@@ -40,6 +40,13 @@ Des documents à venir de correction de certains exercices.
 
 ## Pour tous
 Voici des liens facultatifs
-+ [1000 livres gratuits en ebook](https://livre.fnac.com/n309183/Tous-les-Ebooks-gratuits)
-+ [article : Didier Pittet, le médecin qui a inventé le gel hydroalcoolique](https://www.la-croix.com/Sciences-et-ethique/Sante/Didier-Pittet-medecin-invente-gel-hydroalcoolique-2020-03-24-1201085797)
 
+### Des livres (ebook) gratuits et libres :
+
++ [Ebooks libres et gratuits](https://www.ebooksgratuits.com/) ;
++ [Ebook gratuit français](http://ebook-gratuit-francais.com/) ;
++ [Gutenberg](http://www.gutenberg.org/wiki/FR_Page_d%27Accueil) ;
++ [Wikisource](https://fr.wikisource.org/wiki/Wikisource:Accueil) ;
++ [Atramenta](https://www.atramenta.net/).
+
+Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
