@@ -61,7 +61,7 @@ Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou
 ## Pour la spé mathématiques en première
 
 + Des documents `maison` à venir de correction de certains exercices.
-+ Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteur académique
++ Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
 
 
 ## Pour tous
