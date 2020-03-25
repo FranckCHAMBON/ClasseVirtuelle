@@ -56,6 +56,7 @@ Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou
         + d'autres langages, comme SageMath (pour les profs)
 + [commandes de bases Linux](http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf) ;
 + un [TP Linux](http://nsivaugelas.free.fr/premiere/archi_s_e.php)
++ un [jeu avec un émulateur Linux](http://luffah.xyz/bidules/Terminus/)
 
 ## Pour la spé mathématiques en première
 
