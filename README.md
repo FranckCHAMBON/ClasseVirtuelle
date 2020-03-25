@@ -47,7 +47,7 @@ Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou
 + [jor1k](https://s-macke.github.io/jor1k/demos/main.html?user=XjgQbmJywo&cpu=asm&n=1&relayURL=wss%3A%2F%2Frelay.widgetry.org%2F)
     + facile, pas d'inscription
 + [CoCalc](https://cocalc.com/)
-    + nécessite une inscription, mais logiciel libre et gratuit ;
+    + nécessite une inscription ; solution basée sur logiciel libre et gratuit ;
     + permet la sauvegarde de document ;
     + permet de travailer avec :
         + Python,
