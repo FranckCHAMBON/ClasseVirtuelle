@@ -8,7 +8,7 @@ https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564
 
 
 Il y a des règles :
-+ votre pseudo doit être sous la forme : prénom_nomcourt_classe ; comme Jean_Du_102 pour Jean Dupont en classe 102.
++ votre pseudo doit être sous la forme : prénom_nomcourt_classe ; comme `Jean_Du_102` pour Jean Dupont en classe 102.
 + seuls ces pseudos pourront entrer dans le groupe de  travail et d'échange. Les autres n'auront rien qu'un tableau blanc !
 + tout le monde est invité, il peut y avoir des intrus, donc vous n'aurez pas la possibilité de vous exprimer, de base.
 + vous pourrez toujours vous exprimer par icône de resenti (*feedback*) ; vous le ferez sur demande.
