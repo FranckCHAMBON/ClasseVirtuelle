@@ -62,6 +62,8 @@ Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi
 + [commandes de bases Linux](http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf) ;
 + un [TP Linux](http://nsivaugelas.free.fr/premiere/archi_s_e.php)
 + un [jeu avec un émulateur Linux](http://luffah.xyz/bidules/Terminus/)
++ un autre [TP](http://gervaisprof.free.fr/dl/bash/Ligne_de_commande_POSIX.pdf)
++ un autre TP sur demande uniquement ;-) 
 
 ## Pour la spé mathématiques en première
 
