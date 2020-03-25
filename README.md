@@ -36,3 +36,10 @@ Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou
 ## Pour la spé mathématiques en première
 
 Des documents à venir de correction de certains exercices.
+
+
+## Pour tous
+Voici des liens facultatifs
++ [1000 livres gratuits en ebook](https://livre.fnac.com/n309183/Tous-les-Ebooks-gratuits)
++ [article : Didier Pittet, le médecin qui a inventé le gel hydroalcoolique](https://www.la-croix.com/Sciences-et-ethique/Sante/Didier-Pittet-medecin-invente-gel-hydroalcoolique-2020-03-24-1201085797)
+
