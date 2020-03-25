@@ -62,10 +62,13 @@ Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi
 + [commandes de bases Linux](http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf) ;
 + un [TP Linux](http://nsivaugelas.free.fr/premiere/archi_s_e.php)
 + un [jeu avec un émulateur Linux](http://luffah.xyz/bidules/Terminus/)
++ un autre [TP](http://gervaisprof.free.fr/dl/bash/Ligne_de_commande_POSIX.pdf)
++ un autre TP sur demande uniquement ;-) 
 
 ## Pour la spé mathématiques en première
 
 + Des documents `maison` à venir de correction de certains exercices.
++ [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
 + Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
 
 
@@ -87,3 +90,6 @@ Voici des liens facultatifs
 + [Atramenta](https://www.atramenta.net/).
 
 Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
+
+### Liens youtube
++ [À quoi ressemble notre réseau social ?](https://www.youtube.com/watch?v=UX7YQ6m2r_o)
