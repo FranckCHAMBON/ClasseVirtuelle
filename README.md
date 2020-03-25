@@ -35,6 +35,7 @@ Des manuels sont aussi disponibles, par exemple :
 
 ### Activités
 + [Pixees SNT](https://pixees.fr/informatiquelycee/n_site/snt.html)
++ [40 activités pour la quarantaine](https://pixees.fr/quarante-activites-pour-la-quarantaine/)
 + [Recueil d'activités variées](http://numerique-sciences-informatiques.ac-besancon.fr/wp-content/uploads/sites/35/2020/02/snt_formationv2.pdf)
 
 ## Pour la NSI
