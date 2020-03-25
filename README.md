@@ -41,6 +41,9 @@ Des manuels sont aussi disponibles, par exemple :
 
 Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou sur ordinateur.
 
+Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
+> Nous continuerons à corriger certains exercices ensemble.
+
 ### Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
 
