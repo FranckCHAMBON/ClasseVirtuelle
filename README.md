@@ -30,7 +30,8 @@ Des manuels sont aussi disponibles, par exemple :
 + [SNT Didier](https://monespace-educ.fr/feuilleter/9782278094912)
 + [SNT Hachette](https://monespace-educ.fr/feuilleter/9782017102281)
 + [SNT Nathan](https://biblio.nathan.fr/adistance/9782091194059/?openBook=9782091194059%3fdXNlck5hbWU9UVFGdno4NlNydnZRQWQrbWhmQUVvQT09JnVzZXJQYXNzd29yZD1XalB3YkZzdmZ2RmNDSHNXUmgyemt3PT0mZGVtbz10cnVlJndhdGVybWFyaz0=)
-+ et d'autres en suivant [ce lien](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw), valable pour (presque) toutes les disciplines ! Il n'y a pas de manuels NSI par exemple.
++ et d'autres en suivant [ce lien](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw), valable pour (presque) toutes les disciplines !
+> /!\ Il n'y a pas de manuels NSI par exemple.
 
 ### Activités
 + [Pixees SNT](https://pixees.fr/informatiquelycee/n_site/snt.html)
