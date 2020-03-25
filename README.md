@@ -90,3 +90,6 @@ Voici des liens facultatifs
 + [Atramenta](https://www.atramenta.net/).
 
 Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
+
+### Liens youtube
++ [À quoi ressemble notre réseau social ?](https://www.youtube.com/watch?v=UX7YQ6m2r_o)
