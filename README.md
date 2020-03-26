@@ -49,6 +49,8 @@ Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
 
 ### Émulateurs Linux
++ [Termux](https://play.google.com/store/apps/details?id=com.termux) : pour les tablettes
+    + [Un article à lire sur Termux](https://grisebouille.net/termux-hackez-votre-android/)
 + [jor1k](https://s-macke.github.io/jor1k/demos/main.html?user=XjgQbmJywo&cpu=asm&n=1&relayURL=wss%3A%2F%2Frelay.widgetry.org%2F)
     + facile, pas d'inscription
 + [CoCalc](https://cocalc.com/)
