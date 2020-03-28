@@ -69,7 +69,7 @@ Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi
 
 ## Pour la spé mathématiques en première
 
-+ Des documents `maison` à venir de correction de certains exercices.
++ [Des corrections](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths) de certains exercices.
 + [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
 + Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
 
