@@ -1820,8 +1820,8 @@ pre[data-line] {
 <p><strong>Premi&#xE8;res exp&#xE9;riences</strong></p>
 <p>La <a href="https://fr.wikipedia.org/wiki/Virtualisation">virtualisation syst&#xE8;me</a> consiste, en informatique, &#xE0; ex&#xE9;cuter sur une machine h&#xF4;te, dans un environnement isol&#xE9;, des syst&#xE8;mes d&apos;exploitation.</p>
 </section><section vertical="true" lineno="8" class="slide " data-line="8" data-h="0" data-v="1">
-<p><img src="i.png" alt="exemple-global"></p>
-<p>Une machine virtuelle Manjaro invit&#xE9;e dans une machine h&#xF4;te Linux Mint</p>
+<p><img src="assets/total3.png" alt="exemple-global"></p>
+<p>Trois machines virtuelles invit&#xE9;es dans une machine h&#xF4;te Linux Mint</p>
 </section><section vertical="true" lineno="14" class="slide " data-line="14" data-h="0" data-v="2">
 <h2 class="mume-header" id="pourquoi">Pourquoi ?</h2>
 
@@ -1838,7 +1838,7 @@ pre[data-line] {
 </ul>
 </section><section vertical="true" lineno="24" class="slide " data-line="24" data-h="0" data-v="3">
 <p>D&#xE9;couvrons avec <a href="https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox">VirtualBox</a>, un logiciel libre de virtualisation comment installer un <strong>syst&#xE8;me d&apos;exploitation libre</strong>.</p>
-<p>Cette installation vous permettra de travailler dans les conditions pr&#xE9;vues par le B.O. en NSI.</p>
+<p>Cette installation vous permettra de travailler &#xE0; la maison dans les conditions pr&#xE9;vues par le B.O. en NSI.</p>
 </section></section><section><section lineno="30" class="slide " data-line="30" data-h="1" data-v="0">
 <h2 class="mume-header" id="vocabulaire">Vocabulaire</h2>
 
@@ -1860,7 +1860,7 @@ pre[data-line] {
 <li>Machine invit&#xE9;e (<em>Guest</em>) : c&apos;est la machine virtuelle qui sera allou&#xE9;e et g&#xE9;r&#xE9;e par l&apos;hyperviseur VirtualBox.</li>
 </ul>
 <blockquote>
-<p>Cette machine peut avoir un disque dur virtuel, un lecteur DVD virtuel, un &#xE9;cran virtuel, un processeur avec un ou plusieurs c&#x153;urs virtuels, etc. Cette machine peut capturer votre souris et votre clavier.</p>
+<p>Cette machine aura un disque dur virtuel, un lecteur DVD virtuel, un &#xE9;cran virtuel, un processeur avec un ou plusieurs c&#x153;urs virtuels, etc. Cette machine peut capturer votre souris et votre clavier. On pourra aussi y bricoler virtuellement : ajout/suppression de mat&#xE9;riel...</p>
 </blockquote>
 </section><section vertical="true" lineno="50" class="slide " data-line="50" data-h="1" data-v="3">
 <ul>
@@ -1976,7 +1976,7 @@ pre[data-line] {
 
 <p>On poursuit ici l&apos;exp&#xE9;rience avec <a href="https://blog.linuxmint.com/?p=3867">Linux Mint Debian Edition (LMDE 4)</a>.</p>
 <blockquote>
-<p>Mint est par d&#xE9;faut bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian. LMDE est bas&#xE9;e directement sur Debian.</p>
+<p>Mint est, par d&#xE9;faut, bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian. LMDE est bas&#xE9;e directement sur Debian.</p>
 </blockquote>
 </section><section vertical="true" lineno="176" class="slide " data-line="176" data-h="4" data-v="1">
 <ol>
@@ -1993,7 +1993,7 @@ pre[data-line] {
 <li>Un torrent est auto v&#xE9;rifi&#xE9; ; bonne pratique.</li>
 </ul>
 </li>
-<li>Vous disposez d&apos;une image disque :
+<li>On dispose d&apos;une image disque :
 <ul>
 <li>elle pourrait &#xEA;tre graver sur un DVD,</li>
 <li>on pourrait cr&#xE9;er une cl&#xE9; USB bootable avec,</li>
@@ -2027,14 +2027,9 @@ pre[data-line] {
 </ul>
 </section><section vertical="true" lineno="216" class="slide " data-line="216" data-h="4" data-v="5">
 <p>Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va ins&#xE9;rer notre disque virtuel t&#xE9;l&#xE9;charg&#xE9;.</p>
-<ol>
-<li>Dans stockage,</li>
-<li>on clique sur &apos;vide&apos; dans le contr&#xF4;leur IDE,</li>
-<li>puis (&#xE0; droite) dans attributs, lecteur optique, on clique sur l&apos;ic&#xF4;ne de DVD &#xE0; droite et son menu...</li>
-<li><code>Choisissez un fichier de disque virtuel</code> ; on s&#xE9;lectionne notre choix d&apos;image .iso t&#xE9;l&#xE9;charg&#xE9;e.</li>
-</ol>
+<p>Dans <code>stockage</code>, on clique sur <code>vide</code> dans le contr&#xF4;leur IDE, puis (&#xE0; droite) dans attributs, lecteur optique, on clique sur l&apos;ic&#xF4;ne de DVD &#xE0; droite et son menu... <code>Choisissez un fichier de disque virtuel</code> ; on s&#xE9;lectionne notre image .iso.</p>
 <p><img src="assets/choix_disque.png" alt></p>
-</section><section vertical="true" lineno="226" class="slide " data-line="226" data-h="4" data-v="6">
+</section><section vertical="true" lineno="224" class="slide " data-line="224" data-h="4" data-v="6">
 <p>On peut fermer la configuration et d&#xE9;marrer la machine virtuelle.</p>
 <ul>
 <li>Elle va booter sur le DVD virtuel pour la premi&#xE8;re fois.</li>
@@ -2046,36 +2041,36 @@ pre[data-line] {
 <blockquote>
 <p>L&apos;origine du verbe <em>booter</em> est en rapport avec <a href="https://fr.wiktionary.org/wiki/bootstrap"><em>bootstrap</em></a>.</p>
 </blockquote>
-</section></section><section><section lineno="237" class="slide " data-line="237" data-h="5" data-v="0">
+</section></section><section><section lineno="235" class="slide " data-line="235" data-h="5" data-v="0">
 <h2 class="mume-header" id="1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></h2>
 
 <p><img src="assets/boot1.png" alt></p>
-</section><section vertical="true" lineno="243" class="slide " data-line="243" data-h="5" data-v="1">
+</section><section vertical="true" lineno="241" class="slide " data-line="241" data-h="5" data-v="1">
 <ul>
 <li>Notre clavier sera captur&#xE9; dans la machine virtuelle,</li>
-<li>on peut &apos;voir&apos; l&apos;&#xE9;cran virtuel de d&#xE9;marrage.</li>
+<li>on peut voir l&apos;&#xE9;cran virtuel de d&#xE9;marrage.</li>
 <li>La souris sera &#xE9;galement captur&#xE9;e.</li>
 <li>On pourra cocher &apos;ne plus afficher ce message&apos;.</li>
 <li><code>Start LMDE 4</code>.</li>
 </ul>
-<p>Quand La machine a fini de booter.</p>
+<p>Quand La machine a fini de booter :</p>
 <ul>
 <li>On peut la tester, ses logiciels, ses param&#xE8;tres, ...</li>
 <li>On va installer cet O.S. sur le disque dur virtuel.</li>
 </ul>
-</section><section vertical="true" lineno="255" class="slide " data-line="255" data-h="5" data-v="2">
+</section><section vertical="true" lineno="253" class="slide " data-line="253" data-h="5" data-v="2">
 <p><img src="assets/%C3%A9cran1.png" alt></p>
-</section><section vertical="true" lineno="260" class="slide " data-line="260" data-h="5" data-v="3">
+</section><section vertical="true" lineno="258" class="slide " data-line="258" data-h="5" data-v="3">
 <p><img src="assets/total.png" alt><br>
 Cette machine invit&#xE9;e est une application parmi d&apos;autres du syst&#xE8;me h&#xF4;te.</p>
-</section><section vertical="true" lineno="265" class="slide " data-line="265" data-h="5" data-v="4">
+</section><section vertical="true" lineno="263" class="slide " data-line="263" data-h="5" data-v="4">
 <p>Dans le menu de VirtualBox, choisir <code>&#xC9;cran</code>, puis <code>Mode plein &#xE9;cran</code>.</p>
 <p><strong>Attention</strong>, pour en sortir, on pourra d&#xE9;placer notre souris tout en bas de l&apos;&#xE9;cran, pour faire appara&#xEE;tre le menu de la machine virtuelle.</p>
 <blockquote>
 <p>Il y a un raccourci clavier qui pourrait &#xEA;tre <kbd>Ctrl(droit)</kbd>+<kbd>F</kbd> .<br>
 Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host</strong></kbd>.</p>
 </blockquote>
-</section></section><section><section lineno="275" class="slide " data-line="275" data-h="6" data-v="0">
+</section></section><section><section lineno="273" class="slide " data-line="273" data-h="6" data-v="0">
 <h2 class="mume-header" id="installation-virtuelle">Installation virtuelle</h2>
 
 <p>Il vaut mieux ici &#xEA;tre en mode plein &#xE9;cran.</p>
@@ -2085,36 +2080,36 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 <li>On choisit son fuseau horaire.</li>
 <li>On choisit sa disposition de clavier. <strong>Attention</strong>, il vaut mieux choisir <code>French (alt.)</code>. Explications &#xE0; venir... On pourra &#xE9;crire tr&#xE8;s facilement les caract&#xE8;res &#xC7;&#xC9;&#xC8;&#xD6;&#xCB;&#x153;&#x152;&#xE6;&#xC6;&#xD7;&#xF7;&#xA1;&#xBF;&#x2026;</li>
 </ul>
-</section><section vertical="true" lineno="287" class="slide " data-line="287" data-h="6" data-v="1">
+</section><section vertical="true" lineno="285" class="slide " data-line="285" data-h="6" data-v="1">
 <p><img src="assets/clavier.png" alt></p>
 <p><code>French (alt.)</code> est un tr&#xE8;s bon choix.</p>
-</section><section vertical="true" lineno="293" class="slide " data-line="293" data-h="6" data-v="2">
+</section><section vertical="true" lineno="291" class="slide " data-line="291" data-h="6" data-v="2">
 <ul>
-<li>Ensuite on entre les param&#xE8;tres du compte qui va administrer la machine.</li>
+<li>On entre les param&#xE8;tres de l&apos;administrateur.</li>
 <li>Majuscules et espaces possibles pour le nom.</li>
 <li>Majuscules et espaces <strong>interdites</strong> pour le nom de la machine. <a href="https://fr.wikipedia.org/wiki/Tiret_bas">Tiret bas</a> ( <code>_</code> ) possible.</li>
 <li>Majuscules et espaces <strong>interdites</strong> pour le nom d&apos;utilisateur (<em>login</em>).</li>
-<li>On choisit un bon mot de passe, que l&apos;on note soigneusement.</li>
+<li>On <strong>note soigneusement</strong> un bon mot de passe.</li>
 <li>Pour un premier test, on peut choisir : <code>Se connecter automatiquement</code>.</li>
 </ul>
-</section><section vertical="true" lineno="302" class="slide " data-line="302" data-h="6" data-v="3">
+</section><section vertical="true" lineno="300" class="slide " data-line="300" data-h="6" data-v="3">
 <p><img src="assets/compte.png" alt></p>
-</section><section vertical="true" lineno="306" class="slide " data-line="306" data-h="6" data-v="4">
+</section><section vertical="true" lineno="304" class="slide " data-line="304" data-h="6" data-v="4">
 <p><strong>Pour une premi&#xE8;re installation avec VirtualBox seulement !!!</strong></p>
 <p>On peut faire une <code>installation automatis&#xE9;e</code> ; Effacer un disque et y installer LMDE. On choisit le <code>VBOX_HARDDISK</code>.</p>
 <blockquote>
 <p>Le disque dur en question est le disque virtuel ; aucun probl&#xE8;me, il est vide.</p>
 </blockquote>
 <p><strong>Quand vous ferez une installation sur une machine r&#xE9;elle, soyez prudent, ce sera peut-&#xEA;tre diff&#xE9;rent.</strong></p>
-</section><section vertical="true" lineno="316" class="slide " data-line="316" data-h="6" data-v="5">
+</section><section vertical="true" lineno="314" class="slide " data-line="314" data-h="6" data-v="5">
 <p><img src="assets/type_install.png" alt></p>
-</section><section vertical="true" lineno="320" class="slide " data-line="320" data-h="6" data-v="6">
+</section><section vertical="true" lineno="318" class="slide " data-line="318" data-h="6" data-v="6">
 <p><img src="assets/confirm.png" alt></p>
 <p><code>VBOX_HARDDRIVE</code> est bien notre disque virtuel, il est vide, il lui faut une table des partitions. Toutes les donn&#xE9;es seront effac&#xE9;es, oui, mais il n&apos;y a aucune en m&#xEA;me temps.</p>
 <ul>
 <li>On clique sur <code>Oui</code>.</li>
 </ul>
-</section><section vertical="true" lineno="327" class="slide " data-line="327" data-h="6" data-v="7">
+</section><section vertical="true" lineno="325" class="slide " data-line="325" data-h="6" data-v="7">
 <p>On continue avec l&apos;installation du chargeur de d&#xE9;marrage <code>GRUB</code>. C&apos;est lui qui donne un menu quand plusieurs syst&#xE8;mes d&apos;exploitation sont disponibles au moment du <em>boot</em>.</p>
 <ul>
 <li>Ici, on laisse le choix par d&#xE9;faut. <code>/dev/sda</code> d&#xE9;signera le descripteur de notre unique disque virtuel.
@@ -2124,21 +2119,25 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 </ul>
 </li>
 </ul>
-</section><section vertical="true" lineno="335" class="slide " data-line="335" data-h="6" data-v="8">
+</section><section vertical="true" lineno="333" class="slide " data-line="333" data-h="6" data-v="8">
 <p><img src="assets/R%C3%A9sum%C3%A9.png" alt></p>
 <p>Un dernier coup d&apos;&#x153;il avant l&apos;installation.</p>
-</section><section vertical="true" lineno="341" class="slide " data-line="341" data-h="6" data-v="9">
+</section><section vertical="true" lineno="339" class="slide " data-line="339" data-h="6" data-v="9">
 <p><img src="assets/Install.png" alt></p>
 <p>L&apos;installation va prendre plusieurs minutes.</p>
-</section><section vertical="true" lineno="347" class="slide " data-line="347" data-h="6" data-v="10">
+</section><section vertical="true" lineno="345" class="slide " data-line="345" data-h="6" data-v="10">
 <p>Une fois l&apos;installation termin&#xE9;e :</p>
 <ul>
 <li>On peut red&#xE9;marrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il <strong>faut</strong> bien &#xE9;jecter le DVD virtuel avant le red&#xE9;marrage. C&apos;est souvent automatique (mais pas toujours). Sinon, on boote &#xE0; nouveau sur le DVD pr&#xEA;t &#xE0; refaire une installation...</li>
 <li>Pour v&#xE9;rifier que le DVD a bien &#xE9;t&#xE9; &#xE9;ject&#xE9;, aller dans le menu <code>P&#xE9;riph&#xE9;riques</code> de la machine virtuelle, puis dans <code>lecteurs optiques</code>.</li>
 </ul>
-<blockquote>
-<p>Voil&#xE0; !</p>
-</blockquote>
+<p><img src="assets/eject.png" alt></p>
+</section></section><section><section lineno="354" class="slide " data-line="354" data-h="7" data-v="0">
+<h2 class="mume-header" id="pr%C3%A9paration">Pr&#xE9;paration</h2>
+
+</section><section vertical="true" lineno="358" class="slide " data-line="358" data-h="7" data-v="1">
+</section><section vertical="true" lineno="360" class="slide " data-line="360" data-h="7" data-v="2">
+</section><section vertical="true" lineno="362" class="slide " data-line="362" data-h="7" data-v="3">
 </section></section>
       </div>
     </div>

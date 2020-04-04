@@ -8,9 +8,9 @@ La [virtualisation système](https://fr.wikipedia.org/wiki/Virtualisation) consi
 
 <!-- slide vertical=true -->
 
-![exemple-global](i.png)
+![exemple-global](assets/total3.png)
 
-Une machine virtuelle Manjaro invitée dans une machine hôte Linux Mint
+Trois machines virtuelles invitées dans une machine hôte Linux Mint
 
 <!-- slide vertical=true -->
 
@@ -26,7 +26,7 @@ Une machine virtuelle Manjaro invitée dans une machine hôte Linux Mint
 
 Découvrons avec [VirtualBox](https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox), un logiciel libre de virtualisation comment installer un **système d'exploitation libre**.
 
-Cette installation vous permettra de travailler dans les conditions prévues par le B.O. en NSI.
+Cette installation vous permettra de travailler à la maison dans les conditions prévues par le B.O. en NSI.
 
 <!-- slide -->
 
@@ -46,7 +46,7 @@ Cette installation vous permettra de travailler dans les conditions prévues par
 
 * Machine invitée (*Guest*) : c'est la machine virtuelle qui sera allouée et gérée par l'hyperviseur VirtualBox.
 
-> Cette machine peut avoir un disque dur virtuel, un lecteur DVD virtuel, un écran virtuel, un processeur avec un ou plusieurs cœurs virtuels, etc. Cette machine peut capturer votre souris et votre clavier.
+> Cette machine aura un disque dur virtuel, un lecteur DVD virtuel, un écran virtuel, un processeur avec un ou plusieurs cœurs virtuels, etc. Cette machine peut capturer votre souris et votre clavier. On pourra aussi y bricoler virtuellement : ajout/suppression de matériel...
 
 <!-- slide vertical=true-->
 
@@ -172,7 +172,7 @@ Il suffit de télécharger une image disque (fichier .iso).
 ## Création d'une machine virtuelle
 
 On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://blog.linuxmint.com/?p=3867).
-> Mint est par défaut basée sur Ubuntu qui, elle-même est basée sur Debian. LMDE est basée directement sur Debian.
+> Mint est, par défaut, basée sur Ubuntu qui, elle-même est basée sur Debian. LMDE est basée directement sur Debian.
 
 <!-- slide vertical=true -->
 
@@ -183,7 +183,7 @@ On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://
     * C'est optionnel ici ; uniquement pour un test.
     * C'est important en production ; sécurité !
     * Un torrent est auto vérifié ; bonne pratique.
-3. Vous disposez d'une image disque :
+3. On dispose d'une image disque :
     * elle pourrait être graver sur un DVD,
     * on pourrait créer une clé USB bootable avec,
     * plaçons-la dans une machine virtuelle !
@@ -217,10 +217,8 @@ Notre machine virtuelle est crée, elle possède :
 <!-- slide vertical=true -->
 
 Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va insérer notre disque virtuel téléchargé.
-1. Dans stockage,
-2. on clique sur 'vide' dans le contrôleur IDE,
-3. puis (à droite) dans attributs, lecteur optique, on clique sur l'icône de DVD à droite et son menu...
-4. `Choisissez un fichier de disque virtuel` ; on sélectionne notre choix d'image .iso téléchargée.
+
+Dans `stockage`, on clique sur `vide` dans le contrôleur IDE, puis (à droite) dans attributs, lecteur optique, on clique sur l'icône de DVD à droite et son menu... `Choisissez un fichier de disque virtuel` ; on sélectionne notre image .iso.
 
 ![](assets/choix_disque.png)
 
@@ -244,12 +242,12 @@ On peut fermer la configuration et démarrer la machine virtuelle.
 <!-- slide vertical=true -->
 
 * Notre clavier sera capturé dans la machine virtuelle,
-* on peut 'voir' l'écran virtuel de démarrage.
+* on peut voir l'écran virtuel de démarrage.
 * La souris sera également capturée.
 * On pourra cocher 'ne plus afficher ce message'.
 * `Start LMDE 4`.
 
-Quand La machine a fini de booter.
+Quand La machine a fini de booter :
 * On peut la tester, ses logiciels, ses paramètres, ...
 * On va installer cet O.S. sur le disque dur virtuel.
 
@@ -293,11 +291,11 @@ Il vaut mieux ici être en mode plein écran.
 
 <!-- slide vertical=true -->
 
-* Ensuite on entre les paramètres du compte qui va administrer la machine.
+* On entre les paramètres de l'administrateur.
 * Majuscules et espaces possibles pour le nom.
 * Majuscules et espaces **interdites** pour le nom de la machine. [Tiret bas](https://fr.wikipedia.org/wiki/Tiret_bas) ( `_` ) possible.
 * Majuscules et espaces **interdites** pour le nom d'utilisateur (*login*).
-* On choisit un bon mot de passe, que l'on note soigneusement.
+* On **note soigneusement** un bon mot de passe.
 * Pour un premier test, on peut choisir : `Se connecter automatiquement`.
 
 <!-- slide vertical=true -->
