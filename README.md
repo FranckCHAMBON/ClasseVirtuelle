@@ -3,15 +3,15 @@
 Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première
 
 ## Les visio-conférences
-Pour rejoindre la classe virtuelle deM. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées:
-https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564
+Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées:
+[https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564](https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564)
 
 
 Il y a des règles :
 + votre pseudo doit être sous la forme : prénom_nomcourt_classe ; comme `Jean_Du_102` pour Jean Dupont en classe 102.
 + seuls ces pseudos pourront entrer dans le groupe de  travail et d'échange. Les autres n'auront rien qu'un tableau blanc !
 + tout le monde est invité, il peut y avoir des intrus, donc vous n'aurez pas la possibilité de vous exprimer, de base.
-+ vous pourrez toujours vous exprimer par icône de resenti (*feedback*) ; vous le ferez sur demande.
++ vous pourrez toujours vous exprimer par icône de ressenti (*feedback*) ; vous le ferez sur demande.
 + si je vous donne la parole ou la possibilité d'écrire, vous devez agir comme en classe :
     + pas de style SMS ; vocabulaire correct ; on ne pose que des questions utiles.
 + certains élèves auront le status de commentateur, ils pourront poser des questions à tout moment.
@@ -34,16 +34,18 @@ Des manuels sont aussi disponibles, par exemple :
 > /!\ Il n'y a pas de manuels NSI par exemple.
 
 ### Activités
++ [Découvrir les objets connectés](https://amazon.quick-pi.org/)
 + [Pixees SNT](https://pixees.fr/informatiquelycee/n_site/snt.html)
 + [40 activités pour la quarantaine](https://pixees.fr/quarante-activites-pour-la-quarantaine/)
 + [Recueil d'activités variées](http://numerique-sciences-informatiques.ac-besancon.fr/wp-content/uploads/sites/35/2020/02/snt_formationv2.pdf)
 
 ## Pour la NSI
 
-Des tutoriels à venir pour installer des logiciels de travail, sur tablettes ou sur ordinateur.
-
-Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
+1. Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
 > Nous continuerons à corriger certains exercices ensemble.
+
+2. **Nouveaux documents** :
+* [Utilisation de VirtualBox](NSI/Virtualbox-1/virtualbox-1.html)
 
 ### Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
