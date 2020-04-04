@@ -20,7 +20,7 @@ Il y a des règles :
 
 ## Pour la SNT
 
-Vous êtes invités à travailler avec http://www.france-ioi.org/confinement/
+Vous êtes invités à travailler avec [http://www.france-ioi.org/confinement/](http://www.france-ioi.org/confinement/)
 > Vous trouverez beaucoup d'activités pour tous de l'école primaire à la terminale.
 
 ### Manuels
