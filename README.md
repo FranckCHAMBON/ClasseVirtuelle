@@ -45,7 +45,11 @@ Des manuels sont aussi disponibles, par exemple :
 > Nous continuerons à corriger certains exercices ensemble.
 
 2. **Nouveaux documents** :
-* [Utilisation de VirtualBox](NSI/Virtualbox-1/virtualbox-1.html)
+* [Utilisation de VirtualBox](NSI/Virtualbox-1/virtualbox-1.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
+
+3. **À venir** :
+* [Mises à jour et installation de logiciels pour la NSI]() : conseils pour Firefox, Python, Anaconda, VSCodium, ...
+
 
 ### Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
@@ -71,7 +75,7 @@ Des manuels sont aussi disponibles, par exemple :
 
 ## Pour la spé mathématiques en première
 
-+ [Des corrections](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths) de certains exercices.
++ [Des corrections](Maths/corrections.md) de certains exercices.
 + [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
 + Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
 
