@@ -351,13 +351,3 @@ Une fois l'installation terminée :
 * Pour vérifier que le DVD a bien été éjecté, aller dans le menu `Périphériques` de la machine virtuelle, puis dans `lecteurs optiques`.
 
 ![](assets/eject.png)
-
-<!-- slide -->
-
-## Préparation
-
-<!-- slide vertical=true -->
-
-<!-- slide vertical=true -->
-
-<!-- slide vertical=true -->
