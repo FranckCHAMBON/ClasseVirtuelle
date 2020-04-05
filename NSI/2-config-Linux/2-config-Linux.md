@@ -19,3 +19,22 @@ On supposera qu'une installation toute fraîche vient d'être réalisée. Nous a
 ## Les sources
 On peut modifier le choix des serveurs qui offrent les mises à jour. On choisit en général un dépôt proche, ayant un bon débit, et fiable dans le temps.
 
+
+```bash
+francky@debianmintvirtuel:~$ cat /etc/apt/sources.list.d/official-package-repositories.list 
+```
+```
+deb http://packages.linuxmint.com debbie main upstream import backport #id:linuxmint_main
+
+deb https://deb.debian.org/debian buster main contrib non-free
+deb https://deb.debian.org/debian buster-updates main contrib non-free
+deb http://security.debian.org buster/updates main contrib non-free
+
+deb https://deb.debian.org/debian buster-backports main contrib non-free
+```
+
+https://wiki.debian.org/fr/SourcesList#Modifier_les_sources_de_logiciels
+
+<!-- slide -->
+
+<object type="image/svg+xml" data="sortie.svg"></object>
