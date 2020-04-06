@@ -6,4 +6,4 @@
 * [Ex 95 p 154](p154_ex95/corrigé_95p154.html)
 
 * [Ex 93 p 153](p153_ex93/ex93.html) ; nouveau
-* [Feuilles d'exercices M. Calvet](Docs_Calvet)
+* [Feuilles d'exercices M. Calvet](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths/Docs_Calvet)
