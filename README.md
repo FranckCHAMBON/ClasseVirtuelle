@@ -1,6 +1,8 @@
 # Classe Virtuelle de M. Chambon
 
-Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première
+Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première.
+
+Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées:
