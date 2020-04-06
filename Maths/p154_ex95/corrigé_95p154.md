@@ -25,8 +25,9 @@ $f'(x) = -3x^2 +3$, expression qui se factorise aisément ;
 
 <!-- slide vertical=true -->
 
-à finir...
-(tableau intermédiaire)
+![tableau de variation](tab_var1.png)
+
+Tableau obtenu avec [Scratchwork](https://www.scratchwork.io) : outils de schéma en ligne.
 
 <!-- slide -->
 ### Q2
@@ -42,7 +43,13 @@ Pour $x\in \mathbb R$, on a $f(x) = −x^3+3x+2$, donc
 
 $f(-1) = -(-1)^3+3\times(-1)+2 = +1 -3 +2 = 0$
 
-((tableau à finir...))
+![tabvar2](tabvar2.svg)
+
+<!-- slide vertical=true -->
+
+Ce tableau de variation a été obtenu avec [**Pdf**_add_](https://www.xm1math.net/pdfadd/), qui est simple d'utilisation. Il a ensuite été modifié avec [InkScape](https://inkscape.org/fr/) pour obtenir un fichier `.svg` avec la partie en bleu pour $f'$.
+
+> Entraînez-vous avec **Pdf**_add_
 
 <!-- slide -->
 ### Q4
