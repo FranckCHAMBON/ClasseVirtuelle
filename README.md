@@ -47,10 +47,10 @@ Des manuels sont aussi disponibles, par exemple :
 > Nous continuerons à corriger certains exercices ensemble.
 
 2. **Nouveaux documents** :
-* [Utilisation de VirtualBox](NSI/Virtualbox-1/virtualbox-1.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
+* [Utilisation de VirtualBox](NSI/1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
 
 3. **À venir** :
-* [Mises à jour et installation de logiciels pour la NSI]() : conseils pour Firefox, Python, Anaconda, VSCodium, ...
+* [Mises à jour et installation de logiciels pour la NSI](NSI/2-config-Linux/2-config-Linux.html) : conseils pour Firefox, Python, Anaconda, VSCodium, ...
 
 
 ### Des liens de cours
@@ -64,7 +64,7 @@ Des manuels sont aussi disponibles, par exemple :
 + [CoCalc](https://cocalc.com/)
     + nécessite une inscription ; solution basée sur logiciel libre et gratuit ;
     + permet la sauvegarde de document ;
-    + permet de travailer avec :
+    + permet de travailler avec :
         + Python,
         + langage C,
         + langage Bash
