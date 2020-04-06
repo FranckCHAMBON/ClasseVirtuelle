@@ -45,6 +45,12 @@ On clique sur `OK`. Cela prend quelques instants.
 
 <!-- slide vertical=true -->
 
+**Pour information** : avec un terminal, on peut voir les dépôts ainsi.
+
+<object type="image/svg+xml" data="assets/sources.svg"></object>
+
+<!-- slide vertical=true -->
+
 On clique sur `Installer les mises à jour`.
 ![](assets/maj-5.png)
 Après quelques minutes... Et voilà.
