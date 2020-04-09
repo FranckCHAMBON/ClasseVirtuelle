@@ -50,8 +50,9 @@ Des manuels sont aussi disponibles, par exemple :
 * [Utilisation de VirtualBox](NSI/1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
 
 3. **À venir** :
-* [Mises à jour et installation de logiciels pour la NSI](NSI/2-config-Linux/2-config-Linux.html) : conseils pour Firefox, Python, Anaconda, VSCodium, ...
-
+* [Mises à jour et installation de logiciels pour la NSI](NSI/2-config-Linux/2-config-Linux.html) 
+* [Conseils pour Firefox](NSI/3-Firefox/3-Firefox.html)
+* Conseils pour Python, Anaconda, VSCodium, ...
 
 ### Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
