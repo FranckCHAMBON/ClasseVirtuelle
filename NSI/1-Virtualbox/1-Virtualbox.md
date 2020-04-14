@@ -1,3 +1,18 @@
+---
+export_on_save:
+  html: true
+
+presentation:
+  width: 1920
+  height: 1200
+  theme: solarized.css
+  margin: 0.1
+
+  # Display a presentation progress bar
+  progress: true
+---
+
+
 <!-- slide -->
 
 # Virtualisation système
@@ -206,7 +221,7 @@ On utilise VirtualBox :
 
 <!-- slide vertical=true -->
 
-Notre machine virtuelle est crée, elle possède :
+Notre machine virtuelle est créée, elle possède :
 * un procésseur virtuel,
 * de la mémoire virtuelle,
 * une carte vidéo virtuelle et sa mémoire,
