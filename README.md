@@ -51,7 +51,7 @@ Des manuels sont aussi disponibles, par exemple :
 
 3. **À venir** :
 * [Mises à jour et installation de logiciels pour la NSI](NSI/2-config-Linux/2-config-Linux.html) 
-* [Conseils pour Firefox](NSI/3-Firefox/3-Firefox.html)
+* [Conseils pour Firefox](NSI/3-Navigateurs/3-Navigateurs.html)
 * Conseils pour Python, Anaconda, VSCodium, ...
 
 ### Des liens de cours
