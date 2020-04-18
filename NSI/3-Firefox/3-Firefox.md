@@ -1,3 +1,16 @@
+---
+export_on_save:
+  html: true
+
+presentation:
+  width: 1920
+  height: 1200
+  theme: solarized.css
+  margin: 0.1
+
+  progress: true
+---
+
 <!-- slide -->
 
 # Conseils pour Firefox

@@ -390,3 +390,20 @@ Une fois l'installation terminée :
 * Pour vérifier que le DVD a bien été éjecté, aller dans le menu `Périphériques` de la machine virtuelle, puis dans `lecteurs optiques`.
 
 ![](assets/eject.png)
+
+<!-- slide -->
+
+## Quelques distributions à tester
+
+1. [Linux Mint 19.3](https://blog.linuxmint.com/?p=3832), recommandée pour sa simplicité, basée sur `Ubuntu`, utilise le bureau `Cinnamon`.
+2. [MX Linux](https://mxlinux.org/), basée sur `Debian (stable)`, utilise le bureau `XFCE`. Équipe récente.
+3. [Manjaro](https://manjaro.org/download/), basée sur `Arch`, utilise le bureau `XFCE`, `KDE`, ou d'autres... **Idéale pour tester KDE.**
+4. [elementary OS](https://elementary.io/), basée sur `Ubuntu`, utilise le bureau `Pantheon`. Très jolie !
+5. [CentOS](https://www.centos.org/download/), basée sur `Fedora` et `Red Hat`, utilise le bureau `Gnome` ou `KDE`. Utilisée dans l'industrie.
+6. [ReactOS](https://reactos.org/), un clone libre de Windows XP. Ici, ce n'est pas Linux ! Origine de Russie.
+7. [SparkyLinux](https://sparkylinux.org/download/), basée sur `Debian (stable ou non !!!)`, rapide et légère.
+8. [Tails](https://tails.boum.org/), pour tester un *live*, objectif préservation de la vie privée et de l'anonymat.
+9. [Lubuntu 20.04 Focal Fossa](https://lubuntu.me/downloads/), basée sur `Ubuntu`, utilise le bureau `LXQt`.
+10. [Parrot](https://www.parrotlinux.org/download/), basée sur `Debian (testing)`, utilise le bureau `MATE` ou `KDE`, pour les hackers.
+
+Beaucoup de distributions Linux proposent plusieurs bureaux au choix. Testez-en plusieurs !
