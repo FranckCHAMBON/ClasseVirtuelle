@@ -1626,32 +1626,55 @@ body {
     <div style="display:none;"></div>
     <div class="reveal">
       <div class="slides">
-        <section><section lineno="15" class="slide " data-line="15" data-h="0" data-v="0">
+        <section><section lineno="14" class="slide " data-line="14" data-h="0" data-v="0">
 <h1 class="mume-header" id="virtualisation-syst%C3%A8me">Virtualisation syst&#xE8;me</h1>
 
 <p><strong>Premi&#xE8;res exp&#xE9;riences</strong></p>
 <p>La <a href="https://fr.wikipedia.org/wiki/Virtualisation">virtualisation syst&#xE8;me</a> consiste, en informatique, &#xE0; ex&#xE9;cuter sur une machine h&#xF4;te, dans un environnement isol&#xE9;, des syst&#xE8;mes d&apos;exploitation.</p>
-</section><section vertical="true" lineno="23" class="slide " data-line="23" data-h="0" data-v="1">
+<ul>
+<li>La machine h&#xF4;te sera votre ordinateur, au lyc&#xE9;e ou &#xE0; la maison.</li>
+<li>Les syst&#xE8;mes d&apos;exploitations seront libres, conform&#xE9;ment au programme du B.O. ; il n&apos;y a pas que Linux...</li>
+</ul>
+</section><section vertical="true" lineno="24" class="slide " data-line="24" data-h="0" data-v="1">
 <p><img src="assets/total3.png" alt="exemple-global"></p>
-<p>Trois machines virtuelles invit&#xE9;es dans une machine h&#xF4;te Linux Mint</p>
-</section><section vertical="true" lineno="29" class="slide " data-line="29" data-h="0" data-v="2">
+<p><strong>Exemple</strong> : Trois machines virtuelles invit&#xE9;es dans une machine h&#xF4;te Linux Mint. On peut y observer des versions diff&#xE9;rentes de Python3 qui y sont install&#xE9;es.</p>
+</section><section vertical="true" lineno="30" class="slide " data-line="30" data-h="0" data-v="2">
 <h2 class="mume-header" id="pourquoi">Pourquoi ?</h2>
 
 <ul>
 <li>
-<p>C&apos;est un bac &#xE0; sable p&#xE9;dagogique pour les premi&#xE8;res installations d&apos;un syst&#xE8;me d&apos;exploitation.</p>
+<p><strong>Pour vous</strong> :</p>
+<ul>
+<li>C&apos;est un bac &#xE0; sable p&#xE9;dagogique pour les premi&#xE8;res installations d&apos;un syst&#xE8;me d&apos;exploitation.</li>
+<li>D&#xE9;couvrir Linux, et &#xEA;tre administrateur d&apos;une machine.</li>
+<li>Faire des exp&#xE9;riences sans cons&#xE9;quences en cas de mauvaises manipulations.</li>
+<li>Travailler &#xE0; la maison dans les conditions pr&#xE9;vues par le B.O. en NSI.</li>
+</ul>
 </li>
 <li>
-<p>Permet de faire des tests vari&#xE9;s, du partage de ressources, de la s&#xE9;curisation de r&#xE9;seau, du d&#xE9;ploiement ...</p>
-</li>
-<li>
-<p>Et d&apos;<a href="https://fr.wikipedia.org/wiki/Virtualisation#Int%C3%A9r%C3%AAts">autres raisons</a> encore.</p>
+<p><strong>Pour les professionnels</strong> :</p>
+<ul>
+<li>Faire des tests vari&#xE9;s, du partage de ressources, de la s&#xE9;curisation de r&#xE9;seau, du d&#xE9;ploiement ...</li>
+<li>Faire des &#xE9;conomies d&apos;&#xE9;nergies, et d&apos;<a href="https://fr.wikipedia.org/wiki/Virtualisation#Int%C3%A9r%C3%AAts">autres raisons</a> encore.</li>
+</ul>
 </li>
 </ul>
-</section><section vertical="true" lineno="39" class="slide " data-line="39" data-h="0" data-v="3">
-<p>D&#xE9;couvrons avec <a href="https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox">VirtualBox</a>, un logiciel libre de virtualisation comment installer un <strong>syst&#xE8;me d&apos;exploitation libre</strong>.</p>
-<p>Cette installation vous permettra de travailler &#xE0; la maison dans les conditions pr&#xE9;vues par le B.O. en NSI.</p>
-</section></section><section><section lineno="45" class="slide " data-line="45" data-h="1" data-v="0">
+</section><section vertical="true" lineno="47" class="slide " data-line="47" data-h="0" data-v="3">
+<h2 class="mume-header" id="comment">Comment ?</h2>
+
+<p>Il existe plusieurs <a href="https://fr.wikipedia.org/wiki/Virtualisation#Diff%C3%A9rentes_techniques">techniques</a> de virtualisation, et donc <a href>plusieurs logiciels</a> :</p>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine">KVM</a> ; libre, uniquement pour Linux.</li>
+<li><a href="https://fr.wikipedia.org/wiki/QEMU">QEMU</a> ; libre et multiplateforme, mais plus performant actuellement avec Linux.</li>
+<li><a href="https://fr.wikipedia.org/wiki/VMware">VMware</a> ; non libre, uniquement pour Windows.</li>
+<li><strong>VirtualBox</strong></li>
+<li><a href="https://fr.wikipedia.org/wiki/VirtualPC">VirtualPC</a> ; non libre, uniquement pour Mac et Windows.</li>
+</ul>
+<blockquote>
+<p>Nous utiliserons <a href="https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox">VirtualBox</a> ; un logiciel libre et multiplateforme.</p>
+<p>On pourra alors installer un <strong>syst&#xE8;me d&apos;exploitation libre</strong> de type Linux ou non.</p>
+</blockquote>
+</section></section><section><section lineno="64" class="slide " data-line="64" data-h="1" data-v="0">
 <h2 class="mume-header" id="vocabulaire">Vocabulaire</h2>
 
 <ul>
@@ -1660,41 +1683,35 @@ body {
 <blockquote>
 <p>Votre ordinateur actuel sera pr&#xEA;t si vous disposez d&apos;au moins 1 Go de m&#xE9;moire vive disponible, et 20 Go de place sur votre disque dur.</p>
 </blockquote>
-</section><section vertical="true" lineno="53" class="slide " data-line="53" data-h="1" data-v="1">
 <ul>
 <li>Syst&#xE8;me h&#xF4;te : c&apos;est le syst&#xE8;me d&apos;exploitation (<em><strong>O</strong>perating</em> <em><strong>S</strong>ystem</em> ; <em>O.S.</em>) de la machine h&#xF4;te.</li>
 </ul>
 <blockquote>
 <p><em>VirtualBox</em> est multiplateforme, vous pouvez l&apos;installer avec un syst&#xE8;me h&#xF4;te <em>Windows</em>, <em>Linux</em> ou <em>MacOS</em>.</p>
 </blockquote>
-</section><section vertical="true" lineno="59" class="slide " data-line="59" data-h="1" data-v="2">
+</section><section vertical="true" lineno="76" class="slide " data-line="76" data-h="1" data-v="1">
 <ul>
 <li>Machine invit&#xE9;e (<em>Guest</em>) : c&apos;est la machine virtuelle qui sera allou&#xE9;e et g&#xE9;r&#xE9;e par l&apos;hyperviseur VirtualBox.</li>
 </ul>
 <blockquote>
 <p>Cette machine aura un disque dur virtuel, un lecteur DVD virtuel, un &#xE9;cran virtuel, un processeur avec un ou plusieurs c&#x153;urs virtuels, etc. Cette machine peut capturer votre souris et votre clavier. On pourra aussi y bricoler virtuellement : ajout/suppression de mat&#xE9;riel...</p>
 </blockquote>
-</section><section vertical="true" lineno="65" class="slide " data-line="65" data-h="1" data-v="3">
 <ul>
 <li>Syst&#xE8;me invit&#xE9; : c&apos;est le syst&#xE8;me d&apos;exploitation que vous installez sur la machine virtuelle.</li>
 </ul>
 <blockquote>
 <p>Nous exp&#xE9;rimenterons l&apos;installation de diff&#xE9;rentes versions de <em>Linux</em> comme  Debian, Ubuntu, Linux Mint, Manjaro, CentOS, ou Fedora.</p>
 </blockquote>
-<blockquote>
-<p>L&apos;installation de versions vari&#xE9;es de Windows ou MacOS est possible.</p>
-</blockquote>
-</section><section vertical="true" lineno="73" class="slide " data-line="73" data-h="1" data-v="4">
+<p><a href="https://www.virtualbox.org/wiki/Screenshots">L&apos;installation de versions vari&#xE9;es</a> de Windows ou MacOS est possible.</p>
+</section><section vertical="true" lineno="88" class="slide " data-line="88" data-h="1" data-v="2">
 <ul>
 <li>Les suppl&#xE9;ments invit&#xE9;s (<em>Guest Additions</em>) : c&apos;est un pack logiciel &#xE0; installer sur la machine virtuelle pour optimiser son fonctionnement, comme pour avoir une meilleure r&#xE9;solution d&apos;&#xE9;cran.</li>
 </ul>
 <blockquote>
 <p>Ce pack n&apos;est pas un logiciel libre et il est interdit de l&apos;utiliser en entreprise ou &#xE0; l&apos;Universit&#xE9;.</p>
 </blockquote>
-<blockquote>
 <p>&#xC0; titre priv&#xE9;, vous avez le droit de l&apos;installer ; nous verrons comment.</p>
-</blockquote>
-</section></section><section><section lineno="81" class="slide " data-line="81" data-h="2" data-v="0">
+</section></section><section><section lineno="96" class="slide " data-line="96" data-h="2" data-v="0">
 <h2 class="mume-header" id="installation-de-virtualbox">Installation de VirtualBox</h2>
 
 <p>Sur la <a href="https://www.virtualbox.org/wiki/Downloads">page de t&#xE9;l&#xE9;chargement</a> du site officiel, choisir la version correspondant &#xE0; votre machine h&#xF4;te.</p>
@@ -1702,10 +1719,13 @@ body {
 <p>En cas de probl&#xE8;me avec la version 6.0 pour Windows, vous pouvez tenter la version 5.2 pour Windows.</p>
 </blockquote>
 <p>Bonne installation ...</p>
-</section><section vertical="true" lineno="91" class="slide " data-line="91" data-h="2" data-v="1">
+<blockquote>
+<p>Dans certains cas, il faudra <a href="https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC">activer le support de virtualisation</a>.</p>
+</blockquote>
+</section><section vertical="true" lineno="108" class="slide " data-line="108" data-h="2" data-v="1">
 <p><img src="assets/VBox-vide.png" alt="Vbox vide"></p>
-<p>VirtualBox sans aucune machine virtuelle.</p>
-</section></section><section><section lineno="98" class="slide " data-line="98" data-h="3" data-v="0">
+<p><strong>Premier d&#xE9;marage du logiciel</strong> : VirtualBox sans aucune machine virtuelle.</p>
+</section></section><section><section lineno="115" class="slide " data-line="115" data-h="3" data-v="0">
 <h2 class="mume-header" id="pr%C3%A9sentation-de-linux">Pr&#xE9;sentation de Linux</h2>
 
 <p><a href="https://fr.wikipedia.org/wiki/Linux">Linux</a> est un noyau de syst&#xE8;mes d&apos;exploitation pour :</p>
@@ -1718,7 +1738,7 @@ body {
 <li>presque tous les <a href="https://fr.wikipedia.org/wiki/Superordinateur">supercalculateurs</a> ;</li>
 <li>ordinateur d&apos;entreprise s&#xE9;curis&#xE9; : banque, arm&#xE9;e, ...</li>
 </ul>
-</section><section vertical="true" lineno="111" class="slide " data-line="111" data-h="3" data-v="1">
+</section><section vertical="true" lineno="128" class="slide " data-line="128" data-h="3" data-v="1">
 <h3 class="mume-header" id="distribution-linux">Distribution Linux</h3>
 
 <p>Une distribution Linux propose :</p>
@@ -1731,7 +1751,7 @@ body {
 <blockquote>
 <p><strong>Exemples</strong> : Manjaro, Linux Mint, Debian, Ubuntu, Fedora, CentOS, Arch.</p>
 </blockquote>
-</section><section vertical="true" lineno="121" class="slide " data-line="121" data-h="3" data-v="2">
+</section><section vertical="true" lineno="138" class="slide " data-line="138" data-h="3" data-v="2">
 <h3 class="mume-header" id="le-noyau-linux">Le noyau Linux</h3>
 
 <p>Le <a href="https://fr.wikipedia.org/wiki/Noyau_Linux">noyau Linux</a> a &#xE9;t&#xE9; <strong>cr&#xE9;&#xE9; en 1991 par <a href="https://fr.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a></strong>.</p>
@@ -1739,7 +1759,7 @@ body {
 <p>Ses caract&#xE9;ristiques principales sont d&apos;&#xEA;tre multit&#xE2;che et multi-utilisateur. Il respecte les normes POSIX ce qui en fait un digne h&#xE9;ritier des syst&#xE8;mes UNIX.</p>
 </blockquote>
 <p>Il est &#xE9;crit essentiellement en langage C, par des milliers de b&#xE9;n&#xE9;voles et salari&#xE9;s en travail collaboratif sur Internet.</p>
-</section><section vertical="true" lineno="131" class="slide " data-line="131" data-h="3" data-v="3">
+</section><section vertical="true" lineno="148" class="slide " data-line="148" data-h="3" data-v="3">
 <h3 class="mume-header" id="les-logiciels-disponibles">Les logiciels disponibles</h3>
 
 <ul>
@@ -1750,18 +1770,18 @@ body {
 <li>Des compilateurs pour les langages C, C++, java, ...</li>
 <li>Des <a href="https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte">&#xE9;diteurs de texte</a>, et des environnement de d&#xE9;veloppement int&#xE9;gr&#xE9;s, ...</li>
 <li>De nombreux logiciels &#xE9;ducatifs comme <a href="https://fr.wikipedia.org/wiki/GeoGebra">GeoGebra</a>, <a href="https://fr.wikipedia.org/wiki/GCompris">GCompris</a>, <a href="https://fr.wikipedia.org/wiki/Stellarium">Stellarium</a>, ...</li>
-<li>Des <a href="https://www.dotslashplay.it/">jeux</a> ...</li>
+<li>Mais aussi des <a href="https://www.dotslashplay.it/">jeux</a> ...</li>
 </ul>
-</section><section vertical="true" lineno="144" class="slide " data-line="144" data-h="3" data-v="4">
+</section><section vertical="true" lineno="161" class="slide " data-line="161" data-h="3" data-v="4">
 <h3 class="mume-header" id="les-gestionnaires-de-paquets">Les gestionnaires de paquets</h3>
 
 <p>Ils permettent de g&#xE9;rer les mises &#xE0; jour et l&apos;installation de logiciels via des paquets :</p>
 <ul>
 <li><code>dpkg</code> avec le format <a href="https://fr.wikipedia.org/wiki/Deb">.deb</a>, pour Debian, Ubuntu, Linux Mint, ...</li>
 <li><code>rpm</code> avec le format <a href="https://fr.wikipedia.org/wiki/RPM_Package_Manager">.rpm</a>, pour Red Hat, Fedora, CentOS, ...</li>
-<li><a href="https://fr.wikipedia.org/wiki/Pacman_(Arch_Linux)">pacman</a> est le gestionnaire pour Manjaro, Arch...</li>
+<li><a href="https://fr.wikipedia.org/wiki/Pacman_(Arch_Linux)">pacman</a> est le gestionnaire pour Manjaro, Arch, ...</li>
 </ul>
-</section><section vertical="true" lineno="154" class="slide " data-line="154" data-h="3" data-v="5">
+</section><section vertical="true" lineno="171" class="slide " data-line="171" data-h="3" data-v="5">
 <h3 class="mume-header" id="les-environnements-de-bureau">Les environnements de bureau</h3>
 
 <p>Un <a href="https://fr.wikipedia.org/wiki/Environnement_de_bureau">environnement de bureau</a> est un ensemble de logiciels qui donne une coh&#xE9;rence graphique &#xE0; l&apos;ensemble d&apos;une distribution et en permet le r&#xE9;glage.</p>
@@ -1770,11 +1790,11 @@ body {
 <blockquote>
 <p><a href="https://fr.wikipedia.org/wiki/GTK_(bo%C3%AEte_%C3%A0_outils)">GTK</a> et <a href="https://fr.wikipedia.org/wiki/Qt">Qt</a> sont des biblioth&#xE8;ques graphiques, un ensemble d&apos;outils.</p>
 </blockquote>
-</section><section vertical="true" lineno="168" class="slide " data-line="168" data-h="3" data-v="6">
+</section><section vertical="true" lineno="185" class="slide " data-line="185" data-h="3" data-v="6">
 <h3 class="mume-header" id="quelques-exemples">Quelques exemples</h3>
 
 <p><a href="https://distrowatch.com/">DistroWatch</a> pr&#xE9;sente les distributions populaires.</p>
-<p>Chaque distribution peut proposer plusieurs gestionnaire de bureaux. Exemples :</p>
+<p>Chaque distribution peut proposer plusieurs gestionnaires de bureaux. Exemples :</p>
 <ul>
 <li><a href="https://manjaro.org/">Manjaro</a> : avec Xfce ; <a href>lien direct</a></li>
 <li><a href="https://linuxmint.com">Linux Mint</a> : avec Cinnamon ; <a href="https://linuxmint.com/download.php">lien direct</a></li>
@@ -1783,14 +1803,15 @@ body {
 <li><a href="https://ubuntu.com/">Ubuntu</a> avec LXQt ; <a href="https://lubuntu.me/downloads/">lien direct</a></li>
 </ul>
 <p>Il suffit de t&#xE9;l&#xE9;charger une image disque (fichier .iso).</p>
-</section></section><section><section lineno="184" class="slide " data-line="184" data-h="4" data-v="0">
+</section></section><section><section lineno="201" class="slide " data-line="201" data-h="4" data-v="0">
 <h2 class="mume-header" id="cr%C3%A9ation-dune-machine-virtuelle">Cr&#xE9;ation d&apos;une machine virtuelle</h2>
 
 <p>On poursuit ici l&apos;exp&#xE9;rience avec <a href="https://blog.linuxmint.com/?p=3867">Linux Mint Debian Edition (LMDE 4)</a>.</p>
 <blockquote>
-<p>Mint est, par d&#xE9;faut, bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian. LMDE est bas&#xE9;e directement sur Debian.</p>
+<p>Mint est, par d&#xE9;faut, bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian.<br>
+Mais LMDE est bas&#xE9;e directement sur Debian.</p>
 </blockquote>
-</section><section vertical="true" lineno="191" class="slide " data-line="191" data-h="4" data-v="1">
+</section><section vertical="true" lineno="209" class="slide " data-line="209" data-h="4" data-v="1">
 <ol>
 <li>On t&#xE9;l&#xE9;charge l&apos;image disque de 1.9 Go.
 <ul>
@@ -1807,27 +1828,27 @@ body {
 </li>
 <li>On dispose d&apos;une image disque :
 <ul>
-<li>elle pourrait &#xEA;tre graver sur un DVD,</li>
+<li>elle pourrait &#xEA;tre grav&#xE9;e sur un DVD,</li>
 <li>on pourrait cr&#xE9;er une cl&#xE9; USB bootable avec,</li>
 <li>pla&#xE7;ons-la dans une machine virtuelle !</li>
 </ul>
 </li>
 </ol>
-</section><section vertical="true" lineno="205" class="slide " data-line="205" data-h="4" data-v="2">
+</section><section vertical="true" lineno="223" class="slide " data-line="223" data-h="4" data-v="2">
 <p>On utilise VirtualBox :</p>
 <ol>
 <li>On cr&#xE9;e une <strong>nouvelle</strong> machine ; <kbd>Ctrl</kbd>+<kbd>N</kbd> ;</li>
 <li>On l&apos;appellera <code>Debian Mint</code></li>
 </ol>
 <p><img src="assets/cr%C3%A9ation.png" alt="Nouvelle machine"></p>
-</section><section vertical="true" lineno="213" class="slide " data-line="213" data-h="4" data-v="3">
+</section><section vertical="true" lineno="231" class="slide " data-line="231" data-h="4" data-v="3">
 <ol start="3">
 <li>On offre au moins 1024 Mo de m&#xE9;moire vive, <strong>2048 Mo de pr&#xE9;f&#xE9;rence</strong>, pour la machine invit&#xE9;e.</li>
 <li>On cr&#xE9;e un disque dur virtuel maintenant, de type VDI, dynamiquement allou&#xE9;.</li>
-<li><strong>Modifier son nom</strong>, et <strong>choisir une taille de 20Go</strong>.</li>
+<li>On <strong>modifie son nom</strong>, et on <strong>choisit une taille de 20Go</strong> au moins. On peut m&#xEA;me choisir le maximum ; c&apos;est dynamiquement allou&#xE9; donc seul l&apos;espace n&#xE9;cessaire sera pris.</li>
 </ol>
 <p><img src="assets/disque.png" alt></p>
-</section><section vertical="true" lineno="221" class="slide " data-line="221" data-h="4" data-v="4">
+</section><section vertical="true" lineno="239" class="slide " data-line="239" data-h="4" data-v="4">
 <p>Notre machine virtuelle est cr&#xE9;&#xE9;e, elle poss&#xE8;de :</p>
 <ul>
 <li>un proc&#xE9;sseur virtuel,</li>
@@ -1837,11 +1858,11 @@ body {
 <li>un lecteur DVD virtuel vide,</li>
 <li>un disque virtuel vide !</li>
 </ul>
-</section><section vertical="true" lineno="231" class="slide " data-line="231" data-h="4" data-v="5">
+</section><section vertical="true" lineno="249" class="slide " data-line="249" data-h="4" data-v="5">
 <p>Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va ins&#xE9;rer notre disque virtuel t&#xE9;l&#xE9;charg&#xE9;.</p>
 <p>Dans <code>stockage</code>, on clique sur <code>vide</code> dans le contr&#xF4;leur IDE, puis (&#xE0; droite) dans attributs, lecteur optique, on clique sur l&apos;ic&#xF4;ne de DVD &#xE0; droite et son menu... <code>Choisissez un fichier de disque virtuel</code> ; on s&#xE9;lectionne notre image .iso.</p>
 <p><img src="assets/choix_disque.png" alt></p>
-</section><section vertical="true" lineno="239" class="slide " data-line="239" data-h="4" data-v="6">
+</section><section vertical="true" lineno="257" class="slide " data-line="257" data-h="4" data-v="6">
 <p>On peut fermer la configuration et d&#xE9;marrer la machine virtuelle.</p>
 <ul>
 <li>Elle va booter sur le DVD virtuel pour la premi&#xE8;re fois.</li>
@@ -1853,11 +1874,11 @@ body {
 <blockquote>
 <p>L&apos;origine du verbe <em>booter</em> est en rapport avec <a href="https://fr.wiktionary.org/wiki/bootstrap"><em>bootstrap</em></a>.</p>
 </blockquote>
-</section></section><section><section lineno="250" class="slide " data-line="250" data-h="5" data-v="0">
+</section></section><section><section lineno="268" class="slide " data-line="268" data-h="5" data-v="0">
 <h2 class="mume-header" id="1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></h2>
 
 <p><img src="assets/boot1.png" alt></p>
-</section><section vertical="true" lineno="256" class="slide " data-line="256" data-h="5" data-v="1">
+</section><section vertical="true" lineno="274" class="slide " data-line="274" data-h="5" data-v="1">
 <ul>
 <li>Notre clavier sera captur&#xE9; dans la machine virtuelle,</li>
 <li>on peut voir l&apos;&#xE9;cran virtuel de d&#xE9;marrage.</li>
@@ -1870,32 +1891,47 @@ body {
 <li>On peut la tester, ses logiciels, ses param&#xE8;tres, ...</li>
 <li>On va installer cet O.S. sur le disque dur virtuel.</li>
 </ul>
-</section><section vertical="true" lineno="268" class="slide " data-line="268" data-h="5" data-v="2">
+</section><section vertical="true" lineno="286" class="slide " data-line="286" data-h="5" data-v="2">
 <p><img src="assets/%C3%A9cran1.png" alt></p>
-</section><section vertical="true" lineno="273" class="slide " data-line="273" data-h="5" data-v="3">
+</section><section vertical="true" lineno="291" class="slide " data-line="291" data-h="5" data-v="3">
 <p><img src="assets/total.png" alt><br>
 Cette machine invit&#xE9;e est une application parmi d&apos;autres du syst&#xE8;me h&#xF4;te.</p>
-</section><section vertical="true" lineno="278" class="slide " data-line="278" data-h="5" data-v="4">
-<p>Dans le menu de VirtualBox, choisir <code>&#xC9;cran</code>, puis <code>Mode plein &#xE9;cran</code>.</p>
-<p><strong>Attention</strong>, pour en sortir, on pourra d&#xE9;placer notre souris tout en bas de l&apos;&#xE9;cran, pour faire appara&#xEE;tre le menu de la machine virtuelle.</p>
+</section><section vertical="true" lineno="296" class="slide " data-line="296" data-h="5" data-v="4">
+<ul>
+<li>
+<p>On peut agrandir la fen&#xEA;tre de VirtualBox &#xE0; presque tout l&apos;&#xE9;cran.</p>
+<ul>
+<li>Dans ce cas, <strong>attention</strong> &#xE0; ne pas confondre les deux menus de d&#xE9;marrage.</li>
+</ul>
+</li>
+<li>
+<p>Dans le menu de VirtualBox, on peut aussi choisir <code>&#xC9;cran</code>, puis <code>Mode plein &#xE9;cran</code>.</p>
+<ul>
+<li><strong>Attention</strong>, pour en sortir, on pourra d&#xE9;placer notre souris tout en bas de l&apos;&#xE9;cran, pour faire appara&#xEE;tre le menu de la machine virtuelle.</li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <p>Il y a un raccourci clavier qui pourrait &#xEA;tre <kbd>Ctrl(droit)</kbd>+<kbd>F</kbd> .<br>
 Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host</strong></kbd>.</p>
 </blockquote>
-</section></section><section><section lineno="288" class="slide " data-line="288" data-h="6" data-v="0">
+</section></section><section><section lineno="309" class="slide " data-line="309" data-h="6" data-v="0">
 <h2 class="mume-header" id="installation-virtuelle">Installation virtuelle</h2>
 
-<p>Il vaut mieux ici &#xEA;tre en mode plein &#xE9;cran.</p>
+<p>Il vaut mieux ici &#xEA;tre en mode plein &#xE9;cran (ou presque).</p>
 <ul>
 <li>On double clique (ou bien un seul clic + <kbd>Entr&#xE9;e</kbd>) sur <code>Install Linux Mint</code></li>
 <li>On r&#xE9;pond &#xE0; la langue que l&apos;on souhaite pour l&apos;installation ; c&apos;est au choix !</li>
 <li>On choisit son fuseau horaire.</li>
-<li>On choisit sa disposition de clavier. <strong>Attention</strong>, il vaut mieux choisir <code>French (alt.)</code>. Explications &#xE0; venir... On pourra &#xE9;crire tr&#xE8;s facilement les caract&#xE8;res &#xC7;&#xC9;&#xC8;&#xD6;&#xCB;&#x153;&#x152;&#xE6;&#xC6;&#xD7;&#xF7;&#xA1;&#xBF;&#x2026;</li>
+<li>On choisit sa disposition de clavier. <strong>Attention</strong>, il vaut mieux choisir <code>French (alt.)</code>.</li>
 </ul>
-</section><section vertical="true" lineno="300" class="slide " data-line="300" data-h="6" data-v="1">
+<blockquote>
+<p>Explications compl&#xE8;tes &#xE0; venir... On pourra &#xE9;crire tr&#xE8;s facilement les caract&#xE8;res &#xC7;&#xC9;&#xC8;&#xD6;&#xCB;&#x153;&#x152;&#xE6;&#xC6;&#xD7;&#xF7;&#xA1;&#xBF;&#x2026;</p>
+</blockquote>
+</section><section vertical="true" lineno="322" class="slide " data-line="322" data-h="6" data-v="1">
 <p><img src="assets/clavier.png" alt></p>
 <p><code>French (alt.)</code> est un tr&#xE8;s bon choix.</p>
-</section><section vertical="true" lineno="306" class="slide " data-line="306" data-h="6" data-v="2">
+</section><section vertical="true" lineno="328" class="slide " data-line="328" data-h="6" data-v="2">
 <ul>
 <li>On entre les param&#xE8;tres de l&apos;administrateur.</li>
 <li>Majuscules et espaces possibles pour le nom.</li>
@@ -1904,24 +1940,26 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 <li>On <strong>note soigneusement</strong> un bon mot de passe.</li>
 <li>Pour un premier test, on peut choisir : <code>Se connecter automatiquement</code>.</li>
 </ul>
-</section><section vertical="true" lineno="315" class="slide " data-line="315" data-h="6" data-v="3">
+</section><section vertical="true" lineno="337" class="slide " data-line="337" data-h="6" data-v="3">
 <p><img src="assets/compte.png" alt></p>
-</section><section vertical="true" lineno="319" class="slide " data-line="319" data-h="6" data-v="4">
+</section><section vertical="true" lineno="341" class="slide " data-line="341" data-h="6" data-v="4">
 <p><strong>Pour une premi&#xE8;re installation avec VirtualBox seulement !!!</strong></p>
-<p>On peut faire une <code>installation automatis&#xE9;e</code> ; Effacer un disque et y installer LMDE. On choisit le <code>VBOX_HARDDISK</code>.</p>
+<p>On peut faire une <code>installation automatis&#xE9;e</code> ; Effacer un disque et y installer LMDE.<br>
+On choisit le <code>VBOX_HARDDISK</code>.</p>
 <blockquote>
 <p>Le disque dur en question est le disque virtuel ; aucun probl&#xE8;me, il est vide.</p>
 </blockquote>
 <p><strong>Quand vous ferez une installation sur une machine r&#xE9;elle, soyez prudent, ce sera peut-&#xEA;tre diff&#xE9;rent.</strong></p>
-</section><section vertical="true" lineno="329" class="slide " data-line="329" data-h="6" data-v="5">
+</section><section vertical="true" lineno="352" class="slide " data-line="352" data-h="6" data-v="5">
 <p><img src="assets/type_install.png" alt></p>
-</section><section vertical="true" lineno="333" class="slide " data-line="333" data-h="6" data-v="6">
+</section><section vertical="true" lineno="356" class="slide " data-line="356" data-h="6" data-v="6">
 <p><img src="assets/confirm.png" alt></p>
-<p><code>VBOX_HARDDRIVE</code> est bien notre disque virtuel, il est vide, il lui faut une table des partitions. Toutes les donn&#xE9;es seront effac&#xE9;es, oui, mais il n&apos;y a aucune en m&#xEA;me temps.</p>
-<ul>
-<li>On clique sur <code>Oui</code>.</li>
-</ul>
-</section><section vertical="true" lineno="340" class="slide " data-line="340" data-h="6" data-v="7">
+<p><code>VBOX_HARDDRIVE</code> est bien notre disque virtuel, il est vide, il lui faut une table des partitions.<br>
+Toutes les donn&#xE9;es seront effac&#xE9;es, <strong>oui</strong>, mais il n&apos;y a aucune.</p>
+<blockquote>
+<p>On clique sur <code>Oui</code>.</p>
+</blockquote>
+</section><section vertical="true" lineno="364" class="slide " data-line="364" data-h="6" data-v="7">
 <p>On continue avec l&apos;installation du chargeur de d&#xE9;marrage <code>GRUB</code>. C&apos;est lui qui donne un menu quand plusieurs syst&#xE8;mes d&apos;exploitation sont disponibles au moment du <em>boot</em>.</p>
 <ul>
 <li>Ici, on laisse le choix par d&#xE9;faut. <code>/dev/sda</code> d&#xE9;signera le descripteur de notre unique disque virtuel.
@@ -1931,16 +1969,16 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 </ul>
 </li>
 </ul>
-</section><section vertical="true" lineno="348" class="slide " data-line="348" data-h="6" data-v="8">
+</section><section vertical="true" lineno="372" class="slide " data-line="372" data-h="6" data-v="8">
 <p><img src="assets/R%C3%A9sum%C3%A9.png" alt></p>
 <p>Un dernier coup d&apos;&#x153;il avant l&apos;installation.</p>
-</section><section vertical="true" lineno="354" class="slide " data-line="354" data-h="6" data-v="9">
+</section><section vertical="true" lineno="378" class="slide " data-line="378" data-h="6" data-v="9">
 <p><img src="assets/Install.png" alt></p>
 <p>L&apos;installation va prendre plusieurs minutes.</p>
-</section><section vertical="true" lineno="360" class="slide " data-line="360" data-h="6" data-v="10">
+</section><section vertical="true" lineno="384" class="slide " data-line="384" data-h="6" data-v="10">
 <p>Une fois l&apos;installation termin&#xE9;e :</p>
 <ul>
-<li>On peut red&#xE9;marrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il <strong>faut</strong> bien &#xE9;jecter le DVD virtuel avant le red&#xE9;marrage. C&apos;est souvent automatique (mais pas toujours). Sinon, on boote &#xE0; nouveau sur le DVD pr&#xEA;t &#xE0; refaire une installation...</li>
+<li>On peut red&#xE9;marrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il <strong>faut</strong> bien &#xE9;jecter le DVD virtuel avant le red&#xE9;marrage. C&apos;est souvent automatique (mais pas toujours). Sinon, on booterait &#xE0; nouveau sur le DVD pr&#xEA;t &#xE0; refaire une installation...</li>
 <li>Pour v&#xE9;rifier que le DVD a bien &#xE9;t&#xE9; &#xE9;ject&#xE9;, aller dans le menu <code>P&#xE9;riph&#xE9;riques</code> de la machine virtuelle, puis dans <code>lecteurs optiques</code>.</li>
 </ul>
 <p><img src="assets/eject.png" alt></p>

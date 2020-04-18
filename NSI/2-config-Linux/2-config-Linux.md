@@ -1,3 +1,16 @@
+---
+export_on_save:
+  html: true
+
+presentation:
+  width: 1920
+  height: 1200
+  theme: solarized.css
+  margin: 0.1
+
+  progress: true
+---
+
 <!-- slide -->
 
 # Première configuration de *Linux*
@@ -20,6 +33,8 @@ On supposera qu'une installation toute fraîche vient d'être réalisée. Nous a
 * On peut modifier le choix des serveurs qui offrent les mises à jour. On choisit en général un dépôt proche, ayant un bon débit, et fiable dans le temps. Il faut alors ensuite recharger le cache.
 
 * On installe ensuite les mises à jour.
+
+![màj](assets/bouclier.png)
 
 > Dans la barre en bas du bureau, le bouclier avec un point d'exclamation indique des mises à jours à faire.
 
@@ -57,7 +72,7 @@ Après quelques minutes... Et voilà.
 
 <!-- slide vertical=true -->
 
-Il reste une notification avec un point d'exclamation dans un triangle.
+En bas à droite, ![problèmes](assets/triangle.png), il reste une notification avec un point d'exclamation dans un triangle.
 
 ![](assets/rapport.png)
 

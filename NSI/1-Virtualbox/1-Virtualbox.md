@@ -8,7 +8,6 @@ presentation:
   theme: solarized.css
   margin: 0.1
 
-  # Display a presentation progress bar
   progress: true
 ---
 
@@ -20,28 +19,48 @@ presentation:
 **Premières expériences**
 
 La [virtualisation système](https://fr.wikipedia.org/wiki/Virtualisation) consiste, en informatique, à exécuter sur une machine hôte, dans un environnement isolé, des systèmes d'exploitation.
+* La machine hôte sera votre ordinateur, au lycée ou à la maison.
+* Les systèmes d'exploitations seront libres, conformément au programme du B.O. ; il n'y a pas que Linux...
 
 <!-- slide vertical=true -->
 
 ![exemple-global](assets/total3.png)
 
-Trois machines virtuelles invitées dans une machine hôte Linux Mint
+**Exemple** : Trois machines virtuelles invitées dans une machine hôte Linux Mint. On peut y observer des versions différentes de Python3 qui y sont installées.
 
 <!-- slide vertical=true -->
 
 ## Pourquoi ?
 
-* C'est un bac à sable pédagogique pour les premières installations d'un système d'exploitation.
+* **Pour vous** :
 
-* Permet de faire des tests variés, du partage de ressources, de la sécurisation de réseau, du déploiement ...
+  * C'est un bac à sable pédagogique pour les premières installations d'un système d'exploitation.
+  * Découvrir Linux, et être administrateur d'une machine.
+  * Faire des expériences sans conséquences en cas de mauvaises manipulations.
+  * Travailler à la maison dans les conditions prévues par le B.O. en NSI.
 
-* Et d'[autres raisons](https://fr.wikipedia.org/wiki/Virtualisation#Int%C3%A9r%C3%AAts) encore.
+
+* **Pour les professionnels** : 
+
+  * Faire des tests variés, du partage de ressources, de la sécurisation de réseau, du déploiement ...
+  * Faire des économies d'énergies, et d'[autres raisons](https://fr.wikipedia.org/wiki/Virtualisation#Int%C3%A9r%C3%AAts) encore.
 
 <!-- slide vertical=true -->
 
-Découvrons avec [VirtualBox](https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox), un logiciel libre de virtualisation comment installer un **système d'exploitation libre**.
+## Comment ?
 
-Cette installation vous permettra de travailler à la maison dans les conditions prévues par le B.O. en NSI.
+Il existe plusieurs [techniques](https://fr.wikipedia.org/wiki/Virtualisation#Diff%C3%A9rentes_techniques) de virtualisation, et donc [plusieurs logiciels]() :
+* [KVM](https://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine) ; libre, uniquement pour Linux.
+* [QEMU](https://fr.wikipedia.org/wiki/QEMU) ; libre et multiplateforme, mais plus performant actuellement avec Linux.
+* [VMware](https://fr.wikipedia.org/wiki/VMware) ; non libre, uniquement pour Windows.
+* **VirtualBox**
+* [VirtualPC](https://fr.wikipedia.org/wiki/VirtualPC) ; non libre, uniquement pour Mac et Windows.
+
+
+> Nous utiliserons [VirtualBox](https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox) ; un logiciel libre et multiplateforme.
+>
+> On pourra alors installer un **système d'exploitation libre** de type Linux ou non.
+
 
 <!-- slide -->
 
@@ -50,8 +69,6 @@ Cette installation vous permettra de travailler à la maison dans les conditions
 * Machine hôte (*Host*) : c'est l'ordinateur physique qui va "héberger" une ou plusieurs machines virtuelles.
 
 > Votre ordinateur actuel sera prêt si vous disposez d'au moins 1 Go de mémoire vive disponible, et 20 Go de place sur votre disque dur.
-
-<!-- slide vertical=true-->
 
 * Système hôte : c'est le système d'exploitation (_**O**perating_ _**S**ystem_ ; *O.S.*) de la machine hôte. 
 
@@ -63,13 +80,11 @@ Cette installation vous permettra de travailler à la maison dans les conditions
 
 > Cette machine aura un disque dur virtuel, un lecteur DVD virtuel, un écran virtuel, un processeur avec un ou plusieurs cœurs virtuels, etc. Cette machine peut capturer votre souris et votre clavier. On pourra aussi y bricoler virtuellement : ajout/suppression de matériel...
 
-<!-- slide vertical=true-->
-
 * Système invité : c'est le système d'exploitation que vous installez sur la machine virtuelle.
 
 > Nous expérimenterons l'installation de différentes versions de *Linux* comme  Debian, Ubuntu, Linux Mint, Manjaro, CentOS, ou Fedora.
 
-> L'installation de versions variées de Windows ou MacOS est possible.
+[L'installation de versions variées](https://www.virtualbox.org/wiki/Screenshots) de Windows ou MacOS est possible.
 
 <!-- slide vertical=true-->
 
@@ -77,7 +92,7 @@ Cette installation vous permettra de travailler à la maison dans les conditions
 
 > Ce pack n'est pas un logiciel libre et il est interdit de l'utiliser en entreprise ou à l'Université.
 
-> À titre privé, vous avez le droit de l'installer ; nous verrons comment.
+À titre privé, vous avez le droit de l'installer ; nous verrons comment.
 
 <!-- slide -->
 
@@ -89,11 +104,13 @@ Sur la [page de téléchargement](https://www.virtualbox.org/wiki/Downloads) du 
 
 Bonne installation ...
 
+> Dans certains cas, il faudra [activer le support de virtualisation](https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC).
+
 <!-- slide vertical=true -->
 
 ![Vbox vide](assets/VBox-vide.png)
 
-VirtualBox sans aucune machine virtuelle.
+**Premier démarage du logiciel** : VirtualBox sans aucune machine virtuelle.
 
 
 <!-- slide -->
@@ -140,7 +157,7 @@ Il est écrit essentiellement en langage C, par des milliers de bénévoles et s
 * Des compilateurs pour les langages C, C++, java, ...
 * Des [éditeurs de texte](https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte), et des environnement de développement intégrés, ...
 * De nombreux logiciels éducatifs comme [GeoGebra](https://fr.wikipedia.org/wiki/GeoGebra), [GCompris](https://fr.wikipedia.org/wiki/GCompris), [Stellarium](https://fr.wikipedia.org/wiki/Stellarium), ...
-* Des [jeux](https://www.dotslashplay.it/) ...
+* Mais aussi des [jeux](https://www.dotslashplay.it/) ...
 
 <!-- slide vertical=true -->
 
@@ -150,7 +167,7 @@ Ils permettent de gérer les mises à jour et l'installation de logiciels via de
 
 * `dpkg` avec le format [.deb](https://fr.wikipedia.org/wiki/Deb), pour Debian, Ubuntu, Linux Mint, ...
 * `rpm` avec le format [.rpm](https://fr.wikipedia.org/wiki/RPM_Package_Manager), pour Red Hat, Fedora, CentOS, ...
-* [pacman](https://fr.wikipedia.org/wiki/Pacman_(Arch_Linux)) est le gestionnaire pour Manjaro, Arch...
+* [pacman](https://fr.wikipedia.org/wiki/Pacman_(Arch_Linux)) est le gestionnaire pour Manjaro, Arch, ...
 
 <!-- slide vertical=true -->
 
@@ -172,7 +189,7 @@ Un [environnement de bureau](https://fr.wikipedia.org/wiki/Environnement_de_bure
 
 [DistroWatch](https://distrowatch.com/) présente les distributions populaires.
 
- Chaque distribution peut proposer plusieurs gestionnaire de bureaux. Exemples :
+ Chaque distribution peut proposer plusieurs gestionnaires de bureaux. Exemples :
 
 * [Manjaro](https://manjaro.org/) : avec Xfce ; [lien direct]()
 * [Linux Mint](https://linuxmint.com) : avec Cinnamon ; [lien direct](https://linuxmint.com/download.php)
@@ -187,7 +204,8 @@ Il suffit de télécharger une image disque (fichier .iso).
 ## Création d'une machine virtuelle
 
 On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://blog.linuxmint.com/?p=3867).
-> Mint est, par défaut, basée sur Ubuntu qui, elle-même est basée sur Debian. LMDE est basée directement sur Debian.
+> Mint est, par défaut, basée sur Ubuntu qui, elle-même est basée sur Debian.
+> Mais LMDE est basée directement sur Debian.
 
 <!-- slide vertical=true -->
 
@@ -199,7 +217,7 @@ On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://
     * C'est important en production ; sécurité !
     * Un torrent est auto vérifié ; bonne pratique.
 3. On dispose d'une image disque :
-    * elle pourrait être graver sur un DVD,
+    * elle pourrait être gravée sur un DVD,
     * on pourrait créer une clé USB bootable avec,
     * plaçons-la dans une machine virtuelle !
 
@@ -215,7 +233,7 @@ On utilise VirtualBox :
 
 3. On offre au moins 1024 Mo de mémoire vive, **2048 Mo de préférence**, pour la machine invitée.
 4. On crée un disque dur virtuel maintenant, de type VDI, dynamiquement alloué.
-5. **Modifier son nom**, et **choisir une taille de 20Go**.
+5. On **modifie son nom**, et on **choisit une taille de 20Go** au moins. On peut même choisir le maximum ; c'est dynamiquement alloué donc seul l'espace nécessaire sera pris.
 
 ![](assets/disque.png)
 
@@ -278,9 +296,12 @@ Cette machine invitée est une application parmi d'autres du système hôte.
 
 <!-- slide vertical=true -->
 
-Dans le menu de VirtualBox, choisir `Écran`, puis `Mode plein écran`.
+* On peut agrandir la fenêtre de VirtualBox à presque tout l'écran.
+  * Dans ce cas, **attention** à ne pas confondre les deux menus de démarrage.
 
-**Attention**, pour en sortir, on pourra déplacer notre souris tout en bas de l'écran, pour faire apparaître le menu de la machine virtuelle.
+* Dans le menu de VirtualBox, on peut aussi choisir `Écran`, puis `Mode plein écran`.
+
+  * **Attention**, pour en sortir, on pourra déplacer notre souris tout en bas de l'écran, pour faire apparaître le menu de la machine virtuelle.
 
 > Il y a un raccourci clavier qui pourrait être <kbd>Ctrl(droit)</kbd>+<kbd>F</kbd> .
 > Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd>**Host**</kbd>.
@@ -290,12 +311,13 @@ Dans le menu de VirtualBox, choisir `Écran`, puis `Mode plein écran`.
 
 ## Installation virtuelle
 
-Il vaut mieux ici être en mode plein écran.
+Il vaut mieux ici être en mode plein écran (ou presque).
 
 * On double clique (ou bien un seul clic + <kbd>Entrée</kbd>) sur `Install Linux Mint`
 * On répond à la langue que l'on souhaite pour l'installation ; c'est au choix !
 * On choisit son fuseau horaire.
-* On choisit sa disposition de clavier. **Attention**, il vaut mieux choisir `French (alt.)`. Explications à venir... On pourra écrire très facilement les caractères ÇÉÈÖËœŒæÆ×÷¡¿…
+* On choisit sa disposition de clavier. **Attention**, il vaut mieux choisir `French (alt.)`.
+> Explications complètes à venir... On pourra écrire très facilement les caractères ÇÉÈÖËœŒæÆ×÷¡¿…
 
 
 <!-- slide vertical=true -->
@@ -321,7 +343,8 @@ Il vaut mieux ici être en mode plein écran.
 
 **Pour une première installation avec VirtualBox seulement !!!**
 
-On peut faire une `installation automatisée` ; Effacer un disque et y installer LMDE. On choisit le `VBOX_HARDDISK`.
+On peut faire une `installation automatisée` ; Effacer un disque et y installer LMDE.
+On choisit le `VBOX_HARDDISK`.
 
 > Le disque dur en question est le disque virtuel ; aucun problème, il est vide.
 
@@ -335,8 +358,9 @@ On peut faire une `installation automatisée` ; Effacer un disque et y installer
 
 ![](assets/confirm.png)
 
-`VBOX_HARDDRIVE` est bien notre disque virtuel, il est vide, il lui faut une table des partitions. Toutes les données seront effacées, oui, mais il n'y a aucune en même temps.
-* On clique sur `Oui`.
+`VBOX_HARDDRIVE` est bien notre disque virtuel, il est vide, il lui faut une table des partitions.
+Toutes les données seront effacées, **oui**, mais il n'y a aucune.
+> On clique sur `Oui`.
 
 <!-- slide vertical=true -->
 
@@ -362,7 +386,7 @@ L'installation va prendre plusieurs minutes.
 
 Une fois l'installation terminée :
 
-* On peut redémarrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il **faut** bien éjecter le DVD virtuel avant le redémarrage. C'est souvent automatique (mais pas toujours). Sinon, on boote à nouveau sur le DVD prêt à refaire une installation...
+* On peut redémarrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il **faut** bien éjecter le DVD virtuel avant le redémarrage. C'est souvent automatique (mais pas toujours). Sinon, on booterait à nouveau sur le DVD prêt à refaire une installation...
 * Pour vérifier que le DVD a bien été éjecté, aller dans le menu `Périphériques` de la machine virtuelle, puis dans `lecteurs optiques`.
 
 ![](assets/eject.png)

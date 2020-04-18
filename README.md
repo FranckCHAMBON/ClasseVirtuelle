@@ -1,12 +1,12 @@
-# Classe Virtuelle de M. Chambon
+# Documents de cours de M. Chambon
 
 Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première.
 
 Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 
 ## Les visio-conférences
-Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées:
-[https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564](https://eu.bbcollab.com/guest/a7ae914e8cdc4c5b852f6a6990038564)
+Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
+[pas de classe virtuelle pendant les vacances]()
 
 
 Il y a des règles :
@@ -14,7 +14,7 @@ Il y a des règles :
 + seuls ces pseudos pourront entrer dans le groupe de  travail et d'échange. Les autres n'auront rien qu'un tableau blanc !
 + tout le monde est invité, il peut y avoir des intrus, donc vous n'aurez pas la possibilité de vous exprimer, de base.
 + vous pourrez toujours vous exprimer par icône de ressenti (*feedback*) ; vous le ferez sur demande.
-+ si je vous donne la parole ou la possibilité d'écrire, vous devez agir comme en classe :
++ si vous avez la parole ou la possibilité d'écrire, vous devez agir comme en classe :
     + pas de style SMS ; vocabulaire correct ; on ne pose que des questions utiles.
 + certains élèves auront le status de commentateur, ils pourront poser des questions à tout moment.
     + 4 élèves maximum ; les mêmes lors d'une séance.
@@ -46,7 +46,7 @@ Des manuels sont aussi disponibles, par exemple :
 1. Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
 > Nous continuerons à corriger certains exercices ensemble.
 
-2. **Nouveaux documents** :
+2. **Nouveaux documents** adaptés à la tablette :
 * [Utilisation de VirtualBox](NSI/1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
 
 3. **À venir** :
@@ -102,5 +102,5 @@ Voici des liens facultatifs
 
 Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
 
-### Liens youtube
+### Liens YouTube
 + [À quoi ressemble notre réseau social ?](https://www.youtube.com/watch?v=UX7YQ6m2r_o)
