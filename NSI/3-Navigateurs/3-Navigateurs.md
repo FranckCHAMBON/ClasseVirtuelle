@@ -97,3 +97,74 @@ Mais on peut aussi surtout ajouter et utiliser des moteurs qui respèctent votre
 >**Conseils** : 
 >* choisir un de ces trois en moteur de recherche par défaut,
 >* n'utiliser Google qu'à certaines occasion, dans une fenêtre de navigation privée.
+
+
+<!-- slide vertical=true -->
+
+Conseils pour renforcer la sécurité :
+
+* Ne pas croire qu'utiliser Linux simplement suffit à être protégé de tout. C'est un avantage qui peut donner un faux sentiment de sécurité.
+
+* Utiliser un [bon et long mot de passe](https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe) pour votre compte personnel.
+
+* Ne pas utiliser le compte administrateur pour l'utilisation quotidienne. Vous devriez ajouter et utiliser un compte de type standard pour cela.
+
+* Chiffrer vos données. Idéalement le disque dur en entier, mais il est possible de chiffrer uniquement votre espace personnel.
+
+* Activer l'économiseur d'écran avec une sortie par mot de passe, et réduire à quelques secondes le délai de verrouillage.
+
+* Faire le tour des applications et désinstaller les superflues. BleachBit est un utilitaire qui permet de faire du ménage sur des fichiers devenus inutiles.
+
+* Garder votre système à jour, il est possible de faire les mises à jour de sécurité automatiquement.
+
+
+> Pour les situations extrêmes où on recherche également un anonymat renforcé, on se tournera vers la distribution [**Tails**](https://fr.wikipedia.org/wiki/Tails_(syst%C3%A8me_d%27exploitation)), en *live*, avec le navigateur [Tor](https://fr.wikipedia.org/wiki/Tor_Browser).
+
+
+<!-- slide -->
+
+## Modules complémentaires
+
+De nombreux sites Web rivalisent d'inventivité pour pister les utilisateurs.
+
+Se prémunir du pistage est très complexe.
+
+
+[Un article complet sur la question](https://linuxfr.org/news/proteger-sa-vie-privee-sur-le-web-exemple-avec-firefox) ; au programme :
+* Enjeux
+* Techniques de pistage
+* Solutions
+* Conclusion
+
+> **Attention**, ça fait peur !
+
+<!-- slide vertical=true -->
+
+Voici une sélection de modules complémentaires pour Firefox :
+* [ublock Origin](https://addons.mozilla.org/fr/firefox/addon/ublock-origin/) ; Un bloqueur de nuisances efficace, qui ménagera votre processeur et votre mémoire vive.
+* [HTTPS Everywhere](https://addons.mozilla.org/fr/firefox/addon/https-everywhere/) ; active le protocole http**S** (S pour sécurisé) dès que possible.
+* [Privacy Badger](https://addons.mozilla.org/fr/firefox/addon/privacy-badger17/) ; Apprend automatiquement à bloquer les *trackers* invisibles.
+* [Decentraleyes](https://addons.mozilla.org/fr/firefox/addon/decentraleyes/) ; Protège du pistage et accélère votre navigation.
+* [Firefox Multi-Account Containers](https://addons.mozilla.org/fr/firefox/addon/multi-account-containers) ; Avec Firefox Multi-Account Containers, les cookies sont séparés par onglet contextuel, pour que vous puissiez naviguer sur le Web en utilisant plusieurs identités ou comptes simultanément.
+* [Facebook Container](https://addons.mozilla.org/fr/firefox/addon/facebook-container) ; pour les utilisateurs de Facebook...
+* [Cookie Autodelete](https://addons.mozilla.org/fr/firefox/addon/cookie-autodelete/?src=search) ; pour pouvoir détruire les cookies automatiquement à la fermeture d'un onglet. On pourra *whitelister* certains sites de confiance.
+* [AdNauseam](https://addons.mozilla.org/fr/firefox/addon/adnauseam/) ; brouille vos traces en les polluant totalement. **Probablement une des meilleures techniques.**
+
+
+<!-- slide vertical=true -->
+
+### Quelques conseils supplémentaires
+
+1. [**Configurer Firefox Sync**](https://support.mozilla.org/fr/kb/configurer-firefox-sync) pour synchroniser vos extensions, identifiants, mots de passe, marque-pages, ...
+
+> Vous pourrez avoir une sélection homogène sur vos différents appareils fixes ou mobiles.
+
+---
+
+2. Ajouter des modules complémentaires de correction grammaticale.
+  * [Grammalecte](https://addons.mozilla.org/fr/firefox/addon/grammalecte-fr/) ; s'installe aussi sur LibreOffice...
+  * [LanguageTool](https://addons.mozilla.org/fr/firefox/addon/languagetool/) ; s'installe aussi sur LibreOffice...
+
+---
+
+3. ???
