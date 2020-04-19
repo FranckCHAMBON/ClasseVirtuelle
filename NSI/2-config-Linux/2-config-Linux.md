@@ -141,12 +141,72 @@ On peut y zoomer de manière continue par un clic de souris.
 * Cliquer sur `Appliquer`, et une autre fois pour confirmer.
 * Le téléchargement des paquets se fait depuis les dépôts que vous avez choisis.
 * Enfin, l'installation est automatique.
-* Vous avez une entrée dans le `Menu Démarrer` à la section `Graphisme`.
+* Vous avez une entrée `XaoS`dans le `Menu Démarrer` à la section `Graphisme`.
 
 <!-- slide -->
 ## Avec le terminal
 
-Commençons par un exemple non direct. On va installer l'éditeur de code [VSCodium](https://vscodium.com/).
+### Exemple simple
+
+On va installer [**GeoGebra**]()
+
+```bash
+sudo apt install geogebra
+```
+
+* `sudo` : indique que la commande suivante est au nom de l'administrateur ;
+* `apt` : la commande pour gérer les paquets Debian ;
+* `install` : un paramètre donné à `apt`, ici pour installer ;
+* `geogebra` : un argument donné à `apt`, le paquet que l'on souhaite installer.
+
+![GeoGebra install](assets/geogebra.svg)
+
+<!-- slide vertical=true -->
+
+* `apt` commence par vérifier l'existence du paquet demandé ;
+* ensuite, on a le calcul des dépendances, ici de nombreux paquets autour de `java` le langage avec lequel GeoGebra est construit ;
+* ensuite il affiche les paquets qui sont nécessaires, puis ceux suggérés.
+* On a le bilan des paquets qui vont être installés, et une demande de confirmation d'installation.
+* On a répondu `O` pour oui.
+* Les paquets sont téléchargés, puis installés.
+* Un traitement final est opéré.
+* On peut ensuite lancer **GeoGebra**.
+
+![GeoGebra](assets/GeoGebra.png)
+
+<!-- slide vertical=true -->
+
+
+### Exemple intermédiaire
+
+On va installer [**Chromium**](https://framalibre.org/content/chromium) la version libre du navigateur `Chrome` de la firme Google.
+
+![chromium-install](assets/chromium.svg)
+
+<!-- slide vertical=true -->
+Les commandes utilisées :
+
+* `apt search chromium` ; pour une liste des paquets intéressants.
+* `sudo apt install chromium chromium-l10n chromium-ublock-origin`
+    * `chromium` ; le paquet principal
+    * `chromium-l10n` ; le paquet linguistique
+    * `chromium-ublock-origin` ; un bloqueur de publicité
+
+Au passage, un paquet necessaire est installé : `webext-ublock-origin`. Cela nous pousse à faire une recherche sur les paquets `webext-*`, parmi ceux-ci, on va installer en plus :
+* `webext-https-everywhere` ; Si le serveur web autorise une connexion HTTPS, l'extension bascule le navigateur dans ce protocole de communication.
+* `webext-privacy-badger` ; Son objectif est de bloquer les régies publicitaires et les autres sites tiers qui cherchent à connaître les pages visités par l’internaute.
+* `webext-umatrix` ; bloque des scripts et efface automatiquement des *cookies*.
+
+```bash
+sudo apt install webext-https-everywhere webext-privacy-badger webext-umatrix
+```
+
+
+<!-- slide -->
+
+## Installer un paquet hors dépôts
+
+On va installer l'éditeur de code [VSCodium](https://vscodium.com/).
 
 > Visual Studio Code est un excellent logiciel libre édité par Microsoft, cependant la présence de télémétrie n'est pas souhaitée. VSCodium est une version recompilée sans télémétrie. 
 

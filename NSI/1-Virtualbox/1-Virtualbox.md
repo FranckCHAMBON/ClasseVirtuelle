@@ -50,14 +50,17 @@ La [virtualisation système](https://fr.wikipedia.org/wiki/Virtualisation) consi
 ## Comment ?
 
 Il existe plusieurs [techniques](https://fr.wikipedia.org/wiki/Virtualisation#Diff%C3%A9rentes_techniques) de virtualisation, et donc [plusieurs logiciels]() :
+
+* [Boxes](https://wiki.gnome.org/Apps/Boxes) ; libre, très simple pour débuter, mais uniquement sous Linux.
 * [KVM](https://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine) ; libre, uniquement pour Linux.
 * [QEMU](https://fr.wikipedia.org/wiki/QEMU) ; libre et multiplateforme, mais plus performant actuellement avec Linux.
 * [VMware](https://fr.wikipedia.org/wiki/VMware) ; non libre, uniquement pour Windows.
-* **VirtualBox**
+* [Virtual Machine Manager](https://virt-manager.org/) ; libre, technique, uniquement pour les administrateurs Linux.
+* **VirtualBox** ; notre choix ici.
 * [VirtualPC](https://fr.wikipedia.org/wiki/VirtualPC) ; non libre, uniquement pour Mac et Windows.
 
 
-> Nous utiliserons [VirtualBox](https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox) ; un logiciel libre et multiplateforme.
+> Nous utiliserons [VirtualBox](https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox) ; un logiciel libre et multiplateforme qui a des performances correctes homogènes.
 >
 > On pourra alors installer un **système d'exploitation libre** de type Linux ou non.
 

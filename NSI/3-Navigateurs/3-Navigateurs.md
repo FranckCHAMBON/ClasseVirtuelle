@@ -125,6 +125,8 @@ Conseils pour renforcer la sécurité :
 
 ## Modules complémentaires
 
+### Le gros problème des publicités ciblées
+
 De nombreux sites Web rivalisent d'inventivité pour pister les utilisateurs.
 
 Se prémunir du pistage est très complexe.
@@ -136,10 +138,11 @@ Se prémunir du pistage est très complexe.
 * Solutions
 * Conclusion
 
-> **Attention**, ça fait peur !
+> **Attention**, ça fait peur ! D'autre part, l'évolution permanente des mesures et contre-mesures de pistage demande une veille constante et les indications mentionnée ici ou là sont amenées à être adaptées dans le futur.
 
 <!-- slide vertical=true -->
 
+### Protéger vos données et votre vie privée
 Voici une sélection de modules complémentaires pour Firefox :
 * [ublock Origin](https://addons.mozilla.org/fr/firefox/addon/ublock-origin/) ; Un bloqueur de nuisances efficace, qui ménagera votre processeur et votre mémoire vive.
 * [HTTPS Everywhere](https://addons.mozilla.org/fr/firefox/addon/https-everywhere/) ; active le protocole http**S** (S pour sécurisé) dès que possible.
@@ -162,9 +165,13 @@ Voici une sélection de modules complémentaires pour Firefox :
 ---
 
 2. Ajouter des modules complémentaires de correction grammaticale.
-  * [Grammalecte](https://addons.mozilla.org/fr/firefox/addon/grammalecte-fr/) ; s'installe aussi sur LibreOffice...
-  * [LanguageTool](https://addons.mozilla.org/fr/firefox/addon/languagetool/) ; s'installe aussi sur LibreOffice...
 
+    * [Grammalecte](https://addons.mozilla.org/fr/firefox/addon/grammalecte-fr/)
+    * [LanguageTool](https://addons.mozilla.org/fr/firefox/addon/languagetool/)
+
+> Ces extensions sont [disponibles aussi pour LibreOffice](https://doc.ubuntu-fr.org/correction_grammaticale).
 ---
 
-3. ???
+3. Pour les appareils mobiles :
+    * [Blokada](https://blokada.org/) un bloqueur de publicité pour Android. (Ne pas utiliser le *Play Store* pour l'installer !!!)
+    * [Firefox focus](https://play.google.com/store/apps/details?id=org.mozilla.focus&hl=fr) ; naviguer au maximum en mode privé sur votre mobile.
