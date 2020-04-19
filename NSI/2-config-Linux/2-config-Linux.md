@@ -195,10 +195,9 @@ Les commandes utilisées :
 Au passage, un paquet necessaire est installé : `webext-ublock-origin`. Cela nous pousse à faire une recherche sur les paquets `webext-*`, parmi ceux-ci, on va installer en plus :
 * `webext-https-everywhere` ; Si le serveur web autorise une connexion HTTPS, l'extension bascule le navigateur dans ce protocole de communication.
 * `webext-privacy-badger` ; Son objectif est de bloquer les régies publicitaires et les autres sites tiers qui cherchent à connaître les pages visités par l’internaute.
-* `webext-umatrix` ; bloque des scripts et efface automatiquement des *cookies*.
 
 ```bash
-sudo apt install webext-https-everywhere webext-privacy-badger webext-umatrix
+sudo apt install webext-https-everywhere webext-privacy-badger
 ```
 
 
