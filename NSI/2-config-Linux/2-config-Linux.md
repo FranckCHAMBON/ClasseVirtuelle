@@ -9,13 +9,14 @@ presentation:
   margin: 0.1
 
   progress: true
+  previewLinks: true
 ---
 
 <!-- slide -->
 
 # Première configuration de *Linux*
 
-Avec l'exemple de *Linux Mint* LMDE 4
+Avec l'exemple de *Linux Mint MATE*
 
 <!-- slide vertical=true -->
 

@@ -371,7 +371,7 @@ On peut **effacer le disque et installer Linux Mint**.
 
 * On entre les paramètres de l'administrateur.
 * Majuscules et espaces possibles pour le nom.
-* Majuscules et espaces **interdites** pour le nom de la machine. [Tiret bas](https://fr.wikipedia.org/wiki/Tiret_bas) ( `_` ) possible.
+* Majuscules et espaces **déconseillées** pour le nom de la machine. [Tiret bas](https://fr.wikipedia.org/wiki/Tiret_bas) ( `_` ) possible.
 * Majuscules et espaces **interdites** pour le nom d'utilisateur (*login*).
 * On **note soigneusement** un bon mot de passe.
 * Pour un premier test, on peut choisir : `Se connecter automatiquement`.
