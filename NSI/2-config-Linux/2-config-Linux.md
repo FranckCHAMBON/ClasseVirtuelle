@@ -289,7 +289,7 @@ Quand vous obtenez cette étape, allez voir le cours sur la configuration de VSC
 
 Il est possible de créer un fichier script `bash` qui récapitule toute une liste de commandes d'installation. On suppose qu'on a installé un système tout frais basé sur `Debian`, et que la source des dépôts est configurée.
 
-Voici <a href="/assets/auto_install.sh" download>un script à sauvegarder</a> dans votre machine ; il s'appelle `auto_install.sh`
+Voici <a download="/assets/auto_install.sh">un script à sauvegarder</a> dans votre machine ; il s'appelle `auto_install.sh`
 
 * Une fois téléchargé, ouvrir un terminal (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>) ;
 * aller dans le répertoire où il est téléchargé (`cd ...`)
