@@ -239,18 +239,19 @@ VSCodium est libre et multiplateforme ; vous êtes invité à l'installer sur vo
 <!-- slide vertical=true -->
 
 ### Installation avec *Linux/Debian*
-Pour une machine de type *Linux/Debian*, voici ce qu'il faut entrer dans un terminal :
+Pour une machine de type *Linux/Debian*, voici ce qu'il faut entrer dans un terminal, ligne après ligne :
 
 ```bash
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
 ```
-
 ```bash
 echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
 ```
-
 ```bash
 sudo apt update && sudo apt install codium
+```
+```bash
+codium .
 ```
 
 Nous verrons bientôt comment bien s'en servir.
@@ -270,6 +271,43 @@ Explications techniques facultatives :
     * `apt update` met le cache `APT` à jour. Nous l'avions déjà fait à la souris avant les premières mises à jour.
     * `&&` signale un enchaînement **ET** de deux commandes : la première et la suivante si aucun problème.
     * `apt install` nous permet d'installer le paquet `codium` qui est désormais dans un dépôt que nous suivons. Il sera mis à jour automatiquement avec tous les autres logiciels ; c'est une bonne pratique.
+* Dernière ligne :
+    * `codium .` lance l'éditeur VSCodium (`codium`) avec le répertoire de travail actuel (`.`)
 
 Idéalement, les bons logiciels sont inclus dans les dépôts officiels de la distribution. C'est le cas pour l'essentiel. Ici, nous faisons confiance à un tiers.
 > Dans la distribution Linux `Parrot OS security`, VSCodium est inclus dans les dépôts.
+
+<!-- slide vertical=true -->
+
+![codium1](assets/vscodium1.png)
+
+Quand vous obtenez cette étape, allez voir le cours sur la configuration de VSCodium avant de continuer.
+
+<!-- slide -->
+
+## Installation automatisée avec un script
+
+Il est possible de créer un fichier script `bash` qui récapitule toute une liste de commandes d'installation. On suppose qu'on a installé un système tout frais basé sur `Debian`, et que la source des dépôts est configurée.
+
+Voici <a href="/assets/auto_install.sh" download>un script à sauvegarder</a> dans votre machine ; il s'appelle `auto_install.sh`
+
+* Une fois téléchargé, ouvrir un terminal (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>) ;
+* aller dans le répertoire où il est téléchargé (`cd ...`)
+* vérifier qu'il ne contient pas de vilaines choses,
+    * Entrer `nano auto_install.sh`
+    * vérifier les actions proposées,
+        * `echo ...`
+            * affiche la progression
+        * `apt-get install -qq -y ...`
+            * installe silencieusement (`-qq`) et
+            * répond oui (`-y`) à toute question.
+    * toutes installent des paquets utiles des dépôts officiels,
+    * sauf la fin pour VSCodium
+    * quitter `nano` avec (<kbd>Ctrl</kbd>+<kbd>X</kbd>)
+* nous allons l'exécuter en tant qu'administrateur :
+    * `sudo bash ./auto_install.sh`
+
+
+<!-- slide vertical=true -->
+
+À suivre...

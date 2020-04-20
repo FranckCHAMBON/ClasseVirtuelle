@@ -1834,12 +1834,13 @@ On peut y zoomer de mani&#xE8;re continue par un clic de souris.</p>
 </section><section vertical="true" lineno="238" class="slide " data-line="238" data-h="5" data-v="1">
 <h3 class="mume-header" id="installation-avec-linuxdebian">Installation avec <em>Linux/Debian</em></h3>
 
-<p>Pour une machine de type <em>Linux/Debian</em>, voici ce qu&apos;il faut entrer dans un terminal :</p>
+<p>Pour une machine de type <em>Linux/Debian</em>, voici ce qu&apos;il faut entrer dans un terminal, ligne apr&#xE8;s ligne :</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">wget</span> -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key add -
 </pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token keyword">echo</span> <span class="token string">&apos;deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main&apos;</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> --append /etc/apt/sources.list.d/vscodium.list
 </pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codium
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">codium <span class="token keyword">.</span>
 </pre><p>Nous verrons bient&#xF4;t comment bien s&apos;en servir.</p>
-</section><section vertical="true" lineno="257" class="slide " data-line="257" data-h="5" data-v="2">
+</section><section vertical="true" lineno="258" class="slide " data-line="258" data-h="5" data-v="2">
 <p>Explications techniques facultatives :</p>
 <ul>
 <li>Premi&#xE8;re ligne :
@@ -1866,11 +1867,58 @@ On peut y zoomer de mani&#xE8;re continue par un clic de souris.</p>
 <li><code>apt install</code> nous permet d&apos;installer le paquet <code>codium</code> qui est d&#xE9;sormais dans un d&#xE9;p&#xF4;t que nous suivons. Il sera mis &#xE0; jour automatiquement avec tous les autres logiciels ; c&apos;est une bonne pratique.</li>
 </ul>
 </li>
+<li>Derni&#xE8;re ligne :
+<ul>
+<li><code>codium .</code> lance l&apos;&#xE9;diteur VSCodium (<code>codium</code>) avec le r&#xE9;pertoire de travail actuel (<code>.</code>)</li>
+</ul>
+</li>
 </ul>
 <p>Id&#xE9;alement, les bons logiciels sont inclus dans les d&#xE9;p&#xF4;ts officiels de la distribution. C&apos;est le cas pour l&apos;essentiel. Ici, nous faisons confiance &#xE0; un tiers.</p>
 <blockquote>
 <p>Dans la distribution Linux <code>Parrot OS security</code>, VSCodium est inclus dans les d&#xE9;p&#xF4;ts.</p>
 </blockquote>
+</section><section vertical="true" lineno="279" class="slide " data-line="279" data-h="5" data-v="3">
+<p><img src="assets/vscodium1.png" alt="codium1"></p>
+<p>Quand vous obtenez cette &#xE9;tape, allez voir le cours sur la configuration de VSCodium avant de continuer.</p>
+</section></section><section><section lineno="285" class="slide " data-line="285" data-h="6" data-v="0">
+<h2 class="mume-header" id="installation-automatis%C3%A9e-avec-un-script">Installation automatis&#xE9;e avec un script</h2>
+
+<p>Il est possible de cr&#xE9;er un fichier script <code>bash</code> qui r&#xE9;capitule toute une liste de commandes d&apos;installation. On suppose qu&apos;on a install&#xE9; un syst&#xE8;me tout frais bas&#xE9; sur <code>Debian</code>, et que la source des d&#xE9;p&#xF4;ts est configur&#xE9;e.</p>
+<p>Voici <a href="../../assets/auto_install.sh" download>un script &#xE0; sauvegarder</a> dans votre machine ; il s&apos;appelle <code>auto_install.sh</code></p>
+<ul>
+<li>Une fois t&#xE9;l&#xE9;charg&#xE9;, ouvrir un terminal (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>) ;</li>
+<li>aller dans le r&#xE9;pertoire o&#xF9; il est t&#xE9;l&#xE9;charg&#xE9; (<code>cd ...</code>)</li>
+<li>v&#xE9;rifier qu&apos;il ne contient pas de vilaines choses,
+<ul>
+<li>Entrer <code>nano auto_install.sh</code></li>
+<li>v&#xE9;rifier les actions propos&#xE9;es,
+<ul>
+<li><code>echo ...</code>
+<ul>
+<li>affiche la progression</li>
+</ul>
+</li>
+<li><code>apt-get install -qq -y ...</code>
+<ul>
+<li>installe silencieusement (<code>-qq</code>) et</li>
+<li>r&#xE9;pond oui (<code>-y</code>) &#xE0; toute question.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>toutes installent des paquets utiles des d&#xE9;p&#xF4;ts officiels,</li>
+<li>sauf la fin pour VSCodium</li>
+<li>quitter <code>nano</code> avec (<kbd>Ctrl</kbd>+<kbd>X</kbd>)</li>
+</ul>
+</li>
+<li>nous allons l&apos;ex&#xE9;cuter en tant qu&apos;administrateur :
+<ul>
+<li><code>sudo bash ./auto_install.sh</code></li>
+</ul>
+</li>
+</ul>
+</section><section vertical="true" lineno="310" class="slide " data-line="310" data-h="6" data-v="1">
+<p>&#xC0; suivre...</p>
 </section></section>
       </div>
     </div>
