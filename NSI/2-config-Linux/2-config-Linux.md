@@ -200,6 +200,27 @@ Au passage, un paquet necessaire est installé : `webext-ublock-origin`. Cela no
 sudo apt install webext-https-everywhere webext-privacy-badger
 ```
 
+<!-- slide vertical=true -->
+
+### Exemple pour jouer avec le Terminal
+
+
+<object data="assets/unicorn.svg"
+    type="image/svg+xml">
+<img src="assets/unicorn.svg" />
+</object>
+
+<!-- slide vertical=true -->
+
+**Explications**
+* `sudo apt install ...` ; installe les paquets :
+    * `fortunes-fr` ; une collection de citations en français.
+    * `cowsay` ; un programme pour afficher de l'ASCII art avec un texte en paramètre
+    * `lolcat` ; un programme pour mettre en couleur un texte
+* `fortune | cowsay - f unipony | lolcat` ; un enchaînement de trois commandes dont la sortie de l'une est envoyée sur l'entrée de la suivante...
+    * `fortune` donne une citation au hasard et l'envoie dans le *pipe* ;
+    * `cowsay -f unipony` récupère le texte puis le décore avec une licorne (*unipony*) et envoie à son tour dans le pipe en temps que texte ;
+    * `lolcat` récupère le texte d'ASCII art, le colorise et l'envoie sur la sortie standard, l'écran !
 
 <!-- slide -->
 
