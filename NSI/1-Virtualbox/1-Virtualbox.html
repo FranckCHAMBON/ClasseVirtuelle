@@ -1821,14 +1821,17 @@ body {
 <li><a href="https://ubuntu.com/">Ubuntu</a> avec LXQt ; <a href="https://lubuntu.me/downloads/">lien direct</a></li>
 </ul>
 <p>Il faudra t&#xE9;l&#xE9;charger une image disque (fichier .iso) de 1, 2 ou 3 Go.</p>
-</section></section><section><section lineno="212" class="slide " data-line="212" data-h="4" data-v="0">
+</section><section vertical="true" lineno="212" class="slide " data-line="212" data-h="3" data-v="7">
+<p><img src="assets/parrot.png" alt="parrot"></p>
+<p><a href="https://parrotlinux.org/">Parrot OS</a>, une distribution orient&#xE9;e s&#xE9;curit&#xE9; et <em>hack</em>.</p>
+</section></section><section><section lineno="218" class="slide " data-line="218" data-h="4" data-v="0">
 <h2 class="mume-header" id="cr%C3%A9ation-dune-machine-virtuelle">Cr&#xE9;ation d&apos;une machine virtuelle</h2>
 
 <p>On poursuit ici l&apos;exp&#xE9;rience avec <a href="https://linuxmint.com/download.php">Linux Mint MATE 64-bit</a>.</p>
 <blockquote>
 <p>Mint est, par d&#xE9;faut, bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian.</p>
 </blockquote>
-</section><section vertical="true" lineno="220" class="slide " data-line="220" data-h="4" data-v="1">
+</section><section vertical="true" lineno="226" class="slide " data-line="226" data-h="4" data-v="1">
 <ol>
 <li>On t&#xE9;l&#xE9;charge l&apos;image disque de 2 Go.
 <ul>
@@ -1851,20 +1854,20 @@ body {
 </ul>
 </li>
 </ol>
-</section><section vertical="true" lineno="234" class="slide " data-line="234" data-h="4" data-v="2">
+</section><section vertical="true" lineno="240" class="slide " data-line="240" data-h="4" data-v="2">
 <p>On utilise VirtualBox :</p>
 <ol>
 <li>On cr&#xE9;e une <strong>nouvelle</strong> machine ; <kbd>Ctrl</kbd>+<kbd>N</kbd> ;</li>
 <li>On l&apos;appellera <code>Mint MATE</code></li>
 </ol>
 <p><img src="assets/newMintMATE.png" alt="Nouvelle machine Mint MATE"></p>
-</section><section vertical="true" lineno="242" class="slide " data-line="242" data-h="4" data-v="3">
+</section><section vertical="true" lineno="248" class="slide " data-line="248" data-h="4" data-v="3">
 <p><img src="assets/2-m%C3%A9moire.png" alt="m&#xE9;moire"><br>
 3. On offre au moins 1024 Mo de m&#xE9;moire vive, <strong>2048 Mo de pr&#xE9;f&#xE9;rence</strong>, pour la machine invit&#xE9;e.<br>
 4. On cr&#xE9;e un disque dur virtuel maintenant, de type VDI, dynamiquement allou&#xE9;.<br>
 5. On <strong>modifie son nom</strong>, et on <strong>choisit une taille de 20Go</strong> au moins. On peut m&#xEA;me choisir le maximum ; c&apos;est dynamiquement allou&#xE9; donc seul l&apos;espace n&#xE9;cessaire sera pris.</p>
 <p><img src="assets/3-disquedur.png" alt="taille disque"></p>
-</section><section vertical="true" lineno="251" class="slide " data-line="251" data-h="4" data-v="4">
+</section><section vertical="true" lineno="257" class="slide " data-line="257" data-h="4" data-v="4">
 <p>Notre machine virtuelle est cr&#xE9;&#xE9;e, elle poss&#xE8;de :</p>
 <ul>
 <li>un proc&#xE9;sseur virtuel,</li>
@@ -1874,7 +1877,7 @@ body {
 <li>un lecteur DVD virtuel vide,</li>
 <li>un disque virtuel vide !</li>
 </ul>
-</section><section vertical="true" lineno="261" class="slide " data-line="261" data-h="4" data-v="5">
+</section><section vertical="true" lineno="267" class="slide " data-line="267" data-h="4" data-v="5">
 <p>Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va ins&#xE9;rer notre disque virtuel t&#xE9;l&#xE9;charg&#xE9;.</p>
 <ul>
 <li>Dans <code>stockage</code>, on clique sur <code>vide</code> dans le contr&#xF4;leur IDE, puis (&#xE0; droite) dans attributs, lecteur optique,</li>
@@ -1882,7 +1885,7 @@ body {
 <li>on s&#xE9;lectionne notre fichier image .iso qui a &#xE9;t&#xE9; t&#xE9;l&#xE9;charg&#xE9;e.</li>
 </ul>
 <p><img src="assets/4-choixdvd.png" alt></p>
-</section><section vertical="true" lineno="271" class="slide " data-line="271" data-h="4" data-v="6">
+</section><section vertical="true" lineno="277" class="slide " data-line="277" data-h="4" data-v="6">
 <p>On peut fermer la configuration et d&#xE9;marrer la machine virtuelle.</p>
 <ul>
 <li>Elle va booter sur le DVD virtuel pour la premi&#xE8;re fois.</li>
@@ -1894,12 +1897,12 @@ body {
 <blockquote>
 <p>L&apos;origine du verbe <a href="https://fr.wiktionary.org/wiki/booter"><em>booter</em></a> est en rapport avec <a href="https://fr.wiktionary.org/wiki/bootstrap"><em>bootstrap</em></a>.</p>
 </blockquote>
-</section></section><section><section lineno="282" class="slide " data-line="282" data-h="5" data-v="0">
+</section></section><section><section lineno="288" class="slide " data-line="288" data-h="5" data-v="0">
 <h2 class="mume-header" id="1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></h2>
 
 <p><img src="assets/5-boot1.png" alt><br>
 Au bout de quelques secondes, Linux Mint d&#xE9;marrera ; on peut aussi appuyer sur <kbd>Entr&#xE9;e</kbd>.</p>
-</section><section vertical="true" lineno="289" class="slide " data-line="289" data-h="5" data-v="1">
+</section><section vertical="true" lineno="295" class="slide " data-line="295" data-h="5" data-v="1">
 <ul>
 <li>Notre clavier sera captur&#xE9; dans la machine virtuelle,</li>
 <li>on peut voir l&apos;&#xE9;cran virtuel de d&#xE9;marrage.</li>
@@ -1912,12 +1915,12 @@ Au bout de quelques secondes, Linux Mint d&#xE9;marrera ; on peut aussi appuyer 
 <li>On peut la tester, ses logiciels, ses param&#xE8;tres, ...</li>
 <li>On va installer cet O.S. sur le disque dur virtuel.</li>
 </ul>
-</section><section vertical="true" lineno="301" class="slide " data-line="301" data-h="5" data-v="2">
+</section><section vertical="true" lineno="307" class="slide " data-line="307" data-h="5" data-v="2">
 <p><img src="assets/6-demar1.png" alt></p>
-</section><section vertical="true" lineno="306" class="slide " data-line="306" data-h="5" data-v="3">
+</section><section vertical="true" lineno="312" class="slide " data-line="312" data-h="5" data-v="3">
 <p><img src="assets/total.png" alt><br>
 Cette machine invit&#xE9;e est une application parmi d&apos;autres du syst&#xE8;me h&#xF4;te.</p>
-</section><section vertical="true" lineno="311" class="slide " data-line="311" data-h="5" data-v="4">
+</section><section vertical="true" lineno="317" class="slide " data-line="317" data-h="5" data-v="4">
 <ul>
 <li>
 <p>On peut agrandir la fen&#xEA;tre de VirtualBox &#xE0; presque tout l&apos;&#xE9;cran.</p>
@@ -1936,7 +1939,7 @@ Cette machine invit&#xE9;e est une application parmi d&apos;autres du syst&#xE8;
 <p>Il y a un raccourci clavier qui pourrait &#xEA;tre <kbd>Ctrl(droit)</kbd>+<kbd>F</kbd> .<br>
 Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host</strong></kbd>.</p>
 </blockquote>
-</section></section><section><section lineno="324" class="slide " data-line="324" data-h="6" data-v="0">
+</section></section><section><section lineno="330" class="slide " data-line="330" data-h="6" data-v="0">
 <h2 class="mume-header" id="installation-virtuelle">Installation virtuelle</h2>
 
 <p>Il vaut mieux ici &#xEA;tre en mode plein &#xE9;cran (ou presque).</p>
@@ -1949,12 +1952,12 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 <blockquote>
 <p>Explications compl&#xE8;tes &#xE0; venir... On pourra &#xE9;crire tr&#xE8;s facilement les caract&#xE8;res &#xC7;&#xC9;&#xC8;&#xD6;&#xCB;&#x153;&#x152;&#xE6;&#xC6;&#xD7;&#xF7;&#xA1;&#xBF;&#x2026;</p>
 </blockquote>
-</section><section vertical="true" lineno="337" class="slide " data-line="337" data-h="6" data-v="1">
+</section><section vertical="true" lineno="343" class="slide " data-line="343" data-h="6" data-v="1">
 <p><img src="assets/7-clavier.png" alt></p>
 <p><code>Fran&#xE7;ais (variante)</code> (ou <code>French (alt.)</code>) est un tr&#xE8;s bon choix.</p>
 <hr>
 <p>Ensuite, vous avez le droit d&apos;installer les logiciels tiers propri&#xE9;taires mais ils sont inutiles ici.</p>
-</section><section vertical="true" lineno="347" class="slide " data-line="347" data-h="6" data-v="2">
+</section><section vertical="true" lineno="353" class="slide " data-line="353" data-h="6" data-v="2">
 <p><strong>Pour une premi&#xE8;re installation avec VirtualBox seulement !!!</strong></p>
 <p>On peut <strong>effacer le disque et installer Linux Mint</strong>.</p>
 <blockquote>
@@ -1962,7 +1965,7 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 </blockquote>
 <p><strong>Quand vous ferez une installation sur une machine r&#xE9;elle, soyez prudent, ce sera peut-&#xEA;tre diff&#xE9;rent.</strong></p>
 <p><img src="assets/8-type.png" alt="type"></p>
-</section><section vertical="true" lineno="359" class="slide " data-line="359" data-h="6" data-v="3">
+</section><section vertical="true" lineno="365" class="slide " data-line="365" data-h="6" data-v="3">
 <ul>
 <li>On choisit le bon fuseau horaire.</li>
 </ul>
@@ -1975,9 +1978,9 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 <li>On <strong>note soigneusement</strong> un bon mot de passe.</li>
 <li>Pour un premier test, on peut choisir : <code>Se connecter automatiquement</code>.</li>
 </ul>
-</section><section vertical="true" lineno="372" class="slide " data-line="372" data-h="6" data-v="4">
+</section><section vertical="true" lineno="378" class="slide " data-line="378" data-h="6" data-v="4">
 <p><img src="assets/9-compte.png" alt></p>
-</section><section vertical="true" lineno="376" class="slide " data-line="376" data-h="6" data-v="5">
+</section><section vertical="true" lineno="382" class="slide " data-line="382" data-h="6" data-v="5">
 <p>Pour l&apos;installation de <strong>Linux Mint Debian Edition</strong>, une autre &#xE9;tape technique est :</p>
 <p>On continue avec l&apos;installation du chargeur de d&#xE9;marrage <code>GRUB</code>. C&apos;est lui qui donne un menu quand plusieurs syst&#xE8;mes d&apos;exploitation sont disponibles au moment du <em>boot</em>.</p>
 <ul>
@@ -1988,10 +1991,10 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 </ul>
 </li>
 </ul>
-</section><section vertical="true" lineno="386" class="slide " data-line="386" data-h="6" data-v="6">
+</section><section vertical="true" lineno="392" class="slide " data-line="392" data-h="6" data-v="6">
 <p><img src="assets/10-install.png" alt></p>
 <p>L&apos;installation va prendre plusieurs minutes.</p>
-</section><section vertical="true" lineno="393" class="slide " data-line="393" data-h="6" data-v="7">
+</section><section vertical="true" lineno="399" class="slide " data-line="399" data-h="6" data-v="7">
 <p>Une fois l&apos;installation termin&#xE9;e :</p>
 <ul>
 <li>On peut red&#xE9;marrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il <strong>faut</strong> bien &#xE9;jecter le DVD virtuel avant le red&#xE9;marrage. C&apos;est souvent automatique (mais pas toujours). Sinon, on booterait &#xE0; nouveau sur le DVD pr&#xEA;t &#xE0; refaire une installation...</li>
@@ -1999,7 +2002,7 @@ Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host
 </ul>
 <p><img src="assets/11-eject.png" alt></p>
 <p>Rien n&apos;est coch&#xE9; ; c&apos;est bon !</p>
-</section></section><section lineno="404" class="slide " data-line="404" data-h="7" data-v="0">
+</section></section><section lineno="410" class="slide " data-line="410" data-h="7" data-v="0">
 <h2 class="mume-header" id="quelques-syst%C3%A8mes-%C3%A0-tester">Quelques syst&#xE8;mes &#xE0; tester</h2>
 
 <ol>

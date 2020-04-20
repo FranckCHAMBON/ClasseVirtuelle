@@ -210,6 +210,12 @@ Un [environnement de bureau](https://fr.wikipedia.org/wiki/Environnement_de_bure
 
 Il faudra télécharger une image disque (fichier .iso) de 1, 2 ou 3 Go.
 
+<!-- slide vertical=true-->
+
+![parrot](assets/parrot.png)
+
+[Parrot OS](https://parrotlinux.org/), une distribution orientée sécurité et *hack*.
+
 <!-- slide -->
 
 ## Création d'une machine virtuelle
