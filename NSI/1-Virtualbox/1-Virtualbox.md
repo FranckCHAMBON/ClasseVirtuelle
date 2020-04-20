@@ -9,6 +9,7 @@ presentation:
   margin: 0.1
 
   progress: true
+  previewLinks: true
 ---
 
 
@@ -32,7 +33,7 @@ La [virtualisation système](https://fr.wikipedia.org/wiki/Virtualisation) consi
 
 ## Pourquoi ?
 
-* **Pour vous** :
+* **Pour l'élève en NSI** :
 
   * C'est un bac à sable pédagogique pour les premières installations d'un système d'exploitation.
   * Découvrir Linux, et être administrateur d'une machine.
@@ -101,13 +102,15 @@ Il existe plusieurs [techniques](https://fr.wikipedia.org/wiki/Virtualisation#Di
 
 ## Installation de VirtualBox
 
-Sur la [page de téléchargement](https://www.virtualbox.org/wiki/Downloads) du site officiel, choisir la version correspondant à votre machine hôte.
+* Sur la [page de téléchargement](https://www.virtualbox.org/wiki/Downloads) du site officiel,
+* choisir la version correspondant à votre machine hôte.
 
-> En cas de problème avec la version 6.0 pour Windows, vous pouvez tenter la version 5.2 pour Windows.
+* Dans certains cas, il faudra [activer le support de virtualisation](https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC).
+* En cas de problème avec la version 6.0 pour Windows,
+  * vous pouvez tenter la version 5.2 pour Windows.
 
 Bonne installation ...
 
-> Dans certains cas, il faudra [activer le support de virtualisation](https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC).
 
 <!-- slide vertical=true -->
 
@@ -147,15 +150,18 @@ Le [noyau Linux](https://fr.wikipedia.org/wiki/Noyau_Linux) a été **créé en 
 
 > Ses caractéristiques principales sont d'être multitâche et multi-utilisateur. Il respecte les normes POSIX ce qui en fait un digne héritier des systèmes UNIX.
 
-Il est écrit essentiellement en langage C, par des milliers de bénévoles et salariés en travail collaboratif sur Internet.
+* Il est écrit essentiellement en langage C,
+* par des milliers de bénévoles et salariés,
+* en travail collaboratif sur Internet.
 
 <!-- slide vertical=true -->
 
 ### Les logiciels disponibles
 
 * Des navigateurs web : [Mozilla Firefox](https://fr.wikipedia.org/wiki/Mozilla_Firefox), [Chromium](https://fr.wikipedia.org/wiki/Chromium), ...
-* Des applications multimédia : [VLC](https://fr.wikipedia.org/wiki/VLC_media_player), [GIMP](https://fr.wikipedia.org/wiki/GIMP), [OBS](https://fr.wikipedia.org/wiki/Open_Broadcaster_Software), ...
+* Des applications multimédia : [VLC](https://fr.wikipedia.org/wiki/VLC_media_player), [OBS](https://fr.wikipedia.org/wiki/Open_Broadcaster_Software), ...
 * Des suites bureautiques comme [LibreOffice](https://fr.wikipedia.org/wiki/LibreOffice) ;
+* Des outils graphiques :  [GIMP](https://fr.wikipedia.org/wiki/GIMP), [Pinta](https://pinta-project.com/pintaproject/pinta/), [MyPaint](http://mypaint.org/), [Inkscape](https://inkscape.org/fr/), [Krita](https://krita.org/fr/) ...
 * Des interpréteurs pour les langages Bash, Python, OCaml, ...
 * Des compilateurs pour les langages C, C++, java, ...
 * Des [éditeurs de texte](https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte), et des environnement de développement intégrés, ...
@@ -192,7 +198,9 @@ Un [environnement de bureau](https://fr.wikipedia.org/wiki/Environnement_de_bure
 
 [DistroWatch](https://distrowatch.com/) présente les distributions populaires.
 
- Chaque distribution peut proposer plusieurs gestionnaires de bureaux. Exemples :
+ Chaque distribution peut proposer plusieurs gestionnaires de bureaux.
+ 
+**Exemples** :
 
 * [Manjaro](https://manjaro.org/) : avec Xfce ; [lien direct]()
 * [Linux Mint](https://linuxmint.com) : avec Cinnamon ; [lien direct](https://linuxmint.com/download.php)
@@ -200,20 +208,20 @@ Un [environnement de bureau](https://fr.wikipedia.org/wiki/Environnement_de_bure
 * [Debian](https://www.debian.org/) : avec KDE ; [lien direct](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/)
 * [Ubuntu](https://ubuntu.com/) avec LXQt ; [lien direct](https://lubuntu.me/downloads/)
 
-Il suffit de télécharger une image disque (fichier .iso).
+Il faudra télécharger une image disque (fichier .iso) de 1, 2 ou 3 Go.
 
 <!-- slide -->
 
 ## Création d'une machine virtuelle
 
-On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://blog.linuxmint.com/?p=3867).
+On poursuit ici l'expérience avec [Linux Mint MATE 64-bit](https://linuxmint.com/download.php).
 > Mint est, par défaut, basée sur Ubuntu qui, elle-même est basée sur Debian.
-> Mais LMDE est basée directement sur Debian.
+
 
 <!-- slide vertical=true -->
 
-1. On télécharge l'image disque de 1.9 Go.
-    * Avec le [nœud BitTorrent Transmission](https://fr.wikipedia.org/wiki/Transmission_(logiciel)), ou
+1. On télécharge l'image disque de 2 Go.
+    * Avec le [nœud BitTorrent Transmission](https://fr.wikipedia.org/wiki/Transmission_(logiciel)), **ou**
     * avec le miroir de téléchargement de son choix.
 2. On [vérifie l'intégrité](https://linuxmint.com/verify.php) du téléchargement.
     * C'est optionnel ici ; uniquement pour un test.
@@ -228,17 +236,18 @@ On poursuit ici l'expérience avec [Linux Mint Debian Edition (LMDE 4)](https://
 
 On utilise VirtualBox :
 1. On crée une **nouvelle** machine ; <kbd>Ctrl</kbd>+<kbd>N</kbd> ;
-2. On l'appellera `Debian Mint`
+2. On l'appellera `Mint MATE`
 
-![Nouvelle machine](assets/création.png)
+![Nouvelle machine Mint MATE](assets/newMintMATE.png)
 
 <!-- slide vertical=true -->
 
+![mémoire](assets/2-mémoire.png)
 3. On offre au moins 1024 Mo de mémoire vive, **2048 Mo de préférence**, pour la machine invitée.
 4. On crée un disque dur virtuel maintenant, de type VDI, dynamiquement alloué.
 5. On **modifie son nom**, et on **choisit une taille de 20Go** au moins. On peut même choisir le maximum ; c'est dynamiquement alloué donc seul l'espace nécessaire sera pris.
 
-![](assets/disque.png)
+![taille disque](assets/3-disquedur.png)
 
 <!-- slide vertical=true -->
 
@@ -254,9 +263,11 @@ Notre machine virtuelle est créée, elle possède :
 
 Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va insérer notre disque virtuel téléchargé.
 
-Dans `stockage`, on clique sur `vide` dans le contrôleur IDE, puis (à droite) dans attributs, lecteur optique, on clique sur l'icône de DVD à droite et son menu... `Choisissez un fichier de disque virtuel` ; on sélectionne notre image .iso.
+* Dans `stockage`, on clique sur `vide` dans le contrôleur IDE, puis (à droite) dans attributs, lecteur optique,
+* on clique sur l'icône de DVD à droite et son menu... `Choisissez un fichier de disque virtuel` ;
+* on sélectionne notre fichier image .iso qui a été téléchargée.
 
-![](assets/choix_disque.png)
+![](assets/4-choixdvd.png)
 
 <!-- slide vertical=true -->
 
@@ -267,13 +278,14 @@ On peut fermer la configuration et démarrer la machine virtuelle.
 * Aux redémarrages suivants, la machine bootera sur le disque dur.
 * Notre machine sera prête !
 
-> L'origine du verbe *booter* est en rapport avec [*bootstrap*](https://fr.wiktionary.org/wiki/bootstrap).
+> L'origine du verbe [*booter*](https://fr.wiktionary.org/wiki/booter) est en rapport avec [*bootstrap*](https://fr.wiktionary.org/wiki/bootstrap).
 
 <!-- slide --> 
 
 ## 1er Démarrage en *live*
 
-![](assets/boot1.png)
+![](assets/5-boot1.png)
+Au bout de quelques secondes, Linux Mint démarrera ; on peut aussi appuyer sur <kbd>Entrée</kbd>.
 
 <!-- slide vertical=true -->
 
@@ -281,7 +293,7 @@ On peut fermer la configuration et démarrer la machine virtuelle.
 * on peut voir l'écran virtuel de démarrage.
 * La souris sera également capturée.
 * On pourra cocher 'ne plus afficher ce message'.
-* `Start LMDE 4`.
+* `Start Linux Mint`.
 
 Quand La machine a fini de booter :
 * On peut la tester, ses logiciels, ses paramètres, ...
@@ -289,7 +301,7 @@ Quand La machine a fini de booter :
 
 <!-- slide vertical=true -->
 
-![](assets/écran1.png)
+![](assets/6-demar1.png)
 
 
 <!-- slide vertical=true -->
@@ -319,17 +331,37 @@ Il vaut mieux ici être en mode plein écran (ou presque).
 * On double clique (ou bien un seul clic + <kbd>Entrée</kbd>) sur `Install Linux Mint`
 * On répond à la langue que l'on souhaite pour l'installation ; c'est au choix !
 * On choisit son fuseau horaire.
-* On choisit sa disposition de clavier. **Attention**, il vaut mieux choisir `French (alt.)`.
+* On choisit sa disposition de clavier. **Attention**, il vaut mieux choisir `Français (variante)`.
 > Explications complètes à venir... On pourra écrire très facilement les caractères ÇÉÈÖËœŒæÆ×÷¡¿…
 
 
 <!-- slide vertical=true -->
 
-![](assets/clavier.png)
+![](assets/7-clavier.png)
 
-`French (alt.)` est un très bon choix.
+`Français (variante)` (ou `French (alt.)`) est un très bon choix.
+
+---
+
+Ensuite, vous avez le droit d'installer les logiciels tiers propriétaires mais ils sont inutiles ici.
 
 <!-- slide vertical=true -->
+
+**Pour une première installation avec VirtualBox seulement !!!**
+
+On peut **effacer le disque et installer Linux Mint**.
+
+> Le disque dur en question est le disque virtuel ; aucun problème, il est vide.
+
+**Quand vous ferez une installation sur une machine réelle, soyez prudent, ce sera peut-être différent.**
+
+![type](assets/8-type.png)
+
+<!-- slide vertical=true -->
+
+* On choisit le bon fuseau horaire.
+
+---
 
 * On entre les paramètres de l'administrateur.
 * Majuscules et espaces possibles pour le nom.
@@ -340,32 +372,11 @@ Il vaut mieux ici être en mode plein écran (ou presque).
 
 <!-- slide vertical=true -->
 
-![](assets/compte.png)
+![](assets/9-compte.png)
 
 <!-- slide vertical=true -->
 
-**Pour une première installation avec VirtualBox seulement !!!**
-
-On peut faire une `installation automatisée` ; Effacer un disque et y installer LMDE.
-On choisit le `VBOX_HARDDISK`.
-
-> Le disque dur en question est le disque virtuel ; aucun problème, il est vide.
-
-**Quand vous ferez une installation sur une machine réelle, soyez prudent, ce sera peut-être différent.**
-
-<!-- slide vertical=true -->
-
-![](assets/type_install.png)
-
-<!-- slide vertical=true -->
-
-![](assets/confirm.png)
-
-`VBOX_HARDDRIVE` est bien notre disque virtuel, il est vide, il lui faut une table des partitions.
-Toutes les données seront effacées, **oui**, mais il n'y a aucune.
-> On clique sur `Oui`.
-
-<!-- slide vertical=true -->
+Pour l'installation de **Linux Mint Debian Edition**, une autre étape technique est :
 
 On continue avec l'installation du chargeur de démarrage `GRUB`. C'est lui qui donne un menu quand plusieurs systèmes d'exploitation sont disponibles au moment du *boot*.
 * Ici, on laisse le choix par défaut. `/dev/sda` désignera le descripteur de notre unique disque virtuel.
@@ -375,13 +386,8 @@ On continue avec l'installation du chargeur de démarrage `GRUB`. C'est lui qui 
 
 <!-- slide vertical=true -->
 
-![](assets/Résumé.png)
 
-Un dernier coup d'œil avant l'installation.
-
-<!-- slide vertical=true -->
-
-![](assets/Install.png)
+![](assets/10-install.png)
 
 L'installation va prendre plusieurs minutes.
 
@@ -392,15 +398,18 @@ Une fois l'installation terminée :
 * On peut redémarrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il **faut** bien éjecter le DVD virtuel avant le redémarrage. C'est souvent automatique (mais pas toujours). Sinon, on booterait à nouveau sur le DVD prêt à refaire une installation...
 * Pour vérifier que le DVD a bien été éjecté, aller dans le menu `Périphériques` de la machine virtuelle, puis dans `lecteurs optiques`.
 
-![](assets/eject.png)
+![](assets/11-eject.png)
+
+Rien n'est coché ; c'est bon !
 
 <!-- slide -->
 
-## Quelques distributions à tester
+## Quelques systèmes à tester
 
-1. [Linux Mint 19.3](https://blog.linuxmint.com/?p=3832), recommandée pour sa simplicité, basée sur `Ubuntu`, utilise le bureau `Cinnamon`.
+1. [**Linux Mint 19.3**](https://blog.linuxmint.com/?p=3832), **recommandée**, basée sur `Ubuntu`, utilise le bureau `Cinnamon` ou `MATE`.
 2. [MX Linux](https://mxlinux.org/), basée sur `Debian (stable)`, utilise le bureau `XFCE`. Succès récent.
 3. [Manjaro](https://manjaro.org/download/), basée sur `Arch`, utilise le bureau `XFCE`, `KDE`, ou d'autres... **Idéale pour tester KDE.**
+4. [Ubuntu 20.04](https://ubuntu-fr.org/), basée sur `Debian`. Idéale pour tester le bureau `Gnome` ou `LXQt`.
 4. [elementary OS](https://elementary.io/), basée sur `Ubuntu`, utilise le bureau `Pantheon`. Très jolie !
 5. [CentOS](https://www.centos.org/download/), basée sur `Fedora` et `Red Hat`, utilise le bureau `Gnome` ou `KDE`. Utilisée dans l'industrie.
 6. [ReactOS](https://reactos.org/), un clone libre de Windows XP. Ici, ce n'est pas Linux !

@@ -2,7 +2,8 @@ echo "Vérification des mises à jour..."
 apt-get update && apt-get upgrade && echo "Système à jour !"
 echo ==============================================
 echo "Installation de chromium et d'extensions pour chromium et Firefox..."
-apt-get install -qq -y chromium chromium-browser-l10n chromium-ublock-origin
+apt-get install -qq -y chromium-browser chromium-browser-l10n
+apt-get install -qq -y chromium chromium-l10n chromium-ublock-origin
 apt-get install -qq -y webext-https-everywhere webext-privacy-badger
 echo ==============================================
 echo "Installation d'outils système"
