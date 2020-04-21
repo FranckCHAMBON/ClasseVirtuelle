@@ -9,7 +9,6 @@ echo ==============================================
 echo "Installation d'outils système"
 apt-get install -qq -y bleachbit
 apt-get install -qq -y numlockx
-apt-get install -qq -y virtualbox
 apt-get install -qq -y libreoffice
 echo ==============================================
 echo "Installation d'outils graphiques"
