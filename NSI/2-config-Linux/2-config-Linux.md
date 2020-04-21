@@ -16,7 +16,7 @@ presentation:
 
 # Première configuration de *Linux*
 
-Avec l'exemple de *Linux Mint MATE*
+Avec l'exemple de *Linux Mint Cinnamon 19.3*
 
 <!-- slide vertical=true -->
 

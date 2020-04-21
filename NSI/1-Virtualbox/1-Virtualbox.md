@@ -412,16 +412,16 @@ Rien n'est coché ; c'est bon !
 
 ## Quelques systèmes à tester
 
-1. [**Linux Mint 19.3**](https://blog.linuxmint.com/?p=3832), **recommandée**, basée sur `Ubuntu`, utilise le bureau `Cinnamon` ou `MATE`.
+1. [**Linux Mint 19.3**](https://blog.linuxmint.com/?p=3832), **recommandée**, basée sur `Ubuntu`, utilise le bureau `Cinnamon`.
 2. [MX Linux](https://mxlinux.org/), basée sur `Debian (stable)`, utilise le bureau `XFCE`. Succès récent.
 3. [Manjaro](https://manjaro.org/download/), basée sur `Arch`, utilise le bureau `XFCE`, `KDE`, ou d'autres... **Idéale pour tester KDE.**
-4. [Ubuntu 20.04](https://ubuntu-fr.org/), basée sur `Debian`. Idéale pour tester le bureau `Gnome` ou `LXQt`.
+4. [Ubuntu 20.04](https://ubuntu-fr.org/), basée sur `Debian`. Idéale pour tester le bureau `Gnome`.
 4. [elementary OS](https://elementary.io/), basée sur `Ubuntu`, utilise le bureau `Pantheon`. Très jolie !
 5. [CentOS](https://www.centos.org/download/), basée sur `Fedora` et `Red Hat`, utilise le bureau `Gnome` ou `KDE`. Utilisée dans l'industrie.
 6. [ReactOS](https://reactos.org/), un clone libre de Windows XP. Ici, ce n'est pas Linux !
 7. [SparkyLinux](https://sparkylinux.org/download/), basée sur `Debian (stable ou non !!!)`, rapide et légère.
 8. [Tails](https://tails.boum.org/), pour tester un *live*, objectif préservation de la vie privée et de l'anonymat.
-9. [Lubuntu 20.04 Focal Fossa](https://lubuntu.me/downloads/), basée sur `Ubuntu`, utilise le bureau `LXQt`.
+9. [Lubuntu 20.04 Focal Fossa](https://lubuntu.me/downloads/), basée sur `Ubuntu`, utilise le bureau `LXQt` léger.
 10. [Parrot](https://www.parrotlinux.org/download/), basée sur `Debian (testing)`, utilise le bureau `MATE` ou `KDE`, pour les hackers.
 11. [FreeDOS](http://wiki.freedos.org/wiki/index.php/Main_Page), un clone libre de MS-DOS, pour le *retro-gaming* en particulier.
 
