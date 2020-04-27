@@ -11,7 +11,7 @@ Pour $a, b\in \mathbb R^*$, et $n, m \in \mathbb Z$
 * $a^0 = 1$, $a^1 = a$, $a^2 = a\times a$, ...
 * $\dfrac{a^n}{b^n} = \left(\dfrac{a}{b}\right)^n$ 
 
-### Exercice
+### Correction, exercice du livre
 1.  $2^4 \times 2^7 \times 2^3 = 2^{4+7+3} = 2^{14}$
 2. $6^4 \times 6^{-9} = 6^{4+(-9)} = 6^{-5}$
 3. $3^2 \times 9^4$, deux pistes
@@ -29,7 +29,7 @@ Soit $f$, $g$ sont des fonctions dérivables.
 * Avec $n\in\mathbb N^*$, si $f(x) = x^n$, alors $f'(x)=n\times x^{n-1}$
 * $(f+g)'= f'+g'$
 * $(fg)' = f'g + fg'$
-* si $g$ ne s'annulle pas, $\left(\dfrac f g\right)' =
+* si $g$ ne s'annule pas, $\left(\dfrac f g\right)' =
 \dfrac{f'g - fg'}{g^2}$
 * (Hors programme) $f(g(x))' = f'(g(x))\times g'(x)$
 * (Au programme, $g$ affine) $f(ax+b)'= a\times f'(ax+b)$
@@ -64,9 +64,9 @@ Dérivons $g$ :
 
 ## Cours
 ### Définition
-La fonctione exponentielle
-* $\exp$
-*  (ou $x\mapsto \mathrm e ^x$)
+La fonction exponentielle s'écrit :
+* $x\mapsto \exp(x)$
+*  ou $x\mapsto \mathrm e ^x$
 
 $\exp$ est définie et dérivable sur $\mathbb R$, avec :
 * L'image de zéro :
@@ -80,7 +80,7 @@ $\exp$ est définie et dérivable sur $\mathbb R$, avec :
 ### Des formules
 Pour tout $x\in\mathbb R$, on a :
 * $\exp(-x)=\dfrac 1 
-{\exp x}$
+{\exp(x)}$
 
 ---
 

@@ -7,6 +7,8 @@ Rendez-vous :
 * les lundis de 14h à 16h
 * les jeudis de 8h à 10h
 
+> Le cours du moment : [la fonction exponentielle](Exponentielle.md) $\leftarrow$ cliquer pour voir le cours, les exercices corrigés et les devoirs.
+
 ## Liens utiles
 * [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
 * [Manuels de mathématiques ou autres](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw)
