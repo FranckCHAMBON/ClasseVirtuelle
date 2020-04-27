@@ -1,5 +1,6 @@
 echo "Vérification des mises à jour..."
 apt-get update && apt-get upgrade && echo "Système à jour !" || exit 1
+dpkg --configure -a
 echo ==============================================
 echo "Installation de chromium et d'extensions pour chromium et Firefox..."
 apt-get install -qq -y chromium-browser chromium-browser-l10n
