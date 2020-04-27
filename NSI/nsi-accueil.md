@@ -16,6 +16,7 @@ Rendez-vous :
 
 2. **Nouveaux documents** adaptés à la tablette :
 * [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
+    * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
 * [Mises à jour et installation de logiciels pour la NSI](2-config-Linux/2-config-Linux.html) 
 * [Conseils pour Firefox](3-Navigateurs/3-Navigateurs.html)
 
