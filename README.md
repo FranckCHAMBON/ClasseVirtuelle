@@ -6,7 +6,7 @@ Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-[pas de classe virtuelle pendant les vacances]()
+[https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e](https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e)
 
 
 Il y a des règles :
@@ -20,77 +20,14 @@ Il y a des règles :
     + 4 élèves maximum ; les mêmes lors d'une séance.
     + 1 élève par séance pourra rassembler les questions des élèves ; j'y répondrai la séance suivante.
 
-## Pour la SNT
 
-Vous êtes invités à travailler avec [http://www.france-ioi.org/confinement/](http://www.france-ioi.org/confinement/)
-> Vous trouverez beaucoup d'activités pour tous de l'école primaire à la terminale.
-
-### Manuels
-Des manuels sont aussi disponibles, par exemple :
-+ [SNT Delagrave](https://www.lib-manuels.fr/textbook/5d10efe207571612cb53d27c?demo=true)
-+ [SNT Hatier](https://monespace-educ.fr/feuilleter/9782216155033)
-+ [SNT Didier](https://monespace-educ.fr/feuilleter/9782278094912)
-+ [SNT Hachette](https://monespace-educ.fr/feuilleter/9782017102281)
-+ [SNT Nathan](https://biblio.nathan.fr/adistance/9782091194059/?openBook=9782091194059%3fdXNlck5hbWU9UVFGdno4NlNydnZRQWQrbWhmQUVvQT09JnVzZXJQYXNzd29yZD1XalB3YkZzdmZ2RmNDSHNXUmgyemt3PT0mZGVtbz10cnVlJndhdGVybWFyaz0=)
-+ et d'autres en suivant [ce lien](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw), valable pour (presque) toutes les disciplines !
-> /!\ Il n'y a pas de manuels NSI par exemple.
-
-### Activités
-+ [Découvrir les objets connectés](https://amazon.quick-pi.org/)
-+ [Pixees SNT](https://pixees.fr/informatiquelycee/n_site/snt.html)
-+ [40 activités pour la quarantaine](https://pixees.fr/quarante-activites-pour-la-quarantaine/)
-+ [Recueil d'activités variées](http://numerique-sciences-informatiques.ac-besancon.fr/wp-content/uploads/sites/35/2020/02/snt_formationv2.pdf)
-
-## Pour la NSI
-
-1. Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
-> Nous continuerons à corriger certains exercices ensemble.
-
-2. **Nouveaux documents** adaptés à la tablette :
-* [Utilisation de VirtualBox](NSI/1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
-
-3. **À venir** :
-* [Mises à jour et installation de logiciels pour la NSI](NSI/2-config-Linux/2-config-Linux.html) 
-* [Conseils pour Firefox](NSI/3-Navigateurs/3-Navigateurs.html)
-* Conseils pour Python, Anaconda, VSCodium, ...
-
-### Des liens de cours
-+ [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
-
-### Émulateurs Linux
-+ [Termux](https://play.google.com/store/apps/details?id=com.termux) : pour les tablettes
-    + [Un article à lire sur Termux](https://grisebouille.net/termux-hackez-votre-android/)
-+ [jor1k](https://s-macke.github.io/jor1k/demos/main.html?user=XjgQbmJywo&cpu=asm&n=1&relayURL=wss%3A%2F%2Frelay.widgetry.org%2F)
-    + facile, pas d'inscription
-+ [CoCalc](https://cocalc.com/)
-    + nécessite une inscription ; solution basée sur logiciel libre et gratuit ;
-    + permet la sauvegarde de document ;
-    + permet de travailler avec :
-        + Python,
-        + langage C,
-        + langage Bash
-        + d'autres langages, comme SageMath (pour les profs)
-+ [commandes de bases Linux](http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf) ;
-+ un [TP Linux](http://nsivaugelas.free.fr/premiere/archi_s_e.php)
-+ un [jeu avec un émulateur Linux](http://luffah.xyz/bidules/Terminus/)
-+ un autre [TP](http://gervaisprof.free.fr/dl/bash/Ligne_de_commande_POSIX.pdf)
-+ un autre TP sur demande uniquement ;-) 
-
-## Pour la spé mathématiques en première
-
-+ [Des corrections](Maths/corrections.md) de certains exercices.
-+ [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
-+ Une [liste de liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
+## Accès aux pages dédiées
+* [Pour les mathématiques](Maths/maths-accueil.md)
+* [Pour la NSI](NSI/nsi-accueil.md)
+* [Pour la SNT](SNT/snt-accueil.md)
 
 
-## Pour tous
-Voici des liens facultatifs
-
-### Des sites web utiles
-
-+ pour [tester le débit de votre débit internet](https://www.quechoisir.org/outil-speedtest-n64483/)
-+ pour [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
-
+## Pour tous le monde
 
 ### Des livres (ebook) gratuits et libres :
 
@@ -102,5 +39,3 @@ Voici des liens facultatifs
 
 Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
 
-### Liens YouTube
-+ [À quoi ressemble notre réseau social ?](https://www.youtube.com/watch?v=UX7YQ6m2r_o)
