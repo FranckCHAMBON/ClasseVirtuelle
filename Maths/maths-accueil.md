@@ -36,8 +36,17 @@ Rendez-vous :
 * [Ex 80 p 150](5-Appli-Diff/p150_ex80/corrigé_80p150.html)
 * [Ex 95 p 154](5-Appli-Diff/p154_ex95/corrigé_95p154.html)
 * [Ex 93 p 153](5-Appli-Diff/p153_ex93/ex93.html)
-* [Feuilles d'exercices M. Calvet](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths/Docs_Calvet)
+
+
+> Bonus : [Feuilles d'exercices M. Calvet](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths/Docs_Calvet)
 
 ### Sur l'exponentielle
 
 * [Ex 24 p 171](6-Exponentielle/ex24.html)
+* [Ex 34 p 171](6-Exponentielle/ex34.html)
+* [Ex 35 p 171](6-Exponentielle/ex35.html)
+* [Ex 36 p 171](6-Exponentielle/ex36.html)
+* [Ex 53 p 172](6-Exponentielle/ex53.html)
+* [Ex 59 p 173](6-Exponentielle/ex59.html)
+* [Ex 65 p 173](6-Exponentielle/ex65.html)
+* [Ex 71 p 174](6-Exponentielle/ex71.html)
