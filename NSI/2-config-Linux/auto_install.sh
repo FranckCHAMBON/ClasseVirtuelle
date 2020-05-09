@@ -11,6 +11,8 @@ echo "Installation d'outils système"
 apt-get install -qq -y bleachbit
 apt-get install -qq -y numlockx
 apt-get install -qq -y libreoffice
+apt-get install -qq -y git
+apt-get install -qq -y xclip
 echo ==============================================
 echo "Installation d'outils graphiques"
 apt-get install -qq -y pinta

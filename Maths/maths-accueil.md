@@ -7,7 +7,9 @@ Rendez-vous :
 * les lundis de 14h à 16h
 * les jeudis de 8h à 10h
 
-> Le cours du moment : [la fonction exponentielle](Exponentielle.md) $\leftarrow$ cliquer pour voir le cours, les exercices corrigés et les devoirs.
+> Le cours du moment : [la fonction exponentielle](6-Exponentielle/cours.html) $\leftarrow$ cliquer pour voir le cours et les exercices corrigés.
+
+Les devoirs pour le prochain cours : exercices 70, 71, 72 p 174.
 
 ## Liens utiles
 * [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
@@ -24,13 +26,17 @@ Rendez-vous :
 
 
 
-## Corrections de certains exercices
+## Corrections des exercices
 
-* [Ex 78 p 150](p150_ex78/corrigé_78p150.html)
-* [Ex 79 p 150](p150_ex79/corrigé_79p150.html)
-* [Ex 80 p 150](p150_ex80/corrigé_80p150.html)
-* [Ex 95 p 154](p154_ex95/corrigé_95p154.html)
+### Sur la dérivation
 
-* [Ex 93 p 153](p153_ex93/ex93.html) ; nouveau
+* [Ex 78 p 150](5-Appli-Diff/p150_ex78/corrigé_78p150.html)
+* [Ex 79 p 150](5-Appli-Diff/p150_ex79/corrigé_79p150.html)
+* [Ex 80 p 150](5-Appli-Diff/p150_ex80/corrigé_80p150.html)
+* [Ex 95 p 154](5-Appli-Diff/p154_ex95/corrigé_95p154.html)
+* [Ex 93 p 153](5-Appli-Diff/p153_ex93/ex93.html)
 * [Feuilles d'exercices M. Calvet](https://github.com/FranckCHAMBON/ClasseVirtuelle/tree/master/Maths/Docs_Calvet)
 
+### Sur l'exponentielle
+
+* [Ex 24 p 171](6-Exponentielle/ex24.html)
