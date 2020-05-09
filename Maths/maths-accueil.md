@@ -8,7 +8,8 @@ Rendez-vous :
 * les jeudis de 8h à 10h
 
 > **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html).
->Ce cours est construit en direct avec les élèves, comme en au tableau en classe.
+
+>>Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
 **Les devoirs** : pour le prochain cours, exercices 70, 71, 72 p 174.
 
