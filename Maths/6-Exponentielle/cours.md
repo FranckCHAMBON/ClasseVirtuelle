@@ -1,5 +1,29 @@
 # Fonction exponentielle
 
+```python {cmd="python3" matplotlib=true}
+import matplotlib.pyplot as plt
+from math import exp
+
+def xrange(a, b, n):
+    " Retourne n points de [a..b[ "
+    return [a + (b-a)/n * i for i in range(n)]
+
+X = xrange(-2, +2, 20) # 20 points entre -2 et +2
+Y = [exp(x) for x in X] # images de X par exponentielle
+plt.plot(X, Y) # le graphique associé
+
+# décoration
+plt.xlabel("Axe des abscisses")
+plt.ylabel("Axe des ordonnées")
+plt.title(r"Fonction $x\mapsto \exp(x)$")
+plt.annotate(r"$\exp(0) = 1$", xy=(0, 1), xytext=(0.5, 0.5), arrowprops=dict(facecolor='black'), )
+
+
+# affichage
+plt.show()
+```
+> Représentation graphique de la fonction exponentielle.
+
 ## Avant de commencer
 ###  Formules sur les fractions
 
