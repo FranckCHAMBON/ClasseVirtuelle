@@ -7,9 +7,10 @@ Rendez-vous :
 * les lundis de 14h à 16h
 * les jeudis de 8h à 10h
 
-> Le cours du moment : [la fonction exponentielle](6-Exponentielle/cours.html) $\leftarrow$ cliquer pour voir le cours et les exercices corrigés.
+> **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html).
+>Ce cours est construit en direct avec les élèves, comme en au tableau en classe.
 
-Les devoirs pour le prochain cours : exercices 70, 71, 72 p 174.
+**Les devoirs** : pour le prochain cours, exercices 70, 71, 72 p 174.
 
 ## Liens utiles
 * [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
