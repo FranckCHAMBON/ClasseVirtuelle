@@ -25,6 +25,7 @@ Rendez-vous :
 
 ## Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
++ Une [vidéo](https://www.lumni.fr/video/notion-de-listes-en-informatique-et-application-aux-images-numeriques) sur les listes en Python (et applications aux images numériques).
 
 ## Émulateurs Linux
 + [Termux](https://play.google.com/store/apps/details?id=com.termux) : pour les tablettes

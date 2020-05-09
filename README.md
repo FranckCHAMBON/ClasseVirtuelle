@@ -29,6 +29,13 @@ Il y a des règles :
 
 ## Pour tous le monde
 
+### Des conseils pour les échanges via Internet
+1. Choisir un outil qui respecte votre vie privée
+    * [Signal](https://signal.org/fr/) ; pour votre application de messagerie
+    * [Jitsi meet](https://jitsi.org/jitsi-meet/) ; pour un échange en groupe
+    * [Les autres solutions](https://blog.mozilla.org/blog/2020/04/28/which-video-call-apps-can-you-trust/) publiques sont moins respectueuses.
+
+
 ### Des livres (ebook) gratuits et libres :
 
 + [Ebooks libres et gratuits](https://www.ebooksgratuits.com/) ;
