@@ -17,6 +17,7 @@ Rendez-vous :
 2. Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
     * une [vidéo](https://tube-creteil.beta.education.fr/videos/watch/playlist/8fca67aa-4575-485b-b2ce-3fd2c00c620c?videoId=fcad64bf-da5e-4f35-9a94-b8863ba989a5) d'un exemple.
+    * Un [autre tutoriel](https://laboiteaphysique.fr/site2/index.php/numerique-et-sciences-informatiques/systeme-dexploitation/obtenir-un-systeme-dexploitation-linux/machine-virtuelle) fait par un physicien.
 
 3. Documents **adaptés à la tablette** :
     * [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
