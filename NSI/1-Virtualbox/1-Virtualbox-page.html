@@ -1,0 +1,477 @@
+<!DOCTYPE html><html><head>
+      <title>1-Virtualbox-page</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#839496;background-color:#003b4a !important;border:#006c88;border-radius:3px}pre[class*="language-"]{padding:1em}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#586e75;font-style:italic}code[class*="language-"] .token.punctuation,pre[class*="language-"] .token.punctuation{color:#586e75}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.property,pre[class*="language-"] .token.property{color:#859900}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#d33682}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#268bd2}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#859900}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#657b83}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#2aa198}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#cb4b16}code[class*="language-"] .token.builtin,pre[class*="language-"] .token.builtin{color:#859900}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{color:#268bd2}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#586e75}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#859900}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#268bd2}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#268bd2}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#268bd2}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex,code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#dc322f}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:rgba(153,122,102,0.08);background:linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:rgba(153,122,102,0.4);color:#f5f2f0;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px white}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#839496;background-color:#002b36;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#dbe0e1}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#afbabb}html body strong{color:#dbe0e1}html body del{color:#afbabb}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#afbabb;border-left:4px solid #006c88}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#006c88;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#dbe0e1}html body table td,html body table th{border:1px solid #006c88;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#dbe0e1;background-color:#004b5f;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#006c88;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#dbe0e1;border:1px solid #006c88;border-bottom:2px solid #005469;padding:2px 4px;background-color:#004b5f;border-radius:3px}@media print{html body{background-color:#002b36}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#dbe0e1;page-break-after:avoid}html body blockquote{color:#afbabb}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <img src="assets/EducNat.jpg?0.48505885953761374" width="400px" title="Logo de l&apos;&#xC9;ducation Nationale" alt="Logo de l&apos;&#xC9;ducation Nationale">
+<h1 class="mume-header undefined" id="virtualisation-syst%C3%A8me">Virtualisation syst&#xE8;me</h1>
+
+<dl>
+<dt>Auteur</dt>
+<dd><a href="mailto:franck.chambon@ac-aix-marseille.fr">&#x1F4E9; Franck CHAMBON</a>, enseignant au lyc&#xE9;e Lucie AUBRAC de Boll&#xE8;ne (84).</dd>
+<dt>Licence</dt>
+<dd>&#x1F193; Les documents suivants sont plac&#xE9;s sous licence libre <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr">CC - BY-NC-SA 4.0</a> :
+<ul>
+<li>Ils sont accessibles gratuitement.</li>
+<li>Ils peuvent &#xEA;tre modifi&#xE9;s, adapt&#xE9;s, &#xE9;toff&#xE9;s, quitte &#xE0; citer les diff&#xE9;rents auteurs.</li>
+<li>Leur utilisation commerciale n&apos;est pas accept&#xE9;e.<br>
+<img src="data:image/svg+xml;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU3MCAyMDAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDU3MCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQUJCMUFBO30gLnN0MXtmaWxsOiNGRkZGRkY7fSAuc3Qye2ZpbGw6I0ZGRkZGRjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MTQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+CiA8cGF0aCBjbGFzcz0ic3QwIiBkPSJtNTYwIDE5Ny41aC01NTBjLTQuMiAwLTcuNS0zLjQtNy41LTcuNXYtMTgwYzAtNC4yIDMuNC03LjUgNy41LTcuNWg1NTBjNC4yIDAgNy41IDMuNCA3LjUgNy41djE4MGMwIDQuMS0zLjQgNy41LTcuNSA3LjV6Ii8+CiA8cGF0aCBkPSJNNTYwLDBIMTBDNC41LDAsMCw0LjUsMCwxMHYxODBjMCw1LjUsNC41LDEwLDEwLDEwaDU1MGM1LjUsMCwxMC00LjUsMTAtMTBWMTBDNTcwLDQuNSw1NjUuNSwwLDU2MCwweiBNMTAsNmg1NTAgYzIuMiwwLDQsMS44LDQsNHYxMzBINlYxMEM2LDcuOCw3LjgsNiwxMCw2eiIvPgogPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iOTgiIGN5PSI5MyIgcj0iODYuNSIvPgogPHBhdGggY2xhc3M9InN0MSIgZD0ibTIzOC44IDE2Ny4yYzMuMy0xLjYgNS0zLjggNS02LjUgMC0yLjgtMS4yLTUtMy41LTYuNi0yLjMtMS41LTUuNS0yLjMtOS42LTIuMy0yLjEgMC01LjkgMC4xLTExLjIgMC4zdjM0LjZoMTIuMWM0LjMgMCA3LjgtMC45IDEwLjUtMi44czQuMS00LjMgNC4xLTcuNWMtMC4xLTQuNi0yLjUtNy43LTcuNC05LjJ6bS0xMi4zLTEwLjFjMS42LTAuMSAyLjktMC4xIDQtMC4xIDQuMSAwIDYuMiAxLjMgNi4yIDQgMCAzLTIuMyA0LjUtNi44IDQuNS0xLjIgMC0yLjMgMC0zLjQtMC4xdi04LjN6bTEwLjIgMjMuM2MtMS40IDAuOS0zLjcgMS40LTYuOCAxLjQtMC45IDAtMi0wLjEtMy40LTAuMnYtMTEuNGMxLjcgMCAyLjgtMC4xIDMuNS0wLjEgMy4zIDAgNS42IDAuNCA2LjkgMS4zczIgMi4zIDIgNC4zYy0wLjEgMi4yLTAuOCAzLjgtMi4yIDQuN3oiLz4KIDxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iMjcyLjEgMTUyLjIgMjYyLjcgMTY2LjkgMjUzLjQgMTUyLjIgMjQ1LjkgMTUyLjIgMjU5LjIgMTcyLjYgMjU5LjIgMTg2LjggMjY2LjIgMTg2LjggMjY2LjIgMTcyLjYgMjc5LjUgMTUyLjIiLz4KIDxwb2x5Z29uIGNsYXNzPSJzdDEiIHBvaW50cz0iMzYwLjEgMTcyLjggMzQxLjggMTUyLjQgMzM4LjUgMTUyLjQgMzM4LjUgMTg2LjMgMzQ1LjEgMTg2LjMgMzQ1LjEgMTY1LjMgMzYzLjkgMTg2LjcgMzY2LjcgMTg2LjcgMzY2LjcgMTUyLjQgMzYwLjEgMTUyLjQiLz4KIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Im0zOTguMyAxNzguMWMtMi4xIDIuMy00LjkgMy40LTguNiAzLjQtMy4yIDAtNS43LTEuMS03LjYtMy4ycy0yLjktNS0yLjktOC42IDEtNi42IDMuMS05IDQuNy0zLjYgNy45LTMuNmMzLjQgMCA1LjkgMC43IDcuNCAybDIuOC01Yy0yLjctMS42LTYuMi0yLjQtMTAuNi0yLjQtNS4yIDAtOS40IDEuNy0xMi43IDUuMXMtNSA3LjYtNSAxMi42YzAgNS40IDEuNSA5LjYgNC41IDEyLjggMyAzLjEgNy4yIDQuNyAxMi42IDQuN3M5LjUtMS4zIDEyLjMtMy45bC0zLjItNC45eiIvPgogPHBhdGggY2xhc3M9InN0MSIgZD0ibTQ4Mi4zIDE2OS40Yy0xLjItMS0zLjEtMi01LjctMy4xLTUtMi4xLTcuNS00LjItNy41LTYuMiAwLTEuMiAwLjQtMi4yIDEuMy0yLjlzMi4xLTEuMSAzLjgtMS4xYzIuNyAwIDUuMyAwLjggNy44IDIuM2wyLjEtNS4zYy0yLjEtMS41LTUuNS0yLjItMTAuMS0yLjItMy41IDAtNi40IDAuOS04LjYgMi42cy0zLjQgNC0zLjQgNi43YzAgMS40IDAuMyAyLjcgMC44IDMuOSAwLjYgMS4yIDEuNCAyLjIgMi40IDMuMSAxLjEgMC45IDMuMSAyIDYuMSAzLjNzNSAyLjUgNiAzLjYgMS41IDIuMiAxLjUgMy40YzAgMi41LTIuMSAzLjgtNi4yIDMuOC0yLjcgMC01LjQtMC45LTguMi0yLjZsLTIuNiA1LjVjMyAxLjcgNi4zIDIuNSAxMCAyLjUgNC4yIDAgNy42LTAuOSAxMC4yLTIuNyAyLjUtMS44IDMuOC00LjEgMy44LTYuOSAwLTEuNi0wLjMtMy0wLjktNC4yLTAuNS0xLjQtMS40LTIuNS0yLjYtMy41eiIvPgogPHBhdGggY2xhc3M9InN0MSIgZD0ibTUwNi4xIDE1MWgtMy4xbC0xNS44IDM1LjFoNy44bDIuOC03aDEzLjVsMi45IDdoNy43bC0xNS44LTM1LjF6bS02LjMgMjMuNCA0LjctMTIuOCA0LjcgMTIuOGgtOS40eiIvPgogPGNpcmNsZSBjbGFzcz0ic3QxIiBjeD0iMjQ4IiBjeT0iNzAuNiIgcj0iNTAiLz4KIDxwYXRoIGQ9Im0yNDggMjUuNmMyNC44IDAgNDUgMjAuMiA0NSA0NXMtMjAuMiA0NS00NSA0NS00NS0yMC4yLTQ1LTQ1IDIwLjItNDUgNDUtNDVtMC0xMGMtMzAuNCAwLTU1IDI0LjYtNTUgNTVzMjQuNiA1NSA1NSA1NSA1NS0yNC42IDU1LTU1LTI0LjYtNTUtNTUtNTV6Ii8+CiA8Y2lyY2xlIGN4PSIyNDgiIGN5PSI0MyIgcj0iNy45Ii8+CiA8cGF0aCBkPSJtMjYxLjIgNTcuOWMwLTAuOCAwLjEtMi4zLTEuMS0zLjUtMS4xLTEuMS0yLjctMS4xLTMuNS0xLjFoLTE3LjNjLTAuOCAwLTIuMy0wLjEtMy41IDEuMS0xLjEgMS4xLTEuMSAyLjctMS4xIDMuNXYyMS45aDV2MjYuNGgxNi40di0yNi40aDVjMC4xIDAgMC4xLTE4LjkgMC4xLTIxLjl6Ii8+CiA8Y2lyY2xlIGNsYXNzPSJzdDIiIGN4PSI5OCIgY3k9IjkzIiByPSI2OC41Ii8+CiA8cGF0aCBkPSJtNzguOCAxMDYuM2MtNi45IDAtMTAuMS01LjctMTAuMS0xMy4zczIuNy0xMy4zIDEwLjEtMTMuM2MyIDAgNiAxLjEgOC4zIDYuMWwxMC01LjJjLTQuMi03LjctMTEuNS0xMC44LTE5LjktMTAuOC0xMi4yIDAtMjIgOC42LTIyIDIzLjMgMCAxNC45IDkuMiAyMy4zIDIyLjQgMjMuMyA4LjUgMCAxNS43LTQuNyAxOS43LTExLjdsLTkuMy00LjdjLTIgNC44LTUuMiA2LjMtOS4yIDYuM3oiLz4KIDxwYXRoIGQ9Im0xMzEuNCA5OS44Yy0yLjEgNS01LjIgNi41LTkuMiA2LjUtNi45IDAtMTAuMS01LjctMTAuMS0xMy4zczIuNy0xMy4zIDEwLjEtMTMuM2MyIDAgNiAxLjEgOC4zIDYuMWwxMC01LjJjLTQuMi03LjctMTEuNS0xMC44LTE5LjktMTAuOC0xMi4yIDAtMjIgOC42LTIyIDIzLjMgMCAxNC45IDkuMiAyMy4zIDIyLjQgMjMuMyA4LjUgMCAxNS43LTQuNyAxOS43LTExLjdsLTkuMy00Ljl6Ii8+CiA8Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI0OTIiIGN5PSI3MC42IiByPSI1MCIvPgogPHBhdGggZD0ibTQ5MiAyNS42YzI0LjggMCA0NSAyMC4yIDQ1IDQ1cy0yMC4yIDQ1LTQ1IDQ1LTQ1LTIwLjItNDUtNDUgMjAuMi00NSA0NS00NW0wLTEwYy0zMC40IDAtNTUgMjQuNi01NSA1NXMyNC42IDU1IDU1IDU1IDU1LTI0LjYgNTUtNTUtMjQuNi01NS01NS01NXoiLz4KIDxwYXRoIGQ9Im00OTMuMiA0MC40aC0xLjdjLTkuOSAwLjItMjMuNCA3LjEtMjMuNCAyMC42aC00LjdsMTAuNyAxMiAxMC43LTEyaC0zLjljMC44LTUuOCA2LTkuNiAxMS45LTkuMWgwLjdjOS43IDAgMTMuNSA3LjMgMTMuOCAxOC4xIDAuMyAxMS4zLTYuMiAxOC4zLTEzLjggMTguMS04LTAuMi0xMS4xLTQtMTIuMi05LjhoLTE0LjNjMi40IDEzLjQgMTIuMiAyMS4zIDI2LjMgMjEuMyAxNS45IDAgMjcuMy0xMy4yIDI3LjMtMjkuNiAwLTE3LjQtMTEuNS0yOS42LTI3LjQtMjkuNnoiLz4KIDxjaXJjbGUgY2xhc3M9InN0MSIgY3g9IjM3MCIgY3k9IjcwLjYiIHI9IjUwIi8+CiA8cGF0aCBkPSJtMzcwIDI1LjZjMjQuOCAwIDQ1IDIwLjIgNDUgNDVzLTIwLjIgNDUtNDUgNDUtNDUtMjAuMi00NS00NSAyMC4yLTQ1IDQ1LTQ1bTAtMTBjLTMwLjQgMC01NSAyNC42LTU1IDU1czI0LjYgNTUgNTUgNTUgNTUtMjQuNiA1NS01NS0yNC42LTU1LTU1LTU1eiIvPgogPHBhdGggZD0ibTQyMCA4Ni42LTQuNSA5LjktOTUuNS00MyA0LjUtOS45IDk1LjUgNDN6Ii8+CiA8cGF0aCBkPSJtMzU4LjMgODEuOGMzLjUgNSAxNC40IDUuMyAxOC4xIDMuMiAxLjQtMC44IDEuNy0zIDEuNy00LjUgMC0xLTAuMy0xLjktMC44LTIuNS0wLjYtMC42LTItMi4xLTMuNy0yLjUtOC42LTIuMi0xNC42LTUtMTYuOS03LTIuOS0yLjUtMy40LTQuMi0zLjQtOC42czEuMy04LjEgNC4xLTEwLjdjMi45LTIuNiA3LTQgMTIuNC00IDUuMiAwIDEyLjUgMS40IDE2LjEgNS42bC01LjkgNi41Yy0zLjQtMi44LTUuOC0zLjEtOS45LTMuMS0yLjYgMC0zLjkgMC40LTUgMS4xcy0xLjYgMS42LTEuNiAyLjhjMCAxIDAuNSAxLjkgMS41IDIuNnMzLjYgMS44IDguOCAzLjJjNS45IDEuNiA5LjggMy41IDExLjkgNS44czMuMSA1LjMgMy4xIDkuMWMwIDQuNi0xLjYgOC4zLTQuOCAxMS4zcy03LjEgNS4zLTEyLjggNS4zYy03LjMgMC0xNy0yLjYtMTkuNy03LjMiLz4KIDxwYXRoIGQ9Im0zNjYuNCAzNi41djEyaDUuMnYtMTJoLTUuMnptMCA1Ni43djEwLjNoNS4ydi0xMC4zaC01LjJ6Ii8+Cjwvc3ZnPgo=" width="100px" title="Licence" alt="Licence CC-BY-NC-SA-4.0"></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Premi&#xE8;res exp&#xE9;riences</strong> de virtualisation en premi&#xE8;re NSI.</p>
+<p>La <a href="https://fr.wikipedia.org/wiki/Virtualisation">virtualisation syst&#xE8;me</a> consiste, en informatique, &#xE0; ex&#xE9;cuter sur une machine h&#xF4;te, dans un environnement isol&#xE9;, des syst&#xE8;mes d&apos;exploitation.</p>
+<ul>
+<li>La machine h&#xF4;te sera votre ordinateur, au lyc&#xE9;e ou &#xE0; la maison.</li>
+<li>Les syst&#xE8;mes d&apos;exploitations seront libres, conform&#xE9;ment au programme du B.O. ; et il n&apos;y a pas que Linux...</li>
+</ul>
+<blockquote>
+<p>Si certains mots vous semblent inconnus, les d&#xE9;finitions arrivent...</p>
+</blockquote>
+<p><img src="assets/total3.png" alt="exemple-global"></p>
+<p><strong>Exemple</strong> : Trois machines virtuelles invit&#xE9;es dans une machine h&#xF4;te Linux Mint. On peut y observer des versions diff&#xE9;rentes de Python3 qui y sont install&#xE9;es.</p>
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#pourquoi-virtualiser">Pourquoi virtualiser ?</a></li>
+<li><a href="#comment-virtualiser">Comment virtualiser ?</a></li>
+<li><a href="#vocabulaire">Vocabulaire</a></li>
+<li><a href="#installation-de-virtualbox">Installation de VirtualBox</a></li>
+<li><a href="#pr%C3%A9sentation-de-linux">Pr&#xE9;sentation de Linux</a>
+<ul>
+<li><a href="#distribution-linux">Distribution Linux</a></li>
+<li><a href="#le-noyau-linux">Le noyau Linux</a></li>
+<li><a href="#les-logiciels-disponibles">Les logiciels disponibles</a></li>
+<li><a href="#les-gestionnaires-de-paquets">Les gestionnaires de paquets</a></li>
+<li><a href="#les-environnements-de-bureau">Les environnements de bureau</a></li>
+<li><a href="#quelques-exemples-de-distributions">Quelques exemples de distributions</a></li>
+</ul>
+</li>
+<li><a href="#cr%C3%A9ation-dune-machine-virtuelle">Cr&#xE9;ation d&apos;une machine virtuelle</a></li>
+<li><a href="#1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></a></li>
+<li><a href="#installation-virtuelle">Installation virtuelle</a></li>
+<li><a href="#quelques-syst%C3%A8mes-%C3%A0-tester">Quelques syst&#xE8;mes &#xE0; tester</a></li>
+</ul>
+<h2 class="mume-header" id="pourquoi-virtualiser">Pourquoi virtualiser ?</h2>
+
+<ul>
+<li>
+<p><strong>Pour l&apos;&#xE9;l&#xE8;ve en NSI</strong> :</p>
+<ul>
+<li>C&apos;est un bac &#xE0; sable p&#xE9;dagogique pour les premi&#xE8;res installations d&apos;un syst&#xE8;me d&apos;exploitation.</li>
+<li>D&#xE9;couvrir Linux, et &#xEA;tre administrateur d&apos;une machine.</li>
+<li>Faire des exp&#xE9;riences sans cons&#xE9;quences en cas de mauvaises manipulations.</li>
+<li>Travailler &#xE0; la maison dans les conditions pr&#xE9;vues par le B.O. en NSI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pour les professionnels</strong> :</p>
+<ul>
+<li>Pr&#xE9;parer son d&#xE9;veloppement web.</li>
+<li>Faire des tests vari&#xE9;s, du partage de ressources, de la s&#xE9;curisation de r&#xE9;seau, du d&#xE9;ploiement ...</li>
+<li>Faire des &#xE9;conomies d&apos;&#xE9;nergies, et d&apos;<a href="https://fr.wikipedia.org/wiki/Virtualisation#Int%C3%A9r%C3%AAts">autres raisons</a> encore.</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="comment-virtualiser">Comment virtualiser ?</h2>
+
+<p>Il existe plusieurs <a href="https://fr.wikipedia.org/wiki/Virtualisation#Diff%C3%A9rentes_techniques">techniques</a> de virtualisation, et donc <a href>plusieurs logiciels</a> :</p>
+<ul>
+<li><a href="https://wiki.gnome.org/Apps/Boxes">Boxes</a> ; libre, tr&#xE8;s simple pour d&#xE9;buter, mais uniquement sous Linux.</li>
+<li><a href="https://fr.wikipedia.org/wiki/Kernel-based_Virtual_Machine">KVM</a> ; libre, uniquement pour Linux.</li>
+<li><a href="https://fr.wikipedia.org/wiki/QEMU">QEMU</a> ; libre et multiplateforme, mais plus performant actuellement avec Linux.</li>
+<li><a href="https://fr.wikipedia.org/wiki/VMware">VMware</a> ; non libre, uniquement pour Windows.</li>
+<li><a href="https://virt-manager.org/">Virtual Machine Manager</a> ; libre, technique, uniquement pour les administrateurs Linux.</li>
+<li><strong>VirtualBox</strong> ; notre choix ici.</li>
+<li><a href="https://fr.wikipedia.org/wiki/VirtualPC">VirtualPC</a> ; non libre, uniquement pour Mac et Windows.</li>
+</ul>
+<blockquote>
+<p>Nous utiliserons <a href="https://fr.wikipedia.org/wiki/Oracle_VM_VirtualBox">VirtualBox</a> ; un logiciel libre et multiplateforme qui a des performances correctes, et homog&#xE8;nes.</p>
+<p>On pourra alors installer un <strong>syst&#xE8;me d&apos;exploitation libre</strong> de type Linux <em>(ou non)</em>.</p>
+</blockquote>
+<h2 class="mume-header" id="vocabulaire">Vocabulaire</h2>
+
+<dl>
+<dt>Machine h&#xF4;te (<em>Host</em>)</dt>
+<dd>&#x1F4BB; C&apos;est l&apos;ordinateur physique qui va &quot;h&#xE9;berger&quot; une ou plusieurs machines virtuelles.</dd>
+</dl>
+<blockquote>
+<p>Votre ordinateur actuel sera pr&#xEA;t si vous disposez d&apos;<strong>au moins</strong> 1 Go de m&#xE9;moire vive disponible, et 20 Go de place sur votre disque dur.</p>
+</blockquote>
+<dl>
+<dt>Syst&#xE8;me h&#xF4;te</dt>
+<dd>&#x1F4BD; C&apos;est le syst&#xE8;me d&apos;exploitation (<em><strong>O</strong>perating</em> <em><strong>S</strong>ystem</em> ; <em>O.S.</em>) de la machine h&#xF4;te.</dd>
+</dl>
+<blockquote>
+<p><em>VirtualBox</em> est multiplateforme, vous pouvez l&apos;installer avec un syst&#xE8;me h&#xF4;te <em>Windows</em>, <em>Linux</em> ou <em>MacOS</em>.</p>
+</blockquote>
+<dl>
+<dt>Machine invit&#xE9;e (<em>Guest</em>)</dt>
+<dd>C&apos;est la machine virtuelle qui sera allou&#xE9;e et g&#xE9;r&#xE9;e par l&apos;hyperviseur VirtualBox.</dd>
+</dl>
+<blockquote>
+<p>Cette machine aura un disque dur virtuel, un lecteur DVD virtuel, un &#xE9;cran virtuel, un processeur avec un ou plusieurs c&#x153;urs virtuels, etc. Cette machine peut capturer votre souris et votre clavier. On pourra aussi y bricoler virtuellement : ajout/suppression de mat&#xE9;riel...</p>
+</blockquote>
+<dl>
+<dt>Syst&#xE8;me invit&#xE9;</dt>
+<dd>C&apos;est le syst&#xE8;me d&apos;exploitation que vous installez sur la machine virtuelle.</dd>
+</dl>
+<blockquote>
+<p>&#x1F427; Nous exp&#xE9;rimenterons l&apos;installation de diff&#xE9;rentes versions de <em>Linux</em> comme  Debian, Ubuntu, Linux Mint, Manjaro, CentOS, ou Fedora.</p>
+<blockquote>
+<p>&#x1F34E; <a href="https://www.virtualbox.org/wiki/Screenshots">L&apos;installation de versions vari&#xE9;es</a> de Windows ou MacOS est possible.</p>
+</blockquote>
+</blockquote>
+<dl>
+<dt>Les suppl&#xE9;ments invit&#xE9;s (<em>Guest Additions</em>)</dt>
+<dd>C&apos;est un pack logiciel &#xE0; installer sur la machine virtuelle pour optimiser son fonctionnement, comme pour avoir une meilleure r&#xE9;solution d&apos;&#xE9;cran.</dd>
+</dl>
+<blockquote>
+<p>&#x26A0;&#xFE0F; Ce pack n&apos;est pas un logiciel libre et il est interdit de l&apos;utiliser en entreprise ou &#xE0; l&apos;Universit&#xE9;.<br>
+&#xC0; titre priv&#xE9;, vous avez le droit de l&apos;installer ; nous verrons comment.</p>
+</blockquote>
+<h2 class="mume-header" id="installation-de-virtualbox">Installation de VirtualBox</h2>
+
+<ul>
+<li>
+<p>Sur la <a href="https://www.virtualbox.org/wiki/Downloads">page de t&#xE9;l&#xE9;chargement</a> du site officiel,</p>
+<ul>
+<li>choisir la version correspondant &#xE0; votre machine h&#xF4;te.</li>
+</ul>
+</li>
+<li>
+<p>Dans certains cas, il faudra <a href="https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC">activer le support de virtualisation</a>.</p>
+</li>
+<li>
+<p>En cas de probl&#xE8;me avec la version 6.0 pour Windows,</p>
+<ul>
+<li>vous pouvez tenter la version 5.2 pour Windows.</li>
+</ul>
+</li>
+</ul>
+<p>Bonne installation ...</p>
+<p><img src="assets/VBox-vide.png" alt="Vbox vide"></p>
+<p><strong>Premier d&#xE9;marage du logiciel</strong> : VirtualBox sans aucune machine virtuelle.</p>
+<h2 class="mume-header" id="pr%C3%A9sentation-de-linux">Pr&#xE9;sentation de Linux</h2>
+
+<p><a href="https://fr.wikipedia.org/wiki/Linux">Linux</a> est un noyau de syst&#xE8;mes d&apos;exploitation pour :</p>
+<ul>
+<li>passerelle domestique <a href="https://fr.wikipedia.org/wiki/Box_(Internet)">(<em>Box Internet</em>)</a> ;</li>
+<li>objet connect&#xE9; comme <a href="https://fr.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi</a> ;</li>
+<li>smartphone bas&#xE9; sur <a href="https://fr.wikipedia.org/wiki/Android">Android</a> ;</li>
+<li>ordinateur personnel, (alternative libre &#xE0; Windows) ;</li>
+<li>la majorit&#xE9; des <a href="https://fr.wikipedia.org/wiki/Serveur_informatique">serveurs informatique</a> ;</li>
+<li>presque tous les <a href="https://fr.wikipedia.org/wiki/Superordinateur">supercalculateurs</a> ;</li>
+<li>ordinateur d&apos;entreprise s&#xE9;curis&#xE9; : banque, arm&#xE9;e, ...</li>
+</ul>
+<h3 class="mume-header" id="distribution-linux">Distribution Linux</h3>
+
+<p>Une distribution Linux propose :</p>
+<ul>
+<li>un noyau Linux plus ou moins r&#xE9;cent, parfois exp&#xE9;rimental, parfois tr&#xE8;s stable ;</li>
+<li>un ensemble de logiciels plus ou moins complet ;</li>
+<li>un gestionnaire de paquets pour en installer d&apos;autres; et poursuivre les mises &#xE0; jour ;</li>
+<li>d&apos;autres services comme de la documentation, un forum.</li>
+</ul>
+<blockquote>
+<p><strong>Exemples</strong> : Manjaro, Linux Mint, Debian, Ubuntu, Fedora, CentOS, Arch.</p>
+</blockquote>
+<h3 class="mume-header" id="le-noyau-linux">Le noyau Linux</h3>
+
+<p>Le <a href="https://fr.wikipedia.org/wiki/Noyau_Linux">noyau Linux</a> a &#xE9;t&#xE9; <strong>cr&#xE9;&#xE9; en 1991 par <a href="https://fr.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a></strong>.</p>
+<blockquote>
+<p>Ses caract&#xE9;ristiques principales sont d&apos;&#xEA;tre multit&#xE2;che et multi-utilisateur. Il respecte les normes POSIX ce qui en fait un digne h&#xE9;ritier des syst&#xE8;mes UNIX.</p>
+</blockquote>
+<ul>
+<li>Il est &#xE9;crit essentiellement en langage C,</li>
+<li>par des milliers de b&#xE9;n&#xE9;voles et salari&#xE9;s,</li>
+<li>en travail collaboratif sur Internet.</li>
+</ul>
+<h3 class="mume-header" id="les-logiciels-disponibles">Les logiciels disponibles</h3>
+
+<ul>
+<li>Des navigateurs web : <a href="https://fr.wikipedia.org/wiki/Mozilla_Firefox">Mozilla Firefox</a>, <a href="https://fr.wikipedia.org/wiki/Chromium">Chromium</a>, ...</li>
+<li>Des applications multim&#xE9;dia : <a href="https://fr.wikipedia.org/wiki/VLC_media_player">VLC</a>, <a href="https://fr.wikipedia.org/wiki/Open_Broadcaster_Software">OBS</a>, ...</li>
+<li>Des suites bureautiques comme <a href="https://fr.wikipedia.org/wiki/LibreOffice">LibreOffice</a> ;</li>
+<li>Des outils graphiques :  <a href="https://fr.wikipedia.org/wiki/GIMP">GIMP</a>, <a href="https://pinta-project.com/pintaproject/pinta/">Pinta</a>, <a href="http://mypaint.org/">MyPaint</a>, <a href="https://inkscape.org/fr/">Inkscape</a>, <a href="https://krita.org/fr/">Krita</a> ...</li>
+<li>Des interpr&#xE9;teurs pour les langages Bash, Python, OCaml, ...</li>
+<li>Des compilateurs pour les langages C, C++, java, ...</li>
+<li>Des <a href="https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte">&#xE9;diteurs de texte</a>, et des environnements de d&#xE9;veloppement int&#xE9;gr&#xE9;, ...</li>
+<li>De nombreux logiciels &#xE9;ducatifs comme <a href="https://fr.wikipedia.org/wiki/GeoGebra">GeoGebra</a>, <a href="https://fr.wikipedia.org/wiki/GCompris">GCompris</a>, <a href="https://fr.wikipedia.org/wiki/Stellarium">Stellarium</a>, ...</li>
+<li>Mais aussi des <a href="https://www.dotslashplay.it/">jeux</a> ...</li>
+</ul>
+<h3 class="mume-header" id="les-gestionnaires-de-paquets">Les gestionnaires de paquets</h3>
+
+<p>Ils permettent de g&#xE9;rer les mises &#xE0; jour et l&apos;installation de logiciels via des paquets :</p>
+<ul>
+<li><code>dpkg</code> avec le format <a href="https://fr.wikipedia.org/wiki/Deb">.deb</a>, pour Debian, Ubuntu, Linux Mint, ...</li>
+<li><code>rpm</code> avec le format <a href="https://fr.wikipedia.org/wiki/RPM_Package_Manager">.rpm</a>, pour Red Hat, Fedora, CentOS, ...</li>
+<li><a href="https://fr.wikipedia.org/wiki/Pacman_(Arch_Linux)">pacman</a> est le gestionnaire pour Manjaro, Arch, ...</li>
+<li><a href="https://snapcraft.io/store"><strong>snap</strong>craft</a> est un nouveau gestionnaire pour les paquets les plus r&#xE9;cents. &#xC0; suivre s&apos;il survit...</li>
+</ul>
+<h3 class="mume-header" id="les-environnements-de-bureau">Les environnements de bureau</h3>
+
+<p>Un <a href="https://fr.wikipedia.org/wiki/Environnement_de_bureau">environnement de bureau</a> est un ensemble de logiciels qui donne une coh&#xE9;rence graphique &#xE0; l&apos;ensemble d&apos;une distribution et en permet le r&#xE9;glage.</p>
+<p><strong>Exemples</strong> bas&#xE9;s sur GTK : <a href="https://fr.wikipedia.org/wiki/GNOME">GNOME</a>, <a href="https://fr.wikipedia.org/wiki/Cinnamon_(logiciel)">Cinnamon</a>, <a href="https://fr.wikipedia.org/wiki/Xfce">Xfce</a>, ...</p>
+<p><strong>Exemples</strong> bas&#xE9;s sur Qt : <a href="https://fr.wikipedia.org/wiki/KDE">KDE</a>, <a href="https://fr.wikipedia.org/wiki/LXQt">LXQt</a>, ...</p>
+<blockquote>
+<p><a href="https://fr.wikipedia.org/wiki/GTK_(bo%C3%AEte_%C3%A0_outils)">GTK</a> et <a href="https://fr.wikipedia.org/wiki/Qt">Qt</a> sont des biblioth&#xE8;ques graphiques, un ensemble d&apos;outils.</p>
+</blockquote>
+<h3 class="mume-header" id="quelques-exemples-de-distributions">Quelques exemples de distributions</h3>
+
+<p><a href="https://distrowatch.com/">DistroWatch</a> pr&#xE9;sente les distributions populaires.</p>
+<p>Chaque distribution peut proposer plusieurs gestionnaires de bureaux.</p>
+<p><strong>Exemples</strong> :</p>
+<ul>
+<li><a href="https://manjaro.org/">Manjaro</a> : avec Xfce ; <a href>lien direct</a></li>
+<li><a href="https://linuxmint.com">Linux Mint</a> : avec Cinnamon ; <a href="https://linuxmint.com/download.php">lien direct</a></li>
+<li><a href="https://getfedora.org/">Fedora</a> : avec GNOME ; <a href="https://getfedora.org/fr/workstation/download/">lien direct</a></li>
+<li><a href="https://www.debian.org/">Debian</a> : avec KDE ; <a href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/">lien direct</a></li>
+<li><a href="https://ubuntu.com/">Ubuntu</a> avec LXQt ; <a href="https://lubuntu.me/downloads/">lien direct</a></li>
+</ul>
+<p>Il faudra t&#xE9;l&#xE9;charger une image disque (fichier .iso) de 1, 2 ou 3 Go.</p>
+<p><img src="assets/parrot.png" alt="parrot"></p>
+<p><a href="https://parrotlinux.org/">Parrot OS</a>, une distribution orient&#xE9;e s&#xE9;curit&#xE9; et <em>hack</em>.</p>
+<h2 class="mume-header" id="cr%C3%A9ation-dune-machine-virtuelle">Cr&#xE9;ation d&apos;une machine virtuelle</h2>
+
+<p>On poursuit ici l&apos;exp&#xE9;rience avec <a href="https://linuxmint.com/download.php">Linux Mint MATE 64-bit</a>.</p>
+<blockquote>
+<p>Mint est, par d&#xE9;faut, bas&#xE9;e sur Ubuntu qui, elle-m&#xEA;me est bas&#xE9;e sur Debian.</p>
+</blockquote>
+<ol>
+<li>On t&#xE9;l&#xE9;charge l&apos;image disque de 2 Go.
+<ul>
+<li>Avec le <a href="https://fr.wikipedia.org/wiki/Transmission_(logiciel)">n&#x153;ud BitTorrent Transmission</a>, <strong>ou</strong></li>
+<li>avec le miroir de t&#xE9;l&#xE9;chargement de son choix.</li>
+</ul>
+</li>
+<li>On <a href="https://linuxmint.com/verify.php">v&#xE9;rifie l&apos;int&#xE9;grit&#xE9;</a> du t&#xE9;l&#xE9;chargement.
+<ul>
+<li>C&apos;est optionnel ici ; uniquement pour un test.</li>
+<li>C&apos;est important en production ; s&#xE9;curit&#xE9; !</li>
+<li>Un torrent est auto v&#xE9;rifi&#xE9; ; bonne pratique.</li>
+</ul>
+</li>
+<li>On dispose d&apos;une image disque :
+<ul>
+<li>elle pourrait &#xEA;tre grav&#xE9;e sur un DVD,</li>
+<li>on pourrait cr&#xE9;er une cl&#xE9; USB bootable avec,</li>
+<li>pla&#xE7;ons-la dans une machine virtuelle !</li>
+</ul>
+</li>
+</ol>
+<p>On utilise VirtualBox :</p>
+<ol>
+<li>On cr&#xE9;e une <strong>nouvelle</strong> machine ; <kbd>Ctrl</kbd>+<kbd>N</kbd> ;</li>
+<li>On l&apos;appellera <code>Mint MATE</code><br>
+<img src="assets/1-newMintMATE.png" alt="Nouvelle machine Mint MATE"></li>
+<li>On offre au moins 1024 Mo de m&#xE9;moire vive, <strong>2048 Mo de pr&#xE9;f&#xE9;rence</strong>, pour la machine invit&#xE9;e.<br>
+<img src="assets/2-m%C3%A9moire.png" alt="m&#xE9;moire"></li>
+<li>On cr&#xE9;e un disque dur virtuel maintenant, de type VDI, dynamiquement allou&#xE9;.</li>
+<li>On <strong>modifie son nom</strong>, et on <strong>choisit une taille de 20Go</strong> au moins. On peut m&#xEA;me choisir le maximum ; c&apos;est dynamiquement allou&#xE9; donc seul l&apos;espace n&#xE9;cessaire sera pris.</li>
+</ol>
+<p><img src="assets/3-disquedur.png" alt="taille disque"></p>
+<p>Notre machine virtuelle est cr&#xE9;&#xE9;e, elle poss&#xE8;de :</p>
+<ul>
+<li>un proc&#xE9;sseur virtuel,</li>
+<li>de la m&#xE9;moire virtuelle,</li>
+<li>une carte vid&#xE9;o virtuelle et sa m&#xE9;moire,</li>
+<li>une carte r&#xE9;seau, une carte sons, des ports USB, ...</li>
+<li>un lecteur DVD virtuel vide,</li>
+<li>un disque dur virtuel vide !</li>
+</ul>
+<p>Dans la configuration ( <kbd>Ctrl</kbd>+<kbd>S</kbd> ) de cette machine, on va ins&#xE9;rer notre disque virtuel t&#xE9;l&#xE9;charg&#xE9;.</p>
+<ul>
+<li>Dans <code>stockage</code>, on clique sur <code>vide</code> dans le contr&#xF4;leur IDE, puis (&#xE0; droite) dans attributs, lecteur optique,</li>
+<li>on clique sur l&apos;ic&#xF4;ne de DVD &#xE0; droite et son menu... <code>Choisissez un fichier de disque virtuel</code> ;</li>
+<li>on s&#xE9;lectionne notre fichier image .iso qui a &#xE9;t&#xE9; t&#xE9;l&#xE9;charg&#xE9;e.</li>
+</ul>
+<p><img src="assets/4-choixdvd.png" alt></p>
+<p>On peut fermer la configuration et d&#xE9;marrer la machine virtuelle.</p>
+<ul>
+<li>Elle va booter sur le DVD virtuel pour la premi&#xE8;re fois.</li>
+<li>On va installer le syst&#xE8;me sur le disque virtuel.</li>
+<li>On retirera le DVD virtuel.</li>
+<li>Aux red&#xE9;marrages suivants, la machine bootera sur le disque dur.</li>
+<li>Notre machine sera pr&#xEA;te !</li>
+</ul>
+<blockquote>
+<p>L&apos;origine du verbe <a href="https://fr.wiktionary.org/wiki/booter"><em>booter</em></a> est en rapport avec <a href="https://fr.wiktionary.org/wiki/bootstrap"><em>bootstrap</em></a>.</p>
+</blockquote>
+<h2 class="mume-header" id="1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></h2>
+
+<p><img src="assets/5-boot1.png" alt><br>
+Au bout de quelques secondes, Linux Mint d&#xE9;marrera ; on peut aussi appuyer sur <kbd>Entr&#xE9;e</kbd>.</p>
+<ul>
+<li>Notre clavier sera captur&#xE9; dans la machine virtuelle,</li>
+<li>on peut voir l&apos;&#xE9;cran virtuel de d&#xE9;marrage.</li>
+<li>La souris sera &#xE9;galement captur&#xE9;e.</li>
+<li>On pourra cocher &apos;ne plus afficher ce message&apos;.</li>
+<li><code>Start Linux Mint</code>.</li>
+</ul>
+<p>Quand La machine a fini de booter :</p>
+<ul>
+<li>On peut la tester, ses logiciels, ses param&#xE8;tres, ...</li>
+<li>On va installer cet O.S. sur le disque dur virtuel.</li>
+</ul>
+<p><img src="assets/6-demar1.png" alt></p>
+<p><img src="assets/total.png" alt><br>
+Cette machine invit&#xE9;e est une application parmi d&apos;autres du syst&#xE8;me h&#xF4;te.</p>
+<ul>
+<li>
+<p>On peut agrandir la fen&#xEA;tre de VirtualBox &#xE0; presque tout l&apos;&#xE9;cran.</p>
+<ul>
+<li>Dans ce cas, <strong>attention</strong> &#xE0; ne pas confondre les deux menus de d&#xE9;marrage.</li>
+</ul>
+</li>
+<li>
+<p>Dans le menu de VirtualBox, on peut aussi choisir <code>&#xC9;cran</code>, puis <code>Mode plein &#xE9;cran</code>.</p>
+<ul>
+<li>&#x26A0;&#xFE0F; <strong>Attention</strong>, pour en sortir, on pourra d&#xE9;placer notre souris tout en bas de l&apos;&#xE9;cran, pour faire appara&#xEE;tre le menu de la machine virtuelle.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Il y a un raccourci clavier qui pourrait &#xEA;tre <kbd>Ctrl(droit)</kbd>+<kbd>F</kbd> .<br>
+Dans ce cas, la touche <kbd>Ctrl(droit)</kbd> est votre touche <kbd><strong>Host</strong></kbd>.</p>
+</blockquote>
+<h2 class="mume-header" id="installation-virtuelle">Installation virtuelle</h2>
+
+<p>Il vaut mieux ici &#xEA;tre en mode plein &#xE9;cran (ou presque).</p>
+<ul>
+<li>On double clique (ou bien un seul clic + <kbd>Entr&#xE9;e</kbd>) sur <code>Install Linux Mint</code></li>
+<li>On r&#xE9;pond &#xE0; la langue que l&apos;on souhaite pour l&apos;installation ; c&apos;est au choix !</li>
+<li>On choisit son fuseau horaire.</li>
+<li>On choisit sa disposition de clavier. &#x26A0;&#xFE0F; <strong>Attention</strong>, il vaut mieux choisir <code>Fran&#xE7;ais (variante)</code>.</li>
+</ul>
+<blockquote>
+<p>Explications compl&#xE8;tes &#xE0; venir... On pourra &#xE9;crire tr&#xE8;s facilement les caract&#xE8;res &#xC7;&#xC9;&#xC8;&#xD6;&#xCB;&#x153;&#x152;&#xE6;&#xC6;&#xD7;&#xF7;&#xA1;&#xBF;&#x2026;</p>
+</blockquote>
+<p><img src="assets/7-clavier.png" alt></p>
+<p><code>Fran&#xE7;ais (variante)</code> (ou <code>French (alt.)</code>) est un tr&#xE8;s bon choix.</p>
+<hr>
+<p>Ensuite, vous avez le droit d&apos;installer les logiciels tiers propri&#xE9;taires mais ils sont inutiles ici.</p>
+<p>&#x26A0;&#xFE0F; &#x26A0;&#xFE0F; &#x26A0;&#xFE0F; <strong>Pour une premi&#xE8;re installation avec VirtualBox seulement !!!</strong> &#x26A0;&#xFE0F; &#x26A0;&#xFE0F; &#x26A0;&#xFE0F;</p>
+<p>On peut <strong>effacer le disque et installer Linux Mint</strong>.</p>
+<blockquote>
+<p>&#x2705; Le disque dur en question est le disque virtuel ; aucun probl&#xE8;me, il est vide.</p>
+</blockquote>
+<p><strong>Quand vous ferez une installation sur une machine r&#xE9;elle, soyez prudent, ce sera peut-&#xEA;tre diff&#xE9;rent.</strong></p>
+<p><img src="assets/8-type.png" alt="type"></p>
+<ul>
+<li>On choisit le bon fuseau horaire.</li>
+</ul>
+<hr>
+<ul>
+<li>On entre les param&#xE8;tres de l&apos;administrateur.</li>
+<li>Majuscules et espaces possibles pour le nom.</li>
+<li>Majuscules et espaces <strong>d&#xE9;conseill&#xE9;es</strong> pour le nom de la machine. <a href="https://fr.wikipedia.org/wiki/Tiret_bas">Tiret bas</a> ( <code>_</code> ) possible.</li>
+<li>Majuscules et espaces <strong>interdites</strong> pour le nom d&apos;utilisateur (<em>login</em>).</li>
+<li>On <strong>note soigneusement</strong> un bon mot de passe.</li>
+<li><strong>Pour un premier test</strong>, on peut choisir : <code>Se connecter automatiquement</code>.</li>
+</ul>
+<p><img src="assets/9-compte.png" alt></p>
+<p>&#x26A0;&#xFE0F; Pour qui tente l&apos;installation de <strong>Linux Mint Debian Edition</strong>, une autre &#xE9;tape technique est :</p>
+<p>On continue avec l&apos;installation du chargeur de d&#xE9;marrage <code>GRUB</code>. C&apos;est lui qui donne un menu quand plusieurs syst&#xE8;mes d&apos;exploitation sont disponibles au moment du <em>boot</em>.</p>
+<ul>
+<li>Ici, on laisse le choix par d&#xE9;faut. <code>/dev/sda</code> d&#xE9;signera le descripteur de notre unique disque virtuel.
+<ul>
+<li><code>dev</code> est un r&#xE9;pertoire Linux en lien avec les p&#xE9;riph&#xE9;riques (<em><strong>dev</strong>ices</em>).</li>
+<li><code>sda</code> est le premier disque dur branch&#xE9; en SCSI sur la carte m&#xE8;re. <a href="https://en.wikipedia.org/wiki/Device_file#Naming_conventions">(<em>more info in english</em>)</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="assets/10-install.png" alt></p>
+<p>L&apos;installation va prendre plusieurs minutes.</p>
+<p>Une fois l&apos;installation termin&#xE9;e :</p>
+<ul>
+<li>On peut red&#xE9;marrer cette machine virtuelle et la faire booter sur le disque dur virtuel au lieu du DVD virtuel. Il <strong>faut</strong> bien &#xE9;jecter le DVD virtuel avant le red&#xE9;marrage. C&apos;est souvent automatique (mais pas toujours). Sinon, on booterait &#xE0; nouveau sur le DVD pr&#xEA;t &#xE0; refaire une installation...</li>
+<li>Pour v&#xE9;rifier que le DVD a bien &#xE9;t&#xE9; &#xE9;ject&#xE9;, aller dans le menu <code>P&#xE9;riph&#xE9;riques</code> de la machine virtuelle, puis dans <code>lecteurs optiques</code>.</li>
+</ul>
+<p><img src="assets/11-eject.png" alt></p>
+<p>Rien n&apos;est coch&#xE9; ; c&apos;est bon !</p>
+<h2 class="mume-header" id="quelques-syst%C3%A8mes-%C3%A0-tester">Quelques syst&#xE8;mes &#xE0; tester</h2>
+
+<ol>
+<li><a href="https://blog.linuxmint.com/?p=3832"><strong>Linux Mint 19.3</strong></a>, <strong>fortement recommand&#xE9;e</strong>, bas&#xE9;e sur <code>Ubuntu</code>, utilise le bureau <code>Cinnamon</code>.</li>
+<li><a href="https://mxlinux.org/">MX Linux</a>, bas&#xE9;e sur <code>Debian (stable)</code>, utilise le bureau <code>XFCE</code>. Succ&#xE8;s r&#xE9;cent.</li>
+<li><a href="https://manjaro.org/download/">Manjaro</a>, bas&#xE9;e sur <code>Arch</code>, utilise le bureau <code>XFCE</code>, <code>KDE</code>, ou d&apos;autres... <strong>Id&#xE9;ale pour tester KDE.</strong></li>
+<li><a href="https://ubuntu-fr.org/">Ubuntu 20.04</a>, bas&#xE9;e sur <code>Debian</code>. Id&#xE9;ale pour tester le bureau <code>Gnome</code>.</li>
+<li><a href="https://elementary.io/">elementary OS</a>, bas&#xE9;e sur <code>Ubuntu</code>, utilise le bureau <code>Pantheon</code>. Jolie !</li>
+<li><a href="https://www.centos.org/download/">CentOS</a>, bas&#xE9;e sur <code>Fedora</code> et <code>Red Hat</code>, utilise le bureau <code>Gnome</code> ou <code>KDE</code>. Utilis&#xE9;e dans l&apos;industrie.</li>
+<li><a href="https://reactos.org/">ReactOS</a>, un clone libre de Windows XP. Ici, ce n&apos;est pas Linux !</li>
+<li><a href="https://sparkylinux.org/download/">SparkyLinux</a>, bas&#xE9;e sur <code>Debian (stable ou non !!!)</code>, rapide et l&#xE9;g&#xE8;re.</li>
+<li><a href="https://tails.boum.org/">Tails</a>, pour tester un <em>live</em>, objectif pr&#xE9;servation de la vie priv&#xE9;e et de l&apos;anonymat.</li>
+<li><a href="https://lubuntu.me/downloads/">Lubuntu 20.04 Focal Fossa</a>, bas&#xE9;e sur <code>Ubuntu</code>, utilise le bureau <code>LXQt</code> tr&#xE8;s l&#xE9;ger.</li>
+<li><a href="https://www.parrotlinux.org/download/">Parrot</a>, bas&#xE9;e sur <code>Debian (testing)</code>, utilise le bureau <code>MATE</code> ou <code>KDE</code>, pour les hackers.</li>
+<li><a href="http://wiki.freedos.org/wiki/index.php/Main_Page">FreeDOS</a>, un clone libre de MS-DOS, pour le <em>retro-gaming</em> en particulier.</li>
+</ol>
+<p>Beaucoup de distributions Linux proposent plusieurs bureaux au choix. Testez-en plusieurs !</p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#pourquoi-virtualiser">Pourquoi virtualiser ?</a></li>
+<li><a href="#comment-virtualiser">Comment virtualiser ?</a></li>
+<li><a href="#vocabulaire">Vocabulaire</a></li>
+<li><a href="#installation-de-virtualbox">Installation de VirtualBox</a></li>
+<li><a href="#pr%C3%A9sentation-de-linux">Pr&#xE9;sentation de Linux</a>
+<ul>
+<li><a href="#distribution-linux">Distribution Linux</a></li>
+<li><a href="#le-noyau-linux">Le noyau Linux</a></li>
+<li><a href="#les-logiciels-disponibles">Les logiciels disponibles</a></li>
+<li><a href="#les-gestionnaires-de-paquets">Les gestionnaires de paquets</a></li>
+<li><a href="#les-environnements-de-bureau">Les environnements de bureau</a></li>
+<li><a href="#quelques-exemples-de-distributions">Quelques exemples de distributions</a></li>
+</ul>
+</li>
+<li><a href="#cr%C3%A9ation-dune-machine-virtuelle">Cr&#xE9;ation d&apos;une machine virtuelle</a></li>
+<li><a href="#1er-d%C3%A9marrage-en-live">1er D&#xE9;marrage en <em>live</em></a></li>
+<li><a href="#installation-virtuelle">Installation virtuelle</a></li>
+<li><a href="#quelques-syst%C3%A8mes-%C3%A0-tester">Quelques syst&#xE8;mes &#xE0; tester</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
