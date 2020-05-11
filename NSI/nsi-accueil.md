@@ -20,14 +20,14 @@ Rendez-vous :
     * Un [autre tutoriel](https://laboiteaphysique.fr/site2/index.php/numerique-et-sciences-informatiques/systeme-dexploitation/obtenir-un-systeme-dexploitation-linux/machine-virtuelle) fait par un physicien.
 
 3. Documents **adaptés à la tablette** :
-    * [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
-    * [Mises à jour et installation de logiciels pour la NSI](2-config-Linux/2-config-Linux.html) 
-    * [Conseils pour Firefox](3-Navigateurs/3-Navigateurs.html)
+    * :black_square_button: [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
+    * :eight_pointed_black_star: [Mises à jour et installation de logiciels pour la NSI](2-config-Linux/2-config-Linux.html) 
+    * :globe_with_meridians: [Conseils pour les navigateurs Internet](3-Navigateurs/3-Navigateurs.html)
 
 3. **À venir**, des conseils pour :
-    * Python,
-    * Anaconda,
-    * VSCodium, ...
+    * :snake: Python,
+    * :rocket: Anaconda,
+    * :ledger: VSCodium, ...
 
 ## Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
