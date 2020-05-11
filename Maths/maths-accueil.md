@@ -11,7 +11,7 @@ Rendez-vous :
 
 >>Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
-**Les devoirs** : pour le prochain cours, exercices 70, 71, 72 p 174.
+**Les devoirs** : pour le prochain cours, exercices 84, 88 p 175, 90, 91 p 176.
 
 ## Liens utiles
 * [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
