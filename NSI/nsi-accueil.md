@@ -14,14 +14,19 @@ Rendez-vous :
 1. Il est important de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
 > Nous continuerons à corriger certains exercices ensemble.
 
-2. **Nouveaux documents** adaptés à la tablette :
-* [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
-* [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
-* [Mises à jour et installation de logiciels pour la NSI](2-config-Linux/2-config-Linux.html) 
-* [Conseils pour Firefox](3-Navigateurs/3-Navigateurs.html)
+2. Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
+    * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
+    * une [vidéo](https://tube-creteil.beta.education.fr/videos/watch/playlist/8fca67aa-4575-485b-b2ce-3fd2c00c620c?videoId=fcad64bf-da5e-4f35-9a94-b8863ba989a5) d'un exemple.
 
-3. **À venir** :
-* Conseils pour Python, Anaconda, VSCodium, ...
+3. Documents **adaptés à la tablette** :
+    * [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
+    * [Mises à jour et installation de logiciels pour la NSI](2-config-Linux/2-config-Linux.html) 
+    * [Conseils pour Firefox](3-Navigateurs/3-Navigateurs.html)
+
+3. **À venir**, des conseils pour :
+    * Python,
+    * Anaconda,
+    * VSCodium, ...
 
 ## Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
