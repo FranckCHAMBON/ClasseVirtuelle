@@ -50,4 +50,6 @@ Rendez-vous :
 * [Ex 53 p 172](6-Exponentielle/ex53.html)
 * [Ex 59 p 173](6-Exponentielle/ex59.html)
 * [Ex 65 p 173](6-Exponentielle/ex65.html)
+* [Ex 70 p 174](6-Exponentielle/ex70.html)
 * [Ex 71 p 174](6-Exponentielle/ex71.html)
+* [Ex 72 p 174](6-Exponentielle/ex72.html)
