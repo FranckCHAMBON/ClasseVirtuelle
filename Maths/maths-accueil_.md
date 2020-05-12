@@ -13,6 +13,8 @@ Rendez-vous
 ###  :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html ) <img src="https://latex.codecogs.com/svg.latex?x&#x5C;mapsto%20&#x5C;mathrm%20e^x"/>
   
 <img src="https://latex.codecogs.com/svg.latex?x&#x5C;mapsto%20&#x5C;mathrm%20e^x"/>
+<img src="https://latex.codecogs.com/gif.latex?x&#x5C;mapsto%20&#x5C;mathrm%20e^x"/>
+<img src="https://latex.codecogs.com/png.latex?x&#x5C;mapsto%20&#x5C;mathrm%20e^x"/>
   
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
   
