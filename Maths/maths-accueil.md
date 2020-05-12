@@ -9,6 +9,7 @@ Rendez-vous
    :clock8: les jeudis de 8h à 10h
 
 ### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html) $x\mapsto \mathrm e^x$
+$x\mapsto \mathrm e^x$
 
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
