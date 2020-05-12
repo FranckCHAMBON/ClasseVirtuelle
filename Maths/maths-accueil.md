@@ -1,34 +1,21 @@
-# Spécialité mathématiques
+#  :triangular_ruler: Spécialité mathématiques
 
-## Classe virtuelle
+## :busts_in_silhouette: Classe virtuelle
 > [https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e](https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e)
 
-Rendez-vous :
-* les lundis de 14h à 16h
-* les jeudis de 8h à 10h
+Rendez-vous
+:  :clock2: les lundis de 14h à 16h
+   :clock8: les jeudis de 8h à 10h
 
-> **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html).
+### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html)
 
->>Ce cours est construit en direct avec les élèves, comme au tableau en classe.
+* Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
-**Les devoirs** : pour le prochain cours, exercices 84, 88 p 175, 90, 91 p 176.
-
-## Liens utiles
-* [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
-* [Manuels de mathématiques ou autres](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw)
-* [Manuels de mathématiques ou autres](https://monespace-educ.fr/feuilleter?%20%20utm_source=mesmanuels&utm_medium%20%20=redirect&utm_campaign=mesmanuels) (lien différent)
-* [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
-* [Maths et tiques](https://www.youtube.com/user/YMONKA/playlists?view=1&flow=grid) chaîne YouTube
-* [Maths 93](https://www.math93.com/lycee.html)
-* [Chingatome](https://chingatome.fr/)
-* [Mathenpoche](https://mathenpoche.sesamath.net/?page=premiere)
-* [Multimaths](http://www.multimaths.net/?page=default)
-* [Pyromaths](https://enligne.pyromaths.org/)
-* et [d'autres liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
+:black_nib: Les devoirs
+: Pour le prochain cours, exercices 84, 88 p 175, 90, 91 p 176.
 
 
-
-## Corrections des exercices
+## :tophat: Corrections des exercices
 
 ### Sur la dérivation
 
@@ -53,3 +40,18 @@ Rendez-vous :
 * [Ex 70 p 174](6-Exponentielle/ex70.html)
 * [Ex 71 p 174](6-Exponentielle/ex71.html)
 * [Ex 72 p 174](6-Exponentielle/ex72.html)
+
+
+## :link: Liens utiles
+* [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
+* [Manuels de mathématiques ou autres](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw)
+* [Manuels de mathématiques ou autres](https://monespace-educ.fr/feuilleter?%20%20utm_source=mesmanuels&utm_medium%20%20=redirect&utm_campaign=mesmanuels) (lien différent)
+* [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
+* [Maths et tiques](https://www.youtube.com/user/YMONKA/playlists?view=1&flow=grid) chaîne YouTube
+* [Maths 93](https://www.math93.com/lycee.html)
+* [Chingatome](https://chingatome.fr/)
+* [Mathenpoche](https://mathenpoche.sesamath.net/?page=premiere)
+* [Multimaths](http://www.multimaths.net/?page=default)
+* [Pyromaths](https://enligne.pyromaths.org/)
+* et [d'autres liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
+
