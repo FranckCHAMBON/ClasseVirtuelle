@@ -5,6 +5,7 @@
 
 Rendez-vous
 :  :clock2: les lundis de 14h à 16h
+
    :clock8: les jeudis de 8h à 10h
 
 ### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html)
