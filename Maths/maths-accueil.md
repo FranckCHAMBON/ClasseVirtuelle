@@ -8,8 +8,7 @@ Rendez-vous
 
    :clock8: les jeudis de 8h à 10h
 
-### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html) $x\mapsto \mathrm e^x$
-
+### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html)
 
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
@@ -42,25 +41,7 @@ Rendez-vous
 * [Ex 70 p 174](6-Exponentielle/ex70.html)
 * [Ex 71 p 174](6-Exponentielle/ex71.html)
 * [Ex 72 p 174](6-Exponentielle/ex72.html)
-<<<<<<< HEAD
 * [Ex 84 p 175](6-Exponentielle/ex84.html)
 * [Ex 88 p 175](6-Exponentielle/ex88.html)
 * [Ex 90 p 176](6-Exponentielle/ex90.html)
 * [Ex 91 p 176](6-Exponentielle/ex91.html)
-=======
-
-
-## :link: Liens utiles
-* [faire des schémas](https://www.scratchwork.io/), écrire des maths, à l'écran, pour les partager ensuite...
-* [Manuels de mathématiques ou autres](https://outilstice.com/2020/03/tous-les-manuels-scolaires-disponibles-gratuitement-en-ligne-pendant-la-fermeture-des-ecoles/#gs.1n5wuw)
-* [Manuels de mathématiques ou autres](https://monespace-educ.fr/feuilleter?%20%20utm_source=mesmanuels&utm_medium%20%20=redirect&utm_campaign=mesmanuels) (lien différent)
-* [Calculatrice en ligne](https://www.numworks.com/fr/simulateur/) Numworks avec Python (matériel et logiciel libres !)
-* [Maths et tiques](https://www.youtube.com/user/YMONKA/playlists?view=1&flow=grid) chaîne YouTube
-* [Maths 93](https://www.math93.com/lycee.html)
-* [Chingatome](https://chingatome.fr/)
-* [Mathenpoche](https://mathenpoche.sesamath.net/?page=premiere)
-* [Multimaths](http://www.multimaths.net/?page=default)
-* [Pyromaths](https://enligne.pyromaths.org/)
-* et [d'autres liens utiles](http://www.pedagogie.ac-aix-marseille.fr/jcms/c_10768528/fr/continuite-pedagogique) établie par le collège d'inspecteurs académiques
-
->>>>>>> ee07ad9444f1616b3218897c1f993b2b3b9b82fd
