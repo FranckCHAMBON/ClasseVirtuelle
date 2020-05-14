@@ -53,3 +53,7 @@ Rendez-vous :
 * [Ex 70 p 174](6-Exponentielle/ex70.html)
 * [Ex 71 p 174](6-Exponentielle/ex71.html)
 * [Ex 72 p 174](6-Exponentielle/ex72.html)
+* [Ex 84 p 175](6-Exponentielle/ex84.html)
+* [Ex 88 p 175](6-Exponentielle/ex88.html)
+* [Ex 90 p 176](6-Exponentielle/ex90.html)
+* [Ex 91 p 176](6-Exponentielle/ex91.html)
