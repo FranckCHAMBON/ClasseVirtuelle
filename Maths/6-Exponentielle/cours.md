@@ -292,4 +292,4 @@ for n_sup in range(20):
     print("Avec n_sup =", n_sup, ", on a l'approximation :", e_approx)
 ```
 
-On constante une excellente approximation très rapide.
+On constate une excellente approximation, et très rapide.
