@@ -1,6 +1,9 @@
 ---
 export_on_save:
   html: true
+title: 🖥 Virtualisation Système
+lang: fr-FR
+author: Franck CHAMBON
 ---
 
 <!-- @import "assets/EducNat.jpg" {width="400px" title="Logo de l'Éducation Nationale" alt="Logo de l'Éducation Nationale"} -->

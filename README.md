@@ -22,7 +22,7 @@ Il y a des règles :
 
 
 ## Accès aux pages dédiées
-* [Pour les spé mathématiques en première](Maths/maths-accueil.md)
+* [Pour les spé mathématiques en première](Maths/maths-accueil_.md)
 * [Pour les spé NSI en première](NSI/nsi-accueil.md)
 * [Pour les seconde en SNT](SNT/snt-accueil.md)
 
