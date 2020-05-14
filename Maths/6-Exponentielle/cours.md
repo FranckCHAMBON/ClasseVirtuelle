@@ -293,3 +293,5 @@ for n_sup in range(20):
 ```
 
 On constate une excellente approximation, et très rapide.
+
+Obtenu avec VSCodium.
