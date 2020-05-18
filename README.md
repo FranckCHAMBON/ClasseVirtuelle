@@ -1,8 +1,4 @@
 # Documents de cours de M. Chambon
- 
-hum...
-
-
 
 Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première.
 
