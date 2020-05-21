@@ -46,3 +46,5 @@ Il y a des règles :
 
 Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
 
+### Test
+écrit avec Acode directement sur la tablette.
