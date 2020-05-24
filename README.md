@@ -15,10 +15,10 @@ Il y a des règles :
 + tout le monde est invité, il peut y avoir des intrus, donc vous n'aurez pas la possibilité de vous exprimer, de base.
 + vous pourrez toujours vous exprimer par icône de ressenti (*feedback*) ; vous le ferez sur demande.
 + si vous avez la parole ou la possibilité d'écrire, vous devez agir comme en classe :
-    + pas de style SMS ; vocabulaire correct ; on ne pose que des questions utiles.
++ pas de style SMS ; vocabulaire correct ; on ne pose que des questions utiles.
 + certains élèves auront le status de commentateur, ils pourront poser des questions à tout moment.
-    + 4 élèves maximum ; les mêmes lors d'une séance.
-    + 1 élève par séance pourra rassembler les questions des élèves ; j'y répondrai la séance suivante.
++ 4 élèves maximum ; les mêmes lors d'une séance.
++ 1 élève par séance pourra rassembler les questions des élèves ; j'y répondrai la séance suivante.
 
 
 ## Accès aux pages dédiées
@@ -31,9 +31,9 @@ Il y a des règles :
 
 ### Des conseils pour les échanges via Internet
 1. Choisir un outil qui respecte votre vie privée
-    * [Signal](https://signal.org/fr/) ; pour votre application de messagerie
-    * [Jitsi meet](https://jitsi.org/jitsi-meet/) ; pour un échange en groupe
-    * [Les autres solutions](https://blog.mozilla.org/blog/2020/04/28/which-video-call-apps-can-you-trust/) publiques sont moins respectueuses.
+* [Signal](https://signal.org/fr/) ; pour votre application de messagerie
+* [Jitsi meet](https://jitsi.org/jitsi-meet/) ; pour un échange en groupe
+* [Les autres solutions](https://blog.mozilla.org/blog/2020/04/28/which-video-call-apps-can-you-trust/) publiques sont moins respectueuses.
 
 
 ### Des livres (ebook) gratuits et libres :
@@ -44,7 +44,4 @@ Il y a des règles :
 + [Wikisource](https://fr.wikisource.org/wiki/Wikisource:Accueil) ;
 + [Atramenta](https://www.atramenta.net/).
 
-Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…). 
-
-### Test
-écrit avec Acode directement sur la tablette.
+Dans tous ces sites on trouvera des livres du domaine public en téléchargement gratuit sans DRM et sans inscription nécessaire. On pourra éventuellement trouver des livres en téléchargement public et gratuit qui ont d'autres licences (sur Atramenta par exemple, mais ce sont des textes non corrigés…).
