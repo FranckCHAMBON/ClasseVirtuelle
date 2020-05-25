@@ -188,7 +188,7 @@ $[\exp(x)]^{n+1} = [\exp(x)]^n \times \exp(x) = \exp(nx)\times \exp(x)= \exp(nx 
 
 
 ### Dérivée de $\mathrm e^{ax+b}$
-En appliquant la formule : $(f(ax+b))' = a\times f(ax+b)$, on déduit :
+En appliquant la formule : $(f(ax+b))' = a\times f'(ax+b)$, on déduit :
 
 > $(\mathrm e^{ax+b})' = a \times \mathrm e^{ax+b}$
 
