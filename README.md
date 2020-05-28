@@ -8,10 +8,6 @@ Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
 [https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e](https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e)
 
-Test :Vous êtes invité(e) à participer à une réunion.
-Rejoindre la réunion:
-[https://h-9068.educnat-ensemble.scaleway.com/maBBx3B6Mv](https://h-9068.educnat-ensemble.scaleway.com/maBBx3B6Mv)
-
 
 Il y a des règles :
 + votre pseudo doit être sous la forme : prénom_nomcourt_classe ; comme `Jean_Du_102` pour Jean Dupont en classe 102.
