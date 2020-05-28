@@ -10,7 +10,7 @@ Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien s
 
 Test :Vous êtes invité(e) à participer à une réunion.
 Rejoindre la réunion:
-https://h-9068.educnat-ensemble.scaleway.com/maBBx3B6Mv
+[https://h-9068.educnat-ensemble.scaleway.com/maBBx3B6Mv](https://h-9068.educnat-ensemble.scaleway.com/maBBx3B6Mv)
 
 
 Il y a des règles :
