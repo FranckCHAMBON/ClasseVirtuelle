@@ -149,3 +149,88 @@ pkg install asciinema
 ```bash
 asciinema rec votre_fichier.cast
 ```
+
+## Créer un environnement virtuel Python
+
+### Exemple pour TermtoSVG
+
+Créer un environnement virtuel permet d'installer des paquets Python, accessibles uniquement pour certains projets et pas d'autres ; éviter les conflits de versions.
+
+```bash
+python3 -m venv .enregistrement
+```
+
+Cela crée une copie de Python que l'on peut modifier par l'ajout de paquets.
+
+Pour activer cet environnement :
+
+```bash
+source .enregistrement/bin/activate
+```
+
+> On constate que le **prompt** est modifié pour indiquer qu'on est dans l'environnement.
+
+Ensuite, on peut utiliser le gestionnaire de paquets Python : `pip`
+
+#### Première utilisation
+
+```bash
+pip install --upgrade pip
+```
+
+Première mise à jour **très importante** du gestionnaire lui-même !
+
+#### Quelques paquets à installer
+
+* `pkg install clang`
+* `pkg install libxml2 libxslt`
+
+```bash
+pip install termtosvg
+```
+
+> ⚠️ Un peu long sur tablette.
+
+
+Un example d'utilisation :
+```bash
+termtosvg example.svg -t window_frame_js
+```
+
+* Le fichier de sortie est `example.svg`
+* L'option `-t` sert à choisir un modèle de cadre pour le terminal, faire `termtosvg -h` pour d'autres options.
+
+#### Pour sortir de l'environnement virtuel
+
+```bash
+deactivate
+```
+
+Cette commande repositionne à l'état précédent.
+
+## Utilisation de MkDocs
+
+> Objectif : créer un site web avec Python et markdown.
+
+1. On crée un environnement virtuel `.web`
+
+```bash
+python3 -m venv .web
+```
+
+2. On l'active
+```bash
+source .web/bin/activate
+```
+
+3. On met à jour `pip` de cet environnement
+
+```bash
+pip install --upgrade pip
+```
+
+4. On installe MkDocs
+
+```bash
+pip install mkdocs
+```
