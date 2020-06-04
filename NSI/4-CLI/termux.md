@@ -111,3 +111,41 @@ pkg install xclip
 ```
 
 > À savoir : pour copier à partir de la tablette, il faut laisser le doigt appuyé jusqu'à avoir le menu de sélection du texte et de copie.
+
+##### `git` contrôle de version
+
+```bash
+pkg install git
+```
+
+> **Objectif** : pourvoir travailler avec ses fichiers en ligne sur github ou sur gitlab...
+
+##### Outils variés
+
+```bash
+pkg install coreutils
+```
+
+> Exemple d'utilisation
+
+Pour obtenir la factorisation d'un entier :
+
+```bash
+factor 1234567890000007
+```
+
+```
+1234567890000007: 23 6427 79151 105517
+```
+
+###### Enregistrement de session terminal
+
+```bash
+pkg install asciinema
+```
+
+> Exemple d'utilisation
+
+```bash
+asciinema rec votre_fichier.cast
+```
