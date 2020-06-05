@@ -234,3 +234,5 @@ pip install --upgrade pip
 ```bash
 pip install mkdocs
 ```
+
+5. On crée un nouveau projet

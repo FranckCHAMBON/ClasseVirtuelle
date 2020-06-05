@@ -8,12 +8,12 @@ Rendez-vous
 
    :clock8: les jeudis de 8h à 10h
 
-### :memo: **Le cours du moment** : [la fonction exponentielle](6-Exponentielle/cours.html)
+### :memo: **Le cours du moment** : [le produit scalaire](8-Produit-scalaire/cours.html)
 
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
 :black_nib: Les devoirs
-: Pour le prochain cours, exercices 84, 88 p 175, 90, 91 p 176.
+: Pour le prochain cours, exercices 29 p 243, 32 à 37 p 244, et 42 p 245.
 
 
 ## :tophat: Corrections des exercices
@@ -31,6 +31,8 @@ Rendez-vous
 
 ### Sur l'exponentielle
 
+> [Rappel de cours](6-Exponentielle/.html)
+
 * [Ex 24 p 171](6-Exponentielle/ex24.html)
 * [Ex 34 p 171](6-Exponentielle/ex34.html)
 * [Ex 35 p 171](6-Exponentielle/ex35.html)
@@ -45,3 +47,11 @@ Rendez-vous
 * [Ex 88 p 175](6-Exponentielle/ex88.html)
 * [Ex 90 p 176](6-Exponentielle/ex90.html)
 * [Ex 91 p 176](6-Exponentielle/ex91.html)
+
+### Sur les fonctions trigonométriques
+
+* [Ex 33](7-Fonctions-trigo/ex33.html)
+
+### Sur le produit scalaire
+
+* À venir
