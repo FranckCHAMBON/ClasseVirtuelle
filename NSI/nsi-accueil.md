@@ -25,6 +25,7 @@ Rendez-vous :
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
     * une [vidéo](https://tube-creteil.beta.education.fr/videos/watch/playlist/8fca67aa-4575-485b-b2ce-3fd2c00c620c?videoId=fcad64bf-da5e-4f35-9a94-b8863ba989a5) d'un exemple.
     * Un [autre tutoriel](https://laboiteaphysique.fr/site2/index.php/numerique-et-sciences-informatiques/systeme-dexploitation/obtenir-un-systeme-dexploitation-linux/machine-virtuelle) fait par un physicien.
+    * [Expériences avec Termux](/4-CLI/termux.md)
 
 3. :iphone: Documents **adaptés à la tablette** :
     * :black_square_button: [Utilisation de VirtualBox](1-Virtualbox/1-Virtualbox.html) : avec cette aide, vous pouvez installer un système d'exploitation libre de manière virtuelle, comme en classe.
