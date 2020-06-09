@@ -36,4 +36,4 @@ def pe005(n=20):
 
 assert pe005(10) == 2520, "Le test avec 10 a échoué"
 
-print(pe005(1000))
+print(pe005(100))
