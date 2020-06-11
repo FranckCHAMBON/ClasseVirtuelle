@@ -59,3 +59,4 @@ Rendez-vous
 * [Ex 34](8-Produit-scalaire/Ex34.html)
 * [Ex 35](8-Produit-scalaire/Ex35.html)
 * [Ex 36](8-Produit-scalaire/Ex36.html)
+* [Ex 37](8-Produit-scalaire/Ex37.html)
