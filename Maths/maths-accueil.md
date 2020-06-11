@@ -54,8 +54,8 @@ Rendez-vous
 
 ### Sur le produit scalaire
 
-* [Ex 32](8-Produit-scalaire/Ex32.md)
-* [Ex 33](8-Produit-scalaire/Ex33.md)
-* [Ex 34](8-Produit-scalaire/Ex34.md)
-* [Ex 35](8-Produit-scalaire/Ex35.md)
-* [Ex 36](8-Produit-scalaire/Ex36.md)
+* [Ex 32](8-Produit-scalaire/Ex32.html)
+* [Ex 33](8-Produit-scalaire/Ex33.html)
+* [Ex 34](8-Produit-scalaire/Ex34.html)
+* [Ex 35](8-Produit-scalaire/Ex35.html)
+* [Ex 36](8-Produit-scalaire/Ex36.html)
