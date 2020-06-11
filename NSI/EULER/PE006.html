@@ -273,6 +273,72 @@ Le carr&#xE9; de la somme des dix premiers entiers est :<br>
 Ainsi la diff&#xE9;rence entre la somme des carr&#xE9;s des dix premiers entiers et le carr&#xE9; de la somme est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3025</mn><mo>&#x2212;</mo><mn>385</mn><mo>=</mo><mn>2640</mn></mrow><annotation encoding="application/x-tex">3025-385=2640</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">2</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">8</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">6</span><span class="mord">4</span><span class="mord">0</span></span></span></span><br>
 Trouver la diff&#xE9;rence entre la somme des carr&#xE9;s des cent premiers entiers et le carr&#xE9; de la somme.</p>
 </blockquote>
+<h2 class="mume-header" id="solution">Solution</h2>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">def</span> <span class="token function">pe006_brute</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Solution au probl&#xE8;me PE006
+    S_1 = 1 + 2 + 3 + ... + n
+    S_2 = 1&#xB2; + 2&#xB2; + 3&#xB2; + ... + n&#xB2;
+    Calculer (S_1)&#xB2; - S_2
+    Complexit&#xE9; : lin&#xE9;aire, O(n)
+    &quot;&quot;&quot;</span>
+    S_1 <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        S_1 <span class="token operator">=</span> S_1 <span class="token operator">+</span> i
+    <span class="token comment"># variante fonctionnelle</span>
+    <span class="token comment">#S_1 = sum(i for i in range(n+1))</span>
+    
+    S_2 <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        S_2 <span class="token operator">=</span> S_2 <span class="token operator">+</span> i<span class="token operator">*</span>i
+    <span class="token comment"># variante fonctionnelle</span>
+    <span class="token comment">#S_2 = sum(i*i for i in range(n+1))</span>
+    
+    <span class="token keyword">return</span> S_1 <span class="token operator">*</span> S_1  <span class="token operator">-</span>  S_2
+
+<span class="token keyword">def</span> <span class="token function">pe006</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Solution au probl&#xE8;me PE006
+    S_1 = 1 + 2 + 3 + ... + n
+    S_2 = 1&#xB2; + 2&#xB2; + 3&#xB2; + ... + n&#xB2;
+    Calculer (S_1)&#xB2; - S_2
+    Complexit&#xE9; : co&#xFB;t constant O(1), en nombre de multiplications
+    &quot;&quot;&quot;</span>
+    S_1 <span class="token operator">=</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span> <span class="token comment">#sum(i for i in range(n+1))</span>
+    
+    S_2 <span class="token operator">=</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">6</span> <span class="token comment">#sum(i*i for i in range(n+1))</span>
+    
+    <span class="token keyword">return</span> S_1 <span class="token operator">*</span> S_1  <span class="token operator">-</span>  S_2
+
+
+<span class="token keyword">assert</span> pe006<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2640</span><span class="token punctuation">,</span> <span class="token string">&quot;Le test avec 10 a &#xE9;chou&#xE9;&quot;</span>
+
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">assert</span> pe006<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">==</span> pe006_brute<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f&quot;&#xE9;chec au test pour n = </span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>pe006<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> time <span class="token keyword">import</span> time
+t0 <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+pe006_brute<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
+t1 <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;le temps pris pour la force brute est </span><span class="token interpolation"><span class="token punctuation">{</span>t1<span class="token operator">-</span>t0<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+t0 <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+pe006<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">8</span><span class="token punctuation">)</span>
+t1 <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;le temps pris pour la nouvelle version est </span><span class="token interpolation"><span class="token punctuation">{</span>t1<span class="token operator">-</span>t0<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+
+</pre><p>On a propos&#xE9; deux codes avec des complexit&#xE9;s diff&#xE9;rentes,</p>
+<ul>
+<li>l&apos;une lin&#xE9;aire en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></li>
+<li>l&apos;autre &#xE0; co&#xFB;t constant, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<p>En sortie, on constate qu&apos;avec <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">n=10^8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>, on une dur&#xE9;e (sur l&apos;ordinateur de votre serviteur) :</p>
+<ul>
+<li>de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>17</mn><mtext>&#xA0;</mtext></mrow><annotation encoding="application/x-tex">17~</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">7</span><span class="mspace nobreak">&#xA0;</span></span></span></span>s pour la force brute,</li>
+<li>de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mtext>&#xA0;</mtext></mrow><annotation encoding="application/x-tex">4~</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace nobreak">&#xA0;</span></span></span></span>ms pour la version am&#xE9;lior&#xE9;e.</li>
+</ul>
 
       </div>
       
