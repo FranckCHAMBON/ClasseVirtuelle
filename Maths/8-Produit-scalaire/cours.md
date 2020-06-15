@@ -125,7 +125,7 @@ On déduit :
 * $\cos(\vec u, \vec v) = \dfrac{-11}{5\sqrt{26}}$
 * $(\vec u, \vec v) = \arccos\left(\dfrac{-11}{5\sqrt{26}}\right)$, environ $116°$
 
-### Formules liés au parallélogramme
+### Formules liées au parallélogramme
 
 Pour tous vecteurs $\vec u$ et $\vec v$ ,on a :
 
