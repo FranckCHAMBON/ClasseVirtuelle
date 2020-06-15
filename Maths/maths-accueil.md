@@ -13,7 +13,7 @@ Rendez-vous
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
 :black_nib: Les devoirs
-: Pour le prochain cours, exercices 29 p 243, 32 à 37 p 244, et 42 p 245.
+: Pour le prochain cours, exercices 68, 69, 75, 248.
 
 
 ## :tophat: Corrections des exercices
