@@ -51,12 +51,17 @@ Rendez-vous
 ### Sur les fonctions trigonométriques
 
 * [Ex 33](7-Fonctions-trigo/ex33.html)
+* autres fichiers perdus...
 
 ### Sur le produit scalaire
 
-* [Ex 32](8-Produit-scalaire/Ex32.html)
-* [Ex 33](8-Produit-scalaire/Ex33.html)
-* [Ex 34](8-Produit-scalaire/Ex34.html)
-* [Ex 35](8-Produit-scalaire/Ex35.html)
-* [Ex 36](8-Produit-scalaire/Ex36.html)
-* [Ex 37](8-Produit-scalaire/Ex37.html)
+* [Ex 32 p 244](8-Produit-scalaire/Ex32.html)
+* [Ex 33 p 244](8-Produit-scalaire/Ex33.html)
+* [Ex 34 p 244](8-Produit-scalaire/Ex34.html)
+* [Ex 35 p 244](8-Produit-scalaire/Ex35.html)
+* [Ex 36 p 244](8-Produit-scalaire/Ex36.html)
+* [Ex 37 p 244](8-Produit-scalaire/Ex37.html)
+* [Ex 42 p 245](8-Produit-scalaire/Ex42.html)
+* [Ex 55 p 247](8-Produit-scalaire/Ex55.html)
+* [Ex 68 p 248](8-Produit-scalaire/Ex68.html)
+* [Ex 69 p 248](8-Produit-scalaire/Ex69.html)

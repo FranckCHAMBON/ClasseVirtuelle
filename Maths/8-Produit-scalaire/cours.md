@@ -132,3 +132,13 @@ Pour tous vecteurs $\vec u$ et $\vec v$ ,on a :
 1. $\vec u ⋅ \vec v = \frac12\left(||\vec u + \vec v||^2 - ||\vec u||^2 - ||\vec v||^2\right)$
 2. $\vec u ⋅ \vec v = \frac12\left(||\vec u||^2 + ||\vec v||^2 - ||\vec u - \vec v||^2\right)$
 3. $\vec u ⋅ \vec v = \frac14\left(||\vec u + \vec v||^2  - ||\vec u - \vec v||^2\right)$
+
+### Vecteur normal à une droite
+
+Dans un repère orthonormé, si une droite a pour équation
+$$ax+by+c = 0$$
+alors un vecteur normal à cette droite est $\vec u = \binom{a}{b}$
+
+Exemple : pour la droite $3x + 2y = 11$, un vecteur normal est : $\binom{3}{2}$
+
+> **Rappel**, un vecteur directeur de la cette droite est $\vec v = \binom{b}{-a}$
