@@ -14,7 +14,7 @@ Rendez-vous :
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
 > Nous continuerons à corriger certains exercices ensemble.
 
-2. Résoudre des problèmes sur [Project Euler](https://projecteuler.net/archives), voici quelques solutions :
+2. Résoudre des problèmes sur [Project Euler](https://projecteuler.net/archives), voici quelques solutions étudiées en classe :
     * [Problème 1](/EULER/PE001.html)
     * [Problème 2](/EULER/PE002.html)
     * [Problème 3](/EULER/PE003.html)
@@ -22,6 +22,8 @@ Rendez-vous :
     * [Problème 5](/EULER/PE005.html)
     * [Problème 6](/EULER/PE006.html)
     * [Problème 9](/EULER/PE009.html)
+    * [Problème 8](/EULER/PE008.html)
+    * [Problème 11](/EULER/PE011.html)
 
 2. :wrench: Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
