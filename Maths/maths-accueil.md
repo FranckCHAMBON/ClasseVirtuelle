@@ -13,7 +13,7 @@ Rendez-vous
 * Ce cours est construit en direct avec les élèves, comme au tableau en classe.
 
 :black_nib: Les devoirs
-: Pour le prochain cours, exercices 68, 69, 75 page 248.
+: Pour le prochain cours, exercices 34 à 38 p 268.
 
 
 ## :tophat: Corrections des exercices
@@ -65,3 +65,4 @@ Rendez-vous
 * [Ex 55 p 247](8-Produit-scalaire/Ex55.html)
 * [Ex 68 p 248](8-Produit-scalaire/Ex68.html)
 * [Ex 69 p 248](8-Produit-scalaire/Ex69.html)
+* [Ex 75 p 248](8-Produit-scalaire/Ex75.html)
