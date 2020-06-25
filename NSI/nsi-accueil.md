@@ -27,6 +27,9 @@ Rendez-vous :
     * [Problème 13](/EULER/PE013.html)
     * [Problème 16](/EULER/PE016.html)
     * [Problème 22](/EULER/PE022.html)
+    * [Problème 29](/EULER/PE029.html)
+    * [Problème 31](/EULER/PE031.html)
+    * [Problème 48](/EULER/PE048.html)
 
 2. :wrench: Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
