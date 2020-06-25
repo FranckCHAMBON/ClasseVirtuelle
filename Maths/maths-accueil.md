@@ -66,3 +66,12 @@ Rendez-vous
 * [Ex 68 p 248](8-Produit-scalaire/Ex68.html)
 * [Ex 69 p 248](8-Produit-scalaire/Ex69.html)
 * [Ex 75 p 248](8-Produit-scalaire/Ex75.html)
+
+
+### Sur la géométrie
+
+* [Ex 31 p 268](9-Géométrie/Ex31.html)
+* [Ex 33 p 268](9-Géométrie/Ex33.html)
+* [Ex 34 p 268](9-Géométrie/Ex34.html)
+* [Ex 35 p 268](9-Géométrie/Ex35.html)
+* [Ex 36 p 268](9-Géométrie/Ex36.html)
