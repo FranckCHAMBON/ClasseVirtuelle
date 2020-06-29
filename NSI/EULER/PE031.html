@@ -279,6 +279,48 @@ Il y a huit pi&#xE8;ces en circulation :</p>
 
 <pre data-role="codeBlock" data-info="py" class="language-python">UK_coins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span>
 
+<span class="token keyword">def</span> <span class="token function">travail</span><span class="token punctuation">(</span>pi&#xE8;ces<span class="token operator">=</span>UK_coins<span class="token punctuation">,</span> valeur<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># si on a aucune pi&#xE8;ce !!!!</span>
+    nb_fa&#xE7;ons_0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># ... que des 0 ensuite</span>
+
+    <span class="token comment"># si on a des pi&#xE8;ces de 1</span>
+    nb_fa&#xE7;ons_1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># ... que des 1</span>
+
+    <span class="token comment"># si on a des pi&#xE8;ces de 1 et de 2</span>
+    nb_fa&#xE7;ons_2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment"># etc...</span>
+    <span class="token comment"># 4 = 1+1+1+1 = 1+1+2 = 2+2</span>
+    <span class="token comment"># 5 = 2 + (3) # 2 fa&#xE7;ons (avec au moins une pi&#xE8;ce de 2)</span>
+    <span class="token comment"># 5 = 1+1+1+1+1 # 1 fa&#xE7;on (sans pi&#xE8;ce de 2)</span>
+
+    <span class="token comment"># si on a des pi&#xE8;ces de 1, de 2 et de 5</span>
+    nb_fa&#xE7;ons_3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span> <span class="token comment"># ?</span>
+    <span class="token comment"># 5&#x20AC; = 5&#x20AC; + (0&#x20AC;) -&gt; 1 fa&#xE7;on</span>
+    <span class="token comment"># 5&#x20AC; -&gt; il y a 3 fa&#xE7;ons, (avec des pi&#xE8;ces de 1 et 2)</span>
+    <span class="token comment"># d&apos;apr&#xE8;s ce qui pr&#xE9;c&#xE8;de.</span>
+
+    <span class="token comment"># 6&#x20AC; = 5&#x20AC; + (1&#x20AC;) -&gt; 1 fa&#xE7;on</span>
+    <span class="token comment"># 6&#x20AC; -&gt; il y a 4 fa&#xE7;ons avec des pi&#xE8;ces de 1 et 2</span>
+
+    <span class="token comment"># 7&#x20AC; = 5&#x20AC; + (2&#x20AC;) -&gt; 2 fa&#xE7;ons</span>
+    <span class="token comment"># 7&#x20AC; -&gt; il y a 4 fa&#xE7;ons avec des pi&#xE8;ces de 1 et 2</span>
+
+    <span class="token comment">#...</span>
+    <span class="token comment"># n&#x20AC; = 5&#x20AC; + (n-5)&#x20AC; -&gt; nb_fa&#xE7;ons_3[n-5] fa&#xE7;ons avec au moins une pi&#xE8;ce de 5</span>
+    <span class="token comment"># n&#x20AC; -&gt; il y a nb_fa&#xE7;ons_2[n] fa&#xE7;ons avec des pi&#xE8;ces de 1 et 2 (sans pi&#xE8;ce de 5)</span>
+    <span class="token comment"># n&#x20AC; -&gt; total = nb_fa&#xE7;ons_3[n-5] + nb_fa&#xE7;ons_2[n] fa&#xE7;ons</span>
+
+    facon_prev <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span>
+    <span class="token comment"># facon_prev[n] le nombre de fa&#xE7;on de rendre n&#x20AC; sans pi&#xE8;ce de 5</span>
+
+    <span class="token comment"># on ajoute la possibilit&#xE9; d&apos;une pi&#xE8;ce de p&#x20AC;</span>
+
+    facon_next <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># &#xE0; compl&#xE9;ter</span>
+    <span class="token comment"># facon_next[n]  le nombre de fa&#xE7;on de rendre n&#x20AC; avec &#xE9;ventuellement pi&#xE8;ce de p&#x20AC;</span>
+    facon_next <span class="token operator">=</span> facon_prev<span class="token punctuation">[</span><span class="token punctuation">:</span>p<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        facon_next<span class="token punctuation">.</span>append<span class="token punctuation">(</span>facon_next<span class="token punctuation">[</span>n<span class="token operator">-</span>p<span class="token punctuation">]</span> <span class="token operator">+</span> facon_prev<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
 <span class="token keyword">def</span> <span class="token function">pe031</span><span class="token punctuation">(</span>pi&#xE8;ces<span class="token operator">=</span>UK_coins<span class="token punctuation">,</span> valeur<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;
     Retourne le nombre de fa&#xE7;ons de rendre &quot;valeur&quot;
@@ -288,9 +330,18 @@ Il y a huit pi&#xE8;ces en circulation :</p>
     10
     &quot;&quot;&quot;</span>
     
-    nb_fa&#xE7;ons <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment">#, (???)]</span>
-    <span class="token comment"># &#xE0; reflechir</span>
-    
+    l <span class="token operator">=</span> valeur<span class="token operator">+</span><span class="token number">1</span> <span class="token comment"># nb de valeurs</span>
+    facon_prev <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>l<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># on a l valeurs</span>
+
+    <span class="token keyword">for</span> p <span class="token keyword">in</span> pi&#xE8;ces<span class="token punctuation">:</span>
+        facon_next <span class="token operator">=</span> facon_prev<span class="token punctuation">[</span><span class="token punctuation">:</span>p<span class="token punctuation">]</span>
+        <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            facon_next<span class="token punctuation">.</span>append<span class="token punctuation">(</span>facon_next<span class="token punctuation">[</span>n<span class="token operator">-</span>p<span class="token punctuation">]</span> <span class="token operator">+</span> facon_prev<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        facon_prev <span class="token operator">=</span> facon_next
+
+    <span class="token keyword">return</span> facon_next<span class="token punctuation">[</span>valeur<span class="token punctuation">]</span>
+
+
 
 <span class="token keyword">assert</span> pe031<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
 
@@ -313,6 +364,10 @@ fa&#xE7;ons <span class="token operator">=</span> <span class="token punctuation
     <span class="token string">&quot;1+1+1+1+1+1+1+1+1+1&quot;</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span>
 <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>fa&#xE7;ons<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span>
+
+
+
+
 </pre>
       </div>
       
