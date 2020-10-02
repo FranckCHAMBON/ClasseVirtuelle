@@ -2,4 +2,4 @@
 
 ## Récursivité
 ### Exercices corrigés de France-IOI
-* [Nombre encadré](1-nombre_encadré.html)
+* [Nombre encadré](1-Récursivité/1-nombre_encadré.html)
