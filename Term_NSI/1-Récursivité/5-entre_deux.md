@@ -19,23 +19,23 @@ sortie :
 ## Solution
 
 ```python
-def entre_deux(n: int, m: int) -> None:
-    """Affiche les nombres entre n et m
+def entre_deux(n: int, m: int) -> str:
+    """Renvoie les nombres entre n et m
     >>> entre_deux(4, 11)
     4 5 6 7 8 9 10 11
     """
     if n == m:
-        print(n)
+        return str(n)
     else:
-        print(n, end=" ")
-        entre_deux(n+1, m)
+        return str(n) + " " + entre_deux(n+1, m)
 
 n, m = map(int, input().split())
-entre_deux(n, m)
+print(entre_deux(n, m))
 ```
 
 ### Commentaires
-* Pour le cas de base ($n = m$), il suffit d'afficher $n$.
-* Pour le cas général, on peut
-    * afficher $n$, et finir par une espace, 
-    * et afficher de $n+1$ jusqu'à $m$ par récursivité.
+* Pour le cas de base ($n = m$), il suffit de renvoyer $n$, en chaîne.
+* Pour le cas général, on peut renvoyer
+    * $n$ en chaîne, puis
+    * une espace, puis
+    * la chaîne des nombre entre $n+1$ et $m$ par récursivité.
