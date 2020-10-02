@@ -47,7 +47,7 @@ def main():
         if nb_crochets == 0:
             return str(nombre)
         else:
-            return "[" + nb_encadré(nombre, nb_crochets-1) + "]"
+            return "[" + nb_encadré(nombre, nb_crochets - 1) + "]"
         
 
     nombre, nb_crochets = map(int, input().split())
