@@ -1,13 +1,12 @@
 # Documents de cours de M. Chambon
 
-Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première.
+Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé maths première, en spé NSI première et terminale.
 
 Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-[https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e](https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e)
-
+    * pas de lien actif aujurd'hui.
 
 Il y a des règles :
 + votre pseudo doit être sous la forme : prénom_nomcourt_classe ; comme `Jean_Du_102` pour Jean Dupont en classe 102.
@@ -25,9 +24,10 @@ Il y a des règles :
 * [Pour les spé mathématiques en première](Maths/maths-accueil.md)
 * [Pour les spé NSI en première](NSI/nsi-accueil.md)
 * [Pour les seconde en SNT](SNT/snt-accueil.md)
+* [Pour les maths expertes](https://franckchambon.github.io/matex/)
+* [Pour les terminales NSI](Term_NSI/accueil.md)
 
-
-## Pour tous le monde
+## Pour tout le monde
 
 ### Des conseils pour les échanges via Internet
 1. Choisir un outil qui respecte votre vie privée

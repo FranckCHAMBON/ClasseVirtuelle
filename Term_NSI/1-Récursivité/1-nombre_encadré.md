@@ -56,4 +56,9 @@ main()
 ```
 
 ### Commentaires
-On voit ici l'intérêt de déclarer les types, en particulier le type de sortie. L'oubli de `str` dans le `return` du cas de base `nb_crochets == 0` serait une faute importante. La concaténation (`+`) dans le cas général générerait une erreur.
+* Le cœur de la fonction récursive est de construire un objet `str`, avec :
+    * un crochet ouvrant, puis
+    * le nombre encadré avec une profondeur inférieure de $1$, puis
+    * le crochet fermant.
+* Le cas de base étant de ne renvoyer que le nombre... avec le type `str` ! 
+* On voit ici l'intérêt de déclarer les types, en particulier le type de sortie. L'oubli de `str` dans le `return` du cas de base `nb_crochets == 0` serait une faute importante. La concaténation (`+`) dans le cas général générerait une erreur.
