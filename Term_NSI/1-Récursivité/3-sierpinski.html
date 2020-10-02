@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1-nombre_encadr&#xE9;</title>
+      <title>3-sierpinski</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,77 +23,92 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="nombre-encadr%C3%A9httpwwwfrance-ioiorgalgotaskphpidchapter513idtask511"><a href="http://www.france-ioi.org/algo/task.php?idChapter=513&amp;idTask=511">Nombre encadr&#xE9;</a></h1>
+      <h1 class="mume-header" id="fractale-triangle-de-sierpinskihttpwwwfrance-ioiorgalgotaskphpidchapter513idtask515"><a href="http://www.france-ioi.org/algo/task.php?idChapter=513&amp;idTask=515">Fractale : triangle de Sierpinski</a></h1>
 
-<p>&#xC9;crivez un programme qui lit deux entiers sur l&apos;entr&#xE9;e, et qui affiche le premier entier, entour&#xE9; d&apos;autant de paires de crochets <code>[</code> et <code>]</code>, qu&apos;indiqu&#xE9; par la valeur du deuxi&#xE8;me nombre.</p>
-<p><strong>Votre programme doit imp&#xE9;rativement utiliser une fonction r&#xE9;cursive, et non une boucle.</strong></p>
+<p>Une image qui a une apparence similaire quelle-que soit l&apos;&#xE9;chelle &#xE0; laquelle on l&apos;observe est appel&#xE9;e une fractale (il y a d&apos;autres types de fractales).</p>
+<p>Un exemple simple de fractale est le triangle de Sierpinski, dont voici une repr&#xE9;sentation :</p>
+<p><img src="triangle_sierpinski.png" alt="triangle de Sierpinski"></p>
+<p>Une telle image peut &#xEA;tre r&#xE9;alis&#xE9;e en quelques minutes avec n&apos;importe-quel logiciel de dessin. On commence par former un triangle de trois pixels. On en fait ensuite trois copies que l&apos;on utilise pour former un plus grand triangle, et on recommence l&apos;op&#xE9;ration avec ce nouveau triangle, et ainsi de suite, jusqu&apos;&#xE0; obtenir une figure de la taille souhait&#xE9;e.</p>
+<p>Voici une vue zoom&#xE9;e des trois premi&#xE8;res &#xE9;tapes de l&apos;op&#xE9;ration :</p>
+<p><img src="triangle_sierpinski2.png" alt="3 &#xE9;tapes pour sierpinski"></p>
+<p>Les dimensions de la figure &#xE9;tant multipli&#xE9;es par 2 &#xE0; chaque nouvelle &#xE9;tape, le c&#xF4;t&#xE9; de la figure finale est une puissance de 2.</p>
+<p>A vous d&apos;afficher un triangle de Sierpinski de la taille demand&#xE9;e.</p>
+<p><strong>Votre programme doit imp&#xE9;rativement &#xEA;tre bas&#xE9; sur une fonction r&#xE9;cursive, et non sur des boucles.</strong></p>
 <h2 class="mume-header" id="contraintes">Contraintes</h2>
 
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&#x2A7D;</mo><mi>E</mi><mo>&#x2A7D;</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">0 \leqslant E \leqslant 50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8200000000000001em;vertical-align:-0.13667em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span>, o&#xF9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> est le nombre de crochets &#xE0; mettre de chaque c&#xF4;t&#xE9;.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&#x2A7D;</mo><mi>N</mi><mo>&#x2A7D;</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">1 \leqslant N \leqslant 64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8200000000000001em;vertical-align:-0.13667em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span>, o&#xF9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> est le c&#xF4;t&#xE9; de la figure.</li>
 </ul>
-<h2 class="mume-header" id="exemples">Exemples</h2>
+<h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
-<h3 class="mume-header" id="exemple-1">Exemple 1</h3>
+<p>Un entier : la taille du c&#xF4;t&#xE9; de la figure. Ce sera toujours une puissance de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>.</p>
+<h3 class="mume-header" id="sortie">Sortie</h3>
 
-<p>entr&#xE9;e :</p>
-<pre class="language-text">42 3
-</pre>
-<p>sortie :</p>
-<pre class="language-text">[[[42]]]
-</pre>
-<h3 class="mume-header" id="exemple-2">Exemple 2</h3>
+<p>Le triangle de Sierpinski de la taille fournie en entr&#xE9;e.</p>
+<p>Les pixels noirs doivent &#xEA;tre affich&#xE9;s sous la forme de caract&#xE8;res <code>#</code>, et les pixels blancs sous la forme d&apos;espaces. N&apos;affichez pas d&apos;espaces &#xE0; la fin des lignes, lorsqu&apos;il n&apos;y a plus de caract&#xE8;res <code>#</code> sur la ligne.</p>
+<h2 class="mume-header" id="exemple">Exemple</h2>
 
 <p>entr&#xE9;e :</p>
-<pre class="language-text">24 0
+<pre class="language-text">8
 </pre>
 <p>sortie :</p>
-<pre class="language-text">24
+<pre class="language-text">########
+# # # #
+##  ##
+#   #
+####
+# #
+##
+#
 </pre>
-<hr>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> nb_encadr&#xE9;<span class="token punctuation">(</span>nombre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nb_crochets<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie &apos;nombre&apos; entour&#xE9; de paires de crochets.
-    La sortie est de type str
-    &gt;&gt;&gt; exo(42, 3)
-    [[[42]]]
-    &gt;&gt;&gt; exo(24, 0)
-    24
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">sierpinski</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie une liste de n lignes de longueur n, formant un triangle de Sierpinski.
+    n est une puissance de 2.
+    &gt;&gt;&gt; sierpinski(1)
+    [&quot;#&quot;]
+    &gt;&gt;&gt; sierpinski(2)
+    [&quot;##&quot;, &quot;# &quot;]
+    &gt;&gt;&gt; sierpinski(4)
+    [&quot;####&quot;, &quot;# # &quot;, &quot;##  &quot;, &quot;#   &quot;]
     &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> nb_crochets <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>nombre<span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token string">&quot;[&quot;</span> <span class="token operator">+</span> nb_encadr&#xE9;<span class="token punctuation">(</span>nombre<span class="token punctuation">,</span> nb_crochets <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;]&quot;</span>
-    
+    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">&apos;#&apos;</span><span class="token punctuation">]</span>
+    demi_n <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">2</span>
+    base <span class="token operator">=</span> sierpinski<span class="token punctuation">(</span>demi_n<span class="token punctuation">)</span>
+    motif <span class="token operator">=</span> <span class="token punctuation">[</span>ligne <span class="token operator">*</span> <span class="token number">2</span> <span class="token keyword">for</span> ligne <span class="token keyword">in</span> base<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> ligne <span class="token keyword">in</span> base<span class="token punctuation">:</span>
+        motif<span class="token punctuation">.</span>append<span class="token punctuation">(</span>ligne <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">*</span> demi_n<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> motif
 
-nombre<span class="token punctuation">,</span> nb_crochets <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>nb_encadr&#xE9;<span class="token punctuation">(</span>nombre<span class="token punctuation">,</span> nb_crochets<span class="token punctuation">)</span><span class="token punctuation">)</span>
+n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> ligne <span class="token keyword">in</span> sierpinski<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ligne<span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><h3 class="mume-header" id="commentaires">Commentaires</h3>
 
 <ul>
-<li>Le c&#x153;ur de la fonction r&#xE9;cursive est de construire un objet <code>str</code>, avec :
+<li>On cr&#xE9;e une fonction r&#xE9;cursive qui renvoie une liste de cha&#xEE;nes de caract&#xE8;res ; cela aurait pu &#xEA;tre un tableau bi-dimensionnel de bool&#xE9;ens. Cela d&#xE9;pend du langage et de ses facilit&#xE9;s ; ici en Python, les listes de cha&#xEE;nes sont tr&#xE8;s adapt&#xE9;es.</li>
+<li>Pour cr&#xE9;er le motif, on part du motif de taille moiti&#xE9;.
 <ul>
-<li>un crochet ouvrant, puis</li>
-<li>le nombre encadr&#xE9; avec une profondeur inf&#xE9;rieure de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, puis</li>
-<li>le crochet fermant.</li>
+<li>Dans un premier temps, chaque ligne du motif de base est dupliqu&#xE9;e-coll&#xE9;e.</li>
+<li>Ensuite, on ajoute &#xE0; chaque ligne du motif de base, des espaces pour construire le bas du nouveau motif.</li>
 </ul>
 </li>
-<li>Le cas de base &#xE9;tant de ne renvoyer que le nombre... avec le type <code>str</code> !</li>
-<li>On voit ici l&apos;int&#xE9;r&#xEA;t de d&#xE9;clarer les types, en particulier le type de sortie. L&apos;oubli de <code>str</code> dans le <code>return</code> du cas de base <code>nb_crochets == 0</code> serait une faute importante. La concat&#xE9;nation (<code>+</code>) dans le cas g&#xE9;n&#xE9;ral g&#xE9;n&#xE9;rerait une erreur.</li>
+<li>Pour l&apos;affichage final, on enl&#xE8;ve les espaces superflus &#xE0; droite avec <code>rstrip</code> (pour <em>right strip</em>).</li>
 </ul>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#nombre-encadr%C3%A9httpwwwfrance-ioiorgalgotaskphpidchapter513idtask511">Nombre encadr&#xE9;</a>
+<li><a href="#fractale-triangle-de-sierpinskihttpwwwfrance-ioiorgalgotaskphpidchapter513idtask515">Fractale : triangle de Sierpinski</a>
 <ul>
-<li><a href="#contraintes">Contraintes</a></li>
-<li><a href="#exemples">Exemples</a>
+<li><a href="#contraintes">Contraintes</a>
 <ul>
-<li><a href="#exemple-1">Exemple 1</a></li>
-<li><a href="#exemple-2">Exemple 2</a></li>
+<li><a href="#entr%C3%A9e">Entr&#xE9;e</a></li>
+<li><a href="#sortie">Sortie</a></li>
 </ul>
 </li>
+<li><a href="#exemple">Exemple</a></li>
 <li><a href="#solution">Solution</a>
 <ul>
 <li><a href="#commentaires">Commentaires</a></li>
