@@ -12,8 +12,11 @@
 
 ### Gestion de caractères
 
-* [Bâtiment et allée](N3/3-gestion_caractères/a1-bât_allée.html)
-* [Nombre d'amour](N3/3-gestion_caractères/a2-nombre_amour.html)
+* A – Entiers et caractères
+    * [Bâtiment et allée](N3/3-gestion_caractères/a1-bât_allée.html)
+    * [Nombre d'amour](N3/3-gestion_caractères/a2-nombre_amour.html)
+* B – Classe de caractères
+    * [Majuscules](N3/3-gestion_caractères/b1-Majuscules.html)
 
 ### Récursivité
 
