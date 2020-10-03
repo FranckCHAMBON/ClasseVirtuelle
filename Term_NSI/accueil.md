@@ -10,6 +10,10 @@
 * [Lissage de signal](N3/0-Déblocage_du_niveau_3/4-Lissage_de_signal.html)
 * [Course de grenouilles](N3/0-Déblocage_du_niveau_3/5-Course_de_grenouilles.html)
 
+### Gestion de caractères
+
+* [Nombre d'amour](N3/3-gestion_caractères/3-nombre_amour.html)
+
 ### Récursivité
 
 * [Nombre encadré](N3/7-Récursivité/1-nombre_encadré.html)
