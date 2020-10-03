@@ -17,6 +17,7 @@
     * [Nombre d'amour](N3/3-gestion_caractères/a2-nombre_amour.html)
 * B – Classe de caractères
     * [Majuscules](N3/3-gestion_caractères/b1-Majuscules.html)
+    * [Lettre la plus fréquente](N3/3-gestion_caractères/b2-Lettre_la_plus_fréquente.html)
 
 ### Récursivité
 
