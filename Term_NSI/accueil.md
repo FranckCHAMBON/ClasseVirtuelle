@@ -1,6 +1,7 @@
-# Documents de cours
+# Terminale NSI
 
-## Déblocage Niveau 3
+## Pour un bon départ
+### Déblocage Niveau 3 (France-IOI)
 * [Emprunts de livres](0-Déblocage_du_niveau_3/1-emprunt_livre.html)
 * [Fléchettes](0-Déblocage_du_niveau_3/2-fléchette.html)
 * [Composition musicale](0-Déblocage_du_niveau_3/3-compo_musicale.html)
@@ -8,7 +9,7 @@
 * [Course de grenouilles](0-Déblocage_du_niveau_3/5-Course_de_grenouilles.html)
 
 ## Récursivité
-### Exercices corrigés de France-IOI
+### Exercices corrigés
 * [Nombre encadré](1-Récursivité/1-nombre_encadré.html)
 * [0 + 0 = la tête à Toto](1-Récursivité/2-la_tête_à_Toto.html)
 * [Fractale : triangle de Sierpinski](1-Récursivité/3-sierpinski.html)
