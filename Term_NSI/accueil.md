@@ -1,5 +1,10 @@
 # Documents de cours
 
+## Déblocage Niveau 3
+* [Emprunts de livres](0-Déblocage_du_niveau_3/1-emprunt_livre.html)
+* [Fléchettes](0-Déblocage_du_niveau_3/2-fléchettes.html)
+* [Composition musicale](0-Déblocage_du_niveau_3/3-compo_musicale.html)
+
 ## Récursivité
 ### Exercices corrigés de France-IOI
 * [Nombre encadré](1-Récursivité/1-nombre_encadré.html)
