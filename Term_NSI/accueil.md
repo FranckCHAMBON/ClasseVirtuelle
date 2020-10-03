@@ -12,7 +12,7 @@
 
 ### Gestion de caractères
 
-* [Nombre d'amour](N3/3-gestion_caractères/3-nombre_amour.html)
+* [Nombre d'amour](N3/3-gestion_caractères/a2-nombre_amour.html)
 
 ### Récursivité
 
