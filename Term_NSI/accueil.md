@@ -18,6 +18,25 @@
 * B – Classe de caractères
     * [Majuscules](N3/3-gestion_caractères/b1-Majuscules.html)
     * [Lettre la plus fréquente](N3/3-gestion_caractères/b2-Lettre_la_plus_fréquente.html)
+    * Titres palindromiques
+    * Validité des noms de variables
+    * Fréquences d’apparition
+
+### Opérations avancées sur les chaînes de caractères
+    
+* ...à venir...
+
+### Tableaux avancés
+
+* ...à venir...
+
+### Tris simples
+
+* ...à venir...
+
+### Structures de données élémentaires et Balayages
+
+* ...à venir...
 
 ### Récursivité
 
@@ -27,3 +46,8 @@
 * [Tours de Hanoï](1-Récursivité/N3/7-Tours_de_Hanoï.html)
 * [Entre deux](1-Récursivité/N3/7-entre_deux.html)
 * [Retournement de chaîne](N3/7-Récursivité/6-retournement_chaîne.html)
+
+
+### Efficacité temporelle
+
+* ...à venir...
