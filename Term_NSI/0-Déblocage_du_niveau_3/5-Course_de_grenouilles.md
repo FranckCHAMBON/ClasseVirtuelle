@@ -108,6 +108,3 @@ for _ in range(nb_tours):
 print(meilleure_grenouille())
 ```
 
-
-### Commentaires
-

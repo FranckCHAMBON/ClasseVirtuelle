@@ -2,7 +2,7 @@
 
 ## Déblocage Niveau 3
 * [Emprunts de livres](0-Déblocage_du_niveau_3/1-emprunt_livre.html)
-* [Fléchettes](0-Déblocage_du_niveau_3/2-fléchettes.html)
+* [Fléchettes](0-Déblocage_du_niveau_3/2-fléchette.html)
 * [Composition musicale](0-Déblocage_du_niveau_3/3-compo_musicale.html)
 * [Lissage de signal](0-Déblocage_du_niveau_3/4-Lissage_de_signal.html)
 * [Course de grenouilles](0-Déblocage_du_niveau_3/5-Course_de_grenouilles.html)
