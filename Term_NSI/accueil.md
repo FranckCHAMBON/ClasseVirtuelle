@@ -59,6 +59,7 @@ Pour le code Python des solutions :
 ### Efficacité temporelle
 
 * **Ne pas le faire encore en Python ; danger**
+
 Il faut apprendre à savoir lire l'entrée de manière très rapide.
 
 ### Bases

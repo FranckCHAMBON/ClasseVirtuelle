@@ -64,22 +64,29 @@
 </pre>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<pre data-role="codeBlock" data-info="python" class="language-python">n<span class="token punctuation">,</span> base <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> &#xE9;crire_base<span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> base<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;&#xC9;crit l&apos;entier &apos;n&apos;, dans la &apos;base&apos;.
+    &gt;&gt;&gt; &#xE9;crire_base(1234, 100)
+    2
+    12 34
+    &quot;&quot;&quot;</span>
+    chiffres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        chiffre <span class="token operator">=</span> n <span class="token operator">%</span> base
+        n <span class="token operator">=</span> n <span class="token operator">//</span> base
+        chiffres<span class="token punctuation">.</span>append<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
 
-chiffres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">while</span> n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-    chiffre <span class="token operator">=</span> n <span class="token operator">%</span> base
-    n <span class="token operator">=</span> n <span class="token operator">//</span> base
-    chiffres<span class="token punctuation">.</span>append<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> chiffres <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># un seul chiffre</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># le chiffre 0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>chiffres<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> chiffre <span class="token keyword">in</span> chiffres<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">if</span> chiffres <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># un seul chiffre</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># le chiffre 0</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>chiffres<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> chiffre <span class="token keyword">in</span> chiffres<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+n<span class="token punctuation">,</span> base <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+&#xE9;crire_base<span class="token punctuation">(</span>n<span class="token punctuation">,</span> base<span class="token punctuation">)</span>
 </pre><h3 class="mume-header" id="commentaires">Commentaires</h3>
 
 <ul>
