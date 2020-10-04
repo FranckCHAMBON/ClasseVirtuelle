@@ -64,3 +64,6 @@ for jour in range(nb_jours):
             print(0)
 ```
 
+### Commentaires
+
+* Dans `for _ in range(nb_clients):` on ne sert pas de la variable d'itération de boucle, une tradition est d'utiliser `_` comme nom de variable, dont on ne se sert pas...

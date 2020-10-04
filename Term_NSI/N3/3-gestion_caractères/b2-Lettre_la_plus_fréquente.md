@@ -66,4 +66,4 @@ main()
 
 ### Commentaires
 * On a placé la totalité du code dans une fonction `main`, c'est une bonne pratique, c'est obligatoire avec certains langages.
-* On a utilisé la comparaison avec l'ordre lexicographique, et Python propose même la double comparaison en même temps, pour un encadrement.
+* On a utilisé la comparaison avec l'ordre lexicographique, et Python propose même la double comparaison en même temps, pour tester un encadrement.

@@ -66,7 +66,7 @@ La grenouille 1 est restée 0 tour strictement en tête, la seconde 2 (les tours
 def grenouille_tête():
     """Renvoie l'indice entre 0 et nb_grenouilles-1
         de la grenouille seule en tête,
-        None sinon, si elle est pas seule.
+        None sinon, si elle n'est pas seule.
     """
     d_max = -1
     for i in range(nb_grenouilles):

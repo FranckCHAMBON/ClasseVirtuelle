@@ -96,8 +96,9 @@ def est_palindrome(ligne: str) -> bool:
     * La transformer en minuscule, avec `lower`.
     * Découper chaque mot autour des espaces, avec `split`.
     * On a une liste de mots, que l'on recolle sans espaces avec `"".join`.
-    * On teste alors si le résultat est égal à son symétrique.
-    * `truc[::-1]` renvoie une copie de la fin de truc jusqu'au début, à l'envers, par pas de $-1$.
+    * `INI` est alors égal à l'entrée, en minuscule et sans espace.
+    * On teste alors si `INI` est égal à son symétrique.
+    * `INI[::-1]` renvoie une copie de la fin de `INI` jusqu'au début, à l'envers, par pas de $-1$.
 
 ```python
 for _ in range(int(input())):

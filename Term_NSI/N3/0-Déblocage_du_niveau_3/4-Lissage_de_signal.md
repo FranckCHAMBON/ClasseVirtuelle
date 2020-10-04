@@ -81,8 +81,10 @@ def est_pas_lisse(mesures, diff_max):
     """Renvoie un booléen, vrai si deux termes consécutifs
     dans la liste 'mesures' ont un écart supérieur à 'diff_max'
     """
-    return any(abs(mesures[x] - mesures[x+1]) > diff_max \
-        for x in range(nb_mesures-1))
+    for x in range(nb_mesures - 1):
+        if abs(mesures[x] - mesures[x+1]) > diff_max:
+            return True
+    return False
     
 def lissage(t):
     """Renvoie la liste t lissée comme dans l'énoncé
@@ -107,4 +109,14 @@ print(nb_passes)
 
 ### Commentaires
 
-* La fonction `est_pas_lisse` utilise la fonction `any` qui renvoie `True` si **au moins un** `True` est présent dans la liste donnée en paramètre. Il existe de même la fonction `all` qui renvoie `True` uniquement si **tous** les éléments de la liste sont égaux à `True`.
+* Dans la fonction `est_pas_lisse`, il faut penser à faire une boucle de longueur un de moins que la liste.
+
+* Dans la fonction `lissage`, `[t[0]]` représente une liste avec le premier élément de `t`, cette liste sera augmentée, et finira concaténée avec la liste contenant un élément, le dernier de `t`, à savoir `[t[-1]]`. Le cœur de la liste est crée par compréhension, dans un style un peu fonctionnel.
+
+* Une variante fonctionnelle de la fonction `est_pas_lisse` utilise la fonction `any` qui renvoie `True` si **au moins un** `True` est présent dans la liste donnée en paramètre. Il existe de même la fonction `all` qui renvoie `True` uniquement si **tous** les éléments de la liste sont égaux à `True`.
+
+```python
+def est_pas_lisse(mesures, diff_max):
+    return any(abs(mesures[x] - mesures[x+1]) > diff_max \
+        for x in range(nb_mesures-1))
+```

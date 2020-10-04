@@ -73,11 +73,17 @@ print(nombre_amour(valeur(prénom1)), nombre_amour(valeur(prénom2)))
 * On peut réécrire la fonction `valeur` avec une seule instruction :
     * `    return sum(ord(lettre) - ord('A') for lettre in mot)`
     * La fonction `sum` renvoie la somme des valeurs de l'objet en paramètre. C'est un style de programmation plus **fonctionnel**.
+    * On peut faire encore plus fonctionnel, et éviter de faire une soustraction à chaque tour de boucle. On fait une seule soustraction à la fin.
+```python
+def valeur(mot: str) -> int:
+    return sum(map(ord, mot)) -  len(mot) * ord('A')
+```
+
 * La fonction `nombre_amour` est ici donnée en version récursive.
 * Une version très courte (mais un peu technique, et peu lisible) pour ce problème peut s'écrire :
 ```python
 def f(x):
-    return sum(ord(c) - ord('A') for c in x)
+    return sum(map(ord, x)) - len(x) * ord('A')
 
 def g(x):
     return x if x<10 else g(x//10 + x%10)

@@ -92,8 +92,10 @@ Apr&#xE8;s 13 passages: 1.292    1.64709 2.58661 2.48824 3.56043 3.59314 4.212
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un bool&#xE9;en, vrai si deux termes cons&#xE9;cutifs
     dans la liste &apos;mesures&apos; ont un &#xE9;cart sup&#xE9;rieur &#xE0; &apos;diff_max&apos;
     &quot;&quot;&quot;</span>
-    <span class="token keyword">return</span> <span class="token builtin">any</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>mesures<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-</span> mesures<span class="token punctuation">[</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> diff_max \
-        <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_mesures<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_mesures <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>mesures<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-</span> mesures<span class="token punctuation">[</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> diff_max<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">return</span> <span class="token boolean">False</span>
     
 <span class="token keyword">def</span> <span class="token function">lissage</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la liste t liss&#xE9;e comme dans l&apos;&#xE9;nonc&#xE9;
@@ -117,9 +119,20 @@ nb_passes <span class="token operator">=</span> <span class="token number">0</sp
 </pre><h3 class="mume-header" id="commentaires-1">Commentaires</h3>
 
 <ul>
-<li>La fonction <code>est_pas_lisse</code> utilise la fonction <code>any</code> qui renvoie <code>True</code> si <strong>au moins un</strong> <code>True</code> est pr&#xE9;sent dans la liste donn&#xE9;e en param&#xE8;tre. Il existe de m&#xEA;me la fonction <code>all</code> qui renvoie <code>True</code> uniquement si <strong>tous</strong> les &#xE9;l&#xE9;ments de la liste sont &#xE9;gaux &#xE0; <code>True</code>.</li>
+<li>
+<p>Dans la fonction <code>est_pas_lisse</code>, il faut penser &#xE0; faire une boucle de longueur un de moins que la liste.</p>
+</li>
+<li>
+<p>Dans la fonction <code>lissage</code>, <code>[t[0]]</code> repr&#xE9;sente une liste avec le premier &#xE9;l&#xE9;ment de <code>t</code>, cette liste sera augment&#xE9;e, et finira concat&#xE9;n&#xE9;e avec la liste contenant un &#xE9;l&#xE9;ment, le dernier de <code>t</code>, &#xE0; savoir <code>[t[-1]]</code>. Le c&#x153;ur de la liste est cr&#xE9;e par compr&#xE9;hension, dans un style un peu fonctionnel.</p>
+</li>
+<li>
+<p>Une variante fonctionnelle de la fonction <code>est_pas_lisse</code> utilise la fonction <code>any</code> qui renvoie <code>True</code> si <strong>au moins un</strong> <code>True</code> est pr&#xE9;sent dans la liste donn&#xE9;e en param&#xE8;tre. Il existe de m&#xEA;me la fonction <code>all</code> qui renvoie <code>True</code> uniquement si <strong>tous</strong> les &#xE9;l&#xE9;ments de la liste sont &#xE9;gaux &#xE0; <code>True</code>.</p>
+</li>
 </ul>
-
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">est_pas_lisse</span><span class="token punctuation">(</span>mesures<span class="token punctuation">,</span> diff_max<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">any</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>mesures<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">-</span> mesures<span class="token punctuation">[</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> diff_max \
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_mesures<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#lissage-de-signalhttpwwwfrance-ioiorgalgotaskphpidchapter656idtask2278">Lissage de signal</a>
