@@ -58,11 +58,14 @@ Pour le code Python des solutions :
 
 ### Efficacité temporelle
 
-* ...à venir...
+* **Ne pas le faire ; danger**
 
 ### Bases
 
-* ...à venir...
+* [Puissance de 2](N3/10-Bases/1-Puissance_de_2.html)
+* [Affichage binaire](N3/10-Bases/2-Affichage_binaire.html)
+* [Lecture binaire](N3/10-Bases/3-Lecture_binaire.html)
+* ...
 
 ### Exercices d'entraînement du niveau 3
 
