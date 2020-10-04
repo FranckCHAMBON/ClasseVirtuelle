@@ -67,6 +67,7 @@ Il faut apprendre à savoir lire l'entrée de manière très rapide.
 * [Affichage binaire](N3/10-Bases/2-Affichage_binaire.html)
 * [Lecture binaire](N3/10-Bases/3-Lecture_binaire.html)
 * [Lecture dans une base quelconque](N3/10-Bases/4-Lecture_base.html)
+* [Écriture dans une base quelconque](N3/10-Bases/5-Écriture_base.html)
 * ...
 
 ### Exercices d'entraînement du niveau 3
