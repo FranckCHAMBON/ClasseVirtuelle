@@ -28,7 +28,7 @@ Pour le code Python des solutions :
     * [Lettre la plus fréquente](N3/3-gestion_caractères/b2-Lettre_la_plus_fréquente.html)
     * [Titres palindromiques](N3/3-gestion_caractères/b3-Titres_palindromiques.html)
     * [Validité des noms de variables](N3/3-gestion_caractères/b4-Validité_des_noms_de_variables.html)
-    * Fréquences d’apparition
+    * [Fréquences d’apparition](N3/3-gestion_caractères/b5-Fréquences_d_apparition.html)
 
 ### Opérations avancées sur les chaînes de caractères
     
