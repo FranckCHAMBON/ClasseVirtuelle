@@ -58,13 +58,15 @@ Pour le code Python des solutions :
 
 ### Efficacité temporelle
 
-* **Ne pas le faire ; danger**
+* **Ne pas le faire encore en Python ; danger**
+Il faut apprendre à savoir lire l'entrée de manière très rapide.
 
 ### Bases
 
 * [Puissance de 2](N3/10-Bases/1-Puissance_de_2.html)
 * [Affichage binaire](N3/10-Bases/2-Affichage_binaire.html)
 * [Lecture binaire](N3/10-Bases/3-Lecture_binaire.html)
+* [Lecture dans une base quelconque](N3/10-Bases/4-Lecture_base.html)
 * ...
 
 ### Exercices d'entraînement du niveau 3
