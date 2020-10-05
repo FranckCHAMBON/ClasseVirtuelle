@@ -51,8 +51,8 @@ Pour le code Python des solutions :
 * [Nombre encadré](N3/7-Récursivité/1-nombre_encadré.html)
 * [0 + 0 = la tête à Toto](N3/7-Récursivité/2-la_tête_à_Toto.html)
 * [Fractale : triangle de Sierpinski](N3/7-Récursivité/3-sierpinski.html)
-* [Tours de Hanoï](1-Récursivité/N3/4-Tours_de_Hanoï.html)
-* [Entre deux](1-Récursivité/N3/5-entre_deux.html)
+* [Tours de Hanoï](7-Récursivité/N3/4-Tours_de_Hanoï.html)
+* [Entre deux](7-Récursivité/N3/5-entre_deux.html)
 * [Retournement de chaîne](N3/7-Récursivité/6-retournement_chaîne.html)
 
 
