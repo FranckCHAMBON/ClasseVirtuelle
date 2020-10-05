@@ -69,6 +69,7 @@ Il faut apprendre à savoir lire l'entrée de manière très rapide.
 * [Lecture binaire](N3/10-Bases/3-Lecture_binaire.html)
 * [Lecture dans une base quelconque](N3/10-Bases/4-Lecture_base.html)
 * [Écriture dans une base quelconque](N3/10-Bases/5-Écriture_base.html)
+* [Table de multiplication binaire](N3/10-Bases/6-Table_de_multiplication_binaire.html)
 * ...
 
 ### Exercices d'entraînement du niveau 3
