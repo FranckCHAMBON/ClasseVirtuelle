@@ -18,7 +18,7 @@ sortie :
 
 ### Commentaires
 
-26 vaut en effet 64, qui est inférieur à 73. La puissance de 2 suivante, 27 vaut 128 et est donc supérieure à 73.
+$2^6$ vaut en effet $64$, qui est inférieur à $73$. La puissance de $2$ suivante, $2^7$ vaut $128$ et est donc supérieure à $73$.
 
 ## Solution
 
@@ -31,4 +31,9 @@ def main():
     puissance >>= 1
     print(puissance)
 main()
-``` 
+```
+
+### Commentaires
+
+* On part de $1 = 2^0$, et on boucle tant que la puissance est inférieure ou égale à $n$. En sortie de boucle, on a `puissance > n`.
+* On revient une étape en arrière, et `puissance` est le plus grand possible avec `puissance <= n`.
