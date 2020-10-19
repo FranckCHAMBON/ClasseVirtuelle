@@ -112,3 +112,74 @@ temp_max = int(input())
 affiche(temp_min, temp_max)
 ```
 
+## Socles pour statues
+
+### Sujet
+
+ Un socle est ainsi constitué d'étages, chaque étage ayant une hauteur égale à une unité et une base carrée. Le côté des carrés diminue de une unité à chaque étage.
+
+Votre programme doit lire deux entiers, représentant respectivement la largeur du socle au niveau du sol et la largeur du socle au niveau de la face supérieure du socle. Il doit ensuite calculer et afficher le volume du socle.
+
+### Exemple
+
+entrée :
+
+    7
+    3
+
+sortie :
+
+    135
+
+### Solution officielle
+
+```python
+largeurBas = int(input())
+largeurHaut = int(input())
+ 
+volume = 0
+largeur = largeurHaut
+for loop in range(largeurBas - largeurHaut + 1):
+   volume = volume + largeur * largeur
+   largeur = largeur + 1
+ 
+print(volume)
+```
+
+### solution alternative
+
+1. Avec une boucle `while`
+
+```python
+largeur_bas = int(input())
+largeur_haut = int(input())
+
+volume = 0
+largeur = largeur_bas
+while largeur <= largeur_haut:
+    volume_étage = largeur * largeur * 1
+    volume += volume_étage
+    largeur += 1
+
+print(volume)
+```
+
+2. Avec une fonction récursive
+
+```python
+def volume_socle(largeur_bas: int, largeur_haut: int) -> int:
+    """Renvoie le volume d'un socle avec des étages carrés.
+    >>> volume_socle(7, 3)
+    135
+    """
+    if largeur_bas > largeur_haut:
+        return 0
+    else:
+        volume_base = largeur_bas * largeur_bas * 1
+        return  volume_base + volume_socle(largeur_bas + 1, largeur_haut)
+
+largeur_bas = int(input())
+largeur_haut = int(input())
+print(volume_socle(largeur_bas, largeur_haut))
+```
+
