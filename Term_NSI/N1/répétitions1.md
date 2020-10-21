@@ -1,4 +1,5 @@
 # [Répétitions d'instructions](http://www.france-ioi.org/algo/chapter.php?idChapter=643)
+
 > Correction alternative de certains problèmes
 
 ## Punition

@@ -1,4 +1,5 @@
 # [Affichage de texte, suite d'instructions](http://www.france-ioi.org/algo/chapter.php?idChapter=642)
+
 > Correction alternative de certains problèmes
 
 ## Plan de la montagne

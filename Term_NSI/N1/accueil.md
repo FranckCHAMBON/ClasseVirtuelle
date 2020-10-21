@@ -11,5 +11,5 @@ On propose des variantes de code, souvent en présentant un style fonctionnel, p
 5. [Tests et conditions](tests.html)
 6. [Structures avancées](structures.html)
 7. [Conditions avancées, opérateurs booléens](conditions.html)
-8. [Répétitions](répétitions2.html)
+8. [Répétitions conditionnées](répétitions2.html)
 
