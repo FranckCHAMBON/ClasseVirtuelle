@@ -2,7 +2,7 @@
 
 On propose ici un retour rapide sur le niveau 1 de FranceIOI, pour les élèves de terminale NSI.
 
-On propose des variantes de code.
+On propose des variantes de code, souvent en présentant un style fonctionnel, parfois avec de la récursivité, ou bien des méthodes propres à *Python*, ou encore des méthodes générales.
 
 1. [Affichage de texte, suite d'instructions](affichage.html)
 2. [Répétitions d'instructions](répétitions1.html)
