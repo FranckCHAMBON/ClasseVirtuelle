@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>lecture</title>
+      <title>9-conversions</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,182 +23,63 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="lecture-de-lentr%C3%A9ehttpwwwfrance-ioiorgalgochapterphpidchapter843"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=843">Lecture de l&apos;entr&#xE9;e</a></h1>
+      <h1 class="mume-header" id="convertisseur-dunit%C3%A9s">Convertisseur d&apos;unit&#xE9;s</h1>
 
-<blockquote>
-<p>Correction alternative de certains probl&#xE8;mes</p>
-</blockquote>
-<h2 class="mume-header" id="r%C3%A9coltes">R&#xE9;coltes</h2>
+<h2 class="mume-header" id="sujet">Sujet</h2>
 
-<h3 class="mume-header" id="sujet">Sujet</h3>
-
-<p>Votre programme doit lire un entier, qui repr&#xE9;sente la longueur du c&#xF4;t&#xE9; d&apos;un champ carr&#xE9; en m&#xE8;tres. Il doit ensuite afficher la masse que l&apos;on pourra r&#xE9;colter de ce champ si l&apos;on suppose que la production sera de 23&#x202F;kg par m&#xE8;tre carr&#xE9;.</p>
-<h3 class="mume-header" id="exemple">Exemple</h3>
-
-<p>entr&#xE9;e :</p>
-<pre class="language-text">10
-</pre>
-<p>sortie :</p>
-<pre class="language-text">2300
-</pre>
-<h3 class="mume-header" id="solution-officielle">Solution officielle</h3>
-
-<pre data-role="codeBlock" data-info="python" class="language-python">longueur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>longueur <span class="token operator">*</span> longueur <span class="token operator">*</span> <span class="token number">23</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
-
-<p>Ici, on propose une solution plus longue, avec des variables explicites, et des commentaires pour les unit&#xE9;s.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">c&#xF4;t&#xE9; <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># m</span>
-aire_du_carr&#xE9; <span class="token operator">=</span> c&#xF4;t&#xE9; <span class="token operator">*</span> c&#xF4;t&#xE9; <span class="token comment"># m&#xB2;</span>
-rendement <span class="token operator">=</span> <span class="token number">23</span> <span class="token comment"># kg / m&#xB2;</span>
-production <span class="token operator">=</span> rendement <span class="token operator">*</span> aire_du_carr&#xE9; <span class="token comment"># kg</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>production<span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="graduation-de-thermom%C3%A8tres">Graduation de thermom&#xE8;tres</h2>
-
-<h3 class="mume-header" id="sujet-1">Sujet</h3>
-
-<p>&#xC9;tant donn&#xE9;es deux temp&#xE9;ratures enti&#xE8;res <code>tempMin</code> et <code>tempMax</code>, votre programme doit afficher toutes les temp&#xE9;ratures comprises entre les deux, bornes incluses.</p>
-<h3 class="mume-header" id="exemple-1">Exemple</h3>
+<p>&#xC9;crivez un programme qui convertit des valeurs du syst&#xE8;me m&#xE9;trique en valeurs du syst&#xE8;me de mesure am&#xE9;ricain. On fournit des mesures &#xE0; votre programme, en m&#xE8;tres, grammes ou degr&#xE9;s Celsius et vous devez les convertir respectivement en pieds, livres et degr&#xE9;s Fahrenheit.</p>
+<p>Voici les r&#xE8;gles de conversion &#xE0; utiliser :</p>
+<ul>
+<li>1 pied = 0,3048 m&#xE8;tres ;</li>
+<li>1 gramme = 0,002205 livres ;</li>
+<li>temp&#xE9;rature en degr&#xE9;s Fahrenheit = 32 + 1,8 &#xD7; temp&#xE9;rature en degr&#xE9;s Celsius.</li>
+</ul>
+<p>On vous donne sur la premi&#xE8;re ligne le nombre de conversions &#xE0; effectuer, puis sur les lignes suivantes la valeur &#xE0; convertir, et son unit&#xE9; : <code>m</code>, <code>g</code> ou <code>c</code> (avec une espace entre les deux).</p>
+<p>Affichez en sortie les valeurs converties, suivies d&apos;une espace et de leur unit&#xE9; : <code>p</code>, <code>l</code> ou <code>f</code>.</p>
+<p>Il n&apos;est en fait pas judicieux d&apos;&#xE9;crire des fonctions pour r&#xE9;soudre cet exercice : le mieux est de d&#xE9;finir des constantes. Vous pouvez aussi profiter de cet exercice pour exp&#xE9;rimenter l&apos;instruction &#xAB; selon &#xBB;, switch dans certains langages.</p>
+<h2 class="mume-header" id="exemple">Exemple</h2>
 
 <p>entr&#xE9;e :</p>
-<pre class="language-text">9
-14
+<pre class="language-text">4
+12.3 m
+1245.243 g
+37.2 c
+23 g
 </pre>
 <p>sortie :</p>
-<pre class="language-text">9
-10
-11
-12
-13
-14
+<pre class="language-text">40.354331 p
+2.745761 l
+98.960000 f
+0.050715 l
 </pre>
-<h3 class="mume-header" id="solution-officielle-1">Solution officielle</h3>
+<h2 class="mume-header" id="solution">Solution</h2>
 
-<pre data-role="codeBlock" data-info="python" class="language-python">tempMin <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-tempMax <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-temperature <span class="token operator">=</span> tempMin
-<span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>tempMax <span class="token operator">-</span> tempMin <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span><span class="token punctuation">(</span>temperature<span class="token punctuation">)</span>
-   temperature <span class="token operator">=</span> temperature <span class="token operator">+</span> <span class="token number">1</span>
-</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
+<p>On va d&#xE9;finir trois fonctions de conversions, et utiliser un dictionnaire pour appeler la bonne fonction.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> m&#xE8;tres_vers_pieds<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">/</span><span class="token number">0.3048</span><span class="token punctuation">,</span> <span class="token string">&quot;p&quot;</span><span class="token punctuation">)</span>
 
-<p>Au lieu de calculer le nombre de tours de boucle, on peut utiliser une boucle <code>while</code>.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">temp_min <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-temp_max <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-temp&#xE9;rature <span class="token operator">=</span> temp_min
-<span class="token keyword">while</span> temp&#xE9;rature <span class="token operator">&lt;=</span> temp_max<span class="token punctuation">:</span>
-   <span class="token keyword">print</span><span class="token punctuation">(</span>temp&#xE9;rature<span class="token punctuation">)</span>
-   temp&#xE9;rature <span class="token operator">+=</span> <span class="token number">1</span>
-</pre><p>On peut aussi utiliser un <code>range</code> &#xE0; deux param&#xE8;tres.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">temp_min <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-temp_max <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> temp&#xE9;rature <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>temp_min<span class="token punctuation">,</span> temp_max<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-   <span class="token keyword">print</span><span class="token punctuation">(</span>temp&#xE9;rature<span class="token punctuation">)</span>
-</pre><p>On peut aussi &#xE9;crire une version r&#xE9;cursive.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">affiche</span><span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> fin<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Affiche les nombres de `d&#xE9;but` &#xE0; `fin` inclus.
-    &gt;&gt;&gt; affiche(3, 5)
-    3
-    4
-    5
-    &quot;&quot;&quot;</span>
-    <span class="token keyword">assert</span> d&#xE9;but <span class="token operator">&lt;=</span> fin
-    <span class="token keyword">print</span><span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> d&#xE9;but <span class="token operator">!=</span> fin<span class="token punctuation">:</span>
-        affiche<span class="token punctuation">(</span>d&#xE9;but<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> fin<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">grammes_vers_livres</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">*</span><span class="token number">0.002205</span><span class="token punctuation">,</span> <span class="token string">&quot;l&quot;</span><span class="token punctuation">)</span>
 
-temp_min <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-temp_max <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-affiche<span class="token punctuation">(</span>temp_min<span class="token punctuation">,</span> temp_max<span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="socles-pour-statues">Socles pour statues</h2>
+<span class="token keyword">def</span> <span class="token function">celsius_vers_fahrenheit</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">32</span> <span class="token operator">+</span> <span class="token number">1.8</span><span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token string">&quot;f&quot;</span><span class="token punctuation">)</span>
 
-<h3 class="mume-header" id="sujet-2">Sujet</h3>
+conversions <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&apos;m&apos;</span><span class="token punctuation">:</span>m&#xE8;tres_vers_pieds<span class="token punctuation">,</span> <span class="token string">&apos;g&apos;</span><span class="token punctuation">:</span>grammes_vers_livres<span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">:</span>celsius_vers_fahrenheit<span class="token punctuation">}</span>
 
-<p>Un socle est ainsi constitu&#xE9; d&apos;&#xE9;tages, chaque &#xE9;tage ayant une hauteur &#xE9;gale &#xE0; une unit&#xE9; et une base carr&#xE9;e. Le c&#xF4;t&#xE9; des carr&#xE9;s diminue de une unit&#xE9; &#xE0; chaque &#xE9;tage.</p>
-<p>Votre programme doit lire deux entiers, repr&#xE9;sentant respectivement la largeur du socle au niveau du sol et la largeur du socle au niveau de la face sup&#xE9;rieure du socle. Il doit ensuite calculer et afficher le volume du socle.</p>
-<h3 class="mume-header" id="exemple-2">Exemple</h3>
-
-<p>entr&#xE9;e :</p>
-<pre class="language-text">7
-3
-</pre>
-<p>sortie :</p>
-<pre class="language-text">135
-</pre>
-<h3 class="mume-header" id="solution-officielle-2">Solution officielle</h3>
-
-<pre data-role="codeBlock" data-info="python" class="language-python">largeurBas <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-largeurHaut <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
- 
-volume <span class="token operator">=</span> <span class="token number">0</span>
-largeur <span class="token operator">=</span> largeurHaut
-<span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>largeurBas <span class="token operator">-</span> largeurHaut <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-   volume <span class="token operator">=</span> volume <span class="token operator">+</span> largeur <span class="token operator">*</span> largeur
-   largeur <span class="token operator">=</span> largeur <span class="token operator">+</span> <span class="token number">1</span>
- 
-<span class="token keyword">print</span><span class="token punctuation">(</span>volume<span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-2">solution alternative</h3>
-
-<ol>
-<li>Avec une boucle <code>while</code></li>
-</ol>
-<pre data-role="codeBlock" data-info="python" class="language-python">largeur_bas <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-largeur_haut <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-volume <span class="token operator">=</span> <span class="token number">0</span>
-largeur <span class="token operator">=</span> largeur_bas
-<span class="token keyword">while</span> largeur <span class="token operator">&lt;=</span> largeur_haut<span class="token punctuation">:</span>
-    volume_&#xE9;tage <span class="token operator">=</span> largeur <span class="token operator">*</span> largeur <span class="token operator">*</span> <span class="token number">1</span>
-    volume <span class="token operator">+=</span> volume_&#xE9;tage
-    largeur <span class="token operator">-=</span> <span class="token number">1</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>volume<span class="token punctuation">)</span>
-</pre><ol start="2">
-<li>Avec une fonction r&#xE9;cursive</li>
-</ol>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">volume_socle</span><span class="token punctuation">(</span>largeur_bas<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> largeur_haut<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le volume d&apos;un socle avec des &#xE9;tages carr&#xE9;s.
-    &gt;&gt;&gt; volume_socle(7, 3)
-    135
-    &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> largeur_bas <span class="token operator">&lt;</span> largeur_haut<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">0</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        volume_base <span class="token operator">=</span> largeur_bas <span class="token operator">*</span> largeur_bas <span class="token operator">*</span> <span class="token number">1</span>
-        <span class="token keyword">return</span>  volume_base <span class="token operator">+</span> volume_socle<span class="token punctuation">(</span>largeur_bas <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> largeur_haut<span class="token punctuation">)</span>
-
-largeur_bas <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-largeur_haut <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>volume_socle<span class="token punctuation">(</span>largeur_bas<span class="token punctuation">,</span> largeur_haut<span class="token punctuation">)</span><span class="token punctuation">)</span>
+nb_conversions <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_conversions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    nombre_en_cha&#xEE;ne<span class="token punctuation">,</span> unit&#xE9;_origine <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    x <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>nombre_en_cha&#xEE;ne<span class="token punctuation">)</span>
+    y<span class="token punctuation">,</span> unit&#xE9;_arriv&#xE9;e <span class="token operator">=</span> conversions<span class="token punctuation">[</span>unit&#xE9;_origine<span class="token punctuation">]</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> unit&#xE9;_arriv&#xE9;e<span class="token punctuation">)</span>
 </pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#lecture-de-lentr%C3%A9ehttpwwwfrance-ioiorgalgochapterphpidchapter843">Lecture de l&apos;entr&#xE9;e</a>
-<ul>
-<li><a href="#r%C3%A9coltes">R&#xE9;coltes</a>
+<li><a href="#convertisseur-dunit%C3%A9s">Convertisseur d&apos;unit&#xE9;s</a>
 <ul>
 <li><a href="#sujet">Sujet</a></li>
 <li><a href="#exemple">Exemple</a></li>
-<li><a href="#solution-officielle">Solution officielle</a></li>
-<li><a href="#solution-alternative">Solution alternative</a></li>
-</ul>
-</li>
-<li><a href="#graduation-de-thermom%C3%A8tres">Graduation de thermom&#xE8;tres</a>
-<ul>
-<li><a href="#sujet-1">Sujet</a></li>
-<li><a href="#exemple-1">Exemple</a></li>
-<li><a href="#solution-officielle-1">Solution officielle</a></li>
-<li><a href="#solution-alternative-1">Solution alternative</a></li>
-</ul>
-</li>
-<li><a href="#socles-pour-statues">Socles pour statues</a>
-<ul>
-<li><a href="#sujet-2">Sujet</a></li>
-<li><a href="#exemple-2">Exemple</a></li>
-<li><a href="#solution-officielle-2">Solution officielle</a></li>
-<li><a href="#solution-alternative-2">solution alternative</a></li>
-</ul>
-</li>
+<li><a href="#solution">Solution</a></li>
 </ul>
 </li>
 </ul>

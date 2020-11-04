@@ -24,7 +24,7 @@ print("Je dois respecter le Grand Sorcier.\n" * 135, end="")
 
 La concaténation des chaînes de caractères permet d'avoir : `"Bon" + "jour" == "Bonjour"`.
 
-De même `"bon" + "bon == "bonbon" == "bon" * 2`.
+De même `"bon" + "bon" == "bonbon" == "bon" * 2`.
 
 Nous avons créé notre sortie avec la phrase à écrire, terminée par un saut de ligne `\n`, et concaténée 135 fois avec elle-même.
 

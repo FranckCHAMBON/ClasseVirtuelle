@@ -142,18 +142,7 @@ nb_maisons_suspectes = sum(1 for (x, y) in coord_maisons if (x_min <= x <= x_max
 print(nb_maisons_suspectes)
 ```
 
-```python
-x_min = int(input())
-x_max = int(input())
-y_min = int(input())
-y_max = int(input())
-nb_maisons = int(input())
-coord_maisons = iter((int(input()), int(input())) for _ in range(nb_maisons))
-nb_maisons_suspectes = sum(1 for (x, y) in coord_maisons if (x_min <= x <= x_max) and (y_min <= y <=y_max))
-print(nb_maisons_suspectes)
-```
-
-Et une variante avec un style encore plus fonctionnel.
+Et une variante avec un style encore plus fonctionnel, mais non recommandée.
 
 ```python
 est_suspecte = lambda coord: (x_min <= coord[0] <= x_max) and (y_min <= coord[1] <=y_max)
@@ -287,7 +276,7 @@ $$\text{non}(A \text{ ou } B) = \text{non}(A)\text{ et }\text{non}(B)$$
 * On utilise l'opérateur ternaire, pour factoriser le `print`.
 
 ```python
-def intersecte(début_1, fin_1, début_2, fin_2):
+def intersecte(début_1: int, fin_1: int, début_2: int, fin_2: int) -> bool:
     """Renvoie un booléen.
     Les deux intervalles s'intersectent-ils ?
     Remarque, ici les bords ne comptent pas !
@@ -358,7 +347,7 @@ for loop in range(nbPaires):
 ### Solution alternative
 
 ```python
-def intersecte(début_1, fin_1, début_2, fin_2):
+def intersecte(début_1: int, fin_1: int, début_2: int, fin_2: int) -> bool:
     """Renvoie un booléen.
     Les deux intervalles s'intersectent-ils ?
     Remarque, ici les bords ne comptent pas !

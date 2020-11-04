@@ -159,7 +159,7 @@ largeur = largeur_bas
 while largeur <= largeur_haut:
     volume_étage = largeur * largeur * 1
     volume += volume_étage
-    largeur += 1
+    largeur -= 1
 
 print(volume)
 ```
@@ -172,11 +172,11 @@ def volume_socle(largeur_bas: int, largeur_haut: int) -> int:
     >>> volume_socle(7, 3)
     135
     """
-    if largeur_bas > largeur_haut:
+    if largeur_bas < largeur_haut:
         return 0
     else:
         volume_base = largeur_bas * largeur_bas * 1
-        return  volume_base + volume_socle(largeur_bas + 1, largeur_haut)
+        return  volume_base + volume_socle(largeur_bas - 1, largeur_haut)
 
 largeur_bas = int(input())
 largeur_haut = int(input())
