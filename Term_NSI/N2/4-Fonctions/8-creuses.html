@@ -303,12 +303,19 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>On fabrique ici des fonctions qui renvoient du texte &#xE0; afficher, et non des fonctions qui affichent directement le texte. C&apos;est une meilleure pratique. On peut vouloir faire autre chose de ce texte plut&#xF4;t que de l&apos;afficher...</p>
 <p>On utilise les possibilit&#xE9;s de concat&#xE9;nation et multiplication avec les cha&#xEE;nes de caract&#xE8;res.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">ligne</span><span class="token punctuation">(</span>motif<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> longueur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">ligne_pleine</span><span class="token punctuation">(</span>motif<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> longueur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie une cha&#xEE;ne avec un motif r&#xE9;p&#xE9;t&#xE9;.
     &gt;&gt;&gt; ligne(&quot;X&quot;, 15)
     XXXXXXXXXXXXXXX
     &quot;&quot;&quot;</span>
-    <span class="token keyword">return</span> motif <span class="token operator">*</span> longueur
+    <span class="token keyword">return</span> motif <span class="token operator">*</span> longueur <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">ligne_creuse</span><span class="token punctuation">(</span>motif<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> longueur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie une cha&#xEE;ne avec un motif encadrant de l&apos;espace.
+    &gt;&gt;&gt; ligne(&quot;X&quot;, 15)
+    X             X
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> motif <span class="token operator">+</span> <span class="token string">&quot; &quot;</span><span class="token operator">*</span> <span class="token punctuation">(</span>longueur<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> motif <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span>
 
 <span class="token keyword">def</span> <span class="token function">rectangle</span><span class="token punctuation">(</span>motif<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> largeur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un rectangle creux entour&#xE9; de motif.
@@ -319,13 +326,13 @@ pre[data-line] .line-highlight[data-end]:after {
     #          #
     ############
     &quot;&quot;&quot;</span>
-    dessin <span class="token operator">=</span> motif <span class="token operator">*</span> largeur <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token comment"># premi&#xE8;re ligne</span>
+    dessin <span class="token operator">=</span> ligne_pleine<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> largeur<span class="token punctuation">)</span> <span class="token comment"># premi&#xE8;re ligne</span>
     <span class="token keyword">if</span> hauteur <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
         <span class="token keyword">if</span> largeur <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
-            dessin <span class="token operator">+=</span> <span class="token punctuation">(</span>motif <span class="token operator">+</span> <span class="token string">&quot; &quot;</span><span class="token operator">*</span><span class="token punctuation">(</span>largeur<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> motif <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>hauteur <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+            dessin <span class="token operator">+=</span> ligne_creuse<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> largeur<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>hauteur <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             dessin <span class="token operator">+=</span> <span class="token punctuation">(</span>motif <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>hauteur <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        dessin <span class="token operator">+=</span> motif <span class="token operator">*</span> largeur <span class="token comment"># derni&#xE8;re ligne</span>
+        dessin <span class="token operator">+=</span> ligne_pleine<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> largeur<span class="token punctuation">)</span> <span class="token comment"># derni&#xE8;re ligne</span>
     <span class="token keyword">return</span> dessin
 
 <span class="token keyword">def</span> <span class="token function">triangle</span><span class="token punctuation">(</span>motif<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> c&#xF4;t&#xE9;<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
@@ -338,26 +345,23 @@ pre[data-line] .line-highlight[data-end]:after {
     @   @
     @@@@@@
     &quot;&quot;&quot;</span>
-    dessin <span class="token operator">=</span> motif <span class="token operator">+</span><span class="token string">&quot;\n&quot;</span> <span class="token comment"># premi&#xE8;re ligne</span>
+    dessin <span class="token operator">=</span> ligne_pleine<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># premi&#xE8;re ligne</span>
     <span class="token keyword">if</span> c&#xF4;t&#xE9; <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>c&#xF4;t&#xE9; <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            dessin <span class="token operator">+=</span> motif <span class="token operator">+</span> <span class="token string">&quot; &quot;</span><span class="token operator">*</span>i <span class="token operator">+</span> motif <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span>
-        dessin <span class="token operator">+=</span> motif <span class="token operator">*</span> c&#xF4;t&#xE9; <span class="token comment"># derni&#xE8;re ligne</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> c&#xF4;t&#xE9;<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dessin <span class="token operator">+=</span> ligne_creuse<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
+        dessin <span class="token operator">+=</span> ligne_pleine<span class="token punctuation">(</span>motif<span class="token punctuation">,</span> c&#xF4;t&#xE9;<span class="token punctuation">)</span> <span class="token comment"># derni&#xE8;re ligne</span>
     <span class="token keyword">return</span> dessin
 
 longueur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>ligne<span class="token punctuation">(</span><span class="token string">&quot;X&quot;</span><span class="token punctuation">,</span> longueur<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ligne_pleine<span class="token punctuation">(</span><span class="token string">&quot;X&quot;</span><span class="token punctuation">,</span> longueur<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 hauteur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 largeur <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>rectangle<span class="token punctuation">(</span><span class="token string">&quot;#&quot;</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">,</span> largeur<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
 c&#xF4;t&#xE9; <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>triangle<span class="token punctuation">(</span><span class="token string">&quot;@&quot;</span><span class="token punctuation">,</span> c&#xF4;t&#xE9;<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>triangle<span class="token punctuation">(</span><span class="token string">&quot;@&quot;</span><span class="token punctuation">,</span> c&#xF4;t&#xE9;<span class="token punctuation">)</span><span class="token punctuation">)</span>```
+
 </pre>
       </div>
       

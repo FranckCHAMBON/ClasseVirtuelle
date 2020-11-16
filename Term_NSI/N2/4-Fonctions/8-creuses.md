@@ -48,12 +48,19 @@ On fabrique ici des fonctions qui renvoient du texte à afficher, et non des fon
 On utilise les possibilités de concaténation et multiplication avec les chaînes de caractères.
 
 ```python
-def ligne(motif: str, longueur: int) -> str:
+def ligne_pleine(motif: str, longueur: int) -> str:
     """Renvoie une chaîne avec un motif répété.
     >>> ligne("X", 15)
     XXXXXXXXXXXXXXX
     """
-    return motif * longueur
+    return motif * longueur + "\n"
+
+def ligne_creuse(motif: str, longueur: int) -> str:
+    """Renvoie une chaîne avec un motif encadrant de l'espace.
+    >>> ligne("X", 15)
+    X             X
+    """
+    return motif + " "* (longueur-2) + motif + "\n"
 
 def rectangle(motif: str, hauteur: int, largeur: int) -> str:
     """Renvoie un rectangle creux entouré de motif.
@@ -64,13 +71,13 @@ def rectangle(motif: str, hauteur: int, largeur: int) -> str:
     #          #
     ############
     """
-    dessin = motif * largeur + "\n" # première ligne
+    dessin = ligne_pleine(motif, largeur) # première ligne
     if hauteur > 1:
         if largeur > 1:
-            dessin += (motif + " "*(largeur-2) + motif + "\n") * (hauteur - 2)
+            dessin += ligne_creuse(motif, largeur) * (hauteur - 2)
         else:
             dessin += (motif + "\n") * (hauteur - 2)
-        dessin += motif * largeur # dernière ligne
+        dessin += ligne_pleine(motif, largeur) # dernière ligne
     return dessin
 
 def triangle(motif: str, côté: int) -> str:
@@ -83,25 +90,20 @@ def triangle(motif: str, côté: int) -> str:
     @   @
     @@@@@@
     """
-    dessin = motif +"\n" # première ligne
+    dessin = ligne_pleine(motif, 1) # première ligne
     if côté > 1:
-        for i in range(côté - 2):
-            dessin += motif + " "*i + motif + "\n"
-        dessin += motif * côté # dernière ligne
+        for i in range(2, côté):
+            dessin += ligne_creuse(motif, i)
+        dessin += ligne_pleine(motif, côté) # dernière ligne
     return dessin
 
 longueur = int(input())
-print(ligne("X", longueur))
-
-print()
+print(ligne_pleine("X", longueur))
 
 hauteur = int(input())
 largeur = int(input())
 print(rectangle("#", hauteur, largeur))
 
-print()
-
 côté = int(input())
-print(triangle("@", côté))
-```
+print(triangle("@", côté))```
 
