@@ -70,7 +70,7 @@ def rectangle(motif: str, hauteur: int, largeur: int) -> str:
             dessin += (motif + " "*(largeur-2) + motif + "\n") * (hauteur - 2)
         else:
             dessin += (motif + "\n") * (hauteur - 2)
-    dessin += motif * largeur # dernière ligne
+        dessin += motif * largeur # dernière ligne
     return dessin
 
 def triangle(motif: str, côté: int) -> str:
