@@ -6,7 +6,7 @@ Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-    * [Salle d'attente](https://classevirtuelle.cned.fr/professor/09cf08a5-24ff-462b-afee-faa32a60786f).
+    * [Salle d'attente](https://lycee.cned.fr/cv/258054/203).
 
 Il y a des règles et des possibilités :
 + Vous devez être connecté au CNED pour accéder à la classe virtuelle.
