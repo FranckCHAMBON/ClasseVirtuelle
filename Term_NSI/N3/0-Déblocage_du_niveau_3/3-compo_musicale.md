@@ -52,7 +52,7 @@ def élimine(ligne, pos):
     ligne.pop(pos)
     ligne.pop(pos)
 
-def néttoie(ligne):
+def nettoie(ligne):
     """Répète l'élimination des doublons tant qu'il y en a."""
     pos = doublon(ligne)
     while pos is not None:
@@ -68,20 +68,20 @@ print("".join(ligne))
 
 * Pour `doublon`, il est classique d'utiliser `None` pour désigner une absence de réponse favorable.
 * Pour `élimine`, on enlève l'élément en position `pos`, deux fois, mais ce ne sont pas les même. Une fois l'un enlevé, le suivant devient celui en position `pos`...
-* Pour `néttoie`, on répète `élimine` tant que `pos` est différent de `None`.
-    * On propose ci-dessous deux variantes pour `néttoie`.
+* Pour `nettoie`, on répète `élimine` tant que `pos` est différent de `None`.
+    * On propose ci-dessous deux variantes pour `nettoie`.
         * la première est une version récursive, dont la compréhension est au programme de terminale.
         * la seconde utilise une nouveauté de Python, et est totalement hors-programme.
 
 ```python
-def néttoie(ligne):
+def nettoie(ligne):
     "Version récursive"
     pos = doublon(ligne)
     if pos is not None:
         élimine(ligne, pos)
-        néttoie(ligne)
+        nettoie(ligne)
 
-def néttoie(ligne):
+def nettoie(ligne):
     "Version avec l'opérateur morse"
     while (pos := doublon(ligne)) is not None:
         élimine(ligne, pos)

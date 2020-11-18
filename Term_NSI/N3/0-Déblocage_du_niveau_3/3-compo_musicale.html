@@ -67,7 +67,7 @@ b
     ligne<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>pos<span class="token punctuation">)</span>
     ligne<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>pos<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">nettoie</span><span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;R&#xE9;p&#xE8;te l&apos;&#xE9;limination des doublons tant qu&apos;il y en a.&quot;&quot;&quot;</span>
     pos <span class="token operator">=</span> doublon<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span>
     <span class="token keyword">while</span> pos <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
@@ -82,9 +82,9 @@ n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punc
 <ul>
 <li>Pour <code>doublon</code>, il est classique d&apos;utiliser <code>None</code> pour d&#xE9;signer une absence de r&#xE9;ponse favorable.</li>
 <li>Pour <code>&#xE9;limine</code>, on enl&#xE8;ve l&apos;&#xE9;l&#xE9;ment en position <code>pos</code>, deux fois, mais ce ne sont pas les m&#xEA;me. Une fois l&apos;un enlev&#xE9;, le suivant devient celui en position <code>pos</code>...</li>
-<li>Pour <code>n&#xE9;ttoie</code>, on r&#xE9;p&#xE8;te <code>&#xE9;limine</code> tant que <code>pos</code> est diff&#xE9;rent de <code>None</code>.
+<li>Pour <code>nettoie</code>, on r&#xE9;p&#xE8;te <code>&#xE9;limine</code> tant que <code>pos</code> est diff&#xE9;rent de <code>None</code>.
 <ul>
-<li>On propose ci-dessous deux variantes pour <code>n&#xE9;ttoie</code>.
+<li>On propose ci-dessous deux variantes pour <code>nettoie</code>.
 <ul>
 <li>la premi&#xE8;re est une version r&#xE9;cursive, dont la compr&#xE9;hension est au programme de terminale.</li>
 <li>la seconde utilise une nouveaut&#xE9; de Python, et est totalement hors-programme.</li>
@@ -93,14 +93,14 @@ n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punc
 </ul>
 </li>
 </ul>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nettoie</span><span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token string">&quot;Version r&#xE9;cursive&quot;</span>
     pos <span class="token operator">=</span> doublon<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span>
     <span class="token keyword">if</span> pos <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
         &#xE9;limine<span class="token punctuation">(</span>ligne<span class="token punctuation">,</span> pos<span class="token punctuation">)</span>
-        n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span>
+        nettoie<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> n&#xE9;ttoie<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">nettoie</span><span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token string">&quot;Version avec l&apos;op&#xE9;rateur morse&quot;</span>
     <span class="token keyword">while</span> <span class="token punctuation">(</span>pos <span class="token punctuation">:</span><span class="token operator">=</span> doublon<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
         &#xE9;limine<span class="token punctuation">(</span>ligne<span class="token punctuation">,</span> pos<span class="token punctuation">)</span>
