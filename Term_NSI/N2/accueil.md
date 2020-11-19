@@ -11,7 +11,7 @@
 * [Soirée orageuse](1-Nombres_virgules/B1-orage.html)
 * [Augmentation des taxes](1-Nombres_virgules/B2-augmentation_taxes.html)
 * [Achat de livres](1-Nombres_virgules/C1-achat_livres.html)
-* [La roue de la fortune](1-Nombres_virgules/C2-récolte.html)
+* [Une belle récolte](1-Nombres_virgules/C2-récolte.html)
 * [La roue de la fortune](1-Nombres_virgules/C3-fortune.html)
 
 

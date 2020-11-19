@@ -30,7 +30,24 @@ sortie :
 
     19.99
 
-## Solution
+## Solution officielle
+
+```python
+from math import *
+ 
+taxeActuelle = float(input())
+taxeFuture = float(input())
+prixLegume = float(input())
+nouveauPrix = prixLegume / ( 1 + taxeActuelle / 100) * (1 + taxeFuture / 100)
+nouveauPrix = round(nouveauPrix * 100) / 100
+print(nouveauPrix)
+```
+
+Remarque
+: Il est inutile d'importer le module `math` pour disposer de la fonction `round`.
+: Il est mal de faire `from math import *`.
+
+## Solution alternative
 
 C'est essentiellement un problème de mathématiques.
 

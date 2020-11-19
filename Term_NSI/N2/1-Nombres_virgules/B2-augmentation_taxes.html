@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>C2-augmentation_taxes</title>
+      <title>B2-augmentation_taxes</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -50,7 +50,22 @@
 <p>sortie :</p>
 <pre class="language-text">19.99
 </pre>
-<h2 class="mume-header" id="solution">Solution</h2>
+<h2 class="mume-header" id="solution-officielle">Solution officielle</h2>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> <span class="token operator">*</span>
+ 
+taxeActuelle <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+taxeFuture <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+prixLegume <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nouveauPrix <span class="token operator">=</span> prixLegume <span class="token operator">/</span> <span class="token punctuation">(</span> <span class="token number">1</span> <span class="token operator">+</span> taxeActuelle <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> taxeFuture <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+nouveauPrix <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>nouveauPrix <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nouveauPrix<span class="token punctuation">)</span>
+</pre><dl>
+<dt>Remarque</dt>
+<dd>Il est inutile d&apos;importer le module <code>math</code> pour disposer de la fonction <code>round</code>.</dd>
+<dd>Il est mal de faire <code>from math import *</code>.</dd>
+</dl>
+<h2 class="mume-header" id="solution-alternative">Solution alternative</h2>
 
 <p>C&apos;est essentiellement un probl&#xE8;me de math&#xE9;matiques.</p>
 <p>On rappelle que :</p>
@@ -98,7 +113,8 @@ prix_avec_taxe2 <span class="token operator">=</span> prix_hors_taxe <span class
 <li><a href="#exemple-2">Exemple 2</a></li>
 </ul>
 </li>
-<li><a href="#solution">Solution</a>
+<li><a href="#solution-officielle">Solution officielle</a></li>
+<li><a href="#solution-alternative">Solution alternative</a>
 <ul>
 <li><a href="#commentaires">Commentaires</a></li>
 </ul>
