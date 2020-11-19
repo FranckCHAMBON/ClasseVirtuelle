@@ -1,6 +1,7 @@
 # Niveau 2 de France IOI
 
-### [Nombres à virgules et autres outils](http://www.france-ioi.org/algo/chapter.php?idChapter=650)
+### Nombres à virgules et autres outils
+[lien vers les sujets de FranceIOI](http://www.france-ioi.org/algo/chapter.php?idChapter=650)
 
 * [Origami](1-Nombres_virgules/1-origami.html)
 * [Conversions de distances](1-Nombres_virgules/2-conversion.html)
