@@ -67,7 +67,7 @@ while numMesure < nbMesures and tempValide:
    numMesure = numMesure + 1
 ```
 
-### Solution alternative
+### Solutions alternatives
 
 On peut aussi utiliser un `break` pour sortir prématurément d'une boucle `for`.
 
@@ -86,4 +86,23 @@ for _ in range(nb_mesures):
 
  :warning: Attention, ce style n'est pas toujours apprécié, parfois oui.
 
- 
+Quel est le problème principal ?
+* La lecture de l'entrée, n'est peut-être pas entièrement lue pour cette partie ; il y a peut-être une autre partie du programme ensuite qui voudrait lire l'entrée et qui attend peut-être que toute la précédente ait été lue !
+* Le principe du rétour prématuré est un bon principe, cependant il serait bon que toute l'entrée soit lue comme prévu.
+
+```python
+nb_mesures = int(input())
+temp_min = int(input())
+temp_max = int(input())
+alerte = False
+for _ in range(nb_mesures):
+    temp = int(input())
+    if not(alerte) and (temp_min <= temp <= temp_max):
+        print("Rien à signaler")
+    else:
+        if not alerte:
+            print("Alerte !!")
+            alerte = True
+```
+
+Ce code lit bien toute l'entrée et n'affiche qu'une fois au maximum `"Alerte !!"`.

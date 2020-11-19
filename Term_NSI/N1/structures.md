@@ -40,6 +40,16 @@ for loop in range(nbVillages):
 print(nbAccessibles)
 ```
 
+Remarque
+: Un écart devrait toujours être positif. Ici, un meilleur nom de variable aurait été `différence`, puis ensuite
+```python
+if différence > 0:
+    écart = différence
+else:
+    écart = - différence
+
+```
+
 ### Solution alternative
 
 ```

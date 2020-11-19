@@ -84,7 +84,7 @@ tempValide <span class="token operator">=</span> <span class="token boolean">Tru
    <span class="token keyword">else</span><span class="token punctuation">:</span>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Alerte !!&quot;</span><span class="token punctuation">)</span>
    numMesure <span class="token operator">=</span> numMesure <span class="token operator">+</span> <span class="token number">1</span>
-</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solutions-alternatives">Solutions alternatives</h3>
 
 <p>On peut aussi utiliser un <code>break</code> pour sortir pr&#xE9;matur&#xE9;ment d&apos;une boucle <code>for</code>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">nb_mesures <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -98,6 +98,24 @@ temp_max <span class="token operator">=</span> <span class="token builtin">int</
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Alerte !!&quot;</span><span class="token punctuation">)</span>
         <span class="token keyword">break</span>
 </pre><p>&#x26A0;&#xFE0F; Attention, ce style n&apos;est pas toujours appr&#xE9;ci&#xE9;, parfois oui.</p>
+<p>Quel est le probl&#xE8;me principal ?</p>
+<ul>
+<li>La lecture de l&apos;entr&#xE9;e, n&apos;est peut-&#xEA;tre pas enti&#xE8;rement lue pour cette partie ; il y a peut-&#xEA;tre une autre partie du programme ensuite qui voudrait lire l&apos;entr&#xE9;e et qui attend peut-&#xEA;tre que toute la pr&#xE9;c&#xE9;dente ait &#xE9;t&#xE9; lue !</li>
+<li>Le principe du r&#xE9;tour pr&#xE9;matur&#xE9; est un bon principe, cependant il serait bon que toute l&apos;entr&#xE9;e soit lue comme pr&#xE9;vu.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_mesures <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+temp_min <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+temp_max <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+alerte <span class="token operator">=</span> <span class="token boolean">False</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_mesures<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    temp <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span>alerte<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>temp_min <span class="token operator">&lt;=</span> temp <span class="token operator">&lt;=</span> temp_max<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Rien &#xE0; signaler&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> alerte<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Alerte !!&quot;</span><span class="token punctuation">)</span>
+            alerte <span class="token operator">=</span> <span class="token boolean">True</span>
+</pre><p>Ce code lit bien toute l&apos;entr&#xE9;e et n&apos;affiche qu&apos;une fois au maximum <code>&quot;Alerte !!&quot;</code>.</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
@@ -113,7 +131,7 @@ temp_max <span class="token operator">=</span> <span class="token builtin">int</
 </ul>
 </li>
 <li><a href="#solution-officielle">Solution officielle</a></li>
-<li><a href="#solution-alternative">Solution alternative</a></li>
+<li><a href="#solutions-alternatives">Solutions alternatives</a></li>
 </ul>
 </li>
 </ul>

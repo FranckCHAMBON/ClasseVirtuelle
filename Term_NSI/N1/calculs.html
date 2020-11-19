@@ -41,8 +41,9 @@
 <span class="token keyword">print</span><span class="token punctuation">(</span>distJour<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>distJour <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>distJour <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solutions-alternatives">Solutions alternatives</h3>
 
+<p>On peut utiliser un seul <code>print</code>, par d&#xE9;faut le s&#xE9;parateur entre plusieurs objets &#xE0; imprimer est <strong>une</strong> espace. Oui, espace est f&#xE9;minin en typographie.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">distance_1jour <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">34</span> <span class="token operator">+</span> <span class="token number">6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>distance_1jour<span class="token punctuation">,</span> distance_1jour <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> distance_1jour <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
 </pre><p>On peut aussi utiliser les <em>f-string</em> &#xE0; partir de Python 3.6, mais pas sur FranceIOI.</p>
@@ -65,13 +66,16 @@ J&apos;arrive !
    <span class="token keyword">print</span><span class="token punctuation">(</span>compte<span class="token punctuation">)</span>
    compte <span class="token operator">=</span> compte <span class="token operator">+</span> <span class="token number">1</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;J&apos;arrive !&quot;</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
 
 <p>On peut utiliser la variable de boucle, et <code>range</code> avec deux param&#xE8;tres.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> compteur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
    <span class="token keyword">print</span><span class="token punctuation">(</span>compteur<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;J&apos;arrive !&quot;</span><span class="token punctuation">)</span>
-</pre><p><code>range(1, 101)</code> se lit : de 1 inclus &#xE0; 101 exclu. Il y aura <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>101</mn><mo>&#x2212;</mo><mn>1</mn><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">101-1 = 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> tours de boucle.</p>
+</pre><dl>
+<dt>Remarque</dt>
+<dd><code>range(1, 101)</code> se lit : de 1 inclus &#xE0; 101 exclu. Il y aura <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>101</mn><mo>&#x2212;</mo><mn>1</mn><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">101-1 = 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> tours de boucle.</dd>
+</dl>
 <h2 class="mume-header" id="d%C3%A9collage-de-fus%C3%A9e">D&#xE9;collage de fus&#xE9;e</h2>
 
 <h3 class="mume-header" id="sujet-2">Sujet</h3>
@@ -93,7 +97,7 @@ D&#xE9;collage !
    <span class="token keyword">print</span><span class="token punctuation">(</span>compte<span class="token punctuation">)</span>
    compte <span class="token operator">=</span> compte <span class="token operator">-</span> <span class="token number">1</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;D&#xE9;collage !&quot;</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-2">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
 
 <p>On peut utiliser la variable de boucle, et <code>range</code> avec trois param&#xE8;tres.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> compteur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -115,7 +119,7 @@ largeurAr&#xEA;te <span class="token operator">=</span> <span class="token numbe
    nbCubes <span class="token operator">=</span> nbCubes <span class="token operator">+</span> largeurAr&#xEA;te <span class="token operator">*</span> largeurAr&#xEA;te <span class="token operator">*</span> largeurAr&#xEA;te
    largeurAr&#xEA;te <span class="token operator">=</span> largeurAr&#xEA;te <span class="token operator">+</span> <span class="token number">2</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>nbCubes<span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-3">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative-2">Solution alternative</h3>
 
 <p>On utilise <code>range</code> &#xE0; trois param&#xE8;tres et une variable de boucle.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">nb_cubes <span class="token operator">=</span> <span class="token number">0</span>
@@ -134,28 +138,28 @@ largeurAr&#xEA;te <span class="token operator">=</span> <span class="token numbe
 <ul>
 <li><a href="#sujet">Sujet</a></li>
 <li><a href="#solution-officielle">Solution officielle</a></li>
-<li><a href="#solution-alternative">Solution alternative</a></li>
+<li><a href="#solutions-alternatives">Solutions alternatives</a></li>
 </ul>
 </li>
 <li><a href="#une-partie-de-cache-cache">Une partie de cache-cache</a>
 <ul>
 <li><a href="#sujet-1">Sujet</a></li>
 <li><a href="#solution-officielle-1">Solution officielle</a></li>
-<li><a href="#solution-alternative-1">Solution alternative</a></li>
+<li><a href="#solution-alternative">Solution alternative</a></li>
 </ul>
 </li>
 <li><a href="#d%C3%A9collage-de-fus%C3%A9e">D&#xE9;collage de fus&#xE9;e</a>
 <ul>
 <li><a href="#sujet-2">Sujet</a></li>
 <li><a href="#solution-officielle-2">Solution officielle</a></li>
-<li><a href="#solution-alternative-2">Solution alternative</a></li>
+<li><a href="#solution-alternative-1">Solution alternative</a></li>
 </ul>
 </li>
 <li><a href="#construction-de-pyramide">Construction de pyramide</a>
 <ul>
 <li><a href="#sujet-3">Sujet</a></li>
 <li><a href="#solution-officielle-3">Solution officielle</a></li>
-<li><a href="#solution-alternative-3">Solution alternative</a></li>
+<li><a href="#solution-alternative-2">Solution alternative</a></li>
 </ul>
 </li>
 </ul>

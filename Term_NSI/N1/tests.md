@@ -41,9 +41,13 @@ if écart < 0:
 print(écart)
 ```
 
+Remarque
+: `écart` devrait toujours être positif, à la ligne 3, il vaut mieux utiliser une variable de nom `différence`.
+
 ### Solution alternative
 
-Avec la fonction `abs` : valeur absolue.
+Avec la fonction `abs` : valeur absolue qui renvoie son argument, avec le signe positif.
+
 
 ```python
 numéro_matin = int(input())

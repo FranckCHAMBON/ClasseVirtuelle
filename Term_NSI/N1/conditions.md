@@ -55,6 +55,10 @@ nb_suspects = sum(1 for date in dates if date_début <= date <= date_fin)
 print(nb_suspects)
 ```
 
+Remarques
+: La construction avec `iter` est presque équivalente à la création d'une liste avec `list` à la place ou bien `dates = [int(input()) for ...]`. La différence essentielle, est que la liste n'est pas créée effectivement en mémoire, juste elle est prête à être déroulée à la demande, une seule fois !
+: `sum(1 for ... if ...)` est une construction qui permet de compter le nombre d'éléments satisfaisant un critère.
+
 On peut aussi écrire avec un style encore plus fonctionnel.
 
 ```python
@@ -196,12 +200,14 @@ else:
 On peut utiliser, au lieu de conditions, une table de valeurs.
 
 ```python
-nb_jours = [0, 30, 30, 30, 31, 31, 31, 30, 30, 30, 31, 29]
+nb_jours = [-1, 30, 30, 30, 31, 31, 31, 30, 30, 30, 31, 29]
 
 numéro = int(input())
 print(nb_jours[numéro])
 ```
 
+Remarque
+: le $-1$ de la liste, correspond au mois d'indice $0$ qui n'existe pas. On peut mettre ce qu'on veut à la place de $-1$, comme $0$ ou `None`. Cependant, pour avoir un un tableau homogène en type de donnée, on pourrait recommander de ne pas mettre `None`.
 
 ## Amitié entre gardes
 
@@ -266,6 +272,9 @@ else:
    print("Amis")
 ```
 
+Remarque
+: Il est simple de justifier qu'on est `Pas amis` : soit le premier est parti quand le second arrive, soit l'inverse !
+: Sinon, `Amis` correspond à l'autre cas.
 ### Solution alternative
 
 * En utilisant la loi de De Morgan, on peut donner une condition aussi rapide qui valide "Amis" au lieu de "Pas amis".
@@ -376,6 +385,8 @@ for _ in range(nb_paires):
       print("NON")
 ```
 
+Remarque
+: On a ici modifié la fonction `intersecte` pour ne pas prendre en compte les bords comme dans l'exercice précédent !
 
 ## Personne disparue
 
@@ -415,7 +426,7 @@ else:
    print("Encore dans la ville")
 ```
 
-### Solution alternative
+### Solution alternative (hors programme ici)
 
 Avec un style fonctionnel.
 
@@ -525,10 +536,10 @@ for _ in range(nb_personnes):
 ```
 ---
 
-**Complément** ; (hors programme)
-
 ---
 ## Au sujet du transtypage
+Ceci est un **Complément de cours**, hors programme.
+
 
 Pour le *fun*, même si c'est mal, on peut écrire une solution en une seule ligne à ce dernier problème.
 
@@ -550,3 +561,13 @@ for _ in range(int(input())): print(["Impossible", "Peu probable", "Peu probable
 
 Ces pratiques sont parfois considérées comme mauvaises ; les changements de type devant être explicites.
 
+**À retenir**
+: Si vous voulez faire du transtypage, faite-le **explicitement** ; comme depuis toujours avec les exemples que vous connaissez déjà :
+
+```python
+x = float(input())
+n = int(input())
+mots = list(input().split())
+n_en_texte = str(n)
+# etc
+```

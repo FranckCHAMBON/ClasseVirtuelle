@@ -44,7 +44,7 @@
 </pre><p>La concat&#xE9;nation des cha&#xEE;nes de caract&#xE8;res permet d&apos;avoir : <code>&quot;Bon&quot; + &quot;jour&quot; == &quot;Bonjour&quot;</code>.</p>
 <p>De m&#xEA;me <code>&quot;bon&quot; + &quot;bon&quot; == &quot;bonbon&quot; == &quot;bon&quot; * 2</code>.</p>
 <p>Nous avons cr&#xE9;&#xE9; notre sortie avec la phrase &#xE0; &#xE9;crire, termin&#xE9;e par un saut de ligne <code>\n</code>, et concat&#xE9;n&#xE9;e 135 fois avec elle-m&#xEA;me.</p>
-<p>On termine le <code>print</code> avec <code>end=&quot;&quot;</code> pour ne pas avoir deux sauts de lignes en fin d&apos;affichage, m&#xEA;me s&apos;il est accept&#xE9;.</p>
+<p>On termine le <code>print</code> avec <code>end=&quot;&quot;</code> pour ne pas avoir deux sauts de lignes en fin d&apos;affichage, m&#xEA;me si cela est accept&#xE9;.</p>
 <h2 class="mume-header" id="page-d%C3%A9criture">Page d&apos;&#xE9;criture</h2>
 
 <h3 class="mume-header" id="sujet-1">Sujet</h3>
@@ -67,7 +67,7 @@ c_c_c_c_
 <span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;c_&quot;</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solutions-alternatives">Solutions alternatives</h3>
 
 <p>On peut factoriser ce code, en faisant une boucle sur les caract&#xE8;res de <code>&quot;abc&quot;</code>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> lettre <span class="token keyword">in</span> <span class="token string">&quot;abc&quot;</span><span class="token punctuation">:</span>
@@ -75,6 +75,11 @@ c_c_c_c_
         <span class="token keyword">print</span><span class="token punctuation">(</span>lettre<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </pre><p>Remarque, on peut &#xE9;crire aussi <code>print(lettre + &quot;_&quot;, end = &quot;&quot;)</code>.</p>
+<p>Une autre solution serait</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;a_&quot;</span><span class="token operator">*</span><span class="token number">30</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;b_&quot;</span><span class="token operator">*</span><span class="token number">30</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;c_&quot;</span><span class="token operator">*</span><span class="token number">30</span><span class="token punctuation">)</span>
+</pre><p>Une autre solution serait aussi</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">30</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><p>Cette derni&#xE8;re solution construit un collage (<code>join</code>) avec un saut de ligne (<code>\n</code>) entre chaque &#xE9;l&#xE9;ment d&#xE9;crit dans l&apos;it&#xE9;rateur.</p>
 <h2 class="mume-header" id="jeu-de-dames">Jeu de dames</h2>
 
 <h3 class="mume-header" id="sujet-2">Sujet</h3>
@@ -95,7 +100,7 @@ XOXO
    <span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;XO&quot;</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-2">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solutions-alternatives-1">Solutions alternatives</h3>
 
 <ol>
 <li>En Python, on pr&#xE9;f&#xE8;re utiliser la variable <code>_</code> dans les boucles o&#xF9; on ne se sert pas de la variable de boucle.</li>
@@ -109,6 +114,31 @@ XOXO
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;OX&quot;</span><span class="token operator">*</span><span class="token number">20</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;XO&quot;</span><span class="token operator">*</span><span class="token number">20</span><span class="token punctuation">)</span>
 </pre><p>Enfin, on peut aussi &#xE9;crire une solution sans boucle.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;OX&quot;</span><span class="token operator">*</span><span class="token number">20</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;XO&quot;</span><span class="token operator">*</span><span class="token number">20</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">20</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+</pre><p>Une solution plus math&#xE9;matique serait</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">lettre</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> j<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+   <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la lettre aux coordonn&#xE9;es (i, j)
+   &gt;&gt;&gt; lettre(0, 0)
+   O
+   &gt;&gt;&gt; lettre(1, 2)
+   X
+   &quot;&quot;&quot;</span>
+   <span class="token keyword">return</span> <span class="token string">&quot;O&quot;</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i<span class="token operator">+</span>j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">else</span> <span class="token string">&quot;X&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">ligne</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> largeur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+   <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la ligne d&apos;indice i
+   &gt;&gt;&gt; ligne(0, 10)
+   OXOXOXOXOX
+   &gt;&gt;&gt; ligne(1, 12)
+   XOXOXOXOXOXO
+   &quot;&quot;&quot;</span>
+   <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>lettre<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>largeur<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">damier</span><span class="token punctuation">(</span>largeur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+   <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un damier de OX
+   &quot;&quot;&quot;</span>
+   <span class="token keyword">return</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>ligne<span class="token punctuation">(</span>i<span class="token punctuation">,</span> largeur<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>hauteur<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>damier<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><h2 class="mume-header" id="mont-kailash">Mont Kailash</h2>
 
 <p>Votre robot doit faire 108 fois le tour du chemin vert repr&#xE9;sent&#xE9; ci-dessous, en tournant dans le sens des aiguilles d&apos;une montre.</p>
@@ -125,7 +155,7 @@ XOXO
       bas<span class="token punctuation">(</span><span class="token punctuation">)</span>
    <span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
       gauche<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-3">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
 
 <p>On peut factoriser le code.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> robot <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -134,7 +164,7 @@ XOXO
         <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             action<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </pre><ol>
-<li><code>[haut, droite, bas, gauche]</code> repr&#xE9;sente une liste de fonctions.</li>
+<li><code>[haut, droite, bas, gauche]</code> repr&#xE9;sente une liste de fonctions, c&apos;est l&#xE9;gal, une liste peut comporter tout type d&apos;objet.</li>
 <li><code>action</code> sera donc l&apos;une de ces fonctions, tour &#xE0; tour.</li>
 <li><code>action()</code> provoque l&apos;ex&#xE9;cution de la fonction, ici sans param&#xE8;tre.</li>
 <li>Ce n&apos;est pas g&#xEA;nant d&apos;avoir une double boucle qui utilise la m&#xEA;me variable inutilis&#xE9;e <code>loop</code> ou bien <code>_</code>.</li>
@@ -155,20 +185,20 @@ XOXO
 <ul>
 <li><a href="#sujet-1">Sujet</a></li>
 <li><a href="#solution-officielle-1">Solution officielle</a></li>
-<li><a href="#solution-alternative-1">Solution alternative</a></li>
+<li><a href="#solutions-alternatives">Solutions alternatives</a></li>
 </ul>
 </li>
 <li><a href="#jeu-de-dames">Jeu de dames</a>
 <ul>
 <li><a href="#sujet-2">Sujet</a></li>
 <li><a href="#solution-officielle-2">Solution officielle</a></li>
-<li><a href="#solution-alternative-2">Solution alternative</a></li>
+<li><a href="#solutions-alternatives-1">Solutions alternatives</a></li>
 </ul>
 </li>
 <li><a href="#mont-kailash">Mont Kailash</a>
 <ul>
 <li><a href="#solution-officielle-3">Solution officielle</a></li>
-<li><a href="#solution-alternative-3">Solution alternative</a></li>
+<li><a href="#solution-alternative-1">Solution alternative</a></li>
 </ul>
 </li>
 </ul>

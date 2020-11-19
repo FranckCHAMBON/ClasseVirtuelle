@@ -30,7 +30,7 @@ print("Quand tu les porteras,")
 print("Et avec le chef tu reviendras !")
 ```
 
-### Solution alternative
+### Solutions alternatives
 
 On peut afficher le texte demandé en une seule instruction, au lieu de quatre.
 

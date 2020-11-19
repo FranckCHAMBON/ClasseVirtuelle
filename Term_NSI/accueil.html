@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>structures</title>
+      <title>accueil</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,113 +23,39 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="structures-avanc%C3%A9eshttpwwwfrance-ioiorgalgochapterphpidchapter647"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=647">Structures avanc&#xE9;es</a></h1>
+      <h1 class="mume-header" id="terminale-nsi">Terminale NSI</h1>
 
 <blockquote>
-<p>Correction alternative de certains probl&#xE8;mes</p>
+<p>Solutions alternatives aux probl&#xE8;mes sur FranceIOI</p>
 </blockquote>
-<h2 class="mume-header" id="planning-de-la-journ%C3%A9e">Planning de la journ&#xE9;e</h2>
+<p>Pour le code Python des solutions :</p>
+<ul>
+<li>La PEP-8 est respect&#xE9;e le plus possible.</li>
+<li>Les noms de variables sont
+<ul>
+<li>le plus explicites possible,</li>
+<li>en fran&#xE7;ais et avec accents,</li>
+<li><em>snake_case</em> utilis&#xE9;.</li>
+</ul>
+</li>
+<li>Les op&#xE9;rateurs comme <code>+=</code> ou <code>-=</code> sont utilis&#xE9;s.</li>
+<li>Utilisation fr&#xE9;quente de fonctions,
+<ul>
+<li>d&#xE8;s le niveau 3, toujours avec <em>docstring</em></li>
+<li>et tr&#xE8;s souvent avec <em>doctest</em>.</li>
+</ul>
+</li>
+<li>Souvent, variantes propos&#xE9;es avec un style fonctionnel.</li>
+</ul>
+<ol>
+<li><a href="N1/accueil.html">Niveau 1</a></li>
+<li><a href="N2/accueil.html">Niveau 2</a></li>
+<li><a href="N3/accueil.html">Niveau 3</a></li>
+</ol>
 
-<h3 class="mume-header" id="sujet">Sujet</h3>
-
-<p>Votre programme doit d&apos;abord lire un entier d&#xE9;crivant votre position actuelle sur la route, sous la forme d&apos;un nombre de kilom&#xE8;tres par rapport au d&#xE9;but de la route. Ensuite, il doit lire un entier donnant le nombre de villages. Pour chaque village, il doit lire un entier d&#xE9;crivant la position de ce village le long de cette m&#xEA;me route. Votre programme doit alors afficher le nombre de villages qui se trouvent &#xE0; une distance inf&#xE9;rieure ou &#xE9;gale &#xE0; 50 km de votre position actuelle.</p>
-<h3 class="mume-header" id="exemple">Exemple</h3>
-
-<p>entr&#xE9;e :</p>
-<pre class="language-text">120
-5
-30
-113
-187
-145
-129
-</pre>
-<p>sortie :</p>
-<pre class="language-text">3
-</pre>
-<h3 class="mume-header" id="solution-officielle">Solution officielle</h3>
-
-<pre data-role="codeBlock" data-info="python" class="language-python">posActuelle <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-nbVillages <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-nbAccessibles <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nbVillages<span class="token punctuation">)</span><span class="token punctuation">:</span>
-   posVillage <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-   ecart <span class="token operator">=</span> posActuelle <span class="token operator">-</span> posVillage
-   <span class="token keyword">if</span> ecart <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-      ecart <span class="token operator">=</span> <span class="token operator">-</span>ecart
-   <span class="token keyword">if</span> ecart <span class="token operator">&lt;=</span> <span class="token number">50</span><span class="token punctuation">:</span>
-      nbAccessibles <span class="token operator">=</span> nbAccessibles <span class="token operator">+</span> <span class="token number">1</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>nbAccessibles<span class="token punctuation">)</span>
-</pre><dl>
-<dt>Remarque</dt>
-<dd>Un &#xE9;cart devrait toujours &#xEA;tre positif. Ici, un meilleur nom de variable aurait &#xE9;t&#xE9; <code>diff&#xE9;rence</code>, puis ensuite</dd>
-</dl>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">if</span> diff&#xE9;rence <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-    &#xE9;cart <span class="token operator">=</span> diff&#xE9;rence
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    &#xE9;cart <span class="token operator">=</span> <span class="token operator">-</span> diff&#xE9;rence
-
-</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
-
-<pre data-role="codeBlock" data-info class="language-"><code>position_actuelle = int(input())
-nb_villages = int(input())
-
-nb_villages_proches = 0
-for _ in range(nb_villages):
-    position_village = int(input())
-    if abs(position_actuelle - position_village) &lt;= 50:
-        nb_villages_proches += 1
-print(nb_villages_proches)
-</code></pre><p>Variante fonctionnelle</p>
-<pre data-role="codeBlock" data-info class="language-"><code>position_actuelle = int(input())
-nb_villages = int(input())
-positions_villages = iter(int(input()) for _ in range(nb_villages))
-
-print(sum(1 for x in positions_villages if abs(position_actuelle - x) &lt;= 50))
-</code></pre><p>Remarque : <code>iter</code> ne fabrique pas la liste <code>positions_villages</code>, mais plut&#xF4;t un it&#xE9;rateur qui va donner &#xE9;l&#xE9;ment par &#xE9;l&#xE9;ment les positions dans la boucle suivante. Utile lorsqu&apos;on n&apos;a pas besoin de conserver en m&#xE9;moire toute la liste, mais plut&#xF4;t traiter un &#xE0; un ses &#xE9;l&#xE9;ments.</p>
-<h2 class="mume-header" id="%C3%A9tape-la-plus-longue">&#xC9;tape la plus longue</h2>
-
-<h3 class="mume-header" id="sujet-1">Sujet</h3>
-
-<p>Votre programme doit d&apos;abord lire un entier strictement positif, le nombre de jours de marche effectu&#xE9;s jusqu&apos;&#xE0; pr&#xE9;sent. Il doit ensuite lire, pour chaque jour, la distance parcourue ce jour-l&#xE0;. Il doit alors afficher la distance maximale parcourue en une journ&#xE9;e.</p>
-<h3 class="mume-header" id="solution-officielle-1">Solution officielle</h3>
-
-<pre data-role="codeBlock" data-info="python" class="language-python">nbJours <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-distanceMax <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nbJours<span class="token punctuation">)</span><span class="token punctuation">:</span>
-   distance <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-   <span class="token keyword">if</span> distance <span class="token operator">&gt;</span> distanceMax<span class="token punctuation">:</span>
-      distanceMax <span class="token operator">=</span> distance
-<span class="token keyword">print</span><span class="token punctuation">(</span>distanceMax<span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-1">Solution alternative</h3>
-
-<p>Une solution dans un style fonctionnel</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">nb_jours <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-distances <span class="token operator">=</span> <span class="token builtin">iter</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_jours<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">max</span><span class="token punctuation">(</span>distances<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#structures-avanc%C3%A9eshttpwwwfrance-ioiorgalgochapterphpidchapter647">Structures avanc&#xE9;es</a>
-<ul>
-<li><a href="#planning-de-la-journ%C3%A9e">Planning de la journ&#xE9;e</a>
-<ul>
-<li><a href="#sujet">Sujet</a></li>
-<li><a href="#exemple">Exemple</a></li>
-<li><a href="#solution-officielle">Solution officielle</a></li>
-<li><a href="#solution-alternative">Solution alternative</a></li>
-</ul>
-</li>
-<li><a href="#%C3%A9tape-la-plus-longue">&#xC9;tape la plus longue</a>
-<ul>
-<li><a href="#sujet-1">Sujet</a></li>
-<li><a href="#solution-officielle-1">Solution officielle</a></li>
-<li><a href="#solution-alternative-1">Solution alternative</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#terminale-nsi">Terminale NSI</a></li>
 </ul>
 </div>
       <a id="sidebar-toc-btn">&#x2261;</a>

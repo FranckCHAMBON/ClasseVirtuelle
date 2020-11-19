@@ -22,7 +22,9 @@ print(distJour * 2, end = " ")
 print(distJour * 3)
 ```
 
-### Solution alternative
+### Solutions alternatives
+
+On peut utiliser un seul `print`, par défaut le séparateur entre plusieurs objets à imprimer est **une** espace. Oui, espace est féminin en typographie.
 
 ```python
 distance_1jour = 2 + 34 + 6
@@ -67,7 +69,8 @@ for compteur in range(1, 101):
 print("J'arrive !")
 ```
 
-`range(1, 101)` se lit : de 1 inclus à 101 exclu. Il y aura $101-1 = 100$ tours de boucle.
+Remarque
+: `range(1, 101)` se lit : de 1 inclus à 101 exclu. Il y aura $101-1 = 100$ tours de boucle.
 
 ## Décollage de fusée
 

@@ -61,9 +61,13 @@ num&#xE9;roSoir <span class="token operator">=</span> <span class="token builtin
 <span class="token keyword">if</span> &#xE9;cart <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
    &#xE9;cart <span class="token operator">=</span> <span class="token operator">-</span>&#xE9;cart
 <span class="token keyword">print</span><span class="token punctuation">(</span>&#xE9;cart<span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
+</pre><dl>
+<dt>Remarque</dt>
+<dd><code>&#xE9;cart</code> devrait toujours &#xEA;tre positif, &#xE0; la ligne 3, il vaut mieux utiliser une variable de nom <code>diff&#xE9;rence</code>.</dd>
+</dl>
+<h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
 
-<p>Avec la fonction <code>abs</code> : valeur absolue.</p>
+<p>Avec la fonction <code>abs</code> : valeur absolue qui renvoie son argument, avec le signe positif.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">num&#xE9;ro_matin <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 num&#xE9;ro_soir <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 &#xE9;cart <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>num&#xE9;ro_soir <span class="token operator">-</span> num&#xE9;ro_matin<span class="token punctuation">)</span>

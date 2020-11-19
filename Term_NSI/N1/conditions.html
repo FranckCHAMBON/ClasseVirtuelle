@@ -70,7 +70,12 @@ dates <span class="token operator">=</span> <span class="token builtin">iter</sp
 
 nb_suspects <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">for</span> date <span class="token keyword">in</span> dates <span class="token keyword">if</span> date_d&#xE9;but <span class="token operator">&lt;=</span> date <span class="token operator">&lt;=</span> date_fin<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>nb_suspects<span class="token punctuation">)</span>
-</pre><p>On peut aussi &#xE9;crire avec un style encore plus fonctionnel.</p>
+</pre><dl>
+<dt>Remarques</dt>
+<dd>La construction avec <code>iter</code> est presque &#xE9;quivalente &#xE0; la cr&#xE9;ation d&apos;une liste avec <code>list</code> &#xE0; la place ou bien <code>dates = [int(input()) for ...]</code>. La diff&#xE9;rence essentielle, est que la liste n&apos;est pas cr&#xE9;&#xE9;e effectivement en m&#xE9;moire, juste elle est pr&#xEA;te &#xE0; &#xEA;tre d&#xE9;roul&#xE9;e &#xE0; la demande, une seule fois !</dd>
+<dd><code>sum(1 for ... if ...)</code> est une construction qui permet de compter le nombre d&apos;&#xE9;l&#xE9;ments satisfaisant un crit&#xE8;re.</dd>
+</dl>
+<p>On peut aussi &#xE9;crire avec un style encore plus fonctionnel.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">est_suspect <span class="token operator">=</span> <span class="token keyword">lambda</span> date<span class="token punctuation">:</span> date_d&#xE9;but <span class="token operator">&lt;=</span> date <span class="token operator">&lt;=</span> date_fin
 nb_suspects <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">filter</span><span class="token punctuation">(</span>est_suspect<span class="token punctuation">,</span> dates<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><h2 class="mume-header" id="maison-de-lespion">Maison de l&apos;espion</h2>
@@ -221,11 +226,15 @@ nb_maisons_suspectes <span class="token operator">=</span> <span class="token bu
 </pre><h3 class="mume-header" id="solution-alternative-2">Solution alternative</h3>
 
 <p>On peut utiliser, au lieu de conditions, une table de valeurs.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">nb_jours <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span>
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_jours <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span>
 
 num&#xE9;ro <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>nb_jours<span class="token punctuation">[</span>num&#xE9;ro<span class="token punctuation">]</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="amiti%C3%A9-entre-gardes">Amiti&#xE9; entre gardes</h2>
+</pre><dl>
+<dt>Remarque</dt>
+<dd>le <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span> de la liste, correspond au mois d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> qui n&apos;existe pas. On peut mettre ce qu&apos;on veut &#xE0; la place de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span>, comme <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ou <code>None</code>. Cependant, pour avoir un un tableau homog&#xE8;ne en type de donn&#xE9;e, on pourrait recommander de ne pas mettre <code>None</code>.</dd>
+</dl>
+<h2 class="mume-header" id="amiti%C3%A9-entre-gardes">Amiti&#xE9; entre gardes</h2>
 
 <h3 class="mume-header" id="sujet-2">Sujet</h3>
 
@@ -277,7 +286,12 @@ dateFinSecond <span class="token operator">=</span> <span class="token builtin">
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Pas amis&quot;</span><span class="token punctuation">)</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Amis&quot;</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-3">Solution alternative</h3>
+</pre><dl>
+<dt>Remarque</dt>
+<dd>Il est simple de justifier qu&apos;on est <code>Pas amis</code> : soit le premier est parti quand le second arrive, soit l&apos;inverse !</dd>
+<dd>Sinon, <code>Amis</code> correspond &#xE0; l&apos;autre cas.</dd>
+</dl>
+<h3 class="mume-header" id="solution-alternative-3">Solution alternative</h3>
 
 <ul>
 <li>En utilisant la loi de De Morgan, on peut donner une condition aussi rapide qui valide &quot;Amis&quot; au lieu de &quot;Pas amis&quot;.</li>
@@ -374,7 +388,11 @@ nb_paires <span class="token operator">=</span> <span class="token builtin">int<
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;OUI&quot;</span><span class="token punctuation">)</span>
    <span class="token keyword">else</span><span class="token punctuation">:</span>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;NON&quot;</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="personne-disparue">Personne disparue</h2>
+</pre><dl>
+<dt>Remarque</dt>
+<dd>On a ici modifi&#xE9; la fonction <code>intersecte</code> pour ne pas prendre en compte les bords comme dans l&apos;exercice pr&#xE9;c&#xE9;dent !</dd>
+</dl>
+<h2 class="mume-header" id="personne-disparue">Personne disparue</h2>
 
 <h3 class="mume-header" id="sujet-4">Sujet</h3>
 
@@ -406,7 +424,7 @@ estSorti  <span class="token operator">=</span> <span class="token boolean">Fals
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Sorti de la ville&quot;</span><span class="token punctuation">)</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Encore dans la ville&quot;</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-5">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative-hors-programme-ici">Solution alternative (hors programme ici)</h3>
 
 <p>Avec un style fonctionnel.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">num_cherch&#xE9; <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -479,7 +497,7 @@ Exemple</p>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Probable&quot;</span><span class="token punctuation">)</span>
    <span class="token keyword">else</span><span class="token punctuation">:</span>
       <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Peu probable&quot;</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="solution-alternative-6">Solution alternative</h3>
+</pre><h3 class="mume-header" id="solution-alternative-5">Solution alternative</h3>
 
 <ul>
 <li>On utilise une table de r&#xE9;sultats (<code>conclusion</code>) ; utile pour une fonction ayant peu d&apos;ant&#xE9;c&#xE9;dents.</li>
@@ -503,10 +521,10 @@ nb_personnes <span class="token operator">=</span> <span class="token builtin">i
     
     <span class="token keyword">print</span><span class="token punctuation">(</span>conclusion<span class="token punctuation">[</span>nb_crit&#xE8;res<span class="token punctuation">]</span><span class="token punctuation">)</span>
 </pre><hr>
-<p><strong>Compl&#xE9;ment</strong> ; (hors programme)</p>
 <hr>
 <h2 class="mume-header" id="au-sujet-du-transtypage">Au sujet du transtypage</h2>
 
+<p>Ceci est un <strong>Compl&#xE9;ment de cours</strong>, hors programme.</p>
 <p>Pour le <em>fun</em>, m&#xEA;me si c&apos;est mal, on peut &#xE9;crire une solution en une seule ligne &#xE0; ce dernier probl&#xE8;me.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;Impossible&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Peu probable&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Peu probable&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Probable&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Probable&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Tr&#xE8;s probable&quot;</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">178</span><span class="token operator">&lt;=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">182</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">34</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">70</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">==</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">==</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </pre><p>&#x26A0;&#xFE0F; Dans cette variante, le transtypage bool&#xE9;en vers entier est implicite. Cette notion n&apos;est pas au programme ! Par exemple, avec explication :</p>
@@ -524,7 +542,16 @@ nb_personnes <span class="token operator">=</span> <span class="token builtin">i
 <li><code>None</code> donne <code>False</code>.</li>
 </ul>
 <p>Ces pratiques sont parfois consid&#xE9;r&#xE9;es comme mauvaises ; les changements de type devant &#xEA;tre explicites.</p>
-
+<dl>
+<dt><strong>&#xC0; retenir</strong></dt>
+<dd>Si vous voulez faire du transtypage, faite-le <strong>explicitement</strong> ; comme depuis toujours avec les exemples que vous connaissez d&#xE9;j&#xE0; :</dd>
+</dl>
+<pre data-role="codeBlock" data-info="python" class="language-python">x <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+mots <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+n_en_texte <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token comment"># etc</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#conditions-avanc%C3%A9es-op%C3%A9rateurs-bool%C3%A9enshttpwwwfrance-ioiorgalgochapterphpidchapter648">Conditions avanc&#xE9;es, op&#xE9;rateurs bool&#xE9;ens</a>
@@ -579,14 +606,14 @@ nb_personnes <span class="token operator">=</span> <span class="token builtin">i
 <li><a href="#sujet-4">Sujet</a></li>
 <li><a href="#exemple-4">Exemple</a></li>
 <li><a href="#solution-officielle-5">Solution officielle</a></li>
-<li><a href="#solution-alternative-5">Solution alternative</a></li>
+<li><a href="#solution-alternative-hors-programme-ici">Solution alternative (hors programme ici)</a></li>
 </ul>
 </li>
 <li><a href="#lespion-est-d%C3%A9masqu%C3%A9">L&apos;espion est d&#xE9;masqu&#xE9; !</a>
 <ul>
 <li><a href="#sujet-5">Sujet</a></li>
 <li><a href="#solution-officielle-6">Solution officielle</a></li>
-<li><a href="#solution-alternative-6">Solution alternative</a></li>
+<li><a href="#solution-alternative-5">Solution alternative</a></li>
 </ul>
 </li>
 <li><a href="#au-sujet-du-transtypage">Au sujet du transtypage</a></li>

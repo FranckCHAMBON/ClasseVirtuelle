@@ -28,7 +28,7 @@ De même `"bon" + "bon" == "bonbon" == "bon" * 2`.
 
 Nous avons créé notre sortie avec la phrase à écrire, terminée par un saut de ligne `\n`, et concaténée 135 fois avec elle-même.
 
-On termine le `print` avec `end=""` pour ne pas avoir deux sauts de lignes en fin d'affichage, même s'il est accepté.
+On termine le `print` avec `end=""` pour ne pas avoir deux sauts de lignes en fin d'affichage, même si cela est accepté.
 
 ## Page d'écriture
 
@@ -57,7 +57,7 @@ for loop in range(30):
 print()
 ```
 
-### Solution alternative
+### Solutions alternatives
 
 On peut factoriser ce code, en faisant une boucle sur les caractères de `"abc"`.
 
@@ -69,6 +69,18 @@ for lettre in "abc":
 ```
 
 Remarque, on peut écrire aussi `print(lettre + "_", end = "")`.
+
+Une autre solution serait
+```python
+print("a_"*30 + "\n" + "b_"*30 + "\n" + "c_"*30)
+```
+
+Une autre solution serait aussi
+```python
+print("\n".join((x + "_")*30 for x in "abc"))
+```
+
+Cette dernière solution construit un collage (`join`) avec un saut de ligne (`\n`) entre chaque élément décrit dans l'itérateur.
 
 
 ## Jeu de dames
@@ -95,7 +107,7 @@ for loop in range(20):
    print()
 ```
 
-### Solution alternative
+### Solutions alternatives
 
 1. En Python, on préfère utiliser la variable `_` dans les boucles où on ne se sert pas de la variable de boucle.
 2. On peut utiliser la multiplication sur les chaînes de caractères.
@@ -117,6 +129,35 @@ Enfin, on peut aussi écrire une solution sans boucle.
 
 ```python
 print(("OX"*20 + "\n" + "XO"*20 + "\n") * 20, end="")
+```
+
+Une solution plus mathématique serait
+
+```python
+def lettre(i: int, j: int) -> str:
+   """Renvoie la lettre aux coordonnées (i, j)
+   >>> lettre(0, 0)
+   O
+   >>> lettre(1, 2)
+   X
+   """
+   return "O" if (i+j) % 2 == 0 else "X"
+
+def ligne(i: int, largeur: int) -> str:
+   """Renvoie la ligne d'indice i
+   >>> ligne(0, 10)
+   OXOXOXOXOX
+   >>> ligne(1, 12)
+   XOXOXOXOXOXO
+   """
+   return "".join(lettre(i, j) for j in range(largeur))
+
+def damier(largeur: int, hauteur: int) -> str:
+   """Renvoie un damier de OX
+   """
+   return "\n".join(ligne(i, largeur) for i in range(hauteur))
+
+print(damier(40, 40))
 ```
 
 ## Mont Kailash
@@ -152,7 +193,7 @@ for _ in range(108):
             action()
 ```
 
-1. `[haut, droite, bas, gauche]` représente une liste de fonctions.
+1. `[haut, droite, bas, gauche]` représente une liste de fonctions, c'est légal, une liste peut comporter tout type d'objet.
 2. `action` sera donc l'une de ces fonctions, tour à tour.
 3. `action()` provoque l'exécution de la fonction, ici sans paramètre.
 4. Ce n'est pas gênant d'avoir une double boucle qui utilise la même variable inutilisée `loop` ou bien `_`.

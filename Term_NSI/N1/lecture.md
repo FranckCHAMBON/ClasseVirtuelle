@@ -70,7 +70,7 @@ for loop in range(tempMax - tempMin + 1):
    temperature = temperature + 1
 ```
 
-### Solution alternative
+### Solutions alternatives
 
 Au lieu de calculer le nombre de tours de boucle, on peut utiliser une boucle `while`.
 
@@ -146,7 +146,7 @@ for loop in range(largeurBas - largeurHaut + 1):
 print(volume)
 ```
 
-### solution alternative
+### solutions alternatives
 
 1. Avec une boucle `while`
 
