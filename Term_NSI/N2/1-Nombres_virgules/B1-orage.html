@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>B1-orage</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,48 +23,48 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="niveau-2-de-france-ioi">Niveau 2 de France IOI</h1>
+      <h1 class="mume-header" id="soir%C3%A9e-orageuse">Soir&#xE9;e orageuse</h1>
 
-<h3 class="mume-header" id="nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=650">Nombres &#xE0; virgules et autres outils</a></h3>
+<h2 class="mume-header" id="sujet">Sujet</h2>
 
-<ul>
-<li><a href="1-Nombres_virgules/1-origami.html">Origami</a></li>
-<li><a href="1-Nombres_virgules/2-conversion.html">Conversions de distances</a></li>
-<li><a href="1-Nombres_virgules/3-comparatif.html">Comparatif de prix</a></li>
-<li><a href="1-Nombres_virgules/4-moyenne.html">Moyenne des notes</a></li>
-<li><a href="1-Nombres_virgules/A1-augmentation.html">Augmentation de la population</a></li>
-<li><a href="1-Nombres_virgules/A2-construction.html">Construction de maisons</a></li>
-<li><a href="1-Nombres_virgules/B1-orage.html">Soir&#xE9;e orageuse</a></li>
-<li><a href="1-Nombres_virgules/B2-augmentation_taxes.html">Augmentation des taxes</a></li>
-<li><a href="1-Nombres_virgules/C1-achat_livres.html">Achat de livres</a></li>
-<li><a href="1-Nombres_virgules/C2-r%C3%A9colte.html">La roue de la fortune</a></li>
-<li><a href="1-Nombres_virgules/C3-fortune.html">La roue de la fortune</a></li>
-</ul>
-<h3 class="mume-header" id="d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</h3>
+<p>Votre programme devra lire un d&#xE9;cimal, le temps (en secondes) entre le moment o&#xF9; vous voyez l&apos;&#xE9;clair et le moment o&#xF9; vous entendez le tonnerre. Il devra calculer et afficher la distance entre vous et l&apos;orage, arrondi au kilom&#xE8;tre pr&#xE8;s.</p>
+<p>On supposera que la lumi&#xE8;re se d&#xE9;place instantan&#xE9;ment. La vitesse du son d&#xE9;pend de param&#xE8;tres comme l&apos;altitude, la temp&#xE9;rature...mais on supposera qu&apos;en cette soir&#xE9;e elle vaut 340,29 m&#xE8;tres / seconde.</p>
+<h3 class="mume-header" id="exemple">Exemple</h3>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</h3>
+<p>entr&#xE9;e :</p>
+<pre class="language-text">3.0
+</pre>
+<p>sortie :</p>
+<pre class="language-text">1
+</pre>
+<h3 class="mume-header" id="solution-officielle">Solution officielle</h3>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="fonctions">Fonctions</h3>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> <span class="token operator">*</span>
 
-<ul>
-<li><a href="4-Fonctions/8-creuses.html">Formes creuses</a></li>
-<li><a href="4-Fonctions/9-conversions.html">Convertisseur d&apos;unit&#xE9;s</a></li>
-</ul>
+vitesseSon <span class="token operator">=</span> <span class="token number">340.29</span>
+tempsParcours <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+distanceKilometres <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token punctuation">(</span>tempsParcours <span class="token operator">*</span> vitesseSon<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>distanceKilometres<span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="solution-alternative">Solution alternative</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">CONST_vitesse_son <span class="token operator">=</span> <span class="token number">340.29</span> <span class="token comment"># en m/s</span>
+temps_parcours <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># en s</span>
+distance_m <span class="token operator">=</span> CONST_vitesse_son <span class="token operator">*</span> temps_parcours <span class="token comment"># en m</span>
+distance_arrondie_km <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>distance_m <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token comment"># en km</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>distance_arrondie_km<span class="token punctuation">)</span>
+</pre><p>Il est inutile d&apos;importer le module <code>math</code> pour disposer de la fonction <code>round</code>.</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#niveau-2-de-france-ioi">Niveau 2 de France IOI</a>
+<li><a href="#soir%C3%A9e-orageuse">Soir&#xE9;e orageuse</a>
 <ul>
-<li><a href="#nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650">Nombres &#xE0; virgules et autres outils</a></li>
-<li><a href="#d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</a></li>
-<li><a href="#cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</a></li>
-<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#sujet">Sujet</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+<li><a href="#solution-officielle">Solution officielle</a></li>
+<li><a href="#solution-alternative">Solution alternative</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

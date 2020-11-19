@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>A1-augmentation</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,48 +23,75 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="niveau-2-de-france-ioi">Niveau 2 de France IOI</h1>
+      <h1 class="mume-header" id="augmentation-de-la-population">Augmentation de la population</h1>
 
-<h3 class="mume-header" id="nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=650">Nombres &#xE0; virgules et autres outils</a></h3>
+<h2 class="mume-header" id="sujet">sujet</h2>
 
+<p>Votre programme devra lire un entier, la population actuelle de la ville, puis un nombre d&#xE9;cimal, la croissance pr&#xE9;vue de la population, en pourcentage. Il devra alors afficher la nouvelle population de la ville sous la forme d&apos;un nombre entier. On consid&#xE9;rera, par convention, qu&apos;une population de 31,4 habitants signifie qu&apos;il y a 31 habitants, on ne compte donc que les habitants &#xAB; entiers &#xBB; !</p>
+<h3 class="mume-header" id="exemples">Exemples</h3>
+
+<h4 class="mume-header" id="exemple-1">Exemple 1</h4>
+
+<p>entr&#xE9;e :</p>
+<pre class="language-text">123
+7.0
+</pre>
+<p>sortie :</p>
+<pre class="language-text">131
+</pre>
+<h4 class="mume-header" id="exemple-2">Exemple 2</h4>
+
+<p>entr&#xE9;e :</p>
+<pre class="language-text">456
+-5.5
+</pre>
+<p>sortie :</p>
+<pre class="language-text">430
+</pre>
+<h2 class="mume-header" id="solution-officielle">Solution officielle</h2>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> <span class="token operator">*</span>
+populationActuelle <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+croissancePourcent <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+populationFuture <span class="token operator">=</span> floor<span class="token punctuation">(</span> populationActuelle <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> croissancePourcent <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>populationFuture<span class="token punctuation">)</span>
+</pre><dl>
+<dt>Remarque</dt>
+<dd>On d&#xE9;conseille l&apos;utilisation de <code>from math import *</code>, cela red&#xE9;finit la fonction <code>pow</code> en moins bien, il n&apos;y a plus le troisi&#xE8;me argument optionnel pour l&apos;arithm&#xE9;tique modulaire.</dd>
+<dt>Rappel</dt>
+<dd>Augmenter une quantit&#xE9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span> de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">t\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord mathdefault">t</span><span class="mord">%</span></span></span></span>, revient &#xE0; multiplier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span> par <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true">(</mo><mn>1</mn><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>t</mi><mn>100</mn></mfrac></mstyle><mo fence="true">)</mo></mrow><annotation encoding="application/x-tex">\left(1 + \dfrac t {100}\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">t</span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></dd>
+</dl>
+<h2 class="mume-header" id="solution-alternative">Solution alternative</h2>
+
+<p>&#x26A0;&#xFE0F; Pour les nombres positifs <code>int</code> et <code>floor</code> se comportent de la m&#xEA;me mani&#xE8;re. En revanche, pour les n&#xE9;gatifs le r&#xE9;sultat peut &#xEA;tre diff&#xE9;rent.</p>
 <ul>
-<li><a href="1-Nombres_virgules/1-origami.html">Origami</a></li>
-<li><a href="1-Nombres_virgules/2-conversion.html">Conversions de distances</a></li>
-<li><a href="1-Nombres_virgules/3-comparatif.html">Comparatif de prix</a></li>
-<li><a href="1-Nombres_virgules/4-moyenne.html">Moyenne des notes</a></li>
-<li><a href="1-Nombres_virgules/A1-augmentation.html">Augmentation de la population</a></li>
-<li><a href="1-Nombres_virgules/A2-construction.html">Construction de maisons</a></li>
-<li><a href="1-Nombres_virgules/B1-orage.html">Soir&#xE9;e orageuse</a></li>
-<li><a href="1-Nombres_virgules/B2-augmentation_taxes.html">Augmentation des taxes</a></li>
-<li><a href="1-Nombres_virgules/C1-achat_livres.html">Achat de livres</a></li>
-<li><a href="1-Nombres_virgules/C2-r%C3%A9colte.html">La roue de la fortune</a></li>
-<li><a href="1-Nombres_virgules/C3-fortune.html">La roue de la fortune</a></li>
+<li><code>int(+3.7) == +3</code></li>
+<li><code>floor(+3.7) == +3</code></li>
+<li><code>int(-3.7) == -3</code></li>
+<li><code>floor(-3.7) == -4</code> ; en effet <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">-4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">4</span></span></span></span> est l&apos;entier inf&#xE9;rieur ou &#xE9;gal &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>3.7</mn></mrow><annotation encoding="application/x-tex">-3.7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">3</span><span class="mord">.</span><span class="mord">7</span></span></span></span> le plus proche.</li>
 </ul>
-<h3 class="mume-header" id="d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</h3>
-
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</h3>
-
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="fonctions">Fonctions</h3>
-
-<ul>
-<li><a href="4-Fonctions/8-creuses.html">Formes creuses</a></li>
-<li><a href="4-Fonctions/9-conversions.html">Convertisseur d&apos;unit&#xE9;s</a></li>
-</ul>
-
+<p>Ici, nous pouvons utiliser <code>int</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">population_actuelle <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+taux_croissance <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+population_pr&#xE9;vue <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>population <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> taux_croissance <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>population_pr&#xE9;vue<span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#niveau-2-de-france-ioi">Niveau 2 de France IOI</a>
+<li><a href="#augmentation-de-la-population">Augmentation de la population</a>
 <ul>
-<li><a href="#nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650">Nombres &#xE0; virgules et autres outils</a></li>
-<li><a href="#d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</a></li>
-<li><a href="#cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</a></li>
-<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#sujet">sujet</a>
+<ul>
+<li><a href="#exemples">Exemples</a>
+<ul>
+<li><a href="#exemple-1">Exemple 1</a></li>
+<li><a href="#exemple-2">Exemple 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#solution-officielle">Solution officielle</a></li>
+<li><a href="#solution-alternative">Solution alternative</a></li>
 </ul>
 </li>
 </ul>
