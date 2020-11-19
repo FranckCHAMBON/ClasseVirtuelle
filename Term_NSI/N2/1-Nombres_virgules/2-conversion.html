@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>2-conversion</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,42 +23,43 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="niveau-2-de-france-ioi">Niveau 2 de France IOI</h1>
+      <h1 class="mume-header" id="conversions-de-distances">Conversions de distances</h1>
 
-<p>Peu de probl&#xE8;mes int&#xE9;ressants ici pour les terminales. Ils sont signal&#xE9;s par &#x1F44D;</p>
-<h3 class="mume-header" id="nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=650">Nombres &#xE0; virgules et autres outils</a></h3>
+<h2 class="mume-header" id="sujet">Sujet</h2>
 
-<ul>
-<li><a href="1-Nombres_virgules/1-origami.html">Origami</a></li>
-<li><a href="1-Nombres_virgules/2-conversion.html">Conversions de distances</a></li>
-<li><a href="1-Nombres_virgules/3-comparatif.html">Comparatif de prix</a></li>
-<li><a href="1-Nombres_virgules/B2-augmentation_taxes.html">Augmentation des taxes</a></li>
-</ul>
-<h3 class="mume-header" id="d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</h3>
+<p>&#xC9;crivez un programme qui lit un nombre d&#xE9;cimal (un nombre &#xE0; virgule) repr&#xE9;sentant un nombre de lieues et affiche le nombre de kilom&#xE8;tres correspondant. Un kilom&#xE8;tre vaut exactement 0.707 lieues.</p>
+<h3 class="mume-header" id="exemple">Exemple</h3>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</h3>
+<p>entr&#xE9;e :</p>
+<pre class="language-text">10.5
+</pre>
+<p>sortie :</p>
+<pre class="language-text">14.8514851485
+</pre>
+<h2 class="mume-header" id="solution-officielle">Solution officielle</h2>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="fonctions">Fonctions</h3>
+<pre data-role="codeBlock" data-info="python" class="language-python">lieues <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+kilometres <span class="token operator">=</span> lieues <span class="token operator">/</span> <span class="token number">0.707</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kilometres<span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="solution-alternative">Solution alternative</h2>
 
-<ul>
-<li><a href="4-Fonctions/8-creuses.html">Formes creuses</a></li>
-<li><a href="4-Fonctions/9-conversions.html">Convertisseur d&apos;unit&#xE9;s</a></li>
-</ul>
-
+<p>Avec de meilleurs noms de variable, et une constante d&#xE9;finie au d&#xE9;but du programme.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">CONST_km_par_lieu <span class="token operator">=</span> <span class="token number">0.707</span>
+distance_en_lieu <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+distance_en_km <span class="token operator">=</span> distance_en_lieu <span class="token operator">/</span> CONST_km_par_lieu
+<span class="token keyword">print</span><span class="token punctuation">(</span>distance_en_km<span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#niveau-2-de-france-ioi">Niveau 2 de France IOI</a>
+<li><a href="#conversions-de-distances">Conversions de distances</a>
 <ul>
-<li><a href="#nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650">Nombres &#xE0; virgules et autres outils</a></li>
-<li><a href="#d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</a></li>
-<li><a href="#cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</a></li>
-<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#sujet">Sujet</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
+<li><a href="#solution-officielle">Solution officielle</a></li>
+<li><a href="#solution-alternative">Solution alternative</a></li>
 </ul>
 </li>
 </ul>

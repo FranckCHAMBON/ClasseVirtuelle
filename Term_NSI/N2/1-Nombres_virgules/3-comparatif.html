@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>3-comparatif</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,42 +23,56 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="niveau-2-de-france-ioi">Niveau 2 de France IOI</h1>
+      <h1 class="mume-header" id="comparatif-de-prix">Comparatif de prix</h1>
 
-<p>Peu de probl&#xE8;mes int&#xE9;ressants ici pour les terminales. Ils sont signal&#xE9;s par &#x1F44D;</p>
-<h3 class="mume-header" id="nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650"><a href="http://www.france-ioi.org/algo/chapter.php?idChapter=650">Nombres &#xE0; virgules et autres outils</a></h3>
+<h2 class="mume-header" id="sujet">Sujet</h2>
 
-<ul>
-<li><a href="1-Nombres_virgules/1-origami.html">Origami</a></li>
-<li><a href="1-Nombres_virgules/2-conversion.html">Conversions de distances</a></li>
-<li><a href="1-Nombres_virgules/3-comparatif.html">Comparatif de prix</a></li>
-<li><a href="1-Nombres_virgules/B2-augmentation_taxes.html">Augmentation des taxes</a></li>
-</ul>
-<h3 class="mume-header" id="d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</h3>
+<p>Votre programme doit d&apos;abord lire le nombre de l&#xE9;gumes mis en vente. Ensuite, pour chacun, il doit lire 3 nombres d&#xE9;cimaux : son poids, son &#xE2;ge (en nombre de jours depuis la cueillette), et son prix de vente. Votre programme doit ensuite afficher pour chaque l&#xE9;gume son prix au kg (au fur et &#xE0; mesure que les l&#xE9;gumes sont pr&#xE9;sent&#xE9;s).</p>
+<h3 class="mume-header" id="exemple">Exemple</h3>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</h3>
+<p>entr&#xE9;e :</p>
+<pre class="language-text">2
+7.0
+5.0
+14.0
+9.5
+2.3
+7.6
+</pre>
+<p>sortie :</p>
+<pre class="language-text">2.0
+0.8
+</pre>
+<h2 class="mume-header" id="solution-officielle">Solution officielle</h2>
 
-<ul>
-<li>&#xE0; venir</li>
-</ul>
-<h3 class="mume-header" id="fonctions">Fonctions</h3>
+<pre data-role="codeBlock" data-info="python" class="language-python">nombreLegumes <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> loop <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nombreLegumes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   poids <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   age <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   prix <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token keyword">print</span><span class="token punctuation">(</span>prix <span class="token operator">/</span> poids<span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="solution-alternative">Solution alternative</h2>
 
-<ul>
-<li><a href="4-Fonctions/8-creuses.html">Formes creuses</a></li>
-<li><a href="4-Fonctions/9-conversions.html">Convertisseur d&apos;unit&#xE9;s</a></li>
-</ul>
-
+<p>Avec des commentaires pour les unit&#xE9;s, c&apos;est une bonne id&#xE9;e.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_l&#xE9;gumes <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_l&#xE9;gumes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   poids <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># en kg</span>
+   age <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment"># en j ; inutile</span>
+   prix <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># en &#x20AC;</span>
+   prix_au_kilo <span class="token operator">=</span> prix <span class="token operator">/</span> poids <span class="token comment"># &#x20AC;/kg</span>
+   <span class="token keyword">print</span><span class="token punctuation">(</span>prix_au_kilo<span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#niveau-2-de-france-ioi">Niveau 2 de France IOI</a>
+<li><a href="#comparatif-de-prix">Comparatif de prix</a>
 <ul>
-<li><a href="#nombres-%C3%A0-virgules-et-autres-outilshttpwwwfrance-ioiorgalgochapterphpidchapter650">Nombres &#xE0; virgules et autres outils</a></li>
-<li><a href="#d%C3%A9couverte-des-tableaux">D&#xE9;couverte des tableaux</a></li>
-<li><a href="#cha%C3%AEnes-de-caract%C3%A8res">Cha&#xEE;nes de caract&#xE8;res</a></li>
-<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#sujet">Sujet</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
+<li><a href="#solution-officielle">Solution officielle</a></li>
+<li><a href="#solution-alternative">Solution alternative</a></li>
 </ul>
 </li>
 </ul>

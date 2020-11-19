@@ -5,8 +5,9 @@ Peu de problèmes intéressants ici pour les terminales. Ils sont signalés par 
 ### [Nombres à virgules et autres outils](http://www.france-ioi.org/algo/chapter.php?idChapter=650)
 
 * [Origami](1-Nombres_virgules/1-origami.html)
+* [Conversions de distances](1-Nombres_virgules/2-conversion.html)
+* [Comparatif de prix](1-Nombres_virgules/3-comparatif.html)
 * [Augmentation des taxes](1-Nombres_virgules/B2-augmentation_taxes.html)
-* [Achat de livres](1-Nombres_virgules/B2-augmentation_taxes.html)
 
 ### Découverte des tableaux
 
