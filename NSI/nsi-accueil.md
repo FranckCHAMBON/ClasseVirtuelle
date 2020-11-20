@@ -1,12 +1,13 @@
 # :dizzy: Spécialité NSI
 
 ## :busts_in_silhouette: Classe virtuelle
-> [https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e](https://eu.bbcollab.com/guest/6e60662ef5b242a79122f6d4b799a66e)
+> [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
 
 Rendez-vous :
-* :clock4: les lundis de 16h à 17h
-* :clock9: les mardis de 9h à 10h
-* :clock2: les jeudis de 14h à 16h
+* :clock10: les mardis de 10h à 12h (groupe1)
+* :clock8: les mercredis de 8h à 10h (groupe2)
+* :clock2: les vendredis de 14h à 16h
+
 
 
 ## :mortar_board: Travail principal
@@ -14,22 +15,9 @@ Rendez-vous :
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
 > Nous continuerons à corriger certains exercices ensemble.
 
-2. Résoudre des problèmes sur [Project Euler](https://projecteuler.net/archives), voici quelques solutions étudiées en classe :
-    * [Problème 1](/EULER/PE001.html)
-    * [Problème 2](/EULER/PE002.html)
-    * [Problème 3](/EULER/PE003.html)
-    * [Problème 4](/EULER/PE004.html)
-    * [Problème 5](/EULER/PE005.html)
-    * [Problème 6](/EULER/PE006.html)
-    * [Problème 9](/EULER/PE009.html)
-    * [Problème 8](/EULER/PE008.html)
-    * [Problème 11](/EULER/PE011.html)
-    * [Problème 13](/EULER/PE013.html)
-    * [Problème 16](/EULER/PE016.html)
-    * [Problème 22](/EULER/PE022.html)
-    * [Problème 29](/EULER/PE029.html)
-    * [Problème 31](/EULER/PE031.html)
-    * [Problème 48](/EULER/PE048.html)
+2. Résoudre des problèmes (en anglais) sur [Project Euler](https://projecteuler.net/archives).
+
+> Nous étudierons ensemble des solutions à certains des 50 premiers problèmes.
 
 2. :wrench: Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
