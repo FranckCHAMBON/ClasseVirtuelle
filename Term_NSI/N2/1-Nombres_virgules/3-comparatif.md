@@ -40,7 +40,7 @@ Avec des commentaires pour les unités, c'est une bonne idée.
 nb_légumes = int(input())
 for _ in range(nb_légumes):
    poids = float(input()) # en kg
-   age = float(input())   # en j ; inutile
+   âge = float(input())   # en j ; inutile
    prix = float(input())  # en €
    prix_au_kilo = prix / poids # €/kg
    print(prix_au_kilo)

@@ -32,11 +32,11 @@ print(prix)
 ```python
 from math import ceil
 
-CONST_masse_sac = 60 # en kg
-CONST_prix_sac = 45 # en €
+CONST_masse_1_sac = 60 # en kg
+CONST_prix_1_sac = 45 # en €
 masse_ciment = float(input()) # en kg
-nb_sacs = ceil(masse_ciment / CONST_masse_sac)
-prix_ciment = nb_sacs * CONST_prix_sac # en €
+nb_sacs = ceil(masse_ciment / CONST_masse_1_sac)
+prix_ciment = nb_sacs * CONST_prix_1_sac # en €
 print(prix_ciment)
 ```
 

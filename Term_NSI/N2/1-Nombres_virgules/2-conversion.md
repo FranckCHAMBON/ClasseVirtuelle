@@ -27,8 +27,8 @@ print(kilometres)
 Avec de meilleurs noms de variable, et une constante définie au début du programme.
 
 ```python
-CONST_km_par_lieu = 0.707
-distance_en_lieu = float(input())
-distance_en_km = distance_en_lieu / CONST_km_par_lieu
+CONST_km_par_lieue = 0.707
+distance_en_lieue = float(input())
+distance_en_km = distance_en_lieue / CONST_km_par_lieue
 print(distance_en_km)
 ```

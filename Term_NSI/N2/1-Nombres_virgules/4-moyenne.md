@@ -35,6 +35,7 @@ Avec un style un plus fonctionnel.
 ```python
 nb_notes = int(input())
 somme_notes = sum(int(input()) for _ in range(nb_notes))
-print(somme_notes)
+moyenne = somme_notes / nb_notes
+print(moyenne)
 ```
 

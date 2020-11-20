@@ -5,6 +5,7 @@
  Votre programme devra lire un entier, la population actuelle de la ville, puis un nombre décimal, la croissance prévue de la population, en pourcentage. Il devra alors afficher la nouvelle population de la ville sous la forme d'un nombre entier. On considérera, par convention, qu'une population de 31,4 habitants signifie qu'il y a 31 habitants, on ne compte donc que les habitants « entiers » !
 
 ### Exemples
+
 #### Exemple 1
 
 entrée :
@@ -57,7 +58,7 @@ Ici, nous pouvons utiliser `int`.
 ```python
 population_actuelle = float(input())
 taux_croissance = float(input())
-population_prévue = int(population * (1 + taux_croissance / 100))
+population_prévue = int(population_actuelle * (1 + taux_croissance / 100))
 print(population_prévue)
 ```
 

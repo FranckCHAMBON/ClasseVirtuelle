@@ -53,13 +53,15 @@ C'est essentiellement un problème de mathématiques.
 
 On rappelle que :
 * $t\%$ d'une quantité $Q$, c'est $Q×\dfrac t {100}$.
-* Faire subir à $Q$ une variation de $t\%$, c'est obtenir $Q + Q×\dfrac t {100} = Q×1 + Q×\dfrac t {100} = Q×\left(1+\dfrac t {100}\right)$
+* Faire subir à $Q$ une variation de $t\%$, c'est obtenir 
+$$Q + Q×\dfrac t {100} = Q×1 + Q×\dfrac t {100} = Q×\left(1+\dfrac t {100}\right)$$
+
 > Ainsi faire varier une quantité $Q$ de $t\%$ revient à multiplier $Q$ par $\left(1+\dfrac t {100}\right)$. Et annuler une variation de $t%$ revient à diviser par ce même coefficient. Ceci étant valable avec $t$ positif ou négatif.
 
 Pour notre problème, on a :
-* $P_\text{T1} = P_\text{HT} × \left(1+\dfrac {t_1} {100}\right)$
-* $P_\text{T2} = P_\text{HT} × \left(1+\dfrac {t_2} {100}\right)$
-* et $P_\text{T1}$, $t_1$ et $t_2$ qui sont connus, $P_\text{HT}$ désigne le prix hors taxe.
+* $P_{\text{T}_1} = P_\text{HT} × \left(1+\dfrac {t_1} {100}\right)$
+* $P_{\text{T}_2} = P_\text{HT} × \left(1+\dfrac {t_2} {100}\right)$
+* et $P_{\text{T}_1}$, $t_1$ et $t_2$ qui sont connus, $P_\text{HT}$ désigne le prix hors taxe.
 
 On déduit le code :
 
