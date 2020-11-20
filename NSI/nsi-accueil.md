@@ -45,16 +45,6 @@ Rendez-vous :
 ## :penguin: Émulateurs Linux
 + [Termux](https://play.google.com/store/apps/details?id=com.termux) : pour les tablettes
     + [Un article à lire sur Termux](https://grisebouille.net/termux-hackez-votre-android/)
-+ [jor1k](https://s-macke.github.io/jor1k/demos/main.html?user=XjgQbmJywo&cpu=asm&n=1&relayURL=wss%3A%2F%2Frelay.widgetry.org%2F)
-    + facile, pas d'inscription
-+ [CoCalc](https://cocalc.com/)
-    + nécessite une inscription ; solution basée sur logiciel libre et gratuit ;
-    + permet la sauvegarde de document ;
-    + permet de travailler avec :
-        + Python,
-        + langage C,
-        + langage Bash
-        + d'autres langages, comme SageMath (pour les profs)
 + :shell: [commandes de bases Linux](http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf) ;
 + un [TP Linux](http://nsivaugelas.free.fr/premiere/archi_s_e.php)
 + un [jeu avec un émulateur Linux](http://luffah.xyz/bidules/Terminus/)
