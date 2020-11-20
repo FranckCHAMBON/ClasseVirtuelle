@@ -6,7 +6,7 @@ Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-    * [Salle d'attente](https://lycee.cned.fr/cv/258054/203).
+* [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203).
 
 Il y a des règles et des possibilités :
 + Vous devez être connecté au CNED pour accéder à la classe virtuelle.
@@ -21,7 +21,6 @@ Il y a des règles et des possibilités :
 
 
 ## Accès aux pages dédiées
-* [Pour les seconde en SNT](SNT/snt-accueil.md)
 * [Pour les spé NSI en première](NSI/nsi-accueil.md)
 * [Pour les terminales NSI](Term_NSI/accueil.md)
 * [Pour les maths expertes](https://franckchambon.github.io/matex/)
