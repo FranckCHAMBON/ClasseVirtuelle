@@ -12,7 +12,10 @@ Rendez-vous en cas de confinement complet :
 
 ## :mortar_board: Travail principal
 
-1. [Cours de Python](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
+1. Cours :
+    * [1 - Le binaire](Cours/1-binaire.html)
+    * [2 - Structures de données linéaires](Cours/2-sdl.html) *À venir*
+    * [Python au lycée](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
     * [Correction et étude des solutions aux problèmes](FranceIOI/accueil.html).
 > Nous continuerons à corriger certains exercices ensemble.
