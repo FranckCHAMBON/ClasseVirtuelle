@@ -1,12 +1,21 @@
 # Terminale NSI
 
-## Épreuve finale
+## :busts_in_silhouette: Classe virtuelle de  M. Chambon
+> [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
+
+Rendez-vous en cas de confinement complet :
+* :clock10: les lundis de 10h à 12h
+* :clock10: les mercredis de 10h à 12h
+* :clock8: les vendredis de 8h à 10h
+
+
+## :checkered_flag: Épreuve finale
 
 L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
 
 
 
-## FranceIOI
+## 🥇 FranceIOI
 > Solutions alternatives aux problèmes sur FranceIOI
 
 Pour le code Python des solutions :
@@ -26,7 +35,7 @@ Pour le code Python des solutions :
 2. [Niveau 2](N2/accueil.html)
 3. [Niveau 3](N3/accueil.html)
 
-## Interfaces Homme Machine
+## 🐚 Interfaces Homme Machine
 
 > Systèmes d'exploitation et commandes Bash
 
