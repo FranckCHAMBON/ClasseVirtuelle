@@ -22,10 +22,10 @@ On parle de **binaire**, pour deux états.
 |16  | Hexadécimal|
 
 
-L'unité élémentaire de stockage est le *bit*. (***Bi**nary digi**t***)
-> Un disque dur, un CD-ROM, la mémoire vive, sont remplis de cases remplis soit de 0, soit de 1.
+L'unité élémentaire de stockage est le *bit*. (_**Bi**nary digi**t**_)
+> Un disque dur, un CD-ROM, la mémoire vive, sont constitués de cases remplies soit de 0, soit de 1.
 
-**Propriété** : avec un paquet de $n$ cases binaire, on peut coder $2^n$ symboles différents.
+**Propriété** : avec un paquet de $n$ cases binaires, on peut coder $2^n$ symboles différents.
 
 **Exemple 1** : avec 3 cases binaires, on peut coder $2^3 = 8$ symboles différents
 + `000` pour 0
@@ -52,9 +52,9 @@ En pratique les données informatiques transitent très souvent par paquets de 8
 
 ### l'ASCII
 
-Le [codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange) utilise sur un octet :
-+ le premier bit à 0 ;
-+ et les 7 autres variables, donc $2^7 = 128$ symboles différents.
+Le [codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange) utilise un octet :
++ le premier bit est à 0 ;
++ et les 7 autres sont variables, donc $2^7 = 128$ symboles différents.
 
 Il est utilisé pour coder :
 + *les* lettres minuscules et majuscules ;
@@ -62,9 +62,9 @@ Il est utilisé pour coder :
 + *les* chiffres ;
 + *les* caractères techniques spéciaux d'imprimerie.
 
-Les articles sont écrits là en italiques, car c'est impossible en réalité.
-+ Il existe trop de langues et donc énormément de lettres, un choix est fait, l'anglais et quelques autres lettres.
-+ Idem pour la ponctuation, un choix est fait...
+Les articles sont écrits là en italiques, car c'est impossible en réalité de les mettre tous.
++ Il existe trop de langues et donc énormément de lettres, un choix a été fait, les lettres anglaises et quelques autres.
++ Idem pour la ponctuation, un choix a été fait...
 
 > Pour un texte en anglais, avec une ponctuation classique, l'ASCII est parfaitement adapté.
 
