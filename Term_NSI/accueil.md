@@ -14,7 +14,7 @@ Pour le code Python des solutions :
 * Les noms de variables sont 
     * le plus explicites possible,
     * en français et avec accents,
-    * *snake_case* utilisé.
+    * avec utilisation du *snake_case*.
 * Les opérateurs comme `+=` ou `-=` sont utilisés.
 * Utilisation fréquente de fonctions, 
     * dès le niveau 3, toujours avec *docstring*
