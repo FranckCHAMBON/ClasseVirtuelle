@@ -1,5 +1,6 @@
 # Terminale NSI
 
+## FranceIOI
 > Solutions alternatives aux problèmes sur FranceIOI
 
 Pour le code Python des solutions :
@@ -18,3 +19,16 @@ Pour le code Python des solutions :
 1. [Niveau 1](N1/accueil.html)
 2. [Niveau 2](N2/accueil.html)
 3. [Niveau 3](N3/accueil.html)
+
+## Interfaces Homme Machine
+
+> Systèmes d'exploitation et commandes Bash
+
+Activités entièrement réalisables sur tablette Android avec l'application [Termux]().
+
+* 0-[Installation](Termux/0-termux.html) *Seule cette activité nécessite une connexion Internet.*
+* 1-[Découverte de Bash](Termux/1-bash.html)
+* 2-[Édition de code dans un terminal](Termux/2-micro.html)
+* 3-[Création de jeux de tests](Termux/3-tests.html)
+* 4-[Créer entièrement son propre problème](Termux/4-problème.html) *À venir*
+

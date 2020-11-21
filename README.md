@@ -1,6 +1,6 @@
 # Documents de cours de M. Chambon
 
-Vous trouverez ici les documents utiles pour suivre et travailler en SNT, en spé NSI première et terminale, ainsi qu'en maths expertes.
+Vous trouverez ici les documents utiles pour suivre et travailler en spé NSI première et terminale, ainsi qu'en maths expertes.
 
 Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 

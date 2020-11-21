@@ -1,0 +1,674 @@
+<!DOCTYPE html><html><head>
+      <title>0-termux</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header undefined" id="ihm-mode-texte">IHM mode texte</h1>
+
+<blockquote>
+<p>Partie 0 - Installations avec <strong><a href="https://termux.com/">Termux</a></strong>.</p>
+<blockquote>
+<p>Seule cette partie n&#xE9;cessite une connexion Internet, afin d&apos;installer les diff&#xE9;rents logiciels.</p>
+</blockquote>
+</blockquote>
+<p>Auteur : Franck CHAMBON, enseignant au lyc&#xE9;e Lucie AUBRAC de Boll&#xE8;ne (84).</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Cc-by-nc-sa_euro_icon.svg/800px-Cc-by-nc-sa_euro_icon.svg.png" width="100px" title="Licence" alt="Licence CC-BY-NC-SA-4.0">
+<p>Le document suivant est plac&#xE9; sous licence libre <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC - BY-NC-SA 4.0</a></p>
+<ul>
+<li>Partie 0 : Installations de Termux</li>
+<li>Partie 1 : D&#xE9;couverte de Bash</li>
+<li>Partie 2 : &#xC9;dition de code dans un terminal</li>
+<li>Partie 3 : Jeux de tests</li>
+</ul>
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#pr%C3%A9sentation-de-termux-pour-android">Pr&#xE9;sentation de Termux pour Android</a></li>
+<li><a href="#mise-en-place-sur-pc">Mise en place sur PC</a></li>
+<li><a href="#alternatives-au-clavier-virtuel">Alternatives au clavier virtuel</a>
+<ul>
+<li><a href="#tablette-connect%C3%A9e-%C3%A0-un-pc">Tablette connect&#xE9;e &#xE0; un PC</a></li>
+<li><a href="#clavier-bluetooth">Clavier Bluetooth</a></li>
+<li><a href="#clavier-usb-avec-ou-sans-adaptateur">Clavier USB avec ou sans adaptateur</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#mise-en-place-pour-tablette-android">Mise en place pour tablette Android</a>
+<ul>
+<li><a href="#0-tldr">0. <em>TL;DR</em></a></li>
+<li><a href="#1-application-termux">1. Application Termux</a></li>
+<li><a href="#2-langage-python">2. Langage Python</a></li>
+<li><a href="#3-%C3%A9diteurs-nano-et-micro">3. &#xC9;diteurs nano et micro</a></li>
+<li><a href="#4-dautres-paquets-utiles">4. D&apos;autres paquets utiles</a>
+<ul>
+<li><a href="#art-ascii">Art ASCII</a></li>
+<li><a href="#outils-syst%C3%A8me">Outils syst&#xE8;me</a></li>
+</ul>
+</li>
+<li><a href="#5-connexion-tablette-pc">5. Connexion tablette-PC</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<h3 class="mume-header" id="pr%C3%A9sentation-de-termux-pour-android">Pr&#xE9;sentation de Termux pour Android</h3>
+
+<p>Cette activit&#xE9; utilise <a href="https://termux.com/">Termux</a>, une application pour tablette ou t&#xE9;l&#xE9;phone Android (tout &#xE9;l&#xE8;ve de la r&#xE9;gion Sud poss&#xE8;de une telle tablette). Termux &#xE9;mule un terminal et un environnement Linux proche de <em>Debian</em>. Cette application est un <strong>logiciel libre</strong> contrairement &#xE0; de tr&#xE8;s nombreuses applications gratuites disponibles pour Android.</p>
+<ul>
+<li>On y installera une version de <strong>Python</strong> et un &#xE9;diteur de code pour terminal,</li>
+<li>on pourra lancer des commandes syst&#xE8;me interpr&#xE9;t&#xE9;es par <strong>Bash</strong>,</li>
+<li>on d&#xE9;couvrira progressivement des possibilit&#xE9;s :
+<ul>
+<li>d&#xE9;couverte minimaliste de Bash,</li>
+<li>&#xE9;dition et ex&#xE9;cution de code Python ou autre,</li>
+<li>utilisation de <code>doctest</code> avec Python,</li>
+<li>cr&#xE9;ation et confrontation de jeux de tests,</li>
+<li>utilisation de plusieurs langages de programmation.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Tout &#xE9;l&#xE8;ve ayant une tablette Android peut donc faire l&apos;activit&#xE9;. Aucune connexion Internet n&apos;est requise pour les parties suivantes.</p>
+</blockquote>
+<h3 class="mume-header" id="mise-en-place-sur-pc">Mise en place sur PC</h3>
+
+<p>L&apos;activit&#xE9; peut tout aussi bien se faire sur un poste fixe &#xE9;quip&#xE9; de Linux, conform&#xE9;ment au programme de NSI. Termux ne faisant qu&apos;&#xE9;muler les outils d&#xE9;j&#xE0; pr&#xE9;sents.</p>
+<blockquote>
+<p>Avec un poste bas&#xE9; sur Debian, l&apos;administrateur n&apos;aura qu&apos;&#xE0; installer quelques paquets suppl&#xE9;mentaires : <code>micro</code>, <code>cowsay</code>, <code>figlet</code>, <code>lolcat</code> et <code>fortune</code>.</p>
+</blockquote>
+<p>La seule diff&#xE9;rence restante sera d&apos;utiliser <code>python3</code>, au lieu de <code>python</code> dans Termux, pour l&apos;interpr&#xE9;teur de Python 3.</p>
+<h3 class="mume-header" id="alternatives-au-clavier-virtuel">Alternatives au clavier virtuel</h3>
+
+<p>L&apos;utilisation de la tablette sans clavier physique est probl&#xE9;matique ; le clavier virtuel n&apos;est pas adapt&#xE9; au travail de saisie.</p>
+<blockquote>
+<p>Cette activit&#xE9; peut toutefois &#xEA;tre r&#xE9;alis&#xE9;e avec le clavier virtuel ; tr&#xE8;s peu de code est &#xE0; saisir.</p>
+</blockquote>
+<p>Plusieurs solutions sont &#xE0; envisager pour pouvoir utiliser un clavier physique sur la tablette.</p>
+<h4 class="mume-header" id="tablette-connect%C3%A9e-%C3%A0-un-pc">Tablette connect&#xE9;e &#xE0; un PC</h4>
+
+<p>On montre comment connecter, via le c&#xE2;ble USB d&apos;origine, la tablette &#xE0; tout PC (Windows, MacOS, ou Linux) afin de pouvoir utiliser le clavier physique du PC, ainsi que la souris. Co&#xFB;t nul, si un PC est disponible ; cependant, c&apos;est un peu technique. Cette solution offre des avantages &#xE0; l&apos;enseignant pour vid&#xE9;o-projeter ou enregistrer une session.<br>
+<img src="assets/scrcpy.png?0.29969583332539274" alt></p>
+<h4 class="mume-header" id="clavier-bluetooth">Clavier Bluetooth</h4>
+
+<p>Il est tout &#xE0; fait possible de connecter un clavier Bluetooth &#xE0; la tablette. Le co&#xFB;t est contenu, mais l&apos;utilisation en classe de nombreuses connections Bluetooth est hasardeuse.<br>
+<img src="assets/ClavierBT2.png?0.14132595285758054" alt></p>
+<h4 class="mume-header" id="clavier-usb-avec-ou-sans-adaptateur">Clavier USB avec ou sans adaptateur</h4>
+
+<p>Il est tout &#xE0; fait possible de brancher un classique clavier USB type-A directement sur la tablette via un adaptateur USB (Type-C m&#xE2;le ; Type-A femelle). Le co&#xFB;t est modique. On peut utiliser tout clavier USB, certains sont transportables, et certains sont d&#xE9;j&#xE0; en USB type-C. <strong>Attention, il faut choisir un mod&#xE8;le de clavier avec un acc&#xE8;s facile aux touches de programmation <code>([{|&amp;\}])</code>.</strong><br>
+<img src="assets/adapterUSB.jpg?0.3498044242620719" alt></p>
+<blockquote>
+<p>Le choix d&apos;un clavier doit &#xEA;tre r&#xE9;fl&#xE9;chi ! Il peut &#xEA;tre un objet personnel (<a href="http://www.legorafi.fr/2014/03/18/coince-chez-lui-pendant-3-semaines-il-survit-en-se-nourrissant-de-restes-coinces-entre-les-touches-de-son-clavier/">humour</a>) qu&apos;on garde longtemps.</p>
+</blockquote>
+<h2 class="mume-header" id="mise-en-place-pour-tablette-android">Mise en place pour tablette Android</h2>
+
+<p>On installe ici les logiciels n&#xE9;cessaires sur tablette, et on fait uniquement des tests rapides.</p>
+<h3 class="mume-header" id="0-tldr">0. <em>TL;DR</em></h3>
+
+<blockquote>
+<p><em><strong>TL;DR</strong></em> signifie <em>Too Long ; Didn&apos;t Read</em> (<em><a href="https://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn%27t_read">en</a></em>).<br>
+On le croise souvent pour annoncer un r&#xE9;sum&#xE9; d&apos;une longue partie que certains pourraient zapper.</p>
+</blockquote>
+<p>Pour les <strong>lecteurs avertis</strong>, voici la mise en place r&#xE9;sum&#xE9;e :</p>
+<ul>
+<li>Installer et lancer <a href="https://termux.com/">Termux</a></li>
+<li>Mettre &#xE0; jour <code>$ apt update</code></li>
+<li>Installer des logiciels <code>$ apt install python micro cowsay figlet fortune man coreutils tree ruby</code></li>
+<li>Installer le paquet Ruby <code>$ gem install lolcat</code></li>
+</ul>
+<p>Pour les autres, bien suivre toutes les &#xE9;tapes suivantes, et faire chaque test.</p>
+<h3 class="mume-header" id="1-application-termux">1. Application Termux</h3>
+
+<dl>
+<dt>Installation</dt>
+<dd>Installer l&apos;application <a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a>, avec <em>Google Play</em>.</dd>
+<dt>Installation alternative</dt>
+<dd>Pour les personnes qui refusent d&apos;utiliser <em>Google Play</em> pour des raisons de respect de la vie priv&#xE9;e (par exemple), il est possible de l&apos;installer via <a href="https://f-droid.org/repository/browse/?fdid=com.termux"><em>F-Droid</em></a>, qui est un magasin d&apos;applications bien plus respectueux.</dd>
+<dt>V&#xE9;rification</dt>
+<dd>Lancer l&apos;application Termux.</dd>
+</dl>
+<p><img src="assets/termux1.png?0.4999285947311922" alt><br>
+<code>$</code> est l&apos;invite de commande <strong>Bash</strong>, on dit aussi <em>prompt</em> en anglais. C&apos;est l&#xE0; que l&apos;on entre les commandes. Il est inutile de taper sur <code>$</code> dans les commandes qui suivent, c&apos;est juste pour indiquer qu&apos;il s&apos;agira d&apos;une commande Bash.</p>
+<blockquote>
+<p>De m&#xEA;me, ensuite on verra <code>&gt;&gt;&gt;</code> l&apos;invite de commande Python qu&apos;il ne faudra pas entrer non plus, mais qui signifie que le <em>prompt</em> attend une commande Python...</p>
+</blockquote>
+<dl>
+<dt>Important</dt>
+<dd>Les premi&#xE8;res commandes &#xE0; entrer sont :
+<ul>
+<li>Pour mettre &#xE0; jour les d&#xE9;p&#xF4;ts de paquets : <code>$ apt update</code> puis r&#xE9;pondre <kbd>Y</kbd>.</li>
+<li>Pour mettre &#xE0; jour les paquets d&#xE9;j&#xE0; install&#xE9;s : <code>$ apt upgrade</code></li>
+</ul>
+</dd>
+<dt>Explication</dt>
+<dd><code>pkg</code> est la <strong>commande</strong> pour g&#xE9;rer (installation, suppression, ...) les paquets (<em><strong>p</strong>ac<strong>k</strong>a<strong>g</strong>e</em>) syst&#xE8;mes dans Termux. On peut aussi utiliser <code>apt</code> comme sur Linux bas&#xE9; sur Debian.<br>
+<code>update</code> est un <strong>argument</strong>, <code>upgrade</code> en est un autre possible. Pour installer (ou supprimer, ou chercher) un paquet, il y a d&apos;autres arguments &#xE0; <code>apt</code>.</dd>
+</dl>
+<blockquote>
+<p>Voyons comment installer le paquet pour Python dans Termux.</p>
+</blockquote>
+<h3 class="mume-header" id="2-langage-python">2. Langage Python</h3>
+
+<p>Python est un langage de script, tout comme Bash, mais plus r&#xE9;cent (premi&#xE8;re version publique en f&#xE9;vrier 1991 par Guido van Rossum).</p>
+<p>Python est disponible dans Termux, une fois un paquet install&#xE9;. En effet, sans installer le paquet, voici le r&#xE9;sultat :</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ python
+The program python is not installed. Install it by executing:
+ pkg install python
+</code></pre><blockquote>
+<p>Python n&apos;est pas install&#xE9;, mais on nous indique comment faire.</p>
+</blockquote>
+<dl>
+<dt>Installation</dt>
+<dd>Dans Termux, entrer <code>$ apt install python</code>, puis r&#xE9;pondre <kbd>Y</kbd>.</dd>
+<dt>Explication</dt>
+<dd><code>install</code> est un <strong>argument</strong> de la commande <code>apt</code>, pour installer des paquets.<br>
+<code>python</code> est un autre <strong>argument</strong>, ici le nom du paquet que l&apos;on souhaite installer.</dd>
+<dt>Remarque</dt>
+<dd>Suivant la plateforme, la commande pour g&#xE9;rer les paquets syst&#xE8;me porte le nom :</dd>
+</dl>
+<ul>
+<li><code>pkg</code> pour Termux (mais <code>apt</code> fonctionne aussi ; nous l&apos;utiliserons),</li>
+<li><code>apt</code> pour Debian et d&#xE9;riv&#xE9;s (tr&#xE8;s utilis&#xE9;s dans le monde &#xE9;ducatif en particulier),</li>
+<li><code>rpm</code> pour Fedora et d&#xE9;riv&#xE9;s,</li>
+<li><code>pacman</code> pour Arch et d&#xE9;riv&#xE9;s,</li>
+<li><code>brew</code> pour MacOS,</li>
+<li>(<code>choco</code> ou <code>winget</code> ou <code>scoop</code> pour Windows).</li>
+</ul>
+<dl>
+<dt>V&#xE9;rification</dt>
+<dd>Entrer &#xE0; nouveau <code>$ python</code><br>
+On obtient une invite de commande Python <code>&gt;&gt;&gt;</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code>$ python
+Python 3.8.3 (default, Jul  8 2020, 22:39:27)
+[Clang 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf6 on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre><dl>
+<dt>Exercice</dt>
+<dd>
+<p>Effectuer un calcul du genre <code>&gt;&gt;&gt; 2**127 - 1</code></p>
+</dd>
+<dd>
+<p>V&#xE9;rifier que la r&#xE9;ponse est bien <code>170141183460469231731687303715884105727</code></p>
+</dd>
+<dt>Quitter Python</dt>
+<dd>
+<p>Entrer <code>&gt;&gt;&gt; exit()</code><br>
+On retrouve alors l&apos;invite de commande Bash <code>$</code>.</p>
+</dd>
+<dd>
+<p>On peut aussi taper sur <kbd>Ctrl</kbd>+<kbd>D</kbd>, qui envoye le caract&#xE8;re ASCII <em><strong>EOF</strong></em> (<em>End Of File</em>) ; cela indique la fin de la saisie, tant pour Python que pour Bash.</p>
+</dd>
+<dt>Exercice</dt>
+<dd>
+<p>V&#xE9;rifier que l&apos;on peut quitter Bash, ou bien avec <code>$ exit</code>, ou bien avec <kbd>Ctrl</kbd>+<kbd>D</kbd>. Noter que pour Python, il faut des parenth&#xE8;ses &#xE0; <code>exit()</code>.</p>
+</dd>
+</dl>
+<blockquote>
+<p>L&apos;utilisation de Python en ligne de commande n&apos;est pratique que pour de tr&#xE8;s petits scripts ; pour de plus longs scripts, il est bien plus commode de les cr&#xE9;er dans un &#xE9;diteur.</p>
+</blockquote>
+<h3 class="mume-header" id="3-%C3%A9diteurs-nano-et-micro">3. &#xC9;diteurs nano et micro</h3>
+
+<p><strong><a href="https://fr.wikipedia.org/wiki/GNU_nano">nano</a></strong> est un &#xE9;diteur de code minimaliste pour l&apos;&#xE9;mulateur de terminal.</p>
+<blockquote>
+<p>Historiquement, il y a les &#xE9;diteurs <strong>Vi(m)</strong> et <strong>Emacs</strong> qui sont tr&#xE8;s utilis&#xE9;s. Leur fonctionnement modal les rend puissants, mais aussi complexes pour une premi&#xE8;re prise en main.</p>
+</blockquote>
+<dl>
+<dt>Installation</dt>
+<dd>Dans Termux, nano est d&#xE9;j&#xE0; install&#xE9;, sinon entrer <code>$ apt install nano</code></dd>
+<dt>Exemple d&apos;utilisation</dt>
+<dd>Dans Termux, pour &#xE9;diter un fichier <code>salut.txt</code> avec nano :
+<ul>
+<li>Entrer : <code>$ nano salut.txt</code></li>
+<li>&#xC9;crire <code>Bonjour &#xE0; tous !</code> sur la premi&#xE8;re ligne.</li>
+<li>Enregistrer (<em>write <strong>O</strong>ut</em>) le fichier, avec <kbd>Ctrl</kbd>+<kbd>O</kbd>, et confirmer le nom du fichier.</li>
+<li>Sortir (<em>e<strong>X</strong>it</em>) de nano, avec <kbd>Ctrl</kbd>+<kbd>X</kbd>.</li>
+</ul>
+</dd>
+</dl>
+<p>D&apos;autres raccourcis clavier (<em>bindings</em>) sont indiqu&#xE9;s par d&#xE9;faut ; ils ne sont pas usuels...</p>
+<p><img src="assets/nano1.png?0.26476739006328476" alt></p>
+<dl>
+<dt>Remarques</dt>
+<dd>
+<p>1- <strong>nano</strong> n&apos;offre pas des raccourcis usuels d&apos;&#xE9;dition, cependant il affiche les plus utiles. C&apos;est un logiciel libre qui reprend les fonctionnalit&#xE9;s d&apos;un ancien &#xE9;diteur minimaliste non libre <a href="https://fr.wikipedia.org/wiki/Pico_(logiciel)">pico</a>.</p>
+</dd>
+<dd>
+<p>2- <strong>nano</strong> est souvent d&#xE9;j&#xE0; install&#xE9; avec Linux, on le retrouve propos&#xE9; dans de nombreux tutoriels ; il est <em>neutre</em> (dans le <a href="https://fr.wikipedia.org/wiki/Guerre_d%27%C3%A9diteurs#%C3%89diteurs_pour_mainframes">conflit historique</a> Vim vs Emacs), et on peut utiliser &#xE0; sa place l&apos;&#xE9;diteur de son choix : Vim, Emacs, xed, ou <strong>micro</strong>...</p>
+</dd>
+<dd>
+<p>3- L&apos;&#xE9;diteur <strong><a href="https://micro-editor.github.io/">micro</a></strong> est aussi un &#xE9;diteur minimaliste, se pr&#xE9;sente comme successeur de nano, en offrant beaucoup plus de possibilit&#xE9;s, et de simplicit&#xE9;s via ses raccourcis clavier. <strong>Recommand&#xE9; pour tous</strong>.<br>
+<code>$ apt install micro</code></p>
+</dd>
+</dl>
+<p><code>$ micro salut.txt</code></p>
+<p><img src="assets/micro1.png?0.6854549080111141" alt></p>
+<p>Raccourcis claviers (<em>bindings</em>) de <strong>micro</strong>, affich&#xE9;s avec <kbd>Alt</kbd>+<kbd>G</kbd> :</p>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>Q</kbd> pour quitter (<em><strong>Q</strong>uit</em>)</li>
+<li><kbd>Ctrl</kbd>+<kbd>S</kbd> pour sauvegarder (<em><strong>S</strong>ave</em>)</li>
+</ul>
+<blockquote>
+<p>Nous utiliserons <strong>micro</strong> dans la partie 2 !</p>
+</blockquote>
+<p>Installons d&apos;autres logiciels plus ou moins utiles, historiquement tr&#xE8;s utilis&#xE9;s.</p>
+<h3 class="mume-header" id="4-dautres-paquets-utiles">4. D&apos;autres paquets utiles</h3>
+
+<h4 class="mume-header" id="art-ascii">Art ASCII</h4>
+
+<h5 class="mume-header undefined" id="cowsay">Cowsay</h5>
+
+<p><a href="https://fr.wikipedia.org/wiki/Cowsay">Cowsay</a> est un logiciel libre qui cr&#xE9;e de <a href="https://fr.wikipedia.org/wiki/Art_ASCII">l&apos;art ASCII</a>, souvent une vache avec un message.</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install cowsay</code></dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ cowsay &quot;Salut&quot;</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code> _______
+&lt; Salut &gt;
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</code></pre><h5 class="mume-header undefined" id="figlet">FIGlet</h5>
+
+<p><a href="https://fr.wikipedia.org/wiki/FIGlet">FIGlet</a> est un logiciel libre qui cr&#xE9;e des banni&#xE8;res textuelles dans diff&#xE9;rentes polices d&apos;&#xE9;criture.</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install figlet</code></dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ figlet &quot;Vive la NSI&quot;</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code>__     ___             _         _   _ ____ ___ 
+\ \   / (_)_   _____  | | __ _  | \ | / ___|_ _|
+ \ \ / /| \ \ / / _ \ | |/ _` | |  \| \___ \| | 
+  \ V / | |\ V /  __/ | | (_| | | |\  |___) | | 
+   \_/  |_| \_/ \___| |_|\__,_| |_| \_|____/___|    
+</code></pre><h5 class="mume-header undefined" id="fortune">fortune</h5>
+
+<p><a href="https://fr.wikipedia.org/wiki/Fortune_(logiciel)">fortune</a> est un programme simple qui affiche un message au hasard provenant d&apos;une base de donn&#xE9;es de citations, reprenant le principe du <a href="https://fr.wikipedia.org/wiki/Biscuit_chinois">biscuit chinois</a> (<em>fortune cookie</em>), d&apos;o&#xF9; le nom.</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install fortune</code></dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ fortune</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code>Another dream that failed.  There&apos;s nothing sadder.
+                -- Kirk, &quot;This side of Paradise&quot;, stardate 3417.3
+</code></pre><p>La plupart des citations sont d&#xE9;licates &#xE0; saisir, elles n&#xE9;cessitent une bonne connaissance de la culture <em>geek</em> ; nous nous en servirons pour obtenir un texte vaguement al&#xE9;atoire.</p>
+<h5 class="mume-header undefined" id="lolcat">lolcat</h5>
+
+<p>Pour avoir un peu de couleur dans les exercices &#xE0; venir, on installe le logiciel <code>lolcat</code> qui est &#xE9;crit avec le langage Ruby. Pour l&apos;avoir dans Termux, on doit l&apos;installer en deux &#xE9;tapes.</p>
+<dl>
+<dt>Installation</dt>
+<dd>
+<ul>
+<li><code>$ apt install ruby</code> : pour installer le langage de programmation Ruby.</li>
+</ul>
+</dd>
+<dd>
+<ul>
+<li><code>$ gem install lolcat</code> : pour installer le paquet <code>ruby</code> qui donne <code>lolcat</code>.</li>
+</ul>
+</dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ lolcat salut.txt</code></dd>
+</dl>
+<p><img src="assets/lolcat1.png?0.12229055759688046" alt></p>
+<p><code>lolcat</code> est une variante ludique d&apos;un outil syst&#xE8;me <code>cat</code> que nous d&#xE9;couvrirons bient&#xF4;t.</p>
+<p>Ajoutons &#xE0; Termux d&apos;autres outils syt&#xE8;me.</p>
+<h4 class="mume-header" id="outils-syst%C3%A8me">Outils syst&#xE8;me</h4>
+
+<h5 class="mume-header undefined" id="man">man</h5>
+
+<p><a href="https://fr.wikipedia.org/wiki/Man_(Unix)">man</a> affiche le <strong>man</strong>uel d&apos;une commande pass&#xE9;e en param&#xE8;tre.</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install man</code></dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ man fortune</code></dd>
+</dl>
+<p>On obtient une page d&apos;aide du <strong>man</strong>uel d&apos;utilisation de la commande <code>fortune</code>. Nous apprendrons &#xE0; lire en partie les informations contenues ; &#xE7;a peut &#xEA;tre technique.</p>
+<blockquote>
+<p>&#x26A0;&#xFE0F; Pour <strong>q</strong>uitter une page de manuel, taper <kbd>Q</kbd>.</p>
+</blockquote>
+<h5 class="mume-header undefined" id="gnu-core-utilities"><em>GNU Core Utilities</em></h5>
+
+<p><a href="https://fr.wikipedia.org/wiki/GNU_Core_Utilities">Un lot</a> d&apos;outils vari&#xE9;s souvent tr&#xE8;s utiles (pour les fichiers, les textes, les <em>shells</em>).</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install coreutils</code></dd>
+<dt>Utilisation anecdotique, mais utile et efficace</dt>
+<dd><code>$ factor 1234567890000007</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code>1234567890000007: 23 6427 79151 105517
+</code></pre><p>On a obtenu la d&#xE9;composition en facteurs premiers d&apos;un entier. L&apos;algorithme utilis&#xE9; est plut&#xF4;t bon !</p>
+<h5 class="mume-header undefined" id="tree">tree</h5>
+
+<p><code>tree</code> est une commande qui nous permet de visualiser l&apos;arborescence de nos r&#xE9;pertoires.</p>
+<dl>
+<dt>Installation</dt>
+<dd><code>$ apt install tree</code></dd>
+<dt>Utilisation basique</dt>
+<dd><code>$ tree</code></dd>
+</dl>
+<pre data-role="codeBlock" data-info class="language-"><code>.
+&#x2514;&#x2500;&#x2500; salut.txt
+
+0 directories, 1 file
+</code></pre><p>Nous d&#xE9;couvrirons plusieurs autres outils tr&#xE8;s utiles !</p>
+<p>Avant cela, voyons comment connecter en USB la tablette &#xE0; un PC.</p>
+<h3 class="mume-header" id="5-connexion-tablette-pc">5. Connexion tablette-PC</h3>
+
+<p>Cette section est facultative et plut&#xF4;t pour les enseignants. Elle permet d&apos;avoir la tablette connect&#xE9;e en USB au PC (Windows, MacOS ou Linux), d&apos;en prendre le contr&#xF4;le avec le clavier et la souris PC, et d&apos;avoir une fen&#xEA;tre d&apos;application PC qui clone l&apos;&#xE9;cran de la tablette, pour l&apos;enregistrer ou la diffuser.</p>
+<h4 class="mume-header undefined" id="51-tablette-en-mode-d%C3%A9veloppeur">5.1. Tablette en mode d&#xE9;veloppeur</h4>
+
+<ul>
+<li>Acc&#xE9;der aux param&#xE8;tres de la tablette,</li>
+<li>aller dans <code>Syst&#xE8;me</code>,</li>
+<li>aller dans <code>&#xC0; propos de la tablette</code></li>
+<li>Tapoter 7 fois <code>Num&#xE9;ro de build</code></li>
+</ul>
+<blockquote>
+<p>Un message indique que &#xAB; vous &#xEA;tes d&#xE9;sormais un d&#xE9;veloppeur &#xBB;.</p>
+</blockquote>
+<h4 class="mume-header undefined" id="52-tablette-en-mode-d%C3%A9bogage-usb">5.2. Tablette en mode d&#xE9;bogage USB</h4>
+
+<p>Il suffit de trouver l&#x2019;option correspondante dans <code>{ } Options pour les d&#xE9;veloppeurs</code>, dans les param&#xE8;tres syst&#xE8;me.</p>
+<blockquote>
+<p>Penser &#xE0; le d&#xE9;sactiver une fois l&apos;utilisation termin&#xE9;e !</p>
+</blockquote>
+<h4 class="mume-header undefined" id="53-logiciel-pc-scrcpy">5.3. Logiciel PC <code>scrcpy</code></h4>
+
+<ul>
+<li>Suivre <a href="https://github.com/Genymobile/scrcpy">les instructions d&apos;installation</a> pour votre syst&#xE8;me PC (Windows, MacOS, ou Linux).</li>
+</ul>
+<blockquote>
+<p>Pour Linux Debian (sid ou testing), Ubuntu 20.04, Mint 20, il suffit de faire :<br>
+<code>$ sudo apt install scrcpy</code></p>
+</blockquote>
+<ul>
+<li>Une fois <code>scrcpy</code> install&#xE9; par l&apos;administrateur, connecter votre tablette en USB sur votre PC et lancer <code>scrcpy</code> dans votre terminal PC.</li>
+</ul>
+<p><img src="assets/scrcpy.png?0.29969583332539274" alt></p>
+<blockquote>
+<p>La tablette est d&#xE9;sormais pilotable par votre clavier/souris de PC (Windows, MacOS ou Linux). L&apos;&#xE9;cran de la tablette est clon&#xE9; dans une application PC, on peut l&apos;enregistrer ou le diffuser en direct.</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
