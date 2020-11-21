@@ -1,9 +1,9 @@
 # :dizzy: Spécialité NSI
 
-## :busts_in_silhouette: Classe virtuelle
+## :busts_in_silhouette: Classe virtuelle de  M. Chambon
 > [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
 
-Rendez-vous :
+Rendez-vous en cas de confinement complet :
 * :clock10: les mardis de 10h à 12h (groupe1)
 * :clock8: les mercredis de 8h à 10h (groupe2)
 * :clock2: les vendredis de 14h à 16h
@@ -16,6 +16,7 @@ Rendez-vous :
     * [Correction et étude des solutions aux problèmes](FranceIOI/accueil.html).
 > Nous continuerons à corriger certains exercices ensemble.
 2. Résoudre des problèmes (en anglais) sur [Project Euler](https://projecteuler.net/archives).
+    * [Correction et étude des solutions aux problèmes](EULER/accueil.html). *À venir*
 > Nous étudierons ensemble des solutions à certains des 50 premiers problèmes.
 3. :wrench: Suivre ce [tutoriel](1-Virtualbox/1-Virtualbox-page.html) pour travailler avec VirtualBox.
     * [Variante avec Ubuntu pour Windows](InstallationLinux.pdf)
@@ -32,7 +33,9 @@ Rendez-vous :
     * :ledger: VSCodium, ...
 
 ## :tophat: Des liens de cours
-+ [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html) : très complet
++ [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html)
++ [Maths-info-lycée](http://www.maths-info-lycee.fr/index.html)
++ [NSI - lycée des 3 sources](http://nsi.janviercommelemois.fr/index.html)
 + Une [vidéo](https://www.lumni.fr/video/notion-de-listes-en-informatique-et-application-aux-images-numeriques) sur les listes en Python (et applications aux images numériques).
 
 ## :penguin: Émulateurs Linux
