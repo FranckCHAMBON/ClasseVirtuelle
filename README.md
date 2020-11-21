@@ -2,7 +2,7 @@
 
 Vous trouverez ici les documents utiles pour suivre et travailler en spé NSI première et terminale, ainsi qu'en maths expertes.
 
-Nouveau lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
+Lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 
 ## Les visio-conférences
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
