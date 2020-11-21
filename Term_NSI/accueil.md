@@ -1,5 +1,11 @@
 # Terminale NSI
 
+## Épreuve finale
+
+L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
+
+
+
 ## FranceIOI
 > Solutions alternatives aux problèmes sur FranceIOI
 
@@ -29,6 +35,5 @@ Activités entièrement réalisables sur tablette Android avec l'application [Te
 * 0-[Installation](Termux/0-termux.html) *Seule cette activité nécessite une connexion Internet.*
 * 1-[Découverte de Bash](Termux/1-bash.html)
 * 2-[Édition de code dans un terminal](Termux/2-micro.html)
-* 3-[Création de jeux de tests](Termux/3-tests.html)
-* 4-[Créer entièrement son propre problème](Termux/4-problème.html) *À venir*
+* 3-[Création de jeux de tests](Termux/3-tests.html) *À venir*
 
