@@ -12,6 +12,7 @@ Rendez-vous en cas de confinement complet :
 
 ## :mortar_board: Travail principal
 
+1. [Cours de Python](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
     * [Correction et étude des solutions aux problèmes](FranceIOI/accueil.html).
 > Nous continuerons à corriger certains exercices ensemble.
