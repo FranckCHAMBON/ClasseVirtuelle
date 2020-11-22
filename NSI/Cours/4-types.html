@@ -74,6 +74,8 @@ x <span class="token operator">=</span> x <span class="token operator">//</span>
 salut_fr <span class="token operator">=</span> <span class="token string">&quot;Bonjour &#xE0; tous !&quot;</span>    <span class="token comment"># en fran&#xE7;ais, le ! n&apos;est pas coll&#xE9;</span>
 phrase_1 <span class="token operator">=</span> <span class="token string">&apos;Il a dit &quot;Bonjour&quot; &#xE0; tous.&apos;</span>
 phrase_2 <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;Il m&apos;a dit &quot;Bonjour&quot; aussi.&quot;&quot;&quot;</span>
+cha&#xEE;ne_vide <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+un_seul_caract&#xE8;re <span class="token operator">=</span> <span class="token string">&apos;c&apos;</span>
 </pre><p>&#x26A0;&#xFE0F; Dans <code>phrase_2</code>, on ne pouvait pas utiliser ni <code>&apos;</code>, ni <code>&quot;</code> qui &#xE9;taient d&#xE9;j&#xE0; utilis&#xE9;s &#xE0; l&apos;int&#xE9;rieur.</p>
 <h3 class="mume-header" id="indices">Indices</h3>
 
@@ -166,6 +168,8 @@ Cha&#xEE;ne      T  r  a  v  a  i  l  l  e  r
 <span class="token string">&apos;er&apos;</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># tout sauf les deux derniers</span>
 <span class="token string">&apos;Travaill&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token comment"># une copie compl&#xE8;te</span>
+<span class="token string">&apos;Travailler&apos;</span>
 </pre><h3 class="mume-header" id="lecture-dune-cha%C3%AEne">Lecture d&apos;une cha&#xEE;ne</h3>
 
 <p>On utilise la fonction <code>input()</code> pour r&#xE9;cup&#xE9;rer une cha&#xEE;ne depuis un utilisateur qui utilise un programme Python.</p>
@@ -227,6 +231,14 @@ Si tu prends 3.2kg, ta masse sera 77.5 kg.
 <p>On peut donc aussi multiplier une cha&#xEE;ne de caract&#xE8;re avec un entier, on obtient plusieurs copies de la cha&#xEE;ne coll&#xE9;es ensemble.</p>
 </blockquote>
 <p>&#x26A0;&#xFE0F; Cette technique n&apos;existe pas avec tous les langages de programmation, elle est peut &#xEA;tre hors programme.</p>
+<h3 class="mume-header" id="caract%C3%A8res-%C3%A9chapp%C3%A9s">Caract&#xE8;res &#xE9;chapp&#xE9;s</h3>
+
+<p>Il est possible d&apos;&#xE9;crire des sauts de lignes, ou des tabulations dans une cha&#xEE;ne de caract&#xE8;res.</p>
+<ul>
+<li><code>&apos;\n&apos;</code> est le caract&#xE8;re saut de ligne,</li>
+<li><code>&apos;\t&apos;</code> est le caract&#xE8;re tabulation horizontal,</li>
+<li>il y en a d&apos;autres moins utiles.</li>
+</ul>
 <h2 class="mume-header" id="les-listes">Les listes</h2>
 
 <p>Les listes d&apos;&#xE9;l&#xE9;ments (<em>list</em>, de type <code>list</code>) sont des objets Python <strong>muables</strong>.</p>
@@ -249,6 +261,8 @@ Si tu prends 3.2kg, ta masse sera 77.5 kg.
 <pre data-role="codeBlock" data-info="python" class="language-python">cours_nsi <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;lundi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;mercredi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;vendredi&quot;</span><span class="token punctuation">]</span>
 nb_premiers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span>
 hauteurs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.82</span><span class="token punctuation">,</span> <span class="token number">1.75</span><span class="token punctuation">,</span> <span class="token number">1.68</span><span class="token punctuation">,</span> <span class="token number">1.89</span><span class="token punctuation">]</span>
+liste_vide <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+liste_avec_un_&#xE9;l&#xE9;ment <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1337</span><span class="token punctuation">]</span>
 </pre><h3 class="mume-header" id="indices-1">Indices</h3>
 
 <p>Les listes sont indic&#xE9;es &#xE0; partir de z&#xE9;ro.</p>
@@ -259,6 +273,28 @@ hauteurs <span class="token operator">=</span> <span class="token punctuation">[
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> hauteurs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token number">1.89</span>
 </pre><p>Comme pour les <code>str</code>, les indices n&#xE9;gatifs sont autoris&#xE9;s en Python, tout comme les tranches.</p>
+<h3 class="mume-header" id="copie-de-liste">Copie de liste</h3>
+
+<p>&#x26A0;&#xFE0F; Point d&#xE9;licat &#xE0; signaler. Voyons deux fa&#xE7;ons de copier une liste.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste_copie1 <span class="token operator">=</span> ma_liste
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste_copie2 <span class="token operator">=</span> ma_liste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+</pre><ol>
+<li>La premi&#xE8;re ligne d&#xE9;finit une liste.</li>
+<li>La seconde ligne fait pointer <code>ma_liste_copie1</code> sur la <strong>m&#xEA;me liste</strong>, nous avons deux variables qui pointent vers le <strong>m&#xEA;me objet</strong>.</li>
+<li>La troisi&#xE8;me ligne r&#xE9;alise une copie r&#xE9;elle de toute la tranche, ainsi on obtient une <strong>autre liste</strong> qui a le <strong>m&#xEA;me contenu</strong>. <em>C&apos;est diff&#xE9;rent</em>.</li>
+</ol>
+<p>La preuve :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste_copie1
+<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste_copie2
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">]</span>
+</pre><p>On constate qu&apos;en modifiant <code>ma_liste</code> :</p>
+<ul>
+<li><code>ma_liste_copie1</code> est modifi&#xE9;e &#xE9;galement ; oui, c&apos;est bien la m&#xEA;me liste !</li>
+<li><code>ma_liste_copie2</code> n&apos;est pas modifi&#xE9;e ; en effet c&apos;&#xE9;tait une copie devenue ind&#xE9;pendante !</li>
+</ul>
 <h3 class="mume-header" id="longueur-1">Longueur</h3>
 
 <p>Comme pour les <code>str</code>, on utilise la fonction <code>len()</code> (pour <em>length</em>, longueur), pour conna&#xEE;tre le nombre d&apos;&#xE9;l&#xE9;ments d&apos;une liste.</p>
@@ -306,8 +342,91 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <p>&#x26A0;&#xFE0F; Le programme pr&#xE9;conise plut&#xF4;t une autre m&#xE9;thode, la construction des <strong>listes en compr&#xE9;hension</strong>.</p>
 <h3 class="mume-header" id="les-listes-en-compr%C3%A9hension">Les listes en compr&#xE9;hension</h3>
 
-<p><em>&#xC0; venir</em></p>
+<p>La syntaxe Python g&#xE9;n&#xE9;rale d&apos;une cr&#xE9;ation de liste en compr&#xE9;hension est :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&lt;</span>nom_liste<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token operator">&lt;</span>&#xE9;l&#xE9;ment<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> it <span class="token keyword">in</span> it&#xE9;rable <span class="token keyword">if</span> <span class="token operator">&lt;</span>condition<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token operator">&gt;</span> <span class="token punctuation">]</span>
+</pre><p>Elle permet de cr&#xE9;er une liste d&apos;images (au sens des fonctions en math&#xE9;matiques) depuis une liste d&apos;ant&#xE9;c&#xE9;dents, et avec la possibilit&#xE9; de filtrer suivant une condition.</p>
+<p>Voyons des exemples progressifs.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>lettre <span class="token operator">+</span> <span class="token string">&quot;_&quot;</span> <span class="token keyword">for</span> lettre <span class="token keyword">in</span> <span class="token string">&quot;azerty&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">&apos;a_&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;z_&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;e_&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;r_&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;t_&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;y_&apos;</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>i<span class="token operator">*</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>i<span class="token operator">*</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">if</span> i<span class="token operator">*</span>i<span class="token operator">%</span><span class="token number">10</span> <span class="token operator">==</span> <span class="token number">9</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">169</span><span class="token punctuation">,</span> <span class="token number">289</span><span class="token punctuation">]</span>
+</pre><ol>
+<li>Une bonne fa&#xE7;on de cr&#xE9;er une liste remplie de 0.</li>
+<li>L&apos;it&#xE9;rable peut &#xEA;tre une cha&#xEE;ne, une liste, ou un <code>range</code>, ou tout it&#xE9;rable...</li>
+<li>La liste des 6 premiers carr&#xE9;s.</li>
+<li>Le dernier exemple donne la liste des 20 premiers carr&#xE9;s, filtr&#xE9;s en ne conservant que ceux qui se terminent par un 9.</li>
+</ol>
+<blockquote>
+<p>C&apos;est <strong>la bonne m&#xE9;thode</strong> &#xE0; essayer d&apos;utiliser le plus possible. On appelle ce style de programmation, le style fonctionnel, il fait penser fortement &#xE0; une &#xE9;criture math&#xE9;matique.</p>
+</blockquote>
+<h4 class="mume-header" id="exercice">Exercice</h4>
 
+<ol>
+<li>Quel est le plus grand entier inf&#xE9;rieur &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn></mrow><annotation encoding="application/x-tex">1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> dont le carr&#xE9; fini par <code>69</code> ?</li>
+<li>Quelle est la somme de ces carr&#xE9;s ?</li>
+</ol>
+<blockquote>
+<p>R&#xE9;ponses :</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">[</span>n <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token keyword">if</span> n<span class="token operator">*</span>n<span class="token operator">%</span><span class="token number">100</span> <span class="token operator">==</span> <span class="token number">69</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">987</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">[</span>n<span class="token operator">*</span>n <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token keyword">if</span> n<span class="token operator">*</span>n<span class="token operator">%</span><span class="token number">100</span> <span class="token operator">==</span> <span class="token number">69</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">13330760</span>
+</pre><blockquote>
+<p>On d&#xE9;couvre, au passage, qu&apos;il existe des fonctions classiques sur les listes :</p>
+</blockquote>
+<ul>
+<li><code>min()</code> pour le minimum d&apos;une liste non vide</li>
+<li><code>max()</code> pour le maximum d&apos;une liste non vide</li>
+<li><code>sum()</code> pour la somme d&apos;une liste</li>
+<li><code>len()</code> pour la longueur d&apos;une liste</li>
+</ul>
+<h3 class="mume-header" id="les-listes-dynamiques-de-python">Les listes dynamiques de Python</h3>
+
+<p>D&apos;un point de vue rigoureux, les listes que nous avons pr&#xE9;sent&#xE9;s pr&#xE9;c&#xE9;demment sont des <strong>tableaux</strong>, des objets :</p>
+<ul>
+<li>&#xE0; taille fix&#xE9;e &#xE0; la cr&#xE9;ation,</li>
+<li>avec des &#xE9;l&#xE9;ments indic&#xE9;s de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> inclus &#xE0; longueur <strong>exclue</strong>.</li>
+</ul>
+<blockquote>
+<p>Les tableaux sont utilis&#xE9;s dans presque tous les langages de programmation, c&apos;est un outil &#xE9;l&#xE9;mentaire.</p>
+</blockquote>
+<p>Les listes Python offrent d&apos;autres possibilit&#xE9;s que les tableaux officiels n&apos;ont pas. Avec une liste Python, on peut :</p>
+<ul>
+<li>ajouter des &#xE9;l&#xE9;ments &#xE0; la fin avec <code>append()</code></li>
+<li>r&#xE9;cup&#xE9;rer en enlevant l&apos;&#xE9;l&#xE9;ment de fin avec <code>pop()</code></li>
+<li>modifier des tranches par d&apos;autres tranches m&#xEA;me de longueur diff&#xE9;rente, ...</li>
+</ul>
+<blockquote>
+<p>Nous apprendrons plus tard &#xE0; nous servir de ces m&#xE9;thodes, ce sera une introduction aux concepts de la programmation orient&#xE9;e objet.</p>
+</blockquote>
+<p>&#x26A0;&#xFE0F; En attendant, essayez de ne pas utiliser ces m&#xE9;thodes. Les exercices pour d&#xE9;butants utilisent souvent les <strong>tableaux</strong> et non les <strong>listes dynamiques</strong>.</p>
+<h3 class="mume-header" id="les-listes-de-listes">Les listes de listes</h3>
+
+<ul>
+<li>Une liste peut contenir tout type d&apos;objets.</li>
+<li>On rappelle qu&apos;on pr&#xE9;f&#xE8;re ne pas m&#xE9;langer les types &#xE0; l&apos;int&#xE9;rieur d&apos;une liste.</li>
+<li>Une liste peut contenir elle-m&#xEA;me des listes. C&apos;est souvent le cas dans le cas de travail avec des images.</li>
+</ul>
+<blockquote>
+<p>Une image est souvent donn&#xE9;e par une liste de lignes. Chaque ligne est donn&#xE9;e par une liste de pixels. Et un pixel est souvent une liste de composante de couleurs.</p>
+</blockquote>
+<h4 class="mume-header" id="exercice-1">Exercice</h4>
+
+<p>Compl&#xE9;ter la d&#xE9;finition de la liste qui correspond &#xE0; l&apos;image en noir et blanc ci-dessous.</p>
+<p><img src="assets/smile.png" alt="smile"></p>
+<pre data-role="codeBlock" data-info="python" class="language-python">ligne0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+ligne1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ligne7 <span class="token operator">=</span>             <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+smile <span class="token operator">=</span> <span class="token punctuation">[</span>ligne0<span class="token punctuation">,</span> ligne1<span class="token punctuation">,</span> ligne2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ligne7<span class="token punctuation">]</span>
+</pre><p>On peut aussi &#xE9;crire :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">smile <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</a>
@@ -340,6 +459,7 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <li><a href="#tranches-slice">Tranches (<em>slice</em>)</a></li>
 <li><a href="#lecture-dune-cha%C3%AEne">Lecture d&apos;une cha&#xEE;ne</a></li>
 <li><a href="#concat%C3%A9nation">Concat&#xE9;nation</a></li>
+<li><a href="#caract%C3%A8res-%C3%A9chapp%C3%A9s">Caract&#xE8;res &#xE9;chapp&#xE9;s</a></li>
 </ul>
 </li>
 <li><a href="#les-listes">Les listes</a>
@@ -350,6 +470,7 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 </ul>
 </li>
 <li><a href="#indices-1">Indices</a></li>
+<li><a href="#copie-de-liste">Copie de liste</a></li>
 <li><a href="#longueur-1">Longueur</a></li>
 <li><a href="#it%C3%A9ration-1">It&#xE9;ration</a>
 <ul>
@@ -358,7 +479,17 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 </ul>
 </li>
 <li><a href="#concat%C3%A9nation-1">Concat&#xE9;nation</a></li>
-<li><a href="#les-listes-en-compr%C3%A9hension">Les listes en compr&#xE9;hension</a></li>
+<li><a href="#les-listes-en-compr%C3%A9hension">Les listes en compr&#xE9;hension</a>
+<ul>
+<li><a href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li><a href="#les-listes-dynamiques-de-python">Les listes dynamiques de Python</a></li>
+<li><a href="#les-listes-de-listes">Les listes de listes</a>
+<ul>
+<li><a href="#exercice-1">Exercice</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

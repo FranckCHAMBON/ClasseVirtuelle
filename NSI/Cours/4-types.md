@@ -58,6 +58,8 @@ salut_en = 'Hello World!'        # en anglais, le ! est collé au mot
 salut_fr = "Bonjour à tous !"    # en français, le ! n'est pas collé
 phrase_1 = 'Il a dit "Bonjour" à tous.'
 phrase_2 = """Il m'a dit "Bonjour" aussi."""
+chaîne_vide = ""
+un_seul_caractère = 'c'
 ```
 
 ⚠️ Dans `phrase_2`, on ne pouvait pas utiliser ni `'`, ni `"` qui étaient déjà utilisés à l'intérieur.
@@ -173,6 +175,8 @@ Python autorise l'extraction d'une tranche d'une chaîne de caractères.
 'er'
 >>> verbe[:-2] # tout sauf les deux derniers
 'Travaill'
+>>> verbe[:] # une copie complète
+'Travailler'
 ```
 
 ### Lecture d'une chaîne
@@ -250,6 +254,13 @@ La concaténation, c'est le fait de rabouter, de coller, deux chaînes.
 
 ⚠️ Cette technique n'existe pas avec tous les langages de programmation, elle est peut être hors programme.
 
+### Caractères échappés
+
+Il est possible d'écrire des sauts de lignes, ou des tabulations dans une chaîne de caractères.
+* `'\n'` est le caractère saut de ligne,
+* `'\t'` est le caractère tabulation horizontal,
+* il y en a d'autres moins utiles.
+
 ## Les listes
 
 Les listes d'éléments (*list*, de type `list`) sont des objets Python **muables**.
@@ -273,6 +284,8 @@ Pour construire une liste dans un code Python, on utilise les délimiteurs :
 cours_nsi = ["lundi", "mercredi", "vendredi"]
 nb_premiers = [2, 3, 5, 7, 11]
 hauteurs = [1.82, 1.75, 1.68, 1.89]
+liste_vide = []
+liste_avec_un_élément = [1337]
 ```
 
 ### Indices
@@ -289,6 +302,33 @@ Les listes sont indicées à partir de zéro.
 ```
 
 Comme pour les `str`, les indices négatifs sont autorisés en Python, tout comme les tranches.
+
+### Copie de liste
+⚠️ Point délicat à signaler. Voyons deux façons de copier une liste.
+
+```python
+>>> ma_liste = [10, 11, 12, 13, 14]
+>>> ma_liste_copie1 = ma_liste
+>>> ma_liste_copie2 = ma_liste[:]
+```
+
+1. La première ligne définit une liste.
+2. La seconde ligne fait pointer `ma_liste_copie1` sur la **même liste**, nous avons deux variables qui pointent vers le **même objet**.
+3. La troisième ligne réalise une copie réelle de toute la tranche, ainsi on obtient une **autre liste** qui a le **même contenu**. *C'est différent*.
+
+La preuve : 
+
+```python
+>>> ma_liste[0] = -1
+>>> ma_liste_copie1
+[-1, 11, 12, 13, 14]
+>>> ma_liste_copie2
+[10, 11, 12, 13, 14]
+```
+
+On constate qu'en modifiant `ma_liste` :
+* `ma_liste_copie1` est modifiée également ; oui, c'est bien la même liste !
+* `ma_liste_copie2` n'est pas modifiée ; en effet c'était une copie devenue indépendante !
 
 ### Longueur
 
@@ -357,4 +397,96 @@ Cette dernière méthode est souvent utilisée pour initialiser de grands tablea
 
 ### Les listes en compréhension
 
-*À venir*
+La syntaxe Python générale d'une création de liste en compréhension est : 
+
+```python
+<nom_liste> = [ <élément(it)> for it in itérable if <condition(it)> ]
+```
+
+Elle permet de créer une liste d'images (au sens des fonctions en mathématiques) depuis une liste d'antécédents, et avec la possibilité de filtrer suivant une condition.
+
+Voyons des exemples progressifs.
+
+```python
+>>> [0 for _ in range(5)]
+[0, 0, 0, 0, 0]
+>>> [lettre + "_" for lettre in "azerty"]
+['a_', 'z_', 'e_', 'r_', 't_', 'y_']
+>>> [i*i for i in range(6)]
+[0, 1, 4, 9, 16, 25]
+>>> [i*i for i in range(20) if i*i%10 == 9]
+[9, 49, 169, 289]
+```
+
+1. Une bonne façon de créer une liste remplie de 0.
+2. L'itérable peut être une chaîne, une liste, ou un `range`, ou tout itérable...
+3. La liste des 6 premiers carrés.
+4. Le dernier exemple donne la liste des 20 premiers carrés, filtrés en ne conservant que ceux qui se terminent par un 9.
+
+> C'est **la bonne méthode** à essayer d'utiliser le plus possible. On appelle ce style de programmation, le style fonctionnel, il fait penser fortement à une écriture mathématique.
+
+#### Exercice
+
+1. Quel est le plus grand entier inférieur à $1000$ dont le carré fini par `69` ?
+2. Quelle est la somme de ces carrés ?
+
+> Réponses : 
+```python
+>>> max([n for n in range(1000) if n*n%100 == 69])
+987
+>>> sum([n*n for n in range(1000) if n*n%100 == 69])
+13330760
+```
+
+
+> On découvre, au passage, qu'il existe des fonctions classiques sur les listes : 
+* `min()` pour le minimum d'une liste non vide
+* `max()` pour le maximum d'une liste non vide
+* `sum()` pour la somme d'une liste
+* `len()` pour la longueur d'une liste
+
+
+
+### Les listes dynamiques de Python
+
+D'un point de vue rigoureux, les listes que nous avons présentés précédemment sont des **tableaux**, des objets : 
+* à taille fixée à la création,
+* avec des éléments indicés de $0$ inclus à longueur **exclue**.
+
+> Les tableaux sont utilisés dans presque tous les langages de programmation, c'est un outil élémentaire.
+
+Les listes Python offrent d'autres possibilités que les tableaux officiels n'ont pas. Avec une liste Python, on peut : 
+* ajouter des éléments à la fin avec `append()`
+* récupérer en enlevant l'élément de fin avec `pop()`
+* modifier des tranches par d'autres tranches même de longueur différente, ...
+
+> Nous apprendrons plus tard à nous servir de ces méthodes, ce sera une introduction aux concepts de la programmation orientée objet.
+
+⚠️ En attendant, essayez de ne pas utiliser ces méthodes. Les exercices pour débutants utilisent souvent les **tableaux** et non les **listes dynamiques**.
+
+### Les listes de listes
+
+* Une liste peut contenir tout type d'objets.
+* On rappelle qu'on préfère ne pas mélanger les types à l'intérieur d'une liste.
+* Une liste peut contenir elle-même des listes. C'est souvent le cas dans le cas de travail avec des images.
+
+> Une image est souvent donnée par une liste de lignes. Chaque ligne est donnée par une liste de pixels. Et un pixel est souvent une liste de composante de couleurs.
+
+#### Exercice
+
+Compléter la définition de la liste qui correspond à l'image en noir et blanc ci-dessous.
+
+![smile](assets/smile.png)
+
+```python
+ligne0 = [0, 0 ,1, 1, 1, 1, 0, 0]
+ligne1 = [0, 1, 0...
+...
+ligne7 =             ... 1, 0, 0]
+smile = [ligne0, ligne1, ligne2, ... ligne7]
+```
+
+On peut aussi écrire : 
+```python
+smile = [[0,0,1,1,1,1,0,0], [0,1,0,...], ..., [...1,0,0]]
+```
