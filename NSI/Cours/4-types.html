@@ -1,0 +1,391 @@
+<!DOCTYPE html><html><head>
+      <title>4-types</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
+*{-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:none;-webkit-touch-callout:none;box-sizing:border-box}.markdown-preview code{border-radius:2px;color:#e96900;font-size:12.8px;font-size:.8rem;margin:0 2px;padding:3px 5px;white-space:pre-wrap}.markdown-preview code,.markdown-preview pre{background-color:#f8f8f8;font-family:Roboto Mono,Monaco,courier,monospace}.markdown-preview pre{-moz-osx-font-smoothing:initial;-webkit-font-smoothing:initial;line-height:24px;line-height:1.5rem;margin:1.2em 0;overflow:auto;padding:0 22.4px;padding:0 1.4rem;position:relative;word-wrap:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8e908c}.token.namespace{opacity:.7}.token.boolean,.token.number{color:#c76b29}.token.punctuation{color:#525252}.token.property{color:#c08b30}.token.tag{color:#2973b7}.token.string{color:#42b983;color:var(--theme-color, #42b983)}.token.selector{color:#6679cc}.token.attr-name{color:#2973b7}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#22a2c9}.token.attr-value,.token.control,.token.directive,.token.unit{color:#42b983;color:var(--theme-color, #42b983)}.token.keyword{color:#e96900}.token.atrule,.token.regex,.token.statement{color:#22a2c9}.token.placeholder,.token.variable{color:#3d8fd1}.token.deleted{text-decoration:line-through}.token.inserted{border-bottom:1px dotted #202746;text-decoration:none}.token.italic{font-style:italic}.token.bold,.token.important{font-weight:700}.token.important{color:#c94922}.token.entity{cursor:help}.markdown-preview pre>code,.markdown-preview pre[class*="language"]{-moz-osx-font-smoothing:initial;-webkit-font-smoothing:initial;background-color:#f8f8f8;border-radius:2px;color:#525252;display:block;font-family:Roboto Mono,Monaco,courier,monospace;font-size:12.8px;font-size:.8rem;line-height:2em;max-width:inherit;overflow:inherit;padding:.8em 1.4em;white-space:pre}.markdown-preview pre>code{padding-left:0;padding-right:0}.markdown-preview code:after,.markdown-preview code:before{letter-spacing:.8px;letter-spacing:.05rem}code .token{-moz-osx-font-smoothing:initial;-webkit-font-smoothing:initial;min-height:24px;min-height:1.5rem}pre:after{color:#ccc;content:attr(data-lang);font-size:9.6px;font-size:.6rem;font-weight:600;height:15px;line-height:15px;padding:5px 10px 0;position:absolute;right:0;text-align:right;top:0}pre[data-line]{position:relative;padding:1em 0 1em 3em !important}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:rgba(153,122,102,0.08);background:linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:rgba(153,122,102,0.4);color:#f5f2f0;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px white}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:400;src:local('Roboto Mono'),local('RobotoMono-Regular'),url(https://fonts.gstatic.com/s/robotomono/v7/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;src:local('Source Sans Pro Light'),local('SourceSansPro-Light'),url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:600;src:local('Source Sans Pro SemiBold'),local('SourceSansPro-SemiBold'),url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf) format('truetype')}*{-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:none;-webkit-touch-callout:none;box-sizing:border-box}body:not(.ready){overflow:hidden}body:not(.ready) .app-nav,body:not(.ready)>nav,body:not(.ready) [data-cloak]{display:none}div#app{font-size:30px;font-weight:lighter;margin:40vh auto;text-align:center}div#app:empty:before{content:"Loading..."}.emoji{height:19.2px;height:1.2rem;vertical-align:middle}.progress{background-color:#42b983;background-color:var(--theme-color, #42b983);height:2px;left:0;position:fixed;right:0;top:0;transition:width .2s,opacity .4s;width:0;z-index:5}.search .search-keyword,.search a:hover{color:#42b983;color:var(--theme-color, #42b983)}.search .search-keyword{font-style:normal;font-weight:700}body,html{height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;color:#34495e;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-size:15px;letter-spacing:0;margin:0;overflow-x:hidden}img{max-width:100%}a[disabled]{cursor:not-allowed;opacity:.6}kbd{color:#34495e;border:1px solid #ccc;border-radius:3px;display:inline-block;font-size:12px !important;line-height:12px;margin-bottom:3px;padding:3px 5px;vertical-align:middle}.task-list-item{list-style-type:none}li input[type=checkbox]{margin:0 .2em .25em -1.6em;vertical-align:middle}.app-nav{left:0;margin:25px 60px 0 0;position:absolute;right:0;text-align:right;z-index:2}.app-nav p{margin:0}.app-nav>a{margin:0 16px;margin:0 1rem;padding:5px 0}.app-nav li,.app-nav ul{display:inline-block;list-style:none;margin:0}.app-nav a{color:inherit;font-size:16px;text-decoration:none;transition:color .3s}.app-nav a.active,.app-nav a:hover{color:#42b983;color:var(--theme-color, #42b983)}.app-nav a.active{border-bottom:2px solid #42b983;border-bottom:2px solid var(--theme-color, #42b983)}.app-nav li{display:inline-block;margin:0 16px;margin:0 1rem;padding:5px 0;position:relative}.app-nav li ul{background-color:#fff;border:1px solid #ddd;border-bottom-color:#ccc;border-radius:4px;box-sizing:border-box;display:none;max-height:calc(100vh - 61px);overflow-y:scroll;padding:10px 0;position:absolute;right:-15px;text-align:left;top:100%;white-space:nowrap}.app-nav li ul li{display:block;font-size:14px;line-height:16px;line-height:1rem;margin:0;margin:8px 14px;white-space:nowrap}.app-nav li ul a{display:block;font-size:inherit;margin:0;padding:0}.app-nav li ul a.active{border-bottom:0}.app-nav li:hover ul{display:block}.app-nav.no-badge{margin-right:25px}.github-corner{border-bottom:0;position:fixed;right:0;text-decoration:none;top:0;z-index:1}.github-corner svg{color:#fff;fill:#42b983;fill:var(--theme-color, #42b983);height:80px;width:80px}.github-corner:hover .octo-arm{-webkit-animation:a .56s ease-in-out;animation:a .56s ease-in-out}main{display:block;position:relative;width:100vw;height:100%;z-index:0}.anchor{display:inline-block;text-decoration:none;transition:all .3s}.anchor span{color:#34495e}.anchor:hover{text-decoration:underline}.sidebar{border-right:1px solid rgba(0,0,0,0.07);overflow-y:auto;padding:40px 0 0;top:0;bottom:0;left:0;position:absolute;transition:-webkit-transform .25s ease-out;transition:transform .25s ease-out;transition:transform .25s ease-out,-webkit-transform .25s ease-out;width:300px;z-index:3}.sidebar>h1{margin:0 auto 16px;margin:0 auto 1rem;font-size:24px;font-size:1.5rem;font-weight:300;text-align:center}.sidebar>h1 a{color:inherit;text-decoration:none}.sidebar>h1 .app-nav{display:block;position:static}.sidebar .sidebar-nav{line-height:2em;padding-bottom:40px}.sidebar ul{margin:0;padding:0}.sidebar li>p{font-weight:700;margin:0}.sidebar ul,.sidebar ul li{list-style:none}.sidebar ul li a{border-bottom:none;display:block}.sidebar ul li ul{padding-left:20px}.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:transparent;border-radius:4px}.sidebar:hover::-webkit-scrollbar-thumb{background:hsla(0,0%,53%,0.4)}.sidebar:hover::-webkit-scrollbar-track{background:hsla(0,0%,53%,0.1)}.sidebar-toggle{background-color:transparent;background-color:hsla(0,0%,100%,0.8);border:0;outline:none;padding:10px;bottom:0;left:0;position:absolute;text-align:center;transition:opacity .3s;width:30px;width:284px;z-index:4}.sidebar-toggle .sidebar-toggle-button:hover{opacity:.4}.sidebar-toggle span{background-color:#42b983;background-color:var(--theme-color, #42b983);display:block;margin-bottom:4px;width:16px;height:2px}body.sticky .sidebar,body.sticky .sidebar-toggle{position:fixed}.content{padding-top:60px;top:0;right:0;bottom:0;left:300px;position:absolute;transition:left .25s ease}.markdown-preview>*{box-sizing:border-box;font-size:inherit}.markdown-preview>:first-child{margin-top:0 !important}.markdown-preview hr{border:none;border-bottom:1px solid #eee;margin:2em 0}.markdown-preview table{border-collapse:collapse;border-spacing:0;display:block;margin-bottom:16px;margin-bottom:1rem;overflow:auto;width:100%}.markdown-preview th{font-weight:700}.markdown-preview td,.markdown-preview th{border:1px solid #ddd;padding:6px 13px}.markdown-preview tr{border-top:1px solid #ccc}.markdown-preview p.tip,.markdown-preview tr:nth-child(2n){background-color:#f8f8f8}.markdown-preview p.tip{border-bottom-right-radius:2px;border-left:4px solid #f66;border-top-right-radius:2px;margin:2em 0;padding:12px 24px 12px 30px;position:relative}.markdown-preview p.tip code{background-color:#efefef}.markdown-preview p.tip em{color:#34495e}.markdown-preview p.tip:before{background-color:#f66;border-radius:100%;color:#fff;content:"!";font-family:Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-size:14px;font-weight:700;left:-12px;line-height:20px;position:absolute;width:20px;height:20px;text-align:center;top:14px}.markdown-preview p.warn{background:rgba(66,185,131,0.1);border-radius:2px;padding:16px;padding:1rem}body.close .sidebar{-webkit-transform:translateX(-300px);transform:translateX(-300px)}body.close .sidebar-toggle{width:auto}body.close .content{left:0}@media print{.app-nav,.github-corner,.sidebar,.sidebar-toggle{display:none}}@media screen and (max-width:768px){.github-corner,.sidebar,.sidebar-toggle{position:fixed}.app-nav{margin-top:16px}.app-nav li ul{top:30px}main{height:auto;overflow-x:hidden}.sidebar{left:-300px;transition:-webkit-transform .25s ease-out;transition:transform .25s ease-out;transition:transform .25s ease-out,-webkit-transform .25s ease-out}.content{left:0;max-width:100vw;position:static;padding-top:20px;transition:-webkit-transform .25s ease;transition:transform .25s ease;transition:transform .25s ease,-webkit-transform .25s ease}.app-nav,.github-corner{transition:-webkit-transform .25s ease-out;transition:transform .25s ease-out;transition:transform .25s ease-out,-webkit-transform .25s ease-out}.sidebar-toggle{background-color:transparent;width:auto;padding:30px 30px 10px 10px}body.close .sidebar{-webkit-transform:translateX(300px);transform:translateX(300px)}body.close .sidebar-toggle{background-color:hsla(0,0%,100%,0.8);transition:background-color 1s;width:284px;padding:10px}body.close .content{-webkit-transform:translateX(300px);transform:translateX(300px)}body.close .app-nav,body.close .github-corner{display:none}.github-corner .octo-arm{-webkit-animation:a .56s ease-in-out;animation:a .56s ease-in-out}.github-corner:hover .octo-arm{-webkit-animation:none;animation:none}}@-webkit-keyframes a{0%,to{-webkit-transform:rotate(0);transform:rotate(0)}20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}}@keyframes a{0%,to{-webkit-transform:rotate(0);transform:rotate(0)}20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}}section.cover{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-position:50%;background-repeat:no-repeat;background-size:cover;height:100vh;display:none}section.cover .cover-main{-webkit-box-flex:1;-ms-flex:1;flex:1;margin:-20px 16px 0;text-align:center;z-index:1}section.cover a{color:inherit}section.cover a,section.cover a:hover{text-decoration:none}section.cover p{line-height:24px;line-height:1.5rem;margin:1em 0}section.cover h1{color:inherit;font-size:40px;font-size:2.5rem;font-weight:300;margin:10px 0 40px;margin:.625rem 0 2.5rem;position:relative;text-align:center}section.cover h1 a{display:block}section.cover h1 small{bottom:-7px;bottom:-0.4375rem;font-size:16px;font-size:1rem;position:absolute}section.cover blockquote{font-size:24px;font-size:1.5rem;text-align:center}section.cover ul{line-height:1.8;list-style-type:none;margin:1em auto;max-width:500px;padding:0}section.cover .cover-main>p:last-child a{border-color:#42b983;border:1px solid var(--theme-color, #42b983);border-radius:2rem;box-sizing:border-box;color:#42b983;color:var(--theme-color, #42b983);display:inline-block;font-size:16.8px;font-size:1.05rem;letter-spacing:1.6px;letter-spacing:.1rem;margin-right:16px;margin-right:1rem;padding:.75em 32px;padding:.75em 2rem;text-decoration:none;transition:all .15s ease}section.cover .cover-main>p:last-child a:last-child{background-color:#42b983;background-color:var(--theme-color, #42b983);color:#fff;margin-right:0}section.cover .cover-main>p:last-child a:last-child:hover{color:inherit;opacity:.8}section.cover .cover-main>p:last-child a:hover{color:inherit}section.cover blockquote>p>a{border-bottom:2px solid #42b983;border-bottom:2px solid var(--theme-color, #42b983);transition:color .3s}section.cover blockquote>p>a:hover{color:#42b983;color:var(--theme-color, #42b983)}section.cover.show{display:-webkit-box;display:-ms-flexbox;display:flex}section.cover.has-mask .mask{background-color:#fff;opacity:.8;position:absolute;width:100%;height:100%}.sidebar,body{background-color:#fff}.sidebar{color:#364149}.sidebar li{margin:6px 0 6px 15px}.sidebar ul li a{color:#505d6b;font-size:14px;font-weight:400;overflow:hidden;text-decoration:none;text-overflow:ellipsis;white-space:nowrap}.sidebar ul li a:hover{text-decoration:underline}.sidebar ul li ul{padding:0}.sidebar ul li.active>a{border-right:2px solid;color:#42b983;color:var(--theme-color, #42b983);font-weight:600}.app-sub-sidebar li:before{content:"-";padding-right:4px;float:left}.markdown-preview h1,.markdown-preview h2,.markdown-preview h3,.markdown-preview h4,.markdown-preview strong{color:#2c3e50;font-weight:600}.markdown-preview a{color:#42b983;color:var(--theme-color, #42b983);font-weight:600}.md-sidebar-toc a{color:#42b983;font-weight:600}.markdown-preview h1{font-size:32px;font-size:2rem;margin:0 0 16px;margin:0 0 1rem}.markdown-preview h2{font-size:28px;font-size:1.75rem;margin:45px 0 12.8px;margin:45px 0 .8rem}.markdown-preview h3{font-size:24px;font-size:1.5rem;margin:40px 0 9.6px;margin:40px 0 .6rem}.markdown-preview h4{font-size:20px;font-size:1.25rem}.markdown-preview h5,.markdown-preview h6{font-size:16px;font-size:1rem}.markdown-preview h6{color:#777}.markdown-preview figure,.markdown-preview p{margin:1.2em 0}.markdown-preview ol,.markdown-preview p,.markdown-preview ul{line-height:25.6px;line-height:1.6rem;word-spacing:.8px;word-spacing:.05rem}.markdown-preview ol,.markdown-preview ul{padding-left:24px;padding-left:1.5rem}.markdown-preview blockquote{border-left:4px solid #42b983;border-left:4px solid var(--theme-color, #42b983);color:#858585;background-color:#f0f0f0;margin:2em 0;padding-left:20px}.markdown-preview blockquote p{font-weight:600;margin-left:0}.markdown-preview iframe{margin:1em 0}.markdown-preview em{color:#7f8c8d}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</h1>
+
+<h2 class="mume-header" id="donn%C3%A9es-num%C3%A9riques">Donn&#xE9;es num&#xE9;riques</h2>
+
+<blockquote>
+<p>Un rappel rapide de ce qui existe.</p>
+</blockquote>
+<p>Il existe 4 types de donn&#xE9;es num&#xE9;riques avec Python.</p>
+<h3 class="mume-header" id="les-bool%C3%A9ens-bool">Les bool&#xE9;ens (<code>bool</code>)</h3>
+
+<p>Ils sont constitu&#xE9;s de <code>False</code> et <code>True</code>.</p>
+<p>C&apos;est officiellement un type num&#xE9;rique, mais il est hors programme d&apos;utiliser des bool&#xE9;ens dans des op&#xE9;rations comme <code>+</code> ou <code>*</code>.</p>
+<h3 class="mume-header" id="les-entiers-int">Les entiers (<code>int</code>)</h3>
+
+<p>Les entiers sont sign&#xE9;s, ils peuvent &#xEA;tre aussi grands que la m&#xE9;moire de l&apos;ordinateur le permet, il n&apos;y a pas de limite th&#xE9;orique.</p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/FranckCHAMBON/Python-Lycee/master/Python-Console/Python-Console.html#travail-avec-des-entiers">Un rappel</a> des op&#xE9;rations classiques.</p>
+<h3 class="mume-header" id="les-flottants-float">Les flottants (<code>float</code>)</h3>
+
+<p>Ils sont constitu&#xE9;s des nombres &#xE0; virgule, ils peuvent s&apos;&#xE9;crire en notation scientifique en binaire 53 bits pour la mantisse et 11 bits pour l&apos;exposant. Ce qui donne environ une pr&#xE9;cision de 16 chiffres en d&#xE9;cimal, et un exposant d&#xE9;cimal environ entre -300 et +300.</p>
+<p><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/FranckCHAMBON/Python-Lycee/master/Python-Console/Python-Console.html#travail-avec-les-flottants">Un rappel</a> des op&#xE9;rations classiques.</p>
+<h3 class="mume-header" id="les-complexes-complex">Les complexes (<code>complex</code>)</h3>
+
+<p>Pour les &#xE9;l&#xE8;ves en maths expertes...</p>
+<h3 class="mume-header" id="muables-ou-immuables">Muables ou immuables ?</h3>
+
+<p>Les objets Python de type num&#xE9;rique sont qualifi&#xE9;s d&apos;<strong>immuables</strong>. M&#xEA;me si une variable num&#xE9;rique peut changer de valeur, la valeur, elle, est fixe !</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">x <span class="token operator">=</span> <span class="token number">1337</span>
+x <span class="token operator">=</span> x <span class="token operator">//</span> <span class="token number">100</span>
+</pre><p>La variable <code>x</code> a &#xE9;t&#xE9; modifi&#xE9;e, mais les nombres <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1337</mn></mrow><annotation encoding="application/x-tex">1337</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">3</span><span class="mord">7</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span></span></span></span> sont <strong>immuables</strong>.</p>
+<blockquote>
+<p>Cette notion sera utilis&#xE9;e plus tard, au sujet des dictionnaires, les nombres peuvent &#xEA;tre des cl&#xE9;s de dictionnaires justement par ce qu&apos;ils sont immuables.</p>
+</blockquote>
+<h2 class="mume-header" id="les-cha%C3%AEnes-de-caract%C3%A8res">Les cha&#xEE;nes de caract&#xE8;res</h2>
+
+<p>Les cha&#xEE;nes de caract&#xE8;res (<em>string</em>, de type <code>str</code>) sont aussi des objets Python <strong>immuables</strong>, ils pourront &#xEA;tre des cl&#xE9;s de dictionnaires.</p>
+<h3 class="mume-header" id="construction">Construction</h3>
+
+<p>Pour construire une cha&#xEE;ne de caract&#xE8;re dans un code Python, on utilise les d&#xE9;limiteurs :</p>
+<ul>
+<li><code>&apos;</code> : guillemet simple.</li>
+<li><code>&quot;</code> : guillemet double.</li>
+<li><code>&apos;&apos;&apos;</code> : triple guillemet simple.</li>
+<li><code>&quot;&quot;&quot;</code> : triple guillemet double.</li>
+</ul>
+<p>Remarque : le guillemet simple n&apos;est pas une apostrophe dactylographique, m&#xEA;me si on utilise cette m&#xEA;me touche pour l&apos;obtenir. La touche du clavier <code>&apos;</code> est la touche <strong>guillemet simple</strong>.</p>
+<h4 class="mume-header" id="exemples">Exemples</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">salut_en <span class="token operator">=</span> <span class="token string">&apos;Hello World!&apos;</span>        <span class="token comment"># en anglais, le ! est coll&#xE9; au mot</span>
+salut_fr <span class="token operator">=</span> <span class="token string">&quot;Bonjour &#xE0; tous !&quot;</span>    <span class="token comment"># en fran&#xE7;ais, le ! n&apos;est pas coll&#xE9;</span>
+phrase_1 <span class="token operator">=</span> <span class="token string">&apos;Il a dit &quot;Bonjour&quot; &#xE0; tous.&apos;</span>
+phrase_2 <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;Il m&apos;a dit &quot;Bonjour&quot; aussi.&quot;&quot;&quot;</span>
+</pre><p>&#x26A0;&#xFE0F; Dans <code>phrase_2</code>, on ne pouvait pas utiliser ni <code>&apos;</code>, ni <code>&quot;</code> qui &#xE9;taient d&#xE9;j&#xE0; utilis&#xE9;s &#xE0; l&apos;int&#xE9;rieur.</p>
+<h3 class="mume-header" id="indices">Indices</h3>
+
+<p>Les cha&#xEE;nes de caract&#xE8;res sont indic&#xE9;es &#xE0; partir de z&#xE9;ro.</p>
+<pre class="language-text">Indice     0  1  2  3  4  5  6  7  8  9  10 11 12 13 14
+Caract&#xE8;re  B  o  n  j  o  u  r     &#xE0;      t  o  u  s  !
+</pre>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr <span class="token operator">=</span> <span class="token string">&apos;Bonjour &#xE0; tous !&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">&apos;B&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">&apos;o&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token string">&apos;r&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span>
+<span class="token string">&apos; &apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span>
+<span class="token string">&apos;!&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>salut_fr<span class="token punctuation">)</span>
+<span class="token number">15</span>
+</pre><h3 class="mume-header" id="longueur">Longueur</h3>
+
+<p>Ici la cha&#xEE;ne est de longueur (<em><strong>len</strong>gth</em>) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>, comme donn&#xE9; par la fonction <code>len</code>.</p>
+<p>Pour une cha&#xEE;ne de caract&#xE8;res de longueur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> les indices vont de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> inclus &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> <strong>exclu</strong>.</p>
+<p>&#x26A0;&#xFE0F; Essayer d&apos;acc&#xE9;der &#xE0; un caract&#xE8;re d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> ou plus provoque une erreur.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">&quot;&lt;stdin&gt;&quot;</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
+IndexError<span class="token punctuation">:</span> string index out of <span class="token builtin">range</span>
+</pre><p>Ici l&apos;erreur est <code>IndexError</code> (Erreur d&apos;index), <em>string index out of range</em> (indice de la cha&#xEE;ne en dehors de l&apos;intervalle).</p>
+<h3 class="mume-header" id="it%C3%A9ration">It&#xE9;ration</h3>
+
+<p>On peut it&#xE9;rer sur les cha&#xEE;nes de deux fa&#xE7;ons.</p>
+<ol>
+<li>La premi&#xE8;re est utile si on a besoin de l&apos;indice en court de boucle.</li>
+<li>La seconde est plus claire et simple si on n&apos;a pas besoin de l&apos;indice au court de la boucle.</li>
+</ol>
+<h4 class="mume-header" id="it%C3%A9ration-par-indices">It&#xE9;ration par indices</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">mot <span class="token operator">=</span> <span class="token string">&quot;Salut&quot;</span>
+longueur <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>mot<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>longueur<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;La lettre d&apos;indice&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token string">&quot;est&quot;</span><span class="token punctuation">,</span> mot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><pre class="language-text">La lettre d&apos;indice 0 est S
+La lettre d&apos;indice 1 est a
+La lettre d&apos;indice 2 est l
+La lettre d&apos;indice 3 est u
+La lettre d&apos;indice 4 est t
+</pre>
+<h4 class="mume-header" id="it%C3%A9ration-sur-la-cha%C3%AEne">It&#xE9;ration sur la cha&#xEE;ne</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">mot <span class="token operator">=</span> <span class="token string">&quot;Salut&quot;</span>
+<span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Voici un caract&#xE8;re&quot;</span><span class="token punctuation">,</span> caract&#xE8;re<span class="token punctuation">)</span>
+</pre><p>Voici un caract&#xE8;re S<br>
+Voici un caract&#xE8;re a<br>
+Voici un caract&#xE8;re l<br>
+Voici un caract&#xE8;re u<br>
+Voici un caract&#xE8;re t</p>
+<h3 class="mume-header" id="indices-n%C3%A9gatifs">Indices n&#xE9;gatifs</h3>
+
+<p>Python autorise aussi les indices n&#xE9;gatifs, cela peut &#xEA;tre tr&#xE8;s pratique.</p>
+<p>Faisons une boucle avec une cha&#xEE;ne, et</p>
+<ul>
+<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span> correspond au dernier caract&#xE8;re,</li>
+<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">2</span></span></span></span> correspond &#xE0; l&apos;avant dernier caract&#xE8;re.</li>
+<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">-i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord mathdefault">i</span></span></span></span> correspond au <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>-&#xE8;me caract&#xE8;re en partant de la fin.</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>Indice   -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6
+Cha&#xEE;ne    B  o  n  j  o  u  r  B  o  n  j  o  u  r
+</code></pre><blockquote>
+<p>Pour une cha&#xEE;ne de longueur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>, les indices Python valables vont de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">-l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> inclus &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">+l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> exclu. &#x26A0;&#xFE0F; Les indices n&#xE9;gatifs ne sont pas l&#xE9;gaux avec tous les langages de programmation, ici c&apos;est un exemple de sucre syntaxique autoris&#xE9; par Python, pour simplifier certains codes.</p>
+</blockquote>
+<h3 class="mume-header" id="tranches-slice">Tranches (<em>slice</em>)</h3>
+
+<p>Python autorise l&apos;extraction d&apos;une tranche d&apos;une cha&#xEE;ne de caract&#xE8;res.</p>
+<pre class="language-text">Indice      0  1  2  3  4  5  6  7  8  9
+Cha&#xEE;ne      T  r  a  v  a  i  l  l  e  r
+</pre>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe <span class="token operator">=</span> <span class="token string">&quot;Travailler&quot;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token comment"># du 3 inclus au 6 exclu</span>
+<span class="token string">&apos;vail&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment"># du d&#xE9;but au 4 exclu</span>
+<span class="token string">&apos;Trav&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token comment"># les 7 premiers (du d&#xE9;but au 7 exclu)</span>
+<span class="token string">&apos;Travail&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token comment"># tout sauf les 7 premiers (du 7 inclus &#xE0; la fin)</span>
+<span class="token string">&apos;ler&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token comment"># les deux derniers</span>
+<span class="token string">&apos;er&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> verbe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># tout sauf les deux derniers</span>
+<span class="token string">&apos;Travaill&apos;</span>
+</pre><h3 class="mume-header" id="lecture-dune-cha%C3%AEne">Lecture d&apos;une cha&#xEE;ne</h3>
+
+<p>On utilise la fonction <code>input()</code> pour r&#xE9;cup&#xE9;rer une cha&#xEE;ne depuis un utilisateur qui utilise un programme Python.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est ton pr&#xE9;nom ?&quot;</span><span class="token punctuation">)</span>
+pr&#xE9;nom <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Tu t&apos;appelles&quot;</span><span class="token punctuation">,</span> pr&#xE9;nom<span class="token punctuation">)</span>
+</pre><pre class="language-text">Quel est ton pr&#xE9;nom ?
+Franck
+Tu t&apos;appelles Franck
+</pre>
+<p>&#x26A0;&#xFE0F; Avec Python3, La fonction <code>input()</code> renvoie une cha&#xEE;ne de caract&#xE8;res ; <strong>toujours</strong>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est ton &#xE2;ge ?&quot;</span><span class="token punctuation">)</span>
+&#xE2;ge <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Dans dix ans, tu auras&quot;</span><span class="token punctuation">,</span> &#xE2;ge <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">)</span>
+</pre><pre class="language-text">Quel est ton &#xE2;ge ?
+42
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: can only concatenate str (not &quot;int&quot;) to str
+</pre>
+<p>On expliquera bient&#xF4;t ce qu&apos;est la concat&#xE9;nation, mais simplement, ici, Python ne sait pas ajouter du texte et un entier, c&apos;est une erreur de type (<code>TypeError</code>).</p>
+<blockquote>
+<p>Pour travailler avec des nombres donn&#xE9;s par un utilisateur, il faut les convertir avec les fonction <code>int()</code> ou bien <code>float()</code>.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est ton &#xE2;ge ?&quot;</span><span class="token punctuation">)</span>
+&#xE2;ge <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Dans dix ans, tu auras&quot;</span><span class="token punctuation">,</span> &#xE2;ge <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">&quot;ans.&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est est ta masse en kg ?&quot;</span><span class="token punctuation">)</span>
+masse <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># en kg</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Si tu prends 3.2kg, ta masse sera&quot;</span><span class="token punctuation">,</span> poids <span class="token operator">+</span> <span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token string">&quot;kg.&quot;</span><span class="token punctuation">)</span>
+</pre><pre class="language-text">Quel est ton &#xE2;ge ?
+42
+Dans dix ans, tu auras 52 ans.
+Quel est est ta masse en kg ?
+74.3
+Si tu prends 3.2kg, ta masse sera 77.5 kg.
+</pre>
+<p><strong>&#xC0; retenir</strong></p>
+<ul>
+<li>pour lire du texte : <code>texte = input()</code></li>
+<li>pour lire un entier : <code>entier = int(input())</code></li>
+<li>pour lire un nombre : <code>nombre = float(input())</code></li>
+</ul>
+<blockquote>
+<p>Nous avons &#xE9;voqu&#xE9; la concat&#xE9;nation, un peu avant ; voyons quelles op&#xE9;rations &#xE9;l&#xE9;mentaires on peut faire avec les cha&#xEE;nes de caract&#xE8;res.</p>
+</blockquote>
+<h3 class="mume-header" id="concat%C3%A9nation">Concat&#xE9;nation</h3>
+
+<p>La concat&#xE9;nation, c&apos;est le fait de rabouter, de coller, deux cha&#xEE;nes.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;bon&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;jour&quot;</span>
+<span class="token string">&apos;bonjour&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;bon&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;bon&quot;</span>
+<span class="token string">&apos;bonbon&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;bon&quot;</span> <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token string">&apos;bonbon&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">&quot;O&quot;</span> <span class="token operator">*</span> <span class="token number">10</span>
+<span class="token string">&apos;OOOOOOOOOO&apos;</span>
+</pre><blockquote>
+<p>On peut donc aussi multiplier une cha&#xEE;ne de caract&#xE8;re avec un entier, on obtient plusieurs copies de la cha&#xEE;ne coll&#xE9;es ensemble.</p>
+</blockquote>
+<p>&#x26A0;&#xFE0F; Cette technique n&apos;existe pas avec tous les langages de programmation, elle est peut &#xEA;tre hors programme.</p>
+<h2 class="mume-header" id="les-listes">Les listes</h2>
+
+<p>Les listes d&apos;&#xE9;l&#xE9;ments (<em>list</em>, de type <code>list</code>) sont des objets Python <strong>muables</strong>.</p>
+<ul>
+<li>On pourra modifier les &#xE9;l&#xE9;ments de la liste, chose qu&apos;on ne pouvait pas faire avec les <code>str</code> immuables.</li>
+<li>On <strong>ne pourra pas</strong> utiliser les <code>list</code> comme des cl&#xE9;s de dictionnaire, mais on pouvait le faire avec les <code>str</code>.</li>
+</ul>
+<p>&#xC0; part cette grande diff&#xE9;rence, il y a de nombreux points communs entre <code>str</code> et <code>list</code> pour les d&#xE9;butants. Nous allons voir comment construire, acc&#xE9;der, modifier, it&#xE9;rer.</p>
+<h3 class="mume-header" id="construction-1">Construction</h3>
+
+<p>Pour construire une liste dans un code Python, on utilise les d&#xE9;limiteurs :</p>
+<ul>
+<li><code>[</code> : pour d&#xE9;buter</li>
+<li><code>]</code> : pour finir</li>
+<li><code>,</code> : pour s&#xE9;parer</li>
+</ul>
+<p>&#x26A0;&#xFE0F; M&#xEA;me s&apos;il est possible de construire des listes avec des &#xE9;l&#xE9;ments de types diff&#xE9;rents, nous le d&#xE9;conseillons.</p>
+<h4 class="mume-header" id="exemples-1">Exemples</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">cours_nsi <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;lundi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;mercredi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;vendredi&quot;</span><span class="token punctuation">]</span>
+nb_premiers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span>
+hauteurs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.82</span><span class="token punctuation">,</span> <span class="token number">1.75</span><span class="token punctuation">,</span> <span class="token number">1.68</span><span class="token punctuation">,</span> <span class="token number">1.89</span><span class="token punctuation">]</span>
+</pre><h3 class="mume-header" id="indices-1">Indices</h3>
+
+<p>Les listes sont indic&#xE9;es &#xE0; partir de z&#xE9;ro.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cours_nsi<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token string">&apos;lundi&apos;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> nb_premiers<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">7</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> hauteurs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token number">1.89</span>
+</pre><p>Comme pour les <code>str</code>, les indices n&#xE9;gatifs sont autoris&#xE9;s en Python, tout comme les tranches.</p>
+<h3 class="mume-header" id="longueur-1">Longueur</h3>
+
+<p>Comme pour les <code>str</code>, on utilise la fonction <code>len()</code> (pour <em>length</em>, longueur), pour conna&#xEE;tre le nombre d&apos;&#xE9;l&#xE9;ments d&apos;une liste.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>hauteurs<span class="token punctuation">)</span>
+<span class="token number">4</span>
+</pre><h3 class="mume-header" id="it%C3%A9ration-1">It&#xE9;ration</h3>
+
+<p>Comme pour les <code>str</code>, on peut it&#xE9;rer sur une liste de deux mani&#xE8;res diff&#xE9;rentes.</p>
+<h4 class="mume-header" id="it%C3%A9ration-avec-lindice">It&#xE9;ration avec l&apos;indice</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">hauteurs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.82</span><span class="token punctuation">,</span> <span class="token number">1.75</span><span class="token punctuation">,</span> <span class="token number">1.68</span><span class="token punctuation">,</span> <span class="token number">1.89</span><span class="token punctuation">]</span>
+nb_&#xE9;lements <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>hauteurs<span class="token punctuation">)</span>
+somme <span class="token operator">=</span> <span class="token number">0.0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_&#xE9;l&#xE9;ments<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    somme <span class="token operator">=</span> somme <span class="token operator">+</span> hauteurs<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;La hauteur totale est&quot;</span><span class="token punctuation">,</span> somme<span class="token punctuation">)</span>
+</pre><pre class="language-text">La hauteur totale est 7.14
+</pre>
+<h4 class="mume-header" id="it%C3%A9ration-sans-indice">It&#xE9;ration sans indice</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">hauteurs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.82</span><span class="token punctuation">,</span> <span class="token number">1.75</span><span class="token punctuation">,</span> <span class="token number">1.68</span><span class="token punctuation">,</span> <span class="token number">1.89</span><span class="token punctuation">]</span>
+somme <span class="token operator">=</span> <span class="token number">0.0</span>
+<span class="token keyword">for</span> h <span class="token keyword">in</span> hauteurs<span class="token punctuation">:</span>
+    somme <span class="token operator">=</span> somme <span class="token operator">+</span> h
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;La hauteur totale est&quot;</span><span class="token punctuation">,</span> somme<span class="token punctuation">)</span>
+</pre><pre class="language-text">La hauteur totale est 7.14
+</pre>
+<blockquote>
+<p>On constate que la deuxi&#xE8;me m&#xE9;thode est bien plus simple. Elle est tr&#xE8;s utile lorsqu&apos;on n&apos;a pas besoin de l&apos;indice pendant la boucle.</p>
+</blockquote>
+<p>Voyons maintenant des m&#xE9;thodes alternatives de construction de liste.</p>
+<h3 class="mume-header" id="concat%C3%A9nation-1">Concat&#xE9;nation</h3>
+
+<p>Comme pour les <code>str</code>, on peut concat&#xE9;ner des listes.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">d&#xE9;but <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span>
+suite <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d&#xE9;but <span class="token operator">+</span> suite<span class="token punctuation">)</span>
+</pre><pre class="language-text">[2, 3, 5, 7, 11, 13, 17, 19, 23]
+</pre>
+<pre data-role="codeBlock" data-info="python" class="language-python">tab <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>tab<span class="token punctuation">)</span>
+</pre><pre class="language-text">[0, 0, 0, 0, 0]
+</pre>
+<p>Cette derni&#xE8;re m&#xE9;thode est souvent utilis&#xE9;e pour initialiser de grands tableaux pleins de z&#xE9;ros.</p>
+<p>&#x26A0;&#xFE0F; Le programme pr&#xE9;conise plut&#xF4;t une autre m&#xE9;thode, la construction des <strong>listes en compr&#xE9;hension</strong>.</p>
+<h3 class="mume-header" id="les-listes-en-compr%C3%A9hension">Les listes en compr&#xE9;hension</h3>
+
+<p><em>&#xC0; venir</em></p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</a>
+<ul>
+<li><a href="#donn%C3%A9es-num%C3%A9riques">Donn&#xE9;es num&#xE9;riques</a>
+<ul>
+<li><a href="#les-bool%C3%A9ens-bool">Les bool&#xE9;ens (<code>bool</code>)</a></li>
+<li><a href="#les-entiers-int">Les entiers (<code>int</code>)</a></li>
+<li><a href="#les-flottants-float">Les flottants (<code>float</code>)</a></li>
+<li><a href="#les-complexes-complex">Les complexes (<code>complex</code>)</a></li>
+<li><a href="#muables-ou-immuables">Muables ou immuables ?</a></li>
+</ul>
+</li>
+<li><a href="#les-cha%C3%AEnes-de-caract%C3%A8res">Les cha&#xEE;nes de caract&#xE8;res</a>
+<ul>
+<li><a href="#construction">Construction</a>
+<ul>
+<li><a href="#exemples">Exemples</a></li>
+</ul>
+</li>
+<li><a href="#indices">Indices</a></li>
+<li><a href="#longueur">Longueur</a></li>
+<li><a href="#it%C3%A9ration">It&#xE9;ration</a>
+<ul>
+<li><a href="#it%C3%A9ration-par-indices">It&#xE9;ration par indices</a></li>
+<li><a href="#it%C3%A9ration-sur-la-cha%C3%AEne">It&#xE9;ration sur la cha&#xEE;ne</a></li>
+</ul>
+</li>
+<li><a href="#indices-n%C3%A9gatifs">Indices n&#xE9;gatifs</a></li>
+<li><a href="#tranches-slice">Tranches (<em>slice</em>)</a></li>
+<li><a href="#lecture-dune-cha%C3%AEne">Lecture d&apos;une cha&#xEE;ne</a></li>
+<li><a href="#concat%C3%A9nation">Concat&#xE9;nation</a></li>
+</ul>
+</li>
+<li><a href="#les-listes">Les listes</a>
+<ul>
+<li><a href="#construction-1">Construction</a>
+<ul>
+<li><a href="#exemples-1">Exemples</a></li>
+</ul>
+</li>
+<li><a href="#indices-1">Indices</a></li>
+<li><a href="#longueur-1">Longueur</a></li>
+<li><a href="#it%C3%A9ration-1">It&#xE9;ration</a>
+<ul>
+<li><a href="#it%C3%A9ration-avec-lindice">It&#xE9;ration avec l&apos;indice</a></li>
+<li><a href="#it%C3%A9ration-sans-indice">It&#xE9;ration sans indice</a></li>
+</ul>
+</li>
+<li><a href="#concat%C3%A9nation-1">Concat&#xE9;nation</a></li>
+<li><a href="#les-listes-en-compr%C3%A9hension">Les listes en compr&#xE9;hension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

@@ -14,7 +14,9 @@ Rendez-vous en cas de confinement complet :
 
 1. Cours :
     * [1 - Le binaire](Cours/1-binaire.html)
-    * [2 - Structures de données linéaires](Cours/2-sdl.html) *À venir*
+    * [2 - Calculatrice Python](Cours/2-calc.html)
+    * [3 - Variables Python](Cours/3-variables.html)
+    * [4 - Types de données Python](Cours/4-types.html) *À venir*
     * [Python au lycée](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
     * [Correction et étude des solutions aux problèmes](FranceIOI/accueil.html).

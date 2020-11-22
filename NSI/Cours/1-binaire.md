@@ -1,4 +1,4 @@
-# Chapitre 1 : le binaire
+# Le binaire
 
 Auteur : Franck CHAMBON, Lycée Lucie Aubrac
 
@@ -323,3 +323,7 @@ Comment obtenir plus rapidement l'opposé d'un entier ?
 > * La partie numérique est $1+4+8 = 13$
 > * Le nombre de départ était $+13$.
 
+
+---
+
+> Nous reviendrons sur ce chapitre pour travailler sur les conversions de bases entre binaire, octal et hexadécimal.
