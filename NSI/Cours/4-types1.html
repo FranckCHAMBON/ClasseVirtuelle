@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>4-types</title>
+      <title>4-types1</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,7 +23,7 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</h1>
+      <h1 class="mume-header" id="types-simples-nombres-cha%C3%AEne-tableau-et-tuple">Types simples : nombres, cha&#xEE;ne, tableau et tuple</h1>
 
 <h2 class="mume-header" id="donn%C3%A9es-num%C3%A9riques">Donn&#xE9;es num&#xE9;riques</h2>
 
@@ -106,6 +106,19 @@ Traceback <span class="token punctuation">(</span>most recent call last<span cla
   File <span class="token string">&quot;&lt;stdin&gt;&quot;</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
 IndexError<span class="token punctuation">:</span> string index out of <span class="token builtin">range</span>
 </pre><p>Ici l&apos;erreur est <code>IndexError</code> (Erreur d&apos;index), <em>string index out of range</em> (indice de la cha&#xEE;ne en dehors de l&apos;intervalle).</p>
+<h3 class="mume-header" id="appartenance">Appartenance</h3>
+
+<p>On peut savoir si une sous cha&#xEE;ne <code>extrait</code> est incluse dans une cha&#xEE;ne <code>phrase</code> avec le code <code>extrait in phrase</code>.</p>
+<h4 class="mume-header" id="exemple">Exemple</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">CONST_voyelles <span class="token operator">=</span> <span class="token string">&quot;aeiouy&quot;</span>
+mot <span class="token operator">=</span> <span class="token string">&quot;Bonjour&quot;</span>
+<span class="token keyword">for</span> lettre <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> lettre <span class="token keyword">in</span> CONST_voyelles<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>lettre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+</pre><pre class="language-text">oou
+</pre>
+<p>Ce code n&apos;affiche que les voyelles de <code>mot</code> apr&#xE8;s avoir test&#xE9; si <code>lettre</code> est dans <code>CONST_voyelles</code>.</p>
 <h3 class="mume-header" id="it%C3%A9ration">It&#xE9;ration</h3>
 
 <p>On peut it&#xE9;rer sur les cha&#xEE;nes de deux fa&#xE7;ons.</p>
@@ -300,7 +313,10 @@ liste_avec_un_&#xE9;l&#xE9;ment <span class="token operator">=</span> <span clas
 <p>Comme pour les <code>str</code>, on utilise la fonction <code>len()</code> (pour <em>length</em>, longueur), pour conna&#xEE;tre le nombre d&apos;&#xE9;l&#xE9;ments d&apos;une liste.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>hauteurs<span class="token punctuation">)</span>
 <span class="token number">4</span>
-</pre><h3 class="mume-header" id="it%C3%A9ration-1">It&#xE9;ration</h3>
+</pre><h3 class="mume-header" id="appartenance-1">Appartenance</h3>
+
+<p>Comme pour les cha&#xEE;nes, <code>x in ma_liste</code> renvoie un bool&#xE9;en, la r&#xE9;ponse &#xE0; : <code>x</code> est-il dans <code>ma_liste</code> ?</p>
+<h3 class="mume-header" id="it%C3%A9ration-1">It&#xE9;ration</h3>
 
 <p>Comme pour les <code>str</code>, on peut it&#xE9;rer sur une liste de deux mani&#xE8;res diff&#xE9;rentes.</p>
 <h4 class="mume-header" id="it%C3%A9ration-avec-lindice">It&#xE9;ration avec l&apos;indice</h4>
@@ -472,7 +488,7 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</a>
+<li><a href="#types-simples-nombres-cha%C3%AEne-tableau-et-tuple">Types simples : nombres, cha&#xEE;ne, tableau et tuple</a>
 <ul>
 <li><a href="#donn%C3%A9es-num%C3%A9riques">Donn&#xE9;es num&#xE9;riques</a>
 <ul>
@@ -492,6 +508,11 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 </li>
 <li><a href="#indices">Indices</a></li>
 <li><a href="#longueur">Longueur</a></li>
+<li><a href="#appartenance">Appartenance</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
 <li><a href="#it%C3%A9ration">It&#xE9;ration</a>
 <ul>
 <li><a href="#it%C3%A9ration-par-indices">It&#xE9;ration par indices</a></li>
@@ -515,6 +536,7 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 <li><a href="#indices-1">Indices</a></li>
 <li><a href="#copie-de-liste">Copie de liste</a></li>
 <li><a href="#longueur-1">Longueur</a></li>
+<li><a href="#appartenance-1">Appartenance</a></li>
 <li><a href="#it%C3%A9ration-1">It&#xE9;ration</a>
 <ul>
 <li><a href="#it%C3%A9ration-avec-lindice">It&#xE9;ration avec l&apos;indice</a></li>

@@ -1,4 +1,4 @@
-# Types de données en Python
+# Types simples : nombres, chaîne, tableau et tuple
 
 ## Données numériques
 
@@ -102,6 +102,24 @@ IndexError: string index out of range
 ```
 
 Ici l'erreur est `IndexError` (Erreur d'index), *string index out of range* (indice de la chaîne en dehors de l'intervalle).
+
+### Appartenance
+
+On peut savoir si une sous chaîne `extrait` est incluse dans une chaîne `phrase` avec le code `extrait in phrase`.
+
+#### Exemple
+
+```python
+CONST_voyelles = "aeiouy"
+mot = "Bonjour"
+for lettre in mot:
+    if lettre in CONST_voyelles:
+        print(lettre, end="")
+```
+
+    oou
+
+Ce code n'affiche que les voyelles de `mot` après avoir testé si `lettre` est dans `CONST_voyelles`.
 
 ### Itération
 
@@ -338,6 +356,12 @@ Comme pour les `str`, on utilise la fonction `len()` (pour *length*, longueur), 
 >>> len(hauteurs)
 4
 ```
+
+### Appartenance
+
+Comme pour les chaînes, `x in ma_liste` renvoie un booléen, la réponse à : `x` est-il dans `ma_liste` ?
+
+
 
 ### Itération
 
