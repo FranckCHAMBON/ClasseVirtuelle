@@ -35,6 +35,9 @@ Pour le code Python des solutions :
 2. [Niveau 2](N2/accueil.html)
 3. [Niveau 3](N3/accueil.html)
 
+## Programmation Orientée Objet (POO)
+* [Cours](cours/POO.html)
+
 ## 🐚 Interfaces Homme Machine
 
 > Systèmes d'exploitation et commandes Bash
