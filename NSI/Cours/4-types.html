@@ -426,7 +426,50 @@ ligne7 <span class="token operator">=</span>             <span class="token punc
 smile <span class="token operator">=</span> <span class="token punctuation">[</span>ligne0<span class="token punctuation">,</span> ligne1<span class="token punctuation">,</span> ligne2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ligne7<span class="token punctuation">]</span>
 </pre><p>On peut aussi &#xE9;crire :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">smile <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-</pre>
+</pre><p>Pour modifier un pixel, on peut faire :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">smile<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+</pre><blockquote>
+<p>Comment lire <code>smile[2][4]</code> ?<br>
+<code>smile</code> est une liste de <strong>lignes</strong>, on veut celle d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>, c&apos;est <code>smile[2]</code> qui est une liste d&apos;entiers, un par <strong>colonne</strong>, on veut celui d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>.<br>
+<code>smile[2][4]</code> correspond donc au pixel de la ligne d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>, et de la colonne d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>.</p>
+</blockquote>
+<h2 class="mume-header" id="les-tuples">Les tuples</h2>
+
+<p>Les tuples sont similaires aux listes Python, mais en version <strong>immuables</strong>, on pourra donc les utiliser comme cl&#xE9;s de dictionnaire.</p>
+<h3 class="mume-header" id="diff%C3%A9rences-entre-list-et-tuple">Diff&#xE9;rences entre <code>list</code> et <code>tuple</code></h3>
+
+<ol>
+<li>Une liste est <strong>muable</strong>, un tuple est <strong>immuable</strong>.</li>
+<li>Une liste se cr&#xE9;e avec <code>[...]</code>, un tuple se cr&#xE9;e avec <code>(...)</code>.</li>
+<li>Un tuple ne poss&#xE8;de pas les m&#xE9;thodes dynamiques d&apos;une liste. Normal, on ne modifie un tuple en place.</li>
+</ol>
+<h3 class="mume-header" id="exemples-2">Exemples</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> coord <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> coord<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token number">5</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cardinaux <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">&apos;N&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;S&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;E&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;O&apos;</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> cardinaux<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token string">&apos;E&apos;</span>
+</pre><p>&#x26A0;&#xFE0F; Un tuple &#xE0; un seul &#xE9;l&#xE9;ment se cr&#xE9;e avec une virgule orpheline comme <code>mon_tuple = (5,)</code>, sinon, sans la virgule, cela deviendrait l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> ; c&apos;est diff&#xE9;rent !</p>
+<h3 class="mume-header" id="conversions-de-type">Conversions de type</h3>
+
+<p>Il est possible de changer le type d&apos;un objet <code>tuple</code> &#xE0; <code>list</code>. Soit pour pouvoir le modifier, soit pour pouvoir l&apos;utiliser comme une cl&#xE9; de dictionnaire.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> mon_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_list <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>mon_tuple<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> ma_liste<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token comment"># on ajoute 7 &#xE0; la fin</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> mon_tuple <span class="token operator">=</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>ma_liste<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> mon_tuple
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>La fonction <code>list()</code> essaie de transformer son argument en liste, autant que possible. On l&apos;utilise souvent pour transformer une cha&#xEE;ne de caract&#xE8;res en liste de carcat&#xE8;res. Liste que l&apos;on peut modifier...</li>
+<li>La fonction <code>tuple()</code> essaie de transformer son argument en tuple...</li>
+<li>La fonction <code>int()</code> essaie de transformer son argument en entier...</li>
+<li>La fonction <code>float()</code> essaie de transformer son argument en flottant...</li>
+<li>La fonction <code>bool()</code> essaie de transformer son argument en bool&#xE9;en...</li>
+<li>On a de m&#xEA;me pour les autres types ; d&#xE8;s que c&apos;est possible.</li>
+</ul>
+
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#types-de-donn%C3%A9es-en-python">Types de donn&#xE9;es en Python</a>
@@ -490,6 +533,13 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 <li><a href="#exercice-1">Exercice</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#les-tuples">Les tuples</a>
+<ul>
+<li><a href="#diff%C3%A9rences-entre-list-et-tuple">Diff&#xE9;rences entre <code>list</code> et <code>tuple</code></a></li>
+<li><a href="#exemples-2">Exemples</a></li>
+<li><a href="#conversions-de-type">Conversions de type</a></li>
 </ul>
 </li>
 </ul>

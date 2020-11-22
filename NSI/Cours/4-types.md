@@ -490,3 +490,58 @@ On peut aussi écrire :
 ```python
 smile = [[0,0,1,1,1,1,0,0], [0,1,0,...], ..., [...1,0,0]]
 ```
+
+Pour modifier un pixel, on peut faire : 
+```python
+smile[2][4] = 0
+```
+
+> Comment lire `smile[2][4]` ?
+> `smile` est une liste de **lignes**, on veut celle d'indice $2$, c'est `smile[2]` qui est une liste d'entiers, un par **colonne**, on veut celui d'indice $4$.
+> `smile[2][4]` correspond donc au pixel de la ligne d'indice $2$, et de la colonne d'indice $4$.
+
+
+## Les tuples
+
+Les tuples sont similaires aux listes Python, mais en version **immuables**, on pourra donc les utiliser comme clés de dictionnaire.
+
+### Différences entre `list` et `tuple`
+
+1. Une liste est **muable**, un tuple est **immuable**.
+2. Une liste se crée avec `[...]`, un tuple se crée avec `(...)`.
+3. Un tuple ne possède pas les méthodes dynamiques d'une liste. Normal, on ne modifie un tuple en place.
+
+### Exemples
+
+```python
+>>> coord = (5, 2)
+>>> coord[0]
+5
+>>> cardinaux = ('N', 'S', 'E', 'O')
+>>> cardinaux[2]
+'E'
+```
+
+
+⚠️ Un tuple à un seul élément se crée avec une virgule orpheline comme `mon_tuple = (5,)`, sinon, sans la virgule, cela deviendrait l'entier $5$ ; c'est différent !
+
+### Conversions de type
+
+Il est possible de changer le type d'un objet `tuple` à `list`. Soit pour pouvoir le modifier, soit pour pouvoir l'utiliser comme une clé de dictionnaire.
+
+```python
+>>> mon_tuple = (2, 3, 5)
+>>> ma_list = list(mon_tuple)
+>>> ma_liste.append(7) # on ajoute 7 à la fin
+>>> mon_tuple = tuple(ma_liste)
+>>> mon_tuple
+(2, 3, 5, 7)
+```
+
+* La fonction `list()` essaie de transformer son argument en liste, autant que possible. On l'utilise souvent pour transformer une chaîne de caractères en liste de carcatères. Liste que l'on peut modifier...
+* La fonction `tuple()` essaie de transformer son argument en tuple...
+* La fonction `int()` essaie de transformer son argument en entier...
+* La fonction `float()` essaie de transformer son argument en flottant...
+* La fonction `bool()` essaie de transformer son argument en booléen...
+* On a de même pour les autres types ; dès que c'est possible.
+
