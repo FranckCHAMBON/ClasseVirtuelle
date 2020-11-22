@@ -94,22 +94,40 @@ count(value, /) method of builtins.list instance
 * On découvre qu'il y a de nombreuses méthodes **privées**, celles dont le nom est entouré de `__`.
 * On découvre l'aide sur `.count()` : renvoie le nombre d'occurrences d'une valeur.
 
+> *More about [Python list](https://www.programiz.com/python-programming/list)* ; en anglais
+
 ## Les ensembles
 
-Un ensemble (*set* de type `set`) est un objet Python qui possède des éléments sans doublon, et sans ordre.
+Un ensemble (*set* de type `set`) est un objet Python **muable** qui possède des éléments sans doublon, et sans ordre.
 * On ne peut pas dire qui est l'élément d'indice `i` donné.
 * Si on ajoute un élément déjà présent, il n'est pas ajouté une seconde fois.
+* Les éléments d'un ensemble doivent être **immuables**, par exemple on peut avoir des nombres, ou des chaînes de caractères, ou bien des tuples, mais pas de listes ni d'ensembles.
 
-L'utilisation des ensembles ressemble à celle des listes dynamiques. Ils sont clairement **muables** et donc ne seront pas des clés pour un dictionnaire.
+L'utilisation des ensembles ressemble à celle des listes dynamiques, avec des méthodes de programmation orientée objet.
 
 > Remarque (hors programme) : il est possible de créer un ensemble figé, donc immuable, avec `frozenset`. Ainsi les listes et les ensembles ont leur version immuables : tuple et frozenset.
 
+> *More about [Python set](https://www.programiz.com/python-programming/set)* ; en anglais
+
 ### Construction
 
-* `{}` pour un ensemble vide
-* `{i*i%10 for i in range(10)}` définition en compréhension
+* `set()` pour un ensemble vide
+* `set(i*i%10 for i in range(10))` définition en compréhension, ou bien `{i*i%10 for i in range(10)}`
 * `set(ma_liste)` pour renvoyer une version sans doublon, ni ordre, d'une liste. La fonction `set()` essaie de transformer son argument en ensemble.
 
+> ⚠️ l'ensemble vide se définit avec `set()`, mais s'affiche comme `{}`, or définir avec `{}` donne un dictionnaire vide ; **danger**, c'est différent.
+
+#### Exemples
+
+```python
+>>> {n*n%10 for n in range(100)}
+{0, 1, 4, 5, 6, 9}
+>>> set("Bonjour")
+{'r', 'j', 'B', 'u', 'o', 'n'}
+```
+
+* Les éléments ne sont pas, *a priori*, triés.
+* Il n'y a pas de doublon.
 
 ### Les méthodes des ensembles
 

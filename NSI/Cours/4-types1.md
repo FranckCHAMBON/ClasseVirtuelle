@@ -37,6 +37,8 @@ La variable `x` a été modifiée, mais les nombres $1337$, $100$ et $13$ sont *
 
 > Cette notion sera utilisée plus tard, au sujet des dictionnaires, les nombres peuvent être des clés de dictionnaires justement par ce qu'ils sont immuables.
 
+> *More about [Python numbers](https://www.programiz.com/python-programming/numbers)* ; en anglais
+
 ## Les chaînes de caractères
 
 Les chaînes de caractères (*string*, de type `str`) sont aussi des objets Python **immuables**, ils pourront être des clés de dictionnaires.
@@ -278,6 +280,8 @@ Il est possible d'écrire des sauts de lignes, ou des tabulations dans une chaî
 * `'\n'` est le caractère saut de ligne,
 * `'\t'` est le caractère tabulation horizontal,
 * il y en a d'autres moins utiles.
+
+> *More about [Python string](https://www.programiz.com/python-programming/string)* ; en anglais
 
 ## Les listes
 

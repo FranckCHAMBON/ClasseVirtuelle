@@ -108,23 +108,43 @@ count<span class="token punctuation">(</span>value<span class="token punctuation
 <li>On d&#xE9;couvre qu&apos;il y a de nombreuses m&#xE9;thodes <strong>priv&#xE9;es</strong>, celles dont le nom est entour&#xE9; de <code>__</code>.</li>
 <li>On d&#xE9;couvre l&apos;aide sur <code>.count()</code> : renvoie le nombre d&apos;occurrences d&apos;une valeur.</li>
 </ul>
+<blockquote>
+<p><em>More about <a href="https://www.programiz.com/python-programming/list">Python list</a></em> ; en anglais</p>
+</blockquote>
 <h2 class="mume-header" id="les-ensembles">Les ensembles</h2>
 
-<p>Un ensemble (<em>set</em> de type <code>set</code>) est un objet Python qui poss&#xE8;de des &#xE9;l&#xE9;ments sans doublon, et sans ordre.</p>
+<p>Un ensemble (<em>set</em> de type <code>set</code>) est un objet Python <strong>muable</strong> qui poss&#xE8;de des &#xE9;l&#xE9;ments sans doublon, et sans ordre.</p>
 <ul>
 <li>On ne peut pas dire qui est l&apos;&#xE9;l&#xE9;ment d&apos;indice <code>i</code> donn&#xE9;.</li>
 <li>Si on ajoute un &#xE9;l&#xE9;ment d&#xE9;j&#xE0; pr&#xE9;sent, il n&apos;est pas ajout&#xE9; une seconde fois.</li>
+<li>Les &#xE9;l&#xE9;ments d&apos;un ensemble doivent &#xEA;tre <strong>immuables</strong>, par exemple on peut avoir des nombres, ou des cha&#xEE;nes de caract&#xE8;res, ou bien des tuples, mais pas de listes ni d&apos;ensembles.</li>
 </ul>
-<p>L&apos;utilisation des ensembles ressemble &#xE0; celle des listes dynamiques. Ils sont clairement <strong>muables</strong> et donc ne seront pas des cl&#xE9;s pour un dictionnaire.</p>
+<p>L&apos;utilisation des ensembles ressemble &#xE0; celle des listes dynamiques, avec des m&#xE9;thodes de programmation orient&#xE9;e objet.</p>
 <blockquote>
 <p>Remarque (hors programme) : il est possible de cr&#xE9;er un ensemble fig&#xE9;, donc immuable, avec <code>frozenset</code>. Ainsi les listes et les ensembles ont leur version immuables : tuple et frozenset.</p>
+</blockquote>
+<blockquote>
+<p><em>More about <a href="https://www.programiz.com/python-programming/set">Python set</a></em> ; en anglais</p>
 </blockquote>
 <h3 class="mume-header" id="construction">Construction</h3>
 
 <ul>
-<li><code>{}</code> pour un ensemble vide</li>
-<li><code>{i*i%10 for i in range(10)}</code> d&#xE9;finition en compr&#xE9;hension</li>
+<li><code>set()</code> pour un ensemble vide</li>
+<li><code>set(i*i%10 for i in range(10))</code> d&#xE9;finition en compr&#xE9;hension, ou bien <code>{i*i%10 for i in range(10)}</code></li>
 <li><code>set(ma_liste)</code> pour renvoyer une version sans doublon, ni ordre, d&apos;une liste. La fonction <code>set()</code> essaie de transformer son argument en ensemble.</li>
+</ul>
+<blockquote>
+<p>&#x26A0;&#xFE0F; l&apos;ensemble vide se d&#xE9;finit avec <code>set()</code>, mais s&apos;affiche comme <code>{}</code>, or d&#xE9;finir avec <code>{}</code> donne un dictionnaire vide ; <strong>danger</strong>, c&apos;est diff&#xE9;rent.</p>
+</blockquote>
+<h4 class="mume-header" id="exemples">Exemples</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>n<span class="token operator">*</span>n<span class="token operator">%</span><span class="token number">10</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">&quot;Bonjour&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">&apos;r&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;j&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;B&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;u&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;n&apos;</span><span class="token punctuation">}</span>
+</pre><ul>
+<li>Les &#xE9;l&#xE9;ments ne sont pas, <em>a priori</em>, tri&#xE9;s.</li>
+<li>Il n&apos;y a pas de doublon.</li>
 </ul>
 <h3 class="mume-header" id="les-m%C3%A9thodes-des-ensembles">Les m&#xE9;thodes des ensembles</h3>
 
@@ -164,7 +184,11 @@ count<span class="token punctuation">(</span>value<span class="token punctuation
 </li>
 <li><a href="#les-ensembles">Les ensembles</a>
 <ul>
-<li><a href="#construction">Construction</a></li>
+<li><a href="#construction">Construction</a>
+<ul>
+<li><a href="#exemples">Exemples</a></li>
+</ul>
+</li>
 <li><a href="#les-m%C3%A9thodes-des-ensembles">Les m&#xE9;thodes des ensembles</a></li>
 <li><a href="#les-fonctions-sur-les-ensembles">Les fonctions sur les ensembles</a></li>
 </ul>
