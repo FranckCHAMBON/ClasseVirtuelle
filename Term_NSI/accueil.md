@@ -11,7 +11,8 @@ Rendez-vous en cas de confinement complet :
 
 ## :checkered_flag: Épreuve finale
 
-L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
+* Le programme : le [B.O.](https://cache.media.eduscol.education.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf)
+* L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
 
 
 

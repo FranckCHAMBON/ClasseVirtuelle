@@ -72,20 +72,20 @@ print("Fraction h :", h.numérateur, "sur", h.dénominateur)
 ```python
 class Fraction:
     def __init__(self, a, b):
-        self._numérateur = a
-        self._dénominateur = b
+        self.__numérateur = a
+        self.__dénominateur = b
     
     def donne_numérateur(self):
-        return self._numérateur
+        return self.__numérateur
 
     def donne_dénominateur(self):
-        return self._dénominateur
+        return self.__dénominateur
 
     def modifie_numérateur(self, a):
-        self._numérateur = a
+        self.__numérateur = a
 
     def modifie_dénominateur(self, b):
-        self._dénominateur = b
+        self.__dénominateur = b
 
 
 
@@ -97,7 +97,7 @@ print("Fraction f :", f.donne_numérateur(), "sur", f.donne_dénominateur())
     Fraction f : 22 sur 7
 
 
-* Les attributs qui doivent être indiqués **privés** commencent par `_`. Ce n'est qu'une indication en Python, et ils peuvent être lus et modifiés quand même. Dans d'autres langages de programmation, la gestion public/privé est beaucoup plus stricte.
+* Les attributs qui doivent être indiqués **privés** commencent par `__` (double *underscore*). Ce **n**'est **pas** qu'une indication en Python, et ils ne peuvent plus être lus ni modifiés à l'extérieur de la définition de la classe. Dans d'autres langages de programmation, la gestion public/privé est encore plus stricte.
 
 * Les méthodes liées au fonctionnement interne sont encadrées de `__` ; ici `__init__()` est la méthode à définir pour avoir un constructeur. **On ne peut pas changer de nom !**
 
@@ -226,5 +226,6 @@ print("f ->", repr(f))
 3. Ajouter une méthode `ajouter(fraction)`
 
 Pour la suite, on peut regarder : 
-* ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) ; attention la PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
+* ce [cours](1-POO.pdf) avec des notions hors programme, pour aller plus loin.
+* ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) illustré ; attention la PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
 * ce [cours](http://www.maths-info-lycee.fr/poo.html), avec de bons exercices.
