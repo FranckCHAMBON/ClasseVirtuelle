@@ -48,7 +48,7 @@ L'unité élémentaire de stockage est le *bit*. (_**Bi**nary digi**t**_)
 
 ## L'octet
 
-En pratique les données informatiques transitent très souvent par paquets de 8, donc par octets. La première raison à cela a été l'utilisation de l'ASCII pour transporter l'information du texte écrit.
+En pratique les données informatiques transitent très souvent par paquets de 8 bits, donc par octets. La première raison à cela a été l'utilisation de l'ASCII pour transporter l'information du texte écrit.
 
 ### l'ASCII
 
@@ -68,9 +68,9 @@ Les articles sont écrits là en italiques, car c'est impossible en réalité de
 
 > Pour un texte en anglais, avec une ponctuation classique, l'ASCII est parfaitement adapté.
 
-**Pour chaque pays**, à une époque, on utilisait une variante de l'ASCII étendu (un pour chaque pays/langue), avec 128 symboles supplémentaires (ceux avec le bit de poids fort égal à 1). Le problème était pour la communication entre utilisateurs de différents pays ; c'était parfois compliqué...
+**Pour chaque pays**, à une époque, on utilisait une variante de l'ASCII étendu (un pour chaque pays/langue), avec 128 symboles supplémentaires (ceux avec le bit de poids fort égal à 1). Le problème était pour la communication entre utilisateurs de différents pays ; c'était parfois compliqué... En France on utilisait l'[encodage](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1) `latin-1` nommé aussi `ISO 8859-1`.
 
-> Aujourd'hui on utilise un codage [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) avec un nombre variable d'octets pour pouvoir échanger du texte dans n’importe quelle langue, avec *smiley*...
+> Aujourd'hui on utilise souvent un codage [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) avec un nombre variable d'octets pour pouvoir échanger du texte dans n’importe quelle langue, avec *smiley*...
 + Si le bit de poids fort est à `0`, alors le caractère est codé en ASCII ; le cas le plus fréquent.
 + Sinon, c'est rare, il est codé sur plusieurs octets, et on peut utiliser au choix, tous les caractères que l'humanité est capable d'inventer : lettre de toute langue, hiéroglyphe, smiley, symbole technique, ...
 
@@ -82,7 +82,7 @@ Les articles sont écrits là en italiques, car c'est impossible en réalité de
 
 Une autre utilisation de l'octet est de proposer 256 symboles différents, comme 256 nombres différents. Un octet peut représenter un niveau de gris parmi 256.
 
-> Une image simple (en 256 niveaux de gris) est une liste de lignes, où chaque ligne est une liste de pixels codés sur **un** octet. Dans ce cas une image de 600 pixels de large, par 400 pixels de haut pèse $600×400×1 = 240~\text{ko}$ (hors compréssion).
+> Une image simple (en 256 niveaux de gris) est une liste de lignes, où chaque ligne est une liste de pixels codés sur **un** octet. Dans ce cas une image de 600 pixels de large, par 400 pixels de haut pèse $600×400×1 = 240~\text{ko}$ (hors compression).
 
 ---
 
@@ -93,24 +93,24 @@ Pour coder d'autres nombres, pour des images plus précises, ou pour d'autres us
 ###  Les entiers non signés sur 4 bits
 On a $2^4 = 16$ nombres de $0$ à $15$.
 
-| $n$ | Codage |
-|-----|--------|
-|0|`0000`|
-|1|`0001`|
-|2|`0010`|
-|3|`0011`|
-|4|`0100`|
-|5|`0101`|
-|6|`0110`|
-|7|`0111`|
-|8|`1000`|
-|9|`1001`|
-|10|`1010`|
-|11|`1011`|
-|12|`1100`|
-|13|`1101`|
-|14|`1110`|
-|15|`1111`|
+| $n$ | binaire | hexadécimal |
+|:-----:|--------|:-------------:|
+|0|`0000`|`0`|
+|1|`0001`|`1`|
+|2|`0010`|`2`|
+|3|`0011`|`3`|
+|4|`0100`|`4`|
+|5|`0101`|`5`|
+|6|`0110`|`6`|
+|7|`0111`|`7`|
+|8|`1000`|`8`|
+|9|`1001`|`9`|
+|10|`1010`|`A`|
+|11|`1011`|`B`|
+|12|`1100`|`C`|
+|13|`1101`|`D`|
+|14|`1110`|`E`|
+|15|`1111`|`F`|
 
 Ce tableau est à connaître et à savoir refaire !
 
@@ -131,7 +131,7 @@ Il y a $2^{32} = 4\,294\,967\,296$ nombres de $0$ jusqu'à $4\,294\,967\,295$.
 
 > On retiendra que sur 4 octets, on peut différencier plus de 4 milliards de nombres.
 
-## III - Opération en binaire
+## III - Opérations en binaire
 
 ### Conversion décimal vers binaire
 

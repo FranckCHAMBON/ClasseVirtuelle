@@ -103,25 +103,7 @@ Traceback (most recent call last):
 IndexError: string index out of range
 ```
 
-Ici l'erreur est `IndexError` (Erreur d'index), *string index out of range* (indice de la chaîne en dehors de l'intervalle).
-
-### Appartenance
-
-On peut savoir si une sous chaîne `extrait` est incluse dans une chaîne `phrase` avec le code `extrait in phrase`.
-
-#### Exemple
-
-```python
-CONST_voyelles = "aeiouy"
-mot = "Bonjour"
-for lettre in mot:
-    if lettre in CONST_voyelles:
-        print(lettre, end="")
-```
-
-    oou
-
-Ce code n'affiche que les voyelles de `mot` après avoir testé si `lettre` est dans `CONST_voyelles`.
+Ici l'erreur est `IndexError` (Erreur d'indice), *string index out of range* (indice de la chaîne en dehors de l'intervalle).
 
 ### Itération
 
@@ -149,14 +131,34 @@ for i in range(longueur):
 ```python
 mot = "Salut"
 for caractère in mot:
-    print("Voici un caractère", caractère)
+    print("Voici un caractère :", caractère)
 ```
 
-Voici un caractère S
-Voici un caractère a
-Voici un caractère l
-Voici un caractère u
-Voici un caractère t
+Voici un caractère : S
+Voici un caractère : a
+Voici un caractère : l
+Voici un caractère : u
+Voici un caractère : t
+
+### Appartenance
+
+On peut savoir si une sous chaîne `extrait` est incluse dans une chaîne `phrase` avec le code `extrait in phrase`.
+
+#### Exemple
+
+```python
+CONST_voyelles = "aeiouy"
+mot = "Bonjour"
+for lettre in mot:
+    if lettre in CONST_voyelles:
+        print(lettre, end="")
+```
+
+    oou
+
+Ce code n'affiche que les voyelles de `mot` après avoir testé si `lettre` est dans `CONST_voyelles`.
+
+
 
 ### Indices négatifs
 
@@ -229,13 +231,13 @@ print("Dans dix ans, tu auras", âge + 10)
 
 On expliquera bientôt ce qu'est la concaténation, mais simplement, ici, Python ne sait pas ajouter du texte et un entier, c'est une erreur de type (`TypeError`).
 
-> Pour travailler avec des nombres donnés par un utilisateur, il faut les convertir avec les fonction `int()` ou bien `float()`.
+> Pour travailler avec des nombres donnés par un utilisateur, il faut les convertir avec les fonctions `int()` ou bien `float()`.
 
 ```python
 print("Quel est ton âge ?")
 âge = int(input())
 print("Dans dix ans, tu auras", âge + 10, "ans.")
-print("Quel est est ta masse en kg ?")
+print("Quelle est est ta masse en kg ?")
 masse = float(input()) # en kg
 print("Si tu prends 3.2kg, ta masse sera", poids + 3.2, "kg.")
 ```
@@ -243,7 +245,7 @@ print("Si tu prends 3.2kg, ta masse sera", poids + 3.2, "kg.")
     Quel est ton âge ?
     42
     Dans dix ans, tu auras 52 ans.
-    Quel est est ta masse en kg ?
+    Quelle est est ta masse en kg ?
     74.3
     Si tu prends 3.2kg, ta masse sera 77.5 kg.
 
@@ -449,7 +451,7 @@ Voyons des exemples progressifs.
 1. Une bonne façon de créer une liste remplie de 0.
 2. L'itérable peut être une chaîne, une liste, ou un `range`, ou tout itérable...
 3. La liste des 6 premiers carrés.
-4. Le dernier exemple donne la liste des 20 premiers carrés, filtrés en ne conservant que ceux qui se terminent par un 9.
+4. Le dernier exemple donne la liste des 20 premiers carrés, filtrée en ne conservant que ceux qui se terminent par un 9.
 
 > C'est **la bonne méthode** à essayer d'utiliser le plus possible. On appelle ce style de programmation, le style fonctionnel, il fait penser fortement à une écriture mathématique.
 
@@ -472,7 +474,7 @@ Voyons des exemples progressifs.
 * `max()` pour le maximum d'une liste non vide
 * `sum()` pour la somme d'une liste
 * `len()` pour la longueur d'une liste
-
+* `sorted()` pour renvoyer une copie triée de la liste. (À ne pas confondre avec `.sort()` qui fait un tri **en place**.)
 
 
 ### Les listes dynamiques de Python
@@ -537,7 +539,7 @@ Les tuples sont similaires aux listes Python, mais en version **immuables**, on 
 
 1. Une liste est **muable**, un tuple est **immuable**.
 2. Une liste se crée avec `[...]`, un tuple se crée avec `(...)`.
-3. Un tuple ne possède pas les méthodes dynamiques d'une liste. Normal, on ne modifie un tuple en place.
+3. Un tuple ne possède pas les méthodes dynamiques d'une liste. Normal, on ne modifie pas un tuple en place.
 
 ### Exemples
 

@@ -75,8 +75,8 @@ mes_carr&#xE9;s <span class="token operator">=</span> <span class="token punctua
 <h3 class="mume-header" id="autres-m%C3%A9thodes-dune-liste">Autres m&#xE9;thodes d&apos;une liste</h3>
 
 <ul>
-<li><code>ma_liste.sort()</code> tri la liste <code>ma_liste</code></li>
-<li><code>ma_liste.reverse()</code> renverse <code>ma_liste</code></li>
+<li><code>ma_liste.sort()</code> trie <strong>en place</strong> la liste <code>ma_liste</code></li>
+<li><code>ma_liste.reverse()</code> renverse en place <code>ma_liste</code></li>
 <li><code>ma_liste.index(&#xE9;l&#xE9;ment)</code> renvoie l&apos;indice de <code>&#xE9;l&#xE9;ment</code> dans <code>ma_liste</code> ; s&apos;il est absent, une erreur survient.</li>
 <li><code>ma_liste.extend(autre_liste)</code> prolonge <code>ma_liste</code> avec <code>autre_liste</code></li>
 <li><code>ma_liste.remove(&#xE9;l&#xE9;ment)</code> enl&#xE8;ve <code>&#xE9;l&#xE9;ment</code> (le premier trouv&#xE9;) de <code>ma_liste</code></li>
@@ -148,7 +148,7 @@ count<span class="token punctuation">(</span>value<span class="token punctuation
 </ul>
 <h3 class="mume-header" id="les-m%C3%A9thodes-des-ensembles">Les m&#xE9;thodes des ensembles</h3>
 
-<p>Donnons seulement les principales, pour les autres, voir <code>dir({})</code></p>
+<p>Donnons seulement les principales, pour les autres, voir <code>dir(set())</code></p>
 <p>On suppose que <code>truc</code> est un ensemble Python</p>
 <ul>
 <li><code>truc.add(&#xE9;l&#xE9;ment)</code> ajoute l&apos;<code>&#xE9;l&#xE9;ment</code> &#xE0; truc, sans doublon, ni ordre.</li>
@@ -162,7 +162,7 @@ count<span class="token punctuation">(</span>value<span class="token punctuation
 <li><code>x in truc</code> renvoie un bool&#xE9;en, <code>True</code> si <code>x</code> est dans <code>truc</code>, sinon <code>False</code></li>
 <li><code>max(truc)</code> renvoie le maximum de <code>truc</code> s&apos;il est non vide</li>
 <li><code>min(truc)</code> renvoie le minimum de <code>truc</code> s&apos;il est non vide</li>
-<li><code>sum(truc)</code> renvoie la somme des &#xE9;l&#xE9;ments de <code>truc</code> si l&apos;addition est autoris&#xE9;e sur tous ses &#xE9;l&#xE9;ments</li>
+<li><code>sum(truc)</code> renvoie la somme des &#xE9;l&#xE9;ments de <code>truc</code> ; erreur si <code>truc</code> contient des &#xE9;l&#xE9;ments non num&#xE9;riques.</li>
 </ul>
 <h2 class="mume-header" id="les-dictionnaires">Les dictionnaires</h2>
 

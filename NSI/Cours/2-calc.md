@@ -124,7 +124,7 @@ On retrouve comme sur de nombreuses calculatrice (et c'est normal) les points su
 
 - Il existe des limites aux nombres flottants, avec un plus petit flottant strictement positif, un plus grand flottant positif, et de même avec les négatifs.
 - Le nombre affiché (un décimal) n'est souvent pas égal au nombre représenté en machine, et parfois différent du nombre entré au départ !
-- Pour simplifier, il y a, en gros, une quinzaine de chiffres significatifs, et des exposants entre -1000 et +1000, environ.
+- Pour simplifier, il y a, en gros, une quinzaine de chiffres significatifs, et des exposants entre -300 et +300, environ.
 
 ```python
 In [13]: 0.5**1000

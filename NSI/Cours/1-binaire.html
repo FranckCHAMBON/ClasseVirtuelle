@@ -95,7 +95,7 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 </ul>
 <h2 class="mume-header" id="loctet">L&apos;octet</h2>
 
-<p>En pratique les donn&#xE9;es informatiques transitent tr&#xE8;s souvent par paquets de 8, donc par octets. La premi&#xE8;re raison &#xE0; cela a &#xE9;t&#xE9; l&apos;utilisation de l&apos;ASCII pour transporter l&apos;information du texte &#xE9;crit.</p>
+<p>En pratique les donn&#xE9;es informatiques transitent tr&#xE8;s souvent par paquets de 8 bits, donc par octets. La premi&#xE8;re raison &#xE0; cela a &#xE9;t&#xE9; l&apos;utilisation de l&apos;ASCII pour transporter l&apos;information du texte &#xE9;crit.</p>
 <h3 class="mume-header" id="lascii">l&apos;ASCII</h3>
 
 <p>Le <a href="https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">codage ASCII</a> utilise un octet :</p>
@@ -118,9 +118,9 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 <blockquote>
 <p>Pour un texte en anglais, avec une ponctuation classique, l&apos;ASCII est parfaitement adapt&#xE9;.</p>
 </blockquote>
-<p><strong>Pour chaque pays</strong>, &#xE0; une &#xE9;poque, on utilisait une variante de l&apos;ASCII &#xE9;tendu (un pour chaque pays/langue), avec 128 symboles suppl&#xE9;mentaires (ceux avec le bit de poids fort &#xE9;gal &#xE0; 1). Le probl&#xE8;me &#xE9;tait pour la communication entre utilisateurs de diff&#xE9;rents pays ; c&apos;&#xE9;tait parfois compliqu&#xE9;...</p>
+<p><strong>Pour chaque pays</strong>, &#xE0; une &#xE9;poque, on utilisait une variante de l&apos;ASCII &#xE9;tendu (un pour chaque pays/langue), avec 128 symboles suppl&#xE9;mentaires (ceux avec le bit de poids fort &#xE9;gal &#xE0; 1). Le probl&#xE8;me &#xE9;tait pour la communication entre utilisateurs de diff&#xE9;rents pays ; c&apos;&#xE9;tait parfois compliqu&#xE9;... En France on utilisait l&apos;<a href="https://fr.wikipedia.org/wiki/ISO/CEI_8859-1">encodage</a> <code>latin-1</code> nomm&#xE9; aussi <code>ISO 8859-1</code>.</p>
 <blockquote>
-<p>Aujourd&apos;hui on utilise un codage <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> avec un nombre variable d&apos;octets pour pouvoir &#xE9;changer du texte dans n&#x2019;importe quelle langue, avec <em>smiley</em>...</p>
+<p>Aujourd&apos;hui on utilise souvent un codage <a href="https://fr.wikipedia.org/wiki/UTF-8">UTF-8</a> avec un nombre variable d&apos;octets pour pouvoir &#xE9;changer du texte dans n&#x2019;importe quelle langue, avec <em>smiley</em>...</p>
 </blockquote>
 <ul>
 <li>Si le bit de poids fort est &#xE0; <code>0</code>, alors le caract&#xE8;re est cod&#xE9; en ASCII ; le cas le plus fr&#xE9;quent.</li>
@@ -135,7 +135,7 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 
 <p>Une autre utilisation de l&apos;octet est de proposer 256 symboles diff&#xE9;rents, comme 256 nombres diff&#xE9;rents. Un octet peut repr&#xE9;senter un niveau de gris parmi 256.</p>
 <blockquote>
-<p>Une image simple (en 256 niveaux de gris) est une liste de lignes, o&#xF9; chaque ligne est une liste de pixels cod&#xE9;s sur <strong>un</strong> octet. Dans ce cas une image de 600 pixels de large, par 400 pixels de haut p&#xE8;se <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>600</mn><mo>&#xD7;</mo><mn>400</mn><mo>&#xD7;</mo><mn>1</mn><mo>=</mo><mn>240</mn><mtext>&#xA0;ko</mtext></mrow><annotation encoding="application/x-tex">600&#xD7;400&#xD7;1 = 240~\text{ko}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span><span class="mord">0</span><span class="mspace nobreak">&#xA0;</span><span class="mord text"><span class="mord">ko</span></span></span></span></span> (hors compr&#xE9;ssion).</p>
+<p>Une image simple (en 256 niveaux de gris) est une liste de lignes, o&#xF9; chaque ligne est une liste de pixels cod&#xE9;s sur <strong>un</strong> octet. Dans ce cas une image de 600 pixels de large, par 400 pixels de haut p&#xE8;se <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>600</mn><mo>&#xD7;</mo><mn>400</mn><mo>&#xD7;</mo><mn>1</mn><mo>=</mo><mn>240</mn><mtext>&#xA0;ko</mtext></mrow><annotation encoding="application/x-tex">600&#xD7;400&#xD7;1 = 240~\text{ko}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span><span class="mord">0</span><span class="mspace nobreak">&#xA0;</span><span class="mord text"><span class="mord">ko</span></span></span></span></span> (hors compression).</p>
 </blockquote>
 <hr>
 <p>Pour coder d&apos;autres nombres, pour des images plus pr&#xE9;cises, ou pour d&apos;autres usages, on pourra utiliser plus que 8 bits.</p>
@@ -147,74 +147,91 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 <table>
 <thead>
 <tr>
-<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></th>
-<th>Codage</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></th>
+<th>binaire</th>
+<th style="text-align:center">hexad&#xE9;cimal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
+<td style="text-align:center">0</td>
 <td><code>0000</code></td>
+<td style="text-align:center"><code>0</code></td>
 </tr>
 <tr>
-<td>1</td>
+<td style="text-align:center">1</td>
 <td><code>0001</code></td>
+<td style="text-align:center"><code>1</code></td>
 </tr>
 <tr>
-<td>2</td>
+<td style="text-align:center">2</td>
 <td><code>0010</code></td>
+<td style="text-align:center"><code>2</code></td>
 </tr>
 <tr>
-<td>3</td>
+<td style="text-align:center">3</td>
 <td><code>0011</code></td>
+<td style="text-align:center"><code>3</code></td>
 </tr>
 <tr>
-<td>4</td>
+<td style="text-align:center">4</td>
 <td><code>0100</code></td>
+<td style="text-align:center"><code>4</code></td>
 </tr>
 <tr>
-<td>5</td>
+<td style="text-align:center">5</td>
 <td><code>0101</code></td>
+<td style="text-align:center"><code>5</code></td>
 </tr>
 <tr>
-<td>6</td>
+<td style="text-align:center">6</td>
 <td><code>0110</code></td>
+<td style="text-align:center"><code>6</code></td>
 </tr>
 <tr>
-<td>7</td>
+<td style="text-align:center">7</td>
 <td><code>0111</code></td>
+<td style="text-align:center"><code>7</code></td>
 </tr>
 <tr>
-<td>8</td>
+<td style="text-align:center">8</td>
 <td><code>1000</code></td>
+<td style="text-align:center"><code>8</code></td>
 </tr>
 <tr>
-<td>9</td>
+<td style="text-align:center">9</td>
 <td><code>1001</code></td>
+<td style="text-align:center"><code>9</code></td>
 </tr>
 <tr>
-<td>10</td>
+<td style="text-align:center">10</td>
 <td><code>1010</code></td>
+<td style="text-align:center"><code>A</code></td>
 </tr>
 <tr>
-<td>11</td>
+<td style="text-align:center">11</td>
 <td><code>1011</code></td>
+<td style="text-align:center"><code>B</code></td>
 </tr>
 <tr>
-<td>12</td>
+<td style="text-align:center">12</td>
 <td><code>1100</code></td>
+<td style="text-align:center"><code>C</code></td>
 </tr>
 <tr>
-<td>13</td>
+<td style="text-align:center">13</td>
 <td><code>1101</code></td>
+<td style="text-align:center"><code>D</code></td>
 </tr>
 <tr>
-<td>14</td>
+<td style="text-align:center">14</td>
 <td><code>1110</code></td>
+<td style="text-align:center"><code>E</code></td>
 </tr>
 <tr>
-<td>15</td>
+<td style="text-align:center">15</td>
 <td><code>1111</code></td>
+<td style="text-align:center"><code>F</code></td>
 </tr>
 </tbody>
 </table>
@@ -237,7 +254,7 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 <blockquote>
 <p>On retiendra que sur 4 octets, on peut diff&#xE9;rencier plus de 4 milliards de nombres.</p>
 </blockquote>
-<h2 class="mume-header" id="iii-op%C3%A9ration-en-binaire">III - Op&#xE9;ration en binaire</h2>
+<h2 class="mume-header" id="iii-op%C3%A9rations-en-binaire">III - Op&#xE9;rations en binaire</h2>
 
 <h3 class="mume-header" id="conversion-d%C3%A9cimal-vers-binaire">Conversion d&#xE9;cimal vers binaire</h3>
 
@@ -486,7 +503,7 @@ On parle de <strong>binaire</strong>, pour deux &#xE9;tats.</li>
 <li><a href="#les-entiers-non-sign%C3%A9s-sur-32-bits-4-octets">Les entiers non sign&#xE9;s sur 32 bits (4 octets).</a></li>
 </ul>
 </li>
-<li><a href="#iii-op%C3%A9ration-en-binaire">III - Op&#xE9;ration en binaire</a>
+<li><a href="#iii-op%C3%A9rations-en-binaire">III - Op&#xE9;rations en binaire</a>
 <ul>
 <li><a href="#conversion-d%C3%A9cimal-vers-binaire">Conversion d&#xE9;cimal vers binaire</a>
 <ul>

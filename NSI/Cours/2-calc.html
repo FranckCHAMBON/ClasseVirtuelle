@@ -149,7 +149,7 @@ Le dernier exemple donne <a href="https://en.wikipedia.org/wiki/Avogadro_constan
 <ul>
 <li>Il existe des limites aux nombres flottants, avec un plus petit flottant strictement positif, un plus grand flottant positif, et de m&#xEA;me avec les n&#xE9;gatifs.</li>
 <li>Le nombre affich&#xE9; (un d&#xE9;cimal) n&apos;est souvent pas &#xE9;gal au nombre repr&#xE9;sent&#xE9; en machine, et parfois diff&#xE9;rent du nombre entr&#xE9; au d&#xE9;part !</li>
-<li>Pour simplifier, il y a, en gros, une quinzaine de chiffres significatifs, et des exposants entre -1000 et +1000, environ.</li>
+<li>Pour simplifier, il y a, en gros, une quinzaine de chiffres significatifs, et des exposants entre -300 et +300, environ.</li>
 </ul>
 <pre data-role="codeBlock" data-info="python" class="language-python">In <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token operator">**</span><span class="token number">1000</span>
 Out<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token number">9.332636185032189e-302</span>
@@ -188,8 +188,8 @@ Out<span class="token punctuation">[</span><span class="token number">17</span><
 </ul>
 </blockquote>
 <p>Ci-dessous deux calculatrices ayant apparemment la m&#xEA;me version de <em>MicroPython</em>.</p>
-<img src="assets/Mathice1a.jpeg?0.21895175548683166" height="200px" title="Casio 35+" alt="MicroPython mis &#xE0; jour">
-<img src="assets/Mathice2.png?0.22807232070897943" height="200px" title="Casio 90+" alt="MicroPython bugg&#xE9;">
+<img src="assets/Mathice1a.jpeg?0.5033630415362271" height="200px" title="Casio 35+" alt="MicroPython mis &#xE0; jour">
+<img src="assets/Mathice2.png?0.6493900791108236" height="200px" title="Casio 90+" alt="MicroPython bugg&#xE9;">
 <p>Pourtant, celle de droite (r&#xE9;ponse <em>True</em>) se trompe. L&apos;erreur a probablement &#xE9;t&#xE9; corrig&#xE9;e. La bonne r&#xE9;ponse, &#xE9;tonnante certes, est <em>False</em>.</p>
 <p>Regardons comment obtenir le type d&apos;un objet.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">In <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>

@@ -120,7 +120,7 @@ De manière synthétique, on a :
 - *Exemples :* `nombre_dOr`, `a15` sont valides et lisibles.
 - *Attention :* `niter`, `nIter`, `NITER` sont trois variables différentes, la seconde étant la plus lisible des trois.
 - *Remarque :* les lettres Unicode sont autorisées comme `Çå_Ãĺòŕš`, mais non conseillées.
-- *Conseil :* ne pas débuter par `_`, sauf si vous savez/voulez travailler avec des variables cachées.
+- *Conseil :* ne pas débuter par `_`, sauf si vous savez/voulez travailler avec des variables privées.
 - [Pour en savoir plus sur le snake_case et ses variantes](https://fr.wikipedia.org/wiki/Snake_case).
 
 
@@ -142,7 +142,7 @@ print(value)
 
 *Further reading : [WTFPython](https://github.com/satwikkansal/wtfpython).* ***Warning*** *very difficult.*
 
-Ceci constitue probablement une raison (pour certains) de déconseiller l'utilisation de variables avec lettres Unicode. La véritable raison est ailleurs. Écrire un code qui a vocation a rester dans un cercle restreint - éducatif par exemple, une classe - peut parfaitement utiliser des variables avec des noms qui ont un sens en français et même avec accents. Pour se prémunir du piège précédent, il suffit d'utiliser un explorateur de variables (inclus dans *Spyder*) ; cela aide beaucoup à identifier des noms de variables proches (et qui ne le devraient pas) !
+Ceci constitue probablement une raison (pour certains) de déconseiller l'utilisation de variables avec lettres Unicode. La véritable raison est ailleurs. Écrire un code qui a vocation à rester dans un cercle restreint - éducatif par exemple, une classe - peut parfaitement utiliser des variables avec des noms qui ont un sens en français et même avec accents. Pour se prémunir du piège précédent, il suffit d'utiliser un explorateur de variables (inclus dans *Spyder*) ; cela aide beaucoup à identifier des noms de variables proches (et qui ne le devraient pas) !
 
 Par contre, un code qui a vocation a être utilisé et partagé largement **doit** :
 

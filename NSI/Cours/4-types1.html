@@ -108,20 +108,7 @@ Caract&#xE8;re  B  o  n  j  o  u  r     &#xE0;      t  o  u  s  !
 Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
   File <span class="token string">&quot;&lt;stdin&gt;&quot;</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
 IndexError<span class="token punctuation">:</span> string index out of <span class="token builtin">range</span>
-</pre><p>Ici l&apos;erreur est <code>IndexError</code> (Erreur d&apos;index), <em>string index out of range</em> (indice de la cha&#xEE;ne en dehors de l&apos;intervalle).</p>
-<h3 class="mume-header" id="appartenance">Appartenance</h3>
-
-<p>On peut savoir si une sous cha&#xEE;ne <code>extrait</code> est incluse dans une cha&#xEE;ne <code>phrase</code> avec le code <code>extrait in phrase</code>.</p>
-<h4 class="mume-header" id="exemple">Exemple</h4>
-
-<pre data-role="codeBlock" data-info="python" class="language-python">CONST_voyelles <span class="token operator">=</span> <span class="token string">&quot;aeiouy&quot;</span>
-mot <span class="token operator">=</span> <span class="token string">&quot;Bonjour&quot;</span>
-<span class="token keyword">for</span> lettre <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
-    <span class="token keyword">if</span> lettre <span class="token keyword">in</span> CONST_voyelles<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>lettre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
-</pre><pre class="language-text">oou
-</pre>
-<p>Ce code n&apos;affiche que les voyelles de <code>mot</code> apr&#xE8;s avoir test&#xE9; si <code>lettre</code> est dans <code>CONST_voyelles</code>.</p>
+</pre><p>Ici l&apos;erreur est <code>IndexError</code> (Erreur d&apos;indice), <em>string index out of range</em> (indice de la cha&#xEE;ne en dehors de l&apos;intervalle).</p>
 <h3 class="mume-header" id="it%C3%A9ration">It&#xE9;ration</h3>
 
 <p>On peut it&#xE9;rer sur les cha&#xEE;nes de deux fa&#xE7;ons.</p>
@@ -145,12 +132,25 @@ La lettre d&apos;indice 4 est t
 
 <pre data-role="codeBlock" data-info="python" class="language-python">mot <span class="token operator">=</span> <span class="token string">&quot;Salut&quot;</span>
 <span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Voici un caract&#xE8;re&quot;</span><span class="token punctuation">,</span> caract&#xE8;re<span class="token punctuation">)</span>
-</pre><p>Voici un caract&#xE8;re S<br>
-Voici un caract&#xE8;re a<br>
-Voici un caract&#xE8;re l<br>
-Voici un caract&#xE8;re u<br>
-Voici un caract&#xE8;re t</p>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Voici un caract&#xE8;re :&quot;</span><span class="token punctuation">,</span> caract&#xE8;re<span class="token punctuation">)</span>
+</pre><p>Voici un caract&#xE8;re : S<br>
+Voici un caract&#xE8;re : a<br>
+Voici un caract&#xE8;re : l<br>
+Voici un caract&#xE8;re : u<br>
+Voici un caract&#xE8;re : t</p>
+<h3 class="mume-header" id="appartenance">Appartenance</h3>
+
+<p>On peut savoir si une sous cha&#xEE;ne <code>extrait</code> est incluse dans une cha&#xEE;ne <code>phrase</code> avec le code <code>extrait in phrase</code>.</p>
+<h4 class="mume-header" id="exemple">Exemple</h4>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">CONST_voyelles <span class="token operator">=</span> <span class="token string">&quot;aeiouy&quot;</span>
+mot <span class="token operator">=</span> <span class="token string">&quot;Bonjour&quot;</span>
+<span class="token keyword">for</span> lettre <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> lettre <span class="token keyword">in</span> CONST_voyelles<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>lettre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+</pre><pre class="language-text">oou
+</pre>
+<p>Ce code n&apos;affiche que les voyelles de <code>mot</code> apr&#xE8;s avoir test&#xE9; si <code>lettre</code> est dans <code>CONST_voyelles</code>.</p>
 <h3 class="mume-header" id="indices-n%C3%A9gatifs">Indices n&#xE9;gatifs</h3>
 
 <p>Python autorise aussi les indices n&#xE9;gatifs, cela peut &#xEA;tre tr&#xE8;s pratique.</p>
@@ -208,18 +208,18 @@ TypeError: can only concatenate str (not &quot;int&quot;) to str
 </pre>
 <p>On expliquera bient&#xF4;t ce qu&apos;est la concat&#xE9;nation, mais simplement, ici, Python ne sait pas ajouter du texte et un entier, c&apos;est une erreur de type (<code>TypeError</code>).</p>
 <blockquote>
-<p>Pour travailler avec des nombres donn&#xE9;s par un utilisateur, il faut les convertir avec les fonction <code>int()</code> ou bien <code>float()</code>.</p>
+<p>Pour travailler avec des nombres donn&#xE9;s par un utilisateur, il faut les convertir avec les fonctions <code>int()</code> ou bien <code>float()</code>.</p>
 </blockquote>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est ton &#xE2;ge ?&quot;</span><span class="token punctuation">)</span>
 &#xE2;ge <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Dans dix ans, tu auras&quot;</span><span class="token punctuation">,</span> &#xE2;ge <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">&quot;ans.&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est est ta masse en kg ?&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quelle est est ta masse en kg ?&quot;</span><span class="token punctuation">)</span>
 masse <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># en kg</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Si tu prends 3.2kg, ta masse sera&quot;</span><span class="token punctuation">,</span> poids <span class="token operator">+</span> <span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token string">&quot;kg.&quot;</span><span class="token punctuation">)</span>
 </pre><pre class="language-text">Quel est ton &#xE2;ge ?
 42
 Dans dix ans, tu auras 52 ans.
-Quel est est ta masse en kg ?
+Quelle est est ta masse en kg ?
 74.3
 Si tu prends 3.2kg, ta masse sera 77.5 kg.
 </pre>
@@ -380,7 +380,7 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <li>Une bonne fa&#xE7;on de cr&#xE9;er une liste remplie de 0.</li>
 <li>L&apos;it&#xE9;rable peut &#xEA;tre une cha&#xEE;ne, une liste, ou un <code>range</code>, ou tout it&#xE9;rable...</li>
 <li>La liste des 6 premiers carr&#xE9;s.</li>
-<li>Le dernier exemple donne la liste des 20 premiers carr&#xE9;s, filtr&#xE9;s en ne conservant que ceux qui se terminent par un 9.</li>
+<li>Le dernier exemple donne la liste des 20 premiers carr&#xE9;s, filtr&#xE9;e en ne conservant que ceux qui se terminent par un 9.</li>
 </ol>
 <blockquote>
 <p>C&apos;est <strong>la bonne m&#xE9;thode</strong> &#xE0; essayer d&apos;utiliser le plus possible. On appelle ce style de programmation, le style fonctionnel, il fait penser fortement &#xE0; une &#xE9;criture math&#xE9;matique.</p>
@@ -406,6 +406,7 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <li><code>max()</code> pour le maximum d&apos;une liste non vide</li>
 <li><code>sum()</code> pour la somme d&apos;une liste</li>
 <li><code>len()</code> pour la longueur d&apos;une liste</li>
+<li><code>sorted()</code> pour renvoyer une copie tri&#xE9;e de la liste. (&#xC0; ne pas confondre avec <code>.sort()</code> qui fait un tri <strong>en place</strong>.)</li>
 </ul>
 <h3 class="mume-header" id="les-listes-dynamiques-de-python">Les listes dynamiques de Python</h3>
 
@@ -463,7 +464,7 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 <ol>
 <li>Une liste est <strong>muable</strong>, un tuple est <strong>immuable</strong>.</li>
 <li>Une liste se cr&#xE9;e avec <code>[...]</code>, un tuple se cr&#xE9;e avec <code>(...)</code>.</li>
-<li>Un tuple ne poss&#xE8;de pas les m&#xE9;thodes dynamiques d&apos;une liste. Normal, on ne modifie un tuple en place.</li>
+<li>Un tuple ne poss&#xE8;de pas les m&#xE9;thodes dynamiques d&apos;une liste. Normal, on ne modifie pas un tuple en place.</li>
 </ol>
 <h3 class="mume-header" id="exemples-2">Exemples</h3>
 
@@ -514,15 +515,15 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 </li>
 <li><a href="#indices">Indices</a></li>
 <li><a href="#longueur">Longueur</a></li>
-<li><a href="#appartenance">Appartenance</a>
-<ul>
-<li><a href="#exemple">Exemple</a></li>
-</ul>
-</li>
 <li><a href="#it%C3%A9ration">It&#xE9;ration</a>
 <ul>
 <li><a href="#it%C3%A9ration-par-indices">It&#xE9;ration par indices</a></li>
 <li><a href="#it%C3%A9ration-sur-la-cha%C3%AEne">It&#xE9;ration sur la cha&#xEE;ne</a></li>
+</ul>
+</li>
+<li><a href="#appartenance">Appartenance</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
 </ul>
 </li>
 <li><a href="#indices-n%C3%A9gatifs">Indices n&#xE9;gatifs</a></li>

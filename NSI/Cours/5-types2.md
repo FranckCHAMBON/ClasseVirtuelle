@@ -60,8 +60,8 @@ Cependant, on constate qu'avec les listes en compréhension, on fait deux fois l
 
 ### Autres méthodes d'une liste
 
-* `ma_liste.sort()` tri la liste `ma_liste`
-* `ma_liste.reverse()` renverse `ma_liste`
+* `ma_liste.sort()` trie **en place** la liste `ma_liste`
+* `ma_liste.reverse()` renverse en place `ma_liste`
 * `ma_liste.index(élément)` renvoie l'indice de `élément` dans `ma_liste` ; s'il est absent, une erreur survient.
 * `ma_liste.extend(autre_liste)` prolonge `ma_liste` avec `autre_liste`
 * `ma_liste.remove(élément)` enlève `élément` (le premier trouvé) de `ma_liste`
@@ -131,7 +131,7 @@ L'utilisation des ensembles ressemble à celle des listes dynamiques, avec des m
 
 ### Les méthodes des ensembles
 
-Donnons seulement les principales, pour les autres, voir `dir({})`
+Donnons seulement les principales, pour les autres, voir `dir(set())`
 
 On suppose que `truc` est un ensemble Python
 * `truc.add(élément)` ajoute l'`élément` à truc, sans doublon, ni ordre.
@@ -144,7 +144,7 @@ Comme pour les listes, on a les fonctions suivantes pour `truc` un ensemble (de 
 * `x in truc` renvoie un booléen, `True` si `x` est dans `truc`, sinon `False`
 * `max(truc)` renvoie le maximum de `truc` s'il est non vide
 * `min(truc)` renvoie le minimum de `truc` s'il est non vide
-* `sum(truc)` renvoie la somme des éléments de `truc` si l'addition est autorisée sur tous ses éléments
+* `sum(truc)` renvoie la somme des éléments de `truc` ; erreur si `truc` contient des éléments non numériques.
 
 ## Les dictionnaires
 
