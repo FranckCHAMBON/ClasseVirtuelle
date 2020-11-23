@@ -133,6 +133,34 @@ C'est bien plus pratique à utiliser !
 
 > ⚠️ Le code n'est pas encore satisfaisant, il manque toutes les *docstring*.
 
+## Encapsulation
+
+L'encapsulation est un des trois principe fondamental de la POO (avec l'héritage et le polymorphisme).
+* On réunit avec une certaine unité les données et les méthodes ; avec toujours des fonctions.
+* On *masque* à l'utilisateur externe les données ; il y accède uniquement via des méthodes qui contrôlent les données comme prévu en interne.
+* Cela permet de pouvoir réécrire entièrement le moteur interne, de manière transparente pour l'utilisateur final, qui ne sait pas comment sont stockées les données *in fine*.
+
+Il y a donc des méthodes particulières : 
+* **accesseur** (*getter*) ; renvoie un attribut
+* **mutateur** (*setter*) ; modifie un attribut
+
+> On trouve de **nombreuses** méthodes qui commencent par `get_` ou par `set_`, comme par exemple :
+```python
+class Personne:
+    """ Classe représentant une personne """
+
+    def __init__(self, nom : str, prénom : str, âge : int):
+        self.__nom = nom
+        self.__prénom = prénom
+        self.__âge = âge
+
+    def get_name(self):
+        return self.__nom
+
+    def set_name(self, nom):
+        self.__nom = nom
+```
+
 ## Méthodes publiques
 
 Ajoutons une méthode pour multiplier deux fractions.
@@ -197,4 +225,6 @@ print("f ->", repr(f))
 2. Ajouter une méthode `simplifier()`
 3. Ajouter une méthode `ajouter(fraction)`
 
-Pour la suite, on peut regarder ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) ; attention la PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
+Pour la suite, on peut regarder : 
+* ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) ; attention la PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
+* ce [cours](http://www.maths-info-lycee.fr/poo.html), avec de bons exercices.

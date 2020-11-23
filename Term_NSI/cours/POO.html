@@ -140,7 +140,36 @@ f -&gt; (22/7)
 <blockquote>
 <p>&#x26A0;&#xFE0F; Le code n&apos;est pas encore satisfaisant, il manque toutes les <em>docstring</em>.</p>
 </blockquote>
-<h2 class="mume-header" id="m%C3%A9thodes-publiques">M&#xE9;thodes publiques</h2>
+<h2 class="mume-header" id="encapsulation">Encapsulation</h2>
+
+<p>L&apos;encapsulation est un des trois principe fondamental de la POO (avec l&apos;h&#xE9;ritage et le polymorphisme).</p>
+<ul>
+<li>On r&#xE9;unit avec une certaine unit&#xE9; les donn&#xE9;es et les m&#xE9;thodes ; avec toujours des fonctions.</li>
+<li>On <em>masque</em> &#xE0; l&apos;utilisateur externe les donn&#xE9;es ; il y acc&#xE8;de uniquement via des m&#xE9;thodes qui contr&#xF4;lent les donn&#xE9;es comme pr&#xE9;vu en interne.</li>
+<li>Cela permet de pouvoir r&#xE9;&#xE9;crire enti&#xE8;rement le moteur interne, de mani&#xE8;re transparente pour l&apos;utilisateur final, qui ne sait pas comment sont stock&#xE9;es les donn&#xE9;es <em>in fine</em>.</li>
+</ul>
+<p>Il y a donc des m&#xE9;thodes particuli&#xE8;res :</p>
+<ul>
+<li><strong>accesseur</strong> (<em>getter</em>) ; renvoie un attribut</li>
+<li><strong>mutateur</strong> (<em>setter</em>) ; modifie un attribut</li>
+</ul>
+<blockquote>
+<p>On trouve de <strong>nombreuses</strong> m&#xE9;thodes qui commencent par <code>get_</code> ou par <code>set_</code>, comme par exemple :</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Personne</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Classe repr&#xE9;sentant une personne &quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> pr&#xE9;nom <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> &#xE2;ge <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__nom <span class="token operator">=</span> nom
+        self<span class="token punctuation">.</span>__pr&#xE9;nom <span class="token operator">=</span> pr&#xE9;nom
+        self<span class="token punctuation">.</span>__&#xE2;ge <span class="token operator">=</span> &#xE2;ge
+
+    <span class="token keyword">def</span> <span class="token function">get_name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__nom
+
+    <span class="token keyword">def</span> <span class="token function">set_name</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__nom <span class="token operator">=</span> nom
+</pre><h2 class="mume-header" id="m%C3%A9thodes-publiques">M&#xE9;thodes publiques</h2>
 
 <p>Ajoutons une m&#xE9;thode pour multiplier deux fractions.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token comment"># suite de Fraction</span>
@@ -196,7 +225,11 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
 <li>Ajouter une m&#xE9;thode <code>simplifier()</code></li>
 <li>Ajouter une m&#xE9;thode <code>ajouter(fraction)</code></li>
 </ol>
-<p>Pour la suite, on peut regarder ce <a href="https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb">cours</a> ; attention la PEP-8 n&apos;est pas respect&#xE9;e, et il y a quelques erreurs gliss&#xE9;es dans les images.</p>
+<p>Pour la suite, on peut regarder :</p>
+<ul>
+<li>ce <a href="https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb">cours</a> ; attention la PEP-8 n&apos;est pas respect&#xE9;e, et il y a quelques erreurs gliss&#xE9;es dans les images.</li>
+<li>ce <a href="http://www.maths-info-lycee.fr/poo.html">cours</a>, avec de bons exercices.</li>
+</ul>
 
       </div>
       <div class="md-sidebar-toc"><ul>
@@ -209,6 +242,7 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
 <li><a href="#troisi%C3%A8me-approche-constructeur-__init__">Troisi&#xE8;me approche ; constructeur <code>__init__()</code></a></li>
 </ul>
 </li>
+<li><a href="#encapsulation">Encapsulation</a></li>
 <li><a href="#m%C3%A9thodes-publiques">M&#xE9;thodes publiques</a></li>
 <li><a href="#exercices">Exercices</a></li>
 </ul>
