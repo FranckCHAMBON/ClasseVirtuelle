@@ -1,5 +1,7 @@
 # Programmation Orientée Objet (POO)
 
+Auteur : Franck Chambon, Lycée Aubrac
+
 Construisons par exemple une façon de travailler avec les fractions.
 
 ```python
