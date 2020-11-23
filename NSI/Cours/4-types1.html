@@ -113,8 +113,8 @@ IndexError<span class="token punctuation">:</span> string index out of <span cla
 
 <p>On peut it&#xE9;rer sur les cha&#xEE;nes de deux fa&#xE7;ons.</p>
 <ol>
-<li>La premi&#xE8;re est utile si on a besoin de l&apos;indice en court de boucle.</li>
-<li>La seconde est plus claire et simple si on n&apos;a pas besoin de l&apos;indice au court de la boucle.</li>
+<li>La premi&#xE8;re est utile si on a besoin de l&apos;indice en cours de boucle.</li>
+<li>La seconde est plus claire et simple si on n&apos;a pas besoin de l&apos;indice au cours de la boucle.</li>
 </ol>
 <h4 class="mume-header" id="it%C3%A9ration-par-indices">It&#xE9;ration par indices</h4>
 
@@ -157,8 +157,8 @@ mot <span class="token operator">=</span> <span class="token string">&quot;Bonjo
 <p>Faisons une boucle avec une cha&#xEE;ne, et</p>
 <ul>
 <li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span> correspond au dernier caract&#xE8;re,</li>
-<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">2</span></span></span></span> correspond &#xE0; l&apos;avant dernier caract&#xE8;re.</li>
-<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">-i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord mathdefault">i</span></span></span></span> correspond au <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>-&#xE8;me caract&#xE8;re en partant de la fin.</li>
+<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">2</span></span></span></span> correspond &#xE0; l&apos;avant-dernier caract&#xE8;re.</li>
+<li>l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">-n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord mathdefault">n</span></span></span></span> correspond au <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>-&#xE8;me caract&#xE8;re en partant de la fin.</li>
 </ul>
 <pre data-role="codeBlock" data-info class="language-"><code>Indice   -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6
 Cha&#xEE;ne    B  o  n  j  o  u  r  B  o  n  j  o  u  r
@@ -213,13 +213,13 @@ TypeError: can only concatenate str (not &quot;int&quot;) to str
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quel est ton &#xE2;ge ?&quot;</span><span class="token punctuation">)</span>
 &#xE2;ge <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Dans dix ans, tu auras&quot;</span><span class="token punctuation">,</span> &#xE2;ge <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">&quot;ans.&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quelle est est ta masse en kg ?&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Quelle est ta masse en kg ?&quot;</span><span class="token punctuation">)</span>
 masse <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># en kg</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Si tu prends 3.2kg, ta masse sera&quot;</span><span class="token punctuation">,</span> poids <span class="token operator">+</span> <span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token string">&quot;kg.&quot;</span><span class="token punctuation">)</span>
 </pre><pre class="language-text">Quel est ton &#xE2;ge ?
 42
 Dans dix ans, tu auras 52 ans.
-Quelle est est ta masse en kg ?
+Quelle est ta masse en kg ?
 74.3
 Si tu prends 3.2kg, ta masse sera 77.5 kg.
 </pre>
@@ -246,7 +246,7 @@ Si tu prends 3.2kg, ta masse sera 77.5 kg.
 </pre><blockquote>
 <p>On peut donc aussi multiplier une cha&#xEE;ne de caract&#xE8;re avec un entier, on obtient plusieurs copies de la cha&#xEE;ne coll&#xE9;es ensemble.</p>
 </blockquote>
-<p>&#x26A0;&#xFE0F; Cette technique n&apos;existe pas avec tous les langages de programmation, elle est peut &#xEA;tre hors programme.</p>
+<p>&#x26A0;&#xFE0F; Cette technique n&apos;existe pas avec tous les langages de programmation, elle est peut-&#xEA;tre hors programme.</p>
 <h3 class="mume-header" id="caract%C3%A8res-%C3%A9chapp%C3%A9s">Caract&#xE8;res &#xE9;chapp&#xE9;s</h3>
 
 <p>Il est possible d&apos;&#xE9;crire des sauts de lignes, ou des tabulations dans une cha&#xEE;ne de caract&#xE8;res.</p>
@@ -458,7 +458,7 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 </blockquote>
 <h2 class="mume-header" id="les-tuples">Les tuples</h2>
 
-<p>Les tuples sont similaires aux listes Python, mais en version <strong>immuables</strong>, on pourra donc les utiliser comme cl&#xE9;s de dictionnaire.</p>
+<p>Un tuple est similaire &#xE0; une liste Python, mais en version <strong>immuable</strong>, on pourra donc l&apos;utiliser comme cl&#xE9; de dictionnaire.</p>
 <h3 class="mume-header" id="diff%C3%A9rences-entre-list-et-tuple">Diff&#xE9;rences entre <code>list</code> et <code>tuple</code></h3>
 
 <ol>
@@ -485,7 +485,7 @@ smile <span class="token operator">=</span> <span class="token punctuation">[</s
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> mon_tuple
 <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>La fonction <code>list()</code> essaie de transformer son argument en liste, autant que possible. On l&apos;utilise souvent pour transformer une cha&#xEE;ne de caract&#xE8;res en liste de carcat&#xE8;res. Liste que l&apos;on peut modifier...</li>
+<li>La fonction <code>list()</code> essaie de transformer son argument en liste, autant que possible. On l&apos;utilise souvent pour transformer une cha&#xEE;ne de caract&#xE8;res en liste de caract&#xE8;res. Liste que l&apos;on peut modifier...</li>
 <li>La fonction <code>tuple()</code> essaie de transformer son argument en tuple...</li>
 <li>La fonction <code>int()</code> essaie de transformer son argument en entier...</li>
 <li>La fonction <code>float()</code> essaie de transformer son argument en flottant...</li>

@@ -8,7 +8,7 @@ Un tableau :
 * a ses éléments de même nature, modifiables.
 
 Le type `list` de Python permet de travailler de cette manière, mais offre en plus les possibilités : 
-* de faire varier le taille de la liste, en n'importe quel endroit,
+* de faire varier la taille de la liste, en n'importe quel endroit,
 * d'avoir des éléments de nature différente, mais nous ne le **recommandons pas**.
 
 Les méthodes dynamiques utilisent la notation de la programmation orientée objet, avec un `.` qui indique à gauche le parent et à droite la filiation.
@@ -105,7 +105,7 @@ Un ensemble (*set* de type `set`) est un objet Python **muable** qui possède de
 
 L'utilisation des ensembles ressemble à celle des listes dynamiques, avec des méthodes de programmation orientée objet.
 
-> Remarque (hors programme) : il est possible de créer un ensemble figé, donc immuable, avec `frozenset`. Ainsi les listes et les ensembles ont leur version immuables : tuple et frozenset.
+> Remarque (hors programme) : il est possible de créer un ensemble figé, donc immuable, avec `frozenset`. Ainsi les listes et les ensembles ont leur version immuable : tuple et frozenset.
 
 > *More about [Python set](https://www.programiz.com/python-programming/set)* ; en anglais
 

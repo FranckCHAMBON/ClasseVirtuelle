@@ -115,7 +115,7 @@ Out[12]: 2.990033222591362e-23
 > La [division](https://fr.wikipedia.org/wiki/Division) entre flottants s'obtient avec l'opérateur `/`
 > Un calcul d'une puissance d'un flottant. Le résultat est donné en écriture scientifique $\approx 1,\!5179\times10^{79}$
 > On peut mélanger un entier et un flottant  dans une opération, l'entier sera d'abord converti en flottant avant le calcul.
-> Si on utilise l'opérateur `/`, les opérandes entières sont converties en flottant avant le calcul, et le résultat sera un flottant, même si la division entière a un reste nul.
+> Si on utilise l'opérateur `/`, les opérandes entiers sont convertis en flottant avant le calcul, et le résultat sera un flottant, même si la division entière a un reste nul.
 > Le dernier exemple donne [le calcul du volume moyen d'une molécule d'eau](https://en.wikipedia.org/wiki/Avogadro_constant) en ml, soit environ  30 Å^3^.
 
 #### Les points plus délicats
@@ -195,7 +195,7 @@ Out[21]: True
 
 Les opérateurs de Python travaillent avec différents objets, de type différent. En fonction du type utilisé, l'opération effective sera différente. Ainsi, on retrouvera les opérateurs `+` `-` `*` `**` `<` `<=` `==` `<>` `!=` `>=` `>` qui fonctionnent aussi avec les flottants. On y ajoute `/` pour la division, faite entre flottants (ou complexes).
 
-> Pour ceux qui savent ce qu'est un nombre complexe, les mêmes opérateurs fonctionnent avec les nombres complexes. Si une opérande est complexe, alors l'autre est transtypée avant calcul en complexe.
+> Pour ceux qui savent ce qu'est un nombre complexe, les mêmes opérateurs fonctionnent avec les nombres complexes. Si un opérande est complexe, alors l'autre est transtypé avant calcul en complexe.
 
 ```python
 In [22]: 0.1 + 0.0045

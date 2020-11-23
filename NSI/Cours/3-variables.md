@@ -144,7 +144,7 @@ print(value)
 
 Ceci constitue probablement une raison (pour certains) de déconseiller l'utilisation de variables avec lettres Unicode. La véritable raison est ailleurs. Écrire un code qui a vocation à rester dans un cercle restreint - éducatif par exemple, une classe - peut parfaitement utiliser des variables avec des noms qui ont un sens en français et même avec accents. Pour se prémunir du piège précédent, il suffit d'utiliser un explorateur de variables (inclus dans *Spyder*) ; cela aide beaucoup à identifier des noms de variables proches (et qui ne le devraient pas) !
 
-Par contre, un code qui a vocation a être utilisé et partagé largement **doit** :
+Par contre, un code qui a vocation à être utilisé et partagé largement **doit** :
 
 * Avoir des noms de variables qui ont un sens en anglais.
 * N'utiliser que les caractères `a→z`, `A→Z`, `0→9` et `_` dans les noms de variables.

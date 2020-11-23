@@ -108,8 +108,8 @@ Ici l'erreur est `IndexError` (Erreur d'indice), *string index out of range* (in
 ### Itération
 
 On peut itérer sur les chaînes de deux façons.
-1. La première est utile si on a besoin de l'indice en court de boucle.
-2. La seconde est plus claire et simple si on n'a pas besoin de l'indice au court de la boucle.
+1. La première est utile si on a besoin de l'indice en cours de boucle.
+2. La seconde est plus claire et simple si on n'a pas besoin de l'indice au cours de la boucle.
 
 #### Itération par indices
 
@@ -166,8 +166,8 @@ Python autorise aussi les indices négatifs, cela peut être très pratique.
 
 Faisons une boucle avec une chaîne, et 
 * l'indice $-1$ correspond au dernier caractère,
-* l'indice $-2$ correspond à l'avant dernier caractère.
-* l'indice $-i$ correspond au $i$-ème caractère en partant de la fin.
+* l'indice $-2$ correspond à l'avant-dernier caractère.
+* l'indice $-n$ correspond au $n$-ème caractère en partant de la fin.
 
 ```
 Indice   -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6
@@ -237,7 +237,7 @@ On expliquera bientôt ce qu'est la concaténation, mais simplement, ici, Python
 print("Quel est ton âge ?")
 âge = int(input())
 print("Dans dix ans, tu auras", âge + 10, "ans.")
-print("Quelle est est ta masse en kg ?")
+print("Quelle est ta masse en kg ?")
 masse = float(input()) # en kg
 print("Si tu prends 3.2kg, ta masse sera", poids + 3.2, "kg.")
 ```
@@ -245,7 +245,7 @@ print("Si tu prends 3.2kg, ta masse sera", poids + 3.2, "kg.")
     Quel est ton âge ?
     42
     Dans dix ans, tu auras 52 ans.
-    Quelle est est ta masse en kg ?
+    Quelle est ta masse en kg ?
     74.3
     Si tu prends 3.2kg, ta masse sera 77.5 kg.
 
@@ -274,7 +274,7 @@ La concaténation, c'est le fait de rabouter, de coller, deux chaînes.
 
 > On peut donc aussi multiplier une chaîne de caractère avec un entier, on obtient plusieurs copies de la chaîne collées ensemble.
 
-⚠️ Cette technique n'existe pas avec tous les langages de programmation, elle est peut être hors programme.
+⚠️ Cette technique n'existe pas avec tous les langages de programmation, elle est peut-être hors programme.
 
 ### Caractères échappés
 
@@ -533,7 +533,7 @@ smile[2][4] = 0
 
 ## Les tuples
 
-Les tuples sont similaires aux listes Python, mais en version **immuables**, on pourra donc les utiliser comme clés de dictionnaire.
+Un tuple est similaire à une liste Python, mais en version **immuable**, on pourra donc l'utiliser comme clé de dictionnaire.
 
 ### Différences entre `list` et `tuple`
 
@@ -568,7 +568,7 @@ Il est possible de changer le type d'un objet `tuple` à `list`. Soit pour pouvo
 (2, 3, 5, 7)
 ```
 
-* La fonction `list()` essaie de transformer son argument en liste, autant que possible. On l'utilise souvent pour transformer une chaîne de caractères en liste de carcatères. Liste que l'on peut modifier...
+* La fonction `list()` essaie de transformer son argument en liste, autant que possible. On l'utilise souvent pour transformer une chaîne de caractères en liste de caractères. Liste que l'on peut modifier...
 * La fonction `tuple()` essaie de transformer son argument en tuple...
 * La fonction `int()` essaie de transformer son argument en entier...
 * La fonction `float()` essaie de transformer son argument en flottant...
