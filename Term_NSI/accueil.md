@@ -10,9 +10,9 @@ Rendez-vous en cas de confinement complet :
 
 
 ## Devoirs
-* DS n°1
-* DS n°2
-* [DM n°1](devoirs/dm1.html)
+* [DS n°1](devoirs/1-ds1/DS1.html)
+* [DS n°2](devoirs/2-ds2/DS2.html)
+* [DM n°1](devoirs/3-dm1/dm1.html)
 
 ## :checkered_flag: Épreuve finale
 
