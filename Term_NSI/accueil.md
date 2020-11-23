@@ -9,6 +9,11 @@ Rendez-vous en cas de confinement complet :
 * :clock8: les vendredis de 8h à 10h
 
 
+## Devoirs
+* DS n°1
+* DS n°2
+* [DM n°1](devoirs/dm1.html)
+
 ## :checkered_flag: Épreuve finale
 
 * Le programme : le [B.O.](https://cache.media.eduscol.education.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf)
