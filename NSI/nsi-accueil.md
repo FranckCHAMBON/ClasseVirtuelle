@@ -8,7 +8,9 @@ Rendez-vous en cas de confinement complet :
 * :clock8: les mercredis de 8h à 10h (groupe2)
 * :clock2: les vendredis de 14h à 16h
 
-
+## ⚓ Devoirs
+* [DS n°1 corrigé](devoirs/ds1.pdf)
+* [DS n°2 corrigé]() *À venir*
 
 ## :mortar_board: Travail principal
 
