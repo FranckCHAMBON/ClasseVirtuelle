@@ -156,7 +156,6 @@ Exemple de sortie
 ## Indices
 
 + Une solution qui utilise la récursivité est facile à écrire.
-+ Il y a peut-être un problème avec le juge Prologin en ce moment pour ce problème ... ??? ...
 
 ## Solution
 
