@@ -106,7 +106,7 @@ if not len(my_list):
 
 Cependant, en Python, toute liste, chaîne ou tuple vide est transypée implicitement à `False`. Nous pouvons donc proposer une alternative plus simple à ce qui précède :
 
-```
+```python
 # Recommended
 my_list = []
 if not my_list:
@@ -115,5 +115,11 @@ if not my_list:
 
 Alors que les deux exemples afficheront "La liste est vide !", La deuxième option est plus simple, donc PEP 8 l’encourage.
 
-> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc la première est recommandée.
+> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc une autre méthode est recommandée.
 
+```python
+# La bonne méthode
+my_list = []
+if my_list == []:
+    print('La liste est vide !')
+```

@@ -127,15 +127,19 @@ my_list <span class="token operator">=</span> <span class="token punctuation">[<
 <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">len</span><span class="token punctuation">(</span>my_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;La liste est vide !&apos;</span><span class="token punctuation">)</span>
 </pre><p>Cependant, en Python, toute liste, cha&#xEE;ne ou tuple vide est transyp&#xE9;e implicitement &#xE0; <code>False</code>. Nous pouvons donc proposer une alternative plus simple &#xE0; ce qui pr&#xE9;c&#xE8;de :</p>
-<pre data-role="codeBlock" data-info class="language-"><code># Recommended
-my_list = []
-if not my_list:
-    print(&apos;La liste est vide !&apos;)
-</code></pre><p>Alors que les deux exemples afficheront &quot;La liste est vide !&quot;, La deuxi&#xE8;me option est plus simple, donc PEP 8 l&#x2019;encourage.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Recommended</span>
+my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token keyword">not</span> my_list<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;La liste est vide !&apos;</span><span class="token punctuation">)</span>
+</pre><p>Alors que les deux exemples afficheront &quot;La liste est vide !&quot;, La deuxi&#xE8;me option est plus simple, donc PEP 8 l&#x2019;encourage.</p>
 <blockquote>
-<p>&#x26A0;&#xFE0F; Contrairement au PEP 8, en NSI nous pr&#xE9;f&#xE9;rons interdire le transtypage implicite, donc la premi&#xE8;re est recommand&#xE9;e.</p>
+<p>&#x26A0;&#xFE0F; Contrairement au PEP 8, en NSI nous pr&#xE9;f&#xE9;rons interdire le transtypage implicite, donc une autre m&#xE9;thode est recommand&#xE9;e.</p>
 </blockquote>
-
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># La bonne m&#xE9;thode</span>
+my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> my_list <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;La liste est vide !&apos;</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#bonnes-pratiques-de-codage">Bonnes pratiques de codage</a>
