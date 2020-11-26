@@ -9,7 +9,6 @@ Rendez-vous en cas de confinement complet :
 * :clock2: les vendredis de 14h à 16h
 
 
-
 ## :mortar_board: Travail principal
 
 1. Cours :
