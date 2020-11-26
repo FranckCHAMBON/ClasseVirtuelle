@@ -95,7 +95,7 @@ On **ne met pas** d'espace
 On ne place jamais d'espace en fin de ligne.
 
 ### Un peu plus encore
-Inspiré de ce [document](https://www.codeflow.site/fr/article/python-pep8), vous retrouverez plus de détails. Cependant une recommandation y est faite qui fait débat.
+Inspiré de ce [document](https://www.codeflow.site/fr/article/python-pep8), vous retrouverez plus de détails. Une recommandation y est faite, elle fait débat.
 
 ```python
 # Not recommended
@@ -104,7 +104,7 @@ if not len(my_list):
     print('La liste est vide !')
 ```
 
-Cependant, en Python, toute liste, chaîne ou tuple vide est transypée implicitement à `False`. Nous pouvons donc proposer une alternative plus simple à ce qui précède :
+En Python, toute liste, chaîne ou tuple vide est transypée implicitement à `False`. Nous pouvons donc proposer une alternative plus simple à ce qui précède :
 
 ```python
 # Recommended
@@ -115,11 +115,14 @@ if not my_list:
 
 Alors que les deux exemples afficheront "La liste est vide !", La deuxième option est plus simple, donc PEP 8 l’encourage.
 
-> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc une autre méthode est recommandée.
+> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc une autre méthode est recommandée. Les deux précédentes sont incorrectes à ce niveau.
 
 ```python
 # La bonne méthode
-my_list = []
 if my_list == []:
     print('La liste est vide !')
+# ou alors
+if my_list != []:
+    print('La liste est non vide !')
+
 ```
