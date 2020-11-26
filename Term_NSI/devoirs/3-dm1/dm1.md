@@ -16,7 +16,7 @@ En guise de devoir maison, je vous demande de faire des exercices parmi l'[entra
 
 1. Vous pouvez vous inscrire sur Prologin ; c'est RGPD compatible, et c'est très sérieux.
 2. Vous pouvez résoudre sur place les problèmes, ainsi vous saurez si vous avez réussi.
-3. Pour chaque problème résolu, faire une sauvegarde du script dans un fichier nommé `problème_X.py` où `X` sera un chiffre entre `1` et `7`.
+3. Pour chaque problème résolu (ou tenté), faire une sauvegarde du script dans un fichier nommé `problème_X.py` où `X` sera un chiffre entre `1` et `7`.
 
 ## Rendu du travail
 
