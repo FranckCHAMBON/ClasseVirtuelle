@@ -8,6 +8,10 @@ Rendez-vous en cas de confinement complet :
 * :clock10: les mercredis de 10h à 12h
 * :clock8: les vendredis de 8h à 10h
 
+## Documents importants
+* [Bonnes pratiques de codage
+](pep.html) : les PEP
+* [Aide sur *doctest*](doctest.html)
 
 ## :anchor: Devoirs
 * [DS n°1](devoirs/1-ds1/DS1.html) - récursivité
@@ -42,6 +46,7 @@ Pour le code Python des solutions :
 1. [Niveau 1](N1/accueil.html)
 2. [Niveau 2](N2/accueil.html)
 3. [Niveau 3](N3/accueil.html)
+
 
 ## Programmation Orientée Objet (POO)
 * [Cours](cours/POO.html)
