@@ -1,4 +1,3 @@
-"""
 # [Problème 2](https://prologin.org/train/2013/semifinal/qi)
 > QI
 
