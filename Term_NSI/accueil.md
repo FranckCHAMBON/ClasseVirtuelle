@@ -48,7 +48,7 @@ Pour le code Python des solutions :
 3. [Niveau 3](N3/accueil.html)
 
 
-## Programmation Orientée Objet (POO)
+## :artificial_satellite: Programmation Orientée Objet (POO)
 * [Cours](cours/POO.html)
 
 ## 🐚 Interfaces Homme Machine

@@ -50,6 +50,64 @@
 <li>Dans le site collaboratif ATRIUM Term_NSI, d&#xE9;poser vos fichiers dans le casier <code>DM prologin 2013</code>.</li>
 <li>Les fichiers seront accept&#xE9;s jusqu&apos;au 29 novembre inclus.</li>
 </ol>
+<h2 class="mume-header" id="conseils-de-r%C3%A9daction">Conseils de r&#xE9;daction</h2>
+
+<h3 class="mume-header" id="noms-de-variables">Noms de variables</h3>
+
+<p>Il faut choisir de <strong>meilleurs</strong> noms de variables que ceux propos&#xE9;s dans l&apos;&#xE9;nonc&#xE9;.<br>
+Par exemple, le d&#xE9;but du <a href="https://prologin.org/train/2013/semifinal/donjons_et_dragons">probl&#xE8;me 8</a> (qui n&apos;est pas &#xE0; faire) ne serait pas :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">P <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+N<span class="token punctuation">,</span> M <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#...</span>
+</pre><p>Mais plut&#xF4;t :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 1. lecture de l&apos;entr&#xE9;e</span>
+nb_points_vie <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nb_salles<span class="token punctuation">,</span> nb_portes <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_portes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    salle_a<span class="token punctuation">,</span> salle_b <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">#...</span>
+</pre><p>On autorisera pour seules abr&#xE9;viations :</p>
+<ul>
+<li><code>nb</code> pour <strong>nombre</strong></li>
+<li><code>id</code> pour <strong>identifiant</strong></li>
+</ul>
+<p>On pourra omettre les articles :</p>
+<ul>
+<li><code>de</code>, <code>du</code> ; ainsi <strong>nombre de points de vie</strong> devient <code>nb_points_vie</code>.</li>
+<li><code>le</code>, <code>la</code> ; sauf s&apos;ils sont important.</li>
+</ul>
+<p>On pourra utiliser :</p>
+<ul>
+<li><code>i</code>, <code>j</code> et <code>k</code> pour des coordonn&#xE9;es dans une grille, ou un <strong>indice</strong>.
+<ul>
+<li><code>i</code> pour l&apos;indice de ligne, <code>j</code> de colonne, et <code>k</code> autre indice.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="fonctions">Fonctions</h3>
+
+<p>&#xC9;crire des fonctions,</p>
+<ul>
+<li>toujours avec <em>docstring</em>,</li>
+<li>souvent avec <em>doctest</em>,</li>
+<li>souvent avec annotation de type.</li>
+<li>inutile de faire une fonction <code>main()</code></li>
+</ul>
+<h3 class="mume-header" id="commentaires">Commentaires</h3>
+
+<p>&#xC9;crire des commentaires <strong>avant</strong> une phase de votre programme. Comme</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 1. lecture de l&apos;entr&#xE9;e</span>
+nb_points_vie <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="respect-de-la-pep-8">Respect de la PEP-8</h3>
+
+<p>Le PEP-8 devra &#xEA;tre respecter le plus possible, sauf sur un point.</p>
+<ul>
+<li>On pr&#xE9;f&#xE9;rera une utilisation correcte des accents dans les identifiants en fran&#xE7;ais.</li>
+<li>Pour les autres : <a href="https://franckchambon.github.io/ClasseVirtuelle/Term_NSI/pep.html">rappel des bonnes pratiques</a>.</li>
+</ul>
 
       </div>
       <div class="md-sidebar-toc"><ul>
@@ -57,6 +115,14 @@
 <ul>
 <li><a href="#r%C3%A9solution">R&#xE9;solution</a></li>
 <li><a href="#rendu-du-travail">Rendu du travail</a></li>
+<li><a href="#conseils-de-r%C3%A9daction">Conseils de r&#xE9;daction</a>
+<ul>
+<li><a href="#noms-de-variables">Noms de variables</a></li>
+<li><a href="#fonctions">Fonctions</a></li>
+<li><a href="#commentaires">Commentaires</a></li>
+<li><a href="#respect-de-la-pep-8">Respect de la PEP-8</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
