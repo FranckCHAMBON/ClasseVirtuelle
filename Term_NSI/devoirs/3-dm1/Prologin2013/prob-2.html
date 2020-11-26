@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>dm1</title>
+      <title>prob-2</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,40 +23,88 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="devoir-maison-facultatif">Devoir maison facultatif</h1>
+      <p>&quot;&quot;&quot;</p>
+<h1 class="mume-header" id="probl%C3%A8me-2httpsprologinorgtrain2013semifinalqi"><a href="https://prologin.org/train/2013/semifinal/qi">Probl&#xE8;me 2</a></h1>
 
-<p>Pour varier l&apos;utilisation des juges en lignes, je vous propose <a href="https://prologin.org/">Prologin</a>.</p>
-<p>En guise de devoir maison, je vous demande de faire des exercices parmi l&apos;<a href="https://prologin.org/train/2013/semifinal">entra&#xEE;nement r&#xE9;gional 2013</a> ; dans l&apos;ordre, autant que vous pouvez.</p>
-<ol>
-<li><a href="Prologin2013/prob-1.html">La r&#xE9;ponse &#xE0; la question universelle</a></li>
-<li><a href="Prologin2013/prob-2.html">QI</a></li>
-<li><a href="Prologin2013/prob-3.html">XOR</a></li>
-<li><a href="Prologin2013/prob-4.html">GATE OF STEINER</a></li>
-<li><a href="Prologin2013/prob-5.html">Gravity</a></li>
-<li><a href="Prologin2013/prob-6.html">Reverse Alchemying</a></li>
-<li><a href="Prologin2013/prob-7.html">&#xC9;chec et mat</a></li>
-</ol>
-<h2 class="mume-header" id="r%C3%A9solution">R&#xE9;solution</h2>
+<blockquote>
+<p>QI</p>
+</blockquote>
+<p>Niveau 1</p>
+<h2 class="mume-header" id="%C3%A9nonc%C3%A9">&#xC9;nonc&#xE9;</h2>
 
-<ol>
-<li>Vous pouvez vous inscrire sur Prologin ; c&apos;est RGPD compatible, et c&apos;est tr&#xE8;s s&#xE9;rieux.</li>
-<li>Vous pouvez r&#xE9;soudre sur place les probl&#xE8;mes, ainsi vous saurez si vous avez r&#xE9;ussi.</li>
-<li>Pour chaque probl&#xE8;me r&#xE9;solu, faire une sauvegarde du script dans un fichier nomm&#xE9; <code>probl&#xE8;me_X.py</code> o&#xF9; <code>X</code> sera un chiffre entre <code>1</code> et <code>7</code>.</li>
-</ol>
-<h2 class="mume-header" id="rendu-du-travail">Rendu du travail</h2>
+<p>Terry Pratchett a &#xE9;crit : &#xAB; <em>the IQ of a mob is the IQ of its most stupid member divided by the number of mobsters</em> &#xBB;&#xB9;. On vous donne la liste des QI des membres d&apos;un groupe, calculer le QI du groupe.</p>
+<blockquote>
+<p>&#xB9; &#xAB; Le QI d&apos;un groupe est le QI de son membre le plus stupide divis&#xE9; par le nombre de personnes du groupe. &#xBB;</p>
+</blockquote>
+<h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
-<ol>
-<li>Votre code sera not&#xE9; sur sa r&#xE9;ussite aux tests, mais aussi sur la qualit&#xE9; d&apos;&#xE9;criture.</li>
-<li>Dans le site collaboratif ATRIUM Term_NSI, d&#xE9;poser vos fichiers dans le casier <code>DM prologin 2013</code>.</li>
-<li>Les fichiers seront accept&#xE9;s jusqu&apos;au 29 novembre inclus.</li>
-</ol>
+<ul>
+<li>Sur la premi&#xE8;re ligne, le nombre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> de personnes dans le groupe.</li>
+<li>Sur la deuxi&#xE8;me ligne, la liste des QI des membres du groupe.</li>
+</ul>
+<h3 class="mume-header" id="sortie">Sortie</h3>
+
+<p>Un entier, repr&#xE9;sentant la partie enti&#xE8;re du QI du groupe.</p>
+<h3 class="mume-header" id="contraintes">Contraintes</h3>
+
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&#x2A7D;</mo><mi>N</mi><mo>&#x2A7D;</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1 \leqslant N \leqslant 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8200000000000001em;vertical-align:-0.13667em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&#x2A7D;</mo><msub><mtext>QI</mtext><mi>i</mi></msub><mo>&#x2A7D;</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">0 \leqslant \text{QI}_i \leqslant 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.92747em;vertical-align:-0.24414em;"></span><span class="mord"><span class="mord text"><span class="mord">QI</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.21752399999999997em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></li>
+</ul>
+<h4 class="mume-header" id="contraintes-dex%C3%A9cution">Contraintes d&apos;ex&#xE9;cution</h4>
+
+<ul>
+<li>
+<p>Utilisation m&#xE9;moire maximum : 1000 kilo-octets</p>
+</li>
+<li>
+<p>Temps d&apos;ex&#xE9;cution maximum : 100 millisecondes</p>
+</li>
+</ul>
+<h3 class="mume-header" id="exemples-dentr%C3%A9esortie">Exemples d&apos;entr&#xE9;e/sortie</h3>
+
+<hr>
+<p>Exemple d&apos;entr&#xE9;e</p>
+<pre class="language-text">2
+90 110
+</pre>
+<p>Exemple de sortie</p>
+<pre class="language-text">45
+</pre>
+<hr>
+<p>Exemple d&apos;entr&#xE9;e</p>
+<pre class="language-text">3
+100 110 160
+</pre>
+<p>Exemple de sortie</p>
+<pre class="language-text">33
+</pre>
+<hr>
+<h2 class="mume-header" id="indices">Indices</h2>
+
+<p>Pensez &#xE0; bien choisir vos identifiants ; vous &#xEA;tes aussi not&#xE9;s sur la qualit&#xE9; de votre code, pas seulement son efficacit&#xE9;.</p>
+<h2 class="mume-header" id="solution">Solution</h2>
+
+<p><em>&#xC0; venir</em></p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#devoir-maison-facultatif">Devoir maison facultatif</a>
+<li><a href="#probl%C3%A8me-2httpsprologinorgtrain2013semifinalqi">Probl&#xE8;me 2</a>
 <ul>
-<li><a href="#r%C3%A9solution">R&#xE9;solution</a></li>
-<li><a href="#rendu-du-travail">Rendu du travail</a></li>
+<li><a href="#%C3%A9nonc%C3%A9">&#xC9;nonc&#xE9;</a>
+<ul>
+<li><a href="#entr%C3%A9e">Entr&#xE9;e</a></li>
+<li><a href="#sortie">Sortie</a></li>
+<li><a href="#contraintes">Contraintes</a>
+<ul>
+<li><a href="#contraintes-dex%C3%A9cution">Contraintes d&apos;ex&#xE9;cution</a></li>
+</ul>
+</li>
+<li><a href="#exemples-dentr%C3%A9esortie">Exemples d&apos;entr&#xE9;e/sortie</a></li>
+</ul>
+</li>
+<li><a href="#indices">Indices</a></li>
+<li><a href="#solution">Solution</a></li>
 </ul>
 </li>
 </ul>
