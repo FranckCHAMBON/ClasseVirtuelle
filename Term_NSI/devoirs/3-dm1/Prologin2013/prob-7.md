@@ -80,7 +80,7 @@ Exemple de sortie
 ## Indices
 
 + Par tradition, on note $(i, j)$ les coordonnées dans une grille (ou une matrice), avec $i$ l'indice de ligne, et $j$ celui de colonne. Dans l'exemple précédent, il y a deux reines, une en $(1, 1)$, l'autre en $(4, 5)$. La case $(0, 0)$ correspond au coin supérieur gauche. Si on tourne la tête de $90°$, cela correspond à abscisse et ordonnée.
-+ On pourra créer une fonction `valide(i, j)` qui renvoie un booléen : si la case de coordonnées $(i, j)$ est bien dans l'échiquier.
++ On pourra créer une fonction `est_valide(i, j)` qui renvoie un booléen : si la case de coordonnées $(i, j)$ est bien dans l'échiquier.
 + Ce problème est plus simple que le précédent !
 
 ## Solution
