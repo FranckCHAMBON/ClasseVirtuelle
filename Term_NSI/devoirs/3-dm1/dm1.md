@@ -76,7 +76,7 @@ On pourra utiliser :
 nb_points_vie = int(input())
 ```
 
-### Respect de la PEP-8
+### Respect du PEP-8
 Le PEP-8 devra être respectée le plus possible, sauf sur un point.
 + On préférera une utilisation correcte des accents dans les identifiants en français.
 
