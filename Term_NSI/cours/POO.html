@@ -429,8 +429,8 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
 <p>On reprend le code pr&#xE9;c&#xE9;dent complet :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Fraction</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>_num&#xE9;rateur <span class="token operator">=</span> a
-        self<span class="token punctuation">.</span>_d&#xE9;nominateur <span class="token operator">=</span> b
+        self<span class="token punctuation">.</span>__num&#xE9;rateur <span class="token operator">=</span> a
+        self<span class="token punctuation">.</span>__d&#xE9;nominateur <span class="token operator">=</span> b
 
     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f&quot;Fraction : </span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_num&#xE9;rateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> sur </span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span>
@@ -439,20 +439,20 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
         <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f&quot;(</span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_num&#xE9;rateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">)&quot;</span></span>
 
     <span class="token keyword">def</span> donne_num&#xE9;rateur<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_num&#xE9;rateur
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__num&#xE9;rateur
 
     <span class="token keyword">def</span> donne_d&#xE9;nominateur<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_d&#xE9;nominateur
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__d&#xE9;nominateur
 
     <span class="token keyword">def</span> modifie_num&#xE9;rateur<span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>_num&#xE9;rateur <span class="token operator">=</span> a
+        self<span class="token punctuation">.</span>__num&#xE9;rateur <span class="token operator">=</span> a
 
     <span class="token keyword">def</span> modifie_d&#xE9;nominateur<span class="token punctuation">(</span>self<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>_d&#xE9;nominateur <span class="token operator">=</span> b
+        self<span class="token punctuation">.</span>__d&#xE9;nominateur <span class="token operator">=</span> b
     
     <span class="token keyword">def</span> <span class="token function">multiplie_par</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fraction<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>_num&#xE9;rateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_num&#xE9;rateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>_d&#xE9;nominateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>__num&#xE9;rateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_num&#xE9;rateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>__d&#xE9;nominateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
 f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>

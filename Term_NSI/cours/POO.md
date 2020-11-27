@@ -191,8 +191,8 @@ On reprend le code précédent complet :
 ```python
 class Fraction:
     def __init__(self, a, b):
-        self._numérateur = a
-        self._dénominateur = b
+        self.__numérateur = a
+        self.__dénominateur = b
 
     def __str__(self):
         return f"Fraction : {f.donne_numérateur()} sur {f.donne_dénominateur()}"
@@ -201,20 +201,20 @@ class Fraction:
         return f"({f.donne_numérateur()}/{f.donne_dénominateur()})"
 
     def donne_numérateur(self):
-        return self._numérateur
+        return self.__numérateur
 
     def donne_dénominateur(self):
-        return self._dénominateur
+        return self.__dénominateur
 
     def modifie_numérateur(self, a):
-        self._numérateur = a
+        self.__numérateur = a
 
     def modifie_dénominateur(self, b):
-        self._dénominateur = b
+        self.__dénominateur = b
     
     def multiplie_par(self, fraction):
-        self._numérateur *= fraction.donne_numérateur()
-        self._dénominateur *= fraction.donne_dénominateur()
+        self.__numérateur *= fraction.donne_numérateur()
+        self.__dénominateur *= fraction.donne_dénominateur()
 
 
 f = Fraction(2, 3)
