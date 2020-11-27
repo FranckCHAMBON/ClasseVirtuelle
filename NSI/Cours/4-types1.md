@@ -134,11 +134,11 @@ for caractère in mot:
     print("Voici un caractère :", caractère)
 ```
 
-Voici un caractère : S
-Voici un caractère : a
-Voici un caractère : l
-Voici un caractère : u
-Voici un caractère : t
+    Voici un caractère : S
+    Voici un caractère : a
+    Voici un caractère : l
+    Voici un caractère : u
+    Voici un caractère : t
 
 ### Appartenance
 
@@ -186,7 +186,7 @@ Python autorise l'extraction d'une tranche d'une chaîne de caractères.
 ```python
 >>> verbe = "Travailler"
 >>> verbe[3:6] # du 3 inclus au 6 exclu
-'vail'
+'vai'
 >>> verbe[:4] # du début au 4 exclu
 'Trav'
 >>> verbe[:7] # les 7 premiers (du début au 7 exclu)
