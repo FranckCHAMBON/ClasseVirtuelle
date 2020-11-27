@@ -229,5 +229,5 @@ print("f ->", repr(f))
 
 Pour la suite, on peut regarder : 
 * ce [cours](1-POO.pdf) avec des notions hors programme, pour aller plus loin.
-* ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) illustré ; attention la PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
+* ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) illustré ; attention le PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
 * ce [cours](http://www.maths-info-lycee.fr/poo.html), avec de bons exercices.
