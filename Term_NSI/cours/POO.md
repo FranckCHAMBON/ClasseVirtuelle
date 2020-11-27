@@ -170,8 +170,8 @@ Ajoutons une méthode pour multiplier deux fractions.
 ```python
     # suite de Fraction
     def multiplie_par(self, fraction):
-        self._numérateur *= fraction.donne_numérateur()
-        self._dénominateur *= fraction.donne_dénominateur()
+        self.__numérateur *= fraction.donne_numérateur()
+        self.__dénominateur *= fraction.donne_dénominateur()
 
 
 f = Fraction(2, 3)
@@ -182,7 +182,7 @@ print("f ->", repr(f))
 
     f -> (10/21)
 
-⚠️ On remarquera, que pour `self`, on peut travailler avec ses attributs privés, mais pour `fraction`, nous avons utilisé les méthodes définies avant. On aurait pu utilisé les attributs privés, mais c'est une mauvaise pratique.
+⚠️ On remarquera, que pour `self`, on peut travailler avec ses attributs privés, mais pour `fraction`, nous avons utilisé les méthodes définies avant.
 
 ## Exercices
 
