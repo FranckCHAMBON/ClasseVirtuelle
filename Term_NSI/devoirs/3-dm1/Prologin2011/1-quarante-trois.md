@@ -12,7 +12,7 @@ Le but de cet exercice est de calculer la réponse à la question universelle su
 
 ### Sortie
 
-Cet entier, moins un, donnant la réponse à la question universelle sur la vie, l'univers et le reste.
+* Cet entier, moins un, donnant la réponse à la question universelle sur la vie, l'univers et le reste.
 
 ## Solution
 

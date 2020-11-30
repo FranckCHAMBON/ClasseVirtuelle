@@ -274,7 +274,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
 <ul>
-<li>Sur la premi&#xE8;re ligne, l&apos;entier N correspondant au nombre d&apos;amis auxquels il avait pr&#xE9;vu d&apos;offrir des chocolats.</li>
+<li>Sur la premi&#xE8;re ligne, l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> correspondant au nombre d&apos;amis auxquels il avait pr&#xE9;vu d&apos;offrir des chocolats.</li>
 <li>Sur la ligne suivante, le nombre de chocolats qu&apos;il doit pr&#xE9;parer.</li>
 </ul>
 <h3 class="mume-header" id="sortie">Sortie</h3>
@@ -302,7 +302,7 @@ auteur : Franck CHAMBON
 R&#xE9;gional 2011 - Probl&#xE8;me 2 - Chocolats
 https://prologin.org/train/2011/semifinal/chocolats
 &quot;&quot;&quot;</span>
-<span class="token comment"># 0. pr&#xE9;paration, coeur du probl&#xE8;me</span>
+<span class="token comment"># 0. C&#x153;ur du probl&#xE8;me</span>
 <span class="token keyword">def</span> <span class="token function">moyenne_nombres_pairs</span><span class="token punctuation">(</span>ma_liste<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la moyenne tronqu&#xE9;e des nombres pairs de `ma_liste`
     &gt;&gt;&gt; moyenne_nombres_pairs([1, 2, 3, 4])
@@ -317,11 +317,11 @@ https://prologin.org/train/2011/semifinal/chocolats
 <span class="token comment"># doctest.testmod()</span>
 <span class="token comment"># exit(0)</span>
 
-<span class="token comment"># 1. lecture</span>
+<span class="token comment"># 1. Lecture</span>
 nb_chocolats <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 chocolats <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<span class="token comment"># 2. &#xE9;criture</span>
+<span class="token comment"># 2. &#xC9;criture</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>moyenne_nombres_pairs<span class="token punctuation">(</span>chocolats<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><h3 class="mume-header" id="commentaire">Commentaire</h3>
 

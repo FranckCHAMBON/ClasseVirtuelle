@@ -12,7 +12,7 @@ Dans l'exemple 1 ci-dessous, Joseph Marchand va préparer en moyenne (6 + 10 + 8
 
 ### Entrée
 
-* Sur la première ligne, l'entier N correspondant au nombre d'amis auxquels il avait prévu d'offrir des chocolats.
+* Sur la première ligne, l'entier $N$ correspondant au nombre d'amis auxquels il avait prévu d'offrir des chocolats.
 * Sur la ligne suivante, le nombre de chocolats qu'il doit préparer.
 
 ### Sortie
@@ -43,7 +43,7 @@ auteur : Franck CHAMBON
 Régional 2011 - Problème 2 - Chocolats
 https://prologin.org/train/2011/semifinal/chocolats
 """
-# 0. préparation, coeur du problème
+# 0. Cœur du problème
 def moyenne_nombres_pairs(ma_liste: list) -> int:
     """Renvoie la moyenne tronquée des nombres pairs de `ma_liste`
     >>> moyenne_nombres_pairs([1, 2, 3, 4])
@@ -58,11 +58,11 @@ def moyenne_nombres_pairs(ma_liste: list) -> int:
 # doctest.testmod()
 # exit(0)
 
-# 1. lecture
+# 1. Lecture
 nb_chocolats = int(input())
 chocolats = list(map(int, input().split()))
 
-# 2. écriture
+# 2. Écriture
 print(moyenne_nombres_pairs(chocolats))
 ```
 

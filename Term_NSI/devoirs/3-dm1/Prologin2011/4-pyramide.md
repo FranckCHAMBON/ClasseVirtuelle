@@ -18,7 +18,7 @@ Connaissant la hauteur de la pyramide, vous devez l'afficher.
 
 ### Contraintes
 
-* *1 \leqslant N \leqslant 100$
+* $1 \leqslant N \leqslant 100$
 
 #### Contraintes d'exécution
 
@@ -60,7 +60,7 @@ Régional 2011 - Problème 4 - Pyramide
 https://prologin.org/train/2011/semifinal/pyramide
 """
 
-# 0. Coeur du problème
+# 0. Cœur du problème
 def pyramide(hauteur: int) -> str:
     """Renvoie une pyramide de hauteur
     >>> pyramide(1)
