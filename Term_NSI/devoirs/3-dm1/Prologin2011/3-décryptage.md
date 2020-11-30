@@ -127,11 +127,11 @@ print("1" if est_extrait(message_chien, message_test) else "0")
 ```python
 """
 auteur : Franck CHAMBON
-Entrainement 2011 - Problème 3 - Décryptage
+Régional 2011 - Problème 3 - Décryptage
 https://prologin.org/train/2011/semifinal/decryptage
 """
 
-# 0. Coeur du problème
+# 0. Cœur du problème
 def est_extrait(texte:str, partie: str) -> bool:
     """Renvoie True ou False selon que
     `partie` est un extrait de `texte`
@@ -155,17 +155,16 @@ def est_extrait(texte:str, partie: str) -> bool:
 
 # import doctest
 # doctest.testmod()
-# print("tests ok")
 # exit(0)
 
 
-# 1. lecture
+# 1. Lecture
 taille_message_chien = int(input())
 message_chien = input()
 taille_message_test = int(input())
 message_test = input()
 
-# 2. écriture
+# 2. Écriture
 print("1" if est_extrait(message_chien, message_test) else "0")
 ```
 
@@ -175,4 +174,3 @@ Explications :
 3. Sinon, les deux sont non vides ; on peut comparer leur premier caractère ; il existe.
     1. Si c'est le même, par récursivité, on cherche le caractère suivant dans le reste des deux.
     2. Sinon, on cherche le même premier caractère de `partie` dans la suite de `texte`.
-    
