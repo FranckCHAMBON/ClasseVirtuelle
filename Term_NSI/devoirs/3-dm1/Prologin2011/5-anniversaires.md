@@ -75,7 +75,7 @@ Régional 2011 - Problème 5 - Anniversaires
 https://prologin.org/train/2011/semifinal/anniversaires
 """
 
-# 0. coeur du problème
+# 0. Cœur du problème
 def nb_ballons(ma_liste: list) -> int:
     """Renvoie le nombre de ballons nécessaires suivant l'énoncé.
     >>> nb_ballons([20, 20])
@@ -100,11 +100,11 @@ def nb_ballons(ma_liste: list) -> int:
 # exit(0)
 
 
-# 1. lecture
+# 1. Lecture
 nb_anniversaires = int(input())
 anniversaires = list(map(int, input().split()))
 
-# 2. écriture
+# 2. Écriture
 print(nb_ballons(anniversaires))
 ```
 
