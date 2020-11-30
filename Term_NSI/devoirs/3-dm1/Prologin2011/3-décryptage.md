@@ -17,7 +17,7 @@ En revanche, le vocabulaire de Scooby-Naire étant assez limité, Joseph Marchan
 
 ### Sortie
 
-`1` si la chaîne à tester est contenue dans le message de Scooby-Naire, `0` sinon.
++ `1` si la chaîne à tester est contenue dans le message de Scooby-Naire, `0` sinon.
 
 ### Contraintes
 

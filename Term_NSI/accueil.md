@@ -9,8 +9,7 @@ Rendez-vous en cas de confinement complet :
 * :clock8: les vendredis de 8h à 10h
 
 ## Documents importants
-* [Bonnes pratiques de codage
-](pep.html) : les PEP
+* [Bonnes pratiques de codage](pep.html) : les PEP
 * [Aide sur *doctest*](doctest.html)
 
 ## :anchor: Devoirs
@@ -18,7 +17,7 @@ Rendez-vous en cas de confinement complet :
     * [corrigé](devoirs/1-ds1/corrigé.html)
 * [DS n°2](devoirs/2-ds2/DS2.html) - algorithmique
     * [corrigé](devoirs/2-ds2/corrigé.html)
-* [DM n°1](devoirs/3-dm1/dm1.html)
+* [DM n°1](devoirs/3-dm1/dm1.html) : le début de Prologin 2013
     * [Aide avec Prologin 2011](devoirs/3-dm1/Aide2011.html)
 
 ## :checkered_flag: Épreuve finale

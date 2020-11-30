@@ -17,7 +17,7 @@ Dans l'exemple 1 ci-dessous, Joseph Marchand va préparer en moyenne (6 + 10 + 8
 
 ### Sortie
 
-La moyenne (tronquée) des nombres de chocolats pairs.
+* La moyenne (tronquée) des nombres de chocolats pairs.
 
 ### Contraintes
 
