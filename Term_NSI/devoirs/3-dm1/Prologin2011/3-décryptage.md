@@ -121,3 +121,58 @@ message_test = input()
 # 2. Écriture
 print("1" if est_extrait(message_chien, message_test) else "0")
 ```
+
+> ⚠️ Nouveau, une version récursive élégante.
+
+```python
+"""
+auteur : Franck CHAMBON
+Entrainement 2011 - Problème 3 - Décryptage
+https://prologin.org/train/2011/semifinal/decryptage
+"""
+
+# 0. Coeur du problème
+def est_extrait(texte:str, partie: str) -> bool:
+    """Renvoie True ou False selon que
+    `partie` est un extrait de `texte`
+    >>> est_extrait("Un morceau complet", "U orc cplt")
+    True
+    >>> est_extrait("Un morceau complet", "Z")
+    False
+    >>> est_extrait("Un morceau complet", "nU")
+    False
+    >>> est_extrait("J'ai dit ho", "diiit")
+    False
+    """
+    if partie == "":
+        return True
+    if texte == "":
+        return False
+    if partie[0] == texte[0]:
+        return est_extrait(texte[1:], partie[1:])
+    else:
+        return est_extrait(texte[1:], partie)
+
+# import doctest
+# doctest.testmod()
+# print("tests ok")
+# exit(0)
+
+
+# 1. lecture
+taille_message_chien = int(input())
+message_chien = input()
+taille_message_test = int(input())
+message_test = input()
+
+# 2. écriture
+print("1" if est_extrait(message_chien, message_test) else "0")
+```
+
+Explications :
+1. Si `partie` est vide, on a fini, et c'est bon.
+2. Si `texte` est vide, `partie` est non vide, et donc c'est pas bon.
+3. Sinon, les deux sont non vides ; on peut comparer leur premier caractère ; il existe.
+    1. Si c'est le même, par récursivité, on cherche le caractère suivant dans le reste des deux.
+    2. Sinon, on cherche le même premier caractère de `partie` dans la suite de `texte`.
+    
