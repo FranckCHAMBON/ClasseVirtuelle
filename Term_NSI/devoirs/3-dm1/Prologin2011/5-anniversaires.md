@@ -65,6 +65,16 @@ Exemple de sortie
 
     125
 ---
+### Commentaire
+
+Si on prend en entrée ces 3 anniversaires : $80, 10$ et $80$.
+On voit qu'il faut :
+
++ $80$ ballons pour le premier, j'en ai $0$, il m'en faut $80$, il m'en reste $0 + 80/2 = 40$ ;
++ $10$ ballons pour le second, j'en ai $40$, il m'en faut $0$, il m'en reste $30 + 10/2 = 35$ ;
++ $80$ ballons pour le dernier, j'en ai $35$, il m'en faut $45$, et on se fiche du reste.
+
+> Il me faut alors au total : $80 + 0 + 45$ ballons, soit $125$.
 
 ## Solution
 
@@ -108,13 +118,3 @@ anniversaires = list(map(int, input().split()))
 print(nb_ballons(anniversaires))
 ```
 
-### Commentaire
-
-    Si on prend en entrée ces 3 anniversaires : 80, 10 et 80.
-    On voit qu'il faut :
-
-        80 ballons pour le premier, j'en ai 0, il m'en faut 80, il m'en reste 0 + 80/2 = 40 ;
-        10 ballons pour le second, j'en ai 40, il m'en faut 0, il m'en reste 30 + 10/2 = 35 ;
-        80 ballons pour le dernier, j'en ai 35, il m'en faut 45, et on se fiche du reste.
-
-    Il me faut alors au total : 80 + 0 + 45 ballons, soit 125.

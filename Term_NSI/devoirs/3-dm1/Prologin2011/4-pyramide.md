@@ -62,11 +62,11 @@ https://prologin.org/train/2011/semifinal/pyramide
 
 # 0. Cœur du problème
 def pyramide(hauteur: int) -> str:
-    """Renvoie une pyramide de hauteur
-    >>> pyramide(1)
-    '*'
-    >>> pyramide(3)
-    '*\\n**\\n***'
+    r"""Renvoie une pyramide de hauteur donnée
+    >>> pyramide(1).split("\n")
+    ['*']
+    >>> pyramide(3).split("\n")
+    ['*', '**', '***']
     """
     return "\n".join("*" * h for h in range(1, 1+hauteur))
     
@@ -81,3 +81,26 @@ hauteur = int(input())
 # 2. Sortie
 print(pyramide(hauteur))
 ```
+
+### Commentaire
+
+Noter le *doctest* qui commence par `r"""`, le `r` permet d'avoir une chaîne de caractères sans échappement. Ainsi, le `\n` n'est pas interprété dans le *docstring*.
+* Sans le `r`, le *docstring* serait équivalent à une chose bizarre :
+```python
+def pyramide(hauteur: int) -> str:
+    """Renvoie une pyramide de hauteur donnée
+    >>> pyramide(1).split("
+")
+    ['*']
+    ...
+```
+* Une solution correcte sans le `r` aurait été :
+```python
+def pyramide(hauteur: int) -> str:
+    """Renvoie une pyramide de hauteur donnée
+    >>> pyramide(1).split("\\n")
+    ['*']
+    ...
+```
+
+En effet, le `\` s'échappe avec lui-même, ainsi `\\n` devient, une fois lue par la *docstring*, un `\n`.

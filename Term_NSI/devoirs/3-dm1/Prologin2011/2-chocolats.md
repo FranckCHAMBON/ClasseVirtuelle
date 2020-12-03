@@ -68,7 +68,7 @@ print(moyenne_nombres_pairs(chocolats))
 
 ### Commentaire
 
-Ceci est une version fonctionnelle, on peut écrire un code plus simple.
+Ceci était une version fonctionnelle, on peut écrire un code plus simple.
 
 ```python
 nb_tours = int(input())
