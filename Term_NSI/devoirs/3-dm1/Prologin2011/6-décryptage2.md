@@ -88,7 +88,7 @@ def est_inclus(extrait: str, texte: str) -> bool:
         """
         compte_morceau = [0 for _ in range(CONST_ASCII)]
         for caractère in morceau:
-            i = ord(caractère) - ord('A')
+            i = ord(caractère)
             compte_morceau[i] += 1
         return compte_morceau
     
@@ -115,3 +115,102 @@ message_test = input()
 # 2. Écriture
 print(1 if est_inclus(message_test, message_scooby_naire) else 0)
 ```
+
+### Commentaire
+
+Il n'était pas précisé dans l'énoncé que les caractères étaient tous en ASCII, donc avec un code (que l'on obtient avec `ord`) compris entre $0$ et $127$ inclus.
+
+Proposons une version avec un dictionnaire, qui est capable de fonctionner avec tous jeux de caractères.
+
+Nous proposerons ensuite une version avec un type nouveau `Counter` qui a été pensé justement pour les dictionnaires qui servent à compter des éléments d'un ensemble.
+
+#### Version itérative avec `dict`
+```python
+# 0. Cœur du problème
+def est_inclus(extrait: str, texte: str) -> bool:
+    """Renvoie True si touts les caractères de 'extrait' sont inclus
+    dans 'texte', avec multiplicité, mais sans compter l'ordre.
+    >>> est_inclus("ABAC", "BRAVO, CHARLIE.")
+    1
+    >>> est_inclus("ABBAC", "BRAVO, CHARLIE.")
+    0
+    """
+    def compte(morceau: str) -> dict:
+        """Renvoie un `Counter` des caractères.
+        >>> compte("ABAC") == {'A': 2, 'B': 1, 'C': 1}
+        True
+        >>> compte("ABBAC") == {'A': 2, 'B': 2, 'C': 1}
+        True
+        """
+        compte_morceau = dict()
+        for caractère in morceau:
+            if caractère not in compte_morceau:
+                compte_morceau[caractère] = 1
+            else:
+                compte_morceau[caractère] += 1
+        return compte_morceau
+    
+    
+    # version itérative
+    compte_extrait = compte(extrait)
+    compte_texte = compte(texte)
+    for caractère in compte_extrait:
+        if caractère not in compte_texte:
+            return False
+        else:
+            if compte_extrait[caractère] > compte_texte[caractère]:
+                return False
+    return True
+```
+
+On constate qu'il faut tester l'appartenance d'une clé au dictionnaire...
+
+#### Version itérative avec `Counter`
+```python
+from collections import Counter
+
+# 0. Cœur du problème
+def est_inclus(extrait: str, texte: str) -> bool:
+    """Renvoie True si touts les caractères de 'extrait' sont inclus
+    dans 'texte', avec multiplicité, mais sans compter l'ordre.
+    >>> est_inclus("ABAC", "BRAVO, CHARLIE.")
+    1
+    >>> est_inclus("ABBAC", "BRAVO, CHARLIE.")
+    0
+    """
+    def compte(morceau: str) -> Counter:
+        """Renvoie un `Counter` des caractères.
+        >>> compte("ABAC") == {'A': 2, 'B': 1, 'C': 1}
+        True
+        >>> compte("ABBAC") == {'A': 2, 'B': 2, 'C': 1}
+        True
+        """
+        compte_morceau = Counter()
+        for caractère in morceau:
+            compte_morceau[caractère] += 1
+        return compte_morceau
+    
+    
+    # version itérative
+    compte_extrait = compte(extrait)
+    compte_texte = compte(texte)
+    for caractère in compte_extrait:
+        if compte_extrait[caractère] > compte_texte[caractère]:
+            return False
+    return True
+```
+
+Ici inutile de tester l'appartenance ; la valeur $0$ est renvoyée par défaut.
+
+#### Version fonctionnelle avec `Counter`
+```python
+    #...
+
+    # version fonctionnelle
+    compte_extrait = compte(extrait)
+    compte_texte = compte(texte)
+    return all(compte_extrait[caractère] <= compte_texte[caractère]
+                 for caractère in compte_extrait)
+```
+
+On constate qu'on peut facilement utiliser `compte_texte[caractère]` qui est par défaut à $0$ si `caractère` n'est pas une clé de `compte_texte`. Chose que nous n'aurions pas pu faire avec un dictionnaire conventionnel.
