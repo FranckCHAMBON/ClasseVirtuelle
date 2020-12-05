@@ -70,8 +70,8 @@ un_seul_caractère = 'c'
 
 Les chaînes de caractères sont indicées à partir de zéro.
 
-    Indice     0  1  2  3  4  5  6  7  8  9  10 11 12 13 14
-    Caractère  B  o  n  j  o  u  r     à      t  o  u  s  !
+    Indice     0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
+    Caractère  B  o  n  j  o  u  r     à      t  o  u  s     !
 
 ```python
 >>> salut_fr = 'Bonjour à tous !'
@@ -83,21 +83,21 @@ Les chaînes de caractères sont indicées à partir de zéro.
 'r'
 >>> salut_fr[9]
 ' '
->>> salut_fr[14]
+>>> salut_fr[15]
 '!'
 >>> len(salut_fr)
-15
+16
 ```
 
 ### Longueur
-Ici la chaîne est de longueur (_**len**gth_) $15$, comme donné par la fonction `len`.
+Ici la chaîne est de longueur (_**len**gth_) $16$, comme donné par la fonction `len`.
 
 Pour une chaîne de caractères de longueur $l$ les indices vont de $0$ inclus à $l$ **exclu**.
 
 ⚠️ Essayer d'accéder à un caractère d'indice $l$ ou plus provoque une erreur.
 
 ```python
->>> salut_fr[15]
+>>> salut_fr[16]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: string index out of range
@@ -147,7 +147,7 @@ On peut savoir si une sous chaîne `extrait` est incluse dans une chaîne `phras
 #### Exemple
 
 ```python
-CONST_voyelles = "aeiouy"
+CONST_voyelles = "aeiouyAEIOUY"
 mot = "Bonjour"
 for lettre in mot:
     if lettre in CONST_voyelles:
@@ -226,7 +226,7 @@ print("Dans dix ans, tu auras", âge + 10)
     Quel est ton âge ?
     42
     Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
+    File "<stdin>", line 3, in <module>
     TypeError: can only concatenate str (not "int") to str
 
 On expliquera bientôt ce qu'est la concaténation, mais simplement, ici, Python ne sait pas ajouter du texte et un entier, c'est une erreur de type (`TypeError`).
@@ -479,9 +479,10 @@ Voyons des exemples progressifs.
 
 ### Les listes dynamiques de Python
 
-D'un point de vue rigoureux, les listes que nous avons présentés précédemment sont des **tableaux**, des objets : 
+D'un point de vue rigoureux, les listes que nous avons présentées précédemment sont des **tableaux**, des objets : 
 * à taille fixée à la création,
-* avec des éléments indicés de $0$ inclus à longueur **exclue**.
+* avec des éléments indicés de $0$ inclus à longueur **exclue**,
+* des éléments qui sont eux-mêmes de même type, tous des entiers, ou bien tous des chaînes de caractères...
 
 > Les tableaux sont utilisés dans presque tous les langages de programmation, c'est un outil élémentaire.
 
@@ -489,10 +490,11 @@ Les listes Python offrent d'autres possibilités que les tableaux officiels n'on
 * ajouter des éléments à la fin avec `append()`
 * récupérer en enlevant l'élément de fin avec `pop()`
 * modifier des tranches par d'autres tranches même de longueur différente, ...
+* avoir des types différents pour les éléments, **mais ce n'est pas recommandé**.
 
-> Nous apprendrons plus tard à nous servir de ces méthodes, ce sera une introduction aux concepts de la programmation orientée objet.
+> Nous apprendrons plus tard à nous servir de ces méthodes dynamiques, ce sera une introduction aux concepts de **la programmation orientée objet**.
 
-⚠️ En attendant, essayez de ne pas utiliser ces méthodes. Les exercices pour débutants utilisent souvent les **tableaux** et non les **listes dynamiques**.
+⚠️ En attendant, essayez de ne pas utiliser ces méthodes. Les exercices pour débutants utilisent souvent les **tableaux** et non les **listes dynamiques**. En terminale, on utilisera les méthodes dynamiques.
 
 ### Les listes de listes
 
@@ -500,7 +502,7 @@ Les listes Python offrent d'autres possibilités que les tableaux officiels n'on
 * On rappelle qu'on préfère ne pas mélanger les types à l'intérieur d'une liste.
 * Une liste peut contenir elle-même des listes. C'est souvent le cas dans le cas de travail avec des images.
 
-> Une image est souvent donnée par une liste de lignes. Chaque ligne est donnée par une liste de pixels. Et un pixel est souvent une liste de composante de couleurs.
+> Une image est souvent donnée par une liste de lignes. Chaque ligne est donnée par une liste de pixels. Et un pixel est souvent une liste de composantes de couleurs.
 
 #### Exercice
 

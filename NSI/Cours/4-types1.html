@@ -83,8 +83,8 @@ un_seul_caract&#xE8;re <span class="token operator">=</span> <span class="token 
 <h3 class="mume-header" id="indices">Indices</h3>
 
 <p>Les cha&#xEE;nes de caract&#xE8;res sont indic&#xE9;es &#xE0; partir de z&#xE9;ro.</p>
-<pre class="language-text">Indice     0  1  2  3  4  5  6  7  8  9  10 11 12 13 14
-Caract&#xE8;re  B  o  n  j  o  u  r     &#xE0;      t  o  u  s  !
+<pre class="language-text">Indice     0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
+Caract&#xE8;re  B  o  n  j  o  u  r     &#xE0;      t  o  u  s     !
 </pre>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr <span class="token operator">=</span> <span class="token string">&apos;Bonjour &#xE0; tous !&apos;</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -95,16 +95,16 @@ Caract&#xE8;re  B  o  n  j  o  u  r     &#xE0;      t  o  u  s  !
 <span class="token string">&apos;r&apos;</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span>
 <span class="token string">&apos; &apos;</span>
-<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span>
 <span class="token string">&apos;!&apos;</span>
 <span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>salut_fr<span class="token punctuation">)</span>
-<span class="token number">15</span>
+<span class="token number">16</span>
 </pre><h3 class="mume-header" id="longueur">Longueur</h3>
 
-<p>Ici la cha&#xEE;ne est de longueur (<em><strong>len</strong>gth</em>) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>, comme donn&#xE9; par la fonction <code>len</code>.</p>
+<p>Ici la cha&#xEE;ne est de longueur (<em><strong>len</strong>gth</em>) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn></mrow><annotation encoding="application/x-tex">16</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">6</span></span></span></span>, comme donn&#xE9; par la fonction <code>len</code>.</p>
 <p>Pour une cha&#xEE;ne de caract&#xE8;res de longueur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> les indices vont de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> inclus &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> <strong>exclu</strong>.</p>
 <p>&#x26A0;&#xFE0F; Essayer d&apos;acc&#xE9;der &#xE0; un caract&#xE8;re d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> ou plus provoque une erreur.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> salut_fr<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span>
 Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
   File <span class="token string">&quot;&lt;stdin&gt;&quot;</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">&gt;</span>
 IndexError<span class="token punctuation">:</span> string index out of <span class="token builtin">range</span>
@@ -144,7 +144,7 @@ Voici un caract&#xE8;re : t
 <p>On peut savoir si une sous cha&#xEE;ne <code>extrait</code> est incluse dans une cha&#xEE;ne <code>phrase</code> avec le code <code>extrait in phrase</code>.</p>
 <h4 class="mume-header" id="exemple">Exemple</h4>
 
-<pre data-role="codeBlock" data-info="python" class="language-python">CONST_voyelles <span class="token operator">=</span> <span class="token string">&quot;aeiouy&quot;</span>
+<pre data-role="codeBlock" data-info="python" class="language-python">CONST_voyelles <span class="token operator">=</span> <span class="token string">&quot;aeiouyAEIOUY&quot;</span>
 mot <span class="token operator">=</span> <span class="token string">&quot;Bonjour&quot;</span>
 <span class="token keyword">for</span> lettre <span class="token keyword">in</span> mot<span class="token punctuation">:</span>
     <span class="token keyword">if</span> lettre <span class="token keyword">in</span> CONST_voyelles<span class="token punctuation">:</span>
@@ -204,7 +204,7 @@ Tu t&apos;appelles Franck
 </pre><pre class="language-text">Quel est ton &#xE2;ge ?
 42
 Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+File &quot;&lt;stdin&gt;&quot;, line 3, in &lt;module&gt;
 TypeError: can only concatenate str (not &quot;int&quot;) to str
 </pre>
 <p>On expliquera bient&#xF4;t ce qu&apos;est la concat&#xE9;nation, mais simplement, ici, Python ne sait pas ajouter du texte et un entier, c&apos;est une erreur de type (<code>TypeError</code>).</p>
@@ -411,10 +411,11 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 </ul>
 <h3 class="mume-header" id="les-listes-dynamiques-de-python">Les listes dynamiques de Python</h3>
 
-<p>D&apos;un point de vue rigoureux, les listes que nous avons pr&#xE9;sent&#xE9;s pr&#xE9;c&#xE9;demment sont des <strong>tableaux</strong>, des objets :</p>
+<p>D&apos;un point de vue rigoureux, les listes que nous avons pr&#xE9;sent&#xE9;es pr&#xE9;c&#xE9;demment sont des <strong>tableaux</strong>, des objets :</p>
 <ul>
 <li>&#xE0; taille fix&#xE9;e &#xE0; la cr&#xE9;ation,</li>
-<li>avec des &#xE9;l&#xE9;ments indic&#xE9;s de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> inclus &#xE0; longueur <strong>exclue</strong>.</li>
+<li>avec des &#xE9;l&#xE9;ments indic&#xE9;s de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> inclus &#xE0; longueur <strong>exclue</strong>,</li>
+<li>des &#xE9;l&#xE9;ments qui sont eux-m&#xEA;mes de m&#xEA;me type, tous des entiers, ou bien tous des cha&#xEE;nes de caract&#xE8;res...</li>
 </ul>
 <blockquote>
 <p>Les tableaux sont utilis&#xE9;s dans presque tous les langages de programmation, c&apos;est un outil &#xE9;l&#xE9;mentaire.</p>
@@ -424,11 +425,12 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <li>ajouter des &#xE9;l&#xE9;ments &#xE0; la fin avec <code>append()</code></li>
 <li>r&#xE9;cup&#xE9;rer en enlevant l&apos;&#xE9;l&#xE9;ment de fin avec <code>pop()</code></li>
 <li>modifier des tranches par d&apos;autres tranches m&#xEA;me de longueur diff&#xE9;rente, ...</li>
+<li>avoir des types diff&#xE9;rents pour les &#xE9;l&#xE9;ments, <strong>mais ce n&apos;est pas recommand&#xE9;</strong>.</li>
 </ul>
 <blockquote>
-<p>Nous apprendrons plus tard &#xE0; nous servir de ces m&#xE9;thodes, ce sera une introduction aux concepts de la programmation orient&#xE9;e objet.</p>
+<p>Nous apprendrons plus tard &#xE0; nous servir de ces m&#xE9;thodes dynamiques, ce sera une introduction aux concepts de <strong>la programmation orient&#xE9;e objet</strong>.</p>
 </blockquote>
-<p>&#x26A0;&#xFE0F; En attendant, essayez de ne pas utiliser ces m&#xE9;thodes. Les exercices pour d&#xE9;butants utilisent souvent les <strong>tableaux</strong> et non les <strong>listes dynamiques</strong>.</p>
+<p>&#x26A0;&#xFE0F; En attendant, essayez de ne pas utiliser ces m&#xE9;thodes. Les exercices pour d&#xE9;butants utilisent souvent les <strong>tableaux</strong> et non les <strong>listes dynamiques</strong>. En terminale, on utilisera les m&#xE9;thodes dynamiques.</p>
 <h3 class="mume-header" id="les-listes-de-listes">Les listes de listes</h3>
 
 <ul>
@@ -437,7 +439,7 @@ suite <span class="token operator">=</span> <span class="token punctuation">[</s
 <li>Une liste peut contenir elle-m&#xEA;me des listes. C&apos;est souvent le cas dans le cas de travail avec des images.</li>
 </ul>
 <blockquote>
-<p>Une image est souvent donn&#xE9;e par une liste de lignes. Chaque ligne est donn&#xE9;e par une liste de pixels. Et un pixel est souvent une liste de composante de couleurs.</p>
+<p>Une image est souvent donn&#xE9;e par une liste de lignes. Chaque ligne est donn&#xE9;e par une liste de pixels. Et un pixel est souvent une liste de composantes de couleurs.</p>
 </blockquote>
 <h4 class="mume-header" id="exercice-1">Exercice</h4>
 
