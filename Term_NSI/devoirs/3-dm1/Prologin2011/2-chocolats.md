@@ -51,8 +51,9 @@ def moyenne_nombres_pairs(ma_liste: list) -> int:
     >>> moyenne_nombres_pairs([12, 22, 3, 0])
     11
     """
-    ma_liste_pair = [x for x in ma_liste if x % 2 == 0]
-    return sum(ma_liste_pair) // len(ma_liste_pair)
+    ma_liste_filtrée = [x for x in ma_liste if x % 2 == 0]
+    moyenne_filtrée_tronquée = sum(ma_liste_filtrée) // len(ma_liste_filtrée)
+    return moyenne_filtrée_tronquée
 
 # import doctest
 # doctest.testmod()
