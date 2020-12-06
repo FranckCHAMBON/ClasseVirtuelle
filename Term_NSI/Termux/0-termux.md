@@ -5,7 +5,7 @@
 @import "abstract.md"
 
 
-## Sommaire {ignore=true}
+## Sommaire de la partie 0 {ignore=true}
 
 [TOC]
 

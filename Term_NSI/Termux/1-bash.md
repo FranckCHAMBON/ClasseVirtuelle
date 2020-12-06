@@ -3,7 +3,7 @@
 @import "abstract.md"
 
 
-## Sommaire {ignore=true}
+## Sommaire de la partie 1 {ignore=true}
 
 [TOC]
 

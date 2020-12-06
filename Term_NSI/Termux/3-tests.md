@@ -4,7 +4,8 @@
 @import "abstract.md"
 
 
-## Sommaire {ignore=true}
+## Sommaire de la partie 3 {ignore=true}
 
 [TOC]
 
+*À venir*

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>2-micro</title>
+      <title>accueil</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -23,11 +23,9 @@
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header undefined" id="ihm-mode-texte-partie-2">IHM mode texte - Partie 2</h1>
+      <h1 class="mume-header" id="ihm-mode-texte">IHM mode texte</h1>
 
-<blockquote>
-<p>&#xC9;dition de code dans un terminal</p>
-</blockquote>
+<p><strong>I</strong>nterface <strong>H</strong>umain <strong>M</strong>achine, en mode texte.</p>
 <p>Auteur : Franck CHAMBON, enseignant au lyc&#xE9;e Lucie AUBRAC de Boll&#xE8;ne (84).</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Cc-by-nc-sa_euro_icon.svg/800px-Cc-by-nc-sa_euro_icon.svg.png" width="100px" title="Licence" alt="Licence CC-BY-NC-SA-4.0">
 <p>Le document suivant est plac&#xE9; sous licence libre <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC - BY-NC-SA 4.0</a></p>
@@ -37,138 +35,17 @@
 <li>Partie 2 : <a href="2-micro.html">&#xC9;dition de code dans un terminal</a></li>
 <li>Partie 3 : <a href="3-tests.html">Jeux de tests</a></li>
 </ul>
-<h2 class="mume-header undefined" id="sommaire-de-la-partie-2">Sommaire de la partie 2</h2>
-
+<p>Un document de cours rempli d&apos;exercices destin&#xE9;s aux &#xE9;l&#xE8;ves de NSI ayant une tablette sous Android.</p>
 <ul>
-<li><a href="#introduction">Introduction</a>
-<ul>
-<li><a href="#les-%C3%A9diteurs-en-mode-texte">Les &#xE9;diteurs en mode texte</a></li>
-<li><a href="#objectifs">Objectifs</a></li>
+<li>L&apos;occasion de d&#xE9;couvrir les notions de syst&#xE8;me d&apos;exploitation avec un environnement proche de <code>bash</code>.</li>
+<li>D&apos;utiliser un &#xE9;diteur de code minimaliste, mais  g&#xE9;n&#xE9;raliste.</li>
+<li>De travailler avec des scripts simples en Python, et cr&#xE9;er des jeux de tests.</li>
+<li>...</li>
 </ul>
-</li>
-<li><a href="#raccourcis-claviers-_bindings_-de-micro">Raccourcis claviers (<em>bindings</em>) de <strong>micro</strong></a>
-<ul>
-<li><a href="#la-liste-principale">La liste principale</a></li>
-<li><a href="#dautres-classiques">D&apos;autres classiques</a></li>
-<li><a href="#avec-les-s%C3%A9lections">Avec les s&#xE9;lections</a></li>
-<li><a href="#multi-curseur">Multi-curseur</a></li>
-<li><a href="#la-notion-de-_buffer_">La notion de <em>buffer</em></a></li>
-</ul>
-</li>
-<li><a href="#le-mode-commande-de-micro">Le mode commande de <strong>micro</strong></a></li>
-</ul>
-<h2 class="mume-header" id="introduction">Introduction</h2>
-
-<h3 class="mume-header" id="les-%C3%A9diteurs-en-mode-texte">Les &#xE9;diteurs en mode texte</h3>
-
-<p>Il existe plusieurs &#xE9;diteurs en mode texte, que l&apos;on peut int&#xE9;grer dans un terminal. Les plus connus sont, par ordre alphab&#xE9;tique :</p>
-<ul>
-<li>Emacs</li>
-<li>micro</li>
-<li>nano</li>
-<li>Vim</li>
-</ul>
-<p>Emacs et Vim seront peut-&#xEA;tre un choix judicieux pour une utilisation intensive, plus tard, mais pas pour d&#xE9;couvrir l&apos;&#xE9;dition de code.</p>
-<p><strong>micro</strong> se pr&#xE9;sente comme le successeur de nano et offre des raccourcis claviers plus usuels et aussi plus de possibilit&#xE9;s.</p>
-<p>Nous utiliserons donc <strong>micro</strong> pour cette activit&#xE9;, et montrerons quelques possibilit&#xE9;s utiles.</p>
-<h3 class="mume-header" id="objectifs">Objectifs</h3>
-
-<ul>
-<li>&#xC9;diter un fichier texte, ou un script.
-<ul>
-<li>Faire des s&#xE9;lections.</li>
-<li>Utiliser le couper/copier/coller.</li>
-<li>Utiliser plusieurs curseurs.</li>
-<li>Utiliser une fonction pour remplacer du texte par un autre.</li>
-</ul>
-</li>
-<li>Obtenir sur un m&#xEA;me &#xE9;cran, une fen&#xEA;tre d&apos;&#xE9;dition de code et une fen&#xEA;tre de terminal de commande.</li>
-<li>Comprendre la notion de <em>buffer</em>.</li>
-</ul>
-<h2 class="mume-header" id="raccourcis-claviers-_bindings_-de-micro">Raccourcis claviers (<em>bindings</em>) de <strong>micro</strong></h2>
-
-<h3 class="mume-header" id="la-liste-principale">La liste principale</h3>
-
-<p><kbd>Alt</kbd>+<kbd>G</kbd> affiche les raccourcis classiques, les plus importants :</p>
-<ul>
-<li><kbd>Ctrl</kbd>+<kbd>Q</kbd> pour quitter (<em><strong>Q</strong>uit</em>)</li>
-<li><kbd>Ctrl</kbd>+<kbd>S</kbd> pour sauvegarder (<em><strong>S</strong>ave</em>)</li>
-<li><kbd>Ctrl</kbd>+<kbd>O</kbd> pour ouvrir (<em><strong>O</strong>pen</em>)</li>
-<li><kbd>Ctrl</kbd>+<kbd>Z</kbd> pour annuler (<em>Undo</em>)</li>
-<li><kbd>Ctrl</kbd>+<kbd>Y</kbd> pour refaire (<em>Redo</em>)</li>
-<li><kbd>Ctrl</kbd>+<kbd>F</kbd> pour rechercher (<em><strong>F</strong>ind</em>)</li>
-</ul>
-<h3 class="mume-header" id="dautres-classiques">D&apos;autres classiques</h3>
-
-<p>Il y a aussi les autres classiques &#xE0; conna&#xEE;tre concernant les selections :</p>
-<ul>
-<li><kbd>Ctrl</kbd>+<kbd>A</kbd> pour tout s&#xE9;lectionner</li>
-<li><kbd>Ctrl</kbd>+<kbd>X</kbd> pour couper la s&#xE9;lection</li>
-<li><kbd>Ctrl</kbd>+<kbd>C</kbd> pour copier la s&#xE9;lection</li>
-<li><kbd>Ctrl</kbd>+<kbd>V</kbd> pour coller la s&#xE9;lection</li>
-</ul>
-<p>Et concernant la duplication ou la suppression</p>
-<ul>
-<li><kbd>Ctrl</kbd>+<kbd>D</kbd> pour dupliquer une ligne ou la s&#xE9;lection</li>
-<li><kbd>Ctrl</kbd>+<kbd>K</kbd> pour supprimer une ligne</li>
-</ul>
-<p>Ces deux derniers ne sont pas utilis&#xE9;s par tous les &#xE9;diteurs, mais par plusieurs comme Sublime Text, Geany, micro et d&apos;autres.</p>
-<h3 class="mume-header" id="avec-les-s%C3%A9lections">Avec les s&#xE9;lections</h3>
-
-<ul>
-<li>Quand on appuie sur <kbd>Maj.</kbd> (i.e. la touche <kbd>SHIFT</kbd>, ou <kbd>&#x21E7;</kbd>) : d&#xE9;placer le curseur avec les fl&#xE8;ches ou la souris construit une s&#xE9;lection.</li>
-<li>Quand on appuie sur <kbd>Ctrl</kbd> : d&#xE9;placer le curseur avec les fl&#xE8;ches se fait mot par mot au lieu de caract&#xE8;re par caract&#xE8;re. On peut le combiner avec <kbd>Maj.</kbd> pour construire rapidement une s&#xE9;lection de mots.</li>
-<li>Les touches <kbd>D&#xE9;but</kbd> (ou <kbd><em>Home</em></kbd> ou <kbd>&#x1F86C;</kbd>) et <kbd>Fin</kbd> (ou <kbd><em>End</em></kbd>) sont aussi utiles.</li>
-</ul>
-<blockquote>
-<p><strong>Tous</strong> ces raccourcis claviers sont &#xE0; conna&#xEE;tre ; on les retrouve dans de nombreux logiciels, c&apos;est aussi une raison pour recommander l&apos;utilisation de <strong>micro</strong>.</p>
-</blockquote>
-<h3 class="mume-header" id="multi-curseur">Multi-curseur</h3>
-
-<p>Une facilit&#xE9; que l&apos;on retrouve avec certains &#xE9;diteurs est le multi-curseur. En appuyant sur <kbd>Ctrl</kbd> et en cliquant dans un texte, on fait appara&#xEE;tre un curseur de plus, c&apos;est utile pour modifier plusieurs lignes &#xE0; la fois, en ajout/suppression.</p>
-<p>On sort du mode multi-curseur en appuyant sur <kbd>&#xC9;chap</kbd>.</p>
-<h3 class="mume-header" id="la-notion-de-_buffer_">La notion de <em>buffer</em></h3>
-
-<dl>
-<dt><em>Buffer</em></dt>
-<dd>Un <em>buffer</em> est (pour son aspect visible) un panneau rectangulaire qui affiche le contenu d&apos;un fichier en cours d&apos;&#xE9;dition. Un <em>buffer</em> est surtout l&apos;&#xE9;tat en m&#xE9;moire vive de ce fichier ; on peut le sauvegarder sur support permanent comme un disque dur ou la m&#xE9;moire <em>flash</em> d&apos;une tablette. On peut aussi recharger le <em>buffer</em> si la version enregistr&#xE9;e est diff&#xE9;rente ; par exemple si le fichier a &#xE9;t&#xE9; modifi&#xE9; par un autre programme.</dd>
-</dl>
-<h2 class="mume-header" id="le-mode-commande-de-micro">Le mode commande de <strong>micro</strong></h2>
-
-<p>Il est possible de partager l&apos;&#xE9;cran de micro en deux parties ou plus, un partage vertical ou horizontal du <em>buffer</em> actuel (la fen&#xEA;tre active).</p>
-<p>Il est possible d&apos;effectuer des recherches et des remplacements de texte dans un document.</p>
-<p>Il est possible d&apos;avoir un buffer avec une invite de commande Bash &#xE0; l&apos;int&#xE9;rieur de micro, et bien d&apos;autres choses.</p>
-<blockquote>
-<p>&#xC0; partir d&apos;un buffer, on entre sur <kbd>Ctrl</kbd>+<kbd>E</kbd> pour obtenir l&apos;invite de commande de micro. C&apos;est un <strong>CLI</strong> ! L&apos;invite de commande de micro est <code>&gt;</code>.</p>
-</blockquote>
-<p>Quelques commandes micro disponibles :</p>
-<ul>
-<li><code>&gt; vsplit</code></li>
-<li><code>&gt; hsplit</code></li>
-<li><code>&gt; replace machin chose</code></li>
-<li><code>&gt; term</code></li>
-</ul>
-<hr>
-<p>&#xC0; compl&#xE9;ter...</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#introduction">Introduction</a>
-<ul>
-<li><a href="#les-%C3%A9diteurs-en-mode-texte">Les &#xE9;diteurs en mode texte</a></li>
-<li><a href="#objectifs">Objectifs</a></li>
-</ul>
-</li>
-<li><a href="#raccourcis-claviers-_bindings_-de-micro">Raccourcis claviers (<em>bindings</em>) de <strong>micro</strong></a>
-<ul>
-<li><a href="#la-liste-principale">La liste principale</a></li>
-<li><a href="#dautres-classiques">D&apos;autres classiques</a></li>
-<li><a href="#avec-les-s%C3%A9lections">Avec les s&#xE9;lections</a></li>
-<li><a href="#multi-curseur">Multi-curseur</a></li>
-<li><a href="#la-notion-de-_buffer_">La notion de <em>buffer</em></a></li>
-</ul>
-</li>
-<li><a href="#le-mode-commande-de-micro">Le mode commande de <strong>micro</strong></a></li>
+<li><a href="#ihm-mode-texte">IHM mode texte</a></li>
 </ul>
 </div>
       <a id="sidebar-toc-btn">&#x2261;</a>

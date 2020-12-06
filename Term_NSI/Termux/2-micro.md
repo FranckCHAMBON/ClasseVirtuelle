@@ -5,7 +5,7 @@
 @import "abstract.md"
 
 
-## Sommaire {ignore=true}
+## Sommaire de la partie 2 {ignore=true}
 
 [TOC]
 
@@ -91,3 +91,8 @@ Quelques commandes micro disponibles :
 * `> hsplit`
 * `> replace machin chose`
 * `> term`
+
+
+---
+
+À compléter...
