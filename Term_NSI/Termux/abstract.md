@@ -7,5 +7,5 @@ Le document suivant est placé sous licence libre [CC - BY-NC-SA 4.0](https://cr
 * Partie 0 : [Installations de Termux](0-termux.html)
 * Partie 1 : [Découverte de Bash](1-bash.html)
 * Partie 2 : [Édition de code dans un terminal](2-micro.html)
-* Partie 3 : [Jeux de tests](3-tests.html)
+* Partie 3 : [Jeux de tests](3-tests.html) *À venir*
 

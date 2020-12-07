@@ -60,4 +60,76 @@ Nous verrons plusieurs méthodes de résolution, avec différentes complexités.
 
 ## Solution
 
-*À venir*
+### Basique
+
+```python
+"""
+auteur : Franck CHAMBON
+Régional 2013 - Problème 3 - XOR
+https://prologin.org/train/2013/semifinal/xor
+"""
+
+def unique(effectif, liste):
+    """Renvoie l'élément unique d'une liste de longueur effectif,
+       quand les autres sont en double.
+    >>> unique(3, [18, 42, 18])
+    42
+    >>> unique(5, [1, 18, 42, 18, 1])
+    42
+    """
+    liste_triée = sorted(liste) # une copie triée
+    liste_triée.append(1_000_001) # on ajoute un dernier pour avoir un nombre pair
+    # 1,1,  3,3,  5,5,  7,8,  8,9,  9,10,  10,10 ...
+    # le premier couple distinct indique l'élément unique ; à gauche 
+    for i in range(0, n, 2):
+        if liste_triée[i] != liste_triée[i+1]:
+            return liste_triée[i]
+
+effectif = int(input())
+nombres = list(map(int, input().split()))
+
+print(unique(effectif, nombres))
+```
+
+### *Smart*
+
+On utilise la propriété de `XOR`, le ou exclusif bit-à-bit.
+
+Cet opérateur binaire est :
++ commutatif : $a \text{ XOR } b = b \text{ XOR } a$
++ associatif : $(a \text{ XOR } b) \text{ XOR } c = a \text{ XOR } (b \text{ XOR } c)$
++ et on a : $a \text{ XOR } a = 0$
++ et aussi : $a \text{ XOR } 0 = a$
+
+De sorte que dans une liste où tous les nombres sont en doublon, un $\text{XOR}$ de tous les nombres conduit à zéro, en effet on $\text{XOR}$ dans l'ordre que l'on veut, le résultat.
+
+Le dernier nombre seul, en appliquant le dernier $\text{XOR}$ avec zéro reste inchangé.
+
+D'après les propriétés de $\text{XOR}$, on peut faire les opérations dans l'ordre de la liste.
+
+
+```python
+effectif = int(input())
+nombres = map(int, input().split()) 
+
+ans = 0
+for n in nombres:
+    ans = ans ^ n
+    # ans ^= n # équivalent
+
+print(ans)
+```
+
+
+Et avec un style fonctionnel, on a :
+```python
+from functools import reduce
+from operator import xor
+
+effectif = int(input())
+nombres = map(int, input().split())
+
+unique = reduce(xor, nombres)
+
+print(unique)
+```

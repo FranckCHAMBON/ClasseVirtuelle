@@ -39,6 +39,14 @@ Souvent un tournoi commence par un test de lecture, écriture sur l'entrée stan
 ## Solution
 
 ```python
-n = int(input())
-print("42") # Ou bien print(42) c'est pareil
+"""
+auteur : Franck CHAMBON
+Régional 2013 - Problème 1 - La réponse à la question universelle
+https://prologin.org/train/2013/semifinal/42
+"""
+
+l_entier_21 = int(input())
+réponse_question_universelle = 2 * l_entier_21
+print(réponse_question_universelle)
 ```
+

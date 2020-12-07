@@ -85,8 +85,48 @@ td.y
 <span class="token string">&apos;...azerty&apos;</span>
 </pre><h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 5 - Gravity
+https://prologin.org/train/2013/semifinal/gravity
+&quot;&quot;&quot;</span>
 
+<span class="token keyword">def</span> <span class="token function">gravite</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la cha&#xEE;ne avec les &apos;.&apos; au d&#xE9;but
+    &gt;&gt;&gt; gravite(&apos;a.zer..ty&apos;)
+    &apos;...azerty&apos;
+    &quot;&quot;&quot;</span>
+    <span class="token comment"># on construit une liste sans les &apos;.&apos;</span>
+    ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> cha&#xEE;ne<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">!=</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+            ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    
+    <span class="token comment"># n : la quantit&#xE9; de &apos;.&apos; manquants</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+    <span class="token comment"># on ajoute au d&#xE9;but les &apos;.&apos; manquants</span>
+    ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;.&apos;</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">+</span> ans
+    <span class="token comment"># join : pour obtenir une cha&#xEE;ne coll&#xE9;e</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+
+<span class="token comment"># 1. lecture de l&apos;entr&#xE9;e</span>
+nb_lignes<span class="token punctuation">,</span> nb_colonnes <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 2. r&#xE9;solution</span>
+<span class="token comment"># ans : une grille pleine de &apos;.&apos;</span>
+ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&apos;.&apos;</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_colonnes<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_colonnes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    colonne_j <span class="token operator">=</span> <span class="token punctuation">[</span>grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment"># la colonne_j va subir la gravit&#xE9;</span>
+    colonne_j <span class="token operator">=</span> gravite<span class="token punctuation">(</span>colonne_j<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ans<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> colonne_j<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+<span class="token comment"># 3. &#xE9;criture de la sortie</span>
+<span class="token keyword">for</span> ligne <span class="token keyword">in</span> ans<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>ligne<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-5httpsprologinorgtrain2013semifinalgravity">Probl&#xE8;me 5</a>

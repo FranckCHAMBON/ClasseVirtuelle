@@ -4,6 +4,8 @@ Pour varier l'utilisation des juges en lignes, je vous propose [Prologin](https:
 
 En guise de devoir maison, je vous demande de faire des exercices parmi l'[entraînement régional 2013](https://prologin.org/train/2013/semifinal) ; dans l'ordre, autant que vous pouvez.
 
+**Nouveau ; corrigé inclus**
+
 1. [La réponse à la question universelle](Prologin2013/prob-1.html)
 2. [QI](Prologin2013/prob-2.html)
 3. [XOR](Prologin2013/prob-3.html)

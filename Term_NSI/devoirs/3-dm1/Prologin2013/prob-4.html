@@ -93,8 +93,60 @@ cccc
 </ol>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 4 - GATE OF STEINER
+https://prologin.org/train/2013/semifinal/gate_of_steiner
+&quot;&quot;&quot;</span>
 
+<span class="token keyword">def</span> <span class="token function">donne_lettre</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la lettre minuscule d&apos;indice i (de 0 &#xE0; 25)
+    &gt;&gt;&gt; donne_lettre(0)
+    &apos;a&apos;
+    &gt;&gt;&gt; donne_lettre(25)
+    &apos;z&apos;
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">assert</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> i <span class="token operator">&lt;=</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f&quot;i = </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string"> mais devrait &#xEA;tre de 0 &#xE0; 25&quot;</span></span>
+    <span class="token keyword">return</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> i<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">donne_indice</span><span class="token punctuation">(</span>lettre<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie l&apos;indice de la lettre minuscule, de 0 &#xE0; 25
+    &gt;&gt;&gt; donne_indice(&apos;a&apos;)
+    0
+    &gt;&gt;&gt; donne_indice(&apos;z&apos;)
+    25
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>lettre<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;il ne doit y avoir qu&apos;un seul caract&#xE8;re&quot;</span>
+    <span class="token keyword">assert</span> <span class="token string">&apos;a&apos;</span> <span class="token operator">&lt;=</span> lettre <span class="token operator">&lt;=</span> <span class="token string">&apos;z&apos;</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f&quot;&apos;</span><span class="token interpolation"><span class="token punctuation">{</span>lettre<span class="token punctuation">}</span></span><span class="token string">&apos; n&apos;est pas une lettre minuscule&quot;</span></span>
+    <span class="token keyword">return</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>lettre<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 1. initialisation d&apos;une liste de 26 compteurs</span>
+compteurs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 2. lecture de l&apos;entr&#xE9;e</span>
+largeur<span class="token punctuation">,</span> longueur <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>largeur<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ligne <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ligne<span class="token punctuation">)</span> <span class="token operator">==</span> longueur<span class="token punctuation">,</span> <span class="token string">&quot;Probl&#xE8;me avec la longueur de la ligne&quot;</span>
+    <span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> ligne<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token string">&apos;a&apos;</span> <span class="token operator">&lt;=</span> caract&#xE8;re <span class="token operator">&lt;=</span> <span class="token string">&apos;z&apos;</span><span class="token punctuation">:</span>
+            <span class="token comment"># caract&#xE8;re est une lettre</span>
+            indice <span class="token operator">=</span> donne_indice<span class="token punctuation">(</span>caract&#xE8;re<span class="token punctuation">)</span>
+            compteurs<span class="token punctuation">[</span>indice<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token comment"># on construit une liste de couples (compteur, indice)</span>
+<span class="token comment"># + i est un indice, on filtre ceux qui ont un compteur &gt; 0</span>
+<span class="token comment"># + compteur[i] donne l&apos;effectif associ&#xE9; &#xE0; i</span>
+<span class="token comment"># on a plac&#xE9; compteur en premier dans le couple,</span>
+<span class="token comment"># + on obtient ainsi un tri sur les compteurs,</span>
+<span class="token comment"># + on a choisit l&apos;ordre inverse.</span>
+
+couples <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>compteurs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span> <span class="token keyword">if</span> compteurs<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">]</span>
+couples<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 3. &#xE9;criture de la sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>donne_lettre<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> q<span class="token punctuation">,</span>i <span class="token keyword">in</span> couples<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-4httpsprologinorgtrain2013semifinalgate_of_steiner">Probl&#xE8;me 4</a>

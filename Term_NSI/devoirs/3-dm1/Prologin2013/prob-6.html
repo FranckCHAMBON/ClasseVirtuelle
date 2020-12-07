@@ -175,8 +175,37 @@ aluminium faucille uranium poire mousse fluoromethyle corde dent dentifrice oeil
 </ul>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 6 - Reverse Alchemying
+https://prologin.org/train/2013/semifinal/reverse_alchemying
+&quot;&quot;&quot;</span>
 
+nb_ingr&#xE9;dients<span class="token punctuation">,</span> nb_recettes <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+recettes <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_recettes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    num&#xE9;ros <span class="token operator">=</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    recettes<span class="token punctuation">[</span>num&#xE9;ros<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> num&#xE9;ros<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+ingr&#xE9;dients <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_ingr&#xE9;dients<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">affiche</span><span class="token punctuation">(</span>id_produit<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> id_produit <span class="token keyword">in</span> recettes<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> id_sous_produit <span class="token keyword">in</span> recettes<span class="token punctuation">[</span>id_produit<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            affiche<span class="token punctuation">(</span>id_sous_produit<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>ingr&#xE9;dients<span class="token punctuation">[</span>id_produit<span class="token punctuation">]</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; = &quot;</span><span class="token punctuation">)</span>
+        ingr&#xE9;dients_produit <span class="token operator">=</span> <span class="token punctuation">(</span>ingr&#xE9;dients<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> recettes<span class="token punctuation">[</span>id_produit<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot; + &quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>ingr&#xE9;dients_produit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+affiche<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment"># r&#xE9;cursivement, affiche avant les ingr&#xE9;dients n&#xE9;cessaires avec leur formule</span>
+
+<span class="token comment"># et les produits de base</span>
+<span class="token keyword">for</span> id_produit <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_ingr&#xE9;dients<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> id_produit <span class="token keyword">not</span> <span class="token keyword">in</span> recettes<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>ingr&#xE9;dients<span class="token punctuation">[</span>id_produit<span class="token punctuation">]</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-6httpsprologinorgtrain2013semifinalreverse_alchemying">Probl&#xE8;me 6</a>

@@ -84,8 +84,53 @@
 <p>Pensez &#xE0; bien choisir vos identifiants ; vous &#xEA;tes aussi not&#xE9;s sur la qualit&#xE9; de votre code, pas seulement son efficacit&#xE9;.</p>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<h3 class="mume-header" id="basique">Basique</h3>
 
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_personnes <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+liste_qi <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plus_bas_qi <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>liste_qi<span class="token punctuation">)</span>
+qi_groupe <span class="token operator">=</span> plus_bas_qi <span class="token operator">//</span> nb_personnes
+<span class="token keyword">print</span><span class="token punctuation">(</span>qi_groupe<span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="avec-poo">Avec POO</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 2 - QI
+https://prologin.org/train/2013/semifinal/qi
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Groupe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token string">&quot;Constructeur&quot;</span>
+        self<span class="token punctuation">.</span>__liste_qi <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> <span class="token function">taille</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        <span class="token string">&quot;Renvoie le nombre de membres&quot;</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__liste_qi<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">ajoute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> un_qi<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token string">&quot;Ajoute un_qi d&apos;un nouveau membre du groupe&quot;</span>
+        self<span class="token punctuation">.</span>__liste_qi<span class="token punctuation">.</span>append<span class="token punctuation">(</span>un_qi<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">qi</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">float</span><span class="token punctuation">:</span>
+        <span class="token string">&quot;Renvoie la partie enti&#xE8;re du QI du groupe suivant la d&#xE9;finition de Pratchett&quot;</span>
+        <span class="token keyword">return</span> <span class="token builtin">min</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__liste_qi<span class="token punctuation">)</span> <span class="token operator">//</span> self<span class="token punctuation">.</span>taille<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># initialisation</span>
+groupe <span class="token operator">=</span> Groupe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">## lecture de l&apos;entr&#xE9;e</span>
+nb_personnes <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> qi <span class="token keyword">in</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    groupe<span class="token punctuation">.</span>ajoute<span class="token punctuation">(</span>qi<span class="token punctuation">)</span>
+
+<span class="token comment">## test optionnel</span>
+<span class="token keyword">assert</span> nb_personnes <span class="token operator">==</span> groupe<span class="token punctuation">.</span>taille<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;Erreur avec le nombre de personnes !&quot;</span>
+
+<span class="token comment">## &#xE9;criture sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>groupe<span class="token punctuation">.</span>qi<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-2httpsprologinorgtrain2013semifinalqi">Probl&#xE8;me 2</a>
@@ -103,7 +148,12 @@
 </ul>
 </li>
 <li><a href="#indices">Indices</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#basique">Basique</a></li>
+<li><a href="#avec-poo">Avec POO</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

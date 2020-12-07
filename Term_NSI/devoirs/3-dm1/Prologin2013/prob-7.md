@@ -86,4 +86,70 @@ Exemple de sortie
 
 ## Solution
 
-*À venir*
+```python
+"""
+auteur : Franck CHAMBON
+Régional 2013 - Problème 7 - Échec et mat
+https://prologin.org/train/2013/semifinal/echec_et_mat
+"""
+
+def est_valide(i: int, j: int) -> bool:
+    """Renvoie un booléen : (i, j) est-il dans la grille 8×8?
+    Les coordonnées vont de 0 à 7.
+    >>> est_valide(2, 5)
+    True
+    >>> est_valide(5, 8)
+    False
+    >>> est_valide(-2, 5)
+    False
+    """
+    return (0 <= i < 8) and (0 <= j < 8)
+
+def marque(i_0: int, j_0: int) -> None:
+    """Modifie la grille, en marquant les cases menacées
+    par une reine placée en (i_0, j_0).
+    """
+    # on marque la colonne j_0
+    for i in range(8):
+        if grille[i][j_0] == '.':
+            grille[i][j_0] = 'x'
+
+    # on marque la ligne i_0
+    for j in range(8):
+        if grille[i_0][j] == '.':
+            grille[i_0][j] = 'x'
+    
+    # on marque une diagonale
+    for k in range(-7, 8):
+        i = i_0 + k
+        j = j_0 + k
+        if est_valide(i, j):
+            if grille[i][j] == '.':
+                grille[i][j] = 'x'
+
+    # on marque l'autre diagonale
+    for k in range(-7, 8):
+        i = i_0 + k
+        j = j_0 - k
+        if est_valide(i, j):
+            if grille[i][j] == '.':
+                grille[i][j] = 'x'
+
+
+# 1. lecture de l'entrée
+grille = [list(input()) for _ in range(8)]
+
+# 2. on marque les cases menacées
+for i in range(8):
+    for j in range(8):
+        if grille[i][j] == 'X':
+            marque(i, j)
+
+# 3. on compte les cases non menacées
+ans = 0
+for i in range(8):
+    for j in range(8):
+        if grille[i][j] == '.':
+            ans += 1
+print(ans)
+```

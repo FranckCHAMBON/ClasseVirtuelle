@@ -159,4 +159,35 @@ Exemple de sortie
 
 ## Solution
 
-*À venir*
+```python
+"""
+auteur : Franck CHAMBON
+Régional 2013 - Problème 6 - Reverse Alchemying
+https://prologin.org/train/2013/semifinal/reverse_alchemying
+"""
+
+nb_ingrédients, nb_recettes = map(int, input().split())
+
+recettes = dict()
+for _ in range(nb_recettes):
+    numéros = tuple(map(int, input().split()))
+    recettes[numéros[0]] = numéros[1:]
+
+ingrédients = [input() for _ in range(nb_ingrédients)]
+
+def affiche(id_produit: int) -> None:
+    if id_produit in recettes:
+        for id_sous_produit in recettes[id_produit]:
+            affiche(id_sous_produit)
+        print(ingrédients[id_produit], end=" = ")
+        ingrédients_produit = (ingrédients[i] for i in recettes[id_produit])
+        print(" + ".join(ingrédients_produit))
+
+affiche(0)
+# récursivement, affiche avant les ingrédients nécessaires avec leur formule
+
+# et les produits de base
+for id_produit in range(nb_ingrédients):
+    if id_produit not in recettes:
+        print(ingrédients[id_produit], end=" ")
+```

@@ -102,8 +102,72 @@ x..x..x.
 </ul>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 7 - &#xC9;chec et mat
+https://prologin.org/train/2013/semifinal/echec_et_mat
+&quot;&quot;&quot;</span>
 
+<span class="token keyword">def</span> <span class="token function">est_valide</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> j<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un bool&#xE9;en : (i, j) est-il dans la grille 8&#xD7;8?
+    Les coordonn&#xE9;es vont de 0 &#xE0; 7.
+    &gt;&gt;&gt; est_valide(2, 5)
+    True
+    &gt;&gt;&gt; est_valide(5, 8)
+    False
+    &gt;&gt;&gt; est_valide(-2, 5)
+    False
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> j <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">marque</span><span class="token punctuation">(</span>i_0<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> j_0<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Modifie la grille, en marquant les cases menac&#xE9;es
+    par une reine plac&#xE9;e en (i_0, j_0).
+    &quot;&quot;&quot;</span>
+    <span class="token comment"># on marque la colonne j_0</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j_0<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+            grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j_0<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;x&apos;</span>
+
+    <span class="token comment"># on marque la ligne i_0</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i_0<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+            grille<span class="token punctuation">[</span>i_0<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;x&apos;</span>
+    
+    <span class="token comment"># on marque une diagonale</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> i_0 <span class="token operator">+</span> k
+        j <span class="token operator">=</span> j_0 <span class="token operator">+</span> k
+        <span class="token keyword">if</span> est_valide<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+                grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;x&apos;</span>
+
+    <span class="token comment"># on marque l&apos;autre diagonale</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> i_0 <span class="token operator">+</span> k
+        j <span class="token operator">=</span> j_0 <span class="token operator">-</span> k
+        <span class="token keyword">if</span> est_valide<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+                grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;x&apos;</span>
+
+
+<span class="token comment"># 1. lecture de l&apos;entr&#xE9;e</span>
+grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 2. on marque les cases menac&#xE9;es</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;X&apos;</span><span class="token punctuation">:</span>
+            marque<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+
+<span class="token comment"># 3. on compte les cases non menac&#xE9;es</span>
+ans <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">:</span>
+            ans <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-7httpsprologinorgtrain2013semifinalechec_et_mat">Probl&#xE8;me 7</a>

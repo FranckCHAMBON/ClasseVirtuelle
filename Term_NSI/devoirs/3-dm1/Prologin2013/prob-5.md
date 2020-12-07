@@ -70,4 +70,46 @@ Il sera judicieux de fabriquer une fonction qui prend une liste ou une chaîne d
 
 ## Solution
 
-*À venir*
+```python
+"""
+auteur : Franck CHAMBON
+Régional 2013 - Problème 5 - Gravity
+https://prologin.org/train/2013/semifinal/gravity
+"""
+
+def gravite(chaîne):
+    """Renvoie la chaîne avec les '.' au début
+    >>> gravite('a.zer..ty')
+    '...azerty'
+    """
+    # on construit une liste sans les '.'
+    ans = []
+    for x in chaîne:
+        if x != '.':
+            ans.append(x)
+    
+    # n : la quantité de '.' manquants
+    n = len(chaîne) - len(ans)
+    # on ajoute au début les '.' manquants
+    ans = ['.' for _ in range(n)] + ans
+    # join : pour obtenir une chaîne collée
+    return "".join(ans)
+
+# 1. lecture de l'entrée
+nb_lignes, nb_colonnes = map(int, input().split())
+grille = [list(input()) for _ in range(nb_lignes)]
+
+# 2. résolution
+# ans : une grille pleine de '.'
+ans = [['.' for _ in range(nb_colonnes)] for _ in range(nb_lignes)]
+for j in range(nb_colonnes):
+    colonne_j = [grille[i][j] for i in range(nb_lignes)]
+    # la colonne_j va subir la gravité
+    colonne_j = gravite(colonne_j)
+    for i in range(nb_lignes):
+        ans[i][j] = colonne_j[i]
+
+# 3. écriture de la sortie
+for ligne in ans:
+    print("".join(ligne))
+```

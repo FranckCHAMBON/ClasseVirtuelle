@@ -81,8 +81,67 @@
 </ul>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<p><em>&#xC0; venir</em></p>
+<h3 class="mume-header" id="basique">Basique</h3>
 
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+R&#xE9;gional 2013 - Probl&#xE8;me 3 - XOR
+https://prologin.org/train/2013/semifinal/xor
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">unique</span><span class="token punctuation">(</span>effectif<span class="token punctuation">,</span> liste<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie l&apos;&#xE9;l&#xE9;ment unique d&apos;une liste de longueur effectif,
+       quand les autres sont en double.
+    &gt;&gt;&gt; unique(3, [18, 42, 18])
+    42
+    &gt;&gt;&gt; unique(5, [1, 18, 42, 18, 1])
+    42
+    &quot;&quot;&quot;</span>
+    liste_tri&#xE9;e <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>liste<span class="token punctuation">)</span> <span class="token comment"># une copie tri&#xE9;e</span>
+    liste_tri&#xE9;e<span class="token punctuation">.</span>append<span class="token punctuation">(</span>1_000_001<span class="token punctuation">)</span> <span class="token comment"># on ajoute un dernier pour avoir un nombre pair</span>
+    <span class="token comment"># 1,1,  3,3,  5,5,  7,8,  8,9,  9,10,  10,10 ...</span>
+    <span class="token comment"># le premier couple distinct indique l&apos;&#xE9;l&#xE9;ment unique ; &#xE0; gauche </span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> liste_tri&#xE9;e<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> liste_tri&#xE9;e<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> liste_tri&#xE9;e<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+effectif <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nombres <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>unique<span class="token punctuation">(</span>effectif<span class="token punctuation">,</span> nombres<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="smart"><em>Smart</em></h3>
+
+<p>On utilise la propri&#xE9;t&#xE9; de <code>XOR</code>, le ou exclusif bit-&#xE0;-bit.</p>
+<p>Cet op&#xE9;rateur binaire est :</p>
+<ul>
+<li>commutatif : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mtext>&#xA0;XOR&#xA0;</mtext><mi>b</mi><mo>=</mo><mi>b</mi><mtext>&#xA0;XOR&#xA0;</mtext><mi>a</mi></mrow><annotation encoding="application/x-tex">a \text{ XOR } b = b \text{ XOR } a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">a</span></span></span></span></li>
+<li>associatif : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mtext>&#xA0;XOR&#xA0;</mtext><mi>b</mi><mo stretchy="false">)</mo><mtext>&#xA0;XOR&#xA0;</mtext><mi>c</mi><mo>=</mo><mi>a</mi><mtext>&#xA0;XOR&#xA0;</mtext><mo stretchy="false">(</mo><mi>b</mi><mtext>&#xA0;XOR&#xA0;</mtext><mi>c</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a \text{ XOR } b) \text{ XOR } c = a \text{ XOR } (b \text{ XOR } c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span></li>
+<li>et on a : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mtext>&#xA0;XOR&#xA0;</mtext><mi>a</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \text{ XOR } a = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+<li>et aussi : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mtext>&#xA0;XOR&#xA0;</mtext><mn>0</mn><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">a \text{ XOR } 0 = a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord text"><span class="mord">&#xA0;XOR&#xA0;</span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></li>
+</ul>
+<p>De sorte que dans une liste o&#xF9; tous les nombres sont en doublon, un <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>XOR</mtext></mrow><annotation encoding="application/x-tex">\text{XOR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">XOR</span></span></span></span></span> de tous les nombres conduit &#xE0; z&#xE9;ro, en effet on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>XOR</mtext></mrow><annotation encoding="application/x-tex">\text{XOR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">XOR</span></span></span></span></span> dans l&apos;ordre que l&apos;on veut, le r&#xE9;sultat.</p>
+<p>Le dernier nombre seul, en appliquant le dernier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>XOR</mtext></mrow><annotation encoding="application/x-tex">\text{XOR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">XOR</span></span></span></span></span> avec z&#xE9;ro reste inchang&#xE9;.</p>
+<p>D&apos;apr&#xE8;s les propri&#xE9;t&#xE9;s de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>XOR</mtext></mrow><annotation encoding="application/x-tex">\text{XOR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">XOR</span></span></span></span></span>, on peut faire les op&#xE9;rations dans l&apos;ordre de la liste.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">effectif <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nombres <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+
+ans <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> nombres<span class="token punctuation">:</span>
+    ans <span class="token operator">=</span> ans <span class="token operator">^</span> n
+    <span class="token comment"># ans ^= n # &#xE9;quivalent</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+</pre><p>Et avec un style fonctionnel, on a :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> <span class="token builtin">reduce</span>
+<span class="token keyword">from</span> operator <span class="token keyword">import</span> xor
+
+effectif <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nombres <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+unique <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span>xor<span class="token punctuation">,</span> nombres<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>unique<span class="token punctuation">)</span>
+</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
 <li><a href="#probl%C3%A8me-3httpsprologinorgtrain2013semifinalxor">Probl&#xE8;me 3</a>
@@ -100,7 +159,12 @@
 </ul>
 </li>
 <li><a href="#indices">Indices</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#basique">Basique</a></li>
+<li><a href="#smart"><em>Smart</em></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
