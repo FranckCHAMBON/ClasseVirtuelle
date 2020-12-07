@@ -95,7 +95,7 @@ class Groupe():
         "Ajoute un_qi d'un nouveau membre du groupe"
         self.__liste_qi.append(un_qi)
     
-    def qi(self) -> float:
+    def qi(self) -> int:
         "Renvoie la partie entière du QI du groupe suivant la définition de Pratchett"
         return min(self.__liste_qi) // self.taille()
 

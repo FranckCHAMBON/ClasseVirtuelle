@@ -87,6 +87,8 @@ def gravite(chaîne):
     for x in chaîne:
         if x != '.':
             ans.append(x)
+    # variante fonctionnelle des 4 lignes précédentes
+    ans = [x for x in chaîne if x != '.']
     
     # n : la quantité de '.' manquants
     n = len(chaîne) - len(ans)
