@@ -1,0 +1,4 @@
+```diff
+-truc
++bidule
+```

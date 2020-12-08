@@ -26,7 +26,7 @@
 
 ## Tableaux avancés
 
-* ...à venir...
+* [Érosion](5-érosion.html), avec POO
 
 ## Tris simples
 
