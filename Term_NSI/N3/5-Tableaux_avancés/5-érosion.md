@@ -102,11 +102,11 @@ class Image:
         return érodée
 
 
-nb_érosion = int(input())
+nb_érosions = int(input())
 nb_lignes, nb_colonnes = map(int, input().split())
 grille = [list(input()) for _ in range(nb_lignes)]
 image = Image(nb_lignes, nb_colonnes, grille)
-for _ in range(nb_érosion):
+for _ in range(nb_érosions):
     image = image.érosion()
 image.affiche()
 ```
