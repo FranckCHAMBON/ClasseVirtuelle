@@ -81,7 +81,7 @@ class Image:
             self.__grille = grille
         else:
             self.__grille = [['.' for _ in range(nb_colonnes)]
-                            for _ in range(nb_lignes)]
+                                for _ in range(nb_lignes)]
     
     def affiche(self):
         for ligne in self.__grille:
