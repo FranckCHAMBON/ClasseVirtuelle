@@ -27,6 +27,7 @@
 ## Tableaux avancés
 
 * [Infographie](5-Tableaux_avancés/1-infographie.html), avec POO
+* [Carré magique](5-Tableaux_avancés/2-carré_magique.html), avec `any`
 * [Érosion](5-Tableaux_avancés/5-érosion.html), avec POO
 
 ## Tris simples
