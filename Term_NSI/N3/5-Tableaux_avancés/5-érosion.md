@@ -1,6 +1,6 @@
 # [Érosion](http://www.france-ioi.org/algo/task.php?idChapter=564&idTask=1124)
 
-
+modif...
 
 Le but de ce sujet est d'implémenter une opération classique de traitement d'images appelée "érosion", qui consiste en gros à faire décroître légèrement la taille d'une forme donnée dessinée en noir sur un fond blanc. Le principe est d'effacer (i.e. rendre blanc) tous les pixels de l'image qui ne sont pas entourés de quatre pixels noirs. Dans ce sujet, on répète ce processus d'érosion un certain nombre de fois afin que la transformation soit bien visible.
 
