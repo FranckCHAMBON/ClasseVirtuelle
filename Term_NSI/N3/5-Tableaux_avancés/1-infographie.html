@@ -369,6 +369,19 @@ nb_rectangles <span class="token operator">=</span> <span class="token builtin">
     image<span class="token punctuation">.</span>remplit_rectangle<span class="token punctuation">(</span>i1<span class="token punctuation">,</span> j1<span class="token punctuation">,</span> i2<span class="token punctuation">,</span> j2<span class="token punctuation">,</span> couleur<span class="token punctuation">)</span>
 
 image<span class="token punctuation">.</span>affiche<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="commentaires">Commentaires</h3>
+
+<p>Pour la lecture de la ligne qui donne les informations &#xE0; dessiner, il y a quatre entiers puis un caract&#xE8;re. On ne peut pas faire <code>map(int, input().split())</code> en effet une erreur sera lev&#xE9;e sur le dernier champ qui ne peut pas &#xEA;tre un argument pour <code>int</code>.</p>
+<p>Nous avons propos&#xE9; deux m&#xE9;thodes.</p>
+<ol>
+<li><code>xa, ya, xb, yb, c = input().split()</code>, puis utilisation de <code>int(xa)</code> etc... ; le code n&apos;est pas factoris&#xE9;, on &#xE9;crit 4 fois <code>int</code> !</li>
+<li>Un code un plus clair, mais avec trois fois &#xAB;&#xA0;quatre objets semblables&#xA0;&#xBB;, on pourra faire mieux.</li>
+</ol>
+<pre data-role="codeBlock" data-info="python" class="language-python">    t_i1<span class="token punctuation">,</span> t_j1<span class="token punctuation">,</span> t_i2<span class="token punctuation">,</span> t_j2<span class="token punctuation">,</span> couleur <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    i1<span class="token punctuation">,</span> j1<span class="token punctuation">,</span> i2<span class="token punctuation">,</span> j2 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>t_i1<span class="token punctuation">,</span> t_j1<span class="token punctuation">,</span> t_i2<span class="token punctuation">,</span> t_j2<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><p>Pour faire mieux, c&apos;est hors programme, une histoire de <em>unpack</em> de liste. On pr&#xE9;fixe une variable avec <code>*</code> pour qu&apos;elle se comporte comme une liste qui va absorber des &#xE9;l&#xE9;ments.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token operator">*</span>d&#xE9;but_param<span class="token punctuation">,</span> couleur <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    i1<span class="token punctuation">,</span> j1<span class="token punctuation">,</span> i2<span class="token punctuation">,</span> j2 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> d&#xE9;but_param<span class="token punctuation">)</span>
 </pre>
       </div>
       

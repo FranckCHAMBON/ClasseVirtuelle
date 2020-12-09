@@ -127,3 +127,24 @@ for _ in range(nb_rectangles):
 
 image.affiche()
 ```
+
+### Commentaires
+
+Pour la lecture de la ligne qui donne les informations à dessiner, il y a quatre entiers puis un caractère. On ne peut pas faire `map(int, input().split())` en effet une erreur sera levée sur le dernier champ qui ne peut pas être un argument pour `int`.
+
+Nous avons proposé deux méthodes.
+1. `xa, ya, xb, yb, c = input().split()`, puis utilisation de `int(xa)` etc... ; le code n'est pas factorisé, on écrit 4 fois `int` !
+2. Un code un plus clair, mais avec trois fois « quatre objets semblables », on pourra faire mieux.
+```python
+    t_i1, t_j1, t_i2, t_j2, couleur = input().split()
+    i1, j1, i2, j2 = map(int, [t_i1, t_j1, t_i2, t_j2])
+```
+
+Pour faire mieux, c'est hors programme, une histoire de *unpack* de liste. On préfixe une variable avec `*` pour qu'elle se comporte comme une liste qui va absorber des éléments.
+
+```python
+    *début_param, couleur = input().split()
+    i1, j1, i2, j2 = map(int, début_param)
+```
+
+
