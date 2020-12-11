@@ -103,10 +103,10 @@ class Image:
         + de sommets opposés (i1, j1) et (i2, j2),
         + avec la couleur donnée.
         """
-        if not all(((0 <= i1 <= self.__nb_lignes),
-                    (0 <= j1 <= self.__nb_colonnes),
-                    (0 <= i2 <= self.__nb_lignes),
-                    (0 <= j2 <= self.__nb_colonnes))):
+        if not all(((0 <= i1 < self.__nb_lignes),
+                    (0 <= j1 < self.__nb_colonnes),
+                    (0 <= i2 < self.__nb_lignes),
+                    (0 <= j2 < self.__nb_colonnes))):
             raise ValueError("Mauvais indice")
         if len(couleur) != 1:
             raise ValueError("couleur doit être un seul caractère")

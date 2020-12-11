@@ -42,7 +42,7 @@ sortie :
 ## Solution
 
 ```python
-def gomoku(n: int, grille:list) -> str:
+def gomoku(n: int, grille:list) -> int:
     """Renvoie le vainqueur 1 ou 2, ou 0 sinon...
     """
     # vecteurs : vertical, horizontal, et 2 en diagonale
@@ -57,13 +57,10 @@ def gomoku(n: int, grille:list) -> str:
         """
         joueur = grille[i][j]
         for k in range(1, 5):
-            i2 = i + k*di
-            j2 = j + k*dj
-            if est_valide(i2, j2):
-                if grille[i2][j2] != joueur:
+            i += di
+            j += dj
+            if not(est_valide(i, j)) or (grille[i2][j2] != joueur):
                     return 0
-            else:
-                return 0
         return joueur
 
     for i in range(n):
@@ -82,5 +79,5 @@ print(résultat)
 ```
 
 ## Commentaires
-* Bien dessiner les vecteurs pour comprendre comment fonctionnent `i2` et `j2`.
+* Bien dessiner les vecteurs pour comprendre comment fonctionnent `i` et `j`, et leur modifications.
 * La complexité n'est pas très bonne, les cases sont souvent relues pour tester différents alignements... Nous verrons plus tard une solution par programmation dynamique, où chaque case n'est lue qu'une seule fois, et où la lecture de la grille peut se faire ligne par ligne, puis l'oublier ! L'empreinte mémoire est alors très bonne, en plus !

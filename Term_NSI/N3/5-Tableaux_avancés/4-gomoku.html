@@ -300,7 +300,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <pre data-role="codeBlock" data-info class="language-"><code>1
 </code></pre><h2 class="mume-header" id="solution">Solution</h2>
 
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">gomoku</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> grille<span class="token punctuation">:</span><span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">gomoku</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> grille<span class="token punctuation">:</span><span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le vainqueur 1 ou 2, ou 0 sinon...
     &quot;&quot;&quot;</span>
     <span class="token comment"># vecteurs : vertical, horizontal, et 2 en diagonale</span>
@@ -315,13 +315,10 @@ pre[data-line] .line-highlight[data-end]:after {
         &quot;&quot;&quot;</span>
         joueur <span class="token operator">=</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
         <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            i2 <span class="token operator">=</span> i <span class="token operator">+</span> k<span class="token operator">*</span>di
-            j2 <span class="token operator">=</span> j <span class="token operator">+</span> k<span class="token operator">*</span>dj
-            <span class="token keyword">if</span> est_valide<span class="token punctuation">(</span>i2<span class="token punctuation">,</span> j2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i2<span class="token punctuation">]</span><span class="token punctuation">[</span>j2<span class="token punctuation">]</span> <span class="token operator">!=</span> joueur<span class="token punctuation">:</span>
+            i <span class="token operator">+=</span> di
+            j <span class="token operator">+=</span> dj
+            <span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span>est_valide<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>grille<span class="token punctuation">[</span>i2<span class="token punctuation">]</span><span class="token punctuation">[</span>j2<span class="token punctuation">]</span> <span class="token operator">!=</span> joueur<span class="token punctuation">)</span><span class="token punctuation">:</span>
                     <span class="token keyword">return</span> <span class="token number">0</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token number">0</span>
         <span class="token keyword">return</span> joueur
 
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -340,7 +337,7 @@ r&#xE9;sultat <span class="token operator">=</span> gomoku<span class="token pun
 </pre><h2 class="mume-header" id="commentaires">Commentaires</h2>
 
 <ul>
-<li>Bien dessiner les vecteurs pour comprendre comment fonctionnent <code>i2</code> et <code>j2</code>.</li>
+<li>Bien dessiner les vecteurs pour comprendre comment fonctionnent <code>i</code> et <code>j</code>, et leur modifications.</li>
 <li>La complexit&#xE9; n&apos;est pas tr&#xE8;s bonne, les cases sont souvent relues pour tester diff&#xE9;rents alignements... Nous verrons plus tard une solution par programmation dynamique, o&#xF9; chaque case n&apos;est lue qu&apos;une seule fois, et o&#xF9; la lecture de la grille peut se faire ligne par ligne, puis l&apos;oublier ! L&apos;empreinte m&#xE9;moire est alors tr&#xE8;s bonne, en plus !</li>
 </ul>
 
