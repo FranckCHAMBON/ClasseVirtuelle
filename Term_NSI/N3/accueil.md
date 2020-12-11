@@ -51,10 +51,18 @@
 
 
 ## Efficacité temporelle
+Les problèmes 2 et 3 sont accessibles.
 
-* **Ne pas le faire encore en Python ; danger**
+> ⚠️ **Ne pas faire encore le 1 et 4 ; difficiles**
 
-Il faut apprendre à savoir lire l'entrée de manière très rapide.
+Il faut apprendre à savoir lire l'entrée de manière très rapide. Voici une méthode rapide, mais qui lit les lignes en lui ajoutant sa fin de ligne, souvent un saut de ligne. Ce n'est pas gênant pour ensuite transtyper en entier.
+
+```python
+import sys
+def main(input=sys.stdin.readline)
+    # votre code ici
+main()
+```
 
 ## Bases
 
