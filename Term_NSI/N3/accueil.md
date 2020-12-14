@@ -29,6 +29,15 @@
     * [Trier des livres](4-string+/A2-tri.html)
     * [Lire ou ne pas lire, telle est (à nouveau) la question](4-string+/A3-lire.html)
     * [Inversion de dictionnaire](4-string+/A4-inversion.html)
+* B – Itérations
+    * [Fréquentation de la bibliothèque](4-string+/B1-fréquentation.html)
+    * [Conférence et tics de langage](4-string+/B2-conférence.html)
+    * [Acronymes](4-string+/B3-acronymes.html)
+    * [Alphabet](4-string+/B4-alphabet.html)
+    * [Consonnes](4-string+/B5-consonnes.html)
+    * [Déchiffrement de la première page](4-string+/B6-déchiffrement.html)
+    * [Chiffrement par décalage](4-string+/B7-chiffrement.html)
+    * [Trouver le décalage](4-string+/B8-challenge.html)
 
 ## Tableaux avancés
 
