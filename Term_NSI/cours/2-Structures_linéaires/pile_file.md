@@ -1,6 +1,12 @@
-# Structures linéaires
+# 🚛 Structures linéaires
 
 ## Rappels sur le tableau
+
+> Exemple d'un tableau, le début des nombres premiers.
+
+|Indice | $0$ | $1$ | $2$ | $3$ |
+|-------|-----|-----|-----|-----|
+|Élément| $2$ | $3$ | $5$ | $7$ |
 
 Un tableau `table` est une structure abstraite de données élémentaire :
 * avec des éléments de même type, et de même taille `taille_élément`,
@@ -14,6 +20,8 @@ On peut lire et modifier un élément d'indice `i` avec `table[i]`.
 Avec cette structure de données, on peut résoudre de nombreux problèmes, et comme nous allons le voir, on peut construire de nouvelles structures de données.
 
 Concrètement, on retrouve des implémentations de cette structure abstraite dans la plupart des langages de programmation. Une limitation évidente est la taille d'un tableau, limitée par la capacité de mémoire disponible ; sinon, c'est assez simple.
+
+* Le cours de première est toujours [accessible ici](https://franckchambon.github.io/ClasseVirtuelle/NSI/nsi-accueil.html).
 
 ## La pile
 
@@ -29,6 +37,9 @@ On utilisera les notations de la POO.
     * `.empile(élément)` ajoute un `élément` au sommet de la pile.
     * `.dépile()` enlève l'élément au sommet de la pile, et le renvoie.
     * Éventuellement d'autres méthodes...
+
+![](Stack_(data_structure)_LIFO.svg.png)
+> Image : [wikipedia, la pile](https://fr.wikipedia.org/wiki/Pile_%28informatique%29)
 
 ### Implémentation sans sucre syntaxique
 
@@ -141,7 +152,7 @@ Refaire les tests vus précédemment.
 
 ## La file
 
-* Le principe de la pile est : *FILO : First In, Last Out*, (premier entré, dernier sorti).
+* Le principe de la pile est : *LIFO : Last In, First Out*, (premier entré, dernier sorti).
 * Le principe de la file est : *FIFO : First In, First Out*, (premier entré, premier sorti).
 
 **Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une file d'une certaine taille maximale. On proposera les méthodes de constructions ainsi que `.est_vide()`, `.enfile(élément)` et `.défile()` analogues au cas de la pile.
