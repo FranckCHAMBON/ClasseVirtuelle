@@ -3,9 +3,8 @@
 ## :busts_in_silhouette: Classe virtuelle de  M. Chambon
 > [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
 
-Rendez-vous en cas de confinement complet :
+Rendez-vous **obligatoires** :
 * :clock10: les lundis de 10h à 12h
-* :clock10: les mercredis de 10h à 12h
 * :clock8: les vendredis de 8h à 10h
 
 ## Documents importants
@@ -50,6 +49,9 @@ Pour le code Python des solutions :
 
 ## :artificial_satellite: Programmation Orientée Objet (POO)
 * [Cours](cours/POO.html)
+
+## 🚛 Structures linéaires
+* [Pile et file](cours/2-Structures_linéaires/pile_file.html)
 
 ## 🐚 Interfaces Homme Machine
 
