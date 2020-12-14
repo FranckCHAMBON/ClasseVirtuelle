@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>A3-lire</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,101 +261,66 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="niveau-3-de-france-ioi">Niveau 3 de France IOI</h1>
+      <h1 class="mume-header" id="lire-ou-ne-pas-lire-telle-est-%C3%A0-nouveau-la-questionhttpwwwfrance-ioiorgalgotaskphpidchapter556iorder6"><a href="http://www.france-ioi.org/algo/task.php?idChapter=556&amp;iOrder=6">Lire ou ne pas lire, telle est (&#xE0; nouveau) la question</a></h1>
 
-<h2 class="mume-header" id="d%C3%A9blocage-niveau-3">D&#xE9;blocage Niveau 3</h2>
+<h2 class="mume-header" id="sujet">Sujet</h2>
+
+<p>Un des employ&#xE9;s de la biblioth&#xE8;que avait mis au point son propre algorithme de s&#xE9;lection des livres &#xE0; lire, bas&#xE9; sur la longueur des titres des livres. Il s&#x2019;en est lass&#xE9; et se base maintenant sur l&apos;ordre alphab&#xE9;tique des titres des livres.</p>
+<p>Sur une &#xE9;tag&#xE8;re sont align&#xE9;s tous les livres qui l&#x2019;int&#xE9;ressent. Chaque mois, cette personne prend le premier livre de l&#x2019;&#xE9;tag&#xE8;re, puis le second et ainsi de suite jusqu&#x2019;&#xE0; la fin. Seulement, elle ne lira un livre que si son titre est situ&#xE9;, selon l&#x2019;ordre alphab&#xE9;tique, apr&#xE8;s chacun des livres qu&#x2019;elle a lus pendant le mois. Si ce n&#x2019;est pas le cas, elle enl&#xE8;ve le livre de l&#x2019;&#xE9;tag&#xE8;re, sans le lire.</p>
+<p>&#xC9;tant donn&#xE9;e la liste de titres de livres possibles pour le mois suivant, donn&#xE9;s dans l&#x2019;ordre o&#xF9; ils apparaissent dans l&#x2019;&#xE9;tag&#xE8;re, vous devez d&#xE9;terminer lesquels elle va lire.</p>
+<h3 class="mume-header" id="contraintes">Contraintes</h3>
+
+<p>Chaque titre de livre contiendra au plus 100 caract&#xE8;res.</p>
+<h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
 <ul>
-<li><a href="0-D%C3%A9blocage_du_niveau_3/1-emprunt_livre.html">Emprunts de livres</a></li>
-<li><a href="0-D%C3%A9blocage_du_niveau_3/2-fl%C3%A9chette.html">Fl&#xE9;chettes</a></li>
-<li><a href="0-D%C3%A9blocage_du_niveau_3/3-compo_musicale.html">Composition musicale</a></li>
-<li><a href="0-D%C3%A9blocage_du_niveau_3/4-Lissage_de_signal.html">Lissage de signal</a></li>
-<li><a href="0-D%C3%A9blocage_du_niveau_3/5-Course_de_grenouilles.html">Course de grenouilles</a></li>
-</ul>
-<h2 class="mume-header" id="gestion-de-caract%C3%A8res">Gestion de caract&#xE8;res</h2>
-
-<ul>
-<li>A &#x2013; Entiers et caract&#xE8;res
-<ul>
-<li><a href="3-gestion_caract%C3%A8res/a1-b%C3%A2t_all%C3%A9e.html">B&#xE2;timent et all&#xE9;e</a></li>
-<li><a href="3-gestion_caract%C3%A8res/a2-nombre_amour.html">Nombre d&apos;amour</a></li>
-</ul>
+<li>
+<p>Sur la premi&#xE8;re ligne, un entier <code>nbLivres</code>, le nombre total de livres.</p>
 </li>
-<li>B &#x2013; Classe de caract&#xE8;res
-<ul>
-<li><a href="3-gestion_caract%C3%A8res/b1-Majuscules.html">Majuscules</a></li>
-<li><a href="3-gestion_caract%C3%A8res/b2-Lettre_la_plus_fr%C3%A9quente.html">Lettre la plus fr&#xE9;quente</a></li>
-<li><a href="3-gestion_caract%C3%A8res/b3-Titres_palindromiques.html">Titres palindromiques</a></li>
-<li><a href="3-gestion_caract%C3%A8res/b4-Validit%C3%A9_des_noms_de_variables.html">Validit&#xE9; des noms de variables</a></li>
-<li><a href="3-gestion_caract%C3%A8res/b5-Fr%C3%A9quences_d_apparition.html">Fr&#xE9;quences d&#x2019;apparition</a></li>
-</ul>
+<li>
+<p>Les <code>nbLivres</code> lignes suivantes contiennent chacune un titre de livre.</p>
+</li>
+<li>
+<p>Les titres ne contiennent que des lettres majuscules ou des espaces.</p>
 </li>
 </ul>
-<h2 class="mume-header" id="op%C3%A9rations-avanc%C3%A9es-sur-les-cha%C3%AEnes-de-caract%C3%A8res">Op&#xE9;rations avanc&#xE9;es sur les cha&#xEE;nes de caract&#xE8;res</h2>
+<h3 class="mume-header" id="sortie">Sortie</h3>
 
 <ul>
-<li>A &#x2013; Tris
-<ul>
-<li><a href="4-string+/A4-inversion.html">Inversion de dictionnaire</a></li>
+<li>La liste des titres respectant la r&#xE8;gle donn&#xE9;e dans l&#x2019;&#xE9;nonc&#xE9;.</li>
 </ul>
-</li>
-</ul>
-<h2 class="mume-header" id="tableaux-avanc%C3%A9s">Tableaux avanc&#xE9;s</h2>
+<h3 class="mume-header" id="exemple">Exemple</h3>
+
+<hr>
+<p>entr&#xE9;e :</p>
+<pre data-role="codeBlock" data-info class="language-"><code>8
+ANNA KARENINE
+JACQUES LE FATALISTE ET SON MAITRE
+DIX PETITS NEGRES
+CENT ANS DE SOLITUDE
+LA PESTE
+LA FERME DES ANIMAUX
+SUR LA ROUTE
+SA MAJESTE DES MOUCHES
+</code></pre><p>sortie :</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ANNA KARENINE
+JACQUES LE FATALISTE ET SON MAITRE
+LA PESTE
+SUR LA ROUTE
+</code></pre><h2 class="mume-header" id="solution">Solution</h2>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_livres <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+livre_pr&#xE9;c&#xE9;dent <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_livres<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    livre <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> livre <span class="token operator">&gt;</span> livre_pr&#xE9;c&#xE9;dent<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>livre<span class="token punctuation">)</span>
+        livre_pr&#xE9;c&#xE9;dent <span class="token operator">=</span> livre
+</pre><h3 class="mume-header" id="commentaire">Commentaire</h3>
 
 <ul>
-<li><a href="5-Tableaux_avanc%C3%A9s/1-infographie.html">Infographie</a>, avec POO</li>
-<li><a href="5-Tableaux_avanc%C3%A9s/2-carr%C3%A9_magique.html">Carr&#xE9; magique</a>, avec <code>any</code></li>
-<li><a href="5-Tableaux_avanc%C3%A9s/3-attaque_cavalier.html">Attaque du cavalier</a></li>
-<li><a href="5-Tableaux_avanc%C3%A9s/4-gomoku.html">Gomoku</a></li>
-<li><a href="5-Tableaux_avanc%C3%A9s/5-%C3%A9rosion.html">&#xC9;rosion</a>, avec POO</li>
-</ul>
-<h2 class="mume-header" id="tris-simples">Tris simples</h2>
-
-<ul>
-<li>...&#xE0; venir...</li>
-</ul>
-<h2 class="mume-header" id="structures-de-donn%C3%A9es-%C3%A9l%C3%A9mentaires-et-balayages">Structures de donn&#xE9;es &#xE9;l&#xE9;mentaires et Balayages</h2>
-
-<ul>
-<li>...&#xE0; venir...</li>
-</ul>
-<h2 class="mume-header" id="r%C3%A9cursivit%C3%A9">R&#xE9;cursivit&#xE9;</h2>
-
-<ul>
-<li><a href="7-R%C3%A9cursivit%C3%A9/1-nombre_encadr%C3%A9.html">Nombre encadr&#xE9;</a></li>
-<li><a href="7-R%C3%A9cursivit%C3%A9/2-la_t%C3%AAte_%C3%A0_Toto.html">0 + 0 = la t&#xEA;te &#xE0; Toto</a></li>
-<li><a href="7-R%C3%A9cursivit%C3%A9/3-sierpinski.html">Fractale : triangle de Sierpinski</a></li>
-<li><a href="7-R%C3%A9cursivit%C3%A9/4-Tours_de_Hano%C3%AF.html">Tours de Hano&#xEF;</a></li>
-<li><a href="7-R%C3%A9cursivit%C3%A9/5-entre_deux.html">Entre deux</a></li>
-<li><a href="7-R%C3%A9cursivit%C3%A9/6-retournement_cha%C3%AEne.html">Retournement de cha&#xEE;ne</a></li>
-</ul>
-<h2 class="mume-header" id="efficacit%C3%A9-temporelle">Efficacit&#xE9; temporelle</h2>
-
-<p>Les probl&#xE8;mes 2 et 3 sont accessibles.</p>
-<blockquote>
-<p>&#x26A0;&#xFE0F; <strong>Ne pas faire encore le 1 et 4 ; difficiles</strong></p>
-</blockquote>
-<p>Il faut apprendre &#xE0; savoir lire l&apos;entr&#xE9;e de mani&#xE8;re tr&#xE8;s rapide. Voici une m&#xE9;thode rapide, mais qui lit les lignes en lui ajoutant sa fin de ligne, souvent un saut de ligne. Ce n&apos;est pas g&#xEA;nant pour ensuite transtyper en entier.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> sys
-<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token operator">=</span>sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline<span class="token punctuation">)</span>
-    <span class="token comment"># votre code ici</span>
-main<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><h2 class="mume-header" id="bases">Bases</h2>
-
-<ul>
-<li><a href="10-Bases/1-Puissance_de_2.html">Puissance de 2</a></li>
-<li><a href="10-Bases/2-Affichage_binaire.html">Affichage binaire</a></li>
-<li><a href="10-Bases/3-Lecture_binaire.html">Lecture binaire</a></li>
-<li><a href="10-Bases/4-Lecture_base.html">Lecture dans une base quelconque</a></li>
-<li><a href="10-Bases/5-%C3%89criture_base.html">&#xC9;criture dans une base quelconque</a></li>
-<li><a href="10-Bases/6-Changement_base.html">Changement de base</a></li>
-<li><a href="10-Bases/7-Table_de_multiplication_binaire.html">Table de multiplication binaire</a></li>
-<li><a href="10-Bases/8-Moyenne_hexad%C3%A9cimale.html">Moyenne hexad&#xE9;cimale</a></li>
-</ul>
-<h2 class="mume-header" id="exercices-dentra%C3%AEnement-du-niveau-3">Exercices d&apos;entra&#xEE;nement du niveau 3</h2>
-
-<ul>
-<li>...&#xE0; venir...</li>
+<li>On initialise <code>livre_pr&#xE9;c&#xE9;dent = &quot;&quot;</code> ; cette cha&#xEE;ne de caract&#xE8;re est la plus petite de toute avec l&apos;ordre alphab&#xE9;tique.</li>
+<li>On le met &#xE0; jour quand on lit un nouveau livre.</li>
 </ul>
 
       </div>

@@ -21,8 +21,14 @@
     * [Fréquences d’apparition](3-gestion_caractères/b5-Fréquences_d_apparition.html)
 
 ## Opérations avancées sur les chaînes de caractères
+
+**===Nouveau===**
     
-* ...à venir...
+* A – Tris
+    * [Inversion d’une liste de livres](4-string+/A1-inversion.html)
+    * [Trier des livres](4-string+/A2-tri.html)
+    * [Lire ou ne pas lire, telle est (à nouveau) la question](4-string+/A3-lire.html)
+    * [Inversion de dictionnaire](4-string+/A4-inversion.html)
 
 ## Tableaux avancés
 
