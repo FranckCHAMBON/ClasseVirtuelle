@@ -48,12 +48,12 @@ On propose ici, en Python, une implémentation qui utilise en arrière-plan une 
 ```python
 class Pile():
     """
-    Construit une classe "pile d'entiers", de taille 'taille',
+    Construit une classe "pile d'entiers", de taille maximale 'taille_max',
     sans sucre syntaxique, sauf pour la méthode __str__ à usage interne.
     """
 
-    def __init__(self, taille: int):
-        self.taille = taille
+    def __init__(self, taille_max: int):
+        self.taille_max = taille_max
         self.données = [0 for _ in range(taille)] # un tableau
         self.hauteur = 0
 
@@ -62,7 +62,7 @@ class Pile():
 
     def empile(self, élément):
         """Ajoute `élément` au sommet de la pile"""
-        if self.hauteur == self.taille:
+        if self.hauteur == self.taille_max:
             raise ValueError('Pile pleine')
         self.données[self.hauteur] = élément
         self.hauteur += 1
@@ -91,7 +91,7 @@ On peut ajouter une méthode `__str__` avec du sucre syntaxique uniquement pour 
         return ans
 ```
 
-Idéalement, il faudrait écrire les attributs `hauteur` et `données` en les préfixant de `__` pour les rendre privés. **Exercice 1** : faire cela et justifier ce choix.
+Idéalement, il faudrait écrire les attributs `taille_max`, `hauteur` et `données` en les préfixant de `__` pour les rendre privés. **Exercice 1** : faire cela et justifier ce choix.
 
 **Exercice 2** : Ajouter une méthode accesseur `.hauteur()`.
 

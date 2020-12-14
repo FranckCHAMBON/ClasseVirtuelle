@@ -329,12 +329,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>On propose ici, en Python, une impl&#xE9;mentation qui utilise en arri&#xE8;re-plan une structure de type <code>list</code> de Python, en limitant volontairement l&apos;usage, comme un tableau. Ainsi l&apos;impl&#xE9;mentation pourrait &#xEA;tre r&#xE9;alis&#xE9;e dans de nombreux langages de programmation avec de rares ajustements.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;
-    Construit une classe &quot;pile d&apos;entiers&quot;, de taille &apos;taille&apos;,
+    Construit une classe &quot;pile d&apos;entiers&quot;, de taille maximale &apos;taille_max&apos;,
     sans sucre syntaxique, sauf pour la m&#xE9;thode __str__ &#xE0; usage interne.
     &quot;&quot;&quot;</span>
 
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>taille <span class="token operator">=</span> taille
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> taille_max<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>taille_max <span class="token operator">=</span> taille_max
         self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># un tableau</span>
         self<span class="token punctuation">.</span>hauteur <span class="token operator">=</span> <span class="token number">0</span>
 
@@ -343,7 +343,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
     <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Ajoute `&#xE9;l&#xE9;ment` au sommet de la pile&quot;&quot;&quot;</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>hauteur <span class="token operator">==</span> self<span class="token punctuation">.</span>taille<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>hauteur <span class="token operator">==</span> self<span class="token punctuation">.</span>taille_max<span class="token punctuation">:</span>
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile pleine&apos;</span><span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">]</span> <span class="token operator">=</span> &#xE9;l&#xE9;ment
         self<span class="token punctuation">.</span>hauteur <span class="token operator">+=</span> <span class="token number">1</span>
@@ -366,7 +366,7 @@ pre[data-line] .line-highlight[data-end]:after {
             ans <span class="token operator">+=</span> <span class="token string">&quot;, &quot;</span>
         ans <span class="token operator">+=</span> <span class="token string">&quot; [Fin de pile.]&quot;</span>
         <span class="token keyword">return</span> ans
-</pre><p>Id&#xE9;alement, il faudrait &#xE9;crire les attributs <code>hauteur</code> et <code>donn&#xE9;es</code> en les pr&#xE9;fixant de <code>__</code> pour les rendre priv&#xE9;s. <strong>Exercice 1</strong> : faire cela et justifier ce choix.</p>
+</pre><p>Id&#xE9;alement, il faudrait &#xE9;crire les attributs <code>taille_max</code>, <code>hauteur</code> et <code>donn&#xE9;es</code> en les pr&#xE9;fixant de <code>__</code> pour les rendre priv&#xE9;s. <strong>Exercice 1</strong> : faire cela et justifier ce choix.</p>
 <p><strong>Exercice 2</strong> : Ajouter une m&#xE9;thode accesseur <code>.hauteur()</code>.</p>
 <p><strong>Exercice 3</strong> : V&#xE9;rifier l&apos;utilisation avec le code suivant.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">ma_pile <span class="token operator">=</span> Pile<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
