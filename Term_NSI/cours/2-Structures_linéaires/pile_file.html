@@ -288,18 +288,18 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 </tbody>
 </table>
-<p>Un tableau <code>table</code> est une structure abstraite de donn&#xE9;es &#xE9;l&#xE9;mentaire :</p>
+<p>Un tableau <code>table</code> est une structure de donn&#xE9;es, abstraite et &#xE9;l&#xE9;mentaire :</p>
 <ul>
 <li>avec des &#xE9;l&#xE9;ments de m&#xEA;me type, et de m&#xEA;me taille <code>taille_&#xE9;l&#xE9;ment</code>,</li>
 <li>un nombre d&apos;&#xE9;l&#xE9;ments fix&#xE9; &#xE0; la cr&#xE9;ation ; <code>nb_&#xE9;l&#xE9;ments</code>,</li>
-<li>rang&#xE9;s de fa&#xE7;on continue en m&#xE9;moire, indic&#xE9;s de <code>0</code> inclus &#xE0; <code>nb_&#xE9;l&#xE9;ments</code> exclu.</li>
+<li>rang&#xE9;s de fa&#xE7;on continue en m&#xE9;moire, indic&#xE9;s de <code>0</code> <strong>inclus</strong> &#xE0; <code>nb_&#xE9;l&#xE9;ments</code> <strong>exclu</strong>.</li>
 </ul>
 <blockquote>
 <p>En interne, on acc&#xE8;de, en pratique, &#xE0; un &#xE9;l&#xE9;ment d&apos;indice <code>i</code> du tableau par son adresse m&#xE9;moire qui est &#xE9;gale &#xE0; <code>adresse_tableau + i * taille_&#xE9;l&#xE9;ment</code>.</p>
 </blockquote>
-<p>On peut lire et modifier un &#xE9;l&#xE9;ment d&apos;indice <code>i</code> avec <code>table[i]</code>.</p>
-<p>Avec cette structure de donn&#xE9;es, on peut r&#xE9;soudre de nombreux probl&#xE8;mes, et comme nous allons le voir, on peut construire de nouvelles structures de donn&#xE9;es.</p>
-<p>Concr&#xE8;tement, on retrouve des impl&#xE9;mentations de cette structure abstraite dans la plupart des langages de programmation. Une limitation &#xE9;vidente est la taille d&apos;un tableau, limit&#xE9;e par la capacit&#xE9; de m&#xE9;moire disponible ; sinon, c&apos;est assez simple.</p>
+<p>On peut lire et modifier un &#xE9;l&#xE9;ment d&apos;indice <code>i</code>, avec un langage de programmation, on note tr&#xE8;s souvent <code>table[i]</code> cet &#xE9;l&#xE9;ment de <code>table</code> d&apos;indice <code>i</code>.</p>
+<p>Avec cette structure de donn&#xE9;es, on a d&#xE9;j&#xE0; r&#xE9;solu de nombreux probl&#xE8;mes, mais on peut aussi construire de nouvelles structures de donn&#xE9;es.</p>
+<p>Concr&#xE8;tement, on retrouve des impl&#xE9;mentations de cette structure abstraite, le tableau, dans la plupart des langages de programmation. Une limitation &#xE9;vidente est la taille d&apos;un tableau, limit&#xE9;e par la capacit&#xE9; de m&#xE9;moire disponible ; sinon, c&apos;est assez simple.</p>
 <ul>
 <li>Le cours de premi&#xE8;re est toujours <a href="https://franckchambon.github.io/ClasseVirtuelle/NSI/nsi-accueil.html">accessible ici</a>.</li>
 </ul>
@@ -312,7 +312,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Les &#xE9;l&#xE9;ments sont de m&#xEA;me type et de m&#xEA;me taille.</li>
 <li>On dispose de m&#xE9;thodes :
 <ul>
-<li><code>Pile()</code> pour construire et initialiser une pile vide.</li>
+<li>Le constructeur <code>Pile()</code>, via la m&#xE9;thode <code>.__init__(self)</code> qui initialise une pile vide.</li>
 <li><code>.est_vide(self)</code> renvoie un bool&#xE9;en, <code>True</code> pour une pile vide.</li>
 <li><code>.empile(self, &#xE9;l&#xE9;ment)</code> ajoute un <code>&#xE9;l&#xE9;ment</code> au sommet de la pile.</li>
 <li><code>.d&#xE9;pile(self)</code> enl&#xE8;ve l&apos;&#xE9;l&#xE9;ment au sommet de la pile, et le renvoie.</li>
@@ -357,7 +357,7 @@ pre[data-line] .line-highlight[data-end]:after {
         &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">]</span>
         <span class="token comment">#self.donn&#xE9;es[self.hauteur] = 0 # optionnel</span>
         <span class="token keyword">return</span> &#xE9;l&#xE9;ment
-</pre><p>On peut ajouter une m&#xE9;thode <code>.__str__(self)</code> avec du sucre syntaxique uniquement pour un usage interne ou de tests.</p>
+</pre><p>On peut ajouter une m&#xE9;thode <code>.__str__(self)</code> uniquement pour un usage interne ou de tests.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
         <span class="token string">&quot;avec sucre... usage interne, pour nous seulement&quot;</span>
         ans <span class="token operator">=</span> <span class="token string">&quot;[D&#xE9;but de pile] &quot;</span>
@@ -391,9 +391,9 @@ ma_pile<span class="token punctuation">.</span>empile<span class="token punctuat
 <li>Tester <code>31</code> au lieu de <code>11</code>.</li>
 <li>Rep&#xE9;rer, et justifier, o&#xF9; dans le code on g&#xE8;re ces erreurs.</li>
 </ul>
-<h3 class="mume-header" id="impl%C3%A9mentation-avec-sucre">Impl&#xE9;mentation avec sucre</h3>
+<h3 class="mume-header" id="impl%C3%A9mentation-avec-les-listes-dynamiques-de-python">Impl&#xE9;mentation avec les listes dynamiques de Python</h3>
 
-<p>On peut facilement impl&#xE9;menter une pile de taille arbitraire avec le type <code>list</code> de Python et les m&#xE9;thodes <code>.append(self, &#xE9;l&#xE9;ment)</code> et <code>.pop(self)</code>.</p>
+<p>On peut facilement impl&#xE9;menter une pile de taille arbitraire avec le type <code>list</code> de Python et ses m&#xE9;thodes <code>.append(self, &#xE9;l&#xE9;ment)</code> et <code>.pop(self)</code>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>

@@ -8,18 +8,18 @@
 |-------|-----|-----|-----|-----|
 |Élément| $2$ | $3$ | $5$ | $7$ |
 
-Un tableau `table` est une structure abstraite de données élémentaire :
+Un tableau `table` est une structure de données, abstraite et élémentaire :
 * avec des éléments de même type, et de même taille `taille_élément`,
 * un nombre d'éléments fixé à la création ; `nb_éléments`,
-* rangés de façon continue en mémoire, indicés de `0` inclus à `nb_éléments` exclu.
+* rangés de façon continue en mémoire, indicés de `0` **inclus** à `nb_éléments` **exclu**.
 
 > En interne, on accède, en pratique, à un élément d'indice `i` du tableau par son adresse mémoire qui est égale à `adresse_tableau + i * taille_élément`.
 
-On peut lire et modifier un élément d'indice `i` avec `table[i]`.
+On peut lire et modifier un élément d'indice `i`, avec un langage de programmation, on note très souvent `table[i]` cet élément de `table` d'indice `i`.
 
-Avec cette structure de données, on peut résoudre de nombreux problèmes, et comme nous allons le voir, on peut construire de nouvelles structures de données.
+Avec cette structure de données, on a déjà résolu de nombreux problèmes, mais on peut aussi construire de nouvelles structures de données.
 
-Concrètement, on retrouve des implémentations de cette structure abstraite dans la plupart des langages de programmation. Une limitation évidente est la taille d'un tableau, limitée par la capacité de mémoire disponible ; sinon, c'est assez simple.
+Concrètement, on retrouve des implémentations de cette structure abstraite, le tableau, dans la plupart des langages de programmation. Une limitation évidente est la taille d'un tableau, limitée par la capacité de mémoire disponible ; sinon, c'est assez simple.
 
 * Le cours de première est toujours [accessible ici](https://franckchambon.github.io/ClasseVirtuelle/NSI/nsi-accueil.html).
 
@@ -32,7 +32,7 @@ On utilisera les notations de la POO.
 * C'est une structure abstraite de donnée linéaire (agencée en ligne en mémoire).
 * Les éléments sont de même type et de même taille.
 * On dispose de méthodes :
-    * `Pile()` pour construire et initialiser une pile vide.
+    * Le constructeur `Pile()`, via la méthode `.__init__(self)` qui initialise une pile vide.
     * `.est_vide(self)` renvoie un booléen, `True` pour une pile vide.
     * `.empile(self, élément)` ajoute un `élément` au sommet de la pile.
     * `.dépile(self)` enlève l'élément au sommet de la pile, et le renvoie.
@@ -78,7 +78,7 @@ class Pile():
         return élément
 ```
 
-On peut ajouter une méthode `.__str__(self)` avec du sucre syntaxique uniquement pour un usage interne ou de tests.
+On peut ajouter une méthode `.__str__(self)` uniquement pour un usage interne ou de tests.
 
 ```python
     def __str__(self) -> str:
@@ -122,8 +122,8 @@ print(dir(ma_pile))
 * Repérer, et justifier, où dans le code on gère ces erreurs.
 
 
-### Implémentation avec sucre
-On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et les méthodes `.append(self, élément)` et `.pop(self)`.
+### Implémentation avec les listes dynamiques de Python
+On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et ses méthodes `.append(self, élément)` et `.pop(self)`.
 
 ```python
 class Pile():
