@@ -152,7 +152,7 @@ Refaire les tests vus précédemment.
 
 ## La file
 
-* Le principe de la pile est : *LIFO : Last In, First Out*, (premier entré, dernier sorti).
+* Le principe de la pile est : *LIFO : Last In, First Out*, (dernier entré, premier sorti).
 * Le principe de la file est : *FIFO : First In, First Out*, (premier entré, premier sorti).
 
 **Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une file d'une certaine taille maximale. On proposera les méthodes de constructions ainsi que `.est_vide()`, `.enfile(élément)` et `.défile()` analogues au cas de la pile.
