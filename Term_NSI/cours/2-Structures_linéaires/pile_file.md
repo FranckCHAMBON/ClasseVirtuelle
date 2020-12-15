@@ -33,9 +33,9 @@ On utilisera les notations de la POO.
 * Les éléments sont de même type et de même taille.
 * On dispose de méthodes :
     * `Pile()` pour construire et initialiser une pile vide.
-    * `.est_vide()` renvoie un booléen, `True` pour une pile vide.
-    * `.empile(élément)` ajoute un `élément` au sommet de la pile.
-    * `.dépile()` enlève l'élément au sommet de la pile, et le renvoie.
+    * `.est_vide(self)` renvoie un booléen, `True` pour une pile vide.
+    * `.empile(self, élément)` ajoute un `élément` au sommet de la pile.
+    * `.dépile(self)` enlève l'élément au sommet de la pile, et le renvoie.
     * Éventuellement d'autres méthodes...
 
 ![](Stack_(data_structure)_LIFO.svg.png)
@@ -78,7 +78,7 @@ class Pile():
         return élément
 ```
 
-On peut ajouter une méthode `__str__` avec du sucre syntaxique uniquement pour un usage interne ou de tests.
+On peut ajouter une méthode `.__str__(self)` avec du sucre syntaxique uniquement pour un usage interne ou de tests.
 
 ```python
     def __str__(self) -> str:
@@ -93,7 +93,7 @@ On peut ajouter une méthode `__str__` avec du sucre syntaxique uniquement pour 
 
 Idéalement, il faudrait écrire les attributs `taille_max`, `hauteur` et `données` en les préfixant de `__` pour les rendre privés. **Exercice 1** : faire cela et justifier ce choix.
 
-**Exercice 2** : Ajouter une méthode accesseur `.hauteur()`.
+**Exercice 2** : Ajouter une méthode accesseur `.hauteur(self)`.
 
 **Exercice 3** : Vérifier l'utilisation avec le code suivant.
 
@@ -123,7 +123,7 @@ print(dir(ma_pile))
 
 
 ### Implémentation avec sucre
-On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et les méthodes `.append(élément)` et `.pop()`.
+On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et les méthodes `.append(self, élément)` et `.pop(self)`.
 
 ```python
 class Pile():
@@ -145,10 +145,29 @@ class Pile():
         return self.données.pop()
 ```
 
-**Exercice 1** : rendre l'attribut `données` privé et ajouter une méthode `.hauteur()`.
+**Exercice 1** : rendre l'attribut `données` privé et ajouter une méthode `.hauteur(self)`.
 Refaire les tests vus précédemment.
 
 **Exercice 2** : Résoudre le problème [Dates de péremption](http://www.france-ioi.org/algo/task.php?idChapter=527&idTask=356) sur France-IOI.
+
+**Exercice 3** : Pour cet exercice, on supposera qu'on ne dispose **que** du constructeur d'une pile vide, ainsi que des méthodes `est_vide(self)`, `.empile(self, élément)` et `.dépile(self)`. 
+* Question 1 : Que fait la méthode suivante ? Donner un vrai nom et une *doctring* et un exemple simple l'illustrant (pas un *doctest* non plus).
+
+```python
+    # suite de class Pile():
+    def mystère(self) -> Pile:
+        autre = Pile()
+        while not self.est_vide():
+            autre.empile(self.dépile())
+        return autre
+```
+
+* Question 2 : Proposer alors une méthode `.hauteur(self)-> int` qui renvoie la hauteur d'une pile, en la laissant inchangée en fin de compte.
+
+* Question 3 : Proposer une méthode `.max_pile(self, i: int) -> int` qui renvoie la position de l'élément maximal parmi les `i` derniers empilés. La position du sommet de la pile est, par convention ici, égale à $1$. La pile doit être inchangée en fin de compte.
+
+* Question 4 : Proposer une méthode `.retourner(self, i: int) -> None` qui modifie la pile en inversant l'ordre des `i` derniers éléments empilés. *On peut utiliser deux piles auxiliaires*.
+
 
 ## La file
 
