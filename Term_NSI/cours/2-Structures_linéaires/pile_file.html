@@ -324,13 +324,13 @@ pre[data-line] .line-highlight[data-end]:after {
 <blockquote>
 <p>Image : <a href="https://fr.wikipedia.org/wiki/Pile_%28informatique%29">wikipedia, la pile</a></p>
 </blockquote>
-<h3 class="mume-header" id="impl%C3%A9mentation-sans-sucre-syntaxique">Impl&#xE9;mentation sans sucre syntaxique</h3>
+<h3 class="mume-header" id="impl%C3%A9mentation-avec-tableau">Impl&#xE9;mentation avec tableau</h3>
 
-<p>On propose ici, en Python, une impl&#xE9;mentation qui utilise en arri&#xE8;re-plan une structure de type <code>list</code> de Python, en limitant volontairement l&apos;usage, comme un tableau. Ainsi l&apos;impl&#xE9;mentation pourrait &#xEA;tre r&#xE9;alis&#xE9;e dans de nombreux langages de programmation avec de rares ajustements.</p>
+<p>On propose ici, en Python, une impl&#xE9;mentation qui utilise en arri&#xE8;re-plan une structure de type <code>list</code> de Python, <strong>mais</strong> en limitant volontairement l&apos;usage, comme <strong>un tableau</strong>, sans m&#xE9;thode dynamique. Ainsi l&apos;impl&#xE9;mentation pourrait &#xEA;tre r&#xE9;alis&#xE9;e dans de nombreux langages de programmation avec de rares ajustements.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;
-    Construit une classe &quot;pile d&apos;entiers&quot;, de taille maximale &apos;taille_max&apos;,
-    sans sucre syntaxique, sauf pour la m&#xE9;thode __str__ &#xE0; usage interne.
+    Une classe &quot;pile d&apos;entiers&quot;, de taille maximale &apos;taille_max&apos;,
+    impl&#xE9;ment&#xE9;e avec les donn&#xE9;es dans un tableau.
     &quot;&quot;&quot;</span>
 
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> taille_max<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -357,9 +357,9 @@ pre[data-line] .line-highlight[data-end]:after {
         &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">]</span>
         <span class="token comment">#self.donn&#xE9;es[self.hauteur] = 0 # optionnel</span>
         <span class="token keyword">return</span> &#xE9;l&#xE9;ment
-</pre><p>On peut ajouter une m&#xE9;thode <code>.__str__(self)</code> uniquement pour un usage interne ou de tests.</p>
+</pre><p>On pourrait ajouter une m&#xE9;thode <code>.__str__(self)</code>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
-        <span class="token string">&quot;avec sucre... usage interne, pour nous seulement&quot;</span>
+        <span class="token string">&quot;Pour usage interne, tests&quot;</span>
         ans <span class="token operator">=</span> <span class="token string">&quot;[D&#xE9;but de pile] &quot;</span>
         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">)</span><span class="token punctuation">:</span>
             ans <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -367,7 +367,7 @@ pre[data-line] .line-highlight[data-end]:after {
         ans <span class="token operator">+=</span> <span class="token string">&quot; [Fin de pile.]&quot;</span>
         <span class="token keyword">return</span> ans
 </pre><p>Id&#xE9;alement, il faudrait &#xE9;crire les attributs <code>taille_max</code>, <code>hauteur</code> et <code>donn&#xE9;es</code> en les pr&#xE9;fixant de <code>__</code> pour les rendre priv&#xE9;s. <strong>Exercice 1</strong> : faire cela et justifier ce choix.</p>
-<p><strong>Exercice 2</strong> : Ajouter une m&#xE9;thode accesseur <code>.hauteur(self)</code>.</p>
+<p><strong>Exercice 2</strong> : Ajouter une m&#xE9;thode accesseur <code>.hauteur(self)</code>. Cela donne une raison de plus d&apos;avoir pr&#xE9;fix&#xE9; l&apos;attribut !</p>
 <p><strong>Exercice 3</strong> : V&#xE9;rifier l&apos;utilisation avec le code suivant.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">ma_pile <span class="token operator">=</span> Pile<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -393,7 +393,7 @@ ma_pile<span class="token punctuation">.</span>empile<span class="token punctuat
 </ul>
 <h3 class="mume-header" id="impl%C3%A9mentation-avec-les-listes-dynamiques-de-python">Impl&#xE9;mentation avec les listes dynamiques de Python</h3>
 
-<p>On peut facilement impl&#xE9;menter une pile de taille arbitraire avec le type <code>list</code> de Python et ses m&#xE9;thodes <code>.append(self, &#xE9;l&#xE9;ment)</code> et <code>.pop(self)</code>.</p>
+<p>On peut facilement impl&#xE9;menter une pile de taille arbitraire avec le type <code>list</code> de Python et ses m&#xE9;thodes <code>.append(self, &#xE9;l&#xE9;ment)</code> et <code>.pop(self)</code>. Tous les langages de programmation ne le permettent pas aussi facilement...</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -411,7 +411,10 @@ ma_pile<span class="token punctuation">.</span>empile<span class="token punctuat
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</pre><p><strong>Exercice 1</strong> : rendre l&apos;attribut <code>donn&#xE9;es</code> priv&#xE9; et ajouter une m&#xE9;thode <code>.hauteur(self)</code>.<br>
+</pre><blockquote>
+<p>On remarque que nous n&apos;avons pas ici (besoin) de m&#xE9;thode ni d&apos;attribut <code>hauteur</code>... Pour le type abstrait pile, on travaille parfois sans l&apos;avoir disponible au d&#xE9;part.</p>
+</blockquote>
+<p><strong>Exercice 1</strong> : rendre l&apos;attribut <code>donn&#xE9;es</code> priv&#xE9; et ajouter une m&#xE9;thode <code>.hauteur(self)</code>.<br>
 Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <p><strong>Exercice 2</strong> : R&#xE9;soudre le probl&#xE8;me <a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;idTask=356">Dates de p&#xE9;remption</a> sur France-IOI.</p>
 <p><strong>Exercice 3</strong> : Pour cet exercice, on supposera qu&apos;on ne dispose <strong>que</strong> du constructeur d&apos;une pile vide, ainsi que des m&#xE9;thodes <code>est_vide(self)</code>, <code>.empile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;pile(self)</code>.</p>
@@ -446,7 +449,7 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <blockquote>
 <p><strong>Conseil</strong> : on peut r&#xE9;soudre les probl&#xE8;mes dans un premier temps sans l&apos;&#xE9;criture avec style POO. Cependant, on demande alors une seconde &#xE9;criture. Pourquoi ?</p>
 <ul>
-<li>Le jour o&#xF9; on dispose d&apos;une meilleure structure de donn&#xE9;es, il suffit de remplacer uniquement le bout de code de la classe, le probl&#xE8;me restant intact. Sans POO, il faut r&#xE9;&#xE9;crire tout le probl&#xE8;me pour utiliser les nouvelles id&#xE9;es... L&apos;&#xE9;criture avec le stye POO permet de s&apos;affranchir presque totalement de la mani&#xE8;re dont est &#xE9;crit la classe. Il faut en revanche <strong>toujours</strong> garder &#xE0; l&apos;esprit : quel est le co&#xFB;t algorithmique de chaque m&#xE9;thode ?</li>
+<li>Le jour o&#xF9; on dispose d&apos;une meilleure structure de donn&#xE9;es, il suffit de remplacer uniquement le bout de code de la classe, le probl&#xE8;me restant intact. Sans POO, il faut souvent r&#xE9;&#xE9;crire tout le probl&#xE8;me pour utiliser les nouvelles id&#xE9;es... L&apos;&#xE9;criture avec le stye POO permet de s&apos;affranchir presque totalement de la mani&#xE8;re dont est &#xE9;crit la classe. Il faut en revanche <strong>toujours</strong> garder &#xE0; l&apos;esprit : quel est le co&#xFB;t algorithmique de chaque m&#xE9;thode ?</li>
 </ul>
 </blockquote>
 

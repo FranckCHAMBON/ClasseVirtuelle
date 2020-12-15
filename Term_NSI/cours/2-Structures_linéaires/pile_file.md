@@ -41,15 +41,15 @@ On utilisera les notations de la POO.
 ![](Stack_(data_structure)_LIFO.svg.png)
 > Image : [wikipedia, la pile](https://fr.wikipedia.org/wiki/Pile_%28informatique%29)
 
-### Implémentation sans sucre syntaxique
+### Implémentation avec tableau
 
-On propose ici, en Python, une implémentation qui utilise en arrière-plan une structure de type `list` de Python, en limitant volontairement l'usage, comme un tableau. Ainsi l'implémentation pourrait être réalisée dans de nombreux langages de programmation avec de rares ajustements.
+On propose ici, en Python, une implémentation qui utilise en arrière-plan une structure de type `list` de Python, **mais** en limitant volontairement l'usage, comme **un tableau**, sans méthode dynamique. Ainsi l'implémentation pourrait être réalisée dans de nombreux langages de programmation avec de rares ajustements.
 
 ```python
 class Pile():
     """
-    Construit une classe "pile d'entiers", de taille maximale 'taille_max',
-    sans sucre syntaxique, sauf pour la méthode __str__ à usage interne.
+    Une classe "pile d'entiers", de taille maximale 'taille_max',
+    implémentée avec les données dans un tableau.
     """
 
     def __init__(self, taille_max: int):
@@ -78,11 +78,11 @@ class Pile():
         return élément
 ```
 
-On peut ajouter une méthode `.__str__(self)` uniquement pour un usage interne ou de tests.
+On pourrait ajouter une méthode `.__str__(self)`.
 
 ```python
     def __str__(self) -> str:
-        "avec sucre... usage interne, pour nous seulement"
+        "Pour usage interne, tests"
         ans = "[Début de pile] "
         for i in range(self.hauteur):
             ans += str(self.données[i])
@@ -93,7 +93,7 @@ On peut ajouter une méthode `.__str__(self)` uniquement pour un usage interne o
 
 Idéalement, il faudrait écrire les attributs `taille_max`, `hauteur` et `données` en les préfixant de `__` pour les rendre privés. **Exercice 1** : faire cela et justifier ce choix.
 
-**Exercice 2** : Ajouter une méthode accesseur `.hauteur(self)`.
+**Exercice 2** : Ajouter une méthode accesseur `.hauteur(self)`. Cela donne une raison de plus d'avoir préfixé l'attribut !
 
 **Exercice 3** : Vérifier l'utilisation avec le code suivant.
 
@@ -123,7 +123,7 @@ print(dir(ma_pile))
 
 
 ### Implémentation avec les listes dynamiques de Python
-On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et ses méthodes `.append(self, élément)` et `.pop(self)`.
+On peut facilement implémenter une pile de taille arbitraire avec le type `list` de Python et ses méthodes `.append(self, élément)` et `.pop(self)`. Tous les langages de programmation ne le permettent pas aussi facilement...
 
 ```python
 class Pile():
@@ -144,6 +144,8 @@ class Pile():
             raise ValueError('Pile vide')
         return self.données.pop()
 ```
+
+> On remarque que nous n'avons pas ici (besoin) de méthode ni d'attribut `hauteur`... Pour le type abstrait pile, on travaille parfois sans l'avoir disponible au départ.
 
 **Exercice 1** : rendre l'attribut `données` privé et ajouter une méthode `.hauteur(self)`.
 Refaire les tests vus précédemment.
@@ -180,4 +182,4 @@ Refaire les tests vus précédemment.
 
 
 > **Conseil** : on peut résoudre les problèmes dans un premier temps sans l'écriture avec style POO. Cependant, on demande alors une seconde écriture. Pourquoi ?
-> * Le jour où on dispose d'une meilleure structure de données, il suffit de remplacer uniquement le bout de code de la classe, le problème restant intact. Sans POO, il faut réécrire tout le problème pour utiliser les nouvelles idées... L'écriture avec le stye POO permet de s'affranchir presque totalement de la manière dont est écrit la classe. Il faut en revanche **toujours** garder à l'esprit : quel est le coût algorithmique de chaque méthode ?
+> * Le jour où on dispose d'une meilleure structure de données, il suffit de remplacer uniquement le bout de code de la classe, le problème restant intact. Sans POO, il faut souvent réécrire tout le problème pour utiliser les nouvelles idées... L'écriture avec le stye POO permet de s'affranchir presque totalement de la manière dont est écrit la classe. Il faut en revanche **toujours** garder à l'esprit : quel est le coût algorithmique de chaque méthode ?
