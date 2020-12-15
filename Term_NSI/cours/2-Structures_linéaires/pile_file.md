@@ -170,11 +170,56 @@ Refaire les tests vus précédemment.
 
 * Question 4 : Proposer une méthode `.retourner(self, i: int) -> None` qui modifie la pile en inversant l'ordre des `i` derniers éléments empilés. *On peut utiliser deux piles auxiliaires*.
 
+### Implémentation de façon récursive
+
+Gardons à l'esprit qu'un programme n'a pas une vue d'ensemble d'une pile. Il ne *voit* que le sommet ; en effet l'accès lui est aisé, moins pour le reste. On peut alors considérer une pile comme étant :
+* Soit une pile vide.
+* Soit un sommet, et le reste qui est ... une pile (vide ou non)
+
+On devine alors une définition récursive. Au lieu de sommet et reste, on trouve souvent dans la littérature **tête** et **queue**.
+
+```python
+class Pile():
+    def __init__(self):
+        self.__données = () # un tuple sans élément
+    
+    def est_vide(self):
+        return self.__données == ()
+
+    def empile(self, élément):
+        queue = self.__données
+        tête = élément
+        self.__données = (tête, queue)
+    
+    def dépile(self):
+        if self.est_vide():
+            raise ValueError('Pile vide')
+        tête, queue = self.__données
+        self.__données = queue
+        return tête
+```
+
+> **Attention** : ici nous avons en structure interne une pile qui est un tuple, soit vide, soit qui n'a que **deux** éléments, et de type différent. Nous nous l'étions interdit pour les listes ! Acceptons l'idée qu'il s'agit en réalité de deux adresses. L'adresse de l'élément `tête` puis celle de `queue`. D'autre part `queue` est un tuple qui contient probablement un tuple qui contient un tuple ; chaque fois de deux éléments.
+
+Voilà un exemple de la représentation interne de cette pile :
+```python
+(31, (12, (55, (20, ()))))
+```
+
+* Ici le sommet (la tête) de la pile est `31`.
+* Et le reste (la queue) est la pile `(12, (55, (20, ())))`
+
+Nous reviendrons sur cette construction, c'est une bonne méthode pour construire les **listes** ; oui, ça vient ensuite !
+
 
 ## La file
 
 * Le principe de la pile est : *LIFO : Last In, First Out*, (dernier entré, premier sorti).
 * Le principe de la file est : *FIFO : First In, First Out*, (premier entré, premier sorti).
+
+![file](FIFO_PEPS.png)
+
+> Wikipedia [file](https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es))
 
 **Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une file d'une certaine taille maximale. On proposera le constructeur ainsi que les méthodes `.est_vide(self)`, `.enfile(self, élément)` et `.défile(self)` analogues au cas de la pile.
 
@@ -183,3 +228,6 @@ Refaire les tests vus précédemment.
 
 > **Conseil** : on peut résoudre les problèmes dans un premier temps sans l'écriture avec style POO. Cependant, on demande alors une seconde écriture. Pourquoi ?
 > * Le jour où on dispose d'une meilleure structure de données, il suffit de remplacer uniquement le bout de code de la classe, le problème restant intact. Sans POO, il faut souvent réécrire tout le problème pour utiliser les nouvelles idées... L'écriture avec le stye POO permet de s'affranchir presque totalement de la manière dont est écrit la classe. Il faut en revanche **toujours** garder à l'esprit : quel est le coût algorithmique de chaque méthode ?
+
+
+>>> **Toujours utile** : relire [le tutoriel sur les structures de données sur python.org](https://docs.python.org/fr/3/tutorial/datastructures.html)

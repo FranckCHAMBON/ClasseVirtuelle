@@ -438,12 +438,52 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <p>Question 4 : Proposer une m&#xE9;thode <code>.retourner(self, i: int) -&gt; None</code> qui modifie la pile en inversant l&apos;ordre des <code>i</code> derniers &#xE9;l&#xE9;ments empil&#xE9;s. <em>On peut utiliser deux piles auxiliaires</em>.</p>
 </li>
 </ul>
+<h3 class="mume-header" id="impl%C3%A9mentation-de-fa%C3%A7on-r%C3%A9cursive">Impl&#xE9;mentation de fa&#xE7;on r&#xE9;cursive</h3>
+
+<p>Gardons &#xE0; l&apos;esprit qu&apos;un programme n&apos;a pas une vue d&apos;ensemble d&apos;une pile. Il ne <em>voit</em> que le sommet ; en effet l&apos;acc&#xE8;s lui est ais&#xE9;, moins pour le reste. On peut alors consid&#xE9;rer une pile comme &#xE9;tant :</p>
+<ul>
+<li>Soit une pile vide.</li>
+<li>Soit un sommet, et le reste qui est ... une pile (vide ou non)</li>
+</ul>
+<p>On devine alors une d&#xE9;finition r&#xE9;cursive. Au lieu de sommet et reste, on trouve souvent dans la litt&#xE9;rature <strong>t&#xEA;te</strong> et <strong>queue</strong>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># un tuple sans &#xE9;l&#xE9;ment</span>
+    
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        t&#xEA;te <span class="token operator">=</span> &#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">(</span>t&#xEA;te<span class="token punctuation">,</span> queue<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> d&#xE9;pile<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> queue
+        <span class="token keyword">return</span> t&#xEA;te
+</pre><blockquote>
+<p><strong>Attention</strong> : ici nous avons en structure interne une pile qui est un tuple, soit vide, soit qui n&apos;a que <strong>deux</strong> &#xE9;l&#xE9;ments, et de type diff&#xE9;rent. Nous nous l&apos;&#xE9;tions interdit pour les listes ! Acceptons l&apos;id&#xE9;e qu&apos;il s&apos;agit en r&#xE9;alit&#xE9; de deux adresses. L&apos;adresse de l&apos;&#xE9;l&#xE9;ment <code>t&#xEA;te</code> puis celle de <code>queue</code>. D&apos;autre part <code>queue</code> est un tuple qui contient probablement un tuple qui contient un tuple ; chaque fois de deux &#xE9;l&#xE9;ments.</p>
+</blockquote>
+<p>Voil&#xE0; un exemple de la repr&#xE9;sentation interne de cette pile :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>Ici le sommet (la t&#xEA;te) de la pile est <code>31</code>.</li>
+<li>Et le reste (la queue) est la pile <code>(12, (55, (20, ())))</code></li>
+</ul>
+<p>Nous reviendrons sur cette construction, c&apos;est une bonne m&#xE9;thode pour construire les <strong>listes</strong> ; oui, &#xE7;a vient ensuite !</p>
 <h2 class="mume-header" id="la-file">La file</h2>
 
 <ul>
 <li>Le principe de la pile est : <em>LIFO : Last In, First Out</em>, (dernier entr&#xE9;, premier sorti).</li>
 <li>Le principe de la file est : <em>FIFO : First In, First Out</em>, (premier entr&#xE9;, premier sorti).</li>
 </ul>
+<p><img src="FIFO_PEPS.png" alt="file"></p>
+<blockquote>
+<p>Wikipedia <a href="https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es)">file</a></p>
+</blockquote>
 <p><strong>Exercice 1</strong> : En s&apos;inspirant de la <strong>premi&#xE8;re</strong> impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation d&apos;une file d&apos;une certaine taille maximale. On proposera le constructeur ainsi que les m&#xE9;thodes <code>.est_vide(self)</code>, <code>.enfile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;file(self)</code> analogues au cas de la pile.</p>
 <p><strong>Exercice 2</strong> : R&#xE9;soudre le probl&#xE8;me <a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;iOrder=2">Distributeur automatique</a> sur France-IOI.</p>
 <blockquote>
@@ -451,6 +491,13 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <ul>
 <li>Le jour o&#xF9; on dispose d&apos;une meilleure structure de donn&#xE9;es, il suffit de remplacer uniquement le bout de code de la classe, le probl&#xE8;me restant intact. Sans POO, il faut souvent r&#xE9;&#xE9;crire tout le probl&#xE8;me pour utiliser les nouvelles id&#xE9;es... L&apos;&#xE9;criture avec le stye POO permet de s&apos;affranchir presque totalement de la mani&#xE8;re dont est &#xE9;crit la classe. Il faut en revanche <strong>toujours</strong> garder &#xE0; l&apos;esprit : quel est le co&#xFB;t algorithmique de chaque m&#xE9;thode ?</li>
 </ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Toujours utile</strong> : relire <a href="https://docs.python.org/fr/3/tutorial/datastructures.html">le tutoriel sur les structures de donn&#xE9;es sur python.org</a></p>
+</blockquote>
+</blockquote>
 </blockquote>
 
       </div>
