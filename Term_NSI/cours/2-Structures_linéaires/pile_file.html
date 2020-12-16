@@ -474,6 +474,28 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <li>Et le reste (la queue) est la pile <code>(12, (55, (20, ())))</code></li>
 </ul>
 <p>Nous reviendrons sur cette construction, c&apos;est une bonne m&#xE9;thode pour construire les <strong>listes</strong> ; oui, &#xE7;a vient ensuite !</p>
+<p>L&apos;int&#xE9;r&#xEA;t de ce genre de d&#xE9;finition est qu&apos;il est tr&#xE8;s commode de construire d&apos;autres m&#xE9;thodes qui se pr&#xEA;tent bien &#xE0; la r&#xE9;cursivit&#xE9;. Par exemple :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la hauteur de la pile&quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span>hauteur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><p><strong>Exercice 1</strong> : Proposer une m&#xE9;thode r&#xE9;cursive qui renvoie la somme des valeurs d&apos;une telle pile, en supposant qu&apos;il ne s&apos;agisse que de nombres entiers.</p>
+<p><strong>Exercice 2</strong> : Proposer une m&#xE9;thode r&#xE9;cursive <code>.contient_valeur(self, valeur)</code> qui renvoie un bool&#xE9;en, <code>True</code> si un &#xE9;l&#xE9;ment poss&#xE8;de une certaine <code>valeur</code>, et <code>False</code> sinon.</p>
+<blockquote>
+<p>On rappelle au passage un point technique, la diff&#xE9;rence entre &#xE9;l&#xE9;ment et valeur.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2.0</span> <span class="token comment"># m&#xEA;me valeur ?</span>
+<span class="token boolean">True</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token number">2</span> <span class="token keyword">is</span> <span class="token number">2.0</span> <span class="token comment"># m&#xEA;me &#xE9;l&#xE9;ment ?</span>
+<span class="token boolean">False</span>
+</pre><blockquote>
+<p>On fera attention, souvent on vous demandera si un objet contient un &#xE9;l&#xE9;ment d&apos;une certaine valeur. Parfois on vous demandera s&apos;il contient un &#xE9;l&#xE9;ment. Dans le second cas, il faudra utiliser le test d&apos;identit&#xE9; <code>is</code>, et non le test d&apos;&#xE9;galit&#xE9; de valeur <code>==</code>.</p>
+</blockquote>
+<blockquote>
+<p>Un autre int&#xE9;r&#xEA;t de cette pr&#xE9;sentation est son approche d&apos;un style de programmation, le <a href="https://fr.wikipedia.org/wiki/Filtrage_par_motif">filtrage par motif</a> (<em>pattern matching</em>).</p>
+</blockquote>
 <h2 class="mume-header" id="la-file">La file</h2>
 
 <ul>
@@ -498,6 +520,64 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <p><strong>Toujours utile</strong> : relire <a href="https://docs.python.org/fr/3/tutorial/datastructures.html">le tutoriel sur les structures de donn&#xE9;es sur python.org</a></p>
 </blockquote>
 </blockquote>
+</blockquote>
+<h2 class="mume-header" id="autres-structures">Autres structures</h2>
+
+<p>En plus des structures <a href="https://fr.wikipedia.org/wiki/Type_abstrait">pr&#xE9;sent&#xE9;es ici</a>, il existe une autre structure lin&#xE9;aire assez utilis&#xE9;e.</p>
+<ul>
+<li><code>Deque</code> : (<em>double end queue</em>), une structure qui permet facilement d&apos;ajouter ou d&apos;enlever facilement un &#xE9;l&#xE9;ment &#xE0; une des deux extr&#xE9;mit&#xE9;s, si elle est non vide.</li>
+</ul>
+<h2 class="mume-header" id="glossaire-anglais-fran%C3%A7ais">Glossaire anglais - fran&#xE7;ais</h2>
+
+<dl>
+<dt><em>push</em></dt>
+<dd>c&apos;est le terme qu&apos;on retrouve le plus pour empiler, enfiler. On trouve aussi <em>append</em> avec Python.</dd>
+<dt><em>pop</em></dt>
+<dd>c&apos;est le terme qu&apos;on retrouve le plus pour d&#xE9;piler, d&#xE9;filer.</dd>
+</dl>
+<blockquote>
+<p>Liens wikipedia en anglais et en fran&#xE7;ais pour ceux qui veulent aller plus loin :</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><em>English</em></th>
+<th>Fran&#xE7;ais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Data_structure"><em>data structure</em></a></td>
+<td><a href="https://fr.wikipedia.org/wiki/Structure_de_donn%C3%A9es">structure de donn&#xE9;es</a></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Array_data_structure"><em>array</em></a></td>
+<td><a href="https://fr.wikipedia.org/wiki/Tableau_(structure_de_donn%C3%A9es)">tableau</a></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"><em>stack</em></a></td>
+<td><a href="https://fr.wikipedia.org/wiki/Pile_(informatique)">pile</a></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)"><em>queue</em></a></td>
+<td><a href="https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es)">file</a></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Pattern_matching"><em>pattern matching</em></a></td>
+<td><a href="https://fr.wikipedia.org/wiki/Filtrage_par_motif">filtrage par motif</a></td>
+</tr>
+<tr>
+<td><em>push</em></td>
+<td>empiler, ou enfiler</td>
+</tr>
+<tr>
+<td><em>pop</em></td>
+<td>d&#xE9;piler, ou d&#xE9;filer</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/List_of_data_structures#Linear_data_structures">List of data structures</a> ; en anglais.</p>
 </blockquote>
 
       </div>

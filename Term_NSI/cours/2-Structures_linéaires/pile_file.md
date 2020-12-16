@@ -211,6 +211,34 @@ Voilà un exemple de la représentation interne de cette pile :
 
 Nous reviendrons sur cette construction, c'est une bonne méthode pour construire les **listes** ; oui, ça vient ensuite !
 
+L'intérêt de ce genre de définition est qu'il est très commode de construire d'autres méthodes qui se prêtent bien à la récursivité. Par exemple :
+
+```python
+    def hauteur(self):
+        """Renvoie la hauteur de la pile"""
+        if self.est_vide():
+            return 0
+        tête, queue = self.__données
+        return 1 + queue.hauteur()
+```
+
+**Exercice 1** : Proposer une méthode récursive qui renvoie la somme des valeurs d'une telle pile, en supposant qu'il ne s'agisse que de nombres entiers.
+
+**Exercice 2** : Proposer une méthode récursive `.contient_valeur(self, valeur)` qui renvoie un booléen, `True` si un élément possède une certaine `valeur`, et `False` sinon.
+
+> On rappelle au passage un point technique, la différence entre élément et valeur.
+```python
+>>> 2 == 2.0 # même valeur ?
+True
+>>> 2 is 2.0 # même élément ?
+False
+```
+
+> On fera attention, souvent on vous demandera si un objet contient un élément d'une certaine valeur. Parfois on vous demandera s'il contient un élément. Dans le second cas, il faudra utiliser le test d'identité `is`, et non le test d'égalité de valeur `==`.
+
+
+> Un autre intérêt de cette présentation est son approche d'un style de programmation, le [filtrage par motif](https://fr.wikipedia.org/wiki/Filtrage_par_motif) (*pattern matching*).
+
 
 ## La file
 
@@ -231,3 +259,33 @@ Nous reviendrons sur cette construction, c'est une bonne méthode pour construir
 
 
 >>> **Toujours utile** : relire [le tutoriel sur les structures de données sur python.org](https://docs.python.org/fr/3/tutorial/datastructures.html)
+
+
+## Autres structures
+
+En plus des structures [présentées ici](https://fr.wikipedia.org/wiki/Type_abstrait), il existe une autre structure linéaire assez utilisée.
+
+* `Deque` : (*double end queue*), une structure qui permet facilement d'ajouter ou d'enlever facilement un élément à une des deux extrémités, si elle est non vide.
+
+
+## Glossaire anglais - français
+
+*push*
+: c'est le terme qu'on retrouve le plus pour empiler, enfiler. On trouve aussi *append* avec Python.
+
+*pop*
+: c'est le terme qu'on retrouve le plus pour dépiler, défiler.
+
+> Liens wikipedia en anglais et en français pour ceux qui veulent aller plus loin :
+
+|*English*|Français|
+|---------|--------|
+|[*data structure*](https://en.wikipedia.org/wiki/Data_structure)|[structure de données](https://fr.wikipedia.org/wiki/Structure_de_donn%C3%A9es)|
+|[*array*](https://en.wikipedia.org/wiki/Array_data_structure)|[tableau](https://fr.wikipedia.org/wiki/Tableau_(structure_de_donn%C3%A9es))|
+|[*stack*](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) | [pile](https://fr.wikipedia.org/wiki/Pile_(informatique)) |
+|[*queue*](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) | [file](https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es)) |
+|[*pattern matching*](https://en.wikipedia.org/wiki/Pattern_matching)|[filtrage par motif](https://fr.wikipedia.org/wiki/Filtrage_par_motif)|
+|*push*|empiler, ou enfiler|
+|*pop*|dépiler, ou défiler|
+ 
+ > [List of data structures](https://en.wikipedia.org/wiki/List_of_data_structures#Linear_data_structures) ; en anglais.
