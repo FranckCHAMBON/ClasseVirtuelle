@@ -2,20 +2,20 @@
 
 ## Rappels sur le tableau
 
-> Exemple d'un tableau, le début des nombres premiers.
+> Exemple de tableau : les nombres premiers inférieurs à 100.
 
-|Indice | $0$ | $1$ | $2$ | $3$ |
-|-------|-----|-----|-----|-----|
-|Élément| $2$ | $3$ | $5$ | $7$ |
+|Indice | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$ | $11$ | $12$ | $13$ | $14$ | $15$ | $16$ | $17$ | $18$ | $19$ | $20$ | $21$ | $22$ | $23$ | $24$ |
+|-------|-----|-----|-----|-----|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+|Élément| $2$ | $3$ | $5$ | $7$ | $11$ | $13$ | $17$ | $19$ | $23$ | $29$ | $31$ | $37$ | $41$ | $43$ | $47$ | $53$ | $59$ | $61$ | $67$ | $71$ | $73$ | $79$ | $83$ | $89$ | $97$ |
 
-Un tableau `table` est une structure de données, abstraite et élémentaire :
+Un tableau, `table` par exemple, est une structure de données, abstraite et élémentaire :
 * avec des éléments de même type, et de même taille `taille_élément`,
 * un nombre d'éléments fixé à la création ; `nb_éléments`,
 * rangés de façon continue en mémoire, indicés de `0` **inclus** à `nb_éléments` **exclu**.
 
 > En interne, on accède, en pratique, à un élément d'indice `i` du tableau par son adresse mémoire qui est égale à `adresse_tableau + i * taille_élément`.
 
-On peut lire et modifier un élément d'indice `i`, avec un langage de programmation, on note très souvent `table[i]` cet élément de `table` d'indice `i`.
+On peut lire et modifier un élément d'indice `i`. Avec un langage de programmation, on note très souvent `table[i]` cet élément de `table` d'indice `i`.
 
 Avec cette structure de données, on a déjà résolu de nombreux problèmes, mais on peut aussi construire de nouvelles structures de données.
 
@@ -25,12 +25,10 @@ Concrètement, on retrouve des implémentations de cette structure abstraite, le
 
 ## La pile
 
-Pour une version simple (éléments de même taille).
-
 On utilisera les notations de la POO.
 
 * C'est une structure abstraite de donnée linéaire (agencée en ligne en mémoire).
-* Les éléments sont de même type et de même taille.
+* Les éléments sont de même type.
 * On dispose de méthodes :
     * Le constructeur `Pile()`, via la méthode `.__init__(self)` qui initialise une pile vide.
     * `.est_vide(self)` renvoie un booléen, `True` pour une pile vide.
@@ -44,6 +42,8 @@ On utilisera les notations de la POO.
 ### Implémentation avec tableau
 
 On propose ici, en Python, une implémentation qui utilise en arrière-plan une structure de type `list` de Python, **mais** en limitant volontairement l'usage, comme **un tableau**, sans méthode dynamique. Ainsi l'implémentation pourrait être réalisée dans de nombreux langages de programmation avec de rares ajustements.
+
+> La limitation, **ici**, sera que les éléments de la pile devront être de même type, et de même taille.
 
 ```python
 class Pile():
@@ -61,7 +61,8 @@ class Pile():
         return self.hauteur == 0
 
     def empile(self, élément):
-        """Ajoute `élément` au sommet de la pile"""
+        """Ajoute `élément` au sommet de la pile.
+        """
         if self.hauteur == self.taille_max:
             raise ValueError('Pile pleine')
         self.données[self.hauteur] = élément
@@ -82,8 +83,9 @@ On pourrait ajouter une méthode `.__str__(self)`.
 
 ```python
     def __str__(self) -> str:
-        "Pour usage interne, tests"
-        ans = "[Début de pile] "
+        """Pour usage interne, tests.
+        """
+        ans = "[Début de pile]
         for i in range(self.hauteur):
             ans += str(self.données[i])
             ans += ", "
@@ -153,7 +155,8 @@ Refaire les tests vus précédemment.
 **Exercice 2** : Résoudre le problème [Dates de péremption](http://www.france-ioi.org/algo/task.php?idChapter=527&idTask=356) sur France-IOI.
 
 **Exercice 3** : Pour cet exercice, on supposera qu'on ne dispose **que** du constructeur d'une pile vide, ainsi que des méthodes `est_vide(self)`, `.empile(self, élément)` et `.dépile(self)`. 
-* Question 1 : Que fait la méthode suivante ? Donner un vrai nom et une *doctring* et un exemple simple l'illustrant (pas un *doctest* non plus).
+* Question 1 : Que fait la méthode `mystère` suivante ? Donner un vrai nom et une *doctring*. On testera à la main sur l'exemple simple : 
+    * sommet de la pile $\rightarrow 4, 6, 3, 9, 7 |$.
 
 ```python
     # suite de class Pile():
@@ -164,7 +167,7 @@ Refaire les tests vus précédemment.
         return autre
 ```
 
-* Question 2 : Proposer alors une méthode `.hauteur(self)-> int` qui renvoie la hauteur d'une pile, en la laissant inchangée en fin de compte.
+* Question 2 : Proposer alors une méthode `.hauteur(self)-> int` qui renvoie la hauteur d'une pile, en la laissant inchangée en fin de compte. *Rappel* : on ne dispose pas du détail d'implémentation, et on ne peut donc pas utiliser `len` ; d'ailleurs sur quel objet ?!?
 
 * Question 3 : Proposer une méthode `.max_pile(self, i: int) -> int` qui renvoie la position de l'élément maximal parmi les `i` derniers empilés. La position du sommet de la pile est, par convention ici, égale à $1$. La pile doit être inchangée en fin de compte.
 
@@ -174,9 +177,15 @@ Refaire les tests vus précédemment.
 
 Gardons à l'esprit qu'un programme n'a pas une vue d'ensemble d'une pile. Il ne *voit* que le sommet ; en effet l'accès lui est aisé, moins pour le reste. On peut alors considérer une pile comme étant :
 * Soit une pile vide.
-* Soit un sommet, et le reste qui est ... une pile (vide ou non)
+* Soit un sommet que l'on nomme souvent ==tête==, et le reste caché qui est ... une pile (vide ou non), que l'on nomme souvent ==queue==.
 
-On devine alors une définition récursive. Au lieu de sommet et reste, on trouve souvent dans la littérature **tête** et **queue**.
+On devine alors une définition récursive d'une pile :
+* Pile vide, ou alors un couple `(tête, queue)`
+* où `tête` est un élément, et `queue` une autre pile.
+
+Dans l'implémentation ci-dessous, on choisit :
+* le tuple vide `()` pour la pile vide,
+* sinon, le tuple `(tête, queue)`.
 
 ```python
 class Pile():
@@ -199,6 +208,8 @@ class Pile():
         return tête
 ```
 
+On aurait pu écrire la méthode `empile` en une seule ligne avec `self.__données = (élément, self.__données)`, mais c'est moins lisible, et moins pédagogique.
+
 > **Attention** : ici nous avons en structure interne une pile qui est un tuple, soit vide, soit qui n'a que **deux** éléments, et de type différent. Nous nous l'étions interdit pour les listes ! Acceptons l'idée qu'il s'agit en réalité de deux adresses. L'adresse de l'élément `tête` puis celle de `queue`. D'autre part `queue` est un tuple qui contient probablement un tuple qui contient un tuple ; chaque fois de deux éléments.
 
 Voilà un exemple de la représentation interne de cette pile :
@@ -209,7 +220,7 @@ Voilà un exemple de la représentation interne de cette pile :
 * Ici le sommet (la tête) de la pile est `31`.
 * Et le reste (la queue) est la pile `(12, (55, (20, ())))`
 
-Nous reviendrons sur cette construction, c'est une bonne méthode pour construire les **listes** ; oui, ça vient ensuite !
+Nous reviendrons sur cette construction, c'est une bonne méthode pour construire la structure de type **liste** ; oui, ça vient ensuite !
 
 L'intérêt de ce genre de définition est qu'il est très commode de construire d'autres méthodes qui se prêtent bien à la récursivité. Par exemple :
 
@@ -221,12 +232,13 @@ L'intérêt de ce genre de définition est qu'il est très commode de construire
         tête, queue = self.__données
         return 1 + queue.hauteur()
 ```
+> Dit autrement : la hauteur d'une pile c'est zéro si la pile est vide, sinon, c'est un, plus, la hauteur de la pile qui est sous l'élément au sommet.
 
 **Exercice 1** : Proposer une méthode récursive qui renvoie la somme des valeurs d'une telle pile, en supposant qu'il ne s'agisse que de nombres entiers.
 
 **Exercice 2** : Proposer une méthode récursive `.contient_valeur(self, valeur)` qui renvoie un booléen, `True` si un élément possède une certaine `valeur`, et `False` sinon.
 
-> On rappelle au passage un point technique, la différence entre élément et valeur.
+> On rappelle au passage un point technique, la différence entre élément et valeur. Regardons l'exemple ci-dessous.
 ```python
 >>> 2 == 2.0 # même valeur ?
 True
@@ -234,10 +246,18 @@ True
 False
 ```
 
-> On fera attention, souvent on vous demandera si un objet contient un élément d'une certaine valeur. Parfois on vous demandera s'il contient un élément. Dans le second cas, il faudra utiliser le test d'identité `is`, et non le test d'égalité de valeur `==`.
+> ⚠️ On fera attention.
+> * **Souvent** on vous demandera si un objet contient un élément d'une certaine valeur ; on pourra utiliser un test d'égalité de valeur `==`.
+> * Parfois on vous demandera s'il contient un élément. Dans ce second cas, il faudra utiliser le test d'identité `is`, et non le test d'égalité de valeur `==`.
 
 
-> Un autre intérêt de cette présentation est son approche d'un style de programmation, le [filtrage par motif](https://fr.wikipedia.org/wiki/Filtrage_par_motif) (*pattern matching*).
+> (Pour aller plus loin) : Un autre intérêt de cette présentation est son approche d'un style de programmation, le [filtrage par motif](https://fr.wikipedia.org/wiki/Filtrage_par_motif) (*pattern matching*).
+
+### Utilisations concrètes
+
+* Lors d'appels récursifs une pile d'appels est créée en mémoire.
+* Lors de l'utilisation d'un navigateur de recherche, la navigation est stockée dans une pile, pour permettre de revenir facilement en arrière.
+* Avec un éditeur de code, un traitement de texte ou bien un logiciel de traitement d'image, on peut annuler les dernières opérations ; elles sont stockées dans une pile.
 
 
 ## La file
@@ -249,7 +269,12 @@ False
 
 > Wikipedia [file](https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es))
 
-**Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une file d'une certaine taille maximale. On proposera le constructeur ainsi que les méthodes `.est_vide(self)`, `.enfile(self, élément)` et `.défile(self)` analogues au cas de la pile.
+### Utilisations concrètes
+
+* Les travaux à imprimer sont envoyés dans une file, le premier arrivé sera le premier servi.
+* Un processeur reçoit des calculs à effectuer, ils arrivent dans une file. L'ordonnanceur est souvent plus élaboré qu'une simple file, et des travaux prioritaires peuvent être traités avant.
+
+**Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une **file** d'une certaine taille maximale. On proposera le constructeur ainsi que les méthodes `.est_vide(self)`, `.enfile(self, élément)` et `.défile(self)` analogues au cas de la pile.
 
 **Exercice 2** : Résoudre le problème [Distributeur automatique](http://www.france-ioi.org/algo/task.php?idChapter=527&iOrder=2) sur France-IOI.
 
