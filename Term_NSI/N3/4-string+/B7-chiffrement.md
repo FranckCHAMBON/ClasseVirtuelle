@@ -91,7 +91,8 @@ def déchiffre(lettre: str, clé: int) -> str:
 
 nb_pages = int(input())
 for page in range(2, nb_pages + 1):
+    ligne = input()
     clé = (-5 * page) if page % 2 == 1 else (3 * page)
-    print("".join((déchiffre(lettre, clé) for lettre in input())))
+    print("".join((déchiffre(lettre, clé) for lettre in ligne)))
 ```
 

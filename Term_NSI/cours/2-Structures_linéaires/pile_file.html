@@ -379,7 +379,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> taille_max<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>taille_max <span class="token operator">=</span> taille_max
-        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># un tableau</span>
+        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille_max<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># un tableau</span>
         self<span class="token punctuation">.</span>hauteur <span class="token operator">=</span> <span class="token number">0</span>
 
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
@@ -394,7 +394,7 @@ pre[data-line] .line-highlight[data-end]:after {
         self<span class="token punctuation">.</span>hauteur <span class="token operator">+=</span> <span class="token number">1</span>
     
     <span class="token keyword">def</span> d&#xE9;pile<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">&quot;&quot;&quot;Enl&#xE8;ve et renvoie l&apos; `&#xE9;l&#xE9;ment` au sommet de la pile.
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Enl&#xE8;ve et renvoie l&apos; `&#xE9;l&#xE9;ment` du sommet de la pile.
         &quot;&quot;&quot;</span>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
@@ -406,7 +406,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Pour usage interne, tests.
         &quot;&quot;&quot;</span>
-        ans <span class="token operator">=</span> &quot;<span class="token punctuation">[</span>D&#xE9;but de pile<span class="token punctuation">]</span>
+        ans <span class="token operator">=</span> <span class="token string">&quot;[D&#xE9;but de pile]&quot;</span>
         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">)</span><span class="token punctuation">:</span>
             ans <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
             ans <span class="token operator">+=</span> <span class="token string">&quot;, &quot;</span>

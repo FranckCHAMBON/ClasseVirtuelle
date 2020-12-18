@@ -54,7 +54,7 @@ class Pile():
 
     def __init__(self, taille_max: int):
         self.taille_max = taille_max
-        self.données = [0 for _ in range(taille)] # un tableau
+        self.données = [0 for _ in range(taille_max)] # un tableau
         self.hauteur = 0
 
     def est_vide(self) -> bool:
@@ -69,7 +69,7 @@ class Pile():
         self.hauteur += 1
     
     def dépile(self):
-        """Enlève et renvoie l' `élément` au sommet de la pile.
+        """Enlève et renvoie l' `élément` du sommet de la pile.
         """
         if self.est_vide():
             raise ValueError('Pile vide')
@@ -85,7 +85,7 @@ On pourrait ajouter une méthode `.__str__(self)`.
     def __str__(self) -> str:
         """Pour usage interne, tests.
         """
-        ans = "[Début de pile]
+        ans = "[Début de pile]"
         for i in range(self.hauteur):
             ans += str(self.données[i])
             ans += ", "
