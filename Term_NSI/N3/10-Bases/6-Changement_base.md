@@ -55,9 +55,9 @@ Faites attention aux deux « 0 » successifs. Par exemple dans l'exemple 2, « 2
 ## Solution
 
 ```python
-def lire_base(base: int, chiffres: list) -> int:
+def lire_base(chiffres: list, base: int) -> int:
     """Renvoie la valeur du nombre, avec ses 'chiffres' donnés en 'base'.
-    >>> lire_base(12, [3, 11])
+    >>> lire_base([3, 11], 12)
     47
     """
     résultat = 0
