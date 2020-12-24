@@ -95,34 +95,34 @@ On **ne met pas** d'espace
 On ne place jamais d'espace en fin de ligne.
 
 ### Un peu plus encore
-Inspiré de ce [document](https://www.codeflow.site/fr/article/python-pep8), vous retrouverez plus de détails. Une recommandation y est faite, elle fait débat.
+Inspiré de ce [document](https://www.codeflow.site/fr/article/python-pep8), vous retrouverez plus de détails. Une recommandation y est faite, elle fait débat. Les deux exemples suivant utilisent du transtypage implicite ; en NSI nous préférons ne pas en voir ! Nous montrons ensuite la bonne pratique.
 
 ```python
 # Not recommended
 my_list = []
 if not len(my_list):
-    print('La liste est vide !')
+    print('my_list is empty!')
 ```
 
-En Python, toute liste, chaîne ou tuple vide est transypée implicitement à `False`. Nous pouvons donc proposer une alternative plus simple à ce qui précède :
+En Python, toute liste, chaîne ou tuple **vide** est transypée implicitement à `False`. Nous pouvons donc proposer une alternative plus simple à ce qui précède :
 
 ```python
 # Recommended
 my_list = []
 if not my_list:
-    print('La liste est vide !')
+    print('my_list is empty!')
 ```
 
-Alors que les deux exemples afficheront "La liste est vide !", La deuxième option est plus simple, donc PEP 8 l’encourage.
+Alors que les deux exemples afficheront que la liste est vide (en anglais), la deuxième option est plus simple, donc PEP 8 l’encourage.
 
-> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc une autre méthode est recommandée. Les deux précédentes sont incorrectes à ce niveau.
+> ⚠️ Contrairement au PEP 8, en NSI nous préférons interdire le transtypage implicite, donc **une autre méthode est recommandée**. Les deux précédentes sont donc incorrectes pour nous.
 
 ```python
 # La bonne méthode
-if my_list == []:
-    print('La liste est vide !')
-# ou alors
-if my_list != []:
-    print('La liste est non vide !')
+if ma_liste == []:
+    print("ma_liste est vide !")
 
+# ou alors
+if ma_liste != []:
+    print("ma_liste n'est pas vide !")
 ```
