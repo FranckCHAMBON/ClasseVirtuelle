@@ -88,7 +88,7 @@ for _ in range(nb_mesures):
 
 Quel est le problème principal ?
 * La lecture de l'entrée, n'est peut-être pas entièrement lue pour cette partie ; il y a peut-être une autre partie du programme ensuite qui voudrait lire l'entrée et qui attend peut-être que toute la précédente ait été lue !
-* Le principe du rétour prématuré est un bon principe, cependant il serait bon que toute l'entrée soit lue comme prévu.
+* Le principe du retour prématuré est un bon principe, cependant il serait bon que toute l'entrée soit lue comme prévu.
 
 ```python
 nb_mesures = int(input())

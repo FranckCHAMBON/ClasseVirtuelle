@@ -75,7 +75,7 @@ nb_suspects = sum(1 for _ in filter(est_suspect, dates))
 
 Votre programme devra lire, dans l'ordre : l'abscisse minimale, l'abscisse maximale, l'ordonnée minimale et l'ordonnée maximale du rectangle. Il lira ensuite le nombre total de maisons, puis pour chaque maison, son abscisse et son ordonnée.
 
-Votre programme devra déterminer puis afficher le nombre de maisons qui se trouvent dans la zone de recherche. Si une maison est exactement sur le bord de la zone, elle doit ête comptée. 
+Votre programme devra déterminer puis afficher le nombre de maisons qui se trouvent dans la zone de recherche. Si une maison est exactement sur le bord de la zone, elle doit être comptée. 
 
 ### Exemple
 
@@ -207,7 +207,7 @@ print(nb_jours[numéro])
 ```
 
 Remarque
-: le $-1$ de la liste, correspond au mois d'indice $0$ qui n'existe pas. On peut mettre ce qu'on veut à la place de $-1$, comme $0$ ou `None`. Cependant, pour avoir un un tableau homogène en type de donnée, on pourrait recommander de ne pas mettre `None`.
+: le $-1$ de la liste, correspond au mois d'indice $0$ qui n'existe pas. On peut mettre ce qu'on veut à la place de $-1$, comme $0$ ou `None`. Cependant, pour avoir un tableau homogène en type de donnée, on pourrait recommander de ne pas mettre `None`.
 
 ## Amitié entre gardes
 
@@ -220,6 +220,7 @@ Votre programme doit lire quatre entiers : la date du début et la date de fin (
 Si les deux soldats ont, à un moment (même une seule seconde), été de garde en même temps le programme devra écrire "Amis" et sinon "Pas amis".
 
 ### Exemples
+
 #### Exemple 1
 
 entrée :
@@ -275,6 +276,7 @@ else:
 Remarque
 : Il est simple de justifier qu'on est `Pas amis` : soit le premier est parti quand le second arrive, soit l'inverse !
 : Sinon, `Amis` correspond à l'autre cas.
+
 ### Solution alternative
 
 * En utilisant la loi de De Morgan, on peut donner une condition aussi rapide qui valide "Amis" au lieu de "Pas amis".
@@ -392,7 +394,7 @@ Remarque
 
 ### Sujet
 
- On vous donne un entier, le numéro d'une personne recherchée, puis un entier tailleListe, et enfin tailleListe entiers parmi lesquels vous devez chercher le numéro de la personne. Si le numéro est présent dans la liste (il peut l'être plusieurs fois) vous devez afficher le texte "Sorti de la ville" sinon "Encore dans la ville".
+ On vous donne un entier, le numéro d'une personne recherchée, puis un entier `tailleListe`, et enfin `tailleListe` entiers parmi lesquels vous devez chercher le numéro de la personne. Si le numéro est présent dans la liste (il peut l'être plusieurs fois) vous devez afficher le texte "Sorti de la ville" sinon "Encore dans la ville".
 
 ### Exemple
 
@@ -450,7 +452,7 @@ print("Sorti de la ville" if est_sorti else "Encore dans la ville")
 
 ### Sujet
 
- Votre programme doit lire entier : un nombre de personnes à considérer. Ensuite, pour chaque personne, il doit lire son signalement sous la forme de cinq entiers : sa taille en centimètres, son âge en années, son poids en kilogrammes, un entier valant 1 si la personne possède un cheval et 0 sinon, et un entier valant 1 si la personne à les cheveux bruns et 0 sinon.
+ Votre programme doit lire entier : un nombre de personnes à considérer. Ensuite, pour chaque personne, il doit lire son signalement sous la forme de cinq entiers : sa taille en centimètres, son âge en années, son poids en kilogrammes, un entier valant 1 si la personne possède un cheval et 0 sinon, et un entier valant 1 si la personne a les cheveux bruns et 0 sinon.
 
 On veut déterminer pour chaque personne à quel point elle correspond aux 5 critères suivants :
 
@@ -552,7 +554,7 @@ for _ in range(int(input())): print(["Impossible", "Peu probable", "Peu probable
 * `True + True * False == 1`, l'opération prioritaire conduit au transtypage `True * False == 1 * 0 == 0`, puis *Python* considère `True + 0`, seul le premier est à transtyper, on a `1 + 0 == 1`.
 
 :warning: Le transtypage fonctionne aussi dans l'autre sens. Par exemple :
-* `if 42: print("OK")` affiche `OK`, en effet, après un `if` on attend un booléen, si ce n'en ai pas un *Python* fait une conversion de type automatique (transtypage). Avec les règles :
+* `if 42: print("OK")` affiche `OK`, en effet, après un `if` on attend un booléen, si ce n'en est pas un *Python* fait une conversion de type automatique (transtypage). Avec les règles :
 * L'entier zéro donne `False` ;
 * Tout autre entier donne `True` ;
 * Une liste (ou ensemble, ...) vide donne `False` ;
@@ -562,7 +564,7 @@ for _ in range(int(input())): print(["Impossible", "Peu probable", "Peu probable
 Ces pratiques sont parfois considérées comme mauvaises ; les changements de type devant être explicites.
 
 **À retenir**
-: Si vous voulez faire du transtypage, faite-le **explicitement** ; comme depuis toujours avec les exemples que vous connaissez déjà :
+: Si vous voulez faire du transtypage, faites-le **explicitement** ; comme depuis toujours avec les exemples que vous connaissez déjà :
 
 ```python
 x = float(input())
