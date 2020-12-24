@@ -52,7 +52,7 @@ else:
 
 ### Solution alternative
 
-```
+```python
 position_actuelle = int(input())
 nb_villages = int(input())
 
@@ -66,7 +66,7 @@ print(nb_villages_proches)
 
 Variante fonctionnelle
 
-```
+```python
 position_actuelle = int(input())
 nb_villages = int(input())
 positions_villages = iter(int(input()) for _ in range(nb_villages))
@@ -75,6 +75,11 @@ print(sum(1 for x in positions_villages if abs(position_actuelle - x) <= 50))
 ```
 
 Remarque : `iter` ne fabrique pas la liste `positions_villages`, mais plutôt un itérateur qui va donner élément par élément les positions dans la boucle suivante. Utile lorsqu'on n'a pas besoin de conserver en mémoire toute la liste, mais plutôt traiter un à un ses éléments.
+
+La méthode recommandée en NSI reste la liste en compréhension :
+```python
+positions_villages = list(int(input()) for _ in range(nb_villages))
+```
 
 ## Étape la plus longue
 
