@@ -160,7 +160,7 @@ Refaire les tests vus précédemment.
 
 ```python
     # suite de class Pile():
-    def mystère(self) -> Pile:
+    def mystère(self):# -> Pile:
         autre = Pile()
         while not self.est_vide():
             autre.empile(self.dépile())
@@ -169,7 +169,7 @@ Refaire les tests vus précédemment.
 
 * Question 2 : Proposer alors une méthode `.hauteur(self)-> int` qui renvoie la hauteur d'une pile, en la laissant inchangée en fin de compte. *Rappel* : on ne dispose pas du détail d'implémentation, et on ne peut donc pas utiliser `len` ; d'ailleurs sur quel objet ?!?
 
-* Question 3 : Proposer une méthode `.max_pile(self, i: int) -> int` qui renvoie la position de l'élément maximal parmi les `i` derniers empilés. La position du sommet de la pile est, par convention ici, égale à $1$. La pile doit être inchangée en fin de compte.
+* Question 3 : Proposer une méthode `.max_pile(self, i: int) -> int` qui renvoie la (plus petite) position de l'élément maximal parmi les `i` derniers empilés. La position du sommet de la pile est, par convention ici, égale à $1$. La pile doit être inchangée en fin de compte.
 
 * Question 4 : Proposer une méthode `.retourner(self, i: int) -> None` qui modifie la pile en inversant l'ordre des `i` derniers éléments empilés. *On peut utiliser deux piles auxiliaires*.
 

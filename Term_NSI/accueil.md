@@ -52,6 +52,7 @@ Pour le code Python des solutions :
 
 ## 🚛 Structures linéaires
 * [Pile et file](cours/2-Structures_linéaires/pile_file.html)
+    * [Corrections](cours/2-Structures_linéaires/2-Corrections.html)
 
 ## 🐚 Interfaces Homme Machine
 

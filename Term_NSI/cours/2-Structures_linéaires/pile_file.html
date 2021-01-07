@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -472,7 +472,7 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 </li>
 </ul>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token comment"># suite de class Pile():</span>
-    <span class="token keyword">def</span> myst&#xE8;re<span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Pile<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> myst&#xE8;re<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment"># -&gt; Pile:</span>
         autre <span class="token operator">=</span> Pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">while</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             autre<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>self<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -482,7 +482,7 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <p>Question 2 : Proposer alors une m&#xE9;thode <code>.hauteur(self)-&gt; int</code> qui renvoie la hauteur d&apos;une pile, en la laissant inchang&#xE9;e en fin de compte. <em>Rappel</em> : on ne dispose pas du d&#xE9;tail d&apos;impl&#xE9;mentation, et on ne peut donc pas utiliser <code>len</code> ; d&apos;ailleurs sur quel objet ?!?</p>
 </li>
 <li>
-<p>Question 3 : Proposer une m&#xE9;thode <code>.max_pile(self, i: int) -&gt; int</code> qui renvoie la position de l&apos;&#xE9;l&#xE9;ment maximal parmi les <code>i</code> derniers empil&#xE9;s. La position du sommet de la pile est, par convention ici, &#xE9;gale &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>. La pile doit &#xEA;tre inchang&#xE9;e en fin de compte.</p>
+<p>Question 3 : Proposer une m&#xE9;thode <code>.max_pile(self, i: int) -&gt; int</code> qui renvoie la (plus petite) position de l&apos;&#xE9;l&#xE9;ment maximal parmi les <code>i</code> derniers empil&#xE9;s. La position du sommet de la pile est, par convention ici, &#xE9;gale &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>. La pile doit &#xEA;tre inchang&#xE9;e en fin de compte.</p>
 </li>
 <li>
 <p>Question 4 : Proposer une m&#xE9;thode <code>.retourner(self, i: int) -&gt; None</code> qui modifie la pile en inversant l&apos;ordre des <code>i</code> derniers &#xE9;l&#xE9;ments empil&#xE9;s. <em>On peut utiliser deux piles auxiliaires</em>.</p>
