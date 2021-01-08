@@ -68,7 +68,7 @@ On va renverser deux fois la pile, et compter lors d'un des deux renversements c
         autre = Pile()
         pos = pos_max = 1
         maxi = self.dépile()
-        autre.empile(truc)
+        autre.empile(maxi)
         for _ in range(i - 1):
             truc = self.dépile()
             pos += 1
@@ -105,3 +105,56 @@ On dépile $i$ éléments, que l'on inverse dans une seconde pile pour la remett
             self.empile(autre_bis.dépile())
 ```
 
+### Implémentation de façon récursive
+
+> Correction des exercices
+
+```python
+class Pile():
+    def __init__(self, données=None):
+        self.__données = données
+
+    def est_vide(self):
+        return self.__données is None
+
+    def empile(self, élément):
+        queue = self.__données
+        tête = élément
+        self.__données = (tête, queue)
+    
+    def dépile(self):
+        if self.est_vide():
+            raise ValueError('Pile vide')
+        tête, queue = self.__données
+        self.__données = queue
+        return tête
+
+    def hauteur(self):
+        """Renvoie la hauteur de la pile"""
+        if self.est_vide():
+            return 0
+        tête, queue = self.__données
+        return 1 + Pile(queue).hauteur()
+
+    # Exercice 1
+    def somme(self):
+        """Renvoie la somme des valeurs.
+        On suppose qu'elles sont entières.
+        """
+        if self.est_vide():
+            return 0
+        tête, queue = self.__données
+        return tête + Pile(queue).somme()
+
+    # Exercice 2
+    def contient_valeur(self, valeur):
+    """ La pile contient-elle la valeur ?
+    """
+        if self.est_vide():
+            return False
+        tête, queue = self.__données
+        return (tête == valeur) or Pile(queue).contient_valeur(valeur)
+    
+
+
+```

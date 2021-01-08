@@ -328,7 +328,7 @@ pre[data-line] .line-highlight[data-end]:after {
         autre <span class="token operator">=</span> Pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
         pos <span class="token operator">=</span> pos_max <span class="token operator">=</span> <span class="token number">1</span>
         maxi <span class="token operator">=</span> self<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        autre<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>truc<span class="token punctuation">)</span>
+        autre<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>maxi<span class="token punctuation">)</span>
         <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             truc <span class="token operator">=</span> self<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
             pos <span class="token operator">+=</span> <span class="token number">1</span>
@@ -359,6 +359,58 @@ pre[data-line] .line-highlight[data-end]:after {
             autre_bis<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>autre<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
             self<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>autre_bis<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="impl%C3%A9mentation-de-fa%C3%A7on-r%C3%A9cursive">Impl&#xE9;mentation de fa&#xE7;on r&#xE9;cursive</h3>
+
+<blockquote>
+<p>Correction des exercices</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> donn&#xE9;es<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> donn&#xE9;es
+
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token keyword">is</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        t&#xEA;te <span class="token operator">=</span> &#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">(</span>t&#xEA;te<span class="token punctuation">,</span> queue<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> d&#xE9;pile<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> queue
+        <span class="token keyword">return</span> t&#xEA;te
+
+    <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la hauteur de la pile&quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> Pile<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>hauteur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Exercice 1</span>
+    <span class="token keyword">def</span> <span class="token function">somme</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la somme des valeurs.
+        On suppose qu&apos;elles sont enti&#xE8;res.
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        <span class="token keyword">return</span> t&#xEA;te <span class="token operator">+</span> Pile<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>somme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Exercice 2</span>
+    <span class="token keyword">def</span> <span class="token function">contient_valeur</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; La pile contient-elle la valeur ?
+    &quot;&quot;&quot;</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>t&#xEA;te <span class="token operator">==</span> valeur<span class="token punctuation">)</span> <span class="token keyword">or</span> Pile<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>contient_valeur<span class="token punctuation">(</span>valeur<span class="token punctuation">)</span>
+    
+
+
 </pre>
       </div>
       

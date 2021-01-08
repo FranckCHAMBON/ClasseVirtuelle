@@ -184,16 +184,16 @@ On devine alors une définition récursive d'une pile :
 * où `tête` est un élément, et `queue` une autre pile.
 
 Dans l'implémentation ci-dessous, on choisit :
-* le tuple vide `()` pour la pile vide,
+* `None` pour la pile vide,
 * sinon, le tuple `(tête, queue)`.
 
 ```python
 class Pile():
-    def __init__(self):
-        self.__données = () # un tuple sans élément
+    def __init__(self, données=None):
+        self.__données = données
     
     def est_vide(self):
-        return self.__données == ()
+        return self.__données is None
 
     def empile(self, élément):
         queue = self.__données
@@ -210,15 +210,15 @@ class Pile():
 
 On aurait pu écrire la méthode `empile` en une seule ligne avec `self.__données = (élément, self.__données)`, mais c'est moins lisible, et moins pédagogique.
 
-> **Attention** : ici nous avons en structure interne une pile qui est un tuple, soit vide, soit qui n'a que **deux** éléments, et de type différent. Nous nous l'étions interdit pour les listes ! Acceptons l'idée qu'il s'agit en réalité de deux adresses. L'adresse de l'élément `tête` puis celle de `queue`. D'autre part `queue` est un tuple qui contient probablement un tuple qui contient un tuple ; chaque fois de deux éléments.
+> **Attention** : ici nous avons en structure interne une pile qui est soit `None`, soit un tuple qui n'a que **deux** éléments, et de types différents. Nous nous l'étions interdit pour les listes ! Acceptons l'idée qu'il s'agit en réalité de deux adresses. L'adresse de l'élément `tête` puis celle de `queue`. 
 
 Voilà un exemple de la représentation interne de cette pile :
 ```python
-(31, (12, (55, (20, ()))))
+(31, (12, (55, (20, None))))
 ```
 
 * Ici le sommet (la tête) de la pile est `31`.
-* Et le reste (la queue) est la pile `(12, (55, (20, ())))`
+* Et le reste (la queue) est la pile `(12, (55, (20, None))`
 
 Nous reviendrons sur cette construction, c'est une bonne méthode pour construire la structure de type **liste** ; oui, ça vient ensuite !
 
@@ -230,9 +230,9 @@ L'intérêt de ce genre de définition est qu'il est très commode de construire
         if self.est_vide():
             return 0
         tête, queue = self.__données
-        return 1 + queue.hauteur()
+        return 1 + Pile(queue).hauteur()
 ```
-> Dit autrement : la hauteur d'une pile c'est zéro si la pile est vide, sinon, c'est un, plus, la hauteur de la pile qui est sous l'élément au sommet.
+> Dit autrement : la hauteur d'une pile c'est zéro si la pile est vide, sinon, c'est **un**, plus, la hauteur de la pile qui est sous l'élément au sommet.
 
 **Exercice 1** : Proposer une méthode récursive qui renvoie la somme des valeurs d'une telle pile, en supposant qu'il ne s'agisse que de nombres entiers.
 

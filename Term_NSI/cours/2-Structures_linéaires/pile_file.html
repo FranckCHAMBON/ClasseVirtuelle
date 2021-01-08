@@ -502,15 +502,15 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 </ul>
 <p>Dans l&apos;impl&#xE9;mentation ci-dessous, on choisit :</p>
 <ul>
-<li>le tuple vide <code>()</code> pour la pile vide,</li>
+<li><code>None</code> pour la pile vide,</li>
 <li>sinon, le tuple <code>(t&#xEA;te, queue)</code>.</li>
 </ul>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># un tuple sans &#xE9;l&#xE9;ment</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> donn&#xE9;es<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">=</span> donn&#xE9;es
     
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__donn&#xE9;es <span class="token keyword">is</span> <span class="token boolean">None</span>
 
     <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
         queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
@@ -525,13 +525,13 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
         <span class="token keyword">return</span> t&#xEA;te
 </pre><p>On aurait pu &#xE9;crire la m&#xE9;thode <code>empile</code> en une seule ligne avec <code>self.__donn&#xE9;es = (&#xE9;l&#xE9;ment, self.__donn&#xE9;es)</code>, mais c&apos;est moins lisible, et moins p&#xE9;dagogique.</p>
 <blockquote>
-<p><strong>Attention</strong> : ici nous avons en structure interne une pile qui est un tuple, soit vide, soit qui n&apos;a que <strong>deux</strong> &#xE9;l&#xE9;ments, et de type diff&#xE9;rent. Nous nous l&apos;&#xE9;tions interdit pour les listes ! Acceptons l&apos;id&#xE9;e qu&apos;il s&apos;agit en r&#xE9;alit&#xE9; de deux adresses. L&apos;adresse de l&apos;&#xE9;l&#xE9;ment <code>t&#xEA;te</code> puis celle de <code>queue</code>. D&apos;autre part <code>queue</code> est un tuple qui contient probablement un tuple qui contient un tuple ; chaque fois de deux &#xE9;l&#xE9;ments.</p>
+<p><strong>Attention</strong> : ici nous avons en structure interne une pile qui est soit <code>None</code>, soit un tuple qui n&apos;a que <strong>deux</strong> &#xE9;l&#xE9;ments, et de types diff&#xE9;rents. Nous nous l&apos;&#xE9;tions interdit pour les listes ! Acceptons l&apos;id&#xE9;e qu&apos;il s&apos;agit en r&#xE9;alit&#xE9; de deux adresses. L&apos;adresse de l&apos;&#xE9;l&#xE9;ment <code>t&#xEA;te</code> puis celle de <code>queue</code>.</p>
 </blockquote>
 <p>Voil&#xE0; un exemple de la repr&#xE9;sentation interne de cette pile :</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">(</span><span class="token number">31</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">55</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Ici le sommet (la t&#xEA;te) de la pile est <code>31</code>.</li>
-<li>Et le reste (la queue) est la pile <code>(12, (55, (20, ())))</code></li>
+<li>Et le reste (la queue) est la pile <code>(12, (55, (20, None))</code></li>
 </ul>
 <p>Nous reviendrons sur cette construction, c&apos;est une bonne m&#xE9;thode pour construire la structure de type <strong>liste</strong> ; oui, &#xE7;a vient ensuite !</p>
 <p>L&apos;int&#xE9;r&#xEA;t de ce genre de d&#xE9;finition est qu&apos;il est tr&#xE8;s commode de construire d&apos;autres m&#xE9;thodes qui se pr&#xEA;tent bien &#xE0; la r&#xE9;cursivit&#xE9;. Par exemple :</p>
@@ -540,9 +540,9 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token number">0</span>
         t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
-        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span>hauteur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> Pile<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>hauteur<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </pre><blockquote>
-<p>Dit autrement : la hauteur d&apos;une pile c&apos;est z&#xE9;ro si la pile est vide, sinon, c&apos;est un, plus, la hauteur de la pile qui est sous l&apos;&#xE9;l&#xE9;ment au sommet.</p>
+<p>Dit autrement : la hauteur d&apos;une pile c&apos;est z&#xE9;ro si la pile est vide, sinon, c&apos;est <strong>un</strong>, plus, la hauteur de la pile qui est sous l&apos;&#xE9;l&#xE9;ment au sommet.</p>
 </blockquote>
 <p><strong>Exercice 1</strong> : Proposer une m&#xE9;thode r&#xE9;cursive qui renvoie la somme des valeurs d&apos;une telle pile, en supposant qu&apos;il ne s&apos;agisse que de nombres entiers.</p>
 <p><strong>Exercice 2</strong> : Proposer une m&#xE9;thode r&#xE9;cursive <code>.contient_valeur(self, valeur)</code> qui renvoie un bool&#xE9;en, <code>True</code> si un &#xE9;l&#xE9;ment poss&#xE8;de une certaine <code>valeur</code>, et <code>False</code> sinon.</p>
