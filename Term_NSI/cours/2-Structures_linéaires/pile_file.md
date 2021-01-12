@@ -276,7 +276,10 @@ False
 
 **Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une **file** d'une certaine taille maximale. On proposera le constructeur ainsi que les méthodes `.est_vide(self)`, `.enfile(self, élément)` et `.défile(self)` analogues au cas de la pile.
 
-**Exercice 2** : Résoudre le problème [Distributeur automatique](http://www.france-ioi.org/algo/task.php?idChapter=527&iOrder=2) sur France-IOI.
+**Exercice 2** : En utilisant une implémentation de la pile, donner une implémentation de la file. On utilisera deux piles.
+> On pourra s'inspirer d'une situation de jeux de cartes avec deux piles : la pioche et la défausse. Quand la pioche est vide, on retourne la défausse qui devient la pioche.
+
+**Exercice 3** : Résoudre le problème [Distributeur automatique](http://www.france-ioi.org/algo/task.php?idChapter=527&iOrder=2) sur France-IOI.
 
 > **Aide** : on pourra considérer [ce devoir](TAD-file-eval.pdf) et ses indications.
 

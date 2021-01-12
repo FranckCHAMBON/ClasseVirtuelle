@@ -263,6 +263,26 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header" id="correction-de-certains-exercices">Correction de certains exercices</h1>
 
+<ul>
+<li><a href="#correction-de-certains-exercices">Correction de certains exercices</a>
+<ul>
+<li><a href="#la-pile">La Pile</a>
+<ul>
+<li><a href="#impl%C3%A9mentation-avec-les-listes-dynamiques-de-python">Impl&#xE9;mentation avec les listes dynamiques de Python</a></li>
+<li><a href="#impl%C3%A9mentation-de-fa%C3%A7on-r%C3%A9cursive">Impl&#xE9;mentation de fa&#xE7;on r&#xE9;cursive</a></li>
+</ul>
+</li>
+<li><a href="#la-deque">La <em>deque</em></a>
+<ul>
+<li><a href="#premi%C3%A8re-approche-liste-dynamique">Premi&#xE8;re approche, liste dynamique</a></li>
+<li><a href="#seconde-approche-module-collections">Seconde approche, module <em>collections</em></a></li>
+<li><a href="#troisi%C3%A8me-approche-file-%C3%A0-deux-piles">Troisi&#xE8;me approche, file &#xE0; deux piles</a></li>
+<li><a href="#quatri%C3%A8me-approche-introduction-aux-listes-cha%C3%AEn%C3%A9es">Quatri&#xE8;me approche, introduction aux listes cha&#xEE;n&#xE9;es</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 class="mume-header" id="la-pile">La Pile</h2>
 
 <h3 class="mume-header" id="impl%C3%A9mentation-avec-les-listes-dynamiques-de-python">Impl&#xE9;mentation avec les listes dynamiques de Python</h3>
@@ -402,16 +422,175 @@ pre[data-line] .line-highlight[data-end]:after {
 
     <span class="token comment"># Exercice 2</span>
     <span class="token keyword">def</span> <span class="token function">contient_valeur</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot; La pile contient-elle la valeur ?
-    &quot;&quot;&quot;</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot; La pile contient-elle la valeur ?
+        &quot;&quot;&quot;</span>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token boolean">False</span>
         t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
         <span class="token keyword">return</span> <span class="token punctuation">(</span>t&#xEA;te <span class="token operator">==</span> valeur<span class="token punctuation">)</span> <span class="token keyword">or</span> Pile<span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>contient_valeur<span class="token punctuation">(</span>valeur<span class="token punctuation">)</span>
     
+</pre><blockquote>
+<p><strong>Remarque</strong> : Cette fa&#xE7;on de faire n&apos;est pas id&#xE9;ale. On aimerait pouvoir obtenir une v&#xE9;ritable pile dans <code>queue</code> et non juste ses donn&#xE9;es lorsqu&apos;on fait :</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python">        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>__donn&#xE9;es
+</pre><p>On est ensuite oblig&#xE9; de d&apos;utiliser avec <code>Pile(queue)</code>.<br>
+Avec d&apos;autres langages de programmation, comme Ocaml, il est possible avec du filtrage par motifs d&apos;&#xE9;crire cette abstraction de mani&#xE8;re bien plus naturelle.</p>
+<p>Essayons encore avec Python.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Ce code est incorrect !!!</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pile <span class="token operator">=</span> <span class="token boolean">None</span>
+    
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>pile <span class="token keyword">is</span> <span class="token boolean">None</span>
+    
+    <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pile <span class="token operator">=</span> <span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> self<span class="token punctuation">)</span> <span class="token comment"># ici !!!</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>pile
+        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>t&#xEA;te<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;::&quot;</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        t&#xEA;te<span class="token punctuation">,</span> queue <span class="token operator">=</span> self<span class="token punctuation">.</span>pile
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> queue<span class="token punctuation">.</span>hauteur<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><p>Ce code est incorrect ; &#xE0; la ligne comment&#xE9;e <code># ici !!!</code>, on a <code>self</code> qui fait r&#xE9;f&#xE9;rence &#xE0; lui-m&#xEA;me dans son &#xE9;tat actuel mais aussi futur apr&#xE8;s l&apos;affectation.</p>
+<p>On verra comment contourner ce probl&#xE8;me avec l&apos;utilisation de deux classes. Ce sera une introduction aux listes cha&#xEE;n&#xE9;es.</p>
+<p>Cependant cette construction se retrouve avec d&apos;autres langages de programmation comme avec OCaml, o&#xF9; on retrouve du code comme :</p>
+<pre data-role="codeBlock" data-info="ocaml" class="language-ocaml"><span class="token keyword">let</span> <span class="token keyword">rec</span> hauteur pile <span class="token operator">=</span> <span class="token keyword">match</span> pile <span class="token keyword">with</span>
+        <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">-&gt;</span> <span class="token number">0</span>
+        <span class="token operator">|</span> tete <span class="token punctuation">:</span><span class="token punctuation">:</span> queue  <span class="token operator">-&gt;</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span>hauteur queue<span class="token punctuation">)</span>
+</pre><p>Ce code se lit :</p>
+<blockquote>
+<p>D&#xE9;finissons par r&#xE9;currence, une fonction hauteur pour un param&#xE8;tre pile par : suivant que pile est :</p>
+<ul>
+<li>soit une liste vide ; on renvoie z&#xE9;ro,</li>
+<li>soit une t&#xEA;te suivie d&apos;une queue ; on renvoie 1 (la hauteur de la t&#xEA;te), plus la hauteur de la queue d&#xE9;termin&#xE9;e par r&#xE9;currence.</li>
+</ul>
+</blockquote>
+<p>On voit l&#xE0; tout l&apos;int&#xE9;r&#xEA;t de pouvoir d&#xE9;finir une structure de donn&#xE9;es r&#xE9;cursive et d&apos;utiliser le filtrage par motif.</p>
+<h2 class="mume-header" id="la-deque">La <em>deque</em></h2>
+
+<p>Une structure de donn&#xE9;es &#xE0; la fois pile et file.</p>
+<p>On va proposer ici une structure de donn&#xE9;es lin&#xE9;aires, agenc&#xE9;e sur une ligne gauche-droite. On demande un cahier des charges :</p>
+<ul>
+<li>Constructeur</li>
+<li>Test pour &#xEA;tre vide</li>
+<li>Ajout &#xE9;l&#xE9;ment &#xE0; gauche</li>
+<li>Extraction &#xE9;l&#xE9;ment &#xE0; gauche</li>
+<li>Ajout &#xE9;l&#xE9;ment &#xE0; droite</li>
+<li>Extraction &#xE9;l&#xE9;ment &#xE0; droite</li>
+</ul>
+<h3 class="mume-header" id="premi%C3%A8re-approche-liste-dynamique">Premi&#xE8;re approche, liste dynamique</h3>
+
+<p>On utilise les facilit&#xE9;s du langage Python (avec les listes dynamiques) pour construire la <code>class Deque</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Deque</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">ajout_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span>&#xE9;l&#xE9;ment<span class="token punctuation">]</span> <span class="token operator">+</span> self<span class="token punctuation">.</span>donn&#xE9;es
+
+    <span class="token keyword">def</span> <span class="token function">ajout_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>append<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">extrait_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment_gauche <span class="token operator">=</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment_gauche
+
+    <span class="token keyword">def</span> <span class="token function">extrait_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment_droite <span class="token operator">=</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment_droite
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">test_init_vide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        &gt;&gt;&gt; test_init_vide()
+        True
+        &quot;&quot;&quot;</span>
+        test <span class="token operator">=</span> Deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> test<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">test_droite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        &gt;&gt;&gt; test_droite()
+        (42, True)
+        &quot;&quot;&quot;</span>
+        test <span class="token operator">=</span> Deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        test<span class="token punctuation">.</span>ajout_droite<span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment <span class="token operator">=</span> test<span class="token punctuation">.</span>extrait_droite<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> test<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">test_gauche</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        &gt;&gt;&gt; test_gauche()
+        (1337, True)
+        &quot;&quot;&quot;</span>
+        test <span class="token operator">=</span> Deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        test<span class="token punctuation">.</span>ajout_gauche<span class="token punctuation">(</span><span class="token number">1337</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment <span class="token operator">=</span> test<span class="token punctuation">.</span>extrait_gauche<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> test<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">import</span> doctest
+    doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><p>Cette m&#xE9;thode n&apos;est pas efficace pour l&apos;ajout et l&apos;extraction &#xE0; gauche !</p>
+<h3 class="mume-header" id="seconde-approche-module-collections">Seconde approche, module <em>collections</em></h3>
+
+<p>On utilise encore plus les facilit&#xE9; du langage Python, la structure de donn&#xE9;es <em>Deque</em> est incluse dans <code>collections</code>.</p>
+<p><a href="https://docs.python.org/fr/3/library/collections.html#collections.deque">Lire la documentation Python de la deque</a></p>
+<p>Cette m&#xE9;thode est efficace, c&apos;est celle qu&apos;il faut utiliser avec le langage Python ; cependant elle n&apos;est pas p&#xE9;dagogique. Voyons une fa&#xE7;on de construire une impl&#xE9;mentation efficace.</p>
+<h3 class="mume-header" id="troisi%C3%A8me-approche-file-%C3%A0-deux-piles">Troisi&#xE8;me approche, file &#xE0; deux piles</h3>
+
+<p>Comme pour la file impl&#xE9;ment&#xE9;e avec deux piles, on peut aussi impl&#xE9;menter la deque avec deux piles.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> pile
+
+<span class="token keyword">class</span> <span class="token class-name">Deque</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pile_gauche <span class="token operator">=</span> pile<span class="token punctuation">.</span>Pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>pile_droite <span class="token operator">=</span> pile<span class="token punctuation">.</span>Pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">ajout_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">ajout_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">extrait_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment_gauche <span class="token operator">=</span> self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment_gauche
+
+    <span class="token keyword">def</span> <span class="token function">extrait_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>empile<span class="token punctuation">(</span>self<span class="token punctuation">.</span>pile_gauche<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment_droite <span class="token operator">=</span> self<span class="token punctuation">.</span>pile_droite<span class="token punctuation">.</span>d&#xE9;pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment_droite
+</pre><p>Cette construction est efficace sauf dans le cas o&#xF9; une des deux piles est vide et alternativement on extrait un &#xE9;l&#xE9;ment &#xE0; gauche puis &#xE0; droite. Dans ce cas, les piles sont alternativement retourn&#xE9;es...</p>
+<p>Voyons une construction r&#xE9;ellement efficace, ce sera une bonne introduction aux listes cha&#xEE;n&#xE9;es.</p>
+<h3 class="mume-header" id="quatri%C3%A8me-approche-introduction-aux-listes-cha%C3%AEn%C3%A9es">Quatri&#xE8;me approche, introduction aux listes cha&#xEE;n&#xE9;es</h3>
 
 
-</pre>
       </div>
       
       

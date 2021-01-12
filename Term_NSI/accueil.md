@@ -30,7 +30,7 @@ Rendez-vous **obligatoires** :
 > Solutions alternatives aux problèmes sur FranceIOI
 
 Pour le code Python des solutions :
-* Le PEP-8 est respectée le plus possible ; essentiellement **sauf pour les accents en français** !
+* Le PEP-8 est respecté le plus possible ; essentiellement **sauf pour les accents en français** !
 * Les noms de variables sont 
     * le plus explicites possible,
     * en français et avec accents,
