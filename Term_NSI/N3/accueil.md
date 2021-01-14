@@ -1,4 +1,7 @@
-# Niveau 3 de France IOI
+# Niveau 3 de France IOI {ignore = true}
+
+## Sommaire {ignore = true}
+[TOC]
 
 ## Déblocage Niveau 3
 

@@ -1,6 +1,11 @@
-# Niveau 2 de France IOI
+# Niveau 2 de France IOI {ignore = true}
 
-### Nombres à virgules et autres outils
+## Sommaire
+
+[TOC]
+
+## Nombres à virgules et autres outils
+
 [lien vers les sujets de FranceIOI](http://www.france-ioi.org/algo/chapter.php?idChapter=650)
 
 * [Origami](1-Nombres_virgules/1-origami.html)
@@ -16,15 +21,15 @@
 * [La roue de la fortune](1-Nombres_virgules/C3-fortune.html)
 
 
-### Découverte des tableaux
+## Découverte des tableaux
 
 * à venir
 
-### Chaînes de caractères
+## Chaînes de caractères
 
 * à venir
 
-### Fonctions
+## Fonctions
 
 * [Formes creuses](4-Fonctions/8-creuses.html)
 * [Convertisseur d'unités](4-Fonctions/9-conversions.html)
