@@ -127,8 +127,10 @@ On peut écrire une version où on empile/dépile des couples d'entiers `(quanti
 class Pile():
     def __init__(self):
         self.données = []
+
     def est_vide(self) -> bool:
         return self.données == []
+        
     def empile(self, valeur):
         self.données.append(valeur)
     

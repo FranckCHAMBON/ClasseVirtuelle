@@ -621,7 +621,63 @@ stock <span class="token operator">=</span> Deque<span class="token punctuation"
 
 <p>On retiendra qu&apos;avec Python, il vaut mieux utiliser les structures d&#xE9;j&#xE0; propos&#xE9;es qui sont bien cod&#xE9;es et efficaces.</p>
 <p>D&apos;un point de vue p&#xE9;dagogique, on retiendra les diff&#xE9;rentes impl&#xE9;mentations, en particulier celle avec le tableau que l&apos;on peut facilement adapter &#xE0; presque tout langage de programmation.</p>
+<p>On retiendra aussi que la POO ralentit le code, et qu&apos;on pouvait le r&#xE9;soudre avec juste l&apos;utilisation d&apos;une file via une deque avec le code sans POO :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> collections
 
+stock <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+enfile <span class="token operator">=</span> stock<span class="token punctuation">.</span>append
+d&#xE9;<span class="token builtin">file</span> <span class="token operator">=</span> stock<span class="token punctuation">.</span>popleft
+
+nb_op&#xE9;rations <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_op&#xE9;rations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    variation<span class="token punctuation">,</span> date <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> variation <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>variation<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            enfile<span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token operator">-</span>variation<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            d&#xE9;<span class="token builtin">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+mini <span class="token operator">=</span> stock<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> stock<span class="token punctuation">:</span>
+    date <span class="token operator">=</span> d&#xE9;<span class="token builtin">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> date <span class="token operator">&lt;</span> mini<span class="token punctuation">:</span>
+        mini <span class="token operator">=</span> date
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>mini<span class="token punctuation">)</span>
+</pre><p>Enfin, plac&#xE9; dans une fonction <code>main</code> et avec une lecture rapide des entiers, cette m&#xE9;thode (enfiler/d&#xE9;filer une date &#xE0; la fois) termine les tests 9 et 10 en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.42</mn><mtext>&#x2009;</mtext><mtext>s</mtext></mrow><annotation encoding="application/x-tex">0.42\,\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">4</span><span class="mord">2</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">s</span></span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.65</mn><mtext>&#x2009;</mtext><mtext>s</mtext></mrow><annotation encoding="application/x-tex">0.65\,\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">s</span></span></span></span></span>.</p>
+<p>Avec la m&#xE9;thode o&#xF9; on enfile/d&#xE9;file un couple, on finit en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.27</mn><mtext>&#x2009;</mtext><mtext>s</mtext></mrow><annotation encoding="application/x-tex">0.27\,\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">2</span><span class="mord">7</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">s</span></span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.41</mn><mtext>&#x2009;</mtext><mtext>s</mtext></mrow><annotation encoding="application/x-tex">0.41\,\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">4</span><span class="mord">1</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">s</span></span></span></span></span>, avec le code suivant :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> collections<span class="token punctuation">,</span> sys
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token operator">=</span>sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    stock <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ajout_droite <span class="token operator">=</span> stock<span class="token punctuation">.</span>append
+    ajout_gauche <span class="token operator">=</span> stock<span class="token punctuation">.</span>appendleft
+    extrait_droite <span class="token operator">=</span> stock<span class="token punctuation">.</span>pop
+    extrait_gauche <span class="token operator">=</span> stock<span class="token punctuation">.</span>popleft
+    
+    nb_op&#xE9;rations <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_op&#xE9;rations<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        quantit&#xE9;<span class="token punctuation">,</span> date <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> quantit&#xE9; <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            ajout_droite<span class="token punctuation">(</span><span class="token punctuation">(</span>quantit&#xE9;<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> quantit&#xE9; <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                q<span class="token punctuation">,</span> date <span class="token operator">=</span> extrait_gauche<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                quantit&#xE9; <span class="token operator">+=</span> q
+            <span class="token keyword">if</span> quantit&#xE9; <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                ajout_gauche<span class="token punctuation">(</span><span class="token punctuation">(</span>quantit&#xE9;<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    _<span class="token punctuation">,</span> mini <span class="token operator">=</span> extrait_droite<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> stock<span class="token punctuation">:</span>
+        _<span class="token punctuation">,</span> date <span class="token operator">=</span> extrait_droite<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> date <span class="token operator">&lt;</span> mini<span class="token punctuation">:</span>
+            mini <span class="token operator">=</span> date
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>mini<span class="token punctuation">)</span>
+
+main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre>
       </div>
       
       

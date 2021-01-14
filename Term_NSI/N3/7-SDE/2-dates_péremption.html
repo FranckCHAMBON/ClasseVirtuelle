@@ -381,8 +381,10 @@ date_mini <span class="token operator">=</span> stock<span class="token punctuat
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Pile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        
     <span class="token keyword">def</span> <span class="token function">empile</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>append<span class="token punctuation">(</span>valeur<span class="token punctuation">)</span>
     

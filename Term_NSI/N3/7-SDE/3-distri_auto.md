@@ -364,3 +364,68 @@ for _ in range(nb_opérations):
 On retiendra qu'avec Python, il vaut mieux utiliser les structures déjà proposées qui sont bien codées et efficaces.
 
 D'un point de vue pédagogique, on retiendra les différentes implémentations, en particulier celle avec le tableau que l'on peut facilement adapter à presque tout langage de programmation.
+
+On retiendra aussi que la POO ralentit le code, et qu'on pouvait le résoudre avec juste l'utilisation d'une file via une deque avec le code sans POO :
+
+```python
+import collections
+
+stock = collections.deque()
+enfile = stock.append
+défile = stock.popleft
+
+nb_opérations = int(input())
+for _ in range(nb_opérations):
+    variation, date = map(int, input().split())
+    if variation > 0:
+        for _ in range(variation):
+            enfile(date)
+    else:
+        for _ in range(-variation):
+            défile()
+
+mini = stock.pop()
+while stock:
+    date = défile()
+    if date < mini:
+        mini = date
+
+print(mini)
+```
+
+Enfin, placé dans une fonction `main` et avec une lecture rapide des entiers, cette méthode (enfiler/défiler une date à la fois) termine les tests 9 et 10 en $0.42\,\text{s}$ et $0.65\,\text{s}$.
+
+Avec la méthode où on enfile/défile un couple, on finit en $0.27\,\text{s}$ et $0.41\,\text{s}$, avec le code suivant :
+
+```python
+import collections, sys
+
+def main(input=sys.stdin.readline):
+    stock = collections.deque()
+    ajout_droite = stock.append
+    ajout_gauche = stock.appendleft
+    extrait_droite = stock.pop
+    extrait_gauche = stock.popleft
+    
+    nb_opérations = int(input())
+    for _ in range(nb_opérations):
+        quantité, date = map(int, input().split())
+        if quantité > 0:
+            ajout_droite((quantité, date))
+        else:
+            while quantité < 0:
+                q, date = extrait_gauche()
+                quantité += q
+            if quantité != 0:
+                ajout_gauche((quantité, date))
+
+    _, mini = extrait_droite()
+    while stock:
+        _, date = extrait_droite()
+        if date < mini:
+            mini = date
+
+    print(mini)
+
+main()
+```
