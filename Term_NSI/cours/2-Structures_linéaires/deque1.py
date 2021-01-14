@@ -1,9 +1,9 @@
-class Deque(taille_max):
-    def __init__(self):
+class Deque():
+    def __init__(self, taille_max):
         self.taille_max = taille_max
         self.données = [None for _ in range(taille_max)]
         self.i_droite = 0
-        self.i_gauche = 0
+        self.i_gauche = taille_max - 1
         self.taille = 0
     
     def est_vide(self):
@@ -12,7 +12,7 @@ class Deque(taille_max):
     def ajout_droite(self, élément):
         if self.taille == self.taille_max:
             raise ValueError("Deque pleine")
-        self.données[self.id_droite] = élément
+        self.données[self.i_droite] = élément
         self.i_droite += 1
         if self.i_droite == self.taille_max:
             self.i_droite = 0
@@ -35,7 +35,7 @@ class Deque(taille_max):
             self.i_droite = self.taille_max - 1
         self.taille -= 1
         élément = self.données[self.i_droite]
-        self.données[self.id_droite] = None # option ; sécurité
+        #self.données[self.i_droite] = None # facultatif
         return élément
 
     def extrait_gauche(self):
@@ -46,6 +46,5 @@ class Deque(taille_max):
             self.i_gauche = 0
         self.taille -= 1
         élément = self.données[self.i_gauche]
-        self.données[self.i_gauche] = None # option ; sécurité
+        #self.données[self.i_gauche] = None # facultatif
         return élément
-

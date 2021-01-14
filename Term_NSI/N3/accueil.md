@@ -52,17 +52,23 @@
 * ...à venir...
 
 ## Structures de données élémentaires et Balayages
+==Nouveau==
 
-* ...à venir...
+* [État du stock](7-SDE/1-état_stock.html)
+* [Dates de péremption](7-SDE/2-dates_péremption.html)
+* [Distributeur automatique](7-SDE/3-distri_auto.html)
+* [Carte des cavernes](7-SDE/4-carte_cavernes.html)
+* [Carte de cinéma](7-SDE/5-carte_cinéma.html)
+* [Hydroélectricité](7-SDE/6-hydroélectricité.html)
 
 ## Récursivité
 
-* [Nombre encadré](7-Récursivité/1-nombre_encadré.html)
-* [0 + 0 = la tête à Toto](7-Récursivité/2-la_tête_à_Toto.html)
-* [Fractale : triangle de Sierpinski](7-Récursivité/3-sierpinski.html)
-* [Tours de Hanoï](7-Récursivité/4-Tours_de_Hanoï.html)
-* [Entre deux](7-Récursivité/5-entre_deux.html)
-* [Retournement de chaîne](7-Récursivité/6-retournement_chaîne.html)
+* [Nombre encadré](8-Récursivité/1-nombre_encadré.html)
+* [0 + 0 = la tête à Toto](8-Récursivité/2-la_tête_à_Toto.html)
+* [Fractale : triangle de Sierpinski](8-Récursivité/3-sierpinski.html)
+* [Tours de Hanoï](8-Récursivité/4-Tours_de_Hanoï.html)
+* [Entre deux](8-Récursivité/5-entre_deux.html)
+* [Retournement de chaîne](8-Récursivité/6-retournement_chaîne.html)
 
 
 ## Efficacité temporelle
