@@ -22,8 +22,6 @@
 
 ## Opérations avancées sur les chaînes de caractères
 
-**===Nouveau===**
-    
 * A – Tris
     * [Inversion d’une liste de livres](4-string+/A1-inversion.html)
     * [Trier des livres](4-string+/A2-tri.html)
@@ -52,7 +50,8 @@
 * ...à venir...
 
 ## Structures de données élémentaires et Balayages
-==Nouveau==
+
+**==Nouveau==**
 
 * [État du stock](7-SDE/1-état_stock.html)
 * [Dates de péremption](7-SDE/2-dates_péremption.html)
