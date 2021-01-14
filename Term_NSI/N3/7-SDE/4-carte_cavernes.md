@@ -116,6 +116,7 @@ class Pile():
             raise ValueError('Pile vide')
         return self.données.pop()
 
+
 def est_valide(n, ligne):
     ouvertures = Pile()
     for c in ligne:
@@ -127,6 +128,7 @@ def est_valide(n, ligne):
             except ValueError:
                 return False
     return ouvertures.est_vide()
+
 
 n = int(input())
 caverne = input()

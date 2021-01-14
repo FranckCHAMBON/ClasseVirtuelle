@@ -24,6 +24,7 @@ Si vous trouvez un tricheur, vous devez laisser votre caisse à un collègue, et
 * S'il n'y avait pas de tricheur, écrivez la valeur -1.
 
 ### Exemples
+
 #### Exemple 1
 
 ---
@@ -75,7 +76,7 @@ doublon = possède_doublon(numéros)
 print(doublon if doublon != None else "-1")
 ```
 
-Ici, on utilise un ensemble (`set`) pour sauvegarder et rechercher rapidement parmi les clients déjà passés. Cependant, il s'agit d'une structure complexe à mettre en place. Pouvons-nous en créer une dans le cadre de notre problème ?
+Ici, on utilise un ensemble (`set`) pour sauvegarder et rechercher rapidement parmi les clients déjà passés. Cependant, il s'agit d'une structure complexe à implémenter en général. Pouvons-nous en créer une simple dans le cadre de notre problème ?
 
 > **Il faut penser au tableau de booléen** pour implémenter une structure d'ensemble lorsque les différentes clés peuvent avoir un indice contenu dans un intervalle qui rentre dans la mémoire disponible.
 > Ici, les numéros de carte sont dans un intervalle de 1 million, et on dispose de 16 Mo de mémoire ; c'est adapté !

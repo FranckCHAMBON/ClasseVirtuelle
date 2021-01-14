@@ -335,7 +335,7 @@ num&#xE9;ros <span class="token operator">=</span> <span class="token builtin">l
 doublon <span class="token operator">=</span> poss&#xE8;de_doublon<span class="token punctuation">(</span>num&#xE9;ros<span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>doublon <span class="token keyword">if</span> doublon <span class="token operator">!=</span> <span class="token boolean">None</span> <span class="token keyword">else</span> <span class="token string">&quot;-1&quot;</span><span class="token punctuation">)</span>
-</pre><p>Ici, on utilise un ensemble (<code>set</code>) pour sauvegarder et rechercher rapidement parmi les clients d&#xE9;j&#xE0; pass&#xE9;s. Cependant, il s&apos;agit d&apos;une structure complexe &#xE0; mettre en place. Pouvons-nous en cr&#xE9;er une dans le cadre de notre probl&#xE8;me ?</p>
+</pre><p>Ici, on utilise un ensemble (<code>set</code>) pour sauvegarder et rechercher rapidement parmi les clients d&#xE9;j&#xE0; pass&#xE9;s. Cependant, il s&apos;agit d&apos;une structure complexe &#xE0; impl&#xE9;menter en g&#xE9;n&#xE9;ral. Pouvons-nous en cr&#xE9;er une simple dans le cadre de notre probl&#xE8;me ?</p>
 <blockquote>
 <p><strong>Il faut penser au tableau de bool&#xE9;en</strong> pour impl&#xE9;menter une structure d&apos;ensemble lorsque les diff&#xE9;rentes cl&#xE9;s peuvent avoir un indice contenu dans un intervalle qui rentre dans la m&#xE9;moire disponible.<br>
 Ici, les num&#xE9;ros de carte sont dans un intervalle de 1 million, et on dispose de 16 Mo de m&#xE9;moire ; c&apos;est adapt&#xE9; !</p>

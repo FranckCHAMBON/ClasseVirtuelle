@@ -362,6 +362,7 @@ caverne <span class="token operator">=</span> <span class="token builtin">input<
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
+
 <span class="token keyword">def</span> <span class="token function">est_valide</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> ligne<span class="token punctuation">)</span><span class="token punctuation">:</span>
     ouvertures <span class="token operator">=</span> Pile<span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">for</span> c <span class="token keyword">in</span> ligne<span class="token punctuation">:</span>
@@ -373,6 +374,7 @@ caverne <span class="token operator">=</span> <span class="token builtin">input<
             <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
                 <span class="token keyword">return</span> <span class="token boolean">False</span>
     <span class="token keyword">return</span> ouvertures<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
 
 n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 caverne <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
