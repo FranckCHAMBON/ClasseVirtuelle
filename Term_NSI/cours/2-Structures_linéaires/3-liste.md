@@ -28,9 +28,11 @@ m_2 = Maillon(1337, m_1)
 m_3 = Maillon(2021, m_2)
 ```
 
-$$m_3:(2021, ⋅) \rightarrow m_2:(1337, ⋅) \rightarrow m_1:(42, ⋅) \rightarrow \text{Nil}$$
+$$\boxed{m_3:(2021, \text{vers }m_2)} \rightarrow \boxed{m_2:(1337, \text{vers }m_1)} \rightarrow \boxed{m_1:(42, \text{vers le vide})} \rightarrow \text{Nil}$$
 
-Avec Python, le passage de paramètres se fait par un lien, l'adresse mémoire, ainsi les objets `m_1` et `m_2` ne sont pas copiés dans `m_2` et `m_3`, seuls leur adresse est donnée.
+> **Nil** représente le vide.
+
+Avec Python, le passage de paramètres se fait par un lien, l'adresse mémoire, ainsi les objets `m_1` et `m_2` ne sont pas copiés dans `m_2` et `m_3`, seule leur adresse est donnée.
 
 On devine qu'on va pouvoir avec cette structure construite les méthodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d'une chaîne en faisant pointer le précédent sur un autre maillon, et pour insérer un maillon, il suffira de modifier les suivants de deux maillons...
 
@@ -81,11 +83,13 @@ class Liste:
         return affichage
 ```
 
+**Exercice** : tester cette implémentation. Sur FranceIOI par exemple.
+
 ### Implémenter la deque
 
 Implémenter la deque est de difficulté comparable à implémenter la file, autant faire mieux immédiatement, on aura indirectement la file.
 
-**Exercice** : compléter la classe pour obtenir les méthodes de la deque. Ces méthodes sont-elles toutes efficaces ?
+**Exercice** : compléter la classe pour obtenir les méthodes de la deque. Ces méthodes sont-elles toutes efficaces ? Tester sur FranceIOI par exemple.
 
 
 ## Listes doublement chaînées
@@ -95,4 +99,4 @@ On utilise un nouveau type de maillon, qui possède trois attributs :
 * un lien vers le suivant,
 * un lien vers le précédent.
 
-**Exercice** : réécrire une implémentation de la deque avec une liste doublement chaînée. Les méthodes sont-elles toutes efficaces ?
+**Exercice** : réécrire une implémentation de la deque avec une liste doublement chaînée. Les méthodes sont-elles toutes efficaces ? Tester sur FranceIOI par exemple.
