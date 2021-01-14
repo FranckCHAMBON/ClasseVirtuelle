@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>accueil</title>
+      <title>2-file</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,125 +261,72 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="terminale-nsi">Terminale NSI</h1>
+      <h1 class="mume-header undefined" id="structures-lin%C3%A9aires-la-file-la-deque">&#x1F69B; Structures lin&#xE9;aires - La file, la deque</h1>
 
-<h2 class="mume-header" id="busts_in_silhouette-classe-virtuelle-de-m-chambon">&#x1F465; Classe virtuelle de  M. Chambon</h2>
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
 
+<ul>
+<li><a href="#la-file">La file</a>
+<ul>
+<li><a href="#utilisations-concr%C3%A8tes">Utilisations concr&#xE8;tes</a></li>
+</ul>
+</li>
+<li><a href="#la-deque">La deque</a></li>
+</ul>
+<h2 class="mume-header" id="la-file">La file</h2>
+
+<ul>
+<li>Le principe de la <strong>pile</strong> est : <em>LIFO : Last In, First Out</em>, (dernier entr&#xE9;, premier sorti).</li>
+<li>Le principe de la <strong>file</strong> est : <em>FIFO : First In, First Out</em>, (premier entr&#xE9;, premier sorti).</li>
+</ul>
+<p><img src="assets/FIFO_PEPS.png" alt="file"></p>
 <blockquote>
-<p><a href="https://lycee.cned.fr/cv/258054/203">https://lycee.cned.fr/cv/258054/203</a></p>
+<p>Wikipedia <a href="https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es)">file</a></p>
 </blockquote>
-<p>Rendez-vous <strong>obligatoires</strong> :</p>
-<ul>
-<li>&#x1F559; les lundis de 10h &#xE0; 12h</li>
-<li>&#x1F557; les vendredis de 8h &#xE0; 10h</li>
-</ul>
-<h2 class="mume-header" id="documents-importants">Documents importants</h2>
+<h3 class="mume-header" id="utilisations-concr%C3%A8tes">Utilisations concr&#xE8;tes</h3>
 
 <ul>
-<li><a href="pep.html">Bonnes pratiques de codage</a> : les PEP</li>
-<li><a href="doctest.html">Aide sur <em>doctest</em></a></li>
+<li>Les travaux &#xE0; imprimer sont envoy&#xE9;s dans une file, le premier arriv&#xE9; sera le premier servi.</li>
+<li>Un processeur re&#xE7;oit des calculs &#xE0; effectuer, ils arrivent dans une file. L&apos;ordonnanceur est souvent plus &#xE9;labor&#xE9; qu&apos;une simple file, et des travaux prioritaires peuvent &#xEA;tre trait&#xE9;s avant.</li>
 </ul>
-<h2 class="mume-header" id="anchor-devoirs">&#x2693;&#xFE0F; Devoirs</h2>
-
-<ul>
-<li><a href="devoirs/1-ds1/DS1.html">DS n&#xB0;1</a> - r&#xE9;cursivit&#xE9;
-<ul>
-<li><a href="devoirs/1-ds1/corrig%C3%A9.html">corrig&#xE9;</a></li>
-</ul>
-</li>
-<li><a href="devoirs/2-ds2/DS2.html">DS n&#xB0;2</a> - algorithmique
-<ul>
-<li><a href="devoirs/2-ds2/corrig%C3%A9.html">corrig&#xE9;</a></li>
-</ul>
-</li>
-<li><a href="devoirs/3-dm1/dm1.html">DM n&#xB0;1</a> : le d&#xE9;but de Prologin 2013
-<ul>
-<li><a href="devoirs/3-dm1/Aide2011.html">Aide avec Prologin 2011</a></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="checkered_flag-%C3%A9preuve-finale">&#x1F3C1; &#xC9;preuve finale</h2>
-
-<ul>
-<li>Le programme : le <a href="https://cache.media.eduscol.education.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf">B.O.</a></li>
-<li>L&apos;am&#xE9;nagement des sujets suite &#xE0; la crise sanitaire se fait sur les <a href="programme.html"><strong>entr&#xE9;es pr&#xE9;pond&#xE9;rantes du programme</strong></a>.</li>
-<li><a href="devoirs/bac-0/S0BAC21-Tle-SPE-NSI.pdf">Sujet z&#xE9;ro</a> du BAC ; <mark><strong>Nouveau</strong></mark></li>
-</ul>
-<h2 class="mume-header" id="franceioi">&#x1F947; FranceIOI</h2>
-
+<p><strong>Exercice 1</strong> : En s&apos;inspirant de la <strong>premi&#xE8;re</strong> impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation d&apos;une <strong>file</strong> d&apos;une certaine taille maximale. On proposera le constructeur ainsi que les m&#xE9;thodes <code>.est_vide(self)</code>, <code>.enfile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;file(self)</code> analogues au cas de la pile.</p>
+<p><strong>Exercice 2</strong> : En utilisant une impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation de la file. On utilisera deux piles.</p>
 <blockquote>
-<p>Solutions alternatives aux probl&#xE8;mes sur FranceIOI</p>
+<p>On pourra s&apos;inspirer d&apos;une situation de jeux de cartes avec deux piles : la pioche et la d&#xE9;fausse. Quand la pioche est vide, on retourne la d&#xE9;fausse qui devient la pioche.</p>
 </blockquote>
-<p>Pour le code Python des solutions :</p>
-<ul>
-<li>Le PEP-8 est respect&#xE9; le plus possible ; essentiellement <strong>sauf pour les accents en fran&#xE7;ais</strong> !</li>
-<li>Les noms de variables sont
-<ul>
-<li>le plus explicites possible,</li>
-<li>en fran&#xE7;ais et avec accents,</li>
-<li>avec utilisation du <em>snake_case</em>.</li>
-</ul>
-</li>
-<li>Les op&#xE9;rateurs comme <code>+=</code> ou <code>-=</code> sont utilis&#xE9;s en classe de Terminale.</li>
-<li>Utilisation fr&#xE9;quente de fonctions,
-<ul>
-<li>d&#xE8;s le niveau 3, toujours avec <em>docstring</em></li>
-<li>et tr&#xE8;s souvent avec <em>doctest</em>.</li>
-</ul>
-</li>
-<li>Souvent, variantes propos&#xE9;es avec un style fonctionnel.</li>
-</ul>
-<ol>
-<li><a href="N1/accueil.html">Niveau 1</a></li>
-<li><a href="N2/accueil.html">Niveau 2</a></li>
-<li><a href="N3/accueil.html">Niveau 3</a></li>
-</ol>
-<h2 class="mume-header" id="artificial_satellite-programmation-orient%C3%A9e-objet-poo">&#x1F6F0; Programmation Orient&#xE9;e Objet (POO)</h2>
-
-<ul>
-<li><a href="cours/1-POO/POO.html">Introduction &#xE0; la POO</a></li>
-</ul>
-<h2 class="mume-header" id="structures-lin%C3%A9aires">&#x1F69B; Structures lin&#xE9;aires</h2>
-
-<ul>
-<li><a href="cours/2-Structures_lin%C3%A9aires/1-pile.html">Pile</a>
-<ul>
-<li><a href="cours/2-Structures_lin%C3%A9aires/1-pile-correction.html">Correction des exercices</a></li>
-</ul>
-</li>
-<li><a href="cours/2-Structures_lin%C3%A9aires/2-file.html">File et deque</a>
-<ul>
-<li><a href="cours/2-Structures_lin%C3%A9aires/2-file-correction.html">Correction des exercices</a></li>
-</ul>
-</li>
-<li><a href="cours/2-Structures_lin%C3%A9aires/3-liste.html">Liste cha&#xEE;n&#xE9;e</a> <strong>(&#xC0; venir)</strong>
-<ul>
-<li><a href="cours/2-Structures_lin%C3%A9aires/3-liste-correction.html">Correction des exercices</a></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="structures-arborescentes">&#x1F333; Structures arborescentes</h2>
-
-<ul>
-<li>
-<p>Arbres</p>
-</li>
-<li>
-<p>Arbres binaires de recherche</p>
-</li>
-</ul>
-<h2 class="mume-header" id="interfaces-homme-machine">&#x1F41A; Interfaces Homme Machine</h2>
-
+<p><strong>Exercice 3</strong> : R&#xE9;soudre le probl&#xE8;me <a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;iOrder=2">Distributeur automatique</a> sur France-IOI.</p>
 <blockquote>
-<p>Syst&#xE8;mes d&apos;exploitation et commandes Bash</p>
+<p><strong>Aide</strong> : on pourra consid&#xE9;rer <a href="TAD-file-eval.pdf">ce devoir</a> et ses indications.</p>
 </blockquote>
-<p>Activit&#xE9;s enti&#xE8;rement r&#xE9;alisables sur tablette Android avec l&apos;application <a href="https://termux.com/">Termux</a>.</p>
+<blockquote>
+<p><strong>Conseil</strong> : on peut r&#xE9;soudre les probl&#xE8;mes dans un premier temps sans l&apos;&#xE9;criture avec style POO. Cependant, on demande alors une seconde &#xE9;criture. Pourquoi ?</p>
 <ul>
-<li>0-<a href="Termux/0-termux.html">Installation</a> <em>Seule cette activit&#xE9; n&#xE9;cessite une connexion Internet.</em></li>
-<li>1-<a href="Termux/1-bash.html">D&#xE9;couverte de Bash</a></li>
-<li>2-<a href="Termux/2-micro.html">&#xC9;dition de code dans un terminal</a></li>
-<li>3-<a href="Termux/3-tests.html">Cr&#xE9;ation de jeux de tests</a> <em>&#xC0; venir</em></li>
+<li>Le jour o&#xF9; on dispose d&apos;une meilleure structure de donn&#xE9;es, il suffit de remplacer uniquement le bout de code de la classe, le probl&#xE8;me restant intact. Sans POO, il faut souvent r&#xE9;&#xE9;crire tout le probl&#xE8;me pour utiliser les nouvelles id&#xE9;es... L&apos;&#xE9;criture avec le stye POO permet de s&apos;affranchir presque totalement de la mani&#xE8;re dont est &#xE9;crit la classe. Il faut en revanche <strong>toujours</strong> garder &#xE0; l&apos;esprit : quel est le co&#xFB;t algorithmique de chaque m&#xE9;thode ?</li>
 </ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Toujours utile</strong> : relire <a href="https://docs.python.org/fr/3/tutorial/datastructures.html">le tutoriel sur les structures de donn&#xE9;es sur python.org</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 class="mume-header" id="la-deque">La deque</h2>
+
+<p>En plus des structures <a href="https://fr.wikipedia.org/wiki/Type_abstrait">pr&#xE9;sent&#xE9;es ici</a>, il existe une autre structure lin&#xE9;aire assez utilis&#xE9;e.</p>
+<ul>
+<li>La <code>deque</code> : (<em>double end queue</em>), une structure qui permet facilement d&apos;ajouter ou d&apos;extraire facilement un &#xE9;l&#xE9;ment &#xE0; une des deux extr&#xE9;mit&#xE9;s, si elle est non vide.</li>
+</ul>
+<p><strong>Exercice 1</strong> : En s&apos;inspirant de la <strong>premi&#xE8;re</strong> impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation d&apos;une <strong>deque</strong> d&apos;une certaine taille maximale. On proposera :</p>
+<ul>
+<li>le constructeur <code>Deque()</code>, ainsi que les m&#xE9;thodes,</li>
+<li><code>.est_vide(self)</code></li>
+<li><code>.ajout_droite(self, &#xE9;l&#xE9;ment)</code></li>
+<li><code>.ajout_gauche(self, &#xE9;l&#xE9;ment)</code></li>
+<li><code>.extrait_droite(self)</code></li>
+<li><code>.extrait_gauche(self)</code></li>
+</ul>
+<p><strong>Exercice 2</strong> : En utilisant une impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation de la deque. On utilisera deux piles. Tout comme pour la file, critiquer la complexit&#xE9; des m&#xE9;thodes.</p>
 
       </div>
       

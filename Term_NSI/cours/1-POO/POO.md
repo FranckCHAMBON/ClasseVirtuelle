@@ -42,7 +42,7 @@ print(g.numérateur, "sur", g.dénominateur)
 
     11 sur 8
 
-On constate que l'on peut travailler d'un coup avec tout l'objet. Ici, on a pas eu une copie indépendante, mais le **même objet** pointé par deux variables différentes.
+On constate que l'on peut travailler d'un coup avec tout l'objet. Ici, on n'a pas eu une copie indépendante, mais le **même objet** pointé par deux variables différentes.
 
 > ⚠️ C'est mal de donner des attributs à un objet en dehors d'un constructeur. **Ne plus jamais refaire.**
 
@@ -101,13 +101,22 @@ print("Fraction f :", f.donne_numérateur(), "sur", f.donne_dénominateur())
 
 * Les attributs qui doivent être indiqués **privés** commencent par `__` (double *underscore*). Ce **n**'est **pas** qu'une indication en Python, et ils ne peuvent plus être lus ni modifiés à l'extérieur de la définition de la classe. Dans d'autres langages de programmation, la gestion public/privé est encore plus stricte.
 
-* Les méthodes liées au fonctionnement interne sont encadrées de `__` ; ici `__init__()` est la méthode à définir pour avoir un constructeur. **On ne peut pas changer de nom !**
+* Les méthodes liées au fonctionnement interne sont encadrées de `__` ; ici `__init__()` est la méthode à redéfinir pour initialiser un objet après son constructeur. **On ne peut pas changer de nom !** Il existe automatiquement le constructeur `__new__` mais en pratique, on réécrit uniquement `__init__`.
 
 * `self` indique l'objet même instancié par la classe. Lui-même (*self*). **On ne peut pas changer de nom !**
 
 > ⚠️ On aimerait une méthode plus simple pour afficher le résultat. On va créer une méthode qui sera appelée par `print` ; une fonction de conversion vers le type `str` ; c'est la méthode `__str__()`. **On ne peut pas changer de nom !**
-On ajoute aussi une méthode `__repr__()` qui a pour rôle de fournir un affichage bien plus succinct, moins joli, mais pour le débogage. Elle est appelée par la fonction `repr`.
+> On ajoute aussi une méthode `__repr__()` qui a pour rôle de fournir un affichage bien plus succinct, moins joli, mais pour le débogage. Elle est appelée par la fonction `repr`. C'est la méthode qui est utilisée en console lorsqu'on entre un objet.
 
+```python
+>>> a = 2.0 # un objet quelconque créé
+>>> print(a) # str sera appelé
+2.0
+>>> a # repr sera appelé
+2.0
+```
+
+Souvent `repr` et `str` sont identiques, mais ce n'est pas obligatoire. `repr` sera plus à destination d'un développeur et `str` pour l'utilisateur.
 
 On ajoute dans la classe, juste après le `__init__()`
 
@@ -122,14 +131,13 @@ On ajoute dans la classe, juste après le `__init__()`
 
 Et on teste
 ```python
-f = Fraction(22, 5)
-f.modifie_dénominateur(7)
-print("f ->", f)
-print("f ->", repr(f))
+>>> f = Fraction(22, 5)
+>>> f.modifie_dénominateur(7)
+>>> print(f)
+Fraction : 22 sur 7
+>>> f
+(22/7)
 ```
-
-    f -> Fraction : 22 sur 7
-    f -> (22/7)
 
 C'est bien plus pratique à utiliser !
 
@@ -137,7 +145,7 @@ C'est bien plus pratique à utiliser !
 
 ## Encapsulation
 
-L'encapsulation est un des trois principe fondamental de la POO (avec l'héritage et le polymorphisme).
+L'encapsulation est un des trois principes fondamentaux de la POO (avec l'héritage et le polymorphisme).
 * On réunit avec une certaine unité les données et les méthodes ; avec toujours des fonctions.
 * On *masque* à l'utilisateur externe les données ; il y accède uniquement via des méthodes qui contrôlent les données comme prévu en interne.
 * Cela permet de pouvoir réécrire entièrement le moteur interne, de manière transparente pour l'utilisateur final, qui ne sait pas comment sont stockées les données *in fine*.
@@ -146,10 +154,11 @@ Il y a donc des méthodes particulières :
 * **accesseur** (*getter*) ; renvoie un attribut
 * **mutateur** (*setter*) ; modifie un attribut
 
-> On trouve de **nombreuses** méthodes qui commencent par `get_` ou par `set_`, comme par exemple :
+> On trouve de **nombreuses** méthodes qui commencent par `get_` ou par `set_`, comme :
+
 ```python
 class Personne:
-    """ Classe représentant une personne """
+    """Classe représentant une personne"""
 
     def __init__(self, nom : str, prénom : str, âge : int):
         self.__nom = nom
@@ -174,13 +183,12 @@ Ajoutons une méthode pour multiplier deux fractions.
         self.__dénominateur *= fraction.donne_dénominateur()
 
 
-f = Fraction(2, 3)
-g = Fraction(5, 7)
-f.multiplie_par(g)
-print("f ->", repr(f))
+>>> f = Fraction(2, 3)
+>>> g = Fraction(5, 7)
+>>> f.multiplie_par(g)
+>>> f
+(10/21)
 ```
-
-    f -> (10/21)
 
 ⚠️ On remarquera, que pour `self`, on peut travailler avec ses attributs privés, mais pour `fraction`, nous avons utilisé les méthodes définies avant.
 
@@ -217,10 +225,11 @@ class Fraction:
         self.__dénominateur *= fraction.donne_dénominateur()
 
 
-f = Fraction(2, 3)
-g = Fraction(5, 7)
-f.multiplie_par(g)
-print("f ->", repr(f))
+>>> f = Fraction(2, 3)
+>>> g = Fraction(5, 7)
+>>> f.multiplie_par(g)
+>>> f
+(10/21)
 ```
 
 1. Ajouter les *docstring*
@@ -228,6 +237,6 @@ print("f ->", repr(f))
 3. Ajouter une méthode `ajouter(fraction)`
 
 Pour la suite, on peut regarder : 
-* ce [cours](1-POO.pdf) avec des notions hors programme, pour aller plus loin.
+* ce [cours](1-POO/1-POO.pdf) avec des notions hors programme, pour aller plus loin.
 * ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) illustré ; attention le PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
 * ce [cours](http://www.maths-info-lycee.fr/poo.html), avec de bons exercices.

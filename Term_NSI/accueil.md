@@ -48,11 +48,25 @@ Pour le code Python des solutions :
 
 
 ## :artificial_satellite: Programmation Orientée Objet (POO)
-* [Cours](cours/POO.html)
+
+* [Introduction à la POO](cours/1-POO/POO.html)
+
 
 ## 🚛 Structures linéaires
-* [Pile et file](cours/2-Structures_linéaires/pile_file.html)
-    * [Corrections](cours/2-Structures_linéaires/2-Corrections.html)
+
+* [Pile](cours/2-Structures_linéaires/1-pile.html)
+    * [Correction des exercices](cours/2-Structures_linéaires/1-pile-correction.html)
+* [File et deque](cours/2-Structures_linéaires/2-file.html)
+    * [Correction des exercices](cours/2-Structures_linéaires/2-file-correction.html)
+* [Liste chaînée](cours/2-Structures_linéaires/3-liste.html) **(À venir)**
+    * [Correction des exercices](cours/2-Structures_linéaires/3-liste-correction.html)
+
+## 🌳 Structures arborescentes
+
+* Arbres
+
+* Arbres binaires de recherche
+
 
 ## 🐚 Interfaces Homme Machine
 

@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -295,7 +295,7 @@ f<span class="token punctuation">.</span>num&#xE9;rateur <span class="token oper
 <span class="token keyword">print</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span>num&#xE9;rateur<span class="token punctuation">,</span> <span class="token string">&quot;sur&quot;</span><span class="token punctuation">,</span> g<span class="token punctuation">.</span>d&#xE9;nominateur<span class="token punctuation">)</span>
 </pre><pre class="language-text">11 sur 8
 </pre>
-<p>On constate que l&apos;on peut travailler d&apos;un coup avec tout l&apos;objet. Ici, on a pas eu une copie ind&#xE9;pendante, mais le <strong>m&#xEA;me objet</strong> point&#xE9; par deux variables diff&#xE9;rentes.</p>
+<p>On constate que l&apos;on peut travailler d&apos;un coup avec tout l&apos;objet. Ici, on n&apos;a pas eu une copie ind&#xE9;pendante, mais le <strong>m&#xEA;me objet</strong> point&#xE9; par deux variables diff&#xE9;rentes.</p>
 <blockquote>
 <p>&#x26A0;&#xFE0F; C&apos;est mal de donner des attributs &#xE0; un objet en dehors d&apos;un constructeur. <strong>Ne plus jamais refaire.</strong></p>
 </blockquote>
@@ -350,7 +350,7 @@ f<span class="token punctuation">.</span>modifie_d&#xE9;nominateur<span class="t
 <p>Les attributs qui doivent &#xEA;tre indiqu&#xE9;s <strong>priv&#xE9;s</strong> commencent par <code>__</code> (double <em>underscore</em>). Ce <strong>n</strong>&apos;est <strong>pas</strong> qu&apos;une indication en Python, et ils ne peuvent plus &#xEA;tre lus ni modifi&#xE9;s &#xE0; l&apos;ext&#xE9;rieur de la d&#xE9;finition de la classe. Dans d&apos;autres langages de programmation, la gestion public/priv&#xE9; est encore plus stricte.</p>
 </li>
 <li>
-<p>Les m&#xE9;thodes li&#xE9;es au fonctionnement interne sont encadr&#xE9;es de <code>__</code> ; ici <code>__init__()</code> est la m&#xE9;thode &#xE0; d&#xE9;finir pour avoir un constructeur. <strong>On ne peut pas changer de nom !</strong></p>
+<p>Les m&#xE9;thodes li&#xE9;es au fonctionnement interne sont encadr&#xE9;es de <code>__</code> ; ici <code>__init__()</code> est la m&#xE9;thode &#xE0; red&#xE9;finir pour initialiser un objet apr&#xE8;s son constructeur. <strong>On ne peut pas changer de nom !</strong> Il existe automatiquement le constructeur <code>__new__</code> mais en pratique, on r&#xE9;&#xE9;crit uniquement <code>__init__</code>.</p>
 </li>
 <li>
 <p><code>self</code> indique l&apos;objet m&#xEA;me instanci&#xE9; par la classe. Lui-m&#xEA;me (<em>self</em>). <strong>On ne peut pas changer de nom !</strong></p>
@@ -358,8 +358,14 @@ f<span class="token punctuation">.</span>modifie_d&#xE9;nominateur<span class="t
 </ul>
 <blockquote>
 <p>&#x26A0;&#xFE0F; On aimerait une m&#xE9;thode plus simple pour afficher le r&#xE9;sultat. On va cr&#xE9;er une m&#xE9;thode qui sera appel&#xE9;e par <code>print</code> ; une fonction de conversion vers le type <code>str</code> ; c&apos;est la m&#xE9;thode <code>__str__()</code>. <strong>On ne peut pas changer de nom !</strong><br>
-On ajoute aussi une m&#xE9;thode <code>__repr__()</code> qui a pour r&#xF4;le de fournir un affichage bien plus succinct, moins joli, mais pour le d&#xE9;bogage. Elle est appel&#xE9;e par la fonction <code>repr</code>.</p>
+On ajoute aussi une m&#xE9;thode <code>__repr__()</code> qui a pour r&#xF4;le de fournir un affichage bien plus succinct, moins joli, mais pour le d&#xE9;bogage. Elle est appel&#xE9;e par la fonction <code>repr</code>. C&apos;est la m&#xE9;thode qui est utilis&#xE9;e en console lorsqu&apos;on entre un objet.</p>
 </blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token operator">=</span> <span class="token number">2.0</span> <span class="token comment"># un objet quelconque cr&#xE9;&#xE9;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment"># str sera appel&#xE9;</span>
+<span class="token number">2.0</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a <span class="token comment"># repr sera appel&#xE9;</span>
+<span class="token number">2.0</span>
+</pre><p>Souvent <code>repr</code> et <code>str</code> sont identiques, mais ce n&apos;est pas obligatoire. <code>repr</code> sera plus &#xE0; destination d&apos;un d&#xE9;veloppeur et <code>str</code> pour l&apos;utilisateur.</p>
 <p>On ajoute dans la classe, juste apr&#xE8;s le <code>__init__()</code></p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token comment"># suite de Fraction</span>
     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -368,20 +374,19 @@ On ajoute aussi une m&#xE9;thode <code>__repr__()</code> qui a pour r&#xF4;le de
     <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f&quot;(</span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_num&#xE9;rateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">{</span>f<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">)&quot;</span></span>
 </pre><p>Et on teste</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
-f<span class="token punctuation">.</span>modifie_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;f -&gt;&quot;</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;f -&gt;&quot;</span><span class="token punctuation">,</span> <span class="token builtin">repr</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><pre class="language-text">f -&gt; Fraction : 22 sur 7
-f -&gt; (22/7)
-</pre>
-<p>C&apos;est bien plus pratique &#xE0; utiliser !</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f<span class="token punctuation">.</span>modifie_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+Fraction <span class="token punctuation">:</span> <span class="token number">22</span> sur <span class="token number">7</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f
+<span class="token punctuation">(</span><span class="token number">22</span><span class="token operator">/</span><span class="token number">7</span><span class="token punctuation">)</span>
+</pre><p>C&apos;est bien plus pratique &#xE0; utiliser !</p>
 <blockquote>
 <p>&#x26A0;&#xFE0F; Le code n&apos;est pas encore satisfaisant, il manque toutes les <em>docstring</em>.</p>
 </blockquote>
 <h2 class="mume-header" id="encapsulation">Encapsulation</h2>
 
-<p>L&apos;encapsulation est un des trois principe fondamental de la POO (avec l&apos;h&#xE9;ritage et le polymorphisme).</p>
+<p>L&apos;encapsulation est un des trois principes fondamentaux de la POO (avec l&apos;h&#xE9;ritage et le polymorphisme).</p>
 <ul>
 <li>On r&#xE9;unit avec une certaine unit&#xE9; les donn&#xE9;es et les m&#xE9;thodes ; avec toujours des fonctions.</li>
 <li>On <em>masque</em> &#xE0; l&apos;utilisateur externe les donn&#xE9;es ; il y acc&#xE8;de uniquement via des m&#xE9;thodes qui contr&#xF4;lent les donn&#xE9;es comme pr&#xE9;vu en interne.</li>
@@ -393,10 +398,10 @@ f -&gt; (22/7)
 <li><strong>mutateur</strong> (<em>setter</em>) ; modifie un attribut</li>
 </ul>
 <blockquote>
-<p>On trouve de <strong>nombreuses</strong> m&#xE9;thodes qui commencent par <code>get_</code> ou par <code>set_</code>, comme par exemple :</p>
+<p>On trouve de <strong>nombreuses</strong> m&#xE9;thodes qui commencent par <code>get_</code> ou par <code>set_</code>, comme :</p>
 </blockquote>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Personne</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot; Classe repr&#xE9;sentant une personne &quot;&quot;&quot;</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Classe repr&#xE9;sentant une personne&quot;&quot;&quot;</span>
 
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> pr&#xE9;nom <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> &#xE2;ge <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>__nom <span class="token operator">=</span> nom
@@ -417,13 +422,12 @@ f -&gt; (22/7)
         self<span class="token punctuation">.</span>__d&#xE9;nominateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-g <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
-f<span class="token punctuation">.</span>multiplie_par<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;f -&gt;&quot;</span><span class="token punctuation">,</span> <span class="token builtin">repr</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><pre class="language-text">f -&gt; (10/21)
-</pre>
-<p>&#x26A0;&#xFE0F; On remarquera, que pour <code>self</code>, on peut travailler avec ses attributs priv&#xE9;s, mais pour <code>fraction</code>, nous avons utilis&#xE9; les m&#xE9;thodes d&#xE9;finies avant.</p>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> g <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f<span class="token punctuation">.</span>multiplie_par<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f
+<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">21</span><span class="token punctuation">)</span>
+</pre><p>&#x26A0;&#xFE0F; On remarquera, que pour <code>self</code>, on peut travailler avec ses attributs priv&#xE9;s, mais pour <code>fraction</code>, nous avons utilis&#xE9; les m&#xE9;thodes d&#xE9;finies avant.</p>
 <h2 class="mume-header" id="exercices">Exercices</h2>
 
 <p>On reprend le code pr&#xE9;c&#xE9;dent complet :</p>
@@ -455,10 +459,11 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
         self<span class="token punctuation">.</span>__d&#xE9;nominateur <span class="token operator">*=</span> fraction<span class="token punctuation">.</span>donne_d&#xE9;nominateur<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-g <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
-f<span class="token punctuation">.</span>multiplie_par<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;f -&gt;&quot;</span><span class="token punctuation">,</span> <span class="token builtin">repr</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> g <span class="token operator">=</span> Fraction<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f<span class="token punctuation">.</span>multiplie_par<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> f
+<span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">21</span><span class="token punctuation">)</span>
 </pre><ol>
 <li>Ajouter les <em>docstring</em></li>
 <li>Ajouter une m&#xE9;thode <code>simplifier()</code></li>
@@ -466,7 +471,7 @@ f<span class="token punctuation">.</span>multiplie_par<span class="token punctua
 </ol>
 <p>Pour la suite, on peut regarder :</p>
 <ul>
-<li>ce <a href="1-POO.pdf">cours</a> avec des notions hors programme, pour aller plus loin.</li>
+<li>ce <a href="1-POO/1-POO.pdf">cours</a> avec des notions hors programme, pour aller plus loin.</li>
 <li>ce <a href="https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb">cours</a> illustr&#xE9; ; attention le PEP-8 n&apos;est pas respect&#xE9;e, et il y a quelques erreurs gliss&#xE9;es dans les images.</li>
 <li>ce <a href="http://www.maths-info-lycee.fr/poo.html">cours</a>, avec de bons exercices.</li>
 </ul>

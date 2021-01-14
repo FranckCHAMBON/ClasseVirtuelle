@@ -16,7 +16,7 @@ class Deque:
 
     def extrait_gauche(self):
         if self.est_vide():
-            raise ValueError("Liste vide")
+            raise ValueError("Deque vide")
         if self.pile_gauche.est_vide():
             while not self.pile_droite.est_vide():
                 self.pile_gauche.empile(self.pile_droite.dépile())
@@ -25,7 +25,7 @@ class Deque:
 
     def extrait_droite(self):
         if self.est_vide():
-            raise ValueError("Liste vide")
+            raise ValueError("Deque vide")
         if self.pile_droite.est_vide():
             while not self.pile_gauche.est_vide():
                 self.pile_droite.empile(self.pile_gauche.dépile())

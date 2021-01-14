@@ -1,4 +1,8 @@
-# 🚛 Structures linéaires
+# 🚛 Structures linéaires - La pile {ignore=true}
+
+## Sommaire {ignore=true}
+
+[TOC]
 
 ## Rappels sur le tableau
 
@@ -8,14 +12,14 @@
 |-------|-----|-----|-----|-----|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
 |Élément| $2$ | $3$ | $5$ | $7$ | $11$ | $13$ | $17$ | $19$ | $23$ | $29$ | $31$ | $37$ | $41$ | $43$ | $47$ | $53$ | $59$ | $61$ | $67$ | $71$ | $73$ | $79$ | $83$ | $89$ | $97$ |
 
-Un tableau, `table` par exemple, est une structure de données, abstraite et élémentaire :
+Un tableau, `masses` par exemple ici, est une structure de données, abstraite et élémentaire :
 * avec des éléments de même type, et de même taille `taille_élément`,
 * un nombre d'éléments fixé à la création ; `nb_éléments`,
 * rangés de façon continue en mémoire, indicés de `0` **inclus** à `nb_éléments` **exclu**.
 
 > En interne, on accède, en pratique, à un élément d'indice `i` du tableau par son adresse mémoire qui est égale à `adresse_tableau + i * taille_élément`.
 
-On peut lire et modifier un élément d'indice `i`. Avec un langage de programmation, on note très souvent `table[i]` cet élément de `table` d'indice `i`.
+On peut lire et modifier un élément d'indice `i`. Avec un langage de programmation, on note très souvent `masses[i]` cet élément de `masses` d'indice `i`.
 
 Avec cette structure de données, on a déjà résolu de nombreux problèmes, mais on peut aussi construire de nouvelles structures de données.
 
@@ -27,16 +31,16 @@ Concrètement, on retrouve des implémentations de cette structure abstraite, le
 
 On utilisera les notations de la POO.
 
-* C'est une structure abstraite de donnée linéaire (agencée en ligne en mémoire).
+* C'est une structure abstraite de données, linéaire (agencée en ligne en mémoire).
 * Les éléments sont de même type.
 * On dispose de méthodes :
     * Le constructeur `Pile()`, via la méthode `.__init__(self)` qui initialise une pile vide.
-    * `.est_vide(self)` renvoie un booléen, `True` pour une pile vide.
+    * `.est_vide(self)` renvoie un booléen, `True` pour une pile vide après sa construction.
     * `.empile(self, élément)` ajoute un `élément` au sommet de la pile.
     * `.dépile(self)` enlève l'élément au sommet de la pile, et le renvoie.
     * Éventuellement d'autres méthodes...
 
-![](Stack_(data_structure)_LIFO.svg.png)
+![](assets/Stack_(data_structure)_LIFO.svg.png)
 > Image : [wikipedia, la pile](https://fr.wikipedia.org/wiki/Pile_%28informatique%29)
 
 ### Implémentation avec tableau
@@ -54,7 +58,7 @@ class Pile():
 
     def __init__(self, taille_max: int):
         self.taille_max = taille_max
-        self.données = [0 for _ in range(taille_max)] # un tableau
+        self.données = [None for _ in range(taille_max)] # un tableau
         self.hauteur = 0
 
     def est_vide(self) -> bool:
@@ -75,7 +79,7 @@ class Pile():
             raise ValueError('Pile vide')
         self.hauteur -= 1
         élément = self.données[self.hauteur]
-        #self.données[self.hauteur] = 0 # optionnel
+        #self.données[self.hauteur] = None # optionnel
         return élément
 ```
 
@@ -85,11 +89,11 @@ On pourrait ajouter une méthode `.__str__(self)`.
     def __str__(self) -> str:
         """Pour usage interne, tests.
         """
-        ans = "[Début de pile]"
+        ans = "[Bas de la pile]"
         for i in range(self.hauteur):
             ans += str(self.données[i])
             ans += ", "
-        ans += " [Fin de pile.]"
+        ans += " [Sommet de la pile.]"
         return ans
 ```
 
@@ -154,7 +158,7 @@ Refaire les tests vus précédemment.
 
 **Exercice 2** : Résoudre le problème [Dates de péremption](http://www.france-ioi.org/algo/task.php?idChapter=527&idTask=356) sur France-IOI.
 
-**Exercice 3** : Pour cet exercice, on supposera qu'on ne dispose **que** du constructeur d'une pile vide, ainsi que des méthodes `est_vide(self)`, `.empile(self, élément)` et `.dépile(self)`. 
+**Exercice 3** : Pour cet exercice, on supposera qu'on ne dispose **que** du constructeur `Pile()` d'une pile vide, ainsi que des méthodes `.est_vide(self)`, `.empile(self, élément)` et `.dépile(self)`. 
 * Question 1 : Que fait la méthode `mystère` suivante ? Donner un vrai nom et une *doctring*. On testera à la main sur l'exemple simple : 
     * sommet de la pile $\rightarrow 4, 6, 3, 9, 7 |$.
 
@@ -220,7 +224,7 @@ Voilà un exemple de la représentation interne de cette pile :
 * Ici le sommet (la tête) de la pile est `31`.
 * Et le reste (la queue) est la pile `(12, (55, (20, None))`
 
-Nous reviendrons sur cette construction, c'est une bonne méthode pour construire la structure de type **liste** ; oui, ça vient ensuite !
+Nous reviendrons sur cette construction, c'est une bonne méthode pour construire la structure de type **liste chaînée** ; oui, ça vient ensuite !
 
 L'intérêt de ce genre de définition est qu'il est très commode de construire d'autres méthodes qui se prêtent bien à la récursivité. Par exemple :
 
@@ -258,43 +262,6 @@ False
 * Lors d'appels récursifs une pile d'appels est créée en mémoire.
 * Lors de l'utilisation d'un navigateur de recherche, la navigation est stockée dans une pile, pour permettre de revenir facilement en arrière.
 * Avec un éditeur de code, un traitement de texte ou bien un logiciel de traitement d'image, on peut annuler les dernières opérations ; elles sont stockées dans une pile.
-
-
-## La file
-
-* Le principe de la pile est : *LIFO : Last In, First Out*, (dernier entré, premier sorti).
-* Le principe de la file est : *FIFO : First In, First Out*, (premier entré, premier sorti).
-
-![file](FIFO_PEPS.png)
-
-> Wikipedia [file](https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es))
-
-### Utilisations concrètes
-
-* Les travaux à imprimer sont envoyés dans une file, le premier arrivé sera le premier servi.
-* Un processeur reçoit des calculs à effectuer, ils arrivent dans une file. L'ordonnanceur est souvent plus élaboré qu'une simple file, et des travaux prioritaires peuvent être traités avant.
-
-**Exercice 1** : En s'inspirant de la **première** implémentation de la pile, donner une implémentation d'une **file** d'une certaine taille maximale. On proposera le constructeur ainsi que les méthodes `.est_vide(self)`, `.enfile(self, élément)` et `.défile(self)` analogues au cas de la pile.
-
-**Exercice 2** : En utilisant une implémentation de la pile, donner une implémentation de la file. On utilisera deux piles.
-> On pourra s'inspirer d'une situation de jeux de cartes avec deux piles : la pioche et la défausse. Quand la pioche est vide, on retourne la défausse qui devient la pioche.
-
-**Exercice 3** : Résoudre le problème [Distributeur automatique](http://www.france-ioi.org/algo/task.php?idChapter=527&iOrder=2) sur France-IOI.
-
-> **Aide** : on pourra considérer [ce devoir](TAD-file-eval.pdf) et ses indications.
-
-> **Conseil** : on peut résoudre les problèmes dans un premier temps sans l'écriture avec style POO. Cependant, on demande alors une seconde écriture. Pourquoi ?
-> * Le jour où on dispose d'une meilleure structure de données, il suffit de remplacer uniquement le bout de code de la classe, le problème restant intact. Sans POO, il faut souvent réécrire tout le problème pour utiliser les nouvelles idées... L'écriture avec le stye POO permet de s'affranchir presque totalement de la manière dont est écrit la classe. Il faut en revanche **toujours** garder à l'esprit : quel est le coût algorithmique de chaque méthode ?
-
-
->>> **Toujours utile** : relire [le tutoriel sur les structures de données sur python.org](https://docs.python.org/fr/3/tutorial/datastructures.html)
-
-
-## Autres structures
-
-En plus des structures [présentées ici](https://fr.wikipedia.org/wiki/Type_abstrait), il existe une autre structure linéaire assez utilisée.
-
-* `Deque` : (*double end queue*), une structure qui permet facilement d'ajouter ou d'enlever facilement un élément à une des deux extrémités, si elle est non vide.
 
 
 ## Glossaire anglais - français

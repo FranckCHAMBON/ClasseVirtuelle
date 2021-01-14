@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>pile_file</title>
+      <title>1-pile</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,8 +261,22 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="structures-lin%C3%A9aires">&#x1F69B; Structures lin&#xE9;aires</h1>
+      <h1 class="mume-header undefined" id="structures-lin%C3%A9aires-la-pile">&#x1F69B; Structures lin&#xE9;aires - La pile</h1>
 
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#rappels-sur-le-tableau">Rappels sur le tableau</a></li>
+<li><a href="#la-pile">La pile</a>
+<ul>
+<li><a href="#impl%C3%A9mentation-avec-tableau">Impl&#xE9;mentation avec tableau</a></li>
+<li><a href="#impl%C3%A9mentation-avec-les-listes-dynamiques-de-python">Impl&#xE9;mentation avec les listes dynamiques de Python</a></li>
+<li><a href="#impl%C3%A9mentation-de-fa%C3%A7on-r%C3%A9cursive">Impl&#xE9;mentation de fa&#xE7;on r&#xE9;cursive</a></li>
+<li><a href="#utilisations-concr%C3%A8tes">Utilisations concr&#xE8;tes</a></li>
+</ul>
+</li>
+<li><a href="#glossaire-anglais-fran%C3%A7ais">Glossaire anglais - fran&#xE7;ais</a></li>
+</ul>
 <h2 class="mume-header" id="rappels-sur-le-tableau">Rappels sur le tableau</h2>
 
 <blockquote>
@@ -330,7 +344,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 </tbody>
 </table>
-<p>Un tableau, <code>table</code> par exemple, est une structure de donn&#xE9;es, abstraite et &#xE9;l&#xE9;mentaire :</p>
+<p>Un tableau, <code>masses</code> par exemple ici, est une structure de donn&#xE9;es, abstraite et &#xE9;l&#xE9;mentaire :</p>
 <ul>
 <li>avec des &#xE9;l&#xE9;ments de m&#xEA;me type, et de m&#xEA;me taille <code>taille_&#xE9;l&#xE9;ment</code>,</li>
 <li>un nombre d&apos;&#xE9;l&#xE9;ments fix&#xE9; &#xE0; la cr&#xE9;ation ; <code>nb_&#xE9;l&#xE9;ments</code>,</li>
@@ -339,7 +353,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <blockquote>
 <p>En interne, on acc&#xE8;de, en pratique, &#xE0; un &#xE9;l&#xE9;ment d&apos;indice <code>i</code> du tableau par son adresse m&#xE9;moire qui est &#xE9;gale &#xE0; <code>adresse_tableau + i * taille_&#xE9;l&#xE9;ment</code>.</p>
 </blockquote>
-<p>On peut lire et modifier un &#xE9;l&#xE9;ment d&apos;indice <code>i</code>. Avec un langage de programmation, on note tr&#xE8;s souvent <code>table[i]</code> cet &#xE9;l&#xE9;ment de <code>table</code> d&apos;indice <code>i</code>.</p>
+<p>On peut lire et modifier un &#xE9;l&#xE9;ment d&apos;indice <code>i</code>. Avec un langage de programmation, on note tr&#xE8;s souvent <code>masses[i]</code> cet &#xE9;l&#xE9;ment de <code>masses</code> d&apos;indice <code>i</code>.</p>
 <p>Avec cette structure de donn&#xE9;es, on a d&#xE9;j&#xE0; r&#xE9;solu de nombreux probl&#xE8;mes, mais on peut aussi construire de nouvelles structures de donn&#xE9;es.</p>
 <p>Concr&#xE8;tement, on retrouve des impl&#xE9;mentations de cette structure abstraite, le tableau, dans la plupart des langages de programmation. Une limitation &#xE9;vidente est la taille d&apos;un tableau, limit&#xE9;e par la capacit&#xE9; de m&#xE9;moire disponible ; sinon, c&apos;est assez simple.</p>
 <ul>
@@ -349,19 +363,19 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>On utilisera les notations de la POO.</p>
 <ul>
-<li>C&apos;est une structure abstraite de donn&#xE9;e lin&#xE9;aire (agenc&#xE9;e en ligne en m&#xE9;moire).</li>
+<li>C&apos;est une structure abstraite de donn&#xE9;es, lin&#xE9;aire (agenc&#xE9;e en ligne en m&#xE9;moire).</li>
 <li>Les &#xE9;l&#xE9;ments sont de m&#xEA;me type.</li>
 <li>On dispose de m&#xE9;thodes :
 <ul>
 <li>Le constructeur <code>Pile()</code>, via la m&#xE9;thode <code>.__init__(self)</code> qui initialise une pile vide.</li>
-<li><code>.est_vide(self)</code> renvoie un bool&#xE9;en, <code>True</code> pour une pile vide.</li>
+<li><code>.est_vide(self)</code> renvoie un bool&#xE9;en, <code>True</code> pour une pile vide apr&#xE8;s sa construction.</li>
 <li><code>.empile(self, &#xE9;l&#xE9;ment)</code> ajoute un <code>&#xE9;l&#xE9;ment</code> au sommet de la pile.</li>
 <li><code>.d&#xE9;pile(self)</code> enl&#xE8;ve l&apos;&#xE9;l&#xE9;ment au sommet de la pile, et le renvoie.</li>
 <li>&#xC9;ventuellement d&apos;autres m&#xE9;thodes...</li>
 </ul>
 </li>
 </ul>
-<p><img src="Stack_(data_structure)_LIFO.svg.png" alt></p>
+<p><img src="assets/Stack_(data_structure)_LIFO.svg.png" alt></p>
 <blockquote>
 <p>Image : <a href="https://fr.wikipedia.org/wiki/Pile_%28informatique%29">wikipedia, la pile</a></p>
 </blockquote>
@@ -379,7 +393,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> taille_max<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>taille_max <span class="token operator">=</span> taille_max
-        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille_max<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># un tableau</span>
+        self<span class="token punctuation">.</span>donn&#xE9;es <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">None</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille_max<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment"># un tableau</span>
         self<span class="token punctuation">.</span>hauteur <span class="token operator">=</span> <span class="token number">0</span>
 
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
@@ -400,17 +414,17 @@ pre[data-line] .line-highlight[data-end]:after {
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Pile vide&apos;</span><span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>hauteur <span class="token operator">-=</span> <span class="token number">1</span>
         &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">]</span>
-        <span class="token comment">#self.donn&#xE9;es[self.hauteur] = 0 # optionnel</span>
+        <span class="token comment">#self.donn&#xE9;es[self.hauteur] = None # optionnel</span>
         <span class="token keyword">return</span> &#xE9;l&#xE9;ment
 </pre><p>On pourrait ajouter une m&#xE9;thode <code>.__str__(self)</code>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Pour usage interne, tests.
         &quot;&quot;&quot;</span>
-        ans <span class="token operator">=</span> <span class="token string">&quot;[D&#xE9;but de pile]&quot;</span>
+        ans <span class="token operator">=</span> <span class="token string">&quot;[Bas de la pile]&quot;</span>
         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>hauteur<span class="token punctuation">)</span><span class="token punctuation">:</span>
             ans <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>donn&#xE9;es<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
             ans <span class="token operator">+=</span> <span class="token string">&quot;, &quot;</span>
-        ans <span class="token operator">+=</span> <span class="token string">&quot; [Fin de pile.]&quot;</span>
+        ans <span class="token operator">+=</span> <span class="token string">&quot; [Sommet de la pile.]&quot;</span>
         <span class="token keyword">return</span> ans
 </pre><p>Id&#xE9;alement, il faudrait &#xE9;crire les attributs <code>taille_max</code>, <code>hauteur</code> et <code>donn&#xE9;es</code> en les pr&#xE9;fixant de <code>__</code> pour les rendre priv&#xE9;s. <strong>Exercice 1</strong> : faire cela et justifier ce choix.</p>
 <p><strong>Exercice 2</strong> : Ajouter une m&#xE9;thode accesseur <code>.hauteur(self)</code>. Cela donne une raison de plus d&apos;avoir pr&#xE9;fix&#xE9; l&apos;attribut !</p>
@@ -463,7 +477,7 @@ ma_pile<span class="token punctuation">.</span>empile<span class="token punctuat
 <p><strong>Exercice 1</strong> : rendre l&apos;attribut <code>donn&#xE9;es</code> priv&#xE9; et ajouter une m&#xE9;thode <code>.hauteur(self)</code>.<br>
 Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <p><strong>Exercice 2</strong> : R&#xE9;soudre le probl&#xE8;me <a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;idTask=356">Dates de p&#xE9;remption</a> sur France-IOI.</p>
-<p><strong>Exercice 3</strong> : Pour cet exercice, on supposera qu&apos;on ne dispose <strong>que</strong> du constructeur d&apos;une pile vide, ainsi que des m&#xE9;thodes <code>est_vide(self)</code>, <code>.empile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;pile(self)</code>.</p>
+<p><strong>Exercice 3</strong> : Pour cet exercice, on supposera qu&apos;on ne dispose <strong>que</strong> du constructeur <code>Pile()</code> d&apos;une pile vide, ainsi que des m&#xE9;thodes <code>.est_vide(self)</code>, <code>.empile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;pile(self)</code>.</p>
 <ul>
 <li>Question 1 : Que fait la m&#xE9;thode <code>myst&#xE8;re</code> suivante ? Donner un vrai nom et une <em>doctring</em>. On testera &#xE0; la main sur l&apos;exemple simple :
 <ul>
@@ -533,7 +547,7 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <li>Ici le sommet (la t&#xEA;te) de la pile est <code>31</code>.</li>
 <li>Et le reste (la queue) est la pile <code>(12, (55, (20, None))</code></li>
 </ul>
-<p>Nous reviendrons sur cette construction, c&apos;est une bonne m&#xE9;thode pour construire la structure de type <strong>liste</strong> ; oui, &#xE7;a vient ensuite !</p>
+<p>Nous reviendrons sur cette construction, c&apos;est une bonne m&#xE9;thode pour construire la structure de type <strong>liste cha&#xEE;n&#xE9;e</strong> ; oui, &#xE7;a vient ensuite !</p>
 <p>L&apos;int&#xE9;r&#xEA;t de ce genre de d&#xE9;finition est qu&apos;il est tr&#xE8;s commode de construire d&apos;autres m&#xE9;thodes qui se pr&#xEA;tent bien &#xE0; la r&#xE9;cursivit&#xE9;. Par exemple :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la hauteur de la pile&quot;&quot;&quot;</span>
@@ -569,46 +583,6 @@ Refaire les tests vus pr&#xE9;c&#xE9;demment.</p>
 <li>Lors d&apos;appels r&#xE9;cursifs une pile d&apos;appels est cr&#xE9;&#xE9;e en m&#xE9;moire.</li>
 <li>Lors de l&apos;utilisation d&apos;un navigateur de recherche, la navigation est stock&#xE9;e dans une pile, pour permettre de revenir facilement en arri&#xE8;re.</li>
 <li>Avec un &#xE9;diteur de code, un traitement de texte ou bien un logiciel de traitement d&apos;image, on peut annuler les derni&#xE8;res op&#xE9;rations ; elles sont stock&#xE9;es dans une pile.</li>
-</ul>
-<h2 class="mume-header" id="la-file">La file</h2>
-
-<ul>
-<li>Le principe de la pile est : <em>LIFO : Last In, First Out</em>, (dernier entr&#xE9;, premier sorti).</li>
-<li>Le principe de la file est : <em>FIFO : First In, First Out</em>, (premier entr&#xE9;, premier sorti).</li>
-</ul>
-<p><img src="FIFO_PEPS.png" alt="file"></p>
-<blockquote>
-<p>Wikipedia <a href="https://fr.wikipedia.org/wiki/File_(structure_de_donn%C3%A9es)">file</a></p>
-</blockquote>
-<h3 class="mume-header" id="utilisations-concr%C3%A8tes-1">Utilisations concr&#xE8;tes</h3>
-
-<ul>
-<li>Les travaux &#xE0; imprimer sont envoy&#xE9;s dans une file, le premier arriv&#xE9; sera le premier servi.</li>
-<li>Un processeur re&#xE7;oit des calculs &#xE0; effectuer, ils arrivent dans une file. L&apos;ordonnanceur est souvent plus &#xE9;labor&#xE9; qu&apos;une simple file, et des travaux prioritaires peuvent &#xEA;tre trait&#xE9;s avant.</li>
-</ul>
-<p><strong>Exercice 1</strong> : En s&apos;inspirant de la <strong>premi&#xE8;re</strong> impl&#xE9;mentation de la pile, donner une impl&#xE9;mentation d&apos;une <strong>file</strong> d&apos;une certaine taille maximale. On proposera le constructeur ainsi que les m&#xE9;thodes <code>.est_vide(self)</code>, <code>.enfile(self, &#xE9;l&#xE9;ment)</code> et <code>.d&#xE9;file(self)</code> analogues au cas de la pile.</p>
-<p><strong>Exercice 2</strong> : R&#xE9;soudre le probl&#xE8;me <a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;iOrder=2">Distributeur automatique</a> sur France-IOI.</p>
-<blockquote>
-<p><strong>Aide</strong> : on pourra consid&#xE9;rer <a href="TAD-file-eval.pdf">ce devoir</a> et ses indications.</p>
-</blockquote>
-<blockquote>
-<p><strong>Conseil</strong> : on peut r&#xE9;soudre les probl&#xE8;mes dans un premier temps sans l&apos;&#xE9;criture avec style POO. Cependant, on demande alors une seconde &#xE9;criture. Pourquoi ?</p>
-<ul>
-<li>Le jour o&#xF9; on dispose d&apos;une meilleure structure de donn&#xE9;es, il suffit de remplacer uniquement le bout de code de la classe, le probl&#xE8;me restant intact. Sans POO, il faut souvent r&#xE9;&#xE9;crire tout le probl&#xE8;me pour utiliser les nouvelles id&#xE9;es... L&apos;&#xE9;criture avec le stye POO permet de s&apos;affranchir presque totalement de la mani&#xE8;re dont est &#xE9;crit la classe. Il faut en revanche <strong>toujours</strong> garder &#xE0; l&apos;esprit : quel est le co&#xFB;t algorithmique de chaque m&#xE9;thode ?</li>
-</ul>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p><strong>Toujours utile</strong> : relire <a href="https://docs.python.org/fr/3/tutorial/datastructures.html">le tutoriel sur les structures de donn&#xE9;es sur python.org</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 class="mume-header" id="autres-structures">Autres structures</h2>
-
-<p>En plus des structures <a href="https://fr.wikipedia.org/wiki/Type_abstrait">pr&#xE9;sent&#xE9;es ici</a>, il existe une autre structure lin&#xE9;aire assez utilis&#xE9;e.</p>
-<ul>
-<li><code>Deque</code> : (<em>double end queue</em>), une structure qui permet facilement d&apos;ajouter ou d&apos;enlever facilement un &#xE9;l&#xE9;ment &#xE0; une des deux extr&#xE9;mit&#xE9;s, si elle est non vide.</li>
 </ul>
 <h2 class="mume-header" id="glossaire-anglais-fran%C3%A7ais">Glossaire anglais - fran&#xE7;ais</h2>
 
