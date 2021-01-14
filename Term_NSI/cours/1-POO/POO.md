@@ -1,6 +1,13 @@
-# Programmation Orientée Objet (POO)
+# Programmation Orientée Objet (POO) {ignore = true}
 
 Auteur : Franck Chambon, Lycée Aubrac
+
+## Sommaire {ignore = true}
+
+[TOC]
+
+
+## Introduction
 
 Construisons par exemple une façon de travailler avec les fractions.
 
@@ -69,7 +76,7 @@ print("Fraction h :", h.numérateur, "sur", h.dénominateur)
 > ⚠️ On aimerait un constructeur pour créer une fraction qui dépend de paramètres. D'autre part, c'est mal de lire ou modifier les attributs directement ; on préfère passer par des fonctions. C'est un aspect de la modularité. On utilisera donc des méthodes pour lire, et d'autres pour modifier.
 
 
-### Troisième approche ; constructeur `__init__()`
+### Troisième approche ; avec initialisation `__init__()`
 
 ```python
 class Fraction:
@@ -160,15 +167,15 @@ Il y a donc des méthodes particulières :
 class Personne:
     """Classe représentant une personne"""
 
-    def __init__(self, nom : str, prénom : str, âge : int):
+    def __init__(self, nom: str, prénom: str, âge: int):
         self.__nom = nom
         self.__prénom = prénom
         self.__âge = âge
 
-    def get_name(self):
+    def get_name(self) -> str:
         return self.__nom
 
-    def set_name(self, nom):
+    def set_name(self, nom: str):
         self.__nom = nom
 ```
 
@@ -237,6 +244,6 @@ class Fraction:
 3. Ajouter une méthode `ajouter(fraction)`
 
 Pour la suite, on peut regarder : 
-* ce [cours](1-POO/1-POO.pdf) avec des notions hors programme, pour aller plus loin.
+* ce [cours](1-POO.pdf) avec des notions hors programme, pour aller plus loin.
 * ce [cours](https://nbviewer.jupyter.org/url/www.maths-info-lycee.fr/notebooks/tnsi_01_poo.ipynb) illustré ; attention le PEP-8 n'est pas respectée, et il y a quelques erreurs glissées dans les images.
 * ce [cours](http://www.maths-info-lycee.fr/poo.html), avec de bons exercices.
