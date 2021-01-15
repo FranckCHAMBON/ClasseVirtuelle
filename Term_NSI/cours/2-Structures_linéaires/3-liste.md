@@ -12,9 +12,12 @@ Un maillon possède deux attributs, un élément et un **lien** vers le suivant.
 
 ```python
 class Maillon:
-    def __init__(self, élément, suivant):
+    """Un maillon est donné par son élément et son maillon suivant à droite,
+    éventuellement None."""
+
+    def __init__(self, élément, droite):
         self.élément = élément
-        self.suivant = suivant
+        self.droite = droite
 
     def __str__(self):
         return str(self.élément)
@@ -34,7 +37,7 @@ $$\boxed{m_3:(2021, \text{vers }m_2)} \rightarrow \boxed{m_2:(1337, \text{vers }
 
 Avec Python, le passage de paramètres se fait par un lien, l'adresse mémoire, ainsi les objets `m_1` et `m_2` ne sont pas copiés dans `m_2` et `m_3`, seule leur adresse est donnée.
 
-On devine qu'on va pouvoir avec cette structure construite les méthodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d'une chaîne en faisant pointer le précédent sur un autre maillon, et pour insérer un maillon, il suffira de modifier les suivants de deux maillons...
+On devine qu'on va pouvoir avec cette structure construire les méthodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d'une chaîne en faisant pointer le précédent sur un autre maillon, et pour insérer un maillon, il suffira de modifier les suivants de deux maillons...
 
 ## Listes chaînées
 
@@ -48,39 +51,45 @@ On commence par construire les méthodes analogues à une pile, ensuite on compl
 
 ```python
 class Maillon:
-    def __init__(self, élément, suivant):
+    """Un maillon est donné par son élément et son maillon suivant à droite,
+    éventuellement None."""
+
+    def __init__(self, élément, droite):
         self.élément = élément
-        self.suivant = suivant
+        self.droite = droite
 
     def __str__(self):
         return str(self.élément)
 
 
 class Liste:
+    "Une liste est donnée par son maillon de gauche"
+
     def __init__(self):
-        self.droite = None
+        self.maillon_gauche = None
     
     def est_vide(self):
-        return self.droite is None
+        return self.maillon_gauche is None
     
-    def ajout_droite(self, élément):
-        self.droite = Maillon(élément, self.droite)
+    def ajout_gauche(self, élément):
+        self.maillon_gauche = Maillon(élément, self.maillon_gauche)
 
-    def extrait_droite(self):
+    def extrait_gauche(self):
         if self.est_vide():
             raise ValueError("Liste vide")
-        maillon = self.droite
-        self.droite = maillon.suivant
-        return maillon.élément
+        élément = self.maillon_gauche.élément
+        self.maillon_gauche = self.maillon_gauche.droite
+        return élément
     
     def __str__(self):
         affichage = "Contenu : "
-        maillon = self.droite
+        maillon = self.maillon_gauche
         while maillon is not None:
             affichage += str(maillon) + "::"
-            maillon = maillon.suivant
+            maillon = maillon.droite
         affichage += " fin."
         return affichage
+    
 ```
 
 **Exercice** : tester cette implémentation. Sur FranceIOI par exemple.
@@ -96,7 +105,7 @@ Implémenter la deque est de difficulté comparable à implémenter la file, aut
 
 On utilise un nouveau type de maillon, qui possède trois attributs :
 * son élément de donnée,
-* un lien vers le suivant,
-* un lien vers le précédent.
+* un lien vers la gauche,
+* un lien vers la droite.
 
 **Exercice** : réécrire une implémentation de la deque avec une liste doublement chaînée. Les méthodes sont-elles toutes efficaces ? Tester sur FranceIOI par exemple.

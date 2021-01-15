@@ -280,9 +280,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Dans une tentative de d&#xE9;finition r&#xE9;cursive de la pile, en Python, on a vu l&apos;int&#xE9;r&#xEA;t d&apos;avoir un objet qui regroupe un &#xE9;l&#xE9;ment et un lien vers la suite de la pile. Nous avions utilis&#xE9; un tuple <code>(t&#xEA;te, queue)</code>, o&#xF9; <code>t&#xEA;te</code> &#xE9;tait l&apos;&#xE9;l&#xE9;ment au sommet, et <code>queue</code> la suite des donn&#xE9;es de la pile, mais nous n&apos;avions pas pu donner le status de pile &#xE0; la <code>queue</code>. En utilisant deux classes, nous y arriverons.</p>
 <p>Un maillon poss&#xE8;de deux attributs, un &#xE9;l&#xE9;ment et un <strong>lien</strong> vers le suivant.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Maillon</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> suivant<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Un maillon est donn&#xE9; par son &#xE9;l&#xE9;ment et son maillon suivant &#xE0; droite,
+    &#xE9;ventuellement None.&quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
-        self<span class="token punctuation">.</span>suivant <span class="token operator">=</span> suivant
+        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
 
     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
@@ -295,7 +298,7 @@ m_3 <span class="token operator">=</span> Maillon<span class="token punctuation"
 <p><strong>Nil</strong> repr&#xE9;sente le vide.</p>
 </blockquote>
 <p>Avec Python, le passage de param&#xE8;tres se fait par un lien, l&apos;adresse m&#xE9;moire, ainsi les objets <code>m_1</code> et <code>m_2</code> ne sont pas copi&#xE9;s dans <code>m_2</code> et <code>m_3</code>, seule leur adresse est donn&#xE9;e.</p>
-<p>On devine qu&apos;on va pouvoir avec cette structure construite les m&#xE9;thodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d&apos;une cha&#xEE;ne en faisant pointer le pr&#xE9;c&#xE9;dent sur un autre maillon, et pour ins&#xE9;rer un maillon, il suffira de modifier les suivants de deux maillons...</p>
+<p>On devine qu&apos;on va pouvoir avec cette structure construire les m&#xE9;thodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d&apos;une cha&#xEE;ne en faisant pointer le pr&#xE9;c&#xE9;dent sur un autre maillon, et pour ins&#xE9;rer un maillon, il suffira de modifier les suivants de deux maillons...</p>
 <h2 class="mume-header" id="listes-cha%C3%AEn%C3%A9es">Listes cha&#xEE;n&#xE9;es</h2>
 
 <p>On va utiliser deux classes :</p>
@@ -307,52 +310,59 @@ m_3 <span class="token operator">=</span> Maillon<span class="token punctuation"
 <h3 class="mume-header" id="premi%C3%A8re-approche-impl%C3%A9menter-la-pile">Premi&#xE8;re approche, impl&#xE9;menter la pile</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Maillon</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> suivant<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Un maillon est donn&#xE9; par son &#xE9;l&#xE9;ment et son maillon suivant &#xE0; droite,
+    &#xE9;ventuellement None.&quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
-        self<span class="token punctuation">.</span>suivant <span class="token operator">=</span> suivant
+        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
 
     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
 
 
 <span class="token keyword">class</span> <span class="token class-name">Liste</span><span class="token punctuation">:</span>
+    <span class="token string">&quot;Une liste est donn&#xE9;e par son maillon de gauche&quot;</span>
+
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> <span class="token boolean">None</span>
     
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>droite <span class="token keyword">is</span> <span class="token boolean">None</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>maillon_gauche <span class="token keyword">is</span> <span class="token boolean">None</span>
     
-    <span class="token keyword">def</span> <span class="token function">ajout_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> Maillon<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> self<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">ajout_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> Maillon<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> self<span class="token punctuation">.</span>maillon_gauche<span class="token punctuation">)</span>
 
-    <span class="token keyword">def</span> <span class="token function">extrait_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">extrait_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
-        maillon <span class="token operator">=</span> self<span class="token punctuation">.</span>droite
-        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> maillon<span class="token punctuation">.</span>suivant
-        <span class="token keyword">return</span> maillon<span class="token punctuation">.</span>&#xE9;l&#xE9;ment
+        &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche<span class="token punctuation">.</span>&#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche<span class="token punctuation">.</span>droite
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment
     
     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         affichage <span class="token operator">=</span> <span class="token string">&quot;Contenu : &quot;</span>
-        maillon <span class="token operator">=</span> self<span class="token punctuation">.</span>droite
+        maillon <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche
         <span class="token keyword">while</span> maillon <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
             affichage <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>maillon<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;::&quot;</span>
-            maillon <span class="token operator">=</span> maillon<span class="token punctuation">.</span>suivant
+            maillon <span class="token operator">=</span> maillon<span class="token punctuation">.</span>droite
         affichage <span class="token operator">+=</span> <span class="token string">&quot; fin.&quot;</span>
         <span class="token keyword">return</span> affichage
-</pre><h3 class="mume-header" id="impl%C3%A9menter-la-deque">Impl&#xE9;menter la deque</h3>
+    
+</pre><p><strong>Exercice</strong> : tester cette impl&#xE9;mentation. Sur FranceIOI par exemple.</p>
+<h3 class="mume-header" id="impl%C3%A9menter-la-deque">Impl&#xE9;menter la deque</h3>
 
 <p>Impl&#xE9;menter la deque est de difficult&#xE9; comparable &#xE0; impl&#xE9;menter la file, autant faire mieux imm&#xE9;diatement, on aura indirectement la file.</p>
-<p><strong>Exercice</strong> : compl&#xE9;ter la classe pour obtenir les m&#xE9;thodes de la deque. Ces m&#xE9;thodes sont-elles toutes efficaces ?</p>
+<p><strong>Exercice</strong> : compl&#xE9;ter la classe pour obtenir les m&#xE9;thodes de la deque. Ces m&#xE9;thodes sont-elles toutes efficaces ? Tester sur FranceIOI par exemple.</p>
 <h2 class="mume-header" id="listes-doublement-cha%C3%AEn%C3%A9es">Listes doublement cha&#xEE;n&#xE9;es</h2>
 
 <p>On utilise un nouveau type de maillon, qui poss&#xE8;de trois attributs :</p>
 <ul>
 <li>son &#xE9;l&#xE9;ment de donn&#xE9;e,</li>
-<li>un lien vers le suivant,</li>
-<li>un lien vers le pr&#xE9;c&#xE9;dent.</li>
+<li>un lien vers la gauche,</li>
+<li>un lien vers la droite.</li>
 </ul>
-<p><strong>Exercice</strong> : r&#xE9;&#xE9;crire une impl&#xE9;mentation de la deque avec une liste doublement cha&#xEE;n&#xE9;e. Les m&#xE9;thodes sont-elles toutes efficaces ?</p>
+<p><strong>Exercice</strong> : r&#xE9;&#xE9;crire une impl&#xE9;mentation de la deque avec une liste doublement cha&#xEE;n&#xE9;e. Les m&#xE9;thodes sont-elles toutes efficaces ? Tester sur FranceIOI par exemple.</p>
 
       </div>
       
