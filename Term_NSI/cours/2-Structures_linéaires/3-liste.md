@@ -107,6 +107,12 @@ Implémenter la deque est de difficulté comparable à implémenter la file, aut
 
 ## Listes doublement chaînées
 
+### Implémenter la file
+
+On garde le même maillon, mais la liste possède deux attributs : `maillon_gauche` et `maillon_droite`.
+
+### Implémenter la deque
+
 On utilise un nouveau type de maillon, qui possède trois attributs :
 * son élément de donnée,
 * un lien vers la gauche,

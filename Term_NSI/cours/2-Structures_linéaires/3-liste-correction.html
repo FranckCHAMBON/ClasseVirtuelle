@@ -266,13 +266,19 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
 
 <ul>
-<li><a href="#la-liste-cha%C3%AEn%C3%A9e">La liste cha&#xEE;n&#xE9;e</a>
+<li><a href="#la-liste-cha%C3%AEn%C3%A9e-bien-pour-une-pile">La liste cha&#xEE;n&#xE9;e, bien pour une pile</a>
 <ul>
 <li><a href="#complexit%C3%A9">Complexit&#xE9;</a></li>
 <li><a href="#premi%C3%A8re-conclusion">Premi&#xE8;re conclusion</a></li>
 </ul>
 </li>
-<li><a href="#la-liste-doublement-cha%C3%AEn%C3%A9e">La liste doublement cha&#xEE;n&#xE9;e</a>
+<li><a href="#la-liste-doublement-cha%C3%AEn%C3%A9e-pour-une-file">La liste doublement cha&#xEE;n&#xE9;e, pour une file</a>
+<ul>
+<li><a href="#complexit%C3%A9-1">Complexit&#xE9;</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#la-liste-doublement-cha%C3%AEn%C3%A9e-pour-une-deque">La liste doublement cha&#xEE;n&#xE9;e, pour une deque</a>
 <ul>
 <li><a href="#illustration-des-m%C3%A9thodes">Illustration des m&#xE9;thodes</a>
 <ul>
@@ -291,12 +297,12 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 </ul>
 </li>
-<li><a href="#complexit%C3%A9-1">Complexit&#xE9;</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#complexit%C3%A9-2">Complexit&#xE9;</a></li>
+<li><a href="#conclusion-1">Conclusion</a></li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="la-liste-cha%C3%AEn%C3%A9e">La liste cha&#xEE;n&#xE9;e</h2>
+<h2 class="mume-header" id="la-liste-cha%C3%AEn%C3%A9e-bien-pour-une-pile">La liste cha&#xEE;n&#xE9;e, bien pour une pile</h2>
 
 <pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Maillon</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Un maillon est donn&#xE9; par son &#xE9;l&#xE9;ment et son maillon suivant &#xE0; droite,
@@ -381,9 +387,73 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="premi%C3%A8re-conclusion">Premi&#xE8;re conclusion</h3>
 
 <p>Si on a besoin uniquement d&apos;une structure de pile, alors la liste cha&#xEE;n&#xE9;e est parfaitement adapt&#xE9;e. De plus il n&apos;y pas de limite fix&#xE9;e &#xE0; l&apos;avance pour la taille de la pile. Cela fournit donc une impl&#xE9;mentation l&#xE9;g&#xE8;rement plus lente mais bien plus flexible qu&apos;avec un tableau. C&apos;est aussi un peu plus technique &#xE0; &#xE9;crire...</p>
-<p>Pour b&#xE9;n&#xE9;ficier d&apos;une structure de file (ou de deque, c&apos;est le m&#xEA;me co&#xFB;t intellectuel), on va utiliser des maillons qui pointent &#xE0; droite et &#xE0; gauche.</p>
-<h2 class="mume-header" id="la-liste-doublement-cha%C3%AEn%C3%A9e">La liste doublement cha&#xEE;n&#xE9;e</h2>
+<p>Pour b&#xE9;n&#xE9;ficier d&apos;une structure de file (ou de deque, c&apos;est presque le m&#xEA;me co&#xFB;t intellectuel), on va utiliser des listes qui m&#xE9;morisent le maillon gauche et droite, (et/ou des maillons qui pointent &#xE0; droite et &#xE0; gauche).</p>
+<h2 class="mume-header" id="la-liste-doublement-cha%C3%AEn%C3%A9e-pour-une-file">La liste doublement cha&#xEE;n&#xE9;e, pour une file</h2>
 
+<p>On peut avoir une file en conservant correctement le maillon gauche et le maillon droite de la liste.</p>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Maillon</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Un maillon est donn&#xE9; par son &#xE9;l&#xE9;ment et son maillon suivant &#xE0; droite,
+    &#xE9;ventuellement None.&quot;&quot;&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Liste</span><span class="token punctuation">:</span>
+    <span class="token string">&quot;Une liste est donn&#xE9;e par son maillon de gauche, et son maillon droite&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>maillon_droite <span class="token operator">=</span> <span class="token boolean">None</span>
+    
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>maillon_gauche <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>maillon_droite <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">ajout_droite</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        maillon <span class="token operator">=</span> Maillon<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> maillon
+            self<span class="token punctuation">.</span>maillon_droite <span class="token operator">=</span> maillon
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>maillon_droite<span class="token punctuation">.</span>droite <span class="token operator">=</span> maillon
+            self<span class="token punctuation">.</span>maillon_droite <span class="token operator">=</span> maillon
+
+    <span class="token keyword">def</span> <span class="token function">extrait_gauche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Liste vide&quot;</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche<span class="token punctuation">.</span>&#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>maillon_gauche <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche<span class="token punctuation">.</span>droite
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>maillon_gauche <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>maillon_droite <span class="token operator">=</span> <span class="token boolean">None</span>
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment
+    
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        affichage <span class="token operator">=</span> <span class="token string">&quot;Contenu : &quot;</span>
+        maillon <span class="token operator">=</span> self<span class="token punctuation">.</span>maillon_gauche
+        <span class="token keyword">while</span> maillon <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            affichage <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>maillon<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;::&quot;</span>
+            maillon <span class="token operator">=</span> maillon<span class="token punctuation">.</span>droite
+        affichage <span class="token operator">+=</span> <span class="token string">&quot; fin.&quot;</span>
+        <span class="token keyword">return</span> affichage
+    
+
+</pre><h3 class="mume-header" id="complexit%C3%A9-1">Complexit&#xE9;</h3>
+
+<p>On pose <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> la longueur de la cha&#xEE;ne. La complexit&#xE9; des m&#xE9;thodes est la suivante :</p>
+<ul>
+<li><code>ajout_gauche</code> : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ; il suffit de modifier un maillon, et d&apos;en ajouter un. Co&#xFB;t constant.</li>
+<li><code>extrait_droite</code> : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ; il suffit de modifier un maillon. Co&#xFB;t constant.</li>
+</ul>
+<h3 class="mume-header" id="conclusion">Conclusion</h3>
+
+<p>Si on a besoin de construire une classe file cette liste doublement cha&#xEE;n&#xE9;e est id&#xE9;ale.</p>
+<h2 class="mume-header" id="la-liste-doublement-cha%C3%AEn%C3%A9e-pour-une-deque">La liste doublement cha&#xEE;n&#xE9;e, pour une deque</h2>
+
+<p>On utilise des maillons qui pointent dans les deux sens.</p>
 <pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Maillon</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Un maillon est donn&#xE9; par son &#xE9;l&#xE9;ment et ses maillons &#xE0; gauche et &#xE0; droite,
     &#xE9;ventuellement None.&quot;&quot;&quot;</span>
@@ -511,7 +581,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Apr&#xE8;s :<br>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Nil</mtext><mo>&#x2190;</mo><msub><mi>m</mi><mn>1</mn></msub><mo>:</mo><menclose notation="box"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="false"><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>vers&#xA0;le&#xA0;vide</mtext><mo separator="true">;</mo><mn>42</mn><mo separator="true">;</mo><mtext>vers&#xA0;la&#xA0;suite</mtext></mrow></mstyle></mstyle></mstyle></menclose><mo>&#x2192;</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\text{Nil} \leftarrow m_1: \boxed{\text{vers le vide} ; 42 ; \text{vers la suite}} \rightarrow ...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">Nil</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2190;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.5688799999999998em;vertical-align:-0.53444em;"></span><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0344399999999998em;"><span style="top:-3.56888em;"><span class="pstrut" style="height:3.56888em;"></span><span class="boxpad"><span class="mord"><span class="mord"><span class="mord text"><span class="mord">vers&#xA0;le&#xA0;vide</span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">2</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">vers&#xA0;la&#xA0;suite</span></span></span></span></span></span><span style="top:-3.03444em;"><span class="pstrut" style="height:3.56888em;"></span><span class="stretchy fbox" style="height:1.5688799999999998em;border-style:solid;border-width:0.04em;"></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.53444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.10556em;vertical-align:0em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span></span></span></span></span></li>
 </ul>
-<h3 class="mume-header" id="complexit%C3%A9-1">Complexit&#xE9;</h3>
+<h3 class="mume-header" id="complexit%C3%A9-2">Complexit&#xE9;</h3>
 
 <p>On pose <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> la longueur de la cha&#xEE;ne. La complexit&#xE9; des m&#xE9;thodes est la suivante :</p>
 <ul>
@@ -520,7 +590,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><code>ajout_droite</code> : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ; il suffit de modifier un maillon, et d&apos;en ajouter un. Co&#xFB;t constant.</li>
 <li><code>extrait_droite</code> : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ; il suffit de modifier un maillon. Co&#xFB;t constant.</li>
 </ul>
-<h3 class="mume-header" id="conclusion">Conclusion</h3>
+<h3 class="mume-header" id="conclusion-1">Conclusion</h3>
 
 <p>Si on a besoin de construire une classe file ou une deque, la liste doublement cha&#xEE;n&#xE9;e est id&#xE9;ale. On rappelle que cette construction est utile pour les langages qui ne fournissent pas ces structures naturellement. <strong>Cette construction est aussi p&#xE9;dagogique.</strong></p>
 <blockquote>

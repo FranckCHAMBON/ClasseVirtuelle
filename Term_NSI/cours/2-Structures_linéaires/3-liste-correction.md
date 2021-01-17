@@ -3,7 +3,7 @@
 ## Sommaire {ignore = true}
 [TOC]
 
-## La liste chaînée
+## La liste chaînée, bien pour une pile
 
 @import "liste1.py"
 
@@ -20,9 +20,26 @@ On pose $n$ la longueur de la chaîne. La complexité des méthodes est la suiva
 Si on a besoin uniquement d'une structure de pile, alors la liste chaînée est parfaitement adaptée. De plus il n'y pas de limite fixée à l'avance pour la taille de la pile. Cela fournit donc une implémentation légèrement plus lente mais bien plus flexible qu'avec un tableau. C'est aussi un peu plus technique à écrire...
 
 
-Pour bénéficier d'une structure de file (ou de deque, c'est le même coût intellectuel), on va utiliser des maillons qui pointent à droite et à gauche.
+Pour bénéficier d'une structure de file (ou de deque, c'est presque le même coût intellectuel), on va utiliser des listes qui mémorisent le maillon gauche et droite, (et/ou des maillons qui pointent à droite et à gauche).
 
-## La liste doublement chaînée
+## La liste doublement chaînée, pour une file
+
+On peut avoir une file en conservant correctement le maillon gauche et le maillon droite de la liste.
+
+@import "file.py"
+
+### Complexité
+
+On pose $n$ la longueur de la chaîne. La complexité des méthodes est la suivante :
+* `ajout_gauche` : $\mathcal O(1)$ ; il suffit de modifier un maillon, et d'en ajouter un. Coût constant.
+* `extrait_droite` : $\mathcal O(1)$ ; il suffit de modifier un maillon. Coût constant.
+
+### Conclusion
+Si on a besoin de construire une classe file cette liste doublement chaînée est idéale.
+
+## La liste doublement chaînée, pour une deque
+
+On utilise des maillons qui pointent dans les deux sens.
 
 @import "liste2.py"
 
