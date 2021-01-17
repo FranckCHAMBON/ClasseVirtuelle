@@ -1,8 +1,5 @@
 # Correction de certains exercices
 
-## La file
-
-...
 
 ## La *deque*
 

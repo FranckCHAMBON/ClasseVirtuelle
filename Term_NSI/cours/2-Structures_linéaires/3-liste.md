@@ -31,11 +31,15 @@ m_2 = Maillon(1337, m_1)
 m_3 = Maillon(2021, m_2)
 ```
 
+Et le schéma associé :
+
 $$\boxed{m_3:(2021, \text{vers }m_2)} \rightarrow \boxed{m_2:(1337, \text{vers }m_1)} \rightarrow \boxed{m_1:(42, \text{vers le vide})} \rightarrow \text{Nil}$$
 
 > **Nil** représente le vide.
 
 Avec Python, le passage de paramètres se fait par un lien, l'adresse mémoire, ainsi les objets `m_1` et `m_2` ne sont pas copiés dans `m_2` et `m_3`, seule leur adresse est donnée.
+
+> **Précision utile** : quand un objet n'est référencé nulle part, par aucune variable, qu'il ne peut donc plus être joignable, Python possède un mécanisme (le ramasse miette) qui supprime les données ; ainsi on pourra supprimer un maillon simplement en n'ayant plus aucune variable qui le référence.
 
 On devine qu'on va pouvoir avec cette structure construire les méthodes pour une pile, mais aussi pour une file, pour une deque, et plus encore. On va pouvoir supprimer un maillon au milieu d'une chaîne en faisant pointer le précédent sur un autre maillon, et pour insérer un maillon, il suffira de modifier les suivants de deux maillons...
 

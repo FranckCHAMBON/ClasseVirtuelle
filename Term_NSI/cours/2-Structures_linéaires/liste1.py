@@ -67,11 +67,3 @@ class Liste:
         précédent.droite = None
         return élément
 
-l = Liste()
-for x in range(5):
-    l.ajout_gauche(x)
-print(l)
-l.ajout_droite(10)
-print(l)
-l.extrait_droite()
-print(l)
