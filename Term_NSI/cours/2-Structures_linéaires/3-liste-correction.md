@@ -117,4 +117,4 @@ On aimerait une structure de donnée, où :
 * L'insertion d'un élément est aussi rapide que possible.
 * La suppression d'un élément est aussi rapide que possible.
 
-> Les **a**rbres **b**inaires de **r**echerches (ABR) seront une réponse à cette question. Mais avant de les évoquer, nous étudierons un peu les graphes en général.
+> Les **a**rbres **b**inaires de **r**echerches (ABR) seront une réponse à cette question.
