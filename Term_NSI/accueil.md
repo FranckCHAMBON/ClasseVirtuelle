@@ -64,7 +64,7 @@ Pour le code Python des solutions :
 
 ## 🌳 Structures arborescentes
 
-* Arbres
+* [Arbres et arbres binaires](cours/3-Arbres/1-arbres.html)
 
 * Arbres binaires de recherche
 

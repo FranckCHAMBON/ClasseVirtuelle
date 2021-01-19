@@ -1,0 +1,952 @@
+<!DOCTYPE html><html><head>
+      <title>1-arbre</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header undefined" id="deciduous_tree-arbres-binaires">&#x1F333; Arbres binaires</h1>
+
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#exemples-introductifs">Exemples introductifs</a>
+<ul>
+<li><a href="#arbre-syntaxique">Arbre syntaxique</a></li>
+<li><a href="#expression-litt%C3%A9rale">Expression litt&#xE9;rale</a></li>
+</ul>
+</li>
+<li><a href="#d%C3%A9finitions">D&#xE9;finitions</a>
+<ul>
+<li><a href="#n%C5%93ud">N&#x153;ud</a></li>
+<li><a href="#arbre-enracin%C3%A9">Arbre enracin&#xE9;</a></li>
+<li><a href="#arbre-binaire">Arbre binaire</a></li>
+<li><a href="#feuille">Feuille</a></li>
+<li><a href="#taille-dun-arbre">Taille d&apos;un arbre</a></li>
+<li><a href="#hauteur-dun-arbre">Hauteur d&apos;un arbre</a></li>
+<li><a href="#arbre-peigne">Arbre peigne</a></li>
+<li><a href="#arbre-parfait">Arbre parfait</a></li>
+<li><a href="#arbre-%C3%A9quilibr%C3%A9">Arbre &#xE9;quilibr&#xE9;</a></li>
+<li><a href="#arbre-presque-complet-%C3%A0-gauche">Arbre presque complet (&#xE0; gauche)</a></li>
+</ul>
+</li>
+<li><a href="#repr%C3%A9sentation-en-python">Repr&#xE9;sentation en Python</a>
+<ul>
+<li><a href="#avec-un-tuple-%C3%A0-trois-%C3%A9l%C3%A9ments">Avec un tuple &#xE0; trois &#xE9;l&#xE9;ments</a></li>
+<li><a href="#avec-une-classe-n%C5%93ud">Avec une classe <code>N&#x153;ud</code></a></li>
+<li><a href="#avec-un-tuple-nomm%C3%A9">Avec un tuple nomm&#xE9;</a></li>
+</ul>
+</li>
+<li><a href="#parcours-dun-arbre-binaire">Parcours d&apos;un arbre binaire</a></li>
+</ul>
+<h2 class="mume-header" id="exemples-introductifs">Exemples introductifs</h2>
+
+<h3 class="mume-header" id="arbre-syntaxique">Arbre syntaxique</h3>
+
+<ul>
+<li>Une page web, un document <code>xml</code>, ou bien un programme informatique peut &#xEA;tre repr&#xE9;sent&#xE9; par un <strong>arbre</strong>.</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="527pt" height="404pt" viewBox="0.00 0.00 527.03 404.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-400 523.026,-400 523.026,4 -4,4"/>
+<!-- corps_1 -->
+<g id="node1" class="node">
+<title>corps_1</title>
+<ellipse fill="none" stroke="#000000" cx="287" cy="-378" rx="34.2084" ry="18"/>
+<text text-anchor="middle" x="287" y="-373.8" font-family="Times,serif" font-size="14.00" fill="#000000">Corps</text>
+</g>
+<!-- affectation_1 -->
+<g id="node2" class="node">
+<title>affectation_1</title>
+<ellipse fill="none" stroke="#000000" cx="102" cy="-306" rx="55.0111" ry="18"/>
+<text text-anchor="middle" x="102" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">Affectation</text>
+</g>
+<!-- corps_1&#45;&gt;affectation_1 -->
+<g id="edge1" class="edge">
+<title>corps_1-&gt;affectation_1</title>
+<path fill="none" stroke="#000000" d="M259.3036,-367.2209C229.6358,-355.6745 182.0945,-337.1719 147.0334,-323.5265"/>
+<polygon fill="#000000" stroke="#000000" points="148.0891,-320.1817 137.5005,-319.8164 145.5502,-326.7051 148.0891,-320.1817"/>
+</g>
+<!-- boucle_for_1 -->
+<g id="node4" class="node">
+<title>boucle_for_1</title>
+<ellipse fill="none" stroke="#000000" cx="287" cy="-306" rx="52.1262" ry="18"/>
+<text text-anchor="middle" x="287" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">Boucle for</text>
+</g>
+<!-- corps_1&#45;&gt;boucle_for_1 -->
+<g id="edge4" class="edge">
+<title>corps_1-&gt;boucle_for_1</title>
+<path fill="none" stroke="#000000" d="M287,-359.8314C287,-352.131 287,-342.9743 287,-334.4166"/>
+<polygon fill="#000000" stroke="#000000" points="290.5001,-334.4132 287,-324.4133 283.5001,-334.4133 290.5001,-334.4132"/>
+</g>
+<!-- Fonction print -->
+<g id="node15" class="node">
+<title>Fonction print</title>
+<ellipse fill="none" stroke="#000000" cx="453" cy="-306" rx="66.0521" ry="18"/>
+<text text-anchor="middle" x="453" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">Fonction print</text>
+</g>
+<!-- corps_1&#45;&gt;Fonction print -->
+<g id="edge14" class="edge">
+<title>corps_1-&gt;Fonction print</title>
+<path fill="none" stroke="#000000" d="M313.6708,-366.432C339.1421,-355.3842 378.0142,-338.524 408.2336,-325.4167"/>
+<polygon fill="#000000" stroke="#000000" points="409.9317,-328.4953 417.7132,-321.3051 407.1462,-322.0734 409.9317,-328.4953"/>
+</g>
+<!-- y_1 -->
+<g id="node3" class="node">
+<title>y_1</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+</g>
+<!-- affectation_1&#45;&gt;y_1 -->
+<g id="edge2" class="edge">
+<title>affectation_1-&gt;y_1</title>
+<path fill="none" stroke="#000000" d="M84.226,-288.937C73.949,-279.071 60.9087,-266.5524 49.8727,-255.9578"/>
+<polygon fill="#000000" stroke="#000000" points="52.249,-253.3873 42.6112,-248.9868 47.4012,-258.437 52.249,-253.3873"/>
+</g>
+<!-- 1337 -->
+<g id="node11" class="node">
+<title>1337</title>
+<ellipse fill="none" stroke="#000000" cx="102" cy="-234" rx="30.2015" ry="18"/>
+<text text-anchor="middle" x="102" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">1337</text>
+</g>
+<!-- affectation_1&#45;&gt;1337 -->
+<g id="edge3" class="edge">
+<title>affectation_1-&gt;1337</title>
+<path fill="none" stroke="#000000" d="M102,-287.8314C102,-280.131 102,-270.9743 102,-262.4166"/>
+<polygon fill="#000000" stroke="#000000" points="105.5001,-262.4132 102,-252.4133 98.5001,-262.4133 105.5001,-262.4132"/>
+</g>
+<!-- i -->
+<g id="node5" class="node">
+<title>i</title>
+<ellipse fill="none" stroke="#000000" cx="177" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="177" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">i</text>
+</g>
+<!-- boucle_for_1&#45;&gt;i -->
+<g id="edge5" class="edge">
+<title>boucle_for_1-&gt;i</title>
+<path fill="none" stroke="#000000" d="M262.5874,-290.0209C245.663,-278.9431 223.0728,-264.1567 205.3506,-252.5568"/>
+<polygon fill="#000000" stroke="#000000" points="206.8664,-249.3659 196.5826,-246.8177 203.0328,-255.2228 206.8664,-249.3659"/>
+</g>
+<!-- range_1 -->
+<g id="node6" class="node">
+<title>range_1</title>
+<ellipse fill="none" stroke="#000000" cx="287" cy="-234" rx="65.0937" ry="18"/>
+<text text-anchor="middle" x="287" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">It&#xE9;rable range</text>
+</g>
+<!-- boucle_for_1&#45;&gt;range_1 -->
+<g id="edge6" class="edge">
+<title>boucle_for_1-&gt;range_1</title>
+<path fill="none" stroke="#000000" d="M287,-287.8314C287,-280.131 287,-270.9743 287,-262.4166"/>
+<polygon fill="#000000" stroke="#000000" points="290.5001,-262.4132 287,-252.4133 283.5001,-262.4133 290.5001,-262.4132"/>
+</g>
+<!-- corps_2 -->
+<g id="node7" class="node">
+<title>corps_2</title>
+<ellipse fill="none" stroke="#000000" cx="404" cy="-234" rx="34.2084" ry="18"/>
+<text text-anchor="middle" x="404" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Corps</text>
+</g>
+<!-- boucle_for_1&#45;&gt;corps_2 -->
+<g id="edge8" class="edge">
+<title>boucle_for_1-&gt;corps_2</title>
+<path fill="none" stroke="#000000" d="M312.6761,-290.1993C330.4458,-279.2642 354.1894,-264.6526 373.0124,-253.0693"/>
+<polygon fill="#000000" stroke="#000000" points="374.8596,-256.0422 381.5418,-247.8204 371.1909,-250.0806 374.8596,-256.0422"/>
+</g>
+<!-- 42 -->
+<g id="node12" class="node">
+<title>42</title>
+<ellipse fill="none" stroke="#000000" cx="287" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="287" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">42</text>
+</g>
+<!-- range_1&#45;&gt;42 -->
+<g id="edge7" class="edge">
+<title>range_1-&gt;42</title>
+<path fill="none" stroke="#000000" d="M287,-215.8314C287,-208.131 287,-198.9743 287,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="290.5001,-190.4132 287,-180.4133 283.5001,-190.4133 290.5001,-190.4132"/>
+</g>
+<!-- affectation_2 -->
+<g id="node9" class="node">
+<title>affectation_2</title>
+<ellipse fill="none" stroke="#000000" cx="404" cy="-162" rx="55.0111" ry="18"/>
+<text text-anchor="middle" x="404" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">Affectation</text>
+</g>
+<!-- corps_2&#45;&gt;affectation_2 -->
+<g id="edge9" class="edge">
+<title>corps_2-&gt;affectation_2</title>
+<path fill="none" stroke="#000000" d="M404,-215.8314C404,-208.131 404,-198.9743 404,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="407.5001,-190.4132 404,-180.4133 400.5001,-190.4133 407.5001,-190.4132"/>
+</g>
+<!-- y_2 -->
+<g id="node8" class="node">
+<title>y_2</title>
+<ellipse fill="none" stroke="#000000" cx="368" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="368" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+</g>
+<!-- affectation_2&#45;&gt;y_2 -->
+<g id="edge10" class="edge">
+<title>affectation_2-&gt;y_2</title>
+<path fill="none" stroke="#000000" d="M395.1011,-144.2022C390.8978,-135.7955 385.7959,-125.5917 381.1575,-116.3149"/>
+<polygon fill="#000000" stroke="#000000" points="384.1513,-114.4762 376.5486,-107.0972 377.8903,-117.6068 384.1513,-114.4762"/>
+</g>
+<!-- × -->
+<g id="node13" class="node">
+<title>&#xD7;</title>
+<ellipse fill="none" stroke="#000000" cx="440" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#xD7;</text>
+</g>
+<!-- affectation_2&#45;&gt;× -->
+<g id="edge11" class="edge">
+<title>affectation_2-&gt;&#xD7;</title>
+<path fill="none" stroke="#000000" d="M412.8989,-144.2022C417.1022,-135.7955 422.2041,-125.5917 426.8425,-116.3149"/>
+<polygon fill="#000000" stroke="#000000" points="430.1097,-117.6068 431.4514,-107.0972 423.8487,-114.4762 430.1097,-117.6068"/>
+</g>
+<!-- y_3 -->
+<g id="node10" class="node">
+<title>y_3</title>
+<ellipse fill="none" stroke="#000000" cx="404" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="404" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+</g>
+<!-- ×&#45;&gt;y_3 -->
+<g id="edge12" class="edge">
+<title>&#xD7;-&gt;y_3</title>
+<path fill="none" stroke="#000000" d="M431.2854,-72.5708C427.0403,-64.0807 421.8464,-53.6929 417.1337,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="420.237,-42.6477 412.6343,-35.2687 413.976,-45.7782 420.237,-42.6477"/>
+</g>
+<!-- 2 -->
+<g id="node14" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="476" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="476" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- ×&#45;&gt;2 -->
+<g id="edge13" class="edge">
+<title>&#xD7;-&gt;2</title>
+<path fill="none" stroke="#000000" d="M448.7146,-72.5708C452.9597,-64.0807 458.1536,-53.6929 462.8663,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="466.024,-45.7782 467.3657,-35.2687 459.763,-42.6477 466.024,-45.7782"/>
+</g>
+<!-- y -->
+<g id="node16" class="node">
+<title>y</title>
+<ellipse fill="none" stroke="#000000" cx="483" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="483" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+</g>
+<!-- Fonction print&#45;&gt;y -->
+<g id="edge15" class="edge">
+<title>Fonction print-&gt;y</title>
+<path fill="none" stroke="#000000" d="M460.5703,-287.8314C463.9865,-279.6323 468.0906,-269.7824 471.849,-260.7624"/>
+<polygon fill="#000000" stroke="#000000" points="475.1272,-261.9947 475.7426,-251.4177 468.6656,-259.3023 475.1272,-261.9947"/>
+</g>
+</g>
+</svg>
+</p><p>Cet arbre pourrait repr&#xE9;senter le programme suivant :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">y <span class="token operator">=</span> <span class="token number">1337</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    y <span class="token operator">=</span> y <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+</pre><p>L&apos;interpr&#xE9;teur Python, quand il lit un programme, commence par le traduire en arbre syntaxique en suivant la grammaire du langage. Il peut d&#xE9;tecter &#xE0; cette occasion une erreur de syntaxe avant m&#xEA;me le d&#xE9;but de l&apos;ex&#xE9;cution du programme.</p>
+<p><strong>Exercice 1</strong> : Chercher lesquels parmi les formats de fichiers suivants peuvent &#xEA;tre lus et repr&#xE9;sent&#xE9;s par un arbre syntaxique.</p>
+<ul>
+<li>Fichier document (<code>.odt</code>)</li>
+<li>Fichier image vectorielle (<code>.svg</code>)</li>
+<li>Fichier web (<code>.html</code>)</li>
+<li>Fichier image matricielle (<code>.jpg</code>)</li>
+</ul>
+<h3 class="mume-header" id="expression-litt%C3%A9rale">Expression litt&#xE9;rale</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="566pt" height="332pt" viewBox="0.00 0.00 566.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-328 562,-328 562,4 -4,4"/>
+<!-- Nil_1 -->
+<g id="node1" class="node">
+<title>Nil_1</title>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_2 -->
+<g id="node2" class="node">
+<title>Nil_2</title>
+<text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_3 -->
+<g id="node3" class="node">
+<title>Nil_3</title>
+<text text-anchor="middle" x="135" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_4 -->
+<g id="node4" class="node">
+<title>Nil_4</title>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_5 -->
+<g id="node5" class="node">
+<title>Nil_5</title>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_6 -->
+<g id="node6" class="node">
+<title>Nil_6</title>
+<text text-anchor="middle" x="315" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_7 -->
+<g id="node7" class="node">
+<title>Nil_7</title>
+<text text-anchor="middle" x="387" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_8 -->
+<g id="node8" class="node">
+<title>Nil_8</title>
+<text text-anchor="middle" x="459" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- Nil_9 -->
+<g id="node9" class="node">
+<title>Nil_9</title>
+<text text-anchor="middle" x="531" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">nil</text>
+</g>
+<!-- + -->
+<g id="node10" class="node">
+<title>+</title>
+<ellipse fill="none" stroke="#000000" cx="279" cy="-306" rx="27" ry="18"/>
+<text text-anchor="middle" x="279" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">+</text>
+</g>
+<!-- × -->
+<g id="node11" class="node">
+<title>&#xD7;</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#xD7;</text>
+</g>
+<!-- +&#45;&gt;× -->
+<g id="edge1" class="edge">
+<title>+-&gt;&#xD7;</title>
+<path fill="none" stroke="#000000" d="M263.7307,-290.7307C253.803,-280.803 240.6847,-267.6847 229.5637,-256.5637"/>
+<polygon fill="#000000" stroke="#000000" points="231.7933,-253.8436 222.2473,-249.2473 226.8436,-258.7933 231.7933,-253.8436"/>
+</g>
+<!-- ÷ -->
+<g id="node12" class="node">
+<title>&#xF7;</title>
+<ellipse fill="none" stroke="#000000" cx="351" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="351" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#xF7;</text>
+</g>
+<!-- +&#45;&gt;÷ -->
+<g id="edge2" class="edge">
+<title>+-&gt;&#xF7;</title>
+<path fill="none" stroke="#000000" d="M294.2693,-290.7307C304.197,-280.803 317.3153,-267.6847 328.4363,-256.5637"/>
+<polygon fill="#000000" stroke="#000000" points="331.1564,-258.7933 335.7527,-249.2473 326.2067,-253.8436 331.1564,-258.7933"/>
+</g>
+<!-- &#45; -->
+<g id="node13" class="node">
+<title>-</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">-</text>
+</g>
+<!-- ×&#45;&gt;&#45; -->
+<g id="edge3" class="edge">
+<title>&#xD7;-&gt;-</title>
+<path fill="none" stroke="#000000" d="M187.6918,-221.1278C170.6445,-209.763 145.5981,-193.0654 126.4656,-180.3104"/>
+<polygon fill="#000000" stroke="#000000" points="128.4031,-177.3956 118.1411,-174.7607 124.5201,-183.2199 128.4031,-177.3956"/>
+</g>
+<!-- y -->
+<g id="node15" class="node">
+<title>y</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">y</text>
+</g>
+<!-- ×&#45;&gt;y -->
+<g id="edge8" class="edge">
+<title>&#xD7;-&gt;y</title>
+<path fill="none" stroke="#000000" d="M207,-215.8314C207,-208.131 207,-198.9743 207,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="210.5001,-190.4132 207,-180.4133 203.5001,-190.4133 210.5001,-190.4132"/>
+</g>
+<!-- x -->
+<g id="node16" class="node">
+<title>x</title>
+<ellipse fill="none" stroke="#000000" cx="351" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="351" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">x</text>
+</g>
+<!-- ÷&#45;&gt;x -->
+<g id="edge11" class="edge">
+<title>&#xF7;-&gt;x</title>
+<path fill="none" stroke="#000000" d="M351,-215.8314C351,-208.131 351,-198.9743 351,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="354.5001,-190.4132 351,-180.4133 347.5001,-190.4133 354.5001,-190.4132"/>
+</g>
+<!-- 2 -->
+<g id="node17" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="459" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="459" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- ÷&#45;&gt;2 -->
+<g id="edge14" class="edge">
+<title>&#xF7;-&gt;2</title>
+<path fill="none" stroke="#000000" d="M370.3082,-221.1278C387.3555,-209.763 412.4019,-193.0654 431.5344,-180.3104"/>
+<polygon fill="#000000" stroke="#000000" points="433.4799,-183.2199 439.8589,-174.7607 429.5969,-177.3956 433.4799,-183.2199"/>
+</g>
+<!-- &#45;&#45;&gt;Nil_1 -->
+<g id="edge4" class="edge">
+<title>--&gt;Nil_1</title>
+<path fill="none" stroke="#000000" d="M83.7307,-146.7307C74.6292,-137.6292 62.8461,-125.8461 52.3788,-115.3788"/>
+<polygon fill="#000000" stroke="#000000" points="54.5927,-112.6429 45.0467,-108.0467 49.6429,-117.5927 54.5927,-112.6429"/>
+</g>
+<!-- 3 -->
+<g id="node14" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- &#45;&#45;&gt;3 -->
+<g id="edge5" class="edge">
+<title>--&gt;3</title>
+<path fill="none" stroke="#000000" d="M99,-143.8314C99,-136.131 99,-126.9743 99,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-118.4132 99,-108.4133 95.5001,-118.4133 102.5001,-118.4132"/>
+</g>
+<!-- 3&#45;&gt;Nil_2 -->
+<g id="edge6" class="edge">
+<title>3-&gt;Nil_2</title>
+<path fill="none" stroke="#000000" d="M90.2854,-72.5708C86.1772,-64.3544 81.1804,-54.3608 76.5911,-45.1821"/>
+<polygon fill="#000000" stroke="#000000" points="79.613,-43.3996 72.0103,-36.0206 73.352,-46.5301 79.613,-43.3996"/>
+</g>
+<!-- 3&#45;&gt;Nil_3 -->
+<g id="edge7" class="edge">
+<title>3-&gt;Nil_3</title>
+<path fill="none" stroke="#000000" d="M107.7146,-72.5708C111.8228,-64.3544 116.8196,-54.3608 121.4089,-45.1821"/>
+<polygon fill="#000000" stroke="#000000" points="124.648,-46.5301 125.9897,-36.0206 118.387,-43.3996 124.648,-46.5301"/>
+</g>
+<!-- y&#45;&gt;Nil_4 -->
+<g id="edge9" class="edge">
+<title>y-&gt;Nil_4</title>
+<path fill="none" stroke="#000000" d="M198.2854,-144.5708C194.1772,-136.3544 189.1804,-126.3608 184.5911,-117.1821"/>
+<polygon fill="#000000" stroke="#000000" points="187.613,-115.3996 180.0103,-108.0206 181.352,-118.5301 187.613,-115.3996"/>
+</g>
+<!-- y&#45;&gt;Nil_5 -->
+<g id="edge10" class="edge">
+<title>y-&gt;Nil_5</title>
+<path fill="none" stroke="#000000" d="M215.7146,-144.5708C219.8228,-136.3544 224.8196,-126.3608 229.4089,-117.1821"/>
+<polygon fill="#000000" stroke="#000000" points="232.648,-118.5301 233.9897,-108.0206 226.387,-115.3996 232.648,-118.5301"/>
+</g>
+<!-- x&#45;&gt;Nil_6 -->
+<g id="edge12" class="edge">
+<title>x-&gt;Nil_6</title>
+<path fill="none" stroke="#000000" d="M342.2854,-144.5708C338.1772,-136.3544 333.1804,-126.3608 328.5911,-117.1821"/>
+<polygon fill="#000000" stroke="#000000" points="331.613,-115.3996 324.0103,-108.0206 325.352,-118.5301 331.613,-115.3996"/>
+</g>
+<!-- x&#45;&gt;Nil_7 -->
+<g id="edge13" class="edge">
+<title>x-&gt;Nil_7</title>
+<path fill="none" stroke="#000000" d="M359.7146,-144.5708C363.8228,-136.3544 368.8196,-126.3608 373.4089,-117.1821"/>
+<polygon fill="#000000" stroke="#000000" points="376.648,-118.5301 377.9897,-108.0206 370.387,-115.3996 376.648,-118.5301"/>
+</g>
+<!-- 2&#45;&gt;Nil_8 -->
+<g id="edge15" class="edge">
+<title>2-&gt;Nil_8</title>
+<path fill="none" stroke="#000000" d="M459,-143.8314C459,-136.131 459,-126.9743 459,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="462.5001,-118.4132 459,-108.4133 455.5001,-118.4133 462.5001,-118.4132"/>
+</g>
+<!-- 2&#45;&gt;Nil_9 -->
+<g id="edge16" class="edge">
+<title>2-&gt;Nil_9</title>
+<path fill="none" stroke="#000000" d="M474.2693,-146.7307C483.3708,-137.6292 495.1539,-125.8461 505.6212,-115.3788"/>
+<polygon fill="#000000" stroke="#000000" points="508.3571,-117.5927 512.9533,-108.0467 503.4073,-112.6429 508.3571,-117.5927"/>
+</g>
+</g>
+</svg>
+</p><p>Cet <strong>arbre binaire</strong> est une repr&#xE9;sentation de l&apos;expression <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>3</mn><mi>y</mi><mo>+</mo><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">-3y + \frac x 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">&#x2212;</span><span class="mord">3</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>.</p>
+<p><strong>Exercice 2</strong> : Dessiner un arbre repr&#xE9;sentant l&apos;expression <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>x</mi><mo>+</mo><mn>7</mn><mo stretchy="false">)</mo><mo>&#xD7;</mo><mo stretchy="false">(</mo><mi>y</mi><mo>&#x2212;</mo><mn>2</mn><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mn>5</mn><mo>&#x2212;</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-x+7)&#xD7;(y-2) + (5-x^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.</p>
+<blockquote>
+<p>On pourra ne pas dessiner <code>nil</code>.</p>
+</blockquote>
+<h2 class="mume-header" id="d%C3%A9finitions">D&#xE9;finitions</h2>
+
+<h3 class="mume-header" id="n%C5%93ud">N&#x153;ud</h3>
+
+<p>Un n&#x153;ud contient un &#xE9;l&#xE9;ment et des enfants, qui sont d&apos;autres n&#x153;uds : z&#xE9;ro, un ou plusieurs n&#x153;uds.</p>
+<blockquote>
+<p>Dans l&apos;exemple pr&#xE9;c&#xE9;dent, <code>+</code>, <code>&#xD7;</code>, <code>3</code>, <code>x</code>, et les autres sont des n&#x153;uds, sauf les <code>nil</code> qui repr&#xE9;sentent l&apos;absence de n&#x153;ud.</p>
+</blockquote>
+<h3 class="mume-header" id="arbre-enracin%C3%A9">Arbre enracin&#xE9;</h3>
+
+<p>Un arbre enracin&#xE9; est un ensemble fini non vide de n&#x153;uds, avec un n&#x153;ud en particulier : la racine de l&apos;arbre. Les n&#x153;uds sont organis&#xE9;s de mani&#xE8;re hi&#xE9;rarchique dans un graphe :</p>
+<ul>
+<li>Tout n&#x153;ud est issu de la racine ; le graphe est connexe (il est d&apos;un seul tenant).</li>
+<li>Un n&#x153;ud ne poss&#xE8;de qu&apos;un seul parent ; le graphe est sans cycle (pas de boucle).</li>
+</ul>
+<h3 class="mume-header" id="arbre-binaire">Arbre binaire</h3>
+
+<p>Un arbre binaire est un ensemble fini de n&#x153;uds qui ont exactement deux enfants, un &#xE0; gauche, un &#xE0; droite : des n&#x153;uds ou &#xE9;ventuellement <code>nil</code> et que l&apos;on pourra alors omettre.</p>
+<p>Une d&#xE9;finition r&#xE9;cursive est alors :</p>
+<ul>
+<li>Un arbre binaire peut avoir z&#xE9;ro n&#x153;ud, il est alors vide, on le note <code>nil</code>.</li>
+<li>Un arbre binaire non vide poss&#xE8;de un n&#x153;ud particulier, sa racine, et deux enfants, un &#xE0; gauche et un &#xE0; droite, qui sont des arbres binaires.</li>
+</ul>
+<blockquote>
+<p>L&apos;arbre binaire ci-dessous est un sous-arbre de l&apos;exemple pr&#xE9;c&#xE9;dent. On a, cette fois, omis les <code>Nil</code>.</p>
+</blockquote>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="134pt" height="116pt" viewBox="0.00 0.00 134.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 130,-112 130,4 -4,4"/>
+<!-- ÷ -->
+<g id="node1" class="node">
+<title>&#xF7;</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#xF7;</text>
+</g>
+<!-- x -->
+<g id="node2" class="node">
+<title>x</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">x</text>
+</g>
+<!-- ÷&#45;&gt;x -->
+<g id="edge1" class="edge">
+<title>&#xF7;-&gt;x</title>
+<path fill="none" stroke="#000000" d="M54.2854,-72.5708C50.0403,-64.0807 44.8464,-53.6929 40.1337,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="43.237,-42.6477 35.6343,-35.2687 36.976,-45.7782 43.237,-42.6477"/>
+</g>
+<!-- 2 -->
+<g id="node3" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- ÷&#45;&gt;2 -->
+<g id="edge2" class="edge">
+<title>&#xF7;-&gt;2</title>
+<path fill="none" stroke="#000000" d="M71.7146,-72.5708C75.9597,-64.0807 81.1536,-53.6929 85.8663,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="89.024,-45.7782 90.3657,-35.2687 82.763,-42.6477 89.024,-45.7782"/>
+</g>
+</g>
+</svg>
+</p><blockquote>
+<p>Les arbres binaires sont <strong>presque</strong> des cas particuliers d&apos;arbres enracin&#xE9;s.</p>
+<ul>
+<li>Un arbre binaire peut &#xEA;tre vide, mais pas un arbre enracin&#xE9;.</li>
+<li>Sinon, un arbre binaire non vide est un exemple d&apos;arbre enracin&#xE9;.</li>
+</ul>
+</blockquote>
+<h3 class="mume-header" id="feuille">Feuille</h3>
+
+<ul>
+<li>Pour un arbre enracin&#xE9;, une feuille est un n&#x153;ud sans enfants.</li>
+<li>Pour un arbre binaire, une feuille est un n&#x153;ud qui poss&#xE8;de deux sous arbres vides.</li>
+</ul>
+<blockquote>
+<p>Ce sont les extr&#xE9;mit&#xE9;s de l&apos;arbre.</p>
+</blockquote>
+<p>Dans le premier exemple, <code>3</code>, <code>y</code>, <code>x</code>, et <code>2</code> sont des feuilles.</p>
+<h3 class="mume-header" id="taille-dun-arbre">Taille d&apos;un arbre</h3>
+
+<p>La taille d&apos;un arbre est son nombre de n&#x153;uds.</p>
+<blockquote>
+<p>L&apos;exemple de l&apos;arbre syntaxique est un arbre de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>, dont <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> feuilles. Il y a donc <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&#x2212;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">8-4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> n&#x153;uds int&#xE9;rieurs.</p>
+</blockquote>
+<h3 class="mume-header" id="hauteur-dun-arbre">Hauteur d&apos;un arbre</h3>
+
+<blockquote>
+<p>&#x26A0;&#xFE0F; La d&#xE9;finition de hauteur n&apos;est pas la m&#xEA;me partout. V&#xE9;rifier celle du document que vous lisez.</p>
+</blockquote>
+<ul>
+<li>Un arbre vide a une hauteur nulle.</li>
+<li>La hauteur d&apos;un arbre non vide est le nombre maximal de <strong>n&#x153;uds</strong> de la racine jusqu&apos;&#xE0; une feuille. C&apos;est aussi le nombre de liens maximal pour joindre la racine &#xE0; <code>nil</code>.</li>
+</ul>
+<p>L&apos;arbre syntaxique donn&#xE9; en exemple est de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>.</p>
+<blockquote>
+<p>Dans l&apos;<strong>autre d&#xE9;finition tr&#xE8;s commune</strong>, un arbre vide a pour hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span>, et s&apos;il est non vide, c&apos;est le nombre maximal de <strong>liens</strong> pour joindre la racine &#xE0; une feuille.</p>
+</blockquote>
+<p>M&#xEA;me si l&apos;autre est assez r&#xE9;pandue, nous pr&#xE9;f&#xE9;rerons la d&#xE9;finition o&#xF9; l&apos;arbre vide est de hauteur nulle. Cette d&#xE9;finition et l&apos;autre ne diff&#xE8;re que de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>.</p>
+<blockquote>
+<p>La hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span> est une notion importante pour le calcul de la complexit&#xE9; d&apos;un algorithme. De nombreux algorithmes ont une complexit&#xE9; en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(h)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mclose">)</span></span></span></span>, et ainsi, un d&#xE9;calage de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> dans la d&#xE9;finition est absolument <strong>sans importance</strong>.</p>
+</blockquote>
+<h3 class="mume-header" id="arbre-peigne">Arbre peigne</h3>
+
+<p>Un arbre binaire <strong>peigne</strong> est un cas particulier extr&#xEA;me d&apos;arbre binaire, tous les n&#x153;uds int&#xE9;rieurs ont un seul fils qui est non vide, et toujours du m&#xEA;me c&#xF4;t&#xE9;. Techniquement c&apos;est une liste chain&#xE9;e.</p>
+<blockquote>
+<p>Un arbre peigne montre une situation extr&#xEA;me o&#xF9; les algorithmes que nous verront ne seront pas efficaces. Avec un arbre peigne, la hauteur est &#xE9;gale &#xE0; la taille ; on ne peut pas obtenir une plus grande hauteur &#xE0; taille fix&#xE9;e.</p>
+</blockquote>
+<h3 class="mume-header" id="arbre-parfait">Arbre parfait</h3>
+
+<p>Un arbre binaire <strong>parfait</strong> poss&#xE8;de des n&#x153;uds int&#xE9;rieurs qui ont tous exactement deux enfants non vides. C&apos;est l&apos;arbre id&#xE9;al pour les algorithmes... Une taille maximale pour une hauteur minimale.</p>
+<h3 class="mume-header" id="arbre-%C3%A9quilibr%C3%A9">Arbre &#xE9;quilibr&#xE9;</h3>
+
+<p>Un arbre binaire est <strong>&#xE9;quilibr&#xE9;</strong> si pour chaque n&#x153;ud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diff&#xE8;re que de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> au plus.</p>
+<blockquote>
+<p>Concr&#xE8;tement, un arbre est &#xE9;quilibr&#xE9; quand tous les n&#x153;uds int&#xE9;rieurs ont deux enfants non vides, sauf les plus &#xE9;loign&#xE9;s qui en ont un ou deux. <strong>Techniquement, les enfants vides sont tous &#xE0; la profondeur maximale</strong>.</p>
+</blockquote>
+<h3 class="mume-header" id="arbre-presque-complet-%C3%A0-gauche">Arbre presque complet (&#xE0; gauche)</h3>
+
+<p>Un arbre binaire est complet (&#xE0; gauche) s&apos;il est &#xE9;quilibr&#xE9; et qu&apos;&#xE0; la profondeur maximale les feuilles sont entass&#xE9;es du m&#xEA;me c&#xF4;t&#xE9; (&#xE0; gauche).</p>
+<blockquote>
+<p>&#x26A0;&#xFE0F; les d&#xE9;finitions de complet et &#xE9;quilibr&#xE9; varient parfois, de m&#xEA;me en anglais. V&#xE9;rifier avec le document que vous utilisez.</p>
+</blockquote>
+<h2 class="mume-header" id="repr%C3%A9sentation-en-python">Repr&#xE9;sentation en Python</h2>
+
+<h3 class="mume-header" id="avec-un-tuple-%C3%A0-trois-%C3%A9l%C3%A9ments">Avec un tuple &#xE0; trois &#xE9;l&#xE9;ments</h3>
+
+<p>Un arbre binaire peut &#xEA;tre repr&#xE9;sent&#xE9; par un ensemble de n&#x153;uds de la forme <code>(fils_gauche, &#xE9;l&#xE9;ment, fils_droit)</code> et avec <code>None</code> pour d&#xE9;signer <code>nil</code>.</p>
+<p>Exemple, l&apos;expression num&#xE9;rique <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>6</mn><mo>&#xD7;</mo><mn>5</mn><mo>&#x2212;</mo><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">A = 6&#xD7;5 - (3+6)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">6</span><span class="mclose">)</span></span></span></span> peut &#xEA;tre repr&#xE9;sent&#xE9;e par :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">six_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+cinq_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+produit_1 <span class="token operator">=</span> <span class="token punctuation">(</span>six_1<span class="token punctuation">,</span> <span class="token string">&quot;&#xD7;&quot;</span><span class="token punctuation">,</span> cinq_1<span class="token punctuation">)</span>
+trois_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+six_2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+somme_1 <span class="token operator">=</span> <span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
+A <span class="token operator">=</span> <span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+</pre><blockquote>
+<p><strong>Remarque</strong> : on notera la num&#xE9;rotation des n&#x153;uds afin d&apos;avoir deux n&#x153;uds &#xE9;tiquet&#xE9;s <code>&quot;six_?&quot;</code> diff&#xE9;rents. De m&#xEA;me, si plusieurs sommes la composait, l&apos;objectif &#xE9;tant de s&#xE9;curiser l&apos;&#xE9;ventuel partage de donn&#xE9;es, m&#xEA;me si c&apos;est possible en faisant tr&#xE8;s attention...</p>
+</blockquote>
+<p>Avec cette repr&#xE9;sentation on peut donner le code de certaines fonctions.</p>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> arbre <span class="token keyword">is</span> <span class="token boolean">None</span>
+
+<span class="token keyword">def</span> <span class="token function">somme</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;On suppose ici que l&apos;arbre binaire ne comporte
+    que des valeurs num&#xE9;riques.&quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> arbre<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">taille</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> est_peigne_gauche<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">and</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+</pre><pre data-role="codeBlock" data-info="python" class="language-python"></pre><h3 class="mume-header" id="avec-une-classe-n%C5%93ud">Avec une classe <code>N&#x153;ud</code></h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">N</span>&#x153;ud<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> gauche<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>gauche <span class="token operator">=</span> gauche
+        self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
+
+
+<span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> arbre <span class="token keyword">is</span> <span class="token boolean">None</span>
+
+<span class="token keyword">def</span> <span class="token function">somme</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;On suppose ici que l&apos;arbre binaire ne comporte
+    que des valeurs num&#xE9;riques.&quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> arbre<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">+</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">taille</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> est_peigne_gauche<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token keyword">and</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+</pre><h3 class="mume-header" id="avec-un-tuple-nomm%C3%A9">Avec un tuple nomm&#xE9;</h3>
+
+<p>Le type tuple nomm&#xE9; est peu connu en Python, c&apos;est pourtant un type recommand&#xE9; au sein du programme de NSI ; il permet d&apos;avoir la l&#xE9;g&#xE8;ret&#xE9; du tuple en ayant une part de l&apos;expressivit&#xE9; de la POO.</p>
+<pre data-role="codeBlock" data-info="py" class="language-python"></pre><h2 class="mume-header" id="parcours-dun-arbre-binaire">Parcours d&apos;un arbre binaire</h2>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
