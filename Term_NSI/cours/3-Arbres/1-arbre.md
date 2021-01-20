@@ -173,6 +173,35 @@ Même si l'autre est assez répandue, nous préférerons la définition où l'ar
 ### Arbre peigne
 Un arbre binaire **peigne** est un cas particulier extrême d'arbre binaire, tous les nœuds intérieurs ont un seul fils qui est non vide, et toujours du même côté. Techniquement c'est une liste chainée.
 
+```dot
+digraph expression
+{
+    label = "Arbre peigne gauche de hauteur 4"
+    "0" [label=""];
+
+    "1" [label=""];
+    "1d" [label="",shape=plaintext];
+    "0" -> "1";
+    "0" -> "1d" [style=dashed, arrowhead=none];
+
+    "2" [label=""];
+    "2d" [label="",shape=plaintext];
+    "1" -> "2";
+    "1" -> "2d" [style=dashed, arrowhead=none];
+
+    "3" [label=""];
+    "3d" [label="",shape=plaintext];
+    "2" -> "3";
+    "2" -> "3d" [style=dashed, arrowhead=none];
+
+    "4" [label="",shape=plaintext];
+    "4d" [label="",shape=plaintext];
+    "3" -> "4" [style=dashed, arrowhead=none];
+    "3" -> "4d" [style=dashed, arrowhead=none];
+
+}
+```
+
 > Un arbre peigne montre une situation extrême où les algorithmes que nous verrons ne seront pas efficaces. Avec un arbre peigne, la hauteur est égale à la taille ; on ne peut pas obtenir une plus grande hauteur à taille fixée.
 
 ### Arbre parfait
@@ -311,6 +340,7 @@ On considère l'arbre binaire suivant :
 ```dot
 digraph expression
 {
+    label = "exemple_6"
     "A" -> "B" [weight=0.75];
     "A" -> "D" [weight=0.75];
     "Bg" [label="",shape=plaintext]
