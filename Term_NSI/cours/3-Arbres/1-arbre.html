@@ -274,9 +274,18 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#d%C3%A9finitions">D&#xE9;finitions</a>
 <ul>
+<li><a href="#arbre-enracin%C3%A9">Arbre enracin&#xE9;</a>
+<ul>
 <li><a href="#n%C5%93ud">N&#x153;ud</a></li>
-<li><a href="#arbre-enracin%C3%A9">Arbre enracin&#xE9;</a></li>
-<li><a href="#arbre-binaire">Arbre binaire</a></li>
+</ul>
+</li>
+<li><a href="#arbre-enracin%C3%A9-1">Arbre enracin&#xE9;</a></li>
+<li><a href="#arbre-binaire">Arbre binaire</a>
+<ul>
+<li><a href="#n%C5%93ud-1">N&#x153;ud</a></li>
+<li><a href="#arbre-binaire-1">Arbre binaire</a></li>
+</ul>
+</li>
 <li><a href="#feuille">Feuille</a></li>
 <li><a href="#taille-dun-arbre">Taille d&apos;un arbre</a></li>
 <li><a href="#hauteur-dun-arbre">Hauteur d&apos;un arbre</a></li>
@@ -294,6 +303,14 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 </li>
 <li><a href="#parcours-dun-arbre-binaire">Parcours d&apos;un arbre binaire</a></li>
+<li><a href="#exercices-sur-les-arbres-binaires">Exercices sur les arbres binaires</a>
+<ul>
+<li><a href="#exercice-4-dessiner-des-arbres">Exercice 4 - Dessiner des arbres</a></li>
+<li><a href="#exercice-5-d%C3%A9nombrement-des-arbres-binaires">Exercice 5 - D&#xE9;nombrement des arbres binaires</a></li>
+<li><a href="#exercice-6-parcours-infixe">Exercice 6 - Parcours infixe</a></li>
+<li><a href="#exercice-7-parcours-en-largeur">Exercice 7 - Parcours en largeur</a></li>
+</ul>
+</li>
 </ul>
 <h2 class="mume-header" id="exemples-introductifs">Exemples introductifs</h2>
 
@@ -721,13 +738,12 @@ pre[data-line] .line-highlight[data-end]:after {
 </blockquote>
 <h2 class="mume-header" id="d%C3%A9finitions">D&#xE9;finitions</h2>
 
-<h3 class="mume-header" id="n%C5%93ud">N&#x153;ud</h3>
+<h3 class="mume-header" id="arbre-enracin%C3%A9">Arbre enracin&#xE9;</h3>
+
+<h4 class="mume-header" id="n%C5%93ud">N&#x153;ud</h4>
 
 <p>Un n&#x153;ud contient un &#xE9;l&#xE9;ment et des enfants, qui sont d&apos;autres n&#x153;uds : z&#xE9;ro, un ou plusieurs n&#x153;uds.</p>
-<blockquote>
-<p>Dans l&apos;exemple pr&#xE9;c&#xE9;dent, <code>+</code>, <code>&#xD7;</code>, <code>3</code>, <code>x</code>, et les autres sont des n&#x153;uds, sauf les <code>nil</code> qui repr&#xE9;sentent l&apos;absence de n&#x153;ud.</p>
-</blockquote>
-<h3 class="mume-header" id="arbre-enracin%C3%A9">Arbre enracin&#xE9;</h3>
+<h3 class="mume-header" id="arbre-enracin%C3%A9-1">Arbre enracin&#xE9;</h3>
 
 <p>Un arbre enracin&#xE9; est un ensemble fini non vide de n&#x153;uds, avec un n&#x153;ud en particulier : la racine de l&apos;arbre. Les n&#x153;uds sont organis&#xE9;s de mani&#xE8;re hi&#xE9;rarchique dans un graphe :</p>
 <ul>
@@ -736,7 +752,15 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <h3 class="mume-header" id="arbre-binaire">Arbre binaire</h3>
 
-<p>Un arbre binaire est un ensemble fini de n&#x153;uds qui ont exactement deux enfants, un &#xE0; gauche, un &#xE0; droite : des n&#x153;uds ou &#xE9;ventuellement <code>nil</code> et que l&apos;on pourra alors omettre.</p>
+<h4 class="mume-header" id="n%C5%93ud-1">N&#x153;ud</h4>
+
+<p>Dans un arbre binaire, un n&#x153;ud contient un &#xE9;l&#xE9;ment et <strong>deux enfants</strong>, qui sont d&apos;autres arbres binaires.</p>
+<blockquote>
+<p>Dans l&apos;exemple pr&#xE9;c&#xE9;dent, <code>+</code>, <code>&#xD7;</code>, <code>3</code>, <code>x</code>, et les autres sont des n&#x153;uds, sauf les <code>nil</code> qui repr&#xE9;sentent l&apos;absence de n&#x153;ud.</p>
+</blockquote>
+<h4 class="mume-header" id="arbre-binaire-1">Arbre binaire</h4>
+
+<p>Un arbre binaire est un ensemble fini de n&#x153;uds qui ont exactement deux enfants, un &#xE0; gauche, un &#xE0; droite ; les enfants sont des n&#x153;uds ou &#xE9;ventuellement <code>nil</code> (une absence de n&#x153;ud) et que l&apos;on pourra alors omettre.</p>
 <p>Une d&#xE9;finition r&#xE9;cursive est alors :</p>
 <ul>
 <li>Un arbre binaire peut avoir z&#xE9;ro n&#x153;ud, il est alors vide, on le note <code>nil</code>.</li>
@@ -801,14 +825,14 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Pour un arbre binaire, une feuille est un n&#x153;ud qui poss&#xE8;de deux sous arbres vides.</li>
 </ul>
 <blockquote>
-<p>Ce sont les extr&#xE9;mit&#xE9;s de l&apos;arbre.</p>
+<p>Les feuilles sont les extr&#xE9;mit&#xE9;s de l&apos;arbre.</p>
 </blockquote>
 <p>Dans le premier exemple, <code>3</code>, <code>y</code>, <code>x</code>, et <code>2</code> sont des feuilles.</p>
 <h3 class="mume-header" id="taille-dun-arbre">Taille d&apos;un arbre</h3>
 
 <p>La taille d&apos;un arbre est son nombre de n&#x153;uds.</p>
 <blockquote>
-<p>L&apos;exemple de l&apos;arbre syntaxique est un arbre de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>, dont <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> feuilles. Il y a donc <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&#x2212;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">8-4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> n&#x153;uds int&#xE9;rieurs.</p>
+<p>L&apos;exemple de l&apos;arbre de l&apos;expression litt&#xE9;rale est un arbre de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>, dont <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> feuilles. Il y a donc <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>&#x2212;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">8-4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> n&#x153;uds int&#xE9;rieurs.</p>
 </blockquote>
 <h3 class="mume-header" id="hauteur-dun-arbre">Hauteur d&apos;un arbre</h3>
 
@@ -831,7 +855,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>Un arbre binaire <strong>peigne</strong> est un cas particulier extr&#xEA;me d&apos;arbre binaire, tous les n&#x153;uds int&#xE9;rieurs ont un seul fils qui est non vide, et toujours du m&#xEA;me c&#xF4;t&#xE9;. Techniquement c&apos;est une liste chain&#xE9;e.</p>
 <blockquote>
-<p>Un arbre peigne montre une situation extr&#xEA;me o&#xF9; les algorithmes que nous verront ne seront pas efficaces. Avec un arbre peigne, la hauteur est &#xE9;gale &#xE0; la taille ; on ne peut pas obtenir une plus grande hauteur &#xE0; taille fix&#xE9;e.</p>
+<p>Un arbre peigne montre une situation extr&#xEA;me o&#xF9; les algorithmes que nous verrons ne seront pas efficaces. Avec un arbre peigne, la hauteur est &#xE9;gale &#xE0; la taille ; on ne peut pas obtenir une plus grande hauteur &#xE0; taille fix&#xE9;e.</p>
 </blockquote>
 <h3 class="mume-header" id="arbre-parfait">Arbre parfait</h3>
 
@@ -846,23 +870,142 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>Un arbre binaire est complet (&#xE0; gauche) s&apos;il est &#xE9;quilibr&#xE9; et qu&apos;&#xE0; la profondeur maximale les feuilles sont entass&#xE9;es du m&#xEA;me c&#xF4;t&#xE9; (&#xE0; gauche).</p>
 <blockquote>
-<p>&#x26A0;&#xFE0F; les d&#xE9;finitions de complet et &#xE9;quilibr&#xE9; varient parfois, de m&#xEA;me en anglais. V&#xE9;rifier avec le document que vous utilisez.</p>
+<p>&#x26A0;&#xFE0F; les d&#xE9;finitions de (presque) complet et &#xE9;quilibr&#xE9; varient parfois, de m&#xEA;me en anglais. V&#xE9;rifier avec le document que vous utilisez.</p>
 </blockquote>
 <h2 class="mume-header" id="repr%C3%A9sentation-en-python">Repr&#xE9;sentation en Python</h2>
 
-<h3 class="mume-header" id="avec-un-tuple-%C3%A0-trois-%C3%A9l%C3%A9ments">Avec un tuple &#xE0; trois &#xE9;l&#xE9;ments</h3>
+<p>Prenons par exemple, l&apos;expression num&#xE9;rique <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>6</mn><mo>&#xD7;</mo><mn>5</mn><mo>&#x2212;</mo><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>6</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">A = 6&#xD7;5 - (3+7+6)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">6</span><span class="mclose">)</span></span></span></span> qui peut &#xEA;tre repr&#xE9;sent&#xE9;e par l&apos;arbre binaire suivant. (<code>nil</code> non dessin&#xE9;s.)</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="314pt" height="260pt" viewBox="0.00 0.00 314.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-256 310,-256 310,4 -4,4"/>
+<!-- six_1 -->
+<g id="node1" class="node">
+<title>six_1</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">6</text>
+</g>
+<!-- &#45; -->
+<g id="node2" class="node">
+<title>-</title>
+<ellipse fill="none" stroke="#000000" cx="135" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="135" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">-</text>
+</g>
+<!-- × -->
+<g id="node3" class="node">
+<title>&#xD7;</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#xD7;</text>
+</g>
+<!-- &#45;&#45;&gt;× -->
+<g id="edge1" class="edge">
+<title>--&gt;&#xD7;</title>
+<path fill="none" stroke="#000000" d="M126.2854,-216.5708C122.0403,-208.0807 116.8464,-197.6929 112.1337,-188.2674"/>
+<polygon fill="#000000" stroke="#000000" points="115.237,-186.6477 107.6343,-179.2687 108.976,-189.7782 115.237,-186.6477"/>
+</g>
+<!-- +_1 -->
+<g id="node4" class="node">
+<title>+_1</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">+</text>
+</g>
+<!-- &#45;&#45;&gt;+_1 -->
+<g id="edge2" class="edge">
+<title>--&gt;+_1</title>
+<path fill="none" stroke="#000000" d="M143.7146,-216.5708C147.9597,-208.0807 153.1536,-197.6929 157.8663,-188.2674"/>
+<polygon fill="#000000" stroke="#000000" points="161.024,-189.7782 162.3657,-179.2687 154.763,-186.6477 161.024,-189.7782"/>
+</g>
+<!-- ×&#45;&gt;six_1 -->
+<g id="edge3" class="edge">
+<title>&#xD7;-&gt;six_1</title>
+<path fill="none" stroke="#000000" d="M83.7307,-146.7307C73.803,-136.803 60.6847,-123.6847 49.5637,-112.5637"/>
+<polygon fill="#000000" stroke="#000000" points="51.7933,-109.8436 42.2473,-105.2473 46.8436,-114.7933 51.7933,-109.8436"/>
+</g>
+<!-- 5 -->
+<g id="node5" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- ×&#45;&gt;5 -->
+<g id="edge4" class="edge">
+<title>&#xD7;-&gt;5</title>
+<path fill="none" stroke="#000000" d="M99,-143.8314C99,-136.131 99,-126.9743 99,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-118.4132 99,-108.4133 95.5001,-118.4133 102.5001,-118.4132"/>
+</g>
+<!-- 3 -->
+<g id="node6" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- +_1&#45;&gt;3 -->
+<g id="edge5" class="edge">
+<title>+_1-&gt;3</title>
+<path fill="none" stroke="#000000" d="M171,-143.8314C171,-136.131 171,-126.9743 171,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-118.4132 171,-108.4133 167.5001,-118.4133 174.5001,-118.4132"/>
+</g>
+<!-- + -->
+<g id="node7" class="node">
+<title>+</title>
+<ellipse fill="none" stroke="#000000" cx="243" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">+</text>
+</g>
+<!-- +_1&#45;&gt;+ -->
+<g id="edge6" class="edge">
+<title>+_1-&gt;+</title>
+<path fill="none" stroke="#000000" d="M186.2693,-146.7307C196.197,-136.803 209.3153,-123.6847 220.4363,-112.5637"/>
+<polygon fill="#000000" stroke="#000000" points="223.1564,-114.7933 227.7527,-105.2473 218.2067,-109.8436 223.1564,-114.7933"/>
+</g>
+<!-- 7 -->
+<g id="node8" class="node">
+<title>7</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">7</text>
+</g>
+<!-- +&#45;&gt;7 -->
+<g id="edge7" class="edge">
+<title>+-&gt;7</title>
+<path fill="none" stroke="#000000" d="M234.2854,-72.5708C230.0403,-64.0807 224.8464,-53.6929 220.1337,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="223.237,-42.6477 215.6343,-35.2687 216.976,-45.7782 223.237,-42.6477"/>
+</g>
+<!-- six_2 -->
+<g id="node9" class="node">
+<title>six_2</title>
+<ellipse fill="none" stroke="#000000" cx="279" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="279" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">6</text>
+</g>
+<!-- +&#45;&gt;six_2 -->
+<g id="edge8" class="edge">
+<title>+-&gt;six_2</title>
+<path fill="none" stroke="#000000" d="M251.7146,-72.5708C255.9597,-64.0807 261.1536,-53.6929 265.8663,-44.2674"/>
+<polygon fill="#000000" stroke="#000000" points="269.024,-45.7782 270.3657,-35.2687 262.763,-42.6477 269.024,-45.7782"/>
+</g>
+</g>
+</svg>
+</p><h3 class="mume-header" id="avec-un-tuple-%C3%A0-trois-%C3%A9l%C3%A9ments">Avec un tuple &#xE0; trois &#xE9;l&#xE9;ments</h3>
 
 <p>Un arbre binaire peut &#xEA;tre repr&#xE9;sent&#xE9; par un ensemble de n&#x153;uds de la forme <code>(fils_gauche, &#xE9;l&#xE9;ment, fils_droit)</code> et avec <code>None</code> pour d&#xE9;signer <code>nil</code>.</p>
-<p>Exemple, l&apos;expression num&#xE9;rique <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>6</mn><mo>&#xD7;</mo><mn>5</mn><mo>&#x2212;</mo><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">A = 6&#xD7;5 - (3+6)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">6</span><span class="mclose">)</span></span></span></span> peut &#xEA;tre repr&#xE9;sent&#xE9;e par :</p>
+<p>Notre exemple peut &#xEA;tre alors repr&#xE9;sent&#xE9; par :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">six_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
 cinq_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
 produit_1 <span class="token operator">=</span> <span class="token punctuation">(</span>six_1<span class="token punctuation">,</span> <span class="token string">&quot;&#xD7;&quot;</span><span class="token punctuation">,</span> cinq_1<span class="token punctuation">)</span>
+
 trois_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+
+sept_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;7&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
 six_2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
-somme_1 <span class="token operator">=</span> <span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
-A <span class="token operator">=</span> <span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+somme_1 <span class="token operator">=</span> <span class="token punctuation">(</span>sept_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
+
+somme_2 <span class="token operator">=</span> <span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+expr_A <span class="token operator">=</span> <span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_2<span class="token punctuation">)</span>
 </pre><blockquote>
-<p><strong>Remarque</strong> : on notera la num&#xE9;rotation des n&#x153;uds afin d&apos;avoir deux n&#x153;uds &#xE9;tiquet&#xE9;s <code>&quot;six_?&quot;</code> diff&#xE9;rents. De m&#xEA;me, si plusieurs sommes la composait, l&apos;objectif &#xE9;tant de s&#xE9;curiser l&apos;&#xE9;ventuel partage de donn&#xE9;es, m&#xEA;me si c&apos;est possible en faisant tr&#xE8;s attention...</p>
+<p><strong>Remarque</strong> : on notera la num&#xE9;rotation des n&#x153;uds afin d&apos;avoir deux n&#x153;uds &#xE9;tiquet&#xE9;s <code>&quot;six_?&quot;</code> diff&#xE9;rents. De m&#xEA;me, plusieurs sommes le compose, l&apos;objectif &#xE9;tant de s&#xE9;curiser l&apos;&#xE9;ventuel partage de donn&#xE9;es, m&#xEA;me si c&apos;est possible en faisant tr&#xE8;s attention...</p>
 </blockquote>
 <p>Avec cette repr&#xE9;sentation on peut donner le code de certaines fonctions.</p>
 <pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -886,7 +1029,7 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -894,7 +1037,30 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> est_peigne_gauche<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">and</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-</pre><pre data-role="codeBlock" data-info="python" class="language-python"></pre><h3 class="mume-header" id="avec-une-classe-n%C5%93ud">Avec une classe <code>N&#x153;ud</code></h3>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    <span class="token comment"># test</span>
+    six_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    cinq_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    produit_1 <span class="token operator">=</span> <span class="token punctuation">(</span>six_1<span class="token punctuation">,</span> <span class="token string">&quot;&#xD7;&quot;</span><span class="token punctuation">,</span> cinq_1<span class="token punctuation">)</span>
+
+    trois_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+
+    sept_1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;7&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    six_2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    somme_1 <span class="token operator">=</span> <span class="token punctuation">(</span>sept_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
+
+    somme_2 <span class="token operator">=</span> <span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+    expr_A <span class="token operator">=</span> <span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_2<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> taille<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">9</span>
+    <span class="token keyword">assert</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> <span class="token keyword">not</span> est_peigne_gauche<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token comment"># Il y a un not !!!</span>
+    <span class="token keyword">assert</span> est_peigne_gauche<span class="token punctuation">(</span>trois_1<span class="token punctuation">)</span> <span class="token comment"># comme toute feuille</span>
+
+</pre><p>On remarquera que ce code est bien moins lisible que les suivants. Nous n&apos;utiliserons plus ici les tuples avec les indices pour acc&#xE9;der aux champs de donn&#xE9;es !</p>
+<h3 class="mume-header" id="avec-une-classe-n%C5%93ud">Avec une classe <code>N&#x153;ud</code></h3>
 
 <pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">N</span>&#x153;ud<span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> gauche<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -924,7 +1090,7 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -932,11 +1098,282 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> est_peigne_gauche<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token keyword">and</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
 
-</pre><h3 class="mume-header" id="avec-un-tuple-nomm%C3%A9">Avec un tuple nomm&#xE9;</h3>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    <span class="token comment"># test</span>
+    six_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    cinq_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    produit_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>six_1<span class="token punctuation">,</span> <span class="token string">&quot;&#xD7;&quot;</span><span class="token punctuation">,</span> cinq_1<span class="token punctuation">)</span>
+
+    trois_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+
+    sept_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;7&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    six_2 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    somme_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>sept_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
+
+    somme_2 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+    expr_A <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_2<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> taille<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">9</span>
+    <span class="token keyword">assert</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> <span class="token keyword">not</span> est_peigne_gauche<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token comment"># Il y a un not !!!</span>
+    <span class="token keyword">assert</span> est_peigne_gauche<span class="token punctuation">(</span>trois_1<span class="token punctuation">)</span> <span class="token comment"># comme toute feuille</span>
+
+</pre><p>On remarque un code bien plus lisible et extensible &#xE0; volont&#xE9;. <strong>Tr&#xE8;s bon choix.</strong></p>
+<h3 class="mume-header" id="avec-un-tuple-nomm%C3%A9">Avec un tuple nomm&#xE9;</h3>
 
 <p>Le type tuple nomm&#xE9; est peu connu en Python, c&apos;est pourtant un type recommand&#xE9; au sein du programme de NSI ; il permet d&apos;avoir la l&#xE9;g&#xE8;ret&#xE9; du tuple en ayant une part de l&apos;expressivit&#xE9; de la POO.</p>
-<pre data-role="codeBlock" data-info="py" class="language-python"></pre><h2 class="mume-header" id="parcours-dun-arbre-binaire">Parcours d&apos;un arbre binaire</h2>
+<blockquote>
+<p>Lire <a href="https://docs.python.org/fr/3/library/collections.html#collections.namedtuple">la documentation officielle</a> ; On constatera ici, qu&apos;apr&#xE8;s la red&#xE9;finition de <code>N&#x153;ud</code>, la suite du code est inchang&#xE9;e !</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">import</span> collections
+N&#x153;ud <span class="token operator">=</span> collections<span class="token punctuation">.</span>namedtuple<span class="token punctuation">(</span><span class="token string">&apos;N&#x153;ud&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&apos;gauche&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&#xE9;l&#xE9;ment&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;droite&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
+
+<span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> arbre <span class="token keyword">is</span> <span class="token boolean">None</span>
+
+<span class="token keyword">def</span> <span class="token function">somme</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;On suppose ici que l&apos;arbre binaire ne comporte
+    que des valeurs num&#xE9;riques.&quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> arbre<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">+</span> somme<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">taille</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> est_peigne_gauche<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token keyword">and</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    <span class="token comment"># test</span>
+    six_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    cinq_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    produit_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>six_1<span class="token punctuation">,</span> <span class="token string">&quot;&#xD7;&quot;</span><span class="token punctuation">,</span> cinq_1<span class="token punctuation">)</span>
+
+    trois_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+
+    sept_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;7&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    six_2 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+    somme_1 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>sept_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> six_2<span class="token punctuation">)</span>
+
+    somme_2 <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>trois_1<span class="token punctuation">,</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span> somme_1<span class="token punctuation">)</span>
+    expr_A <span class="token operator">=</span> N&#x153;ud<span class="token punctuation">(</span>produit_1<span class="token punctuation">,</span> <span class="token string">&quot;-&quot;</span><span class="token punctuation">,</span> somme_2<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> taille<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">9</span>
+    <span class="token keyword">assert</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">,</span> hauteur<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> <span class="token keyword">not</span> est_peigne_gauche<span class="token punctuation">(</span>expr_A<span class="token punctuation">)</span> <span class="token comment"># Il y a un not !!!</span>
+    <span class="token keyword">assert</span> est_peigne_gauche<span class="token punctuation">(</span>trois_1<span class="token punctuation">)</span> <span class="token comment"># comme toute feuille</span>
+
+</pre><p>On remarque un code aussi clair, moins extensible mais plus l&#xE9;ger en empreinte m&#xE9;moire. &#xC0; utiliser en cas de volont&#xE9; d&apos;optimisation temporelle mais surtout m&#xE9;moire. (Ou alors pour pr&#xE9;parer une initiation &#xE0; la POO ???)</p>
+<blockquote>
+<p>Nous utiliserons la POO pour la suite, pour sa lisibilit&#xE9;, son extensibilit&#xE9;. Nous ne cherchons pas ici les performances.</p>
+</blockquote>
+<h2 class="mume-header" id="parcours-dun-arbre-binaire">Parcours d&apos;un arbre binaire</h2>
+
+<p>Les fonctions que nous avons d&#xE9;couvertes utilisaient des op&#xE9;rateurs commutatifs, en effet on a <code>max(a, b) == max(b, a)</code> et <code>1 + x + y == x + 1 + y == y + x + 1</code>. Que se passe-t-il avec des fonctions non commutatives ?</p>
+<blockquote>
+<p>Si on conserve une action &#xE0; gauche avant celle de droite, alors il reste trois positions pour appliquer l&apos;action sur le n&#x153;ud en cours.</p>
+</blockquote>
+<p><strong>Exercice 3</strong> : Appliquer les fonctions suivantes. <strong>Vous ferez sur papier</strong> les parcours avec <code>action</code> d&#xE9;finie comme &#xAB; afficher le n&#x153;ud en cours &#xBB;, sur l&apos;arbre de notre exemple.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> parcours_pr&#xE9;fixe<span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">parcours_infixe</span><span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">parcours_postfixe</span><span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+        action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
+</pre><hr>
+<p>Ceci est un dessin humoristique li&#xE9; aux parcours d&apos;arbre.</p>
+<p><a href="https://xkcd.com/2407/"><img src="depth_and_breadth.png" alt="https://xkcd.com/2407/"></a></p>
+<h2 class="mume-header" id="exercices-sur-les-arbres-binaires">Exercices sur les arbres binaires</h2>
+
+<h3 class="mume-header" id="exercice-4-dessiner-des-arbres">Exercice 4 - Dessiner des arbres</h3>
+
+<blockquote>
+<p>Dessiner &#xE0; la main tous les arbres binaires ayant trois ou quatre n&#x153;uds.</p>
+</blockquote>
+<p><strong>Facultatif :</strong> Pour dessiner des arbres dans un document &#xE9;crit en markdown, on regardera le code source de ce document...</p>
+<h3 class="mume-header" id="exercice-5-d%C3%A9nombrement-des-arbres-binaires">Exercice 5 - D&#xE9;nombrement des arbres binaires</h3>
+
+<ul>
+<li>Il y a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> arbre binaire ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> n&#x153;ud, l&apos;arbre vide.</li>
+<li>Il y a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> arbre binaire ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> n&#x153;ud.</li>
+<li>Il y a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> arbres binaires ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> n&#x153;uds.</li>
+<li>Il y a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> arbres binaires ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> n&#x153;uds.</li>
+<li>Il y a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>14</mn></mrow><annotation encoding="application/x-tex">14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span> arbres binaires ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> n&#x153;uds.</li>
+</ul>
+<blockquote>
+<p>Combien y a-t-il d&apos;arbres binaires ayant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> n&#x153;uds. <em>(Ne pas tous les dessiner ; trouver juste le moyen de tous les d&#xE9;nombrer.)</em></p>
+</blockquote>
+<h3 class="mume-header" id="exercice-6-parcours-infixe">Exercice 6 - Parcours infixe</h3>
+
+<p>On consid&#xE8;re l&apos;arbre binaire suivant :</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="278pt" height="260pt" viewBox="0.00 0.00 278.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-256 274,-256 274,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="#000000" cx="135" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="135" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="#000000" cx="63" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="#000000" d="M119.7307,-218.7307C109.803,-208.803 96.6847,-195.6847 85.5637,-184.5637"/>
+<polygon fill="#000000" stroke="#000000" points="87.7933,-181.8436 78.2473,-177.2473 82.8436,-186.7933 87.7933,-181.8436"/>
+</g>
+<!-- D -->
+<g id="node3" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">D</text>
+</g>
+<!-- A&#45;&gt;D -->
+<g id="edge2" class="edge">
+<title>A-&gt;D</title>
+<path fill="none" stroke="#000000" d="M150.2693,-218.7307C160.197,-208.803 173.3153,-195.6847 184.4363,-184.5637"/>
+<polygon fill="#000000" stroke="#000000" points="187.1564,-186.7933 191.7527,-177.2473 182.2067,-181.8436 187.1564,-186.7933"/>
+</g>
+<!-- Bg -->
+<g id="node4" class="node">
+<title>Bg</title>
+</g>
+<!-- B&#45;&gt;Bg -->
+<g id="edge3" class="edge">
+<title>B-&gt;Bg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M54.2854,-144.5708C48.7502,-133.5003 41.6017,-119.2034 36.0103,-108.0206"/>
+</g>
+<!-- C -->
+<g id="node5" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge4" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="#000000" d="M71.7146,-144.5708C75.9597,-136.0807 81.1536,-125.6929 85.8663,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="89.024,-117.7782 90.3657,-107.2687 82.763,-114.6477 89.024,-117.7782"/>
+</g>
+<!-- Dg -->
+<g id="node8" class="node">
+<title>Dg</title>
+</g>
+<!-- D&#45;&gt;Dg -->
+<g id="edge7" class="edge">
+<title>D-&gt;Dg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.2854,-144.5708C192.7502,-133.5003 185.6017,-119.2034 180.0103,-108.0206"/>
+</g>
+<!-- Dd -->
+<g id="node9" class="node">
+<title>Dd</title>
+</g>
+<!-- D&#45;&gt;Dd -->
+<g id="edge8" class="edge">
+<title>D-&gt;Dd</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M215.7146,-144.5708C221.2498,-133.5003 228.3983,-119.2034 233.9897,-108.0206"/>
+</g>
+<!-- Cg -->
+<g id="node6" class="node">
+<title>Cg</title>
+</g>
+<!-- C&#45;&gt;Cg -->
+<g id="edge5" class="edge">
+<title>C-&gt;Cg</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M90.2854,-72.5708C84.7502,-61.5003 77.6017,-47.2034 72.0103,-36.0206"/>
+</g>
+<!-- Cd -->
+<g id="node7" class="node">
+<title>Cd</title>
+</g>
+<!-- C&#45;&gt;Cd -->
+<g id="edge6" class="edge">
+<title>C-&gt;Cd</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M107.7146,-72.5708C113.2498,-61.5003 120.3983,-47.2034 125.9897,-36.0206"/>
+</g>
+</g>
+</svg>
+</p><ol>
+<li>Construire sa repr&#xE9;sentation interne en Python &#xE0; l&apos;aide de la classe <code>N&#x153;ud</code>.</li>
+<li>&#xC9;crire une fonction <code>affichage</code> d&#xE9;finie par :
+<ul>
+<li>sur un arbre vide, ne rien faire ;</li>
+<li>sur un arbre non vide,
+<ul>
+<li>afficher <code>(</code>, puis</li>
+<li>afficher (r&#xE9;cursivement) le sous arbre gauche, puis</li>
+<li>afficher la racine, puis</li>
+<li>afficher (r&#xE9;cursivement) le sous arbre droite, puis</li>
+<li>afficher <code>)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>V&#xE9;rifier que <code>affichage(exemple_6)</code> produit <code>&apos;((B(C))A(D))&apos;</code>.</li>
+<li>Dessiner un <code>arbre</code> dont <code>affichage(arbre)</code> produit <code>&apos;(1((2)3))&apos;</code>.</li>
+<li>De mani&#xE8;re g&#xE9;n&#xE9;rale, expliquer comment retrouver un arbre dont l&apos;affichage est donn&#xE9;.</li>
+</ol>
+<h3 class="mume-header" id="exercice-7-parcours-en-largeur">Exercice 7 - Parcours en largeur</h3>
+
+<ul>
+<li>Pour afficher un arbre en largeur :
+<ul>
+<li>On utilise une file initialement vide.</li>
+<li>S&apos;il est non vide, on enfile l&apos;arbre (un n&#x153;ud donc) dans la file.</li>
+<li>Tant que la file est non vide :
+<ul>
+<li>On d&#xE9;file un n&#x153;ud.</li>
+<li>On affiche l&apos;<code>&#xE9;l&#xE9;ment</code> du n&#x153;ud.</li>
+<li>On enfile le sous arbre gauche (puis droit), s&apos;il est non vide.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>&#xC9;crire une fonction de parcours en largeur.</li>
+<li>Tester votre fonction.</li>
+<li>V&#xE9;rifier qu&apos;elle consiste &#xE0; lire l&apos;arbre &#xE9;tage par &#xE9;tage en commen&#xE7;ant par la racine, puis de gauche &#xE0; droite pour chaque &#xE9;tage.</li>
+</ol>
 
       </div>
       

@@ -101,19 +101,25 @@ Cet **arbre binaire** est une représentation de l'expression $-3y + \frac x 2$.
 
 ## Définitions
 
-### Nœud
-Un nœud contient un élément et des enfants, qui sont d'autres nœuds : zéro, un ou plusieurs nœuds.
-
-> Dans l'exemple précédent, `+`, `×`, `3`, `x`, et les autres sont des nœuds, sauf les `nil` qui représentent l'absence de nœud.
 
 ### Arbre enraciné
 
+#### Nœud
+Un nœud contient un élément et des enfants, qui sont d'autres nœuds : zéro, un ou plusieurs nœuds.
+
+### Arbre enraciné
 Un arbre enraciné est un ensemble fini non vide de nœuds, avec un nœud en particulier : la racine de l'arbre. Les nœuds sont organisés de manière hiérarchique dans un graphe :
 * Tout nœud est issu de la racine ; le graphe est connexe (il est d'un seul tenant).
 * Un nœud ne possède qu'un seul parent ; le graphe est sans cycle (pas de boucle).
 
 ### Arbre binaire
-Un arbre binaire est un ensemble fini de nœuds qui ont exactement deux enfants, un à gauche, un à droite : des nœuds ou éventuellement `nil` et que l'on pourra alors omettre.
+#### Nœud
+Dans un arbre binaire, un nœud contient un élément et **deux enfants**, qui sont d'autres arbres binaires.
+
+> Dans l'exemple précédent, `+`, `×`, `3`, `x`, et les autres sont des nœuds, sauf les `nil` qui représentent l'absence de nœud.
+
+#### Arbre binaire
+Un arbre binaire est un ensemble fini de nœuds qui ont exactement deux enfants, un à gauche, un à droite ; les enfants sont des nœuds ou éventuellement `nil` (une absence de nœud) et que l'on pourra alors omettre.
 
 Une définition récursive est alors :
 * Un arbre binaire peut avoir zéro nœud, il est alors vide, on le note `nil`.
@@ -139,7 +145,7 @@ Un arbre binaire est aussi un graphe connexe, sans cycle.
 * Pour un arbre enraciné, une feuille est un nœud sans enfants.
 * Pour un arbre binaire, une feuille est un nœud qui possède deux sous arbres vides.
 
-> Ce sont les extrémités de l'arbre.
+> Les feuilles sont les extrémités de l'arbre.
 
 Dans le premier exemple, `3`, `y`, `x`, et `2` sont des feuilles.
 
@@ -147,7 +153,7 @@ Dans le premier exemple, `3`, `y`, `x`, et `2` sont des feuilles.
 
 La taille d'un arbre est son nombre de nœuds.
 
-> L'exemple de l'arbre syntaxique est un arbre de taille $8$, dont $4$ feuilles. Il y a donc $8-4$ nœuds intérieurs.
+> L'exemple de l'arbre de l'expression littérale est un arbre de taille $8$, dont $4$ feuilles. Il y a donc $8-4$ nœuds intérieurs.
 
 
 ### Hauteur d'un arbre
@@ -167,7 +173,7 @@ Même si l'autre est assez répandue, nous préférerons la définition où l'ar
 ### Arbre peigne
 Un arbre binaire **peigne** est un cas particulier extrême d'arbre binaire, tous les nœuds intérieurs ont un seul fils qui est non vide, et toujours du même côté. Techniquement c'est une liste chainée.
 
-> Un arbre peigne montre une situation extrême où les algorithmes que nous verront ne seront pas efficaces. Avec un arbre peigne, la hauteur est égale à la taille ; on ne peut pas obtenir une plus grande hauteur à taille fixée.
+> Un arbre peigne montre une situation extrême où les algorithmes que nous verrons ne seront pas efficaces. Avec un arbre peigne, la hauteur est égale à la taille ; on ne peut pas obtenir une plus grande hauteur à taille fixée.
 
 ### Arbre parfait
 Un arbre binaire **parfait** possède des nœuds intérieurs qui ont tous exactement deux enfants non vides. C'est l'arbre idéal pour les algorithmes... Une taille maximale pour une hauteur minimale.
@@ -180,41 +186,169 @@ Un arbre binaire est **équilibré** si pour chaque nœud, son sous arbre gauche
 Un arbre binaire est complet (à gauche) s'il est équilibré et qu'à la profondeur maximale les feuilles sont entassées du même côté (à gauche).
 
 
-> ⚠️ les définitions de complet et équilibré varient parfois, de même en anglais. Vérifier avec le document que vous utilisez.
+> ⚠️ les définitions de (presque) complet et équilibré varient parfois, de même en anglais. Vérifier avec le document que vous utilisez.
 
 ## Représentation en Python
+
+Prenons par exemple, l'expression numérique $A = 6×5 - (3+7+6)$ qui peut être représentée par l'arbre binaire suivant. (`nil` non dessinés.)
+
+```dot
+digraph expression
+{
+    "six_1" [label="6"]
+    "-" -> "×";
+    "+_1" [label="+"]
+    "-" -> "+_1";
+    "×" -> "six_1";
+    "×" -> "5";
+    "+_1" -> "3";
+    "+_1" -> "+";
+    "+" -> "7";
+    "six_2" [label="6"]
+    "+" -> "six_2";
+}
+```
+
+
 ### Avec un tuple à trois éléments
 
 Un arbre binaire peut être représenté par un ensemble de nœuds de la forme `(fils_gauche, élément, fils_droit)` et avec `None` pour désigner `nil`.
 
-Exemple, l'expression numérique $A = 6×5 - (3+6)$ peut être représentée par :
+Notre exemple peut être alors représenté par :
 
 ```python
 six_1 = (None, "6", None)
 cinq_1 = (None, "5", None)
 produit_1 = (six_1, "×", cinq_1)
+
 trois_1 = (None, "3", None)
+
+sept_1 = (None, "7", None)
 six_2 = (None, "6", None)
-somme_1 = (trois_1, "+", six_2)
-A = (produit_1, "-", somme_1)
+somme_1 = (sept_1, "+", six_2)
+
+somme_2 = (trois_1, "+", somme_1)
+expr_A = (produit_1, "-", somme_2)
 ```
 
-> **Remarque** : on notera la numérotation des nœuds afin d'avoir deux nœuds étiquetés `"six_?"` différents. De même, si plusieurs sommes la composait, l'objectif étant de sécuriser l'éventuel partage de données, même si c'est possible en faisant très attention...
+> **Remarque** : on notera la numérotation des nœuds afin d'avoir deux nœuds étiquetés `"six_?"` différents. De même, plusieurs sommes le compose, l'objectif étant de sécuriser l'éventuel partage de données, même si c'est possible en faisant très attention...
 
 Avec cette représentation on peut donner le code de certaines fonctions.
 
 @import "arbre_binaire_1.py"
-```python
-```
+
+On remarquera que ce code est bien moins lisible que les suivants. Nous n'utiliserons plus ici les tuples avec les indices pour accéder aux champs de données !
 
 ### Avec une classe `Nœud`
 
 @import "arbre_binaire_2.py"
 
+On remarque un code bien plus lisible et extensible à volonté. **Très bon choix.**
+
 ### Avec un tuple nommé
 Le type tuple nommé est peu connu en Python, c'est pourtant un type recommandé au sein du programme de NSI ; il permet d'avoir la légèreté du tuple en ayant une part de l'expressivité de la POO.
 
+> Lire [la documentation officielle](https://docs.python.org/fr/3/library/collections.html#collections.namedtuple) ; On constatera ici, qu'après la redéfinition de `Nœud`, la suite du code est inchangée !
+
 @import "arbre_binaire_3.py"
+
+On remarque un code aussi clair, moins extensible mais plus léger en empreinte mémoire. À utiliser en cas de volonté d'optimisation temporelle mais surtout mémoire. (Ou alors pour préparer une initiation à la POO ???)
+
+> Nous utiliserons la POO pour la suite, pour sa lisibilité, son extensibilité. Nous ne cherchons pas ici les performances.
 
 ## Parcours d'un arbre binaire
 
+Les fonctions que nous avons découvertes utilisaient des opérateurs commutatifs, en effet on a `max(a, b) == max(b, a)` et `1 + x + y == x + 1 + y == y + x + 1`. Que se passe-t-il avec des fonctions non commutatives ?
+
+> Si on conserve une action à gauche avant celle de droite, alors il reste trois positions pour appliquer l'action sur le nœud en cours.
+
+**Exercice 3** : Appliquer les fonctions suivantes. **Vous ferez sur papier** les parcours avec `action` définie comme « afficher le nœud en cours », sur l'arbre de notre exemple.
+
+```python
+def parcours_préfixe(arbre, action):
+    if not est_vide(arbre):
+        action(arbre)
+        parcours_1(arbre.gauche)
+        parcours_1(arbre.droite)
+
+def parcours_infixe(arbre, action):
+    if not est_vide(arbre):
+        parcours_1(arbre.gauche)
+        action(arbre)
+        parcours_1(arbre.droite)
+
+def parcours_postfixe(arbre, action):
+    if not est_vide(arbre):
+        parcours_1(arbre.gauche)
+        parcours_1(arbre.droite)
+        action(arbre)
+```
+
+---
+
+Ceci est un dessin humoristique lié aux parcours d'arbre.
+
+[![https://xkcd.com/2407/](depth_and_breadth.png)](https://xkcd.com/2407/)
+
+## Exercices sur les arbres binaires
+
+### Exercice 4 - Dessiner des arbres
+> Dessiner à la main tous les arbres binaires ayant trois ou quatre nœuds.
+
+**Facultatif :** Pour dessiner des arbres dans un document écrit en markdown, on regardera le code source de ce document...
+
+### Exercice 5 - Dénombrement des arbres binaires
+* Il y a $1$ arbre binaire ayant $0$ nœud, l'arbre vide.
+* Il y a $1$ arbre binaire ayant $1$ nœud.
+* Il y a $2$ arbres binaires ayant $2$ nœuds.
+* Il y a $5$ arbres binaires ayant $3$ nœuds.
+* Il y a $14$ arbres binaires ayant $4$ nœuds.
+> Combien y a-t-il d'arbres binaires ayant $5$ nœuds. *(Ne pas tous les dessiner ; trouver juste le moyen de tous les dénombrer.)*
+
+### Exercice 6 - Parcours infixe
+On considère l'arbre binaire suivant :
+
+```dot
+digraph expression
+{
+    "A" -> "B" [weight=0.75];
+    "A" -> "D" [weight=0.75];
+    "Bg" [label="",shape=plaintext]
+    "B" -> "Bg" [style=dashed, arrowhead=none];
+    "B" -> "C";
+    "Cg" [label="",shape=plaintext]
+    "C" -> "Cg" [style=dashed, arrowhead=none];
+    "Cd" [label="",shape=plaintext]
+    "C" -> "Cd" [style=dashed, arrowhead=none];
+    "Dg" [label="",shape=plaintext]
+    "D" -> "Dg" [style=dashed, arrowhead=none];
+    "Dd" [label="",shape=plaintext]
+    "D" -> "Dd" [style=dashed, arrowhead=none];
+    
+}
+```
+
+1. Construire sa représentation interne en Python à l'aide de la classe `Nœud`.
+2. Écrire une fonction `affichage` définie par :
+    * sur un arbre vide, ne rien faire ;
+    * sur un arbre non vide, 
+        * afficher `(`, puis
+        * afficher (récursivement) le sous arbre gauche, puis
+        * afficher la racine, puis
+        * afficher (récursivement) le sous arbre droite, puis
+        * afficher `)`
+3. Vérifier que `affichage(exemple_6)` produit `'((B(C))A(D))'`.
+4. Dessiner un `arbre` dont `affichage(arbre)` produit `'(1((2)3))'`.
+5. De manière générale, expliquer comment retrouver un arbre dont l'affichage est donné.
+
+### Exercice 7 - Parcours en largeur
+* Pour afficher un arbre en largeur :
+    * On utilise une file initialement vide.
+    * S'il est non vide, on enfile l'arbre (un nœud donc) dans la file.
+    * Tant que la file est non vide :
+        * On défile un nœud.
+        * On affiche l'`élément` du nœud.
+        * On enfile le sous arbre gauche (puis droit), s'il est non vide.
+1. Écrire une fonction de parcours en largeur.
+2. Tester votre fonction.
+3. Vérifier qu'elle consiste à lire l'arbre étage par étage en commençant par la racine, puis de gauche à droite pour chaque étage.
