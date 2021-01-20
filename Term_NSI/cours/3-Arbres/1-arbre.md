@@ -133,6 +133,8 @@ digraph expression
 > * Un arbre binaire peut être vide, mais pas un arbre enraciné.
 > * Sinon, un arbre binaire non vide est un exemple d'arbre enraciné.
 
+Un arbre binaire est aussi un graphe connexe, sans cycle.
+
 ### Feuille
 * Pour un arbre enraciné, une feuille est un nœud sans enfants.
 * Pour un arbre binaire, une feuille est un nœud qui possède deux sous arbres vides.
@@ -154,7 +156,7 @@ La taille d'un arbre est son nombre de nœuds.
 * Un arbre vide a une hauteur nulle.
 * La hauteur d'un arbre non vide est le nombre maximal de **nœuds** de la racine jusqu'à une feuille. C'est aussi le nombre de liens maximal pour joindre la racine à `nil`.
 
-L'arbre syntaxique donné en exemple est de hauteur $4$.
+L'arbre précédent donné en exemple est de hauteur $4$ ; la branche la plus profonde possède les nœuds `+`, `×`, `-`, `3`.
 
 > Dans l'**autre définition très commune**, un arbre vide a pour hauteur $-1$, et s'il est non vide, c'est le nombre maximal de **liens** pour joindre la racine à une feuille.
 
@@ -172,7 +174,7 @@ Un arbre binaire **parfait** possède des nœuds intérieurs qui ont tous exacte
 
 ### Arbre équilibré
 Un arbre binaire est **équilibré** si pour chaque nœud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diffère que de $1$ au plus.
-> Concrètement, un arbre est équilibré quand tous les nœuds intérieurs ont deux enfants non vides, sauf les plus éloignés qui en ont un ou deux. **Techniquement, les enfants vides sont tous à la profondeur maximale**.
+> Concrètement, un arbre est équilibré quand tous les nœuds intérieurs ont deux enfants non vides, sauf les plus éloignés qui en ont un ou deux. **Techniquement, les nœuds intérieurs forment un arbre parfait, et l'arbre peut devenir parfait uniquement en complétant avec des feuilles au dernier niveau.**
 
 ### Arbre presque complet (à gauche)
 Un arbre binaire est complet (à gauche) s'il est équilibré et qu'à la profondeur maximale les feuilles sont entassées du même côté (à gauche).

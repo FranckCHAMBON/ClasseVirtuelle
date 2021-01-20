@@ -20,13 +20,13 @@ def taille(arbre):
     if est_vide(arbre):
         return 0
     else:
-        return taille(arbre.gauche) + taille(arbre.droite)
+        return taille(arbre.gauche) + 1 + taille(arbre.droite)
 
 def hauteur(arbre):
     if est_vide(arbre):
         return 0
     else:
-        return max(taille(arbre.gauche) + taille(arbre.droite))
+        return 1 + max(taille(arbre.gauche) + taille(arbre.droite))
 
 def est_peigne_gauche(arbre):
     if est_vide(arbre):

@@ -793,6 +793,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Sinon, un arbre binaire non vide est un exemple d&apos;arbre enracin&#xE9;.</li>
 </ul>
 </blockquote>
+<p>Un arbre binaire est aussi un graphe connexe, sans cycle.</p>
 <h3 class="mume-header" id="feuille">Feuille</h3>
 
 <ul>
@@ -818,7 +819,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Un arbre vide a une hauteur nulle.</li>
 <li>La hauteur d&apos;un arbre non vide est le nombre maximal de <strong>n&#x153;uds</strong> de la racine jusqu&apos;&#xE0; une feuille. C&apos;est aussi le nombre de liens maximal pour joindre la racine &#xE0; <code>nil</code>.</li>
 </ul>
-<p>L&apos;arbre syntaxique donn&#xE9; en exemple est de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>.</p>
+<p>L&apos;arbre pr&#xE9;c&#xE9;dent donn&#xE9; en exemple est de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> ; la branche la plus profonde poss&#xE8;de les n&#x153;uds <code>+</code>, <code>&#xD7;</code>, <code>-</code>, <code>3</code>.</p>
 <blockquote>
 <p>Dans l&apos;<strong>autre d&#xE9;finition tr&#xE8;s commune</strong>, un arbre vide a pour hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span>, et s&apos;il est non vide, c&apos;est le nombre maximal de <strong>liens</strong> pour joindre la racine &#xE0; une feuille.</p>
 </blockquote>
@@ -839,7 +840,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>Un arbre binaire est <strong>&#xE9;quilibr&#xE9;</strong> si pour chaque n&#x153;ud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diff&#xE8;re que de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> au plus.</p>
 <blockquote>
-<p>Concr&#xE8;tement, un arbre est &#xE9;quilibr&#xE9; quand tous les n&#x153;uds int&#xE9;rieurs ont deux enfants non vides, sauf les plus &#xE9;loign&#xE9;s qui en ont un ou deux. <strong>Techniquement, les enfants vides sont tous &#xE0; la profondeur maximale</strong>.</p>
+<p>Concr&#xE8;tement, un arbre est &#xE9;quilibr&#xE9; quand tous les n&#x153;uds int&#xE9;rieurs ont deux enfants non vides, sauf les plus &#xE9;loign&#xE9;s qui en ont un ou deux. <strong>Techniquement, les n&#x153;uds int&#xE9;rieurs forment un arbre parfait, et l&apos;arbre peut devenir parfait uniquement en compl&#xE9;tant avec des feuilles au dernier niveau.</strong></p>
 </blockquote>
 <h3 class="mume-header" id="arbre-presque-complet-%C3%A0-gauche">Arbre presque complet (&#xE0; gauche)</h3>
 
@@ -879,13 +880,13 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -917,13 +918,13 @@ A <span class="token operator">=</span> <span class="token punctuation">(</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">hauteur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token builtin">max</span><span class="token punctuation">(</span>taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span> <span class="token operator">+</span> taille<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">est_peigne_gauche</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
