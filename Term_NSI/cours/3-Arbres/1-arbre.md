@@ -1,4 +1,4 @@
-# :deciduous_tree: Arbres binaires {ignore=true}
+# :deciduous_tree: Arbres {ignore=true}
 
 ## Sommaire {ignore=true}
 
