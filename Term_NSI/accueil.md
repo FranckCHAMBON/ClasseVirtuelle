@@ -25,7 +25,7 @@ Rendez-vous **obligatoires** :
 * L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
 * [Sujet zéro](devoirs/bac-0/S0BAC21-Tle-SPE-NSI.pdf) du BAC
     * [Corrigé](devoirs/bac-0/Sujet_zero_20_21.pdf)
-* [Banque de sujets NSI](https://eduscol.education.fr/2661/banque-des-epreuves-pratiques-de-specialite-nsi)  ; ==**Nouveau**==
+* [Banque de sujets NSI](https://eduscol.education.fr/2661/banque-des-epreuves-pratiques-de-specialite-nsi)  ; ==**Nouveau**== Attention, il y a de nombreuses coquilles...
 
 ## 🥇 FranceIOI
 > Solutions alternatives aux problèmes sur FranceIOI
