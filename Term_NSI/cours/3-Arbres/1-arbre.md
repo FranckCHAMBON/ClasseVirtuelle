@@ -207,12 +207,137 @@ digraph expression
 ### Arbre parfait
 Un arbre binaire **parfait** possède des nœuds intérieurs qui ont tous exactement deux enfants non vides. C'est l'arbre idéal pour les algorithmes... Une taille maximale pour une hauteur minimale.
 
+
+```dot
+digraph expression
+{
+    label = "Arbre parfait de hauteur 3"
+    "1" [label=""];
+
+    "2" [label=""];
+    "3" [label=""];
+    "1" -> "2" ;
+    "1" -> "3" ;
+
+    "4" [label=""];
+    "5" [label=""];
+    "2" -> "4" ;
+    "2" -> "5" ;
+
+    "6" [label=""];
+    "7" [label=""];
+    "3" -> "6" ;
+    "3" -> "7" ;
+
+"8" [label="",shape=plaintext];
+"9" [label="",shape=plaintext];
+"4" -> "8" [style=dashed, arrowhead=none];
+"4" -> "9" [style=dashed, arrowhead=none];
+
+"10" [label="",shape=plaintext];
+"11" [label="",shape=plaintext];
+"5" -> "10" [style=dashed, arrowhead=none];
+"5" -> "11" [style=dashed, arrowhead=none];
+
+"12" [label="",shape=plaintext];
+"13" [label="",shape=plaintext];
+"6" -> "12" [style=dashed, arrowhead=none];
+"6" -> "13" [style=dashed, arrowhead=none];
+
+"14" [label="",shape=plaintext];
+"15" [label="",shape=plaintext];
+"7" -> "14" [style=dashed, arrowhead=none];
+"7" -> "15" [style=dashed, arrowhead=none];
+
+}
+```
+
 ### Arbre équilibré
 Un arbre binaire est **équilibré** si pour chaque nœud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diffère que de $1$ au plus.
 > Concrètement, un arbre est équilibré quand tous les nœuds intérieurs ont deux enfants non vides, sauf les plus éloignés qui en ont un ou deux. **Techniquement, les nœuds intérieurs forment un arbre parfait, et l'arbre peut devenir parfait uniquement en complétant avec des feuilles au dernier niveau.**
 
+
+```dot
+digraph expression
+{
+    label = "Arbre équilibré"
+    "1" [label=""];
+
+    "2" [label=""];
+    "3" [label=""];
+    "1" -> "2" ;
+    "1" -> "3" ;
+
+    "4" [label=""];
+    "5" [label="",shape=plaintext];
+    "2" -> "4" ;
+    "2" -> "5" [style=dashed, arrowhead=none];
+
+    "6" [label=""];
+    "7" [label=""];
+    "3" -> "6" ;
+    "3" -> "7" ;
+
+"8" [label="",shape=plaintext];
+"9" [label="",shape=plaintext];
+"4" -> "8" [style=dashed, arrowhead=none];
+"4" -> "9" [style=dashed, arrowhead=none];
+
+
+"12" [label="",shape=plaintext];
+"13" [label="",shape=plaintext];
+"6" -> "12" [style=dashed, arrowhead=none];
+"6" -> "13" [style=dashed, arrowhead=none];
+
+"14" [label="",shape=plaintext];
+"15" [label="",shape=plaintext];
+"7" -> "14" [style=dashed, arrowhead=none];
+"7" -> "15" [style=dashed, arrowhead=none];
+
+}
+```
+
+
 ### Arbre presque complet (à gauche)
 Un arbre binaire est complet (à gauche) s'il est équilibré et qu'à la profondeur maximale les feuilles sont entassées du même côté (à gauche).
+
+
+```dot
+digraph expression
+{
+    label = "Arbre presque complet"
+    "1" [label=""];
+
+    "2" [label=""];
+    "3" [label=""];
+    "1" -> "2" ;
+    "1" -> "3" ;
+
+    "4" [label=""];
+    "5" [label=""];
+    "2" -> "4" ;
+    "2" -> "5" ;
+
+    "6" [label="",shape=plaintext];
+    "7" [label="",shape=plaintext];
+    "3" -> "6" [style=dashed, arrowhead=none];
+    "3" -> "7" [style=dashed, arrowhead=none];
+
+"8" [label="",shape=plaintext];
+"9" [label="",shape=plaintext];
+"4" -> "8" [style=dashed, arrowhead=none];
+"4" -> "9" [style=dashed, arrowhead=none];
+
+"10" [label="",shape=plaintext];
+"11" [label="",shape=plaintext];
+"5" -> "10" [style=dashed, arrowhead=none];
+"5" -> "11" [style=dashed, arrowhead=none];
+
+
+
+}
+```
+
 
 
 > ⚠️ les définitions de (presque) complet et équilibré varient parfois, de même en anglais. Vérifier avec le document que vous utilisez.
@@ -285,7 +410,7 @@ On remarque un code aussi clair, moins extensible mais plus léger en empreinte 
 
 > Nous utiliserons la POO pour la suite, pour sa lisibilité, son extensibilité. Nous ne cherchons pas ici les performances.
 
-## Parcours d'un arbre binaire
+## Parcours en profondeur d'un arbre binaire
 
 Les fonctions que nous avons découvertes utilisaient des opérateurs commutatifs, en effet on a `max(a, b) == max(b, a)` et `1 + x + y == x + 1 + y == y + x + 1`. Que se passe-t-il avec des fonctions non commutatives ?
 
