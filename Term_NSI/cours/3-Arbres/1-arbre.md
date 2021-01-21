@@ -176,6 +176,7 @@ Un arbre binaire **peigne** est un cas particulier extrême d'arbre binaire, tou
 ```dot
 digraph expression
 {
+    ratio = 0.8
     label = "Arbre peigne gauche de hauteur 4"
     "0" [label=""];
 
@@ -260,6 +261,7 @@ Un arbre binaire est **équilibré** si pour chaque nœud, son sous arbre gauche
 ```dot
 digraph expression
 {
+    ratio = 0.5
     label = "Arbre équilibré"
     "1" [label=""];
 
@@ -299,12 +301,13 @@ digraph expression
 
 
 ### Arbre presque complet (à gauche)
-Un arbre binaire est complet (à gauche) s'il est équilibré et qu'à la profondeur maximale les feuilles sont entassées du même côté (à gauche).
+Un arbre binaire est presque complet (à gauche) s'il est équilibré et qu'à la profondeur maximale les feuilles sont entassées du même côté (à gauche).
 
 
 ```dot
 digraph expression
 {
+    ratio = 0.5
     label = "Arbre presque complet"
     "1" [label=""];
 
@@ -349,6 +352,7 @@ Prenons par exemple, l'expression numérique $A = 6×5 - (3+7+6)$ qui peut être
 ```dot
 digraph expression
 {
+    ratio = 0.5
     "six_1" [label="6"]
     "-" -> "×";
     "+_1" [label="+"]
@@ -385,7 +389,7 @@ somme_2 = (trois_1, "+", somme_1)
 expr_A = (produit_1, "-", somme_2)
 ```
 
-> **Remarque** : on notera la numérotation des nœuds afin d'avoir deux nœuds étiquetés `"six_?"` différents. De même, plusieurs sommes le compose, l'objectif étant de sécuriser l'éventuel partage de données, même si c'est possible en faisant très attention...
+> **Remarque** : on notera la numérotation des nœuds afin d'avoir deux nœuds étiquetés `"six_?"` différents. De même, plusieurs sommes le composent, l'objectif étant de sécuriser l'éventuel partage de données, même si c'est possible en faisant très attention...
 
 Avec cette représentation on peut donner le code de certaines fonctions.
 
@@ -465,6 +469,7 @@ On considère l'arbre binaire suivant :
 ```dot
 digraph expression
 {
+    ratio = 0.5
     label = "exemple_6"
     "A" -> "B" [weight=0.75];
     "A" -> "D" [weight=0.75];
