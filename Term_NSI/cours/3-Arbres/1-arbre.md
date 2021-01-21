@@ -422,19 +422,19 @@ Les fonctions que nous avons découvertes utilisaient des opérateurs commutatif
 def parcours_préfixe(arbre, action):
     if not est_vide(arbre):
         action(arbre)
-        parcours_1(arbre.gauche)
-        parcours_1(arbre.droite)
+        parcours_préfixe(arbre.gauche)
+        parcours_préfixe(arbre.droite)
 
 def parcours_infixe(arbre, action):
     if not est_vide(arbre):
-        parcours_1(arbre.gauche)
+        parcours_infixe(arbre.gauche)
         action(arbre)
-        parcours_1(arbre.droite)
+        parcours_infixe(arbre.droite)
 
 def parcours_postfixe(arbre, action):
     if not est_vide(arbre):
-        parcours_1(arbre.gauche)
-        parcours_1(arbre.droite)
+        parcours_postfixe(arbre.gauche)
+        parcours_postfixe(arbre.droite)
         action(arbre)
 ```
 

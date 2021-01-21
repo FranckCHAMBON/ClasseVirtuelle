@@ -1694,19 +1694,19 @@ N&#x153;ud <span class="token operator">=</span> collections<span class="token p
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> parcours_pr&#xE9;fixe<span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
         action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+        parcours_pr&#xE9;fixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        parcours_pr&#xE9;fixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">parcours_infixe</span><span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        parcours_infixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
         action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+        parcours_infixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">parcours_postfixe</span><span class="token punctuation">(</span>arbre<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> <span class="token keyword">not</span> est_vide<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
-        parcours_1<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+        parcours_postfixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+        parcours_postfixe<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
         action<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
 </pre><hr>
 <p>Ceci est un dessin humoristique li&#xE9; aux parcours d&apos;arbre.</p>
