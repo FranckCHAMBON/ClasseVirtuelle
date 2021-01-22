@@ -309,6 +309,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#exercice-5-d%C3%A9nombrement-des-arbres-binaires">Exercice 5 - D&#xE9;nombrement des arbres binaires</a></li>
 <li><a href="#exercice-6-parcours-infixe">Exercice 6 - Parcours infixe</a></li>
 <li><a href="#exercice-7-parcours-en-largeur">Exercice 7 - Parcours en largeur</a></li>
+<li><a href="#exercice-8">Exercice 8</a></li>
 </ul>
 </li>
 </ul>
@@ -822,7 +823,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <ul>
 <li>Pour un arbre enracin&#xE9;, une feuille est un n&#x153;ud sans enfants.</li>
-<li>Pour un arbre binaire, une feuille est un n&#x153;ud qui poss&#xE8;de deux sous arbres vides.</li>
+<li>Pour un arbre binaire, une feuille est un n&#x153;ud qui poss&#xE8;de deux sous-arbres vides.</li>
 </ul>
 <blockquote>
 <p>Les feuilles sont les extr&#xE9;mit&#xE9;s de l&apos;arbre.</p>
@@ -1112,7 +1113,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </svg>
 </p><h3 class="mume-header" id="arbre-%C3%A9quilibr%C3%A9">Arbre &#xE9;quilibr&#xE9;</h3>
 
-<p>Un arbre binaire est <strong>&#xE9;quilibr&#xE9;</strong> si pour chaque n&#x153;ud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diff&#xE8;re que de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> au plus.</p>
+<p>Un arbre binaire est <strong>&#xE9;quilibr&#xE9;</strong> si pour chaque n&#x153;ud, son sous-arbre gauche et son sous-arbre droit ont une hauteur qui ne diff&#xE8;re que de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> au plus.</p>
 <blockquote>
 <p>Concr&#xE8;tement, un arbre est &#xE9;quilibr&#xE9; quand tous les n&#x153;uds int&#xE9;rieurs ont deux enfants non vides, sauf les plus &#xE9;loign&#xE9;s qui en ont un ou deux. <strong>Techniquement, les n&#x153;uds int&#xE9;rieurs forment un arbre parfait, et l&apos;arbre peut devenir parfait uniquement en compl&#xE9;tant avec des feuilles au dernier niveau.</strong></p>
 </blockquote>
@@ -1850,9 +1851,9 @@ N&#x153;ud <span class="token operator">=</span> collections<span class="token p
 <li>sur un arbre non vide,
 <ul>
 <li>afficher <code>(</code>, puis</li>
-<li>afficher (r&#xE9;cursivement) le sous arbre gauche, puis</li>
+<li>afficher (r&#xE9;cursivement) le sous-arbre gauche, puis</li>
 <li>afficher la racine, puis</li>
-<li>afficher (r&#xE9;cursivement) le sous arbre droite, puis</li>
+<li>afficher (r&#xE9;cursivement) le sous-arbre droite, puis</li>
 <li>afficher <code>)</code></li>
 </ul>
 </li>
@@ -1873,7 +1874,7 @@ N&#x153;ud <span class="token operator">=</span> collections<span class="token p
 <ul>
 <li>On d&#xE9;file un n&#x153;ud.</li>
 <li>On affiche l&apos;<code>&#xE9;l&#xE9;ment</code> du n&#x153;ud.</li>
-<li>On enfile le sous arbre gauche (puis droit), s&apos;il est non vide.</li>
+<li>On enfile le sous-arbre gauche (puis droit), s&apos;il est non vide.</li>
 </ul>
 </li>
 </ul>
@@ -1883,6 +1884,18 @@ N&#x153;ud <span class="token operator">=</span> collections<span class="token p
 <li>&#xC9;crire une fonction de parcours en largeur.</li>
 <li>Tester votre fonction.</li>
 <li>V&#xE9;rifier qu&apos;elle consiste &#xE0; lire l&apos;arbre &#xE9;tage par &#xE9;tage en commen&#xE7;ant par la racine, puis de gauche &#xE0; droite pour chaque &#xE9;tage.</li>
+</ol>
+<h3 class="mume-header" id="exercice-8">Exercice 8</h3>
+
+<p>Un arbre binaire est &#xE9;tiquet&#xE9; avec des lettres.</p>
+<ul>
+<li>Un parcours pr&#xE9;fixe donne un affichage <code>ALORHGIMET</code>.</li>
+<li>Un parcours infixe donne un affichage <code>OLHRAMIEGT</code>.</li>
+</ul>
+<ol>
+<li>Reconstruire l&apos;arbre qui a produit ces affichages.</li>
+<li>Qu&apos;obtient-on avec un parcours en largeur ?</li>
+<li>Qu&apos;obtient-on avec un parcours postfixe ?</li>
 </ol>
 
       </div>

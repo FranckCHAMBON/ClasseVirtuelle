@@ -143,7 +143,7 @@ Un arbre binaire est aussi un graphe connexe, sans cycle.
 
 ### Feuille
 * Pour un arbre enraciné, une feuille est un nœud sans enfants.
-* Pour un arbre binaire, une feuille est un nœud qui possède deux sous arbres vides.
+* Pour un arbre binaire, une feuille est un nœud qui possède deux sous-arbres vides.
 
 > Les feuilles sont les extrémités de l'arbre.
 
@@ -254,7 +254,7 @@ digraph expression
 ```
 
 ### Arbre équilibré
-Un arbre binaire est **équilibré** si pour chaque nœud, son sous arbre gauche et son sous arbre droit ont une hauteur qui ne diffère que de $1$ au plus.
+Un arbre binaire est **équilibré** si pour chaque nœud, son sous-arbre gauche et son sous-arbre droit ont une hauteur qui ne diffère que de $1$ au plus.
 > Concrètement, un arbre est équilibré quand tous les nœuds intérieurs ont deux enfants non vides, sauf les plus éloignés qui en ont un ou deux. **Techniquement, les nœuds intérieurs forment un arbre parfait, et l'arbre peut devenir parfait uniquement en complétant avec des feuilles au dernier niveau.**
 
 
@@ -493,9 +493,9 @@ digraph expression
     * sur un arbre vide, ne rien faire ;
     * sur un arbre non vide, 
         * afficher `(`, puis
-        * afficher (récursivement) le sous arbre gauche, puis
+        * afficher (récursivement) le sous-arbre gauche, puis
         * afficher la racine, puis
-        * afficher (récursivement) le sous arbre droite, puis
+        * afficher (récursivement) le sous-arbre droite, puis
         * afficher `)`
 3. Vérifier que `affichage(exemple_6)` produit `'((B(C))A(D))'`.
 4. Dessiner un `arbre` dont `affichage(arbre)` produit `'(1((2)3))'`.
@@ -508,7 +508,18 @@ digraph expression
     * Tant que la file est non vide :
         * On défile un nœud.
         * On affiche l'`élément` du nœud.
-        * On enfile le sous arbre gauche (puis droit), s'il est non vide.
+        * On enfile le sous-arbre gauche (puis droit), s'il est non vide.
 1. Écrire une fonction de parcours en largeur.
 2. Tester votre fonction.
 3. Vérifier qu'elle consiste à lire l'arbre étage par étage en commençant par la racine, puis de gauche à droite pour chaque étage.
+
+### Exercice 8
+
+Un arbre binaire est étiqueté avec des lettres.
+* Un parcours préfixe donne un affichage `ALORHGIMET`.
+* Un parcours infixe donne un affichage `OLHRAMIEGT`.
+
+1. Reconstruire l'arbre qui a produit ces affichages.
+2. Qu'obtient-on avec un parcours en largeur ?
+3. Qu'obtient-on avec un parcours postfixe ?
+

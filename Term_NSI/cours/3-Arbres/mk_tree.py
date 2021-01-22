@@ -50,12 +50,13 @@ digraph expression
                 ans += f"""
     "{2*x+0}" [label=""];
     "{2*x+1}" [label=""];
-    "{x}" -> "{2*x+0}" [weight={0.7 + 0.3*i/(h-1)}];
-    "{x}" -> "{2*x+1}" [weight={0.7 + 0.3*i/(h-1)}];
+    "{x}" -> "{2*x+0}" ;
+    "{x}" -> "{2*x+1}" ;
 """
 
+        ans1 = ""
         for x in range(2**(h-1), 2**h):
-            ans += f"""
+            ans1 += f"""
 "{2*x+0}" [label="",shape=plaintext];
 "{2*x+1}" [label="",shape=plaintext];
 "{x}" -> "{2*x+0}" [style=dashed, arrowhead=none];
@@ -67,4 +68,4 @@ digraph expression
 """
     return ans
 
-print(mk_parfait(3))
+print(mk_parfait(4))
