@@ -25,7 +25,10 @@ def est_peigne_gauche(arbre):
     if est_vide(arbre):
         return True
     else:
-        return est_peigne_gauche(arbre[0]) and est_vide(arbre[2])
+        return est_vide(arbre[2]) and est_peigne_gauche(arbre[0])
+    # variante une ligne
+    return est_vide(arbre) or (est_vide(arbre[2]) and est_peigne_gauche(arbre[0]))
+    # l'évaluation paresseuse permet de rester efficace, on traîte le cas difficile en dernier !
 
 
 if __name__ == '__main__':

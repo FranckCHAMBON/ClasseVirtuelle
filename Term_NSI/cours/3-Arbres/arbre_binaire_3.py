@@ -29,8 +29,11 @@ def est_peigne_gauche(arbre):
     if est_vide(arbre):
         return True
     else:
-        return est_peigne_gauche(arbre.gauche) and est_vide(arbre.droite)
-
+        return est_vide(arbre.droite) and est_peigne_gauche(arbre.gauche)
+    # variante une ligne
+    return est_vide(arbre) or (est_vide(arbre.droite) and est_peigne_gauche(arbre.gauche))
+    # l'évaluation paresseuse permet de rester efficace, on traîte le cas difficile en dernier !
+    
 if __name__ == '__main__':
     # test
     six_1 = Nœud(None, "6", None)
