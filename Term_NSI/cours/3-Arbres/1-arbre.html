@@ -1869,12 +1869,16 @@ N&#x153;ud <span class="token operator">=</span> collections<span class="token p
 <li>Pour afficher un arbre en largeur :
 <ul>
 <li>On utilise une file initialement vide.</li>
-<li>S&apos;il est non vide, on enfile l&apos;arbre (un n&#x153;ud donc) dans la file.</li>
+<li>On enfile l&apos;arbre dans la file.</li>
 <li>Tant que la file est non vide :
 <ul>
-<li>On d&#xE9;file un n&#x153;ud.</li>
+<li>On d&#xE9;file un arbre.</li>
+<li>S&apos;il est non vide :
+<ul>
 <li>On affiche l&apos;<code>&#xE9;l&#xE9;ment</code> du n&#x153;ud.</li>
-<li>On enfile le sous-arbre gauche (puis droit), s&apos;il est non vide.</li>
+<li>On enfile le sous-arbre gauche (puis droit).</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

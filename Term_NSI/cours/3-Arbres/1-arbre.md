@@ -504,11 +504,12 @@ digraph expression
 ### Exercice 7 - Parcours en largeur
 * Pour afficher un arbre en largeur :
     * On utilise une file initialement vide.
-    * S'il est non vide, on enfile l'arbre (un nœud donc) dans la file.
+    * On enfile l'arbre dans la file.
     * Tant que la file est non vide :
-        * On défile un nœud.
-        * On affiche l'`élément` du nœud.
-        * On enfile le sous-arbre gauche (puis droit), s'il est non vide.
+        * On défile un arbre.
+        * S'il est non vide :
+            * On affiche l'`élément` du nœud.
+            * On enfile le sous-arbre gauche (puis droit).
 1. Écrire une fonction de parcours en largeur.
 2. Tester votre fonction.
 3. Vérifier qu'elle consiste à lire l'arbre étage par étage en commençant par la racine, puis de gauche à droite pour chaque étage.
