@@ -273,8 +273,8 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#construction-dune-classe-tas">Construction d&apos;une classe <code>Tas</code></a>
 <ul>
-<li><a href="#la-classe-n%C5%93ud">La classe <code>N&#x153;ud</code></a></li>
-<li><a href="#la-classe-tas_min">La classe <code>Tas_min</code></a></li>
+<li><a href="#impl%C3%A9mentation-avec-un-tableau">Impl&#xE9;mentation avec un tableau</a></li>
+<li><a href="#la-classe-tas">La classe <code>Tas</code></a></li>
 </ul>
 </li>
 </ul>
@@ -564,25 +564,133 @@ pre[data-line] .line-highlight[data-end]:after {
 </svg>
 </p><h2 class="mume-header" id="construction-dune-classe-tas">Construction d&apos;une classe <code>Tas</code></h2>
 
-<h3 class="mume-header" id="la-classe-n%C5%93ud">La classe <code>N&#x153;ud</code></h3>
+<h3 class="mume-header" id="impl%C3%A9mentation-avec-un-tableau">Impl&#xE9;mentation avec un tableau</h3>
 
-<p>On reprend notre classe <code>N&#x153;ud</code> pour les arbres binaires.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">N</span>&#x153;ud<span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> gauche<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>gauche <span class="token operator">=</span> gauche
-        self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
-        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
-
-<span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
-</pre><p>On a ajout&#xE9; une m&#xE9;thode pour donner la <strong>repr</strong>&#xE9;sentation d&apos;un n&#x153;ud, qui poura &#xEA;tre utilis&#xE9;e par <code>str(mon_n&#x153;ud)</code> par exemple.</p>
-<h3 class="mume-header" id="la-classe-tas_min">La classe <code>Tas_min</code></h3>
-
-<p>On construit une autre classe qui utilisera la classe <code>N&#x153;ud</code>. Nous ne construisons pas celle-ci par h&#xE9;ritage.</p>
+<p>Tout arbre binaire presque complet gauche peut &#xEA;tre impl&#xE9;ment&#xE9; en stockant les donn&#xE9;es dans un tableau.</p>
+<ul>
+<li>L&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ne stocke pas de donn&#xE9;es, ou alors peut servir &#xE0; stocker la taille en cours du tableau.</li>
+<li>Si l&apos;arbre est non vide, sa racine est stock&#xE9;e &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</li>
+<li>Pour tout n&#x153;ud stock&#xE9; &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>, ses enfants sont stock&#xE9;s aux indices <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">2i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathnormal">i</span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>.</li>
+</ul>
+<p>Par exemple, le tas-max pr&#xE9;c&#xE9;dent peut &#xEA;tre stock&#xE9; dans le tableau :</p>
+<table>
+<thead>
+<tr>
+<th>Indice</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn></mrow><annotation encoding="application/x-tex">9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xC9;l&#xE9;ment</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>Ce tableau correspond &#xE0; une lecture lors d&apos;un parcours en largeur.</p>
+<p><strong>Exercice 1</strong> : Donner le tableau correspondant au tas-min donn&#xE9; en exemple.</p>
+<p><strong>Exercice 2</strong> : Compl&#xE9;ter</p>
 <blockquote>
-<p>L&apos;h&#xE9;ritage est hors-programme en NSI. Le principe de l&apos;h&#xE9;ritage est de construire une nouvelle classe sur la base d&apos;une autre, elle h&#xE9;ritera de ses m&#xE9;thodes qu&apos;il sera inutile de r&#xE9;&#xE9;crire. Les m&#xE9;thodes pourront toutefois &#xEA;tre r&#xE9;&#xE9;crites en utilisant &#xE9;ventuellement celle de l&apos;anc&#xEA;tre ; au choix. Des m&#xE9;thodes pourront &#xEA;tre ajout&#xE9;es...</p>
+<p>Cette impl&#xE9;mentation permet de se d&#xE9;placer facilement.</p>
+<ul>
+<li>Le fils gauche d&apos;un n&#x153;ud stock&#xE9; &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> est stock&#xE9; &#xE0; l&apos;indice ...</li>
+<li>Le fils droite d&apos;un n&#x153;ud stock&#xE9; &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> est stock&#xE9; &#xE0; l&apos;indice ...</li>
+<li>Le parent d&apos;un n&#x153;ud stock&#xE9; &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i &gt; 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> est stock&#xE9; &#xE0; l&apos;indice ...</li>
+</ul>
 </blockquote>
+<h3 class="mume-header" id="la-classe-tas">La classe <code>Tas</code></h3>
 
+<p>On propose de stocker :</p>
+<ul>
+<li>Les donn&#xE9;es dans une liste dynamique Python, avec l&apos;&#xE9;l&#xE9;ment d&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> mis &#xE0; <code>None</code>.</li>
+<li>La taille dans un attribut &#xE0; part ; elle est souvent stock&#xE9;e &#xE0; l&apos;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</li>
+</ul>
+<p>On propose les m&#xE9;thodes :</p>
+<ul>
+<li>Initialisation, qui fait suite au constructeur ;</li>
+<li><code>.est_vide(self)</code> qui indique la vacuit&#xE9; du tas, ou non ;</li>
+<li><code>.ajout(self, x)</code> qui ajoute un &#xE9;l&#xE9;ment au tas (en respectant la r&#xE8;gle) ;</li>
+<li><code>.extrait(self)</code> qui renvoie l&apos;&#xE9;l&#xE9;ment &#xE0; la racine, si l&apos;arbre est non vide, puis r&#xE9;agence le tas en respectant la r&#xE8;gle.</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword">class</span> <span class="token class-name">Tas</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Impl&#xE9;mentation de la structure de donn&#xE9;es tas-max
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__tas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>__taille <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> &#xE9;change<span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">=</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp
+
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__tas<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__tas <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token boolean">None</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__taille <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">ajoute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__taille <span class="token operator">+=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>__tas<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        i <span class="token operator">=</span> self<span class="token punctuation">.</span>__taille
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            &#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> i <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">extrait</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        <span class="token keyword">def</span> <span class="token function">est_valide</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token triple-quoted-string string">&quot;&quot;&quot;Indique si la r&#xE8;gle est respect&#xE9;e pour le n&#x153;ud stock&#xE9; en i
+            &quot;&quot;&quot;</span>
+            <span class="token keyword">if</span> <span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>__taille<span class="token punctuation">:</span>
+                <span class="token comment"># On est sur une feuille</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">if</span> <span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">==</span> self<span class="token punctuation">.</span>taille<span class="token punctuation">:</span>
+                <span class="token comment"># Le n&#x153;ud n&apos;a qu&apos;un enfant &#xE0; gauche</span>
+                <span class="token keyword">return</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token punctuation">]</span>
+            <span class="token comment"># Le n&#x153;ud poss&#xE8;de deux enfant, &#xE0; gauche, &#xE0; droite</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token punctuation">]</span> <span class="token keyword">and</span> \
+                   self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span>
+            
+        <span class="token keyword">if</span> est_vide<span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Tas vide&quot;</span><span class="token punctuation">)</span>
+        &#xE9;l&#xE9;ment <span class="token operator">=</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token comment"># On place &#xE0; la racine le dernier &#xE9;l&#xE9;ment</span>
+        self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>__taille <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token comment"># On va le remettre &#xE0; une place qui respecte la r&#xE8;gle</span>
+        i <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> <span class="token keyword">not</span> est_valide<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            j <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">==</span> self<span class="token punctuation">.</span>__taille<span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                j <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i     <span class="token comment"># vers l&apos;enfant gauche</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                j <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment"># vers l&apos;enfant droite</span>
+            &#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+            i <span class="token operator">=</span> j
+        <span class="token keyword">return</span> &#xE9;l&#xE9;ment
+</pre>
       </div>
       
       

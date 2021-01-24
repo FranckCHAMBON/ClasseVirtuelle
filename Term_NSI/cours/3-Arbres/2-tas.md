@@ -87,25 +87,40 @@ digraph expression
 
 ## Construction d'une classe `Tas`
 
-### La classe `Nœud`
-On reprend notre classe `Nœud` pour les arbres binaires.
+### Implémentation avec un tableau
 
-```python
-class Nœud:
-    def __init__(self, gauche, élément, droite):
-        self.gauche = gauche
-        self.élément = élément
-        self.droite = droite
-
-def __repr__(self):
-    return str(self.élément)
-```
-
-On a ajouté une méthode pour donner la **repr**ésentation d'un nœud, qui poura être utilisée par `str(mon_nœud)` par exemple.
-
-### La classe `Tas_min`
-
-On construit une autre classe qui utilisera la classe `Nœud`. Nous ne construisons pas celle-ci par héritage.
-> L'héritage est hors-programme en NSI. Le principe de l'héritage est de construire une nouvelle classe sur la base d'une autre, elle héritera de ses méthodes qu'il sera inutile de réécrire. Les méthodes pourront toutefois être réécrites en utilisant éventuellement celle de l'ancêtre ; au choix. Des méthodes pourront être ajoutées...
+Tout arbre binaire presque complet gauche peut être implémenté en stockant les données dans un tableau.
+* L'indice $0$ ne stocke pas de données, ou alors peut servir à stocker la taille en cours du tableau.
+* Si l'arbre est non vide, sa racine est stockée à l'indice $0$.
+* Pour tout nœud stocké à l'indice $i$, ses enfants sont stockés aux indices $2i$ et $2i+1$.
 
 
+Par exemple, le tas-max précédent peut être stocké dans le tableau :
+
+|Indice |$0$ |$1$ |$2$ |$3$ |$4$ |$5$ |$6$ |$7$ |$8$ |$9$ |$10$|
+|-------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|Élément|    |$10$|$8$ |$4$ |$5$ |$6$ |$2$ |$1$ |$4$ |$2$ |$3$ |
+
+Ce tableau correspond à une lecture lors d'un parcours en largeur.
+
+**Exercice 1** : Donner le tableau correspondant au tas-min donné en exemple.
+
+**Exercice 2** : Compléter
+> Cette implémentation permet de se déplacer facilement.
+> * Le fils gauche d'un nœud stocké à l'indice $i$ est stocké à l'indice ...
+> * Le fils droite d'un nœud stocké à l'indice $i$ est stocké à l'indice ...
+> * Le parent d'un nœud stocké à l'indice $i > 1$ est stocké à l'indice ...
+
+### La classe `Tas`
+
+On propose de stocker :
+* Les données dans une liste dynamique Python, avec l'élément d'indice $0$ mis à `None`.
+* La taille dans un attribut à part ; elle est souvent stockée à l'indice $0$.
+
+On propose les méthodes :
+* Initialisation, qui fait suite au constructeur ;
+* `.est_vide(self)` qui indique la vacuité du tas, ou non ;
+* `.ajout(self, x)` qui ajoute un élément au tas (en respectant la règle) ;
+* `.extrait(self)` qui renvoie l'élément à la racine, si l'arbre est non vide, puis réagence le tas en respectant la règle.
+
+@import "tas.py"
