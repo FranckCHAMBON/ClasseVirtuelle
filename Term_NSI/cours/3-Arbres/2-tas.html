@@ -1,0 +1,598 @@
+<!DOCTYPE html><html><head>
+      <title>2-tas</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header undefined" id="grapes-tas-binaire">&#x1F347; Tas binaire</h1>
+
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#d%C3%A9finition">D&#xE9;finition</a>
+<ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
+<li><a href="#construction-dune-classe-tas">Construction d&apos;une classe <code>Tas</code></a>
+<ul>
+<li><a href="#la-classe-n%C5%93ud">La classe <code>N&#x153;ud</code></a></li>
+<li><a href="#la-classe-tas_min">La classe <code>Tas_min</code></a></li>
+</ul>
+</li>
+</ul>
+<p>On consid&#xE8;re des arbres binaires particuliers, avec des donn&#xE9;es toutes de m&#xEA;me type, un type qui poss&#xE8;de une relation d&apos;ordre. Par exemple : des entiers, on peut les comparer.</p>
+<h2 class="mume-header" id="d%C3%A9finition">D&#xE9;finition</h2>
+
+<p>Un <strong>tas binaire</strong> (ou <strong>tas-max</strong>) est un arbre binaire presque complet &#xE0; gauche, tel que :</p>
+<ul>
+<li>le n&#x153;ud racine porte une donn&#xE9;e sup&#xE9;rieure ou &#xE9;gale &#xE0; celle des autres n&#x153;uds ;</li>
+<li>ses deux sous-arbres sont aussi des tas.</li>
+</ul>
+<p>Un <strong>tas-min</strong> est une structure &#xE9;quivalente mais avec la racine portant une valeur inf&#xE9;rieure ou &#xE9;gale &#xE0; celles de sa filiation.</p>
+<blockquote>
+<p>La structure de tas binaire est utilis&#xE9;e dans un algorithme de tri efficace (le tri par tas), dans la gestion des files de priorit&#xE9;, etc.</p>
+</blockquote>
+<h3 class="mume-header" id="exemple">Exemple</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="350pt" height="285pt" viewBox="0.00 0.00 350.00 284.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280.8)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280.8 346,-280.8 346,4 -4,4"/>
+<text text-anchor="middle" x="171" y="-8.2" font-family="Times,serif" font-size="14.00" fill="#000000">Tas-max</text>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-258.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-254.6" font-family="Times,serif" font-size="14.00" fill="#000000">10</text>
+</g>
+<!-- 2 -->
+<g id="node2" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-186.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-182.6" font-family="Times,serif" font-size="14.00" fill="#000000">8</text>
+</g>
+<!-- 1&#45;&gt;2 -->
+<g id="edge1" class="edge">
+<title>1-&gt;2</title>
+<path fill="none" stroke="#000000" d="M198.2854,-241.3708C194.0403,-232.8807 188.8464,-222.4929 184.1337,-213.0674"/>
+<polygon fill="#000000" stroke="#000000" points="187.237,-211.4477 179.6343,-204.0687 180.976,-214.5782 187.237,-211.4477"/>
+</g>
+<!-- 3 -->
+<g id="node3" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="243" cy="-186.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-182.6" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- 1&#45;&gt;3 -->
+<g id="edge2" class="edge">
+<title>1-&gt;3</title>
+<path fill="none" stroke="#000000" d="M215.7146,-241.3708C219.9597,-232.8807 225.1536,-222.4929 229.8663,-213.0674"/>
+<polygon fill="#000000" stroke="#000000" points="233.024,-214.5782 234.3657,-204.0687 226.763,-211.4477 233.024,-214.5782"/>
+</g>
+<!-- 4 -->
+<g id="node4" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- 2&#45;&gt;4 -->
+<g id="edge3" class="edge">
+<title>2-&gt;4</title>
+<path fill="none" stroke="#000000" d="M155.7307,-171.5307C145.803,-161.603 132.6847,-148.4847 121.5637,-137.3637"/>
+<polygon fill="#000000" stroke="#000000" points="123.7933,-134.6436 114.2473,-130.0473 118.8436,-139.5933 123.7933,-134.6436"/>
+</g>
+<!-- 5 -->
+<g id="node5" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">6</text>
+</g>
+<!-- 2&#45;&gt;5 -->
+<g id="edge4" class="edge">
+<title>2-&gt;5</title>
+<path fill="none" stroke="#000000" d="M171,-168.6314C171,-160.931 171,-151.7743 171,-143.2166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-143.2132 171,-133.2133 167.5001,-143.2133 174.5001,-143.2132"/>
+</g>
+<!-- 6 -->
+<g id="node6" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="#000000" cx="243" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 3&#45;&gt;6 -->
+<g id="edge5" class="edge">
+<title>3-&gt;6</title>
+<path fill="none" stroke="#000000" d="M243,-168.6314C243,-160.931 243,-151.7743 243,-143.2166"/>
+<polygon fill="#000000" stroke="#000000" points="246.5001,-143.2132 243,-133.2133 239.5001,-143.2133 246.5001,-143.2132"/>
+</g>
+<!-- 7 -->
+<g id="node7" class="node">
+<title>7</title>
+<ellipse fill="none" stroke="#000000" cx="315" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="315" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- 3&#45;&gt;7 -->
+<g id="edge6" class="edge">
+<title>3-&gt;7</title>
+<path fill="none" stroke="#000000" d="M258.2693,-171.5307C268.197,-161.603 281.3153,-148.4847 292.4363,-137.3637"/>
+<polygon fill="#000000" stroke="#000000" points="295.1564,-139.5933 299.7527,-130.0473 290.2067,-134.6436 295.1564,-139.5933"/>
+</g>
+<!-- 8 -->
+<g id="node8" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- 4&#45;&gt;8 -->
+<g id="edge7" class="edge">
+<title>4-&gt;8</title>
+<path fill="none" stroke="#000000" d="M83.7307,-99.5307C73.803,-89.603 60.6847,-76.4847 49.5637,-65.3637"/>
+<polygon fill="#000000" stroke="#000000" points="51.7933,-62.6436 42.2473,-58.0473 46.8436,-67.5933 51.7933,-62.6436"/>
+</g>
+<!-- 9 -->
+<g id="node9" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 4&#45;&gt;9 -->
+<g id="edge8" class="edge">
+<title>4-&gt;9</title>
+<path fill="none" stroke="#000000" d="M99,-96.6314C99,-88.931 99,-79.7743 99,-71.2166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-71.2132 99,-61.2133 95.5001,-71.2133 102.5001,-71.2132"/>
+</g>
+<!-- 10 -->
+<g id="node10" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- 5&#45;&gt;10 -->
+<g id="edge9" class="edge">
+<title>5-&gt;10</title>
+<path fill="none" stroke="#000000" d="M171,-96.6314C171,-88.931 171,-79.7743 171,-71.2166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-71.2132 171,-61.2133 167.5001,-71.2133 174.5001,-71.2132"/>
+</g>
+<!-- 11 -->
+<g id="node11" class="node">
+<title>11</title>
+</g>
+<!-- 5&#45;&gt;11 -->
+<g id="edge10" class="edge">
+<title>5-&gt;11</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.2693,-99.5307C197.5798,-88.2202 213.0318,-72.7682 224.9533,-60.8467"/>
+</g>
+</g>
+</svg>
+</p><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: expression Pages: 1 -->
+<svg width="350pt" height="285pt" viewBox="0.00 0.00 350.00 284.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280.8)">
+<title>expression</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280.8 346,-280.8 346,4 -4,4"/>
+<text text-anchor="middle" x="171" y="-8.2" font-family="Times,serif" font-size="14.00" fill="#000000">Tas-min</text>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-258.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-254.6" font-family="Times,serif" font-size="14.00" fill="#000000">1</text>
+</g>
+<!-- 2 -->
+<g id="node2" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-186.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-182.6" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 1&#45;&gt;2 -->
+<g id="edge1" class="edge">
+<title>1-&gt;2</title>
+<path fill="none" stroke="#000000" d="M198.2854,-241.3708C194.0403,-232.8807 188.8464,-222.4929 184.1337,-213.0674"/>
+<polygon fill="#000000" stroke="#000000" points="187.237,-211.4477 179.6343,-204.0687 180.976,-214.5782 187.237,-211.4477"/>
+</g>
+<!-- 3 -->
+<g id="node3" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="243" cy="-186.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-182.6" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- 1&#45;&gt;3 -->
+<g id="edge2" class="edge">
+<title>1-&gt;3</title>
+<path fill="none" stroke="#000000" d="M215.7146,-241.3708C219.9597,-232.8807 225.1536,-222.4929 229.8663,-213.0674"/>
+<polygon fill="#000000" stroke="#000000" points="233.024,-214.5782 234.3657,-204.0687 226.763,-211.4477 233.024,-214.5782"/>
+</g>
+<!-- 4 -->
+<g id="node4" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- 2&#45;&gt;4 -->
+<g id="edge3" class="edge">
+<title>2-&gt;4</title>
+<path fill="none" stroke="#000000" d="M155.7307,-171.5307C145.803,-161.603 132.6847,-148.4847 121.5637,-137.3637"/>
+<polygon fill="#000000" stroke="#000000" points="123.7933,-134.6436 114.2473,-130.0473 118.8436,-139.5933 123.7933,-134.6436"/>
+</g>
+<!-- 5 -->
+<g id="node5" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+</g>
+<!-- 2&#45;&gt;5 -->
+<g id="edge4" class="edge">
+<title>2-&gt;5</title>
+<path fill="none" stroke="#000000" d="M171,-168.6314C171,-160.931 171,-151.7743 171,-143.2166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-143.2132 171,-133.2133 167.5001,-143.2133 174.5001,-143.2132"/>
+</g>
+<!-- 6 -->
+<g id="node6" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="#000000" cx="243" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">6</text>
+</g>
+<!-- 3&#45;&gt;6 -->
+<g id="edge5" class="edge">
+<title>3-&gt;6</title>
+<path fill="none" stroke="#000000" d="M243,-168.6314C243,-160.931 243,-151.7743 243,-143.2166"/>
+<polygon fill="#000000" stroke="#000000" points="246.5001,-143.2132 243,-133.2133 239.5001,-143.2133 246.5001,-143.2132"/>
+</g>
+<!-- 7 -->
+<g id="node7" class="node">
+<title>7</title>
+<ellipse fill="none" stroke="#000000" cx="315" cy="-114.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="315" y="-110.6" font-family="Times,serif" font-size="14.00" fill="#000000">10</text>
+</g>
+<!-- 3&#45;&gt;7 -->
+<g id="edge6" class="edge">
+<title>3-&gt;7</title>
+<path fill="none" stroke="#000000" d="M258.2693,-171.5307C268.197,-161.603 281.3153,-148.4847 292.4363,-137.3637"/>
+<polygon fill="#000000" stroke="#000000" points="295.1564,-139.5933 299.7527,-130.0473 290.2067,-134.6436 295.1564,-139.5933"/>
+</g>
+<!-- 8 -->
+<g id="node8" class="node">
+<title>8</title>
+<ellipse fill="none" stroke="#000000" cx="27" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- 4&#45;&gt;8 -->
+<g id="edge7" class="edge">
+<title>4-&gt;8</title>
+<path fill="none" stroke="#000000" d="M83.7307,-99.5307C73.803,-89.603 60.6847,-76.4847 49.5637,-65.3637"/>
+<polygon fill="#000000" stroke="#000000" points="51.7933,-62.6436 42.2473,-58.0473 46.8436,-67.5933 51.7933,-62.6436"/>
+</g>
+<!-- 9 -->
+<g id="node9" class="node">
+<title>9</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">8</text>
+</g>
+<!-- 4&#45;&gt;9 -->
+<g id="edge8" class="edge">
+<title>4-&gt;9</title>
+<path fill="none" stroke="#000000" d="M99,-96.6314C99,-88.931 99,-79.7743 99,-71.2166"/>
+<polygon fill="#000000" stroke="#000000" points="102.5001,-71.2132 99,-61.2133 95.5001,-71.2133 102.5001,-71.2132"/>
+</g>
+<!-- 10 -->
+<g id="node10" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-42.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-38.6" font-family="Times,serif" font-size="14.00" fill="#000000">4</text>
+</g>
+<!-- 5&#45;&gt;10 -->
+<g id="edge9" class="edge">
+<title>5-&gt;10</title>
+<path fill="none" stroke="#000000" d="M171,-96.6314C171,-88.931 171,-79.7743 171,-71.2166"/>
+<polygon fill="#000000" stroke="#000000" points="174.5001,-71.2132 171,-61.2133 167.5001,-71.2133 174.5001,-71.2132"/>
+</g>
+<!-- 11 -->
+<g id="node11" class="node">
+<title>11</title>
+</g>
+<!-- 5&#45;&gt;11 -->
+<g id="edge10" class="edge">
+<title>5-&gt;11</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.2693,-99.5307C197.5798,-88.2202 213.0318,-72.7682 224.9533,-60.8467"/>
+</g>
+</g>
+</svg>
+</p><h2 class="mume-header" id="construction-dune-classe-tas">Construction d&apos;une classe <code>Tas</code></h2>
+
+<h3 class="mume-header" id="la-classe-n%C5%93ud">La classe <code>N&#x153;ud</code></h3>
+
+<p>On reprend notre classe <code>N&#x153;ud</code> pour les arbres binaires.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">N</span>&#x153;ud<span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> gauche<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">,</span> droite<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>gauche <span class="token operator">=</span> gauche
+        self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">=</span> &#xE9;l&#xE9;ment
+        self<span class="token punctuation">.</span>droite <span class="token operator">=</span> droite
+
+<span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+</pre><p>On a ajout&#xE9; une m&#xE9;thode pour donner la <strong>repr</strong>&#xE9;sentation d&apos;un n&#x153;ud, qui poura &#xEA;tre utilis&#xE9;e par <code>str(mon_n&#x153;ud)</code> par exemple.</p>
+<h3 class="mume-header" id="la-classe-tas_min">La classe <code>Tas_min</code></h3>
+
+<p>On construit une autre classe qui utilisera la classe <code>N&#x153;ud</code>. Nous ne construisons pas celle-ci par h&#xE9;ritage.</p>
+<blockquote>
+<p>L&apos;h&#xE9;ritage est hors-programme en NSI. Le principe de l&apos;h&#xE9;ritage est de construire une nouvelle classe sur la base d&apos;une autre, elle h&#xE9;ritera de ses m&#xE9;thodes qu&apos;il sera inutile de r&#xE9;&#xE9;crire. Les m&#xE9;thodes pourront toutefois &#xEA;tre r&#xE9;&#xE9;crites en utilisant &#xE9;ventuellement celle de l&apos;anc&#xEA;tre ; au choix. Des m&#xE9;thodes pourront &#xEA;tre ajout&#xE9;es...</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

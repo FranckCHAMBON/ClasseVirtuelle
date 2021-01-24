@@ -68,4 +68,5 @@ digraph expression
 """
     return ans
 
-print(mk_parfait(4))
+#print(mk_parfait(4))
+

@@ -513,7 +513,7 @@ digraph expression
 2. Tester votre fonction.
 3. Vérifier qu'elle consiste à lire l'arbre étage par étage en commençant par la racine, puis de gauche à droite pour chaque étage.
 
-### Exercice 8
+### Exercice 8 - Reconstruire un arbre
 
 Un arbre binaire est étiqueté avec des lettres.
 * Un parcours préfixe donne un affichage `ALORHGIMET`.
