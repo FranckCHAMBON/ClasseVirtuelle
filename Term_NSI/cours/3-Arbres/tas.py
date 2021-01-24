@@ -5,7 +5,7 @@ class Tas:
         self.__tas = [None]
         self.__taille = 0
 
-    def échange(self, i, j):
+    def _échange(self, i, j):
         tmp = self.__tas[i]
         self.__tas[i] = self.__tas[j]:
         self.__tas[j] = tmp
@@ -22,7 +22,7 @@ class Tas:
         self.__tas.append(x)
         i = self.__taille
         while (i > 1) and self.__tas[i // 2] < self.__tas[i]:
-            échange(i, i // 2)
+            _échange(i, i // 2)
 
     def extrait(self, x):
 
@@ -53,6 +53,7 @@ class Tas:
                 j = 2 * i     # vers l'enfant gauche
             else:
                 j = 2 * i + 1 # vers l'enfant droite
-            échange(i, j)
+            _échange(i, j)
             i = j
         return élément
+        

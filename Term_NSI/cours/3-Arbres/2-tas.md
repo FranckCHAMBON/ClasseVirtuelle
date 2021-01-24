@@ -8,7 +8,7 @@ On considère des arbres binaires particuliers, avec des données toutes de mêm
 
 ## Définition
 
-Un **tas binaire** (ou **tas-max**) est un arbre binaire presque complet à gauche, tel que :
+Un **tas binaire** (ou **tas-max**) est un arbre binaire presque complet à gauche, tel que s'il est non vide :
 * le nœud racine porte une donnée supérieure ou égale à celle des autres nœuds ;
 * ses deux sous-arbres sont aussi des tas.
 
