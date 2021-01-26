@@ -21,8 +21,11 @@ class Tas:
         self.__taille += 1
         self.__tas.append(x)
         i = self.__taille
-        while (i > 1) and self.__tas[i // 2] < self.__tas[i]:
-            _échange(i, i // 2)
+        parent_i = i // 2
+        while (i > 1) and self.__tas[parent_i] < self.__tas[i]:
+            _échange(i, parent_i)
+            i = parent_i
+            parent_i = i // 2
 
     def extrait(self, x):
 
@@ -39,16 +42,15 @@ class Tas:
             return self.__tas[i] > self.__tas[2*i] and \
                    self.__tas[i] > self.__tas[2*i + 1]
             
-        if est_vide(self):
+        if self.est_vide():
             raise ValueError("Tas vide")
-        élément = self.__tas[1]
+        élément = self.__tas[1] # l'élément à renvoyer
         # On place à la racine le dernier élément
         self.__tas[1] = self.__tas.pop()
         self.__taille -= 1
         # On va le remettre à une place qui respecte la règle
         i = 1
         while not est_valide(i):
-            j = 2*i + 1
             if (2*i == self.__taille) or (self.__tas[2*i] > self.__tas[2*i]):
                 j = 2 * i     # vers l'enfant gauche
             else:

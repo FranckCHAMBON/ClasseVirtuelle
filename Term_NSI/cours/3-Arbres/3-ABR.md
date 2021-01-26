@@ -112,13 +112,13 @@ Pour construire un ABR, on peut partir d'un ABR vide, et ajouter des nœuds en r
 1. Montrer qu'en ajoutant successivement les nombres $[10, 7, 16, 2, 8, 12, 19]$ on retrouve l'ABR complet donné en exemple.
 2. Trouver une autre liste permettant de construire le **même** ABR. Cette liste est une permutation de la première !
 3. Trouver deux autres permutations de cette liste qui donnent trois ABR **différents**.
-4. Quels sont les types d'ABR qui peuvent se construire avec une unique liste ? 
+4. Quels sont les types d'ABR qui ne peuvent se construire qu'avec une unique liste ? 
 
 ### Recherche dans un ABR
-> Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n'a pas la vision d'ensemble de l'ABR, mais qui a seulement l'accès à la racine (si elle existe), et à ses enfants...
+> Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n'a pas la vision d'ensemble de l'ABR, mais qui a seulement l'accès à la racine (si elle existe), et à ses enfants de manière récursive...
 1. Expliquer comment faire pour rechercher la présence d'un élément dans un ABR.
-2. Pour un ABR donné, quel est le pire des cas pour le nombre d'étapes pour la recherche d'un élément.
-3. Pour une taille donnée, quel est le pire type d'ABR qui peut donner le pire nombre d'étapes pour la recherche d'un élément.
+2. Pour un ABR donné, quel est le pire des cas pour le nombre d'étapes dans la recherche d'un élément.
+3. Pour une taille donnée, quel est le pire type d'ABR qui peut donner le pire nombre d'étapes dans la recherche d'un élément.
 4. Pour une taille donnée, quel est le meilleur type d'ABR qui permet de trouver un élément, dans le pire des cas, en le moins d'étapes.
 5. Expliquer comment trouver l'élément minimal (resp. maximal) d'un ABR non vide.
 
@@ -148,13 +148,13 @@ On suppose que l'ABR est de taille $n$, et de hauteur $h$.
 2. Si l'arbre est équilibré (ou presque), quelle est la complexité en fonction de $n$ ?
 2. Si l'arbre est un peigne (ou presque), quelle est la complexité en fonction de $n$ ?
 
-> Les méthodes que nous avons vues ne guarantissent pas de conserver un arbre équilibré (ou presque). Les solutions étudiées post BAC seront les arbres AVL ou encore les arbres rouges et noirs.
+> Les méthodes que nous avons vues ne garantissent pas de conserver un arbre équilibré (ou presque). Les solutions étudiées post BAC seront les arbres AVL ou encore les arbres rouges et noirs.
 
 ## Exercices
 
 ### Nombre d'occurrences
 On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, et que donc les inégalités dans la définition se comprennent au sens large.
-1. Donner une méthode efficace `.nb_occurrences(self, élément)` qui renvoie le nombre d'occurences de `élément` dans l'ABR `self`. Cette méthode ne doit rien pré-supposer sur la méthode de construction de l'ABR, mais uniquement qu'il respecte les règles.
+1. Donner une méthode efficace `.nb_occurrences(self, élément)` qui renvoie le nombre d'occurrences de `élément` dans l'ABR `self`. Cette méthode ne doit rien pré-supposer sur la méthode de construction de l'ABR, mais uniquement qu'il respecte les règles.
 
 ### Méthode vers liste triée
 1. Écrire une méthode de la classe `ABR` qui renvoie la liste de ses éléments dans l'ordre croissant.

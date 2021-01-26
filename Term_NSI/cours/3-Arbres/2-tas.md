@@ -91,7 +91,7 @@ digraph expression
 
 Tout arbre binaire presque complet gauche peut être implémenté en stockant les données dans un tableau.
 * L'indice $0$ ne stocke pas de données, ou alors peut servir à stocker la taille en cours du tableau.
-* Si l'arbre est non vide, sa racine est stockée à l'indice $0$.
+* Si l'arbre est non vide, sa racine est stockée à l'indice $1$.
 * Pour tout nœud stocké à l'indice $i$, ses enfants sont stockés aux indices $2i$ et $2i+1$.
 
 
@@ -106,10 +106,10 @@ Ce tableau correspond à une lecture lors d'un parcours en largeur.
 **Exercice 1** : Donner le tableau correspondant au tas-min donné en exemple.
 
 **Exercice 2** : Compléter
-> Cette implémentation permet de se déplacer facilement.
+> Cette implémentation permet de se déplacer facilement à partir d'un nœud.
 > * L'enfant gauche d'un nœud stocké à l'indice $i$ est stocké à l'indice ...
 > * L'enfant droite d'un nœud stocké à l'indice $i$ est stocké à l'indice ...
-> * Le parent d'un nœud stocké à l'indice $i > 1$ est stocké à l'indice ...
+> * Le parent d'un nœud **stocké à l'indice $i > 1$** est stocké à l'indice ...
 
 ### La classe `Tas`
 

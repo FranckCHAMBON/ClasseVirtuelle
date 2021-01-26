@@ -1,4 +1,4 @@
-# :deciduous_tree: Arbres {ignore=true}
+# :christmas_tree: Arbres {ignore=true}
 
 ## Sommaire {ignore=true}
 
@@ -125,7 +125,7 @@ Une définition récursive est alors :
 * Un arbre binaire peut avoir zéro nœud, il est alors vide, on le note `nil`.
 * Un arbre binaire non vide possède un nœud particulier, sa racine, et deux enfants, un à gauche et un à droite, qui sont des arbres binaires.
 
-> L'arbre binaire ci-dessous est un sous-arbre de l'exemple précédent. On a, cette fois, omis les `Nil`.
+> L'arbre binaire ci-dessous est un sous-arbre de l'exemple précédent. On a, cette fois, omis les `nil`.
 
 ```dot
 digraph expression
@@ -142,7 +142,7 @@ digraph expression
 Un arbre binaire est aussi un graphe connexe, sans cycle.
 
 ### Feuille
-* Pour un arbre enraciné, une feuille est un nœud sans enfants.
+* Pour un arbre enraciné, une feuille est un nœud sans enfant.
 * Pour un arbre binaire, une feuille est un nœud qui possède deux sous-arbres vides.
 
 > Les feuilles sont les extrémités de l'arbre.
@@ -203,10 +203,10 @@ digraph expression
 }
 ```
 
-> Un arbre peigne montre une situation extrême où les algorithmes que nous verrons ne seront pas efficaces. Avec un arbre peigne, la hauteur est égale à la taille ; on ne peut pas obtenir une plus grande hauteur à taille fixée.
+> Un arbre peigne montre une situation extrême où certains algorithmes que nous verrons ne seront pas efficaces. Avec un arbre peigne, la hauteur est égale à la taille ; on ne peut pas obtenir une plus grande hauteur à taille fixée.
 
 ### Arbre parfait
-Un arbre binaire **parfait** possède des nœuds intérieurs qui ont tous exactement deux enfants non vides. C'est l'arbre idéal pour les algorithmes... Une taille maximale pour une hauteur minimale.
+Un arbre binaire **parfait** possède des nœuds intérieurs qui ont tous exactement deux enfants non vides. C'est l'arbre idéal pour certains algorithmes... Une taille maximale pour une hauteur minimale.
 
 
 ```dot
@@ -453,7 +453,7 @@ Ceci est un dessin humoristique lié aux parcours d'arbre.
 ### Exercice 4 - Dessiner des arbres
 > Dessiner à la main tous les arbres binaires ayant trois ou quatre nœuds.
 
-**Facultatif :** Pour dessiner des arbres dans un document écrit en markdown, on regardera le code source de ce document...
+**Facultatif :** Pour dessiner des arbres dans un document écrit en Markdown, on regardera le code source de ce document...
 
 ### Exercice 5 - Dénombrement des arbres binaires
 * Il y a $1$ arbre binaire ayant $0$ nœud, l'arbre vide.
@@ -513,6 +513,7 @@ digraph expression
 1. Écrire une fonction de parcours en largeur.
 2. Tester votre fonction.
 3. Vérifier qu'elle consiste à lire l'arbre étage par étage en commençant par la racine, puis de gauche à droite pour chaque étage.
+4. Modifier votre fonction pour qu'une étiquette soit affichée avec son niveau. La racine est au niveau `0`.
 
 ### Exercice 8 - Reconstruire un arbre
 

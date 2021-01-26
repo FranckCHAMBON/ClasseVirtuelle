@@ -589,17 +589,17 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Montrer qu&apos;en ajoutant successivement les nombres <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>10</mn><mo separator="true">,</mo><mn>7</mn><mo separator="true">,</mo><mn>16</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>12</mn><mo separator="true">,</mo><mn>19</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[10, 7, 16, 2, 8, 12, 19]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mclose">]</span></span></span></span> on retrouve l&apos;ABR complet donn&#xE9; en exemple.</li>
 <li>Trouver une autre liste permettant de construire le <strong>m&#xEA;me</strong> ABR. Cette liste est une permutation de la premi&#xE8;re !</li>
 <li>Trouver deux autres permutations de cette liste qui donnent trois ABR <strong>diff&#xE9;rents</strong>.</li>
-<li>Quels sont les types d&apos;ABR qui peuvent se construire avec une unique liste ?</li>
+<li>Quels sont les types d&apos;ABR qui ne peuvent se construire qu&apos;avec une unique liste ?</li>
 </ol>
 <h3 class="mume-header" id="recherche-dans-un-abr">Recherche dans un ABR</h3>
 
 <blockquote>
-<p>Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n&apos;a pas la vision d&apos;ensemble de l&apos;ABR, mais qui a seulement l&apos;acc&#xE8;s &#xE0; la racine (si elle existe), et &#xE0; ses enfants...</p>
+<p>Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n&apos;a pas la vision d&apos;ensemble de l&apos;ABR, mais qui a seulement l&apos;acc&#xE8;s &#xE0; la racine (si elle existe), et &#xE0; ses enfants de mani&#xE8;re r&#xE9;cursive...</p>
 </blockquote>
 <ol>
 <li>Expliquer comment faire pour rechercher la pr&#xE9;sence d&apos;un &#xE9;l&#xE9;ment dans un ABR.</li>
-<li>Pour un ABR donn&#xE9;, quel est le pire des cas pour le nombre d&apos;&#xE9;tapes pour la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
-<li>Pour une taille donn&#xE9;e, quel est le pire type d&apos;ABR qui peut donner le pire nombre d&apos;&#xE9;tapes pour la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
+<li>Pour un ABR donn&#xE9;, quel est le pire des cas pour le nombre d&apos;&#xE9;tapes dans la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
+<li>Pour une taille donn&#xE9;e, quel est le pire type d&apos;ABR qui peut donner le pire nombre d&apos;&#xE9;tapes dans la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
 <li>Pour une taille donn&#xE9;e, quel est le meilleur type d&apos;ABR qui permet de trouver un &#xE9;l&#xE9;ment, dans le pire des cas, en le moins d&apos;&#xE9;tapes.</li>
 <li>Expliquer comment trouver l&apos;&#xE9;l&#xE9;ment minimal (resp. maximal) d&apos;un ABR non vide.</li>
 </ol>
@@ -679,7 +679,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Si l&apos;arbre est un peigne (ou presque), quelle est la complexit&#xE9; en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> ?</li>
 </ol>
 <blockquote>
-<p>Les m&#xE9;thodes que nous avons vues ne guarantissent pas de conserver un arbre &#xE9;quilibr&#xE9; (ou presque). Les solutions &#xE9;tudi&#xE9;es post BAC seront les arbres AVL ou encore les arbres rouges et noirs.</p>
+<p>Les m&#xE9;thodes que nous avons vues ne garantissent pas de conserver un arbre &#xE9;quilibr&#xE9; (ou presque). Les solutions &#xE9;tudi&#xE9;es post BAC seront les arbres AVL ou encore les arbres rouges et noirs.</p>
 </blockquote>
 <h2 class="mume-header" id="exercices">Exercices</h2>
 
@@ -687,7 +687,7 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>On suppose qu&apos;on a un ABR o&#xF9; un &#xE9;l&#xE9;ment peut &#xEA;tre pr&#xE9;sent plusieurs fois, et que donc les in&#xE9;galit&#xE9;s dans la d&#xE9;finition se comprennent au sens large.</p>
 <ol>
-<li>Donner une m&#xE9;thode efficace <code>.nb_occurrences(self, &#xE9;l&#xE9;ment)</code> qui renvoie le nombre d&apos;occurences de <code>&#xE9;l&#xE9;ment</code> dans l&apos;ABR <code>self</code>. Cette m&#xE9;thode ne doit rien pr&#xE9;-supposer sur la m&#xE9;thode de construction de l&apos;ABR, mais uniquement qu&apos;il respecte les r&#xE8;gles.</li>
+<li>Donner une m&#xE9;thode efficace <code>.nb_occurrences(self, &#xE9;l&#xE9;ment)</code> qui renvoie le nombre d&apos;occurrences de <code>&#xE9;l&#xE9;ment</code> dans l&apos;ABR <code>self</code>. Cette m&#xE9;thode ne doit rien pr&#xE9;-supposer sur la m&#xE9;thode de construction de l&apos;ABR, mais uniquement qu&apos;il respecte les r&#xE8;gles.</li>
 </ol>
 <h3 class="mume-header" id="m%C3%A9thode-vers-liste-tri%C3%A9e">M&#xE9;thode vers liste tri&#xE9;e</h3>
 
