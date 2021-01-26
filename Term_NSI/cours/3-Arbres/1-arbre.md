@@ -171,7 +171,7 @@ Même si l'autre est assez répandue, nous préférerons la définition où l'ar
 > La hauteur $h$ est une notion importante pour le calcul de la complexité d'un algorithme. De nombreux algorithmes ont une complexité en $\mathcal O(h)$, et ainsi, un décalage de $1$ dans la définition est absolument **sans importance**.
 
 ### Arbre peigne
-Un arbre binaire **peigne** est un cas particulier extrême d'arbre binaire, tous les nœuds intérieurs ont un seul fils qui est non vide, et toujours du même côté. Techniquement c'est une liste chainée.
+Un arbre binaire **peigne** est un cas particulier extrême d'arbre binaire, tous les nœuds intérieurs ont un seul enfant qui est non vide, et toujours du même côté. Techniquement c'est une liste chainée.
 
 ```dot
 digraph expression
@@ -370,7 +370,7 @@ digraph expression
 
 ### Avec un tuple à trois éléments
 
-Un arbre binaire peut être représenté par un ensemble de nœuds de la forme `(fils_gauche, élément, fils_droit)` et avec `None` pour désigner `nil`.
+Un arbre binaire peut être représenté par un ensemble de nœuds de la forme `(enfant_gauche, élément, enfant_droit)` et avec `None` pour désigner `nil`.
 
 Notre exemple peut être alors représenté par :
 

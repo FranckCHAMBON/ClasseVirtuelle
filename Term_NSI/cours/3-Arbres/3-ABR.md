@@ -19,12 +19,125 @@ Les inégalités sont parfois strictes pour obtenir des éléments distincts, pa
 
 ### Exemples
 
-...
+#### Un ABR peut être complet
+
+```dot
+digraph expression
+{
+    label = "ABR complet"
+    "1" [label="10"];
+
+    "2" [label="7"];
+    "3" [label="16"];
+    "1" -> "2" ;
+    "1" -> "3" ;
+
+    "4" [label="2"];
+    "5" [label="8"];
+    "2" -> "4" ;
+    "2" -> "5" ;
+
+    "6" [label="12"];
+    "7" [label="19"];
+    "3" -> "6" ;
+    "3" -> "7" ;
+
+"8" [label="",shape=plaintext];
+"9" [label="",shape=plaintext];
+"4" -> "8" [style=dashed, arrowhead=none];
+"4" -> "9" [style=dashed, arrowhead=none];
+
+"10" [label="",shape=plaintext];
+"11" [label="",shape=plaintext];
+"5" -> "10" [style=dashed, arrowhead=none];
+"5" -> "11" [style=dashed, arrowhead=none];
+
+"12" [label="",shape=plaintext];
+"13" [label="",shape=plaintext];
+"6" -> "12" [style=dashed, arrowhead=none];
+"6" -> "13" [style=dashed, arrowhead=none];
+
+"14" [label="",shape=plaintext];
+"15" [label="",shape=plaintext];
+"7" -> "14" [style=dashed, arrowhead=none];
+"7" -> "15" [style=dashed, arrowhead=none];
+
+}
+```
+
+### Un ABR peut être un peigne
+
+```dot
+digraph expression
+{
+    ratio = 0.8
+    label = "ABR peigne gauche"
+    "0" [label="10"];
+
+    "1" [label="7"];
+    "1d" [label="",shape=plaintext];
+    "0" -> "1";
+    "0" -> "1d" [style=dashed, arrowhead=none];
+
+    "2" [label="6"];
+    "2d" [label="",shape=plaintext];
+    "1" -> "2";
+    "1" -> "2d" [style=dashed, arrowhead=none];
+
+    "3" [label="2"];
+    "3d" [label="",shape=plaintext];
+    "2" -> "3";
+    "2" -> "3d" [style=dashed, arrowhead=none];
+
+    "4" [label="",shape=plaintext];
+    "4d" [label="",shape=plaintext];
+    "3" -> "4" [style=dashed, arrowhead=none];
+    "3" -> "4d" [style=dashed, arrowhead=none];
+
+}
+```
+
+### ABR en général
+
+Un ABR peut être complet, peigne, équilibré, presque complet, mais en général peut être de toute forme d'arbre binaire.
+
+> Nous verrons que de nombreux algorithmes sont efficaces lorsque l'arbre est équilibré (ou presque) et peu efficaces lorsqu'il y a la présence d'une partie peigne importante.
+
+## Exercices débranchés
+
+### Constructions d'ABR
+
+Pour construire un ABR, on peut partir d'un ABR vide, et ajouter des nœuds en respectant la règle des ABR.
+
+1. Montrer qu'en ajoutant successivement les nombres $[10, 7, 16, 2, 8, 12, 19]$ on retrouve l'ABR complet donné en exemple.
+2. Trouver une autre liste permettant de construire le **même** ABR. Cette liste est une permutation de la première !
+3. Trouver deux autres permutations de cette liste qui donnent trois ABR **différents**.
+4. Quels sont les types d'ABR qui peuvent se construire avec une unique liste ? 
+
+### Recherche dans un ABR
+> Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n'a pas la vision d'ensemble de l'ABR, mais qui a seulement l'accès à la racine (si elle existe), et à ses enfants...
+1. Expliquer comment faire pour rechercher la présence d'un élément dans un ABR.
+2. Pour un ABR donné, quel est le pire des cas pour le nombre d'étapes pour la recherche d'un élément.
+3. Pour une taille donnée, quel est le pire type d'ABR qui peut donner le pire nombre d'étapes pour la recherche d'un élément.
+4. Pour une taille donnée, quel est le meilleur type d'ABR qui permet de trouver un élément, dans le pire des cas, en le moins d'étapes.
+5. Expliquer comment trouver l'élément minimal (resp. maximal) d'un ABR non vide.
+
+
+### Suppression dans un ABR
+
+> La suppression dans un ABR n'est pas au programme en NSI. Cependant, on peut découvrir **pourquoi** !
+
+1. Montrer, en utilisant un exemple précédent, que la suppression d'un nœud est un problème qui n'est pas trivial ; qu'il y a du travail à réaliser pour obtenir un ABR suite à la suppression d'un nœud.
+
+2. Donner des exemples où la suppression d'un nœud est triviale ; il n'y a pas beaucoup de travail à effectuer.
+
+3. **Hors programme** : Expliquer comment supprimer un nœud d'un ABR.
 
 
 ## Implémentation
 
-...
+On va reprendre notre class `Nœud`, et on va créer une autre classe `ABR` qui **utilise** simplement la classe `Nœud`, mais **pas par héritage**.
 
-> L'héritage est hors-programme en NSI. Le principe de l'héritage est de construire une nouvelle classe sur la base d'une autre, elle héritera de ses méthodes qu'il sera inutile de réécrire. Les méthodes pourront toutefois être réécrites en utilisant éventuellement celle de l'ancêtre ; au choix. Des méthodes pourront être ajoutées...
+> L'héritage est hors-programme en NSI. Le principe de l'héritage est de construire une nouvelle classe **sur la base d'une autre**, elle héritera de ses méthodes qu'il sera inutile de réécrire. Les méthodes pourront toutefois être réécrites en utilisant éventuellement celle de l'ancêtre ; au choix. Des méthodes pourront être ajoutées...
 
+@import "ABR.py"
