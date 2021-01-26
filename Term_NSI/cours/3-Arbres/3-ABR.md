@@ -141,3 +141,26 @@ On va reprendre notre class `Nœud`, et on va créer une autre classe `ABR` qui 
 > L'héritage est hors-programme en NSI. Le principe de l'héritage est de construire une nouvelle classe **sur la base d'une autre**, elle héritera de ses méthodes qu'il sera inutile de réécrire. Les méthodes pourront toutefois être réécrites en utilisant éventuellement celle de l'ancêtre ; au choix. Des méthodes pourront être ajoutées...
 
 @import "ABR.py"
+
+## Étude de la complexité
+On suppose que l'ABR est de taille $n$, et de hauteur $h$.
+1. Quelle est la complexité, en fonction de $h$, pour la recherche, l'ajout ou la suppression d'un élément ?
+2. Si l'arbre est équilibré (ou presque), quelle est la complexité en fonction de $n$ ?
+2. Si l'arbre est un peigne (ou presque), quelle est la complexité en fonction de $n$ ?
+
+> Les méthodes que nous avons vues ne guarantissent pas de conserver un arbre équilibré (ou presque). Les solutions étudiées post BAC seront les arbres AVL ou encore les arbres rouges et noirs.
+
+## Exercices
+
+### Nombre d'occurrences
+On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, et que donc les inégalités dans la définition se comprennent au sens large.
+1. Donner une méthode efficace `.nb_occurrences(self, élément)` qui renvoie le nombre d'occurences de `élément` dans l'ABR `self`. Cette méthode ne doit rien pré-supposer sur la méthode de construction de l'ABR, mais uniquement qu'il respecte les règles.
+
+### Méthode vers liste triée
+1. Écrire une méthode de la classe `ABR` qui renvoie la liste de ses éléments dans l'ordre croissant.
+2. Quelle est l'efficacité (temps et mémoire) de ce tri ?
+
+### ABR de chaîne de caractères
+1. En considérant l'ordre lexicographique, construire à la main un ABR presque complet ayant les étiquettes :
+`["Pascal", "Sylvain", "Claire", "Marie", "Sandrine", "Manu", "Clarence", "Martin", "Severine", "Claude", "Patricia", "Sonia", "Joël", "Alain"]`
+2. Ajouter cinq prénoms à cet ABR.

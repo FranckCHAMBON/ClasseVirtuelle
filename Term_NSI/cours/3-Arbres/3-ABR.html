@@ -285,6 +285,14 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 </li>
 <li><a href="#impl%C3%A9mentation">Impl&#xE9;mentation</a></li>
+<li><a href="#%C3%A9tude-de-la-complexit%C3%A9">&#xC9;tude de la complexit&#xE9;</a></li>
+<li><a href="#exercices">Exercices</a>
+<ul>
+<li><a href="#nombre-doccurrences">Nombre d&apos;occurrences</a></li>
+<li><a href="#m%C3%A9thode-vers-liste-tri%C3%A9e">M&#xE9;thode vers liste tri&#xE9;e</a></li>
+<li><a href="#abr-de-cha%C3%AEne-de-caract%C3%A8res">ABR de cha&#xEE;ne de caract&#xE8;res</a></li>
+</ul>
+</li>
 </ul>
 <p>On consid&#xE8;re des arbres binaires particuliers, avec des donn&#xE9;es toutes de m&#xEA;me type, un type qui poss&#xE8;de une relation d&apos;ordre. Par exemple : des entiers, on peut les comparer.</p>
 <h2 class="mume-header" id="d%C3%A9finition">D&#xE9;finition</h2>
@@ -662,7 +670,39 @@ pre[data-line] .line-highlight[data-end]:after {
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token boolean">True</span>
             <span class="token comment"># Cas d&apos;&#xE9;galit&#xE9;</span>
-</pre>
+</pre><h2 class="mume-header" id="%C3%A9tude-de-la-complexit%C3%A9">&#xC9;tude de la complexit&#xE9;</h2>
+
+<p>On suppose que l&apos;ABR est de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, et de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>.</p>
+<ol>
+<li>Quelle est la complexit&#xE9;, en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>, pour la recherche, l&apos;ajout ou la suppression d&apos;un &#xE9;l&#xE9;ment ?</li>
+<li>Si l&apos;arbre est &#xE9;quilibr&#xE9; (ou presque), quelle est la complexit&#xE9; en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> ?</li>
+<li>Si l&apos;arbre est un peigne (ou presque), quelle est la complexit&#xE9; en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> ?</li>
+</ol>
+<blockquote>
+<p>Les m&#xE9;thodes que nous avons vues ne guarantissent pas de conserver un arbre &#xE9;quilibr&#xE9; (ou presque). Les solutions &#xE9;tudi&#xE9;es post BAC seront les arbres AVL ou encore les arbres rouges et noirs.</p>
+</blockquote>
+<h2 class="mume-header" id="exercices">Exercices</h2>
+
+<h3 class="mume-header" id="nombre-doccurrences">Nombre d&apos;occurrences</h3>
+
+<p>On suppose qu&apos;on a un ABR o&#xF9; un &#xE9;l&#xE9;ment peut &#xEA;tre pr&#xE9;sent plusieurs fois, et que donc les in&#xE9;galit&#xE9;s dans la d&#xE9;finition se comprennent au sens large.</p>
+<ol>
+<li>Donner une m&#xE9;thode efficace <code>.nb_occurrences(self, &#xE9;l&#xE9;ment)</code> qui renvoie le nombre d&apos;occurences de <code>&#xE9;l&#xE9;ment</code> dans l&apos;ABR <code>self</code>. Cette m&#xE9;thode ne doit rien pr&#xE9;-supposer sur la m&#xE9;thode de construction de l&apos;ABR, mais uniquement qu&apos;il respecte les r&#xE8;gles.</li>
+</ol>
+<h3 class="mume-header" id="m%C3%A9thode-vers-liste-tri%C3%A9e">M&#xE9;thode vers liste tri&#xE9;e</h3>
+
+<ol>
+<li>&#xC9;crire une m&#xE9;thode de la classe <code>ABR</code> qui renvoie la liste de ses &#xE9;l&#xE9;ments dans l&apos;ordre croissant.</li>
+<li>Quelle est l&apos;efficacit&#xE9; (temps et m&#xE9;moire) de ce tri ?</li>
+</ol>
+<h3 class="mume-header" id="abr-de-cha%C3%AEne-de-caract%C3%A8res">ABR de cha&#xEE;ne de caract&#xE8;res</h3>
+
+<ol>
+<li>En consid&#xE9;rant l&apos;ordre lexicographique, construire &#xE0; la main un ABR presque complet ayant les &#xE9;tiquettes :<br>
+<code>[&quot;Pascal&quot;, &quot;Sylvain&quot;, &quot;Claire&quot;, &quot;Marie&quot;, &quot;Sandrine&quot;, &quot;Manu&quot;, &quot;Clarence&quot;, &quot;Martin&quot;, &quot;Severine&quot;, &quot;Claude&quot;, &quot;Patricia&quot;, &quot;Sonia&quot;, &quot;Jo&#xEB;l&quot;, &quot;Alain&quot;]</code></li>
+<li>Ajouter cinq pr&#xE9;noms &#xE0; cet ABR.</li>
+</ol>
+
       </div>
       
       
