@@ -60,7 +60,7 @@ Pour le code Python des solutions :
     * [Correction des exercices](cours/2-Structures_linéaires/1-pile-correction.html)
 * [File et deque](cours/2-Structures_linéaires/2-file.html)
     * [Correction des exercices](cours/2-Structures_linéaires/2-file-correction.html)
-* [Liste chaînée](cours/2-Structures_linéaires/3-liste.html) **(À venir)**
+* [Liste chaînée](cours/2-Structures_linéaires/3-liste.html)
     * [Correction des exercices](cours/2-Structures_linéaires/3-liste-correction.html)
 
 ## 🌳 Structures arborescentes
