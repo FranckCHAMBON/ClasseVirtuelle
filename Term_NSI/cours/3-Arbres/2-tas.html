@@ -660,7 +660,7 @@ pre[data-line] .line-highlight[data-end]:after {
         i <span class="token operator">=</span> self<span class="token punctuation">.</span>__taille
         parent_i <span class="token operator">=</span> i <span class="token operator">//</span> <span class="token number">2</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>parent_i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>__tas<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            _&#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> parent_i<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>_&#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> parent_i<span class="token punctuation">)</span>
             i <span class="token operator">=</span> parent_i
             parent_i <span class="token operator">=</span> i <span class="token operator">//</span> <span class="token number">2</span>
 
@@ -692,7 +692,7 @@ pre[data-line] .line-highlight[data-end]:after {
                 j <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i     <span class="token comment"># vers l&apos;enfant gauche</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
                 j <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment"># vers l&apos;enfant droite</span>
-            _&#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>_&#xE9;change<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
             i <span class="token operator">=</span> j
         <span class="token keyword">return</span> &#xE9;l&#xE9;ment
         

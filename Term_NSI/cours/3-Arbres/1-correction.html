@@ -271,7 +271,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token keyword">def</span> <span class="token function">parcours_largeur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span><span class="token punctuation">:</span>
     n&#x153;uds <span class="token operator">=</span> File<span class="token punctuation">(</span><span class="token punctuation">)</span>
     n&#x153;uds<span class="token punctuation">.</span>enfile<span class="token punctuation">(</span>arbre<span class="token punctuation">)</span>
-    <span class="token keyword">while</span> <span class="token keyword">not</span> n&#x153;uds<span class="token punctuation">.</span>ext_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token keyword">not</span> n&#x153;uds<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         n&#x153;ud <span class="token operator">=</span> n&#x153;uds<span class="token punctuation">.</span>d&#xE9;<span class="token builtin">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">if</span> n&#x153;ud <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span>n&#x153;ud<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>

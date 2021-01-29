@@ -10,7 +10,7 @@
 def parcours_largeur(arbre):
     nœuds = File()
     nœuds.enfile(arbre)
-    while not nœuds.ext_vide():
+    while not nœuds.est_vide():
         nœud = nœuds.défile()
         if nœud is not None:
             print(nœud.élément)

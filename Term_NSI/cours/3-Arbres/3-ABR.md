@@ -10,7 +10,7 @@ On considère des arbres binaires particuliers, avec des données toutes de mêm
 
 Un **arbre binaire de recherche (ABR)** est un arbre binaire, tel que s'il est non vide :
 * le nœud racine porte une donnée supérieure ou égale à celle de son enfant gauche (s'il existe) ;
-* le nœud racine porte une donnée inférieure ou égale à celle de son enfant gauche (s'il existe) ;
+* le nœud racine porte une donnée inférieure ou égale à celle de son enfant droite (s'il existe) ;
 * ses deux sous-arbres sont aussi des ABR.
 
 Les inégalités sont parfois strictes pour obtenir des éléments distincts, parfois strictes d'un seul côté.

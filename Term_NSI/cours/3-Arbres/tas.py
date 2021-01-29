@@ -23,7 +23,7 @@ class Tas:
         i = self.__taille
         parent_i = i // 2
         while (i > 1) and self.__tas[parent_i] < self.__tas[i]:
-            _échange(i, parent_i)
+            self._échange(i, parent_i)
             i = parent_i
             parent_i = i // 2
 
@@ -55,7 +55,7 @@ class Tas:
                 j = 2 * i     # vers l'enfant gauche
             else:
                 j = 2 * i + 1 # vers l'enfant droite
-            _échange(i, j)
+            self._échange(i, j)
             i = j
         return élément
         

@@ -502,13 +502,13 @@ digraph expression
 5. De manière générale, expliquer comment retrouver un arbre dont l'affichage est donné.
 
 ### Exercice 7 - Parcours en largeur
-* Pour afficher un arbre en largeur :
+* Pour afficher (ou faire une autre action) un arbre avec un parcours en largeur :
     * On utilise une file initialement vide.
-    * On enfile l'arbre dans la file.
+    * On enfile l'arbre (son nœud racine, ou nil) dans la file.
     * Tant que la file est non vide :
         * On défile un arbre.
-        * S'il est non vide :
-            * On affiche l'`élément` du nœud.
+        * S'il n'est pas nil, c'est un nœud et :
+            * On affiche (ou un traîte suivant une action) l'`élément` du nœud.
             * On enfile le sous-arbre gauche (puis droit).
 1. Écrire une fonction de parcours en largeur.
 2. Tester votre fonction.
