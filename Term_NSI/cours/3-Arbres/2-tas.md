@@ -115,12 +115,14 @@ Ce tableau correspond à une lecture lors d'un parcours en largeur.
 
 On propose de stocker :
 * Les données dans une liste dynamique Python, avec l'élément d'indice $0$ mis à `None`.
-* La taille dans un attribut à part ; elle est souvent stockée à l'indice $0$.
+* La taille dans un attribut stocké à part
+
+> La taille est souvent stockée à l'indice $0$. Nous ne le ferons pas, en effet, la taille est un entier, mais les éléments du tas ne le sont peut-être pas !
 
 On propose les méthodes :
 * Initialisation, qui fait suite au constructeur ;
 * `.est_vide(self)` qui indique la vacuité du tas, ou non ;
-* `.ajout(self, x)` qui ajoute un élément au tas (en respectant la règle) ;
-* `.extrait(self)` qui renvoie l'élément à la racine, si l'arbre est non vide, puis réagence le tas en respectant la règle.
+* `.ajout(self, x)` qui ajoute un élément au tas (en respectant les règles) ;
+* `.extrait(self)` qui supprime et renvoie l'élément à la racine, si l'arbre est non vide, en réagençant le tas en respectant les règles.
 
 @import "tas.py"

@@ -144,7 +144,7 @@ On va reprendre notre class `Nœud`, et on va créer une autre classe `ABR` qui 
 
 ## Étude de la complexité
 On suppose que l'ABR est de taille $n$, et de hauteur $h$.
-1. Quelle est la complexité, en fonction de $h$, pour la recherche, l'ajout ou la suppression d'un élément ?
+1. Quelle est la complexité, en fonction de $h$, pour la recherche, l'ajout (ou la suppression) d'un élément ?
 2. Si l'arbre est équilibré (ou presque), quelle est la complexité en fonction de $n$ ?
 2. Si l'arbre est un peigne (ou presque), quelle est la complexité en fonction de $n$ ?
 
@@ -158,7 +158,7 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 
 ### Méthode vers liste triée
 1. Écrire une méthode de la classe `ABR` qui renvoie la liste de ses éléments dans l'ordre croissant.
-2. Quelle est l'efficacité (temps et mémoire) de ce tri ?
+2. Un tri de liste peut être réalisé en construisant un ABR à partir d'une liste non triée, puis en utilisant la question 1, et obtenir la liste triée. Quelle est l'efficacité (temps et mémoire) de ce tri ?
 
 ### ABR de chaîne de caractères
 1. En considérant l'ordre lexicographique, construire à la main un ABR presque complet ayant les étiquettes :

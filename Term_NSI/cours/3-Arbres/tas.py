@@ -37,10 +37,10 @@ class Tas:
                 return True
             if 2*i == self.taille:
                 # Le nœud n'a qu'un enfant à gauche
-                return self.__tas[i] > self.__tas[2*i]
+                return self.__tas[i] >= self.__tas[2*i]
             # Le nœud possède deux enfant, à gauche, à droite
-            return self.__tas[i] > self.__tas[2*i] and \
-                   self.__tas[i] > self.__tas[2*i + 1]
+            return self.__tas[i] >= self.__tas[2*i] and \
+                   self.__tas[i] >= self.__tas[2*i + 1]
             
         if self.est_vide():
             raise ValueError("Tas vide")
@@ -51,7 +51,7 @@ class Tas:
         # On va le remettre à une place qui respecte la règle
         i = 1
         while not est_valide(i):
-            if (2*i == self.__taille) or (self.__tas[2*i] > self.__tas[2*i]):
+            if (2*i == self.__taille) or (self.__tas[2*i] > self.__tas[i]):
                 j = 2 * i     # vers l'enfant gauche
             else:
                 j = 2 * i + 1 # vers l'enfant droite
