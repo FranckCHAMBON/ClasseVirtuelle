@@ -51,7 +51,7 @@ class Tas:
         # On va le remettre à une place qui respecte la règle
         i = 1
         while not est_valide(i):
-            if (2*i == self.__taille) or (self.__tas[2*i] > self.__tas[i]):
+            if (2*i == self.__taille) or (self.__tas[2*i] > self.__tas[2 * i + 1]):
                 j = 2 * i     # vers l'enfant gauche
             else:
                 j = 2 * i + 1 # vers l'enfant droite
