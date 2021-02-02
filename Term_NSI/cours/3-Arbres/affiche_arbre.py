@@ -26,7 +26,7 @@ def affiche(arbre, titre=None):
     code_dot = []
     ajout = code_dot.append
     ajout("digraph arbre {")
-    if titre:
+    if titre is not None:
         ajout('label = "{titre}" ;')
     nœuds = File()
     nœuds.enfile((1, arbre))
@@ -79,4 +79,7 @@ somme_2 = Nœud(trois_1, "+", somme_1)
 expr_A = Nœud(produit_1, "-", somme_2)
 
 
-print(repr(expr_A))
+#print(repr(expr_A))
+
+#print(str(expr_A))
+#À utiliser comme code dot avec graphviz

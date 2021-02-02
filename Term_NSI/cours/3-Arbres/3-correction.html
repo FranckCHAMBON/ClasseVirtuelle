@@ -1,0 +1,444 @@
+<!DOCTYPE html><html><head>
+      <title>3-correction</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="correction-de-certains-exercices">Correction de certains exercices</h1>
+
+<h2 class="mume-header" id="constructions-dabr">Constructions d&apos;ABR</h2>
+
+<h3 class="mume-header" id="questions">Questions</h3>
+
+<p>Pour construire un ABR, on peut partir d&apos;un ABR vide, et ajouter des n&#x153;uds en respectant la r&#xE8;gle des ABR.</p>
+<ol>
+<li>Montrer qu&apos;en ajoutant successivement les nombres <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>10</mn><mo separator="true">,</mo><mn>7</mn><mo separator="true">,</mo><mn>16</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>12</mn><mo separator="true">,</mo><mn>19</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[10, 7, 16, 2, 8, 12, 19]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mclose">]</span></span></span></span> on retrouve l&apos;ABR complet donn&#xE9; en exemple.</li>
+<li>Trouver une autre liste permettant de construire le <strong>m&#xEA;me</strong> ABR. Cette liste est une permutation de la premi&#xE8;re !</li>
+<li>Trouver deux autres permutations de cette liste qui donnent trois ABR <strong>diff&#xE9;rents</strong>.</li>
+<li>Quels sont les types d&apos;ABR qui ne peuvent se construire qu&apos;avec une unique liste ?</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses">R&#xE9;ponses</h3>
+
+<ol>
+<li>RAS</li>
+<li>On peut, par exemple, lire chaque niveau dans l&apos;ordre que l&apos;on veut, et obtenir le m&#xEA;me ABR. Il y a d&apos;autres solutions.</li>
+<li>Il suffit de choisir une racine diff&#xE9;rente et de la placer en premier. Il y a bien d&apos;autres solutions.</li>
+<li>Les ABR peignes ne se construisent qu&apos;avec une unique liste : la liste des &#xE9;l&#xE9;ments tri&#xE9;s. Et r&#xE9;ciproquement.</li>
+</ol>
+<h2 class="mume-header" id="recherche-dans-un-abr">Recherche dans un ABR</h2>
+
+<h3 class="mume-header" id="questions-1">Questions</h3>
+
+<blockquote>
+<p>Pour chaque question, on demande quelques phrases claires. On se place comme une machine qui n&apos;a pas la vision d&apos;ensemble de l&apos;ABR, mais qui a seulement l&apos;acc&#xE8;s &#xE0; la racine (si elle existe), et &#xE0; ses enfants de mani&#xE8;re r&#xE9;cursive...</p>
+</blockquote>
+<ol>
+<li>Expliquer comment faire pour rechercher la pr&#xE9;sence d&apos;un &#xE9;l&#xE9;ment dans un ABR.</li>
+<li>Pour un ABR donn&#xE9;, quel est le pire des cas pour le nombre d&apos;&#xE9;tapes dans la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
+<li>Pour une taille donn&#xE9;e, quel est le pire type d&apos;ABR qui peut donner le pire nombre d&apos;&#xE9;tapes dans la recherche d&apos;un &#xE9;l&#xE9;ment.</li>
+<li>Pour une taille donn&#xE9;e, quel est le meilleur type d&apos;ABR qui permet de trouver un &#xE9;l&#xE9;ment, dans le pire des cas, en le moins d&apos;&#xE9;tapes.</li>
+<li>Expliquer comment trouver l&apos;&#xE9;l&#xE9;ment minimal (resp. maximal) d&apos;un ABR non vide.</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses-1">R&#xE9;ponses</h3>
+
+<ol>
+<li>
+<ul>
+<li>Si l&apos;ABR est vide, on renvoie absent (<code>False</code>).</li>
+<li>Sinon, l&apos;ABR est non vide, c&apos;est un n&#x153;ud.
+<ul>
+<li>Si l&apos;&#xE9;l&#xE9;ment cherch&#xE9; est &#xE9;gal &#xE0; l&apos;&#xE9;l&#xE9;ment du n&#x153;ud, on renvoie pr&#xE9;sent (<code>True</code>).</li>
+<li>Si l&apos;&#xE9;l&#xE9;ment cherch&#xE9; est <strong>inf&#xE9;rieur</strong> &#xE0; l&apos;&#xE9;l&#xE9;ment du n&#x153;ud, on fait une recherche, par r&#xE9;cursivit&#xE9;, dans le sous arbre <strong>gauche</strong>.</li>
+<li>Si l&apos;&#xE9;l&#xE9;ment cherch&#xE9; est <strong>sup&#xE9;rieur</strong> &#xE0; l&apos;&#xE9;l&#xE9;ment du n&#x153;ud, on fait une recherche, par r&#xE9;cursivit&#xE9;, dans le sous arbre <strong>droite</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Le pire des cas est la recherche d&apos;un &#xE9;l&#xE9;ment qui est &#xE9;gal (ou presque) &#xE0; une feuille situ&#xE9;e &#xE0; la profondeur maximale.</li>
+<li>Pour une taille donn&#xE9;e, l&apos;ABR peigne peut donner le pire nombre d&apos;&#xE9;tapes pour une recherche ; chercher sa feuille, par exemple.</li>
+<li>Un ABR &#xE9;quilibr&#xE9; est un arbre qui poss&#xE8;de la plus petite hauteur &#xE0; taille donn&#xE9;e, donc le moins d&apos;&#xE9;tapes dans le pire des cas pour une recherche.</li>
+<li>
+<ul>
+<li>Si l&apos;ABR est vide, on l&#xE8;ve une exception, le minimum n&apos;existe pas.</li>
+<li>Sinon, l&apos;ABR poss&#xE8;de une racine qui est un n&#x153;ud.
+<ul>
+<li>Si le sous arbre gauche est vide, on renvoie l&apos;&#xE9;l&#xE9;ment &#xE0; la racine du n&#x153;ud.</li>
+<li>Sinon, par r&#xE9;cursivit&#xE9;, on demande le minimum de ce sous-arbre gauche.</li>
+</ul>
+</li>
+<li>Pour le maximum, on travaille avec le sous-arbre droit.</li>
+</ul>
+</li>
+</ol>
+<h2 class="mume-header" id="suppression-dans-un-abr">Suppression dans un ABR</h2>
+
+<h3 class="mume-header" id="questions-2">Questions</h3>
+
+<blockquote>
+<p>La suppression dans un ABR n&apos;est pas au programme en NSI. Cependant, on peut d&#xE9;couvrir <strong>pourquoi</strong> !</p>
+</blockquote>
+<ol>
+<li>
+<p>Montrer, en utilisant un exemple pr&#xE9;c&#xE9;dent, que la suppression d&apos;un n&#x153;ud est un probl&#xE8;me qui n&apos;est pas trivial ; qu&apos;il y a du travail &#xE0; r&#xE9;aliser pour obtenir un ABR suite &#xE0; la suppression d&apos;un n&#x153;ud.</p>
+</li>
+<li>
+<p>Donner des exemples o&#xF9; la suppression d&apos;un n&#x153;ud est triviale ; il n&apos;y a pas beaucoup de travail &#xE0; effectuer.</p>
+</li>
+<li>
+<p><strong>Hors programme</strong> : Expliquer comment supprimer un n&#x153;ud d&apos;un ABR.</p>
+</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses-2">R&#xE9;ponses</h3>
+
+<ol>
+<li>Supprimer l&apos;&#xE9;l&#xE9;ment &#xE0; la racine n&apos;est pas trivial ; il faut la remplacer par une autre et r&#xE9;agencer !</li>
+<li>Supprimer une feuille est facile, il n&apos;y rien &#xE0; r&#xE9;agencer.</li>
+<li><strong>Hors programme.</strong> Pour supprimer un &#xE9;l&#xE9;ment dans un ABR (o&#xF9; les &#xE9;l&#xE9;ments sont distincts) il suffit de le remplacer par le plus petit &#xE9;l&#xE9;ment du sous-arbre droit, ou bien par le plus grand &#xE9;l&#xE9;ment du sous-arbre gauche. <strong>Attention</strong>, c&apos;est plus technique si l&apos;ABR poss&#xE8;de des &#xE9;l&#xE9;ments en double.</li>
+</ol>
+<h2 class="mume-header" id="%C3%A9tude-de-la-complexit%C3%A9">&#xC9;tude de la complexit&#xE9;</h2>
+
+<h3 class="mume-header" id="questions-3">Questions</h3>
+
+<h2 class="mume-header" id="%C3%A9tude-de-la-complexit%C3%A9-1">&#xC9;tude de la complexit&#xE9;</h2>
+
+<p>On suppose que l&apos;ABR est de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, et de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>.</p>
+<ol>
+<li>Quelle est la complexit&#xE9;, en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>, pour la recherche, l&apos;ajout (ou la suppression) d&apos;un &#xE9;l&#xE9;ment ?</li>
+<li>Si l&apos;arbre est &#xE9;quilibr&#xE9; (ou presque), quelle est la complexit&#xE9; en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> ?</li>
+<li>Si l&apos;arbre est un peigne (ou presque), quelle est la complexit&#xE9; en fonction de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> ?</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses-3">R&#xE9;ponses</h3>
+
+<ol>
+<li>La complexit&#xE9; est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(h)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mclose">)</span></span></span></span> dans chaque cas.</li>
+<li>Si l&apos;arbre est non vide et &#xE9;quilibr&#xE9; (ou presque), on a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>h</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mo>&#x2A7D;</mo><mi>n</mi><mo>&lt;</mo><msup><mn>2</mn><mi>h</mi></msup><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{h-1} \leqslant n &lt; 2^h - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9857779999999998em;vertical-align:-0.13667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>. (Avec la d&#xE9;finition de la hauteur de l&apos;arbre vide &#xE0; z&#xE9;ro). Et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>&#x2248;</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h \approx \log(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2248;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, de sorte que la complexit&#xE9; est alors en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(\log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>. On rappelle que <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> est environ le nombre de chiffre de l&apos;&#xE9;criture de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, quelle que soit la base, &#xE0; un facteur multiplicatif pr&#xE8;s.</li>
+<li>Si l&apos;arbre est un peigne, on a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">n = h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>, et donc la complexit&#xE9; est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>.</li>
+</ol>
+<blockquote>
+<p><strong>Conclusion</strong> : Dans le pire des cas (peigne ou presque) la complexit&#xE9; est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, mais si on se d&#xE9;brouille &#xE0; conserver un ABR presque &#xE9;quilibr&#xE9;, alors la complexit&#xE9; est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(\log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>.</p>
+</blockquote>
+<blockquote>
+<p>Les m&#xE9;thodes que nous avons vues ne garantissent pas de conserver un arbre &#xE9;quilibr&#xE9; (ou presque). Les solutions &#xE9;tudi&#xE9;es post BAC seront les arbres AVL ou encore les arbres rouges et noirs.</p>
+</blockquote>
+<h2 class="mume-header" id="nombre-doccurrences">Nombre d&apos;occurrences</h2>
+
+<h3 class="mume-header" id="questions-4">Questions</h3>
+
+<p>On suppose qu&apos;on a un ABR o&#xF9; un &#xE9;l&#xE9;ment peut &#xEA;tre pr&#xE9;sent plusieurs fois, et que donc les in&#xE9;galit&#xE9;s dans la d&#xE9;finition se comprennent au sens large.</p>
+<ol>
+<li>Donner une m&#xE9;thode efficace <code>.nb_occurrences(self, &#xE9;l&#xE9;ment)</code> qui renvoie le nombre d&apos;occurrences de <code>&#xE9;l&#xE9;ment</code> dans l&apos;ABR <code>self</code>. Cette m&#xE9;thode ne doit rien pr&#xE9;-supposer sur la m&#xE9;thode de construction de l&apos;ABR, mais uniquement qu&apos;il respecte les r&#xE8;gles.</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses-4">R&#xE9;ponses</h3>
+
+<ol>
+<li>Code Python</li>
+</ol>
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">nb_occurences</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token operator">&lt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token operator">&gt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+        <span class="token comment">#On a : self.racine == &#xE9;l&#xE9;ment:</span>
+        <span class="token keyword">return</span>  <span class="token number">1</span> <span class="token operator">+</span> \
+                self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span> <span class="token operator">+</span> \
+                self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+</pre><h2 class="mume-header" id="m%C3%A9thode-vers-liste-tri%C3%A9e">M&#xE9;thode vers liste tri&#xE9;e</h2>
+
+<h3 class="mume-header" id="question">Question</h3>
+
+<ol>
+<li>&#xC9;crire une m&#xE9;thode de la classe <code>ABR</code> qui renvoie la liste de ses &#xE9;l&#xE9;ments dans l&apos;ordre croissant.</li>
+<li>Un tri de liste peut &#xEA;tre r&#xE9;alis&#xE9; en construisant un ABR &#xE0; partir d&apos;une liste non tri&#xE9;e, puis en utilisant la question 1, et obtenir la liste tri&#xE9;e. Quelle est l&apos;efficacit&#xE9; (temps et m&#xE9;moire) de ce tri ?</li>
+</ol>
+<h3 class="mume-header" id="r%C3%A9ponses-5">R&#xE9;ponses</h3>
+
+<ol>
+<li>Voir le code ci-dessous.</li>
+<li>
+<ul>
+<li>Si l&apos;ABR obtenu est &#xE9;quilibr&#xE9; ou presque, alors la complexit&#xE9; de ce tri est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n\log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>, et on ne peut pas faire mieux. <strong>Hors programme.</strong> En effet, m&#xEA;me si les premi&#xE8;res &#xE9;tapes sont rapides, les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord">2</span></span></span></span> derni&#xE8;res co&#xFB;tent chacune au moins <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(n/2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span></span></span></span> et (<em>maths</em>) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>&#x2212;</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(n/2) = \log(n) - \log(2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span></span></span></span>, pour la complexit&#xE9; on peut n&#xE9;gliger la constante <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span></span></span></span> devant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> qui tend vers l&apos;infini. On a donc un co&#xFB;t pour les <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord">2</span></span></span></span> derni&#xE8;res &#xE9;tapes d&apos;environ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>&#xD7;</mo><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n/2 \times \log(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, et on se moque du facteur multiplicatif <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span></span></span></span> qui donne une complexit&#xE9; en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>&#x2061;</mo><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n\log(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>.</li>
+<li>Si l&apos;arbre est plut&#xF4;t peigne ou presque, la complexit&#xE9; est en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, et c&apos;est celle d&apos;un tri classique (&#xE0; bulle, ou par insertion).</li>
+</ul>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">vers_liste</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># cela correspond &#xE0; un parcours infixe</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>vers_liste<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>\
+            <span class="token punctuation">[</span>self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">]</span> <span class="token operator">+</span>\
+            self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>vers_liste<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment"># ici, on a concat&#xE9;n&#xE9; trois listes.</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -69,6 +69,7 @@ Pour le code Python des solutions :
     * [Corrections d'exercices](cours/3-Arbres/1-correction.html)
 * [Tas](cours/3-Arbres/2-tas.html)
 * [Arbres binaires de recherche](cours/3-Arbres/3-ABR.html)
+    * [Corrections d'exercices](cours/3-Arbres/3-correction.html)
 
 
 ## :diamond_shape_with_a_dot_inside: : Graphes
