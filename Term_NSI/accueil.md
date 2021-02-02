@@ -68,6 +68,7 @@ Pour le code Python des solutions :
 * [Arbres et arbres binaires](cours/3-Arbres/1-arbre.html)
     * [Corrections d'exercices](cours/3-Arbres/1-correction.html)
 * [Tas](cours/3-Arbres/2-tas.html)
+    * [Corrections d'exercices](cours/3-Arbres/2-correction.html)
 * [Arbres binaires de recherche](cours/3-Arbres/3-ABR.html)
     * [Corrections d'exercices](cours/3-Arbres/3-correction.html)
 
