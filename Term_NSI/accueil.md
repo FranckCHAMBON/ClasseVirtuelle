@@ -75,7 +75,7 @@ Pour le code Python des solutions :
 
 ## :diamond_shape_with_a_dot_inside: : Graphes
 
-* Graphes
+* [Graphes](cours/4-Graphes/1-graphes.html)
 
 ## 🐚 Interfaces Homme Machine
 
