@@ -168,4 +168,4 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 ### FranceIOI
 Faire les exercice suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser la classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
 * [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
-* ...
+* [Nombres opposés](http://www.france-ioi.org/algo/task.php?idChapter=761&idTask=669)
