@@ -168,7 +168,13 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 ### FranceIOI
 Faire les exercice suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser la classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
 
-> Conseil : réécrire la classe ABR avec une unique méthode `ajout_si_absent(élément)` qui ajoute un élément uniquement s'il était absent, et renvoie `True` s'il était absent et `False` sinon. Cette méthode doit être efficace et ne parcourir qu'une fois l'ABR.
+
+* [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
+* [Nombres opposés](http://www.france-ioi.org/algo/task.php?idChapter=761&idTask=669)
+
+> Conseils :
+> 1. Pour 'Densité du plastique'. Utiliser simplement la classe `ABR` du cours.
+> 2. Pour 'Nombres opposés'. Réécrire la classe ABR avec une unique méthode `ajout_si_absent(élément)` qui ajoute un élément uniquement s'il était absent, et renvoie `True` s'il était absent et `False` sinon. Cette méthode doit être efficace et ne parcourir qu'une fois l'ABR.
 
 ```python
 >>> abr = ABR()
@@ -179,6 +185,3 @@ True
 >>> abr.ajout_si_absent(42)
 False
 ```
-
-* [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
-* [Nombres opposés](http://www.france-ioi.org/algo/task.php?idChapter=761&idTask=669)
