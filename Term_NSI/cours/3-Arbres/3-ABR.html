@@ -652,8 +652,8 @@ pre[data-line] .line-highlight[data-end]:after {
         <span class="token keyword">elif</span> &#xE9;l&#xE9;ment <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">:</span>
             self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>ajoute<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">pass</span>
             <span class="token comment"># en cas d&apos;&#xE9;galit&#xE9;, on ne fait rien ici</span>
+            <span class="token keyword">pass</span>
     
     <span class="token keyword">def</span> <span class="token function">extrait_min</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -668,10 +668,11 @@ pre[data-line] .line-highlight[data-end]:after {
         <span class="token keyword">elif</span> &#xE9;l&#xE9;ment <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">:</span>
             <span class="token keyword">return</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>est_pr&#xE9;sent<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
         <span class="token keyword">elif</span> &#xE9;l&#xE9;ment <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>est_pr&#xE9;sent<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>est_pr&#xE9;sent<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">True</span>
             <span class="token comment"># Cas d&apos;&#xE9;galit&#xE9;</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+
 </pre><h2 class="mume-header" id="%C3%A9tude-de-la-complexit%C3%A9">&#xC9;tude de la complexit&#xE9;</h2>
 
 <p>On suppose que l&apos;ABR est de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, et de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>.</p>

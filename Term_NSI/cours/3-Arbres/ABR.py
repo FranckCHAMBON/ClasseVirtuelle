@@ -23,8 +23,8 @@ class ABR:
         elif élément > self.racine.élément:
             self.racine.droite.ajoute(élément)
         else:
-            pass
             # en cas d'égalité, on ne fait rien ici
+            pass
     
     def extrait_min(self):
         if self.est_vide():
@@ -39,7 +39,7 @@ class ABR:
         elif élément < self.racine.élément:
             return self.racine.gauche.est_présent(élément)
         elif élément > self.racine.élément:
-            self.racine.droite.est_présent(élément)
+            return self.racine.droite.est_présent(élément)
         else:
-            return True
             # Cas d'égalité
+            return True
