@@ -65,6 +65,23 @@ def _repr(nœud, préfixe):
 def repr(arbre):
     return "\n".join(_repr(arbre, '   '))
 
+
+def _repr(arbre, préfixe):
+    if arbre == ABR():
+            return [préfixe[:-3] + '--']
+    if arbre.racine is None:
+            return [préfixe[:-3] + '--']
+
+    code_dot = [préfixe[:-3] + '-- :' + str(arbre.racine.élément)]
+    if (arbre.racine.gauche != ABR()) and (arbre.racine.droite != ABR()):
+        code_dot.extend(_repr(arbre.racine.gauche, préfixe + '|   '))
+        code_dot.extend(_repr(arbre.racine.droite, préfixe + '    '))
+    return code_dot
+
+def repr(arbre):
+    return "\n".join(_repr(arbre, '   '))
+
+
 six_1 = Nœud(None, "6", None)
 cinq_1 = Nœud(None, "5", None)
 produit_1 = Nœud(six_1, "×", cinq_1)

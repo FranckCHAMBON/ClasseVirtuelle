@@ -165,16 +165,9 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 `["Pascal", "Sylvain", "Claire", "Marie", "Sandrine", "Manu", "Clarence", "Martin", "Severine", "Claude", "Patricia", "Sonia", "Joël", "Alain"]`
 2. Ajouter cinq prénoms à cet ABR.
 
-### FranceIOI
-Faire les exercice suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser la classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
+### Ajout si absent
 
-
-* [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
-* [Nombres opposés](http://www.france-ioi.org/algo/task.php?idChapter=761&idTask=669)
-
-> Conseils :
-> 1. Pour 'Densité du plastique'. Utiliser simplement la classe `ABR` du cours.
-> 2. Pour 'Nombres opposés'. Réécrire la classe ABR avec une unique méthode `ajout_si_absent(élément)` qui ajoute un élément uniquement s'il était absent, et renvoie `True` s'il était absent et `False` sinon. Cette méthode doit être efficace et ne parcourir qu'une fois l'ABR.
+Réécrire la classe ABR avec une unique méthode `ajout_si_absent(élément)` qui ajoute un élément uniquement s'il était absent, et renvoie `True` s'il était absent et `False` sinon. Cette méthode doit être efficace et ne parcourir qu'une fois l'ABR.
 
 ```python
 >>> abr = ABR()
@@ -185,3 +178,13 @@ True
 >>> abr.ajout_si_absent(42)
 False
 ```
+
+
+### FranceIOI
+Faire les exercice suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser la classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
+
+
+* [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
+
+> Conseils :
+> 1. Pour 'Densité du plastique'. Utiliser simplement la classe `ABR` du cours. Vous ne pourrez passer que les tests 1 à 7 et le 9.
