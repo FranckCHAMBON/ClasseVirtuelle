@@ -295,6 +295,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#franceioi">FranceIOI</a></li>
 </ul>
 </li>
+<li><a href="#visualisation-des-abr-bonus">Visualisation des ABR (Bonus)</a>
+<ul>
+<li><a href="#dans-un-terminal">Dans un terminal</a></li>
+<li><a href="#utilisation-de-graphviz">Utilisation de GraphViz</a></li>
+</ul>
+</li>
 </ul>
 <p>On consid&#xE8;re des arbres binaires particuliers, avec des donn&#xE9;es toutes de m&#xEA;me type, un type qui poss&#xE8;de une relation d&apos;ordre. Par exemple : des entiers, on peut les comparer.</p>
 <h2 class="mume-header" id="d%C3%A9finition">D&#xE9;finition</h2>
@@ -727,7 +733,267 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Pour &apos;Carte de cin&#xE9;ma&apos;. Utiliser votre r&#xE9;&#xE9;criture avec <code>ajoute_si_absent</code>. Vous ne pourrez pas passer les tests 9 et 10.</li>
 </ol>
 </blockquote>
+<h2 class="mume-header" id="visualisation-des-abr-bonus">Visualisation des ABR (Bonus)</h2>
 
+<p>Votre professeur vous offre deux outils de visualisation de vos ABR. Un outil &#xE0; utiliser dans un terminal, un autre pour obtenir un graphique <code>GraphViz</code> avec le langage dot.</p>
+<h3 class="mume-header" id="dans-un-terminal">Dans un terminal</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">est_feuille</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">and</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">_repr</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pr&#xE9;fixe<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># Auteur: Franck CHAMBON</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">[</span>pr&#xE9;fixe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&apos;--&apos;</span><span class="token punctuation">]</span>
+
+        sortie <span class="token operator">=</span> <span class="token punctuation">[</span>pr&#xE9;fixe<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&apos;-- :&apos;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>est_feuille<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sortie<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>_repr<span class="token punctuation">(</span>pr&#xE9;fixe <span class="token operator">+</span> <span class="token string">&apos;|   &apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            sortie<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>_repr<span class="token punctuation">(</span>pr&#xE9;fixe <span class="token operator">+</span> <span class="token string">&apos;    &apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> sortie
+
+    <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_repr<span class="token punctuation">(</span><span class="token string">&apos;   &apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><p>Ce code ajout&#xE9; &#xE0; votre classe <code>ABR</code> vous permet d&apos;obtenir un affichage console rudimentaire de votre arbre. La fonction <code>__repr__</code> est automatiquement appel&#xE9;e par le terminal dans l&apos;exemple suivant :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> ABR
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> exemple_abr <span class="token operator">=</span> ABR<span class="token punctuation">.</span>ABR<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">:</span> exemple_abr<span class="token punctuation">.</span>ajout<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> exemple_abr
+<span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">21</span>
+   <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">32</span>
+   <span class="token operator">|</span>   <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span>
+   <span class="token operator">|</span>    <span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">24</span>
+    <span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">11</span>
+       <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">17</span>
+       <span class="token operator">|</span>   <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span>
+       <span class="token operator">|</span>    <span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">16</span>
+        <span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">:</span><span class="token number">8</span>
+</pre><p>En penchant la t&#xEA;te, on retrouve une lecture de l&apos;ABR.</p>
+<p>Vous pouvez aussi l&apos;utiliser pour d&#xE9;boguer votre code, il suffit d&apos;ajouter un <code>print(repr(votre_abr))</code> &#xE0; la place d&apos;un (tr&#xE8;s vilain) <code>print(votre_variable_inconnue)</code>, ou bien d&apos;utiliser un bon explorateur de variables dans votre &#xE9;diteur pr&#xE9;f&#xE9;r&#xE9;, s&apos;il en dispose d&apos;un.</p>
+<h3 class="mume-header" id="utilisation-de-graphviz">Utilisation de GraphViz</h3>
+
+<p>Il y a plusieurs fa&#xE7;ons d&apos;utiliser GraphViz ; un outil de visualisation de graphe, comme son nom l&apos;indique. Une fa&#xE7;on est d&apos;indiquer qu&apos;on utilise le langage <code>dot</code>.</p>
+<ol>
+<li>On peut, comme dans ce document dont le code source est en Markdown, inclure du code <code>dot</code>. Pour ce faire, voir la <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/diagrams?id=graphviz">documentation</a>.</li>
+<li>On peut utiliser un <a href="https://dreampuf.github.io/GraphvizOnline/">outil en ligne</a> pour visualiser son graphe.</li>
+<li>On peut installer aussi le logiciel...</li>
+</ol>
+<blockquote>
+<p>Mais comment obtenir le code <code>dot</code> pour votre ABR ?</p>
+<blockquote>
+<p>Votre professeur vous offre une m&#xE9;thode <code>__str__</code> qui vous renvoie le code <code>dot</code> pour afficher votre ABR. Mais aussi une m&#xE9;thode <code>affiche_en_ligne</code> qui donne un lien internet direct vers votre ABR. <strong>Magique.</strong></p>
+</blockquote>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># Auteur : Franck CHAMBON</span>
+        code_dot <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        ajout <span class="token operator">=</span> code_dot<span class="token punctuation">.</span>append
+        ajout<span class="token punctuation">(</span><span class="token string">&quot;digraph arbre {&quot;</span><span class="token punctuation">)</span>
+        sous_arbres <span class="token operator">=</span> File<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        sous_arbres<span class="token punctuation">.</span>enfile<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token keyword">not</span> sous_arbres<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            id_sous_arbre<span class="token punctuation">,</span> sous_arbre <span class="token operator">=</span> sous_arbres<span class="token punctuation">.</span>d&#xE9;<span class="token builtin">file</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> sous_arbre<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                ajout<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;    </span><span class="token interpolation"><span class="token punctuation">{</span>id_sous_arbre<span class="token punctuation">}</span></span><span class="token string"> [label=&quot;&quot;, shape=plaintext];&apos;</span></span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                ajout<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;    &quot;</span><span class="token interpolation"><span class="token punctuation">{</span>id_sous_arbre<span class="token punctuation">}</span></span><span class="token string">&quot; [label=&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>sous_arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">}</span></span><span class="token string">&quot;];&apos;</span></span><span class="token punctuation">)</span>
+                id_gauche <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>id_sous_arbre <span class="token operator">+</span> <span class="token number">0</span>
+                id_droite <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>id_sous_arbre <span class="token operator">+</span> <span class="token number">1</span>
+                sous_arbres<span class="token punctuation">.</span>enfile<span class="token punctuation">(</span><span class="token punctuation">(</span>id_gauche<span class="token punctuation">,</span> sous_arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                sous_arbres<span class="token punctuation">.</span>enfile<span class="token punctuation">(</span><span class="token punctuation">(</span>id_droite<span class="token punctuation">,</span> sous_arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                style_gauche <span class="token operator">=</span> <span class="token string">&quot;[style=dashed, arrowhead=none]&quot;</span> <span class="token keyword">if</span> sous_arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">&quot;&quot;</span>
+                ajout<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;    &quot;</span><span class="token interpolation"><span class="token punctuation">{</span>id_sous_arbre<span class="token punctuation">}</span></span><span class="token string">&quot; -&gt; &quot;</span><span class="token interpolation"><span class="token punctuation">{</span>id_gauche<span class="token punctuation">}</span></span><span class="token string">&quot;&apos;</span></span> <span class="token operator">+</span> style_gauche <span class="token operator">+</span><span class="token string">&apos; ;&apos;</span><span class="token punctuation">)</span>
+                style_droite <span class="token operator">=</span> <span class="token string">&quot;[style=dashed, arrowhead=none]&quot;</span> <span class="token keyword">if</span> sous_arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">&quot;&quot;</span>
+                ajout<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;    &quot;</span><span class="token interpolation"><span class="token punctuation">{</span>id_sous_arbre<span class="token punctuation">}</span></span><span class="token string">&quot; -&gt; &quot;</span><span class="token interpolation"><span class="token punctuation">{</span>id_droite<span class="token punctuation">}</span></span><span class="token string">&quot;&apos;</span></span> <span class="token operator">+</span> style_droite <span class="token operator">+</span><span class="token string">&apos; ;&apos;</span><span class="token punctuation">)</span>
+        ajout<span class="token punctuation">(</span><span class="token string">&apos;}&apos;</span><span class="token punctuation">)</span>
+        sortie <span class="token operator">=</span> <span class="token string">&apos;\n&apos;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>code_dot<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> sortie
+
+    <span class="token keyword">def</span> <span class="token function">affiche_en_ligne</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+
+        &gt;&gt;&gt; exemple_abr = ABR()
+        &gt;&gt;&gt; for x in [21, 32, 11, 17, 24, 8, 16]: exemple_abr.ajoute(x)
+        &gt;&gt;&gt; exemple_abr.affiche_en_ligne()
+        &apos;https://dreampuf.github.io/GraphvizOnline/#digraph%20arbre%20%7B%0A%20%20%20%20%221%22%20%5Blabel%3D%2221%22%5D%3B%0A%20%20%20%20%221%22%20-%3E%20%222%22%20%3B%0A%20%20%20%20%221%22%20-%3E%20%223%22%20%3B%0A%20%20%20%20%222%22%20%5Blabel%3D%2211%22%5D%3B%0A%20%20%20%20%222%22%20-%3E%20%224%22%20%3B%0A%20%20%20%20%222%22%20-%3E%20%225%22%20%3B%0A%20%20%20%20%223%22%20%5Blabel%3D%2232%22%5D%3B%0A%20%20%20%20%223%22%20-%3E%20%226%22%20%3B%0A%20%20%20%20%223%22%20-%3E%20%227%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20%5Blabel%3D%228%22%5D%3B%0A%20%20%20%20%224%22%20-%3E%20%228%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20-%3E%20%229%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%225%22%20%5Blabel%3D%2217%22%5D%3B%0A%20%20%20%20%225%22%20-%3E%20%2210%22%20%3B%0A%20%20%20%20%225%22%20-%3E%20%2211%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20%5Blabel%3D%2224%22%5D%3B%0A%20%20%20%20%226%22%20-%3E%20%2212%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20-%3E%20%2213%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%207%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%208%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%209%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%20%2210%22%20%5Blabel%3D%2216%22%5D%3B%0A%20%20%20%20%2210%22%20-%3E%20%2220%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%2210%22%20-%3E%20%2221%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%2011%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2012%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2013%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2020%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2021%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%7D&apos;
+
+        &quot;&quot;&quot;</span>
+        sortie <span class="token operator">=</span> self<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%20&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%0A&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;{&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%7B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&apos;&quot;&apos;</span><span class="token punctuation">,</span> <span class="token string">&quot;%22&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                     <span class="token punctuation">(</span><span class="token string">&quot;[&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%5B&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">&quot;]&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%5D&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%3D&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%3B&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                     <span class="token punctuation">(</span><span class="token string">&quot;&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%3E&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%2C&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;}&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%7D&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            sortie <span class="token operator">=</span> sortie<span class="token punctuation">.</span>replace<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;https://dreampuf.github.io/GraphvizOnline/#&quot;</span> <span class="token operator">+</span> sortie
+</pre><p><strong>Utilisation.</strong> Comme pr&#xE9;c&#xE9;demment, mais avec l&apos;usage explicite de <code>print</code> en console ou en script.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> ABR
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> exemple_abr <span class="token operator">=</span> ABR<span class="token punctuation">.</span>ABR<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">:</span> exemple_abr<span class="token punctuation">.</span>ajout<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>exemple_abr<span class="token punctuation">)</span> <span class="token comment"># pour le code dot</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> exemple_abr<span class="token punctuation">.</span>affiche_en_ligne<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># pour un lien Internet direct</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>https://dreampuf.github.io/GraphvizOnline/#digraph%20arbre%20%7B%0A%20%20%20%20%221%22%20%5Blabel%3D%2221%22%5D%3B%0A%20%20%20%20%221%22%20-%3E%20%222%22%20%3B%0A%20%20%20%20%221%22%20-%3E%20%223%22%20%3B%0A%20%20%20%20%222%22%20%5Blabel%3D%2211%22%5D%3B%0A%20%20%20%20%222%22%20-%3E%20%224%22%20%3B%0A%20%20%20%20%222%22%20-%3E%20%225%22%20%3B%0A%20%20%20%20%223%22%20%5Blabel%3D%2232%22%5D%3B%0A%20%20%20%20%223%22%20-%3E%20%226%22%20%3B%0A%20%20%20%20%223%22%20-%3E%20%227%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20%5Blabel%3D%228%22%5D%3B%0A%20%20%20%20%224%22%20-%3E%20%228%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20-%3E%20%229%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%225%22%20%5Blabel%3D%2217%22%5D%3B%0A%20%20%20%20%225%22%20-%3E%20%2210%22%20%3B%0A%20%20%20%20%225%22%20-%3E%20%2211%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20%5Blabel%3D%2224%22%5D%3B%0A%20%20%20%20%226%22%20-%3E%20%2212%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20-%3E%20%2213%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%207%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%208%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%209%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%20%2210%22%20%5Blabel%3D%2216%22%5D%3B%0A%20%20%20%20%2210%22%20-%3E%20%2220%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%2210%22%20-%3E%20%2221%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%2011%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2012%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2013%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2020%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2021%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%7D
+</code></pre><p>On obtient un lien, que l&apos;on peut copier et ouvrir avec son navigateur Internet. Le r&#xE9;sultat obtenu est ici :</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: arbre Pages: 1 -->
+<svg width="422pt" height="332pt" viewBox="0.00 0.00 422.00 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>arbre</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-328 418,-328 418,4 -4,4"/>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="#000000" cx="279" cy="-306" rx="27" ry="18"/>
+<text text-anchor="middle" x="279" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">21</text>
+</g>
+<!-- 2 -->
+<g id="node2" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">11</text>
+</g>
+<!-- 1&#45;&gt;2 -->
+<g id="edge1" class="edge">
+<title>1-&gt;2</title>
+<path fill="none" stroke="#000000" d="M263.7307,-290.7307C253.803,-280.803 240.6847,-267.6847 229.5637,-256.5637"/>
+<polygon fill="#000000" stroke="#000000" points="231.7933,-253.8436 222.2473,-249.2473 226.8436,-258.7933 231.7933,-253.8436"/>
+</g>
+<!-- 3 -->
+<g id="node3" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="#000000" cx="315" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="315" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">32</text>
+</g>
+<!-- 1&#45;&gt;3 -->
+<g id="edge2" class="edge">
+<title>1-&gt;3</title>
+<path fill="none" stroke="#000000" d="M287.7146,-288.5708C291.9597,-280.0807 297.1536,-269.6929 301.8663,-260.2674"/>
+<polygon fill="#000000" stroke="#000000" points="305.024,-261.7782 306.3657,-251.2687 298.763,-258.6477 305.024,-261.7782"/>
+</g>
+<!-- 4 -->
+<g id="node4" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="#000000" cx="99" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">8</text>
+</g>
+<!-- 2&#45;&gt;4 -->
+<g id="edge3" class="edge">
+<title>2-&gt;4</title>
+<path fill="none" stroke="#000000" d="M187.6918,-221.1278C170.6445,-209.763 145.5981,-193.0654 126.4656,-180.3104"/>
+<polygon fill="#000000" stroke="#000000" points="128.4031,-177.3956 118.1411,-174.7607 124.5201,-183.2199 128.4031,-177.3956"/>
+</g>
+<!-- 5 -->
+<g id="node5" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="#000000" cx="207" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">17</text>
+</g>
+<!-- 2&#45;&gt;5 -->
+<g id="edge4" class="edge">
+<title>2-&gt;5</title>
+<path fill="none" stroke="#000000" d="M207,-215.8314C207,-208.131 207,-198.9743 207,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="210.5001,-190.4132 207,-180.4133 203.5001,-190.4133 210.5001,-190.4132"/>
+</g>
+<!-- 6 -->
+<g id="node6" class="node">
+<title>6</title>
+<ellipse fill="none" stroke="#000000" cx="315" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="315" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">24</text>
+</g>
+<!-- 3&#45;&gt;6 -->
+<g id="edge5" class="edge">
+<title>3-&gt;6</title>
+<path fill="none" stroke="#000000" d="M315,-215.8314C315,-208.131 315,-198.9743 315,-190.4166"/>
+<polygon fill="#000000" stroke="#000000" points="318.5001,-190.4132 315,-180.4133 311.5001,-190.4133 318.5001,-190.4132"/>
+</g>
+<!-- 7 -->
+<g id="node7" class="node">
+<title>7</title>
+</g>
+<!-- 3&#45;&gt;7 -->
+<g id="edge6" class="edge">
+<title>3-&gt;7</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M330.2693,-218.7307C341.5798,-207.4202 357.0318,-191.9682 368.9533,-180.0467"/>
+</g>
+<!-- 8 -->
+<g id="node8" class="node">
+<title>8</title>
+</g>
+<!-- 4&#45;&gt;8 -->
+<g id="edge7" class="edge">
+<title>4-&gt;8</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M83.7307,-146.7307C72.4202,-135.4202 56.9682,-119.9682 45.0467,-108.0467"/>
+</g>
+<!-- 9 -->
+<g id="node9" class="node">
+<title>9</title>
+</g>
+<!-- 4&#45;&gt;9 -->
+<g id="edge8" class="edge">
+<title>4-&gt;9</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99,-143.8314C99,-133 99,-119.2876 99,-108.4133"/>
+</g>
+<!-- 10 -->
+<g id="node10" class="node">
+<title>10</title>
+<ellipse fill="none" stroke="#000000" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">16</text>
+</g>
+<!-- 5&#45;&gt;10 -->
+<g id="edge9" class="edge">
+<title>5-&gt;10</title>
+<path fill="none" stroke="#000000" d="M198.2854,-144.5708C194.0403,-136.0807 188.8464,-125.6929 184.1337,-116.2674"/>
+<polygon fill="#000000" stroke="#000000" points="187.237,-114.6477 179.6343,-107.2687 180.976,-117.7782 187.237,-114.6477"/>
+</g>
+<!-- 11 -->
+<g id="node11" class="node">
+<title>11</title>
+</g>
+<!-- 5&#45;&gt;11 -->
+<g id="edge10" class="edge">
+<title>5-&gt;11</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M215.7146,-144.5708C221.2498,-133.5003 228.3983,-119.2034 233.9897,-108.0206"/>
+</g>
+<!-- 12 -->
+<g id="node12" class="node">
+<title>12</title>
+</g>
+<!-- 6&#45;&gt;12 -->
+<g id="edge11" class="edge">
+<title>6-&gt;12</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315,-143.8314C315,-133 315,-119.2876 315,-108.4133"/>
+</g>
+<!-- 13 -->
+<g id="node13" class="node">
+<title>13</title>
+</g>
+<!-- 6&#45;&gt;13 -->
+<g id="edge12" class="edge">
+<title>6-&gt;13</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M330.2693,-146.7307C341.5798,-135.4202 357.0318,-119.9682 368.9533,-108.0467"/>
+</g>
+<!-- 20 -->
+<g id="node14" class="node">
+<title>20</title>
+</g>
+<!-- 10&#45;&gt;20 -->
+<g id="edge13" class="edge">
+<title>10-&gt;20</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M162.2854,-72.5708C156.7502,-61.5003 149.6017,-47.2034 144.0103,-36.0206"/>
+</g>
+<!-- 21 -->
+<g id="node15" class="node">
+<title>21</title>
+</g>
+<!-- 10&#45;&gt;21 -->
+<g id="edge14" class="edge">
+<title>10-&gt;21</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.7146,-72.5708C185.2498,-61.5003 192.3983,-47.2034 197.9897,-36.0206"/>
+</g>
+</g>
+</svg>
+</p>
       </div>
       
       
