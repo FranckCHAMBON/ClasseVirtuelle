@@ -191,3 +191,152 @@ Faire les exercices suivants, sans utiliser les facilités du langage Python que
 > Conseils :
 > 1. Pour 'Densité du plastique'. Utiliser simplement la classe `ABR` du cours. Vous ne pourrez passer que les tests 1 à 7 et le 9.
 > 2. Pour 'Carte de cinéma'. Utiliser votre réécriture avec `ajoute_si_absent`. Vous ne pourrez pas passer les tests 9 et 10.
+
+## Visualisation des ABR (Bonus)
+
+Votre professeur vous offre deux outils de visualisation de vos ABR. Un outil à utiliser dans un terminal, un autre pour obtenir un graphique `GraphViz` avec le langage dot.
+
+### Dans un terminal
+
+```python
+    def est_feuille(self):
+        return self.racine.gauche.est_vide() and self.racine.droite.est_vide()
+    
+    def _repr(self, préfixe):
+        # Auteur: Franck CHAMBON
+        if self.est_vide():
+                return [préfixe[:-3] + '--']
+
+        sortie = [préfixe[:-3] + '-- :' + str(self.racine.élément)]
+        if not(self.est_feuille()):
+            sortie.extend(self.racine.droite._repr(préfixe + '|   '))
+            sortie.extend(self.racine.gauche._repr(préfixe + '    '))
+        return sortie
+
+    def __repr__(self):
+        return "\n".join(self._repr('   '))
+```
+
+Ce code ajouté à votre classe `ABR` vous permet d'obtenir un affichage console rudimentaire de votre arbre. La fonction `__repr__` est automatiquement appelée par le terminal dans l'exemple suivant :
+
+```python
+>>> import ABR
+>>> exemple_abr = ABR.ABR()
+>>> for x in [21, 32, 11, 17, 24, 8, 16]: exemple_abr.ajout(x)
+>>> exemple_abr
+-- :21
+   |-- :32
+   |   |--
+   |    -- :24
+    -- :11
+       |-- :17
+       |   |--
+       |    -- :16
+        -- :8
+```
+
+En penchant la tête, on retrouve une lecture de l'ABR.
+
+Vous pouvez aussi l'utiliser pour déboguer votre code, il suffit d'ajouter un `print(repr(votre_abr))` à la place d'un (très vilain) `print(votre_variable_inconnue)`, ou bien d'utiliser un bon explorateur de variables dans votre éditeur préféré, s'il en dispose d'un.
+
+### Utilisation de GraphViz
+Il y a plusieurs façons d'utiliser GraphViz ; un outil de visualisation de graphe, comme son nom l'indique. Une façon est d'indiquer qu'on utilise le langage `dot`.
+1. On peut, comme dans ce document dont le code source est en Markdown, inclure du code `dot`. Pour ce faire, voir la [documentation](https://shd101wyy.github.io/markdown-preview-enhanced/#/diagrams?id=graphviz).
+2. On peut utiliser un [outil en ligne](https://dreampuf.github.io/GraphvizOnline/) pour visualiser son graphe.
+3. On peut installer aussi le logiciel...
+
+> Mais comment obtenir le code `dot` pour votre ABR ?
+>> Votre professeur vous offre une méthode `__str__` qui vous renvoie le code `dot` pour afficher votre ABR. Mais aussi une méthode `affiche_en_ligne` qui donne un lien internet direct vers votre ABR. **Magique.**
+
+```python
+    def __str__(self):
+        # Auteur : Franck CHAMBON
+        code_dot = []
+        ajout = code_dot.append
+        ajout("digraph arbre {")
+        sous_arbres = File()
+        sous_arbres.enfile((1, self))
+        while not sous_arbres.est_vide():
+            id_sous_arbre, sous_arbre = sous_arbres.défile()
+            if sous_arbre.est_vide():
+                ajout(f'    {id_sous_arbre} [label="", shape=plaintext];')
+            else:
+                ajout(f'    "{id_sous_arbre}" [label="{sous_arbre.racine.élément}"];')
+                id_gauche = 2*id_sous_arbre + 0
+                id_droite = 2*id_sous_arbre + 1
+                sous_arbres.enfile((id_gauche, sous_arbre.racine.gauche))
+                sous_arbres.enfile((id_droite, sous_arbre.racine.droite))
+                style_gauche = "[style=dashed, arrowhead=none]" if sous_arbre.racine.gauche.est_vide() else ""
+                ajout(f'    "{id_sous_arbre}" -> "{id_gauche}"' + style_gauche +' ;')
+                style_droite = "[style=dashed, arrowhead=none]" if sous_arbre.racine.droite.est_vide() else ""
+                ajout(f'    "{id_sous_arbre}" -> "{id_droite}"' + style_droite +' ;')
+        ajout('}')
+        sortie = '\n'.join(code_dot)
+        return sortie
+
+    def affiche_en_ligne(self):
+        """
+
+        >>> exemple_abr = ABR()
+        >>> for x in [21, 32, 11, 17, 24, 8, 16]: exemple_abr.ajoute(x)
+        >>> exemple_abr.affiche_en_ligne()
+        'https://dreampuf.github.io/GraphvizOnline/#digraph%20arbre%20%7B%0A%20%20%20%20%221%22%20%5Blabel%3D%2221%22%5D%3B%0A%20%20%20%20%221%22%20-%3E%20%222%22%20%3B%0A%20%20%20%20%221%22%20-%3E%20%223%22%20%3B%0A%20%20%20%20%222%22%20%5Blabel%3D%2211%22%5D%3B%0A%20%20%20%20%222%22%20-%3E%20%224%22%20%3B%0A%20%20%20%20%222%22%20-%3E%20%225%22%20%3B%0A%20%20%20%20%223%22%20%5Blabel%3D%2232%22%5D%3B%0A%20%20%20%20%223%22%20-%3E%20%226%22%20%3B%0A%20%20%20%20%223%22%20-%3E%20%227%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20%5Blabel%3D%228%22%5D%3B%0A%20%20%20%20%224%22%20-%3E%20%228%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20-%3E%20%229%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%225%22%20%5Blabel%3D%2217%22%5D%3B%0A%20%20%20%20%225%22%20-%3E%20%2210%22%20%3B%0A%20%20%20%20%225%22%20-%3E%20%2211%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20%5Blabel%3D%2224%22%5D%3B%0A%20%20%20%20%226%22%20-%3E%20%2212%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20-%3E%20%2213%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%207%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%208%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%209%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%20%2210%22%20%5Blabel%3D%2216%22%5D%3B%0A%20%20%20%20%2210%22%20-%3E%20%2220%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%2210%22%20-%3E%20%2221%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%2011%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2012%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2013%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2020%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2021%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%7D'
+
+        """
+        sortie = self.__str__()
+        for x, y in [(" ", "%20"), ("\n", "%0A"), ("{", "%7B"), ('"', "%22"),
+                     ("[", "%5B") ,("]", "%5D"), ("=", "%3D"), (";", "%3B"),
+                     (">", "%3E"), (",", "%2C"), ("}", "%7D")]:
+            sortie = sortie.replace(x, y)
+        return "https://dreampuf.github.io/GraphvizOnline/#" + sortie
+```
+
+**Utilisation.** Comme précédemment, mais avec l'usage explicite de `print` en console ou en script.
+
+```python
+>>> import ABR
+>>> exemple_abr = ABR.ABR()
+>>> for x in [21, 32, 11, 17, 24, 8, 16]: exemple_abr.ajout(x)
+>>> print(exemple_abr) # pour le code dot
+>>> exemple_abr.affiche_en_ligne() # pour un lien Internet direct
+```
+
+```
+https://dreampuf.github.io/GraphvizOnline/#digraph%20arbre%20%7B%0A%20%20%20%20%221%22%20%5Blabel%3D%2221%22%5D%3B%0A%20%20%20%20%221%22%20-%3E%20%222%22%20%3B%0A%20%20%20%20%221%22%20-%3E%20%223%22%20%3B%0A%20%20%20%20%222%22%20%5Blabel%3D%2211%22%5D%3B%0A%20%20%20%20%222%22%20-%3E%20%224%22%20%3B%0A%20%20%20%20%222%22%20-%3E%20%225%22%20%3B%0A%20%20%20%20%223%22%20%5Blabel%3D%2232%22%5D%3B%0A%20%20%20%20%223%22%20-%3E%20%226%22%20%3B%0A%20%20%20%20%223%22%20-%3E%20%227%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20%5Blabel%3D%228%22%5D%3B%0A%20%20%20%20%224%22%20-%3E%20%228%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%224%22%20-%3E%20%229%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%225%22%20%5Blabel%3D%2217%22%5D%3B%0A%20%20%20%20%225%22%20-%3E%20%2210%22%20%3B%0A%20%20%20%20%225%22%20-%3E%20%2211%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20%5Blabel%3D%2224%22%5D%3B%0A%20%20%20%20%226%22%20-%3E%20%2212%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%226%22%20-%3E%20%2213%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%207%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%208%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%209%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%20%2210%22%20%5Blabel%3D%2216%22%5D%3B%0A%20%20%20%20%2210%22%20-%3E%20%2220%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%20%2210%22%20-%3E%20%2221%22%5Bstyle%3Ddashed%2C%20arrowhead%3Dnone%5D%20%3B%0A%20%20%20%2011%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2012%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2013%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2020%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%20%20%20%2021%20%5Blabel%3D%22%22%2C%20shape%3Dplaintext%5D%3B%0A%7D
+```
+
+On obtient un lien, que l'on peut copier et ouvrir avec son navigateur Internet. Le résultat obtenu est ici :
+
+```dot
+digraph arbre {
+    "1" [label="21"];
+    "1" -> "2" ;
+    "1" -> "3" ;
+    "2" [label="11"];
+    "2" -> "4" ;
+    "2" -> "5" ;
+    "3" [label="32"];
+    "3" -> "6" ;
+    "3" -> "7"[style=dashed, arrowhead=none] ;
+    "4" [label="8"];
+    "4" -> "8"[style=dashed, arrowhead=none] ;
+    "4" -> "9"[style=dashed, arrowhead=none] ;
+    "5" [label="17"];
+    "5" -> "10" ;
+    "5" -> "11"[style=dashed, arrowhead=none] ;
+    "6" [label="24"];
+    "6" -> "12"[style=dashed, arrowhead=none] ;
+    "6" -> "13"[style=dashed, arrowhead=none] ;
+    7 [label="", shape=plaintext];
+    8 [label="", shape=plaintext];
+    9 [label="", shape=plaintext];
+    "10" [label="16"];
+    "10" -> "20"[style=dashed, arrowhead=none] ;
+    "10" -> "21"[style=dashed, arrowhead=none] ;
+    11 [label="", shape=plaintext];
+    12 [label="", shape=plaintext];
+    13 [label="", shape=plaintext];
+    20 [label="", shape=plaintext];
+    21 [label="", shape=plaintext];
+}
+```
