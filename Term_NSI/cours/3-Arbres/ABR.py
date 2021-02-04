@@ -6,10 +6,8 @@ class Nœud:
 
 
 class ABR:
-    def __init__(self, éléments=None):
+    def __init__(self):
         self.racine = None
-        for élément in éléments:
-            self.ajoute(élément)
     
     def est_vide(self):
         return self.racine is None

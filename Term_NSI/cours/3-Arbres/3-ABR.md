@@ -181,10 +181,13 @@ False
 
 
 ### FranceIOI
-Faire les exercice suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser la classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
+
+Faire les exercices suivants, sans utiliser les facilités du langage Python que sont les ensembles. Utiliser une classe `ABR` et uniquement des méthodes simples que l'on pourrait écrire dans de nombreux langages.
 
 
 * [Densité du plastique](http://www.france-ioi.org/algo/task.php?idChapter=525&idTask=756)
+ * [Carte de cinéma](http://www.france-ioi.org/algo/task.php?idChapter=527&idTask=1796)
 
 > Conseils :
 > 1. Pour 'Densité du plastique'. Utiliser simplement la classe `ABR` du cours. Vous ne pourrez passer que les tests 1 à 7 et le 9.
+> 2. Pour 'Carte de cinéma'. Utiliser votre réécriture avec `ajoute_si_absent`. Vous ne pourrez pas passer les tests 9 et 10.

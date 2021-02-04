@@ -635,10 +635,8 @@ pre[data-line] .line-highlight[data-end]:after {
 
 
 <span class="token keyword">class</span> <span class="token class-name">ABR</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ments<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>racine <span class="token operator">=</span> <span class="token boolean">None</span>
-        <span class="token keyword">for</span> &#xE9;l&#xE9;ment <span class="token keyword">in</span> &#xE9;l&#xE9;ments<span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>ajoute<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
     
     <span class="token keyword">def</span> <span class="token function">est_vide</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>racine <span class="token keyword">is</span> <span class="token boolean">None</span>
@@ -717,14 +715,16 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token boolean">False</span>
 </pre><h3 class="mume-header" id="franceioi">FranceIOI</h3>
 
-<p>Faire les exercice suivants, sans utiliser les facilit&#xE9;s du langage Python que sont les ensembles. Utiliser la classe <code>ABR</code> et uniquement des m&#xE9;thodes simples que l&apos;on pourrait &#xE9;crire dans de nombreux langages.</p>
+<p>Faire les exercices suivants, sans utiliser les facilit&#xE9;s du langage Python que sont les ensembles. Utiliser une classe <code>ABR</code> et uniquement des m&#xE9;thodes simples que l&apos;on pourrait &#xE9;crire dans de nombreux langages.</p>
 <ul>
 <li><a href="http://www.france-ioi.org/algo/task.php?idChapter=525&amp;idTask=756">Densit&#xE9; du plastique</a></li>
+<li><a href="http://www.france-ioi.org/algo/task.php?idChapter=527&amp;idTask=1796">Carte de cin&#xE9;ma</a></li>
 </ul>
 <blockquote>
 <p>Conseils :</p>
 <ol>
 <li>Pour &apos;Densit&#xE9; du plastique&apos;. Utiliser simplement la classe <code>ABR</code> du cours. Vous ne pourrez passer que les tests 1 &#xE0; 7 et le 9.</li>
+<li>Pour &apos;Carte de cin&#xE9;ma&apos;. Utiliser votre r&#xE9;&#xE9;criture avec <code>ajoute_si_absent</code>. Vous ne pourrez pas passer les tests 9 et 10.</li>
 </ol>
 </blockquote>
 
