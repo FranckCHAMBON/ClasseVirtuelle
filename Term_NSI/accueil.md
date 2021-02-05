@@ -77,14 +77,3 @@ Pour le code Python des solutions :
 
 * [Graphes](cours/4-Graphes/1-graphes.html)
 
-## 🐚 Interfaces Homme Machine
-
-> Systèmes d'exploitation et commandes Bash
-
-Activités entièrement réalisables sur tablette Android avec l'application [Termux](https://termux.com/).
-
-* 0-[Installation](Termux/0-termux.html) *Seule cette activité nécessite une connexion Internet.*
-* 1-[Découverte de Bash](Termux/1-bash.html)
-* 2-[Édition de code dans un terminal](Termux/2-micro.html)
-* 3-[Création de jeux de tests](Termux/3-tests.html) *À venir*
-

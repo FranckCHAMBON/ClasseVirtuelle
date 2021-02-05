@@ -22,6 +22,14 @@ Rendez-vous en cas de confinement complet :
     * [3 - Variables Python](Cours/3-variables.html)
     * [4 - Types simples : nombres, chaîne, tableau et tuple](Cours/4-types1.html)
     * [5 - Types avancés : listes dynamiques, ensembles, dictionnaires](Cours/5-types2.html) *En construction*
+    * 6 - 🐚 Interfaces Homme Machine (Systèmes d'exploitation et commandes Bash)
+        * Activités entièrement réalisables sur tablette Android avec l'application [Termux](https://termux.com/).
+        * 0-[Installation](Termux/0-termux.html) *Seule cette activité nécessite une connexion Internet.*
+        * 1-[Découverte de Bash](Termux/1-bash.html)
+        * 2-[Édition de code dans un terminal](Termux/2-micro.html)
+        * 3-[Création de jeux de tests](Termux/3-tests.html) *À venir*
+
+
     * [Python au lycée](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
 1. :loudspeaker: Il est **important** de poursuivre le travail avec [FranceIOI](http://www.france-ioi.org/algo/chapters.php?progression=1)
     * [Correction et étude des solutions aux problèmes](FranceIOI/accueil.html).
