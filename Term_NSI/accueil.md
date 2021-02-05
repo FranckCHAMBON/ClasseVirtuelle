@@ -73,7 +73,7 @@ Pour le code Python des solutions :
     * [Corrections d'exercices](cours/3-Arbres/3-correction.html)
 
 
-## :diamond_shape_with_a_dot_inside: : Graphes
+## :diamond_shape_with_a_dot_inside: Graphes
 
 * [Graphes](cours/4-Graphes/1-graphes.html)
 
