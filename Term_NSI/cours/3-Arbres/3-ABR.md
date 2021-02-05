@@ -307,6 +307,42 @@ https://dreampuf.github.io/GraphvizOnline/#digraph%20arbre%20%7B%0A%20%20%20%20%
 
 On obtient un lien, que l'on peut copier et ouvrir avec son navigateur Internet. Le résultat obtenu est ici :
 
+```
+digraph arbre {
+    "1" [label="21"];
+    "1" -> "2" ;
+    "1" -> "3" ;
+    "2" [label="11"];
+    "2" -> "4" ;
+    "2" -> "5" ;
+    "3" [label="32"];
+    "3" -> "6" ;
+    "3" -> "7"[style=dashed, arrowhead=none] ;
+    "4" [label="8"];
+    "4" -> "8"[style=dashed, arrowhead=none] ;
+    "4" -> "9"[style=dashed, arrowhead=none] ;
+    "5" [label="17"];
+    "5" -> "10" ;
+    "5" -> "11"[style=dashed, arrowhead=none] ;
+    "6" [label="24"];
+    "6" -> "12"[style=dashed, arrowhead=none] ;
+    "6" -> "13"[style=dashed, arrowhead=none] ;
+    7 [label="", shape=plaintext];
+    8 [label="", shape=plaintext];
+    9 [label="", shape=plaintext];
+    "10" [label="16"];
+    "10" -> "20"[style=dashed, arrowhead=none] ;
+    "10" -> "21"[style=dashed, arrowhead=none] ;
+    11 [label="", shape=plaintext];
+    12 [label="", shape=plaintext];
+    13 [label="", shape=plaintext];
+    20 [label="", shape=plaintext];
+    21 [label="", shape=plaintext];
+}
+```
+
+Et le résultat :
+
 ```dot
 digraph arbre {
     "1" [label="21"];
