@@ -65,7 +65,7 @@ digraph expression
 }
 ```
 
-### Un ABR peut être un peigne
+#### Un ABR peut être un peigne
 
 ```dot
 digraph expression
@@ -97,7 +97,7 @@ digraph expression
 }
 ```
 
-### ABR en général
+#### ABR en général
 
 Un ABR peut être complet, peigne, équilibré, presque complet, mais en général peut être de toute forme d'arbre binaire.
 
