@@ -8,12 +8,40 @@
 
 ### Réseaux et cartes
 #### Réseau social
-#### Réseau routier, cartes
-#### Labyrinthe
 
+![](assets/social.png)
+
+Sur ce graphe, on constate qu'il y a une grosse **composante connexe**, et quelques petites.
+
+#### Réseau routier, cartes
+![](assets/routes.png)
+
+Sur ce graphe, les **sommets** sont des lieux sur la carte, et les **arcs** sont des routes les reliant.
+
+On pourrait ajouter des flèches, pour indiquer les sens uniques. Dans ce cas, le graphe serait **orienté**.
+
+#### Labyrinthe
+![](assets/laby.png)
+
+Voici un labyrinthe qui n'est pas parfait, il y a un îlot. On ne peut pas en sortir en utilisant la technique de la main gauche (ou droite) si on part d'un point entre $D$ et $F$.
+
+À droite, on voit une modélisation sous forme de graphe, dont on pourra faire un **parcours**.
 
 ### Positions à un jeu
+![](assets/jeu.jpg)
 
+Dans un jeu où on ne retrouve pas deux fois dans la même partie la même position, le graphe des positions est **sans cycle**, donc un arbre. Ici, on peut prouver qu'il y a match nul pour deux joueurs qui ont la meilleure stratégie.
+* Les feuilles sont des parties finies, $-1$ pour une défaite de `X`, $+1$ pour une victoire, et $0$ pour un nul.
+* À chaque étage, pour remonter
+    * si c'est le tour de `X`, on prend le maximum des possibilités.
+    * Si c'est le tour de `O`, on prend le minimum des possibilités.
+
+
+### Graphes de dépendances
+![](assets/dépendances.jpg)
+Ce graphe indique les modules requis pour accéder à d'autres dans un cursus universitaire en informatique.
+
+Ce genre de graphe est utilisé, par exemple, en compilation, où un source ne peut être compilé que si ses dépendances sont satisfaites... Il faut évidemment vérifier l'absence de **cycle** !
 
 ## Définitions
 
@@ -251,4 +279,8 @@ class Graphe:
 **Exercice 5.** Reprendre l'exercice 4, avec cette nouvelle implémentation.
 
 ### Listes d'adjacences
-Il est possible aussi...
+Il est possible aussi d'utiliser des listes, en vérifiant bien l'absence de doublon.
+
+Pour implémenter cette solution, on utilise souvent le principe de **marquage** des sommets, lorsqu'ils sont visités par exemple.
+* Sur un schéma, on leur met une couleur, ou on l'entoure.
+* Dans un programme, on modifie la valeur du sommet, par un code indiquant qu'il est visité. On peut même indiquer des informations plus pertinentes comme la distance minimale par rapport à un point de départ...

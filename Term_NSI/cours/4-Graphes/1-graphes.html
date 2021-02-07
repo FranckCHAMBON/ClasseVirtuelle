@@ -276,6 +276,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 </li>
 <li><a href="#positions-%C3%A0-un-jeu">Positions &#xE0; un jeu</a></li>
+<li><a href="#graphes-de-d%C3%A9pendances">Graphes de d&#xE9;pendances</a></li>
 </ul>
 </li>
 <li><a href="#d%C3%A9finitions">D&#xE9;finitions</a></li>
@@ -303,12 +304,36 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h4 class="mume-header" id="r%C3%A9seau-social">R&#xE9;seau social</h4>
 
+<p><img src="assets/social.png" alt></p>
+<p>Sur ce graphe, on constate qu&apos;il y a une grosse <strong>composante connexe</strong>, et quelques petites.</p>
 <h4 class="mume-header" id="r%C3%A9seau-routier-cartes">R&#xE9;seau routier, cartes</h4>
 
+<p><img src="assets/routes.png" alt></p>
+<p>Sur ce graphe, les <strong>sommets</strong> sont des lieux sur la carte, et les <strong>arcs</strong> sont des routes les reliant.</p>
+<p>On pourrait ajouter des fl&#xE8;ches, pour indiquer les sens uniques. Dans ce cas, le graphe serait <strong>orient&#xE9;</strong>.</p>
 <h4 class="mume-header" id="labyrinthe">Labyrinthe</h4>
 
+<p><img src="assets/laby.png" alt></p>
+<p>Voici un labyrinthe qui n&apos;est pas parfait, il y a un &#xEE;lot. On ne peut pas en sortir en utilisant la technique de la main gauche (ou droite) si on part d&apos;un point entre <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span>.</p>
+<p>&#xC0; droite, on voit une mod&#xE9;lisation sous forme de graphe, dont on pourra faire un <strong>parcours</strong>.</p>
 <h3 class="mume-header" id="positions-%C3%A0-un-jeu">Positions &#xE0; un jeu</h3>
 
+<p><img src="assets/jeu.jpg" alt></p>
+<p>Dans un jeu o&#xF9; on ne retrouve pas deux fois dans la m&#xEA;me partie la m&#xEA;me position, le graphe des positions est <strong>sans cycle</strong>, donc un arbre. Ici, on peut prouver qu&apos;il y a match nul pour deux joueurs qui ont la meilleure strat&#xE9;gie.</p>
+<ul>
+<li>Les feuilles sont des parties finies, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span> pour une d&#xE9;faite de <code>X</code>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span> pour une victoire, et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> pour un nul.</li>
+<li>&#xC0; chaque &#xE9;tage, pour remonter
+<ul>
+<li>si c&apos;est le tour de <code>X</code>, on prend le maximum des possibilit&#xE9;s.</li>
+<li>Si c&apos;est le tour de <code>O</code>, on prend le minimum des possibilit&#xE9;s.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="graphes-de-d%C3%A9pendances">Graphes de d&#xE9;pendances</h3>
+
+<p><img src="assets/d%C3%A9pendances.jpg" alt><br>
+Ce graphe indique les modules requis pour acc&#xE9;der &#xE0; d&apos;autres dans un cursus universitaire en informatique.</p>
+<p>Ce genre de graphe est utilis&#xE9;, par exemple, en compilation, o&#xF9; un source ne peut &#xEA;tre compil&#xE9; que si ses d&#xE9;pendances sont satisfaites... Il faut &#xE9;videmment v&#xE9;rifier l&apos;absence de <strong>cycle</strong> !</p>
 <h2 class="mume-header" id="d%C3%A9finitions">D&#xE9;finitions</h2>
 
 <p>Un <strong>graphe</strong> est un ensemble fini de <strong>sommets</strong> reli&#xE9;s entre eux par des <strong>arcs</strong>. On note souvent <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy="false">(</mo><mi>V</mi><mo separator="true">,</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G = (V, E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span>.</p>
@@ -741,7 +766,12 @@ g<span class="token punctuation">.</span>ajout_arc<span class="token punctuation
 </pre><p><strong>Exercice 5.</strong> Reprendre l&apos;exercice 4, avec cette nouvelle impl&#xE9;mentation.</p>
 <h3 class="mume-header" id="listes-dadjacences">Listes d&apos;adjacences</h3>
 
-<p>Il est possible aussi...</p>
+<p>Il est possible aussi d&apos;utiliser des listes, en v&#xE9;rifiant bien l&apos;absence de doublon.</p>
+<p>Pour impl&#xE9;menter cette solution, on utilise souvent le principe de <strong>marquage</strong> des sommets, lorsqu&apos;ils sont visit&#xE9;s par exemple.</p>
+<ul>
+<li>Sur un sch&#xE9;ma, on leur met une couleur, ou on l&apos;entoure.</li>
+<li>Dans un programme, on modifie la valeur du sommet, par un code indiquant qu&apos;il est visit&#xE9;. On peut m&#xEA;me indiquer des informations plus pertinentes comme la distance minimale par rapport &#xE0; un point de d&#xE9;part...</li>
+</ul>
 
       </div>
       
