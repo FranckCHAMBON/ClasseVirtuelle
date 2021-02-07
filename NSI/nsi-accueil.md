@@ -21,7 +21,7 @@ Rendez-vous en cas de confinement complet :
     * [2 - Calculatrice Python](Cours/2-calc.html)
     * [3 - Variables Python](Cours/3-variables.html)
     * [4 - Types simples : nombres, chaîne, tableau et tuple](Cours/4-types1.html)
-    * [5 - Types avancés : listes dynamiques, ensembles, dictionnaires](Cours/5-types2.html) *En construction*
+    * [5 - Types avancés : listes dynamiques, ensembles, dictionnaires](Cours/5-types2.html)
     * 6 - 🐚 Interfaces Homme Machine (Systèmes d'exploitation et commandes Bash)
         * Activités entièrement réalisables sur tablette Android avec l'application [Termux](https://termux.com/).
         * 0-[Installation](Termux/0-termux.html) *Seule cette activité nécessite une connexion Internet.*

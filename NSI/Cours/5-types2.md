@@ -2,7 +2,8 @@
 
 ## Les listes dynamiques
 
-On a déjà évoqué que la structure de données élémentaire, dans presque tous les langages de programmation, utilisée pour stocker en ligne des éléments de même nature est le tableau.
+On a déjà évoqué que la structure de données élémentaire, dans presque tous les langages de programmation, utilisée pour stocker en ligne des éléments de même nature est le **tableau**.
+
 Un tableau : 
 * a une taille fixe définie à la création,
 * a ses éléments de même nature, modifiables.
@@ -148,4 +149,108 @@ Comme pour les listes, on a les fonctions suivantes pour `truc` un ensemble (de 
 
 ## Les dictionnaires
 
-*À venir*
+Le principe d'un dictionnaire est de créer, comme pour un tableau, une association entre des **clés** et des **valeurs**.
+
+* Dans un tableau `tab` de taille $n$, les clés sont les indices `i` de $0$ inclus à $n$ exclus. On note `tab[i]` la valeur associée à l'indice `i`.
+* Dans un dictionnaire `dico`, les clés peuvent être tout objet `clé`, et la valeur associée est référencée avec `dico[clé]`, avec le même style que pour les tableaux, donc.
+
+### Utilisations simples
+
+* Pour créer un dictionnaire vide, on entre `mon_dico = dict()`
+    * On pourrait aussi utiliser `mon_dico = {}`, mais cela peut donner une confusion avec l'ensemble vide...
+* Pour ajouter, ou modifier une association clé-valeur, on entre `mon_dico[ma_clé] = ma_valeur`.
+* Pour créer un dictionnaire non vide, on peut faire comme l'exemple ci-dessous.
+
+```python
+# codé en dur
+longueur_mot = {'pour': 4, 'créer': 5, 'un': 2, 'dictionnaire': 12}
+
+# avec une boucle
+phrase = "pour créer un dictionnaire"
+longueur_mot = dict()
+for mot in phase.split():
+    longueur_mot[mot] = len(mot)
+
+# avec une compréhension
+phrase = "pour créer un dictionnaire"
+longueur_mot = {mot: len(mot) for mot in phrase.split()}
+```
+
+### Exemples de dictionnaires
+#### Pour traduire des mots
+```python
+>>> traduction_fr_en = {'mot': 'word', 'virgule' : 'coma', 'phrase' : 'sentence', 'point': 'point'}
+>>> traduction_fr_en['phrase']
+'sentence'
+>>> traduction_fr_en['lettre']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'lettre'
+```
+
+#### Pour stocker des numéros
+
+Voici un script qui enregistre des numéros de cartes pour une classe.
+
+```python
+def inscrire_élèves(nb_élèves):
+    num_carte = dict()
+    for _ in range(nb_élèves):
+        nom = input('Quel est votre nom ?')
+        numéro = input('Quel est votre numéro de carte ?')
+        num_carte[nom] = numéro
+    return num_carte
+```
+
+#### Pour mémoriser des résultats
+
+On suppose que l'on a une fonction `f` dont le calcul coûte cher pour certaines entrées que l'on appelle souvent.
+* Si les entrées sont des petits entiers alors un tableau est idéal pour stocker les valeurs associées à l'entrée qui sera l'indice du tableau. On peut initialiser le tableau rempli de `None` pour désigner le fait que la fonction n'a pas encore été calculée.
+* Sinon, on peut utiliser un dictionnaire.
+
+
+> Version avec un tableau
+
+```python
+# on suppose f est une fonction à un paramètre entier x
+
+# On va utiliser un tableau pour stocker certaines valeurs
+
+tab_taille = 10000
+f_tab = [None for _ in range(tab_taille)]
+
+def f_mem(x):
+    if 0 <= x < tab_taille:
+        if f_tab[x] is None:
+            f_tab[x] = f(x)
+        return f_tab[x]
+    else:
+        return f(x)
+```
+
+
+> Version avec un dictionnaire
+
+```python
+# on suppose f est une fonction à un paramètre entier x
+
+# On va utiliser un dictionnaire pour stocker certaines valeurs
+
+f_dico = dict()
+
+def f_mem(x):
+    if not(x in f_dico):
+        f_dico[x] = f(x)
+    return f_dico[x]
+```
+
+> Le code est bien plus simple, inutile de faire des suppositions sur l'entrée. C'est une excellente pratique. On la trouve souvent avec la dénomination de **mémoïsation**.
+
+
+### Itérer avec un dictionnaire
+On fera comme s'il n'y avait pas d'ordre pour les clés, et que l'on peut itérer sur les différentes clés d'un dictionnaire avec le code :
+
+```python
+for une_clé in mon_dico:
+    ma_fonction(mon_dico[une_clé])
+```
