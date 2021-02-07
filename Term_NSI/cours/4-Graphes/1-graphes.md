@@ -37,7 +37,7 @@ Dans un jeu où on ne retrouve pas deux fois dans la même partie la même posit
     * Si c'est le tour de `O`, on prend le minimum des possibilités.
 
 
-### Graphes de dépendances
+### Graphes de prérequis
 ![](assets/dépendances.jpg)
 Ce graphe indique les modules requis pour accéder à d'autres dans un cursus universitaire en informatique.
 
