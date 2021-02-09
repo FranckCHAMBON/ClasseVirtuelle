@@ -25,7 +25,7 @@ On pourrait ajouter des flèches, pour indiquer les sens uniques. Dans ce cas, l
 
 Voici un labyrinthe qui n'est pas parfait, il y a un îlot. On ne peut pas en sortir en utilisant la technique de la main gauche (ou droite) si on part d'un point entre $D$ et $F$.
 
-À droite, on voit une modélisation sous forme de graphe, dont on pourra faire un **parcours**.
+À droite, on voit une modélisation sous forme de graphe, dont on pourra faire des **parcours** de graphe (en largeur ou en profondeur) pour résoudre des problèmes.
 
 ### Positions à un jeu
 ![](assets/jeu.jpg)
@@ -39,8 +39,9 @@ Dans un jeu où on ne retrouve pas deux fois dans la même partie la même posit
 
 ### Graphes de prérequis
 ![](assets/dépendances.jpg)
-Ce graphe indique les modules requis pour accéder à d'autres dans un cursus universitaire en informatique.
+Ce graphe indique les modules requis pour accéder à d'autres dans un cursus universitaire en informatique, ou bien les lectures conseillées de chapitres avant d'aborder d'autres.
 
+### Graphes de dépendances
 Ce genre de graphe est utilisé, par exemple, en compilation, où un source ne peut être compilé que si ses dépendances sont satisfaites... Il faut évidemment vérifier l'absence de **cycle** !
 
 ## Définitions
@@ -134,7 +135,7 @@ Si les arcs sont pondérés, on peut aussi s'intéresser au chemin entre deux so
 ### Variantes de vocabulaire
 * Parfois les sommets sont appelés nœuds.
 * Parfois les chemins sont définis par une liste d'arêtes ; c'est utile si le graphe n'est pas simple, et où plusieurs arcs relient la même paire de sommet.
-
+* Parfois, on autorise les boucles : un arc qui part d'un sommet pour arriver au même sommet. Ce ne sont plus des graphes simples ; on ne les voit pas en NSI, ils sont utilisés pour les automates en post BAC.
 
 ## Représentation en Python
 
@@ -284,3 +285,23 @@ Il est possible aussi d'utiliser des listes, en vérifiant bien l'absence de dou
 Pour implémenter cette solution, on utilise souvent le principe de **marquage** des sommets, lorsqu'ils sont visités par exemple.
 * Sur un schéma, on leur met une couleur, ou on l'entoure.
 * Dans un programme, on modifie la valeur du sommet, par un code indiquant qu'il est visité. On peut même indiquer des informations plus pertinentes comme la distance minimale par rapport à un point de départ...
+
+## Parcours de graphe
+
+### Exercice 1
+1. Reprendre le cours sur les ABR et le code pour le parcours en largeur, celui avec l'utilisation d'une file.
+2. Remplacer la structure `File` par la structure `Pile`. Qu'obtient-on comme parcours ?
+3. En déduire une façon de procéder aux parcours en largeur et en profondeur des graphes.
+4. Votre méthode fonctionne-t-elle si le graphe contient un cycle ?
+
+### Exercice 2
+1. Écrire une méthode `donne_cycle(self, sommet)` qui renvoie `None` si `sommet` ne fait partie d'aucun cycle, et sinon renvoie une liste de sommets, de `sommet` à `sommet` constituant un cycle.
+2. En imaginant que vous travaillez avec un langage qui ne propose pas `None` et qui impose de renvoyer un résultat de même type pour chaque fonction, quelle solution de codage envisager dans le cas présent pour signifier l'absence de cycle.
+3. Hors programme, mais facile. Même question que 2., en supposant la présence de boucle dans le graphe.
+
+### Exercice 3
+Écrire une méthode `sortie_courte(self, sommet)` qui renvoie un plus court chemin de `sommet` vers un sommet sans successeur.
+
+### Exercice 4
+Écrire une méthode `chemin_court(self, initial, fin)` qui renvoie un plus court chemin d'un sommet `initial` vers un sommet `fin`, et `None` s'il n'y en a pas.
+
