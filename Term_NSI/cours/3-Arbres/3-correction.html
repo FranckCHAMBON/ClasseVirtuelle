@@ -391,13 +391,13 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Code Python</li>
 </ol>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">nb_occurences</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> &#xE9;l&#xE9;ment<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token number">0</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token operator">&lt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">&lt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
             <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token operator">&gt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment <span class="token operator">&gt;</span> &#xE9;l&#xE9;ment<span class="token punctuation">:</span>
             <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
-        <span class="token comment">#On a : self.racine == &#xE9;l&#xE9;ment:</span>
+        <span class="token comment">#On a : self.racine.&#xE9;l&#xE9;ment == &#xE9;l&#xE9;ment:</span>
         <span class="token keyword">return</span>  <span class="token number">1</span> <span class="token operator">+</span> \
                 self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span> <span class="token operator">+</span> \
                 self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">.</span>nb_occurences<span class="token punctuation">(</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
@@ -422,7 +422,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </ol>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">vers_liste</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment"># cela correspond &#xE0; un parcours infixe</span>
-    <span class="token keyword">if</span> self<span class="token punctuation">.</span>racine <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">return</span>  self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">.</span>vers_liste<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>\
             <span class="token punctuation">[</span>self<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">]</span> <span class="token operator">+</span>\

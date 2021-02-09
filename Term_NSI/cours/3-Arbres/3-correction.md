@@ -81,13 +81,13 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 1. Code Python
 ```python
     def nb_occurences(self, élément):
-        if self.racine is None:
+        if self.est_vide():
             return 0
-        if self.racine < élément:
+        if self.racine.élément < élément:
             return  self.racine.droite.nb_occurences(élément)
-        if self.racine > élément:
+        if self.racine.élément > élément:
             return  self.racine.gauche.nb_occurences(élément)
-        #On a : self.racine == élément:
+        #On a : self.racine.élément == élément:
         return  1 + \
                 self.racine.gauche.nb_occurences(élément) + \
                 self.racine.droite.nb_occurences(élément)
@@ -107,7 +107,7 @@ On suppose qu'on a un ABR où un élément peut être présent plusieurs fois, e
 ```python
 def vers_liste(self):
     # cela correspond à un parcours infixe
-    if self.racine is None:
+    if self.est_vide():
         return []
     return  self.racine.gauche.vers_liste() +\
             [self.racine.élément] +\
