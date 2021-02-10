@@ -49,6 +49,19 @@ Pour le code Python des solutions :
 3. [Niveau 3](N3/accueil.html)
 
 
+## 🔄 Récursivité
+
+* [Récursivité](cours/1-Récursivité/récursif.html)
+
+## ⚠️ Gestion des erreurs
+
+* [Gestion des erreurs](cours/2-Error/?.html) **à venir**
+
+## 🎢 Modularité
+
+* [Modularité](cours/3-Module/?.html) **à venir**
+
+
 ## :artificial_satellite: Programmation Orientée Objet (POO)
 
 * [Introduction à la POO](cours/1-POO/POO.html)
