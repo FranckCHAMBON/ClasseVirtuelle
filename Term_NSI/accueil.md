@@ -49,6 +49,10 @@ Pour le code Python des solutions :
 3. [Niveau 3](N3/accueil.html)
 
 
+## 🦺 Histoire d'UNIX
+
+* [Histoire d'UNIX](cours/0-Histoire/Unix.html)
+
 ## 🔄 Récursivité
 
 * [Récursivité](cours/1-Récursivité/récursif.html)
