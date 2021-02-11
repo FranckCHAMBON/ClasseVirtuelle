@@ -143,11 +143,12 @@ def puissance(a, n: int):
 ```
 
 
-## Tours de Hanoï
-Utiliser une fonction récursive pour résoudre [ce problème]() sur FranceIOI.
+#### FranceIOI
+Résoudre les problèmes au sujet de [la récursivité sur FranceIOI](http://www.france-ioi.org/algo/chapter.php?idChapter=513).
+
 
 ### Solution
-Suivre ce [lien](https://franckchambon.github.io/ClasseVirtuelle/Term_NSI/N3/8-R%C3%A9cursivit%C3%A9/4-Tours_de_Hano%C3%AF.html).
+Suivre ce [lien](https://franckchambon.github.io/ClasseVirtuelle/Term_NSI/N3/accueil.html#r%C3%A9cursivit%C3%A9).
 
 ## Arbre de Pythagore
 ## Flocon de Von Koch

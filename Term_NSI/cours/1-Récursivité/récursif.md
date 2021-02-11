@@ -187,8 +187,8 @@ En partant du principe que :
 > **Indice** : Penser au cas de base !
 2. Compter à la main le nombre d'appels récursifs pour `puissance(7, 20)`.
 
-#### Tours de Hanoï
-Utiliser une fonction récursive pour résoudre [ce problème]() sur FranceIOI.
+#### FranceIOI
+Résoudre les problèmes au sujet de [la récursivité sur FranceIOI](http://www.france-ioi.org/algo/chapter.php?idChapter=513).
 
 #### Arbre de Pythagore
 #### Flocon de Von Koch
