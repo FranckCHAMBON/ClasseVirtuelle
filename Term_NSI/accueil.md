@@ -45,7 +45,7 @@ Pour le code Python des solutions :
 
 ### ⚠️ Gestion des erreurs
 
-* [Gestion des erreurs](cours/2-Error/?.html) **à venir**
+* [Gestion des erreurs](cours/2-Error/error.html)
 * [Bonnes pratiques de codage](pep.html) : les PEP
 * [Aide sur *doctest*](doctest.html)
 
