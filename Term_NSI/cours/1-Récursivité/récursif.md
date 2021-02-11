@@ -202,12 +202,23 @@ $$
 f_{91}(n)=
 \begin{cases}
 n-10, &\text{si } n > 100\\
-f_{91}\left(f_{91}(n+1)\right), &\text{si } n \leqslant 100\\
+f_{91}\left(f_{91}(n+11)\right), &\text{si } n \leqslant 100\\
 \end{cases}
 $$
 
 1. Implémenter cette fonction en Python.
 2. Donner un tableau de valeurs de $f_{91}(n)$, pour $n\in [\![0..100]\!]$.
 
+#### Nombre de façons d'écrire comme une somme ==**Nouveau**==
+On considère $f(n)$ : le nombre de façons d'écrire un entier $n>0$ comme somme d'entiers strictement positifs, sans tenir compte de l'ordre.
 
+Par exemple, $5$ peut s'écrire de $f(5) = 7$ façons :
+* $1+1+1+1+1$ ; la somme la plus longue,
+* $2+2+1$,
+* $1+3+1$,
+* $2+3$,
+* $5$ ; oui, une somme à un seul terme,
+* $1+4$,
+* $1+2+1+1$.
 
+Écrire une fonction qui renvoie $f(n)$.

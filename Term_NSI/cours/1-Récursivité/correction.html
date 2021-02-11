@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>r&#xE9;cursif</title>
+      <title>correction</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,201 +261,115 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header undefined" id="r%C3%A9cursivit%C3%A9">R&#xE9;cursivit&#xE9;</h1>
-
-<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+      <h1 class="mume-header undefined" id="correction-des-exercices">Correction des exercices</h1>
 
 <ul>
-<li><a href="#exemples">Exemples</a>
+<li><a href="#nombre-de-chiffres">Nombre de chiffres</a>
 <ul>
-<li><a href="#sigles-r%C3%A9cursifs">Sigles r&#xE9;cursifs</a></li>
-<li><a href="#images">Images</a></li>
+<li><a href="#solution">Solution</a></li>
 </ul>
 </li>
-<li><a href="#d%C3%A9finitions">D&#xE9;finitions</a></li>
-<li><a href="#fonctions-r%C3%A9cursives">Fonctions r&#xE9;cursives</a>
+<li><a href="#nombre-de-bits-%C3%A9gaux-%C3%A0-1">Nombre de bits &#xE9;gaux &#xE0; 1</a>
 <ul>
-<li><a href="#exemple-somme-des-premiers-entiers">Exemple, somme des premiers entiers</a>
-<ul>
-<li><a href="#version-it%C3%A9rative">Version it&#xE9;rative</a></li>
-<li><a href="#version-r%C3%A9cursive">Version r&#xE9;cursive</a></li>
+<li><a href="#solution-1">Solution</a></li>
 </ul>
 </li>
-<li><a href="#diff%C3%A9rents-types-de-fonctions-r%C3%A9cursives">Diff&#xE9;rents types de fonctions r&#xE9;cursives</a>
+<li><a href="#calcul-de-puissance">Calcul de puissance</a>
 <ul>
-<li><a href="#appels-multiples">Appels multiples</a></li>
-<li><a href="#appels-crois%C3%A9s">Appels crois&#xE9;s</a></li>
+<li><a href="#solution-2">Solution</a></li>
 </ul>
 </li>
-<li><a href="#exercices-concrets">Exercices concrets</a>
+<li><a href="#tours-de-hano%C3%AF">Tours de Hano&#xEF;</a>
 <ul>
-<li><a href="#nombre-de-chiffres">Nombre de chiffres</a></li>
-<li><a href="#nombre-de-bits-%C3%A9gaux-%C3%A0-1">Nombre de bits &#xE9;gaux &#xE0; 1</a></li>
-<li><a href="#calcul-de-puissance">Calcul de puissance</a></li>
-<li><a href="#tours-de-hano%C3%AF">Tours de Hano&#xEF;</a></li>
+<li><a href="#solution-3">Solution</a></li>
+</ul>
+</li>
 <li><a href="#arbre-de-pythagore">Arbre de Pythagore</a></li>
 <li><a href="#flocon-de-von-koch">Flocon de Von Koch</a></li>
 <li><a href="#triangle-de-pascal">Triangle de Pascal</a></li>
 <li><a href="#fonction-dackermann">Fonction d&apos;Ackermann</a></li>
-<li><a href="#r%C3%A9cursions-imbriqu%C3%A9es">R&#xE9;cursions imbriqu&#xE9;es</a></li>
+<li><a href="#r%C3%A9cursions-imbriqu%C3%A9es">R&#xE9;cursions imbriqu&#xE9;es</a>
+<ul>
+<li><a href="#solution-4">Solution</a></li>
+</ul>
+</li>
 <li><a href="#nombre-de-fa%C3%A7ons-d%C3%A9crire-comme-une-somme-nouveau">Nombre de fa&#xE7;ons d&apos;&#xE9;crire comme une somme <mark><strong>Nouveau</strong></mark></a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>&#xAB; Nous les hackers nous [...] avions aussi une tradition d&apos;acronymes r&#xE9;cursifs qui consiste &#xE0; dire que le programme qu&apos;on cr&#xE9;e est similaire &#xE0; un programme existant. &#xBB;<br>
-<em>Richard Stallman</em></p>
-</blockquote>
-<h2 class="mume-header" id="exemples">Exemples</h2>
-
-<h3 class="mume-header" id="sigles-r%C3%A9cursifs">Sigles r&#xE9;cursifs</h3>
-
-<ul>
-<li><strong>GNU</strong> : <em>GNU&apos;s Not UNIX</em> (GNU n&apos;est pas UNIX)</li>
-<li><strong>LAME</strong> : <em>Lame Ain&apos;t an MP3 Encoder</em> (Lame n&apos;est pas un encodeur mp3.)</li>
-<li><strong>PHP</strong> : <em>PHP: Hypertext Preprocessor</em>. (Historiquement, ce sigle r&#xE9;cursif &#xE9;tait l&apos;abr&#xE9;viation de Personal Home Page ; en 2008, le sigle r&#xE9;cursif est le sens officiel de PHP)</li>
-<li><strong>HURD</strong> : <em>Hird of Unix-Replacing Daemons</em> et <strong>HIRD</strong> : <em>Hurd of Interfaces Representing Depth</em> ; exemple de paire de sigles mutuellement r&#xE9;cursifs.</li>
-</ul>
-<p><img src="assets/tumblr_l9bz3qDYWF1qdmjkto1_1280.jpg" alt="cette image n&apos;est pas sous licence libre"></p>
-<blockquote>
-<p><em>Les Deux Myst&#xE8;res</em>, Ren&#xE9; Magritte</p>
-</blockquote>
-<h3 class="mume-header" id="images">Images</h3>
-
-<p>Dans la nature, on trouve diff&#xE9;rents objets qui font preuve d&apos;auto-similarit&#xE9;. On peut aussi les construire artificiellement.</p>
-<p><img src="assets/Fractal_Broccoli.jpg" alt></p>
-<p><img src="assets/Bransleys_fern.png" alt></p>
-<h2 class="mume-header" id="d%C3%A9finitions">D&#xE9;finitions</h2>
-
-<p>(D&apos;apr&#xE8;s <a href="https://fr.wikipedia.org/wiki/R%C3%A9cursivit%C3%A9">Wikip&#xE9;dia</a>)<br>
-La r&#xE9;cursivit&#xE9; est une d&#xE9;marche qui fait r&#xE9;f&#xE9;rence &#xE0; l&apos;objet m&#xEA;me de la d&#xE9;marche &#xE0; un moment du processus. En d&apos;autres termes, c&apos;est une d&#xE9;marche dont la description m&#xE8;ne &#xE0; la r&#xE9;p&#xE9;tition d&apos;une m&#xEA;me r&#xE8;gle. Ainsi, les cas suivants constituent des cas concrets de r&#xE9;cursivit&#xE9; :</p>
-<ol>
-<li>D&#xE9;crire un processus d&#xE9;pendant de donn&#xE9;es en faisant appel &#xE0; ce m&#xEA;me processus sur d&apos;autres donn&#xE9;es plus &#xAB; simples &#xBB; ;</li>
-<li>Montrer une image contenant des images similaires ;</li>
-<li>&#xC9;crire un algorithme qui s&apos;invoque lui-m&#xEA;me ;</li>
-<li>D&#xE9;finir une structure &#xE0; partir de l&apos;une au moins de ses sous-structures.</li>
-</ol>
-<p>En NSI, nous abordons ces diff&#xE9;rents aspects.</p>
-<ol>
-<li>Le concept &#xAB;Diviser pour mieux r&#xE9;gner &#xBB; donne par exemple le principe de recherche par dichotomie dans un tableau tri&#xE9;.</li>
-<li>Les <a href="https://fr.wikipedia.org/wiki/Fractale">fractales</a>, par exemple.</li>
-<li>Nous allons voir de nombreux exemples de fonctions r&#xE9;cursives !</li>
-<li>Les structures arborescentes, arbres et graphes, par exemple.</li>
-</ol>
-<h2 class="mume-header" id="fonctions-r%C3%A9cursives">Fonctions r&#xE9;cursives</h2>
-
-<p>Une <strong>fonction r&#xE9;cursive</strong> est une fonction qui s&apos;appelle elle-m&#xEA;me. (Ou bien qui fait partie d&apos;un ensemble de fonctions qui s&apos;appellent mutuellement).</p>
-<h3 class="mume-header" id="exemple-somme-des-premiers-entiers">Exemple, somme des premiers entiers</h3>
-
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><mo stretchy="false">(</mo><mi>n</mi><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">S_n = 1 + 2 + 3 + \cdots + (n-1) + n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span></span></p>
-<p>On a :</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S_0 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, et</li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">S_{n} = S_{n-1} + n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span></li>
-</ul>
-<p>Par exemple, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>5</mn></msub><mo>=</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">S_5 = 1 + 2 + 3 + 4 + 5 = 15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span>.</p>
-<h4 class="mume-header" id="version-it%C3%A9rative">Version it&#xE9;rative</h4>
-
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">somme_premiers_entiers</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la somme 0 + 1 + ... + n
-
-    &gt;&gt;&gt; somme_premiers_entiers(5)
-    15
-
-    &quot;&quot;&quot;</span>
-    somme <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        somme <span class="token operator">+=</span> i
-    <span class="token keyword">return</span> somme
-</pre><h4 class="mume-header" id="version-r%C3%A9cursive">Version r&#xE9;cursive</h4>
-
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">somme_premiers_entiers</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la somme 0 + 1 + ... + n
-
-    &gt;&gt;&gt; somme_premiers_entiers(5)
-    15
-
-    &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">0</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> somme_premiers_entiers<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> n
-</pre><p>Les appels r&#xE9;cursifs sont stock&#xE9;s dans une pile d&apos;appels.</p>
-<p>&#x26A0;&#xFE0F; Attention, par d&#xE9;faut, Python limite &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn></mrow><annotation encoding="application/x-tex">1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>, la profondeur des appels r&#xE9;cursifs. Cela peut se modifier.</p>
-<h3 class="mume-header" id="diff%C3%A9rents-types-de-fonctions-r%C3%A9cursives">Diff&#xE9;rents types de fonctions r&#xE9;cursives</h3>
-
-<h4 class="mume-header" id="appels-multiples">Appels multiples</h4>
-
-<p>Voici, par exemple, une version na&#xEF;ve pour calculer un terme de la suite de Fibonacci.</p>
-<blockquote>
-<p>Rappel : cette suite est  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>13</mn><mo separator="true">,</mo><mn>21</mn><mo separator="true">,</mo><mo>&#x22EF;</mo><mtext>&#x2009;</mtext><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 1, 1, 2, 3, 5, 8, 13, 21, \cdots]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mclose">]</span></span></span></span><br>
-On commence avec <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>, puis chaque nouveau terme est la somme des deux pr&#xE9;c&#xE9;dents.</p>
-</blockquote>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le terme d&apos;indice n de la suite
-    &gt;&gt;&gt; fibonacci(6)
-    8
-    &gt;&gt;&gt; fibonacci(0)
-    0
-    &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> n
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> fibonacci<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> fibonacci<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
-</pre><p>Cette version est na&#xEF;ve, en effet l&apos;appel <code>fibonacci(5)</code> est effectu&#xE9; de nombreuses fois pour <code>fibonacci(8)</code> et le r&#xE9;sultat n&apos;est pas stock&#xE9;, donc recalcul&#xE9; &#xE0; chaque fois... On utilisera la <strong>m&#xE9;mo&#xEF;sation</strong> pour am&#xE9;liorer cela.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python">fib_dico <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span> <span class="token comment"># valeurs initiales</span>
-<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le terme d&apos;indice n de la suite
-    &gt;&gt;&gt; fibonacci(6)
-    8
-    &gt;&gt;&gt; fibonacci(0)
-    0
-    &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> n <span class="token keyword">in</span> fib_dico<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> fib_dico<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        fib_n <span class="token operator">=</span> fibonacci<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> fibonacci<span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
-        fib_dico<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> fib_n
-        <span class="token keyword">return</span> fib_n
-</pre><h4 class="mume-header" id="appels-crois%C3%A9s">Appels crois&#xE9;s</h4>
-
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">fonction_A</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>fonction_B<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>x<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-
-<span class="token keyword">def</span> <span class="token function">fonction_B</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>fonction_A<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>x<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword">return</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-</pre><p>La <code>fonction_A</code> utilise la <code>fonction_B</code> qui utilise elle-m&#xEA;me la <code>fonction_A</code>, <em>a priori</em> avec un param&#xE8;tre qui d&#xE9;pend du param&#xE8;tre donn&#xE9; en entr&#xE9;e...</p>
-<p>&#x26A0;&#xFE0F; Faire des appels crois&#xE9;s est <strong>l&#xE9;gal</strong>, cependant on veillera que cela fasse progresser le &quot;calcul&quot;, donc sans rentrer dans une boucle infinie. On remarquera que ce principe est g&#xE9;n&#xE9;ral, et que l&apos;exemple simple suivant boucle &#xE0; l&apos;infini pour toute entr&#xE9;e <code>n</code> sup&#xE9;rieure &#xE0; <code>0</code>.</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">bizarre</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token number">9</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> bizarre<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="exercices-concrets">Exercices concrets</h3>
-
-<h4 class="mume-header" id="nombre-de-chiffres">Nombre de chiffres</h4>
+<h2 class="mume-header" id="nombre-de-chiffres">Nombre de chiffres</h2>
 
 <p>&#xC9;crire une version r&#xE9;cursive d&apos;une fonction qui renvoie le nombre de chiffres d&apos;un entier strictement positif.</p>
 <blockquote>
 <p><strong>Indice</strong> : Quel est le nombre de chiffres de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, par rapport &#xE0; celui de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> divis&#xE9; par <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> ?</p>
 </blockquote>
-<h4 class="mume-header" id="nombre-de-bits-%C3%A9gaux-%C3%A0-1">Nombre de bits &#xE9;gaux &#xE0; 1</h4>
+<h3 class="mume-header" id="solution">Solution</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nb_chiffres</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de chiffres de n.
+    n &#xE9;crit en base 10.
+
+    &gt;&gt;&gt; nb_chiffres(42)
+    2
+    &gt;&gt;&gt; nb_chiffres(1337)
+    4
+
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> nb_chiffres<span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">10</span><span class="token punctuation">)</span>
+</pre><p>Par exemple, <code>nb_chiffres(1337) = 1 + nb_chiffres(133) = 1 + 1 + nb_chiffres(13) = 1 + 1 + 1 + nb_chiffres(1) = 1 + 1 + 1 + 1 = 4</code></p>
+<h2 class="mume-header" id="nombre-de-bits-%C3%A9gaux-%C3%A0-1">Nombre de bits &#xE9;gaux &#xE0; 1</h2>
 
 <p>&#xC9;crire une version r&#xE9;cursive d&apos;une fonction qui renvoie le nombre de bits &#xE9;gaux &#xE0; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> d&apos;un entier strictement positif.</p>
 <blockquote>
 <p><strong>Indice</strong> : S&apos;inspirer de l&apos;exercice pr&#xE9;c&#xE9;dent.</p>
 </blockquote>
-<h4 class="mume-header" id="calcul-de-puissance">Calcul de puissance</h4>
+<h3 class="mume-header" id="solution-1">Solution</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> nb_bits_&#xE0;_1<span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de bits de n &#xE9;gaux &#xE0; 1.
+    n &#xE9;crit en binaire.
+    Exemples :
+    * 7 = (111)_2 -&gt; 3
+    * 17 = (10001)_2 -&gt; 2
+
+    &gt;&gt;&gt; nb_bits_&#xE0;_1(7)
+    3
+    &gt;&gt;&gt; nb_bits_&#xE0;_1(17)
+    2
+
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        bit_faible <span class="token operator">=</span> n <span class="token operator">%</span> <span class="token number">2</span>
+        <span class="token keyword">return</span> bit_faible <span class="token operator">+</span> nb_bit_&#xE0;_1<span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</pre><blockquote>
+<p>Remarque, il existe des op&#xE9;rateurs basiques pour obtenir le bit de poids faible, et la division par deux d&apos;un entier.</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> nb_bits_&#xE0;_1<span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de bits de n &#xE9;gaux &#xE0; 1.
+    n &#xE9;crit en binaire.
+    Exemples :
+    * 7 = (111)_2 -&gt; 3
+    * 17 = (10001)_2 -&gt; 2
+
+    &gt;&gt;&gt; nb_bits_&#xE0;_1(7)
+    3
+    &gt;&gt;&gt; nb_bits_&#xE0;_1(17)
+    2
+
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        bit_faible <span class="token operator">=</span> n <span class="token operator">&amp;</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> bit_faible <span class="token operator">+</span> nb_bit_&#xE0;_1<span class="token punctuation">(</span>n <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</pre><ul>
+<li><code>&amp;</code> r&#xE9;alise un <code>et logique bit &#xE0; bit</code>. Appliqu&#xE9; avec le masque <code>1</code>, on obtient le bit de poids faible.</li>
+<li><code>&gt;&gt;</code> r&#xE9;alise un d&#xE9;calage &#xE0; droite de l&apos;&#xE9;criture binaire, avec perte des bits de poids faible. D&#xE9;caler de 1 revient &#xE0; diviser par deux.</li>
+</ul>
+<h2 class="mume-header" id="calcul-de-puissance">Calcul de puissance</h2>
 
 <p>En partant du principe que :</p>
 <ul>
@@ -479,18 +393,60 @@ On commence avec <span class="katex"><span class="katex-mathml"><math xmlns="htt
 <ol start="2">
 <li>Compter &#xE0; la main le nombre d&apos;appels r&#xE9;cursifs pour <code>puissance(7, 20)</code>.</li>
 </ol>
-<h4 class="mume-header" id="tours-de-hano%C3%AF">Tours de Hano&#xEF;</h4>
+<h3 class="mume-header" id="solution-2">Solution</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">puissance</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie `a` &#xE0; la puissance `n`.
+
+    &gt;&gt;&gt; puissance(13, 0)
+    1
+    &gt;&gt;&gt; puissance(3, 5)
+    243
+    
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment"># n est pair</span>
+            <span class="token keyword">return</span> puissance<span class="token punctuation">(</span>a<span class="token punctuation">,</span> n<span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment"># n est impair</span>
+            <span class="token keyword">return</span> puissance<span class="token punctuation">(</span>a<span class="token punctuation">,</span> n<span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">*</span> a
+</pre><p>Et une version un peu plus efficace, avec un code un peu factoris&#xE9;.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">puissance</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie `a` &#xE0; la puissance `n`.
+
+    &gt;&gt;&gt; puissance(13, 0)
+    1
+    &gt;&gt;&gt; puissance(3, 5)
+    243
+    
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        a_demi_n <span class="token operator">=</span> puissance<span class="token punctuation">(</span>a<span class="token punctuation">,</span> n <span class="token operator">&gt;&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        carr&#xE9; <span class="token operator">=</span> a_demi_n <span class="token operator">*</span> a_demi_n
+        <span class="token keyword">if</span> n <span class="token operator">&amp;</span> <span class="token number">1</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment"># n est pair</span>
+            <span class="token keyword">return</span> carr&#xE9;
+        <span class="token keyword">else</span><span class="token punctuation">:</span>          <span class="token comment"># n est impair</span>
+            <span class="token keyword">return</span> carr&#xE9; <span class="token operator">*</span> a
+</pre><h2 class="mume-header" id="tours-de-hano%C3%AF">Tours de Hano&#xEF;</h2>
 
 <p>Utiliser une fonction r&#xE9;cursive pour r&#xE9;soudre <a href>ce probl&#xE8;me</a> sur FranceIOI.</p>
-<h4 class="mume-header" id="arbre-de-pythagore">Arbre de Pythagore</h4>
+<h3 class="mume-header" id="solution-3">Solution</h3>
 
-<h4 class="mume-header" id="flocon-de-von-koch">Flocon de Von Koch</h4>
+<p>Suivre ce <a href="https://franckchambon.github.io/ClasseVirtuelle/Term_NSI/N3/8-R%C3%A9cursivit%C3%A9/4-Tours_de_Hano%C3%AF.html">lien</a>.</p>
+<h2 class="mume-header" id="arbre-de-pythagore">Arbre de Pythagore</h2>
 
-<h4 class="mume-header" id="triangle-de-pascal">Triangle de Pascal</h4>
+<h2 class="mume-header" id="flocon-de-von-koch">Flocon de Von Koch</h2>
 
-<h4 class="mume-header" id="fonction-dackermann">Fonction d&apos;Ackermann</h4>
+<h2 class="mume-header" id="triangle-de-pascal">Triangle de Pascal</h2>
 
-<h4 class="mume-header" id="r%C3%A9cursions-imbriqu%C3%A9es">R&#xE9;cursions imbriqu&#xE9;es</h4>
+<h2 class="mume-header" id="fonction-dackermann">Fonction d&apos;Ackermann</h2>
+
+<h2 class="mume-header" id="r%C3%A9cursions-imbriqu%C3%A9es">R&#xE9;cursions imbriqu&#xE9;es</h2>
 
 <p>D&apos;apr&#xE8;s John McCarthy :</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>f</mi><mn>91</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>n</mi><mo>&#x2212;</mo><mn>10</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>si&#xA0;</mtext><mi>n</mi><mo>&gt;</mo><mn>100</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mi>f</mi><mn>91</mn></msub><mrow><mo fence="true">(</mo><msub><mi>f</mi><mn>91</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>11</mn><mo stretchy="false">)</mo><mo fence="true">)</mo></mrow><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>si&#xA0;</mtext><mi>n</mi><mo>&#x2A7D;</mo><mn>100</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f_{91}(n)=
@@ -502,7 +458,18 @@ f_{91}\left(f_{91}(n+11)\right), &amp;\text{si } n \leqslant 100\\
 <li>Impl&#xE9;menter cette fonction en Python.</li>
 <li>Donner un tableau de valeurs de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>91</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f_{91}(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">9</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, pour <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2208;</mo><mo stretchy="false">[</mo><mtext>&#x2009;&#x2063;</mtext><mo stretchy="false">[</mo><mn>0..100</mn><mo stretchy="false">]</mo><mtext>&#x2009;&#x2063;</mtext><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">n\in [\![0..100]\!]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2208;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mspace" style="margin-right:-0.16666666666666666em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mord">.</span><span class="mord">.</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">]</span><span class="mspace" style="margin-right:-0.16666666666666666em;"></span><span class="mclose">]</span></span></span></span>.</li>
 </ol>
-<h4 class="mume-header" id="nombre-de-fa%C3%A7ons-d%C3%A9crire-comme-une-somme-nouveau">Nombre de fa&#xE7;ons d&apos;&#xE9;crire comme une somme <mark><strong>Nouveau</strong></mark></h4>
+<h3 class="mume-header" id="solution-4">Solution</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">f_91</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> n <span class="token operator">-</span> <span class="token number">10</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> f_91<span class="token punctuation">(</span>f_91<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span>f_91<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>[91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91]
+</code></pre><p>On constate que la <a href="https://fr.wikipedia.org/wiki/Fonction_91_de_McCarthy">fonction 91</a> est constante sur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mtext>&#x2009;&#x2063;</mtext><mo stretchy="false">[</mo><mn>0..100</mn><mo stretchy="false">]</mo><mtext>&#x2009;&#x2063;</mtext><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[\![0..100]\!]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mspace" style="margin-right:-0.16666666666666666em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mord">.</span><span class="mord">.</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">]</span><span class="mspace" style="margin-right:-0.16666666666666666em;"></span><span class="mclose">]</span></span></span></span>.</p>
+<h2 class="mume-header" id="nombre-de-fa%C3%A7ons-d%C3%A9crire-comme-une-somme-nouveau">Nombre de fa&#xE7;ons d&apos;&#xE9;crire comme une somme <mark><strong>Nouveau</strong></mark></h2>
 
 <p>On consid&#xE8;re <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> : le nombre de fa&#xE7;ons d&apos;&#xE9;crire un entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> comme somme d&apos;entiers strictement positifs, sans tenir compte de l&apos;ordre.</p>
 <p>Par exemple, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> peut s&apos;&#xE9;crire de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mn>5</mn><mo stretchy="false">)</mo><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">f(5) = 7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">5</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> fa&#xE7;ons :</p>
