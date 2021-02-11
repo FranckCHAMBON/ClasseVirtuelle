@@ -1,9 +1,11 @@
 # Histoire de systèmes d'exploitation de type UNIX {ignore}
 
+> Ce document ne fait que reprendre différents passages de Wikipédia. On évoque différents systèmes d'exploitation, et certains de leurs auteurs.
+
+
 ## Sommaire {ignore}
 [TOC]
 
-> Ce document ne fait que reprendre différents passages de Wikipédia.
 
 ## Multics
 [Multics](https://fr.wikipedia.org/wiki/Multics) fut conçu à partir de 1964, conjointement par le MIT, les Laboratoires Bell et General Electric.
@@ -16,7 +18,7 @@ En 1969, Ken Thompson qui travaillait alors pour les laboratoires Bell développ
 
 ## Langage C
 
-En 1971, conscient de la difficulté que représente la maintenance d'un système écrit en langage d'assemblage, Ken Thompson songea à réécrire Unix en TMG10, mais il trouva que le TMG n'offrait pas ce dont il avait besoin. Pendant une courte période il songea à réécrire Unix en Fortran, mais finalement conçut le B avec l'aide de Dennis Ritchie dans les années 1969 et 1970, en s'inspirant du langage BCPL11. Cependant Unix ne fut jamais réécrit en B ; le B ne supportait pas les types, toutes les variables étaient de la même taille que les mots de l'architecture, l'arithmétique sur les flottants n'était pas implémentée ; de plus, le compilateur B utilisait la technique du *threaded code*. C'est pourquoi Dennis Ritchie entreprit en 1971 d'écrire le New B, qui fut renommé en C. Le langage C est toujours l'un des langages les plus utilisés aujourd'hui.
+En 1971, conscient de la difficulté que représente la maintenance d'un système écrit en langage d'assemblage, Ken Thompson songea à réécrire Unix en TMG, mais il trouva que le TMG n'offrait pas ce dont il avait besoin. Pendant une courte période il songea à réécrire Unix en Fortran, mais finalement conçut le B avec l'aide de Dennis Ritchie dans les années 1969 et 1970, en s'inspirant du langage BCPL. Cependant Unix ne fut jamais réécrit en B ; le B ne supportait pas les types, toutes les variables étaient de la même taille que les mots de l'architecture, l'arithmétique sur les flottants n'était pas implémentée ; de plus, le compilateur B utilisait la technique du *threaded code*. C'est pourquoi Dennis Ritchie entreprit en 1971 d'écrire le New B, qui fut renommé en C. Le langage C est toujours l'un des langages les plus utilisés aujourd'hui.
 
 ## L'expansion d'UNIX
 
@@ -77,7 +79,7 @@ Il reçoit conjointement avec Ken Thompson le prix Turing de l'ACM en 1983 pour 
 
 ![](assets/LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg)
 
-Linus Benedict Torvalds, né le 28 décembre 1969 à Helsinki en Finlande, est un informaticien américano-finlandais1,2.
+Linus Benedict Torvalds, né le 28 décembre 1969 à Helsinki en Finlande, est un informaticien américano-finlandais.
 
 Il est connu pour avoir créé en 1991 (à 21 ans) le noyau Linux dont il continue de diriger le développement. Il est considéré comme le « dictateur bienveillant à vie » (*Benevolent Dictator for Life*).
 
