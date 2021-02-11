@@ -42,6 +42,7 @@ Pour le code Python des solutions :
 ### 🔄 Récursivité
 
 * [Récursivité](cours/1-Récursivité/récursif.html)
+    * [Correction des exercices](cours/1-Récursivité/correction.html)
 
 ### ⚠️ Gestion des erreurs
 
