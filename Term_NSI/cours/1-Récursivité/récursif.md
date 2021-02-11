@@ -12,10 +12,10 @@
 * **GNU** : *GNU's Not UNIX* (GNU n'est pas UNIX)
 * **LAME** : *Lame Ain't an MP3 Encoder* (Lame n'est pas un encodeur mp3.)
 * **PHP** : *PHP: Hypertext Preprocessor*. (Historiquement, ce sigle récursif était l'abréviation de Personal Home Page ; en 2008, le sigle récursif est le sens officiel de PHP)
-* **HURD** : *Hird of Unix-Replacing Daemons* et **HIRD** : *Hurd of Interfaces Representing Depth2* ; exemple de paire de sigles mutuellement récursifs.
+* **HURD** : *Hird of Unix-Replacing Daemons* et **HIRD** : *Hurd of Interfaces Representing Depth* ; exemple de paire de sigles mutuellement récursifs.
 
-![](assets/MagrittePipe.jpg)
-> *La Trahison des images*, René Magritte
+![cette image n'est pas sous licence libre](assets/tumblr_l9bz3qDYWF1qdmjkto1_1280.jpg)
+> *Les Deux Mystères*, René Magritte
 
 ### Images
 
@@ -54,6 +54,8 @@ On a :
 * $S_0 = 0$, et
 * $S_{n} = S_{n-1} + n$
 
+Par exemple, $S_5 = 1 + 2 + 3 + 4 + 5 = 15$.
+
 #### Version itérative
 
 ```python
@@ -87,7 +89,6 @@ def somme_premiers_entiers(n):
 ```
 
 Les appels récursifs sont stockés dans une pile d'appels.
-> TODO : Faire un schéma d'appel.
 
 ⚠️ Attention, par défaut, Python limite à $1000$, la profondeur des appels récursifs. Cela peut se modifier.
 
@@ -97,7 +98,8 @@ Les appels récursifs sont stockés dans une pile d'appels.
 
 Voici, par exemple, une version naïve pour calculer un terme de la suite de Fibonacci.
 
-> Rappel : $0, 1, 1, 2, 3, 5, 8, 13, 21, \cdots$ ; le terme suivant est la somme des deux précédents, on commence avec $0, 1$.
+> Rappel : cette suite est  $[0, 1, 1, 2, 3, 5, 8, 13, 21, \cdots]$
+> On commence avec $[0, 1]$, puis chaque nouveau terme est la somme des deux précédents.
 
 ```python
 def fibonacci(n):
@@ -175,6 +177,11 @@ def bizarre(n):
 En partant du principe que :
 * si $n$ est pair, alors $a^n = \left(a^{n/2}\right)^2$
 * si $n$ est impair, alors $a^n = \left(a^{(n-1)/2}\right)^2×a$
+
+> Exemples 
+> 1. $a^{2021} = (a^{1010})^2×a$
+> 2. $a^{1010} = (a^{505})^2$
+> 3. ...
 
 1. Écrire une fonction récursive `puissance(a, n)` qui renvoie $a^n$.
 > **Indice** : Penser au cas de base !
