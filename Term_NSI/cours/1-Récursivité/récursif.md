@@ -165,15 +165,16 @@ def bizarre(n):
 ```
 
 
-### Exercices concrets
-#### Nombre de chiffres
+## Exercices concrets
+### Nombre de chiffres
 Écrire une version récursive d'une fonction qui renvoie le nombre de chiffres d'un entier strictement positif.
 > **Indice** : Quel est le nombre de chiffres de $n$, par rapport à celui de $n$ divisé par $10$ ?
-#### Nombre de bits égaux à 1
+
+### Nombre de bits égaux à 1
 Écrire une version récursive d'une fonction qui renvoie le nombre de bits égaux à $1$ d'un entier strictement positif.
 > **Indice** : S'inspirer de l'exercice précédent.
 
-#### Calcul de puissance
+### Calcul de puissance
 En partant du principe que :
 * si $n$ est pair, alors $a^n = \left(a^{n/2}\right)^2$
 * si $n$ est impair, alors $a^n = \left(a^{(n-1)/2}\right)^2×a$
@@ -187,14 +188,18 @@ En partant du principe que :
 > **Indice** : Penser au cas de base !
 2. Compter à la main le nombre d'appels récursifs pour `puissance(7, 20)`.
 
-#### FranceIOI
+### FranceIOI
 Résoudre les problèmes au sujet de [la récursivité sur FranceIOI](http://www.france-ioi.org/algo/chapter.php?idChapter=513).
 
-#### Arbre de Pythagore
-#### Flocon de Von Koch
-#### Triangle de Pascal
-#### Fonction d'Ackermann
-#### Récursions imbriquées
+### Arbre de Pythagore
+
+### Flocon de Von Koch
+
+### Triangle de Pascal
+
+### Fonction d'Ackermann
+
+### Récursions imbriquées
 
 D'après John McCarthy :
 
@@ -209,7 +214,7 @@ $$
 1. Implémenter cette fonction en Python.
 2. Donner un tableau de valeurs de $f_{91}(n)$, pour $n\in [\![0..100]\!]$.
 
-#### Nombre de façons d'écrire comme une somme ==**Nouveau**==
+### Nombre de façons d'écrire comme une somme
 On considère $f(n)$ : le nombre de façons d'écrire un entier $n>0$ comme somme d'entiers strictement positifs, sans tenir compte de l'ordre.
 
 Par exemple, $5$ peut s'écrire de $f(5) = 7$ façons :
@@ -222,3 +227,55 @@ Par exemple, $5$ peut s'écrire de $f(5) = 7$ façons :
 * $1+2+1+1$.
 
 Écrire une fonction qui renvoie $f(n)$.
+
+## Quelques suites numériques utilisant l'auto-référence ==**Nouveau**==
+> Le coin NSI + maths expertes
+
+[Douglas Hofstadter](https://fr.wikipedia.org/wiki/Douglas_Hofstadter) est l'auteur du livre [Gödel, Escher, Bach : Les Brins d'une Guirlande Éternelle](https://fr.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach_:_Les_Brins_d%27une_Guirlande_%C3%89ternelle).
+
+On y trouve en particulier certaines suites étonnantes.
+
+### 1- *Hofstadter Q-sequence*
+
+Cette suite ressemble à celle de Fibonacci ou de Lucas, chaque terme est la somme de deux termes presque précédents.
+
+La suite $a$ est définie par :
+* $a_1 = a_2 = 1$,
+* $a_n = a_{n-a_{n-1}} + a_{n-a_{n-2}}$, pour $n \geqslant 3$.
+
+Personne n'a prouvé que cette suite est bien définie pour tout $n\in\mathbb N^*$.
+
+On ne connaît pas son taux de croissance.
+
+> Écrire un code qui calcule les termes succéssifs en vérifiant que chacun est bien défini.
+
+$a = (1, 1, 2, 3, 3, 4, 5, 5, 6, 6, 6, 8, 8, 8, 10, 9, \cdots)$ ; suite http://oeis.org/A005185
+
+
+### 2- *Hofstadter Figure-Figure sequences*
+
+Les suites *Hofstadter Figure-Figure* $R$ et $S$ sont des suites d'entiers complémentaires définies par :
+
+* $R_1 = 1$, $S_1 = 2$.
+* $R_n = R_{n - 1} + S_{n-1}$, pour $n > 1$.
+* avec la suite $(S_{n})$ définie comme strictement croissante contenant tous les entiers absents de $(R_{n})$.
+
+
+Les premiers termes sont :
+* $R = (1, 3, 7, 12, 18, 26, 35, 45, 56, 69, 83, 98, 114, 131, 150, 170, 191, 213, 236, 260, \cdots)$ ; suite http://oeis.org/A005228
+* $S = (2, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, \cdots)$ ; suite http://oeis.org/A030124
+
+> Implémenter les fonctions `R` et `S` en Python.
+
+### 3- *Hofstadter–Conway $10,000 dollars sequence*
+
+La suite $a$ est définie par :
+
+* $a_{1} = a_{2} = 1$,
+* $a_{n} = a_{a_{n-1}} + a_{n-a_{n-1}}$, pour $n \geqslant 3$.
+
+$a = (1, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 7, 8, 8, 8, 8, 9, 10, 11, 12, \cdots)$ ; suite http://oeis.org/A004001
+
+1. *(Facile)* Calculer les premiers termes.
+2. *(Variable)* Étudier le comportement asymptotique de $S(n) = \sum\limits_{i=1}^n a_i$.
+3. *(Vraiment très difficile)* [Vérifier si votre code est efficace](https://www.spoj.com/problems/HC10000/).
