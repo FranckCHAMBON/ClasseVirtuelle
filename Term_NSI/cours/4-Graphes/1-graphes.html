@@ -755,7 +755,6 @@ g<span class="token punctuation">.</span>ajout_arc<span class="token punctuation
     &quot;&quot;&quot;</span>
 
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>n <span class="token operator">=</span> n
         self<span class="token punctuation">.</span>adjacence <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># un dictionnaire vide</span>
     
     <span class="token keyword">def</span> <span class="token function">ajout_sommet</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sommet<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -764,17 +763,25 @@ g<span class="token punctuation">.</span>ajout_arc<span class="token punctuation
 
     <span class="token keyword">def</span> <span class="token function">ajout_arc</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sommet_1<span class="token punctuation">,</span> sommet_2<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>ajout_sommet<span class="token punctuation">(</span>sommet_1<span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>ajout_sommet<span class="token punctuation">(</span>sommet_1<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>ajout_sommet<span class="token punctuation">(</span>sommet_2<span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>adjacence<span class="token punctuation">[</span>sommet_1<span class="token punctuation">]</span><span class="token punctuation">.</span>add<span class="token punctuation">(</span>sommet_2<span class="token punctuation">)</span>
     
     <span class="token keyword">def</span> <span class="token function">est_arc</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sommet_1<span class="token punctuation">,</span> sommet_2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> sommet_2 <span class="token keyword">in</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">[</span>sommet_1<span class="token punctuation">]</span>
+        <span class="token keyword">if</span> sommet_1 <span class="token keyword">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> KeyError<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Le sommet_1 </span><span class="token interpolation"><span class="token punctuation">{</span>sommet_1<span class="token punctuation">}</span></span><span class="token string"> n&apos;existe pas&quot;</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> sommet_2 <span class="token keyword">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> KeyError<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Le sommet_2 </span><span class="token interpolation"><span class="token punctuation">{</span>sommet_2<span class="token punctuation">}</span></span><span class="token string"> n&apos;existe pas&quot;</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> sommet_2 <span class="token keyword">in</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">[</span>sommet_1<span class="token punctuation">]</span>
     
     <span class="token keyword">def</span> <span class="token function">sommets</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>adjacence<span class="token punctuation">)</span>
     
     <span class="token keyword">def</span> <span class="token function">voisins</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sommet<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">[</span>sommet<span class="token punctuation">]</span> <span class="token comment"># un ensemble</span>
+        <span class="token keyword">if</span> sommet <span class="token keyword">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> KeyError<span class="token punctuation">(</span><span class="token string">&quot;Le sommet n&apos;existe pas&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>adjacence<span class="token punctuation">[</span>sommet<span class="token punctuation">]</span> <span class="token comment"># un ensemble</span>
 </pre><p><strong>Exercice 5.</strong> Reprendre l&apos;exercice 4, avec cette nouvelle impl&#xE9;mentation.</p>
 <h3 class="mume-header" id="listes-dadjacences">Listes d&apos;adjacences</h3>
 

@@ -255,7 +255,6 @@ class Graphe:
     """
 
     def __init__(self):
-        self.n = n
         self.adjacence = dict() # un dictionnaire vide
     
     def ajout_sommet(self, sommet):
@@ -264,17 +263,25 @@ class Graphe:
 
     def ajout_arc(self, sommet_1, sommet_2):
         self.ajout_sommet(sommet_1)
-        self.ajout_sommet(sommet_1)
+        self.ajout_sommet(sommet_2)
         self.adjacence[sommet_1].add(sommet_2)
     
     def est_arc(self, sommet_1, sommet_2):
-        return sommet_2 in self.adjacence[sommet_1]
+        if sommet_1 not in self.adjacence:
+            raise KeyError(f"Le sommet_1 {sommet_1} n'existe pas")
+        elif sommet_2 not in self.adjacence:
+            raise KeyError(f"Le sommet_2 {sommet_2} n'existe pas")
+        else:
+            return sommet_2 in self.adjacence[sommet_1]
     
     def sommets(self):
         return list(self.adjacence)
     
     def voisins(self, sommet):
-        return self.adjacence[sommet] # un ensemble
+        if sommet not in self.adjacence:
+            raise KeyError("Le sommet n'existe pas")
+        else:
+            return self.adjacence[sommet] # un ensemble
 ```
 
 **Exercice 5.** Reprendre l'exercice 4, avec cette nouvelle implémentation.
