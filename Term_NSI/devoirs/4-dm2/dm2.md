@@ -1,6 +1,6 @@
 # Devoir maison n°2
 
-> À rendre avant le dimanche 28 février 23h59 sur ATRIUM dans le casier `Prologin_2003`.
+> À rendre avant le dimanche 28 février 23h59 sur ATRIUM dans le casier `DM2_Prologin_2003`.
 > * Seul le travail rendu **avant la limite** sera corrigé.
 > * **Un seul** fichier sera lu par le professeur, le dernier avant la date.
 
