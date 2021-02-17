@@ -1,6 +1,6 @@
-# Devoir maison
+# Devoir maison obligatoire
 
-> À rendre avant le dimanche 28 février 23h59 sur ATRIUM dans le casier `DM_Prologin_2003`.
+> À rendre avant le dimanche 28 février 23h59 sur ATRIUM dans le casier `DM1_Prologin` du site collaboratif `1ère_NSI` : aller dans document, et vous verrez le casier. [Lien direct](https://www.atrium-sud.fr/group/1ere_nsi-395127/documents)
 > * Seul le travail rendu **avant la limite** sera corrigé.
 > * **Un seul** fichier sera lu par le professeur, le dernier avant la date.
 
