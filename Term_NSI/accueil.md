@@ -91,6 +91,8 @@ Pour le code Python des solutions :
     * [corrigé](devoirs/2-ds2/corrigé.html)
 * [DM n°1](devoirs/3-dm1/dm1.html) : le début de Prologin 2013
     * [Aide avec Prologin 2011](devoirs/3-dm1/Aide2011.html)
+* [BAC Blanc](devoirs/BAC-blanc/bac-blanc.html)
+    * [corrigé](devoirs/BAC-blanc/corrigé.html)
 * [DM n°2](devoirs/4-dm2/dm2.html) : Prologin 2003 en grande partie.
 
 

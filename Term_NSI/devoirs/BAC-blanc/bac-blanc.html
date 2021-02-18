@@ -1,0 +1,524 @@
+<!DOCTYPE html><html><head>
+      <title>bac-blanc</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="baccalaur%C3%A9at-blanc-session-2021">BACCALAUR&#xC9;AT blanc SESSION 2021</h1>
+
+<p>&#xC9;preuve de l&apos;enseignement de sp&#xE9;cialit&#xE9;  NUM&#xC9;RIQUE et SCIENCES INFORMATIQUES</p>
+<blockquote>
+<p>DUR&#xC9;E DE L&#x2019;&#xC9;PREUVE : 3 heures 30 min ; Sujet de 6 pages, avec 7 exercices</p>
+</blockquote>
+<p>Calculatrice interdite, ainsi que tout document.</p>
+<h2 class="mume-header" id="exercice-1">Exercice 1</h2>
+
+<p>On donne la fonction <code>myst&#xE8;re</code> :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> myst&#xE8;re<span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        truc <span class="token operator">=</span> myst&#xE8;re<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> b <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> truc <span class="token operator">*</span> truc
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> truc <span class="token operator">*</span> truc <span class="token operator">*</span> a
+</pre><ol>
+<li>Comment appelle-t-on les fonctions du genre de <code>myst&#xE8;re</code> ?</li>
+<li>Donner les &#xE9;tapes de calculs de <code>myst&#xE8;re(3, 5)</code>.</li>
+<li>Donner une <em>docstring</em> avec <em>doctest</em> &#xE0; la fonction <code>myst&#xE8;re</code>.</li>
+<li>Proposer une fonction <code>myst&#xE8;re_force_brute</code> bien plus simple qui r&#xE9;alise le m&#xEA;me calcul. La seule op&#xE9;ration math&#xE9;matique autoris&#xE9;e sera la multiplication.
+<ul>
+<li>Combien de multiplications seront effectu&#xE9;es pour le calcul de <code>myst&#xE8;re_force_brute(3, 1000)</code> ?</li>
+</ul>
+</li>
+<li>On suppose que les multiplications sont des op&#xE9;rations &#xE0; co&#xFB;t constant, justifier que le co&#xFB;t du calcul de <code>myst&#xE8;re(a, b)</code> est presque proportionnel au nombre de chiffres en binaire de <code>b</code>.
+<ul>
+<li>Combien de multiplications seront effectu&#xE9;es pour le calcul de <code>myst&#xE8;re(3, 1000)</code> ?</li>
+</ul>
+</li>
+<li><strong>Question BONUS difficile</strong>
+<ul>
+<li>Donner une explication sur le fait que &#xAB; On suppose que les multiplications sont des op&#xE9;rations &#xE0; co&#xFB;t constant &#xBB; est fausse en r&#xE9;alit&#xE9;.</li>
+<li>Justifier que si on choisit un modulo de la taille d&apos;un mot machine, alors en faisant des multiplications modulaires, la phrase devient vraie.</li>
+</ul>
+</li>
+</ol>
+<p><img src="powers_of_one.png" alt></p>
+<h2 class="mume-header" id="exercice-2">Exercice 2</h2>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">10</span> <span class="token operator">//</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">tableau_valeurs</span><span class="token punctuation">(</span>g<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tableau <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            y <span class="token operator">=</span> g<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+        tableau<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> tableau
+
+<span class="token keyword">def</span> <span class="token function">h</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;n doit &#xEA;tre positif&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">==</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> TypeError<span class="token punctuation">(</span><span class="token string">&quot;n doit &#xEA;tre entier&quot;</span><span class="token punctuation">)</span>
+    r&#xE9;ponse <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        r&#xE9;ponse <span class="token operator">*=</span> x
+    <span class="token keyword">return</span> r&#xE9;ponse
+
+</pre><ol>
+<li>Quel est le type de donn&#xE9;es de <code>tableau</code> ?</li>
+<li>A-t-on le droit de d&#xE9;finir la fonction <code>f</code> apr&#xE8;s la fonction <code>tableau_valeurs</code> ?
+<ul>
+<li>Doit-on n&#xE9;cessairement donner &#xE0; cette fonction l&apos;identifiant <code>f</code> ?</li>
+</ul>
+</li>
+<li>A-t-on le droit de d&#xE9;finir la fonction <code>f</code> comme ci-dessous ?
+<ul>
+<li><code>f : lambada t = 10 // (t - 2)</code></li>
+<li>Si non, corriger les erreurs si c&apos;est possible.</li>
+</ul>
+</li>
+<li>Calculer, si possible, <code>f(2)</code>, <code>f(4)</code>, <code>f(8)</code>, <code>f(16)</code>.</li>
+<li>Expliquer le fonctionnement de la fonction <code>tableau_valeurs</code> en prenant l&apos;exemple de l&apos;appel <code>tableau_valeurs(f, -2, 4)</code>.
+<ul>
+<li>On demande autant une explication des &#xE9;tapes que le r&#xE9;sultat de cet appel. Inutile d&apos;expliquer tous les tours de boucle, uniquement ceux qui sont tr&#xE8;s diff&#xE9;rents.</li>
+</ul>
+</li>
+<li><strong>Question BONUS difficile</strong>
+<ul>
+<li>Expliquer toutes les &#xE9;tapes de la d&#xE9;finition de la fonction <code>h</code>.</li>
+<li>Donner lui une <em>docstring</em> compl&#xE8;te.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><img src="exploits_of_a_mom.png" alt></p>
+<h2 class="mume-header" id="exercice-3">Exercice 3</h2>
+
+<p>On souhaite cr&#xE9;er une structure de donn&#xE9;es qui maintient une liste de valeurs dans l&apos;ordre croissant.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">class</span> <span class="token class-name">ListeCroissante</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__liste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>__taille <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">donne_taille</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__taille
+    
+    <span class="token keyword">def</span> <span class="token function">donne_liste</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&quot;&quot;&quot;
+        Renvoie la liste dans l&apos;ordre croissant.
+        &quot;&quot;&quot;</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__liste
+
+    <span class="token keyword">def</span> <span class="token function">ajoute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    
+    <span class="token keyword">def</span> <span class="token function">contient</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    
+    <span class="token keyword">def</span> <span class="token function">extrait</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><ol>
+<li>Comment appelle-t-on les m&#xE9;thodes <code>donne_taille</code> et <code>donne_liste</code> ?</li>
+<li>Quelles raisons peut-on avoir &#xE0; d&#xE9;clarer <code>liste</code> et <code>taille</code> pr&#xE9;fix&#xE9;e de <code>__</code> ?</li>
+<li>&#xC9;crire la m&#xE9;thode <code>.contient(self, x)</code> qui renvoie un bool&#xE9;en : &#xAB; <code>self</code> contient-il la valeur <code>x</code> ? &#xBB;.
+<ul>
+<li>On <strong>interdit</strong> d&apos;utiliser <code>in</code> dans votre code.</li>
+<li>On attend l&apos;&#xE9;criture d&apos;une simple boucle qui teste la valeur des &#xE9;l&#xE9;ments.</li>
+<li>Un retour pr&#xE9;matur&#xE9; sera valoris&#xE9;.</li>
+</ul>
+</li>
+<li>&#xC9;crire la m&#xE9;thode <code>ajoute(self, x)</code> qui ajoute la valeur <code>x</code> &#xE0; la liste, uniquement si elle n&apos;est pas d&#xE9;j&#xE0; pr&#xE9;sente, et en maintenant l&apos;ordre croissant.
+<ul>
+<li>On suppose que tous les &#xE9;l&#xE9;ments <code>x</code> ajout&#xE9;s sont comparables. Par exemple, ce sont tous des cha&#xEE;nes de caract&#xE8;res, ou bien tous un m&#xE9;lange d&apos;entiers et de flottants...</li>
+<li>On autorise uniquement un seul <code>append</code> avec un seul param&#xE8;tre.</li>
+<li>On interdit <strong>toutes</strong> les autres m&#xE9;thodes dynamiques des listes Python.</li>
+<li>On attend essentiellement de la manipulation de tableau.</li>
+</ul>
+</li>
+<li>&#xC9;crire la m&#xE9;thode <code>extrait(self, x)</code> dans l&apos;esprit de l&apos;exercice.</li>
+<li><strong>Question BONUS difficile</strong>
+<ul>
+<li>R&#xE9;&#xE9;crire la m&#xE9;thode <code>contient(self, x)</code> qui aura une meilleure complexit&#xE9;.</li>
+</ul>
+</li>
+</ol>
+<p><img src="self_description.png" alt></p>
+<h2 class="mume-header" id="exercice-4">Exercice 4</h2>
+
+<p>L&apos;&#xE9;criture polonaise inverse des expressions arithm&#xE9;tiques place l&apos;op&#xE9;rateur apr&#xE8;s ses op&#xE9;randes. Cette notation ne n&#xE9;cessite aucune parenth&#xE8;se ni aucune r&#xE8;gle de priorit&#xE9;. Ainsi l&apos;expression polonaise inverse d&#xE9;crite par la cha&#xEE;ne de caract&#xE8;res <code>&apos;1 2 3 * + 4 *&apos;</code> d&#xE9;signe l&apos;expression traditionnellement not&#xE9;e <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>&#xD7;</mo><mn>3</mn><mo stretchy="false">)</mo><mo>&#xD7;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">(1+2&#xD7;3)&#xD7;4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>. La valeur d&apos;une telle expression peut &#xEA;tre calcul&#xE9;e facilement en utilisant une pile pour stocker les r&#xE9;sultats interm&#xE9;diaires. Pour cela, on observe un &#xE0; un les &#xE9;l&#xE9;ments de l&apos;expression et on effectue les actions suivantes :</p>
+<ul>
+<li>si on voit un nombre, on le place sur la pile ;</li>
+<li>si on voit un op&#xE9;rateur binaire, on r&#xE9;cup&#xE8;re les deux nombres sur la pile, on leur applique l&apos;op&#xE9;rateur, et on replace le r&#xE9;sultat sur la pile.</li>
+</ul>
+<ol>
+<li>D&#xE9;crire &#xE9;tape par &#xE9;tape l&apos;&#xE9;tat de la pile dans le calcul de <code>&apos;1 2 3 * + 4 *&apos;</code>.</li>
+<li>&#xC9;crire une fonction <code>calcule_RPN</code> qui prend un seul param&#xE8;tre <code>expression</code> et qui renvoie le r&#xE9;sultat du calcul de cette expression donn&#xE9;e avec la notation polonaise invers&#xE9;e (<em>Reverse Polish notation</em> ; <strong>RPN</strong>).
+<ul>
+<li>On supposera que l&apos;expression ne contient que des entiers et des op&#xE9;rateurs parmi <code>+</code>, <code>-</code>, <code>*</code> et <code>/</code> qui sont les op&#xE9;rateurs classiques usuels sur les entiers &#xE0; r&#xE9;sultat entier.</li>
+<li>On supposera que l&apos;expression contient ses &#xE9;l&#xE9;ments s&#xE9;par&#xE9;s par des espaces.</li>
+<li>On attend que votre fonction l&#xE8;ve une erreur <code>ValueError: mauvaise expression</code> pour une expression mal &#xE9;crite comme <code>&apos;1 + 2&apos;</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 class="mume-header" id="exercice-5">Exercice 5</h2>
+
+<p>Dans cet exercice, on utilisera la convention suivante : la hauteur d&apos;un arbre binaire ne comportant qu&apos;un n&#x153;ud est <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>.</p>
+<ol>
+<li>D&#xE9;terminer la taille et la hauteur de l&apos;arbre binaire suivant :<br>
+<img src="arbre1.png" alt></li>
+<li>On d&#xE9;cide de num&#xE9;roter en binaire les n&#x153;uds d&#x2019;un arbre binaire de la fa&#xE7;on suivante :
+<ul>
+<li>la racine correspond &#xE0; 1 ;</li>
+<li>la num&#xE9;rotation pour un fils gauche s&#x2019;obtient en ajoutant le chiffre <code>0</code> &#xE0; droite au num&#xE9;ro de son p&#xE8;re ;</li>
+<li>la num&#xE9;rotation pour un fils droit s&#x2019;obtient en ajoutant le chiffre <code>1</code> &#xE0; droite au num&#xE9;ro de son p&#xE8;re ;</li>
+<li>Par exemple, dans l&#x2019;arbre suivant, on a utilis&#xE9; ce proc&#xE9;d&#xE9; pour num&#xE9;roter les n&#x153;uds <code>A</code>, <code>B</code>, <code>C</code>, <code>E</code> et <code>F</code>.<br>
+<img src="arbre2.png" alt></li>
+</ul>
+<ol>
+<li>Dans l&#x2019;exemple pr&#xE9;c&#xE9;dent, quel est le num&#xE9;ro en binaire associ&#xE9; au n&#x153;ud <code>G</code> ?</li>
+<li>Quel est le n&#x153;ud dont le num&#xE9;ro en binaire vaut <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>13</mn></mrow><annotation encoding="application/x-tex">13</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span></span></span></span> en d&#xE9;cimal ?</li>
+<li>En notant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span> la hauteur de l&#x2019;arbre, sur combien de bits seront num&#xE9;rot&#xE9;s les n&#x153;uds les plus en bas ?</li>
+<li>Justifier que pour tout arbre de hauteur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span> et de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2A7E;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\geqslant 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7E;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>, on a : <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>&#x2A7D;</mo><mi>n</mi><mo>&#x2A7D;</mo><msup><mn>2</mn><mi>h</mi></msup><mtext>&#x2212;</mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">h \leqslant n \leqslant 2^h&#x2212;1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83111em;vertical-align:-0.13667em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7D;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span><span class="mord">&#x2212;</span><span class="mord">1</span></span></span></span>.</li>
+</ol>
+</li>
+<li>Un arbre binaire est dit complet si tous les niveaux de l&apos;arbre sont remplis. Comme ci-dessous.<br>
+<img src="arbre3.png" alt><br>
+On d&#xE9;cide de repr&#xE9;senter un arbre binaire complet par un tableau de taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, o&#xF9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> est la taille de l&apos;arbre, de la fa&#xE7;on suivante :</li>
+</ol>
+<ul>
+<li>La racine a pour indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>;</li>
+<li>Le fils gauche du n&#x153;ud d&#x2019;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> a pour indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&#xD7;</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">2&#xD7;i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> ;</li>
+<li>Le fils droit du n&#x153;ud d&#x2019;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> a pour indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&#xD7;</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2&#xD7;i+ 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ;</li>
+<li>On place la taille <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> de l&apos;arbre dans la case d&#x2019;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.
+<ol>
+<li>D&#xE9;terminer le tableau qui repr&#xE9;sente l&apos;arbre binaire complet de l&#x2019;exemple pr&#xE9;c&#xE9;dent.</li>
+<li>On consid&#xE8;re le p&#xE8;re du n&#x153;ud d&#x2019;indice <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> avec <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&#x2A7E;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">i\geqslant 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79619em;vertical-align:-0.13667em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">&#x2A7E;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>. Quel est son indice dans le tableau ?</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
+<li>On se place dans le cas particulier d&apos;un arbre binaire de recherche complet o&#xF9; les n&#x153;uds contiennent des entiers et pour lequel la valeur de chaque n&#x153;ud est sup&#xE9;rieure &#xE0; celles des n&#x153;uds de son fils gauche, et inf&#xE9;rieure &#xE0; celles des n&#x153;uds de son fils droit.   1. &#xC9;crire une fonction <code>recherche</code> ayant pour param&#xE8;tres un arbre <code>arbre</code> et un &#xE9;l&#xE9;ment <code>&#xE9;l&#xE9;ment</code>. Cette fonction renvoie <code>True</code> si <code>&#xE9;l&#xE9;ment</code> est dans l&apos;arbre et <code>False</code> sinon. L&apos;arbre sera repr&#xE9;sent&#xE9; par un tableau comme dans la question pr&#xE9;c&#xE9;dente.</li>
+</ol>
+<h2 class="mume-header" id="exercice-6">Exercice 6</h2>
+
+<p>Une liste de bool&#xE9;en peut &#xEA;tre associ&#xE9;e de mani&#xE8;re unique &#xE0; un entier strictement positif en utilisant la formule suivante :</p>
+<ul>
+<li>Pour une liste <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> bool&#xE9;ens,</li>
+<li>on d&#xE9;finit <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><msub><mi>b</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>&#xD7;</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mo>+</mo><msub><mi>b</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>2</mn></mrow></msub><mo>&#xD7;</mo><msup><mn>2</mn><mrow><mi>n</mi><mo>&#x2212;</mo><mn>2</mn></mrow></msup><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mo>&#xD7;</mo><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><msub><mi>b</mi><mn>0</mn></msub><mo>&#xD7;</mo><msup><mn>2</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">f(b) = 2^n + b_{n-1}&#xD7;2^{n-1} + b_{n-2}&#xD7;2^{n-2} + \cdots + b_{1}&#xD7;2^{1} + b_{0}&#xD7;2^{0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">&#x2212;</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">&#x22EF;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<ol>
+<li>
+<p>Montrer que <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mo stretchy="false">[</mo><mtext>True</mtext><mo separator="true">,</mo><mtext>True</mtext><mo separator="true">,</mo><mtext>False</mtext><mo separator="true">,</mo><mtext>True</mtext><mo stretchy="false">]</mo><mo stretchy="false">)</mo><mo>=</mo><mn>29</mn></mrow><annotation encoding="application/x-tex">f([\text{True} ,\text{True} ,\text{False} ,\text{True}]) = 29</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mopen">[</span><span class="mord text"><span class="mord">True</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">True</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">False</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord text"><span class="mord">True</span></span><span class="mclose">]</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">9</span></span></span></span>.</p>
+</li>
+<li>
+<p>Quelle est la liste <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> de bool&#xE9;ens telle que <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mn>42</mn></mrow><annotation encoding="application/x-tex">f(b)= 42</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">2</span></span></span></span> ?</p>
+</li>
+<li>
+<p>En supposant qu&apos;en Python un bool&#xE9;en soit stock&#xE9; sur <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span> octets, et que le poids d&apos;une liste est la somme des poids de ses &#xE9;l&#xE9;ments. Comparer les poids de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> et <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span> pour une tr&#xE8;s grande liste <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> de bool&#xE9;ens.</p>
+</li>
+<li>
+<p>Donner une impl&#xE9;mentation d&apos;une structure de donn&#xE9;es <code>class PileBool</code> qui sera une pile de bool&#xE9;ens dont <strong>les donn&#xE9;es seront enti&#xE8;rement stock&#xE9;es dans un unique entier</strong>. On attend :</p>
+<ul>
+<li>Un constructeur, et les m&#xE9;thodes suivantes</li>
+<li><code>.est_vide(self)</code> pour savoir si la pile est vide</li>
+<li><code>.empile(self, x: bool)</code> pour empiler un bool&#xE9;en <code>x</code>,</li>
+<li><code>.d&#xE9;pile(self)</code> pour d&#xE9;piler et renvoyer un bool&#xE9;en.</li>
+<li>On attend <strong>juste une utilisation simpliste</strong> des op&#xE9;rations : ajout de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, multiplication par <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>, division par <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> et son reste. Le tout sur un <strong>unique entier</strong> pour stocker les donn&#xE9;es.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question BONUS :</strong> donner une m&#xE9;thode <code>.donne_liste(self)</code> qui permettrait de r&#xE9;pondre automatiquement &#xE0; la question 2.</p>
+</li>
+</ol>
+<p><img src="fixing_problems.png" alt></p>
+<h2 class="mume-header" id="exercice-7">Exercice 7</h2>
+
+<p>Pour construire les mots de &#x141;ukasiewicz (des cha&#xEE;nes de caract&#xE8;res),</p>
+<ul>
+<li>&#xE0; l&apos;&#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, on dispose du mot <code>&quot;b&quot;</code> ;</li>
+<li>&#xE0; une &#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, on peut construire les nouveaux mots par concat&#xE9;nation de <code>&quot;a&quot;</code> et de deux mots disponibles &#xE0; l&apos;&#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>. Les nouveaux et les anciens sont disponibles &#xE0; l&apos;&#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>.</li>
+</ul>
+<ol>
+<li>Montrer qu&apos;on peut construire le mot <code>&quot;ababb&quot;</code>, disponible &#xE0; l&apos;&#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>.</li>
+<li>Donner tous les mots disponibles &#xE0; l&apos;&#xE9;tape <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>.</li>
+<li>D&#xE9;montrer que chaque mot de &#x141;ukasiewicz poss&#xE8;de un nombre de <code>b</code> &#xE9;gal au nombre de <code>a</code> plus un.</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
