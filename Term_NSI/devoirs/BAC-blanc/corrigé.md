@@ -4,7 +4,7 @@
 
 1. `mystère` est une fonction **récursive**.
 2. Les étapes sont :
-    * `mystère(3, 5)` appelle `mystère(3, 2)` qui appelle `mystère(3, 1)` qui appelle `mystère(3, 0)` qui renvoie `0`.
+    * `mystère(3, 5)` appelle `mystère(3, 2)` qui appelle `mystère(3, 1)` qui appelle `mystère(3, 0)` qui renvoie `1`.
     * Ensuite, comme `1%2 == 0` est faux, `mystère(3, 1)` renvoie `1 * 1 * 3`, donc `3`.
     * Ensuite, comme `2%2 == 0` est vrai, `mystère(3, 2)` renvoie `3 * 3`, donc `9`.
     * Ensuite, comme `5%2 == 0` est faux, `mystère(3, 5)` renvoie `9 * 9 * 3`, donc `243`.
@@ -60,12 +60,12 @@ def mystère_force_brute(a: int, b: int) -> int:
 ## Exercice 2
 1. `tableau` est une liste Python.
 2. Oui, on peut définir `f` après `tableau_valeurs`. Ce qui compte c'est de la définir **avant** de s'en servir effectivement.
-3. Il y avait plusieurs erreurs. `f = lambada t: 10 // (t - 2)`
+3. Il y avait plusieurs erreurs. `f = lambda t: 10 // (t - 2)`
 4.
     * `f(2)` provoque une erreur de division par zéro.
-    * `f(4)` renvoie `10 // 4`, soit $2$.
-    * `f(8)` renvoie `10 // 8`, soit $1$.
-    * `f(16)` renvoie `10 // 16`, soit $0$.
+    * `f(4)` renvoie `10 // 2`, soit $5$.
+    * `f(8)` renvoie `10 // 6`, soit $1$.
+    * `f(16)` renvoie `10 // 14`, soit $0$.
 5. * `tableau_valeurs(f, -2, 4)` essaie de calculer `f(x)` pour `x` de `-2` inclus à `4` exclu.
     * Tous les essais réussissent, sauf pour `x` qui vaut `2`, dans ce cas, l'erreur de division par zéro est capturée, puis ignorée (`pass`).
     * `tableau` prend alors les valeurs successives :
@@ -78,8 +78,8 @@ def mystère_force_brute(a: int, b: int) -> int:
 
 ## Exercice 3
 
-1. `donne_taille` et `donne_liste` sont des méthodes accesseurs, en anglais des *getter*.
-2. Préfixer de `__` permet de rendre les attributs privés.
+1. `donne_taille` et `donne_liste` sont des méthodes **accesseurs**, en anglais des *getter*.
+2. Préfixer de `__` permet de rendre les attributs **privés**.
 3. Code
 ```python
 class ListeCroissante:
@@ -97,7 +97,8 @@ class ListeCroissante:
         return self.__liste
 
     def ajoute(self, x):
-        """Ajoute l'élément x dans la liste à une place qui maintient l'ordre croissant, en décalant le reste de la liste si nécessaire.
+        """Ajoute l'élément x dans la liste à une place qui maintient l'ordre croissant,
+        en décalant le reste de la liste si nécessaire.
         """
         i = 0
         while (i < self.__taille) and (__liste[i] < x):
@@ -115,6 +116,10 @@ class ListeCroissante:
         for i in range(self.__taille):
             if self.__liste[i] == x:
                 return True
+            #optionnel, retour prématuré
+            if self.__liste[i] > x:
+                # les suivants seront encore plus grands
+                return False
         return False
 
 
@@ -190,7 +195,7 @@ def calcule_RPN(expression: str) -> int:
 ## Exercice 6
 1. En prenant `True` à $1$ et `False` à $0$, on a :
 $$f ([\text{True}, \text{True}, \text{False}, \text{True}]) = 2^4 + 1×2^3 + 1×2^2 + 0×2^1 + 1×2^0$$
-$$f ([\text{True}, \text{False}, \text{True}, \text{True}]) = 16 + 8 + 4 + 0 + 1$$
+$$f ([\text{True}, \text{True}, \text{False}, \text{True}]) = 16 + 8 + 4 + 0 + 1$$
 $$f ([\text{True}, \text{True}, \text{False}, \text{True}]) = 29$$
 2. $42 = 32+8+2 = (101010)_2$, ainsi $$f ([\text{False}, \text{True}, \text{False}, \text{True}, \text{False}]) = 42$$
 3. Pour une liste de $n$ booléens, $b$ prendrait $8n$ octets, soit $64n$ bits. Alors que $f(b)$ prend $n+1$ bits. C'est bien mieux !

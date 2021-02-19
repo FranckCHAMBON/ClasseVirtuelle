@@ -47,9 +47,9 @@ def tableau_valeurs(g, a, b):
     for x in range(a, b):
         try:
             y = g(x)
+            tableau.append((x, y))
         except:
             pass
-        tableau.append((x, y))
     return tableau
 
 def h(n):
@@ -173,7 +173,7 @@ On décide de représenter un arbre binaire complet par un tableau de taille $n+
 ## Exercice 6
 
 Une liste de booléen peut être associée de manière unique à un entier strictement positif en utilisant la formule suivante :
-* Pour une liste $b$ de $n$ booléens,
+* Pour une liste $b$ de $n$ booléens, (on compte $\text{True} = 1$ et $\text{False} = 0$)
 * on définit $f(b) = 2^n + b_{n-1}×2^{n-1} + b_{n-2}×2^{n-2} + \cdots + b_{1}×2^{1} + b_{0}×2^{0}$
 
 1. Montrer que $f([\text{True} ,\text{True} ,\text{False} ,\text{True}]) = 29$.
