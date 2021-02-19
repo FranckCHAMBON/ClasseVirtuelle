@@ -82,6 +82,7 @@ Pour le code Python des solutions :
 ### :diamond_shape_with_a_dot_inside: Graphes
 
 * [Graphes](cours/4-Graphes/1-graphes.html)
+* [Parcours](cours/4-Graphes/2-parcours.html)
 
 
 ## :anchor: Devoirs
