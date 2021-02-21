@@ -51,7 +51,7 @@ Rendez-vous en cas de confinement complet :
 5. **À venir**, des conseils pour :
     * :snake: Python,
     * :rocket: Anaconda,
-    * :ledger: VSCodium, ...
+    * :ledger: [VSCodium](5-Éditeurs/vscodium.html), ...
 
 ## :tophat: Des liens de cours
 + [Pixees NSI-1](https://pixees.fr/informatiquelycee/n_site/nsi_prem.html)

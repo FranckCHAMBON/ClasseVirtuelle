@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>nsi-accueil</title>
+      <title>vscodium</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,133 +261,184 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="dizzy-sp%C3%A9cialit%C3%A9-nsi">&#x1F4AB; Sp&#xE9;cialit&#xE9; NSI</h1>
+      <h1 class="mume-header undefined" id="vscodium">VSCodium</h1>
 
-<h2 class="mume-header" id="busts_in_silhouette-classe-virtuelle-de-m-chambon">&#x1F465; Classe virtuelle de  M. Chambon</h2>
+<p>Visual Studio Code est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclus de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques.</p>
+<p><a href="https://vscodium.com/">VSCodium</a> est une version de Visual Studio Code <strong>sans t&#xE9;l&#xE9;m&#xE9;trie</strong>, et distribu&#xE9;e avec une licence libre (MIT) plus respectueuse de l&apos;esprit <em>Open Source</em>.</p>
+<h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
+
+<ul>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#windows">Windows</a>
+<ul>
+<li><a href="#avec-windows-package-manager-winget">Avec <em>Windows Package Manager (WinGet)</em></a></li>
+<li><a href="#avec-chocolatey">Avec <em>Chocolatey</em></a></li>
+</ul>
+</li>
+<li><a href="#mac-os">Mac OS</a></li>
+<li><a href="#linux-debian">Linux (Debian)</a></li>
+</ul>
+</li>
+<li><a href="#extensions-utiles-en-nsi">Extensions utiles en NSI</a>
+<ul>
+<li><a href="#menus-en-fran%C3%A7ais">Menus en fran&#xE7;ais</a></li>
+<li><a href="#correction-orthographique-et-grammaticale">Correction orthographique et grammaticale</a></li>
+<li><a href="#enjoliveurs">Enjoliveurs</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#meilleure-indentation-avec-python">Meilleure indentation avec Python</a></li>
+<li><a href="#donn%C3%A9es-en-table-csv">Donn&#xE9;es en table (<code>.csv</code>)</a></li>
+<li><a href="#langage-sql">Langage SQL</a></li>
+<li><a href="#vari%C3%A9es">Vari&#xE9;es</a></li>
+</ul>
+</li>
+<li><a href="#extensions-utiles-pour-le-professeur">Extensions utiles pour le professeur</a>
+<ul>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#langage-html">Langage HTML</a></li>
+<li><a href="#enregistrer-une-vid%C3%A9o">Enregistrer une vid&#xE9;o</a></li>
+<li><a href="#%C3%A9dition-de-documents-latex">&#xC9;dition de documents LaTeX</a></li>
+<li><a href="#%C3%A9dition-de-documents-asymptote">&#xC9;dition de documents Asymptote</a></li>
+<li><a href="#autres-extensions-python">Autres extensions Python</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="installation">Installation</h2>
+
+<p>VSCodium est multiplateforme, il suffit de suivre les indications propos&#xE9;es sur le site officiel.<br>
+Ci-dessous, une traduction rapide.</p>
+<h3 class="mume-header" id="windows">Windows</h3>
 
 <blockquote>
-<p><a href="https://lycee.cned.fr/cv/258054/203">https://lycee.cned.fr/cv/258054/203</a></p>
+<p>Cette section est non test&#xE9;e par votre professeur.</p>
 </blockquote>
-<p>Rendez-vous en cas de confinement complet :</p>
-<ul>
-<li>&#x1F559; les mardis de 10h &#xE0; 12h (groupe1)</li>
-<li>&#x1F557; les mercredis de 8h &#xE0; 10h (groupe2)</li>
-<li>&#x1F551; les vendredis de 14h &#xE0; 16h</li>
-</ul>
-<h2 class="mume-header" id="anchor-devoirs">&#x2693;&#xFE0F; Devoirs</h2>
-
-<ul>
-<li><a href="devoirs/ds1.pdf">DS n&#xB0;1</a> <em>corrig&#xE9;</em>
-<ul>
-<li><a href="devoirs/ds1-ex1.html">Correction exercice 1</a></li>
-</ul>
-</li>
-<li><a href="devoirs/ds2.pdf">DS n&#xB0;2</a> <em>corrig&#xE9;</em>
-<ul>
-<li><a href="devoirs/ds2-ex1.html">Correction exercice 1</a></li>
-</ul>
-</li>
-<li><a href="devoirs/dm_prologin_2003/dm.html">DM n&#xB0;1</a></li>
-</ul>
-<h2 class="mume-header" id="mortar_board-travail-principal">&#x1F393; Travail principal</h2>
+<p>Il existe plusieurs gestionnaires de paquets pour Windows.</p>
+<h4 class="mume-header" id="avec-windows-package-manager-winget">Avec <em>Windows Package Manager (WinGet)</em></h4>
 
 <ol>
-<li>Cours :
-<ul>
 <li>
-<p><a href="Cours/1-binaire.html">1 - Le binaire</a></p>
+<p>&#xC0; partir de Windows 10 1709 (build 16299), on peut installer le <a href="https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1?activetab=pivot:overviewtab">App Installer</a></p>
 </li>
 <li>
-<p><a href="Cours/2-calc.html">2 - Calculatrice Python</a></p>
-</li>
-<li>
-<p><a href="Cours/3-variables.html">3 - Variables Python</a></p>
-</li>
-<li>
-<p><a href="Cours/4-types1.html">4 - Types simples : nombres, cha&#xEE;ne, tableau et tuple</a></p>
-</li>
-<li>
-<p><a href="Cours/5-types2.html">5 - Types avanc&#xE9;s : listes dynamiques, ensembles, dictionnaires</a></p>
-</li>
-<li>
-<p>6 - &#x1F41A; Interfaces Homme Machine (Syst&#xE8;mes d&apos;exploitation et commandes Bash)</p>
-<ul>
-<li>Activit&#xE9;s enti&#xE8;rement r&#xE9;alisables sur tablette Android avec l&apos;application <a href="https://termux.com/">Termux</a>.</li>
-<li>0-<a href="Termux/0-termux.html">Installation</a> <em>Seule cette activit&#xE9; n&#xE9;cessite une connexion Internet.</em></li>
-<li>1-<a href="Termux/1-bash.html">D&#xE9;couverte de Bash</a></li>
-<li>2-<a href="Termux/2-micro.html">&#xC9;dition de code dans un terminal</a></li>
-<li>3-<a href="Termux/3-tests.html">Cr&#xE9;ation de jeux de tests</a> <em>&#xC0; venir</em></li>
-</ul>
-</li>
-<li>
-<p><a href="https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html">Python au lyc&#xE9;e</a></p>
-</li>
-</ul>
-</li>
-<li>&#x1F4E2; Il est <strong>important</strong> de poursuivre le travail avec <a href="http://www.france-ioi.org/algo/chapters.php?progression=1">FranceIOI</a>
-<ul>
-<li><a href="FranceIOI/accueil.html">Correction et &#xE9;tude des solutions aux probl&#xE8;mes</a>.</li>
-</ul>
+<p>Ensuite, on peut installer VSCodium avec :</p>
 </li>
 </ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">winget <span class="token function">install</span> vscodium 
+</pre><h4 class="mume-header" id="avec-chocolatey">Avec <em>Chocolatey</em></h4>
+
+<ol>
+<li>Installer <a href="https://chocolatey.org/">Chocolatey</a>, si ce n&apos;est pas d&#xE9;j&#xE0; fait.</li>
+<li>Ensuite, on peut installer VSCodium avec :</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">choco <span class="token function">install</span> vscodium 
+</pre><h3 class="mume-header" id="mac-os">Mac OS</h3>
+
 <blockquote>
-<p>Nous continuerons &#xE0; corriger certains exercices ensemble.</p>
+<p>Cette section est non test&#xE9;e par votre professeur.</p>
 </blockquote>
-<ol start="2">
-<li>R&#xE9;soudre des probl&#xE8;mes (en anglais) sur <a href="https://projecteuler.net/archives">Project Euler</a>.
-<ul>
-<li><a href="EULER/accueil.html">Correction et &#xE9;tude des solutions aux probl&#xE8;mes</a>. <em>&#xC0; venir</em></li>
-</ul>
-</li>
+<ol>
+<li>Il vous faut avoir le gestionnaire de paquet <a href="https://brew.sh/index_fr">Homebrew</a>, qui s&apos;installe (si ce n&apos;est pas d&#xE9;j&#xE0; fait) sur votre Mac, dans un terminal, avec :</li>
 </ol>
-<blockquote>
-<p>Nous &#xE9;tudierons ensemble des solutions &#xE0; certains des 50 premiers probl&#xE8;mes.</p>
-</blockquote>
-<ol start="3">
-<li>&#x1F527; Suivre ce <a href="1-Virtualbox/1-Virtualbox-page.html">tutoriel</a> pour travailler avec VirtualBox.
-<ul>
-<li><a href="InstallationLinux.pdf">Variante avec Ubuntu pour Windows</a></li>
-<li>une <a href="https://tube-creteil.beta.education.fr/videos/watch/playlist/8fca67aa-4575-485b-b2ce-3fd2c00c620c?videoId=fcad64bf-da5e-4f35-9a94-b8863ba989a5">vid&#xE9;o</a> d&apos;un exemple.</li>
-<li>Un <a href="https://laboiteaphysique.fr/site2/index.php/numerique-et-sciences-informatiques/systeme-dexploitation/obtenir-un-systeme-dexploitation-linux/machine-virtuelle">autre tutoriel</a> fait par un physicien.</li>
-<li><a href="../4-CLI/termux.md">Exp&#xE9;riences avec Termux</a></li>
-</ul>
-</li>
-<li>&#x1F4F1; Documents <strong>adapt&#xE9;s &#xE0; la tablette</strong> :
-<ul>
-<li>&#x1F532; <a href="1-Virtualbox/1-Virtualbox.html">Utilisation de VirtualBox</a> : avec cette aide, vous pouvez installer un syst&#xE8;me d&apos;exploitation libre de mani&#xE8;re virtuelle, comme en classe.</li>
-<li>&#x2734;&#xFE0F; <a href="2-config-Linux/2-config-Linux.html">Mises &#xE0; jour et installation de logiciels pour la NSI</a></li>
-<li>&#x1F310; <a href="3-Navigateurs/3-Navigateurs.html">Conseils pour les navigateurs Internet</a></li>
-</ul>
-</li>
-<li><strong>&#xC0; venir</strong>, des conseils pour :
-<ul>
-<li>&#x1F40D; Python,</li>
-<li>&#x1F680; Anaconda,</li>
-<li>&#x1F4D2; <a href="5-%C3%89diteurs/vscodium.html">VSCodium</a>, ...</li>
-</ul>
-</li>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">/bin/bash -c <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>&quot;</span>
+</pre><ol start="2">
+<li>Ensuite, on peut installer VSCodium avec :</li>
 </ol>
-<h2 class="mume-header" id="tophat-des-liens-de-cours">&#x1F3A9; Des liens de cours</h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">brew <span class="token function">install</span> --cask vscodium 
+</pre><h3 class="mume-header" id="linux-debian">Linux (Debian)</h3>
+
+<ol>
+<li>Ajouter la cl&#xE9; GPG du d&#xE9;p&#xF4;t</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">wget</span> -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg <span class="token operator">|</span> gpg --dearmor <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">dd</span> <span class="token assign-left variable">of</span><span class="token operator">=</span>/etc/apt/trusted.gpg.d/vscodium.gpg 
+</pre><ol start="2">
+<li>Ajouter le d&#xE9;p&#xF4;t</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">&apos;deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main&apos;</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> --append /etc/apt/sources.list.d/vscodium.list 
+</pre><ol start="3">
+<li>Mettre &#xE0; jour et installer</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codium 
+</pre><h2 class="mume-header" id="extensions-utiles-en-nsi">Extensions utiles en NSI</h2>
+
+<p>Au premier d&#xE9;marrage de VSCodium, on peut aller dans le gestionnaire d&apos;extensions avec (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>X</kbd>).</p>
+<h3 class="mume-header" id="menus-en-fran%C3%A7ais">Menus en fran&#xE7;ais</h3>
+
+<p>Pour franciser VSCodium :</p>
+<ol>
+<li>Rechercher <code>french</code></li>
+<li>Installer <code>French Language Pack for VS Code</code> de <code>Microsoft</code>, sous licence MIT.</li>
+</ol>
+<h3 class="mume-header" id="correction-orthographique-et-grammaticale">Correction orthographique et grammaticale</h3>
+
+<ol>
+<li>Rechercher et installer <code>LTeX</code></li>
+<li>Une fois install&#xE9;e, cliquer sur la roue dent&#xE9;e (param&#xE8;tres d&apos;extensions)</li>
+<li>D&#xE9;rouler vers le bas, et chercher la section <code>Ltex: language</code></li>
+<li>Dans le menu d&#xE9;roulant, choisir <code>fr</code> pour <code>french</code>.</li>
+</ol>
+<h3 class="mume-header" id="enjoliveurs">Enjoliveurs</h3>
+
+<ol>
+<li>Chercher et installer l&apos;extension <code>Material Icon Theme</code> ; pour des ic&#xF4;nes de fichier.</li>
+<li>Chercher et installer l&apos;extension <code>Path Autocomplete</code> ; pour compl&#xE9;ter automatiquement les noms de fichiers.</li>
+<li>Chercher et installer l&apos;extension <code>Bracket Pair Colorizer 2</code> ; pour mieux voir vos parenth&#xE8;ses.</li>
+</ol>
+<h3 class="mume-header" id="python">Python</h3>
+
+<p>Rechercher <code>Python</code> et installer l&apos;extension de Microsoft. Ceci n&apos;installe pas Python mais fera le lien entre Python d&#xE9;j&#xE0; install&#xE9; et VSCodium.</p>
+<p>Une fois install&#xE9;e, vous pouvez tester.</p>
+<ol>
+<li>Cr&#xE9;er un fichier <code>test.py</code> de type Python.</li>
+<li>En bas, &#xE0; gauche, devrait &#xEA;tre affich&#xE9; votre version de python.</li>
+<li>&#xC9;diter <code>print(&quot;Salut &#xE0; tous !&quot;)</code></li>
+<li>Appuyer sur (<kbd>Ctrl</kbd>+<kbd>F5</kbd>)</li>
+<li>Une fen&#xEA;tre devrait s&apos;ouvrir, avec le r&#xE9;sultat attendu de votre script.</li>
+</ol>
+<h3 class="mume-header" id="meilleure-indentation-avec-python">Meilleure indentation avec Python</h3>
+
+<p>Rechercher et installer l&apos;extension <code>Python Indent</code></p>
+<h3 class="mume-header" id="donn%C3%A9es-en-table-csv">Donn&#xE9;es en table (<code>.csv</code>)</h3>
+
+<p>En premi&#xE8;re, on manipule des fichiers <code>.csv</code>, et on peut faire aussi les toutes premi&#xE8;res exp&#xE9;riences de SQL.</p>
+<p>Rechercher et installer l&apos;extension <code>Rainbow CSV</code></p>
+<h3 class="mume-header" id="langage-sql">Langage SQL</h3>
+
+<p>En terminale, on fait une initiation au langage <code>SQL</code></p>
+<p>Rechercher et installer l&apos;extension <code>SQLite</code></p>
+<h3 class="mume-header" id="vari%C3%A9es">Vari&#xE9;es</h3>
 
 <ul>
-<li><a href="https://pixees.fr/informatiquelycee/n_site/nsi_prem.html">Pixees NSI-1</a></li>
-<li><a href="http://www.maths-info-lycee.fr/index.html">Maths-info-lyc&#xE9;e</a></li>
-<li><a href="http://nsi.janviercommelemois.fr/index.html">NSI - lyc&#xE9;e des 3 sources</a></li>
-<li>Une <a href="https://www.lumni.fr/video/notion-de-listes-en-informatique-et-application-aux-images-numeriques">vid&#xE9;o</a> sur les listes en Python (et applications aux images num&#xE9;riques).</li>
-</ul>
-<h2 class="mume-header" id="penguin-%C3%A9mulateurs-linux">&#x1F427; &#xC9;mulateurs Linux</h2>
-
+<li>Ouvrir un fichier avec une extension particuli&#xE8;re, puis le gestionnaire d&apos;extensions. Par exemple un fichier de sous-titres.
 <ul>
-<li><a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a> : pour les tablettes
-<ul>
-<li><a href="https://grisebouille.net/termux-hackez-votre-android/">Un article &#xE0; lire sur Termux</a></li>
+<li>Le gestionnaire propose des extensions adapt&#xE9;es, comme : <code>Subtitles Editor</code></li>
 </ul>
 </li>
-<li>&#x1F41A; <a href="http://nsivaugelas.free.fr/premiere/fichiers/Commandes%20de%20bases%20Unix.pdf">commandes de bases Linux</a> ;</li>
-<li>un <a href="http://nsivaugelas.free.fr/premiere/archi_s_e.php">TP Linux</a></li>
-<li>un <a href="http://luffah.xyz/bidules/Terminus/">jeu avec un &#xE9;mulateur Linux</a></li>
-<li>un autre <a href="http://gervaisprof.free.fr/dl/bash/Ligne_de_commande_POSIX.pdf">TP</a></li>
-<li>un autre TP sur demande uniquement &#x1F609;</li>
+</ul>
+<h2 class="mume-header" id="extensions-utiles-pour-le-professeur">Extensions utiles pour le professeur</h2>
+
+<h3 class="mume-header" id="markdown">Markdown</h3>
+
+<p>Pour cr&#xE9;er des pages HTML gr&#xE2;ce au langage Markdown, et visualiser en direct le rendu HTML.</p>
+<p>Rechercher et installer l&apos;extension <code>Markdown Preview Enhanced</code></p>
+<h3 class="mume-header" id="langage-html">Langage HTML</h3>
+
+<p>Pour pr&#xE9;visualiser en direct votre rendu HTML/Javascript.</p>
+<p>Rechercher et installer l&apos;extension <code>Browser Preview</code></p>
+<h3 class="mume-header" id="enregistrer-une-vid%C3%A9o">Enregistrer une vid&#xE9;o</h3>
+
+<p>Il faut avoir <code>FFmpeg</code> d&#xE9;j&#xE0; install&#xE9;.</p>
+<p>Rechercher et installer l&apos;extension <code>Chronicler</code></p>
+<h3 class="mume-header" id="%C3%A9dition-de-documents-latex">&#xC9;dition de documents LaTeX</h3>
+
+<p>Rechercher et installer l&apos;extension <code>LaTeX Workshop</code></p>
+<h3 class="mume-header" id="%C3%A9dition-de-documents-asymptote">&#xC9;dition de documents Asymptote</h3>
+
+<p>Rechercher et installer l&apos;extension <code>Asymptote</code></p>
+<h3 class="mume-header" id="autres-extensions-python">Autres extensions Python</h3>
+
+<ul>
+<li><code>Python Type Hint</code> ; pour l&apos;annotation de type</li>
+<li><code>Python Preview</code> ; pour un clone de <em>Python Tutor</em></li>
 </ul>
 
       </div>
