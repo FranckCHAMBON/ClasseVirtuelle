@@ -1,6 +1,6 @@
 # VSCodium {ignore}
 
-Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclus de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques.
+Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques.
 
 [VSCodium](https://vscodium.com/) est une version de Visual Studio Code **sans télémétrie**, et distribuée avec une licence libre (MIT) plus respectueuse de l'esprit *Open Source*.
 
