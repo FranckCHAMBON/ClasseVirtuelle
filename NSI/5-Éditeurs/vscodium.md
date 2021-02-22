@@ -1,8 +1,12 @@
 # VSCodium {ignore}
 
-Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques.
+Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque de certaines extensions.
 
 [VSCodium](https://vscodium.com/) est une version de Visual Studio Code **sans télémétrie**, et distribuée avec une licence libre (MIT) plus respectueuse de l'esprit *Open Source*.
+
+D'autre part, on peut ajouter des extensions ; il y a un point délicat.
+* Le *MarketPlace* de Visual Studio Code contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recomander.
+* Le *MarketPlace* de **VSCodium ne contient que des extensions libres**, ce qui permet de pouvoir le recommander sereinement.
 
 ## Sommaire {ignore}
 
@@ -61,6 +65,27 @@ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium mai
 sudo apt update && sudo apt install codium 
 ```
 
+## Premier démarrage
+
+```bash
+cd ~
+mkdir test_vscodium
+cd test_vscodium
+codium .
+```
+
+Dans un terminal Bash,
+1. Nous sommes aller à la racine de l'utilisateur,
+2. Nous avons créé un nouveau dossier,
+3. et y sommes entré,
+4. ensuite nous avons ouvert VSCodium dans ce dossier.
+
+
+![Premier démarrage](assets/1-initial.png)
+
+### Quelques réglages
+
+
 ## Extensions utiles en NSI
 
 Au premier démarrage de VSCodium, on peut aller dans le gestionnaire d'extensions avec (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>X</kbd>).
@@ -69,14 +94,26 @@ Au premier démarrage de VSCodium, on peut aller dans le gestionnaire d'extensio
 
 Pour franciser VSCodium :
 1. Rechercher `french`
-2. Installer `French Language Pack for VS Code` de `Microsoft`, sous licence MIT.
+2. Installer [`French Language Pack for VS Code`](https://open-vsx.org/extension/MS-CEINTL/vscode-language-pack-fr)
+
+> Installation automatique via Bash
+```bash
+codium --install-extension ms-ceintl.vscode-language-pack-fr
+```
 
 ### Correction orthographique et grammaticale
 
-1. Rechercher et installer `LTeX`
-2. Une fois installée, cliquer sur la roue dentée (paramètres d'extensions)
-3. Dérouler vers le bas, et chercher la section `Ltex: language`
-4. Dans le menu déroulant, choisir `fr` pour `french`.
+1. Rechercher et installer [`LTeX`](https://open-vsx.org/extension/valentjn/vscode-ltex)
+2. LTeX devrait être automatiquement configuré en français, sinon
+    1. Une fois installée, cliquer sur la roue dentée (paramètres d'extensions)
+    2. Dérouler vers le bas, et chercher la section `Ltex: language`
+    3. Dans le menu déroulant, choisir `fr` pour `french`.
+
+> Installation automatique via Bash
+```bash
+codium --install-extension valentjn.vscode-ltex
+```
+
 
 ### Enjoliveurs
 1. Chercher et installer l'extension `Material Icon Theme` ; pour des icônes de fichier.
@@ -108,10 +145,13 @@ En terminale, on fait une initiation au langage `SQL`
 
 Rechercher et installer l'extension `SQLite`
 
+Rechercher et installer l'extension `ERD Editor`
+
 ### Variées
 
 * Ouvrir un fichier avec une extension particulière, puis le gestionnaire d'extensions. Par exemple un fichier de sous-titres.
     * Le gestionnaire propose des extensions adaptées, comme : `Subtitles Editor`
+
 
 ## Extensions utiles pour le professeur
 
@@ -123,22 +163,17 @@ Rechercher et installer l'extension `Markdown Preview Enhanced`
 ### Langage HTML
 Pour prévisualiser en direct votre rendu HTML/Javascript.
 
+Il faut avoir le navigateur `Chromium` déjà installé.
+
+
 Rechercher et installer l'extension `Browser Preview`
 
-### Enregistrer une vidéo
-Il faut avoir `FFmpeg` déjà installé.
-
-Rechercher et installer l'extension `Chronicler`
 
 ### Édition de documents LaTeX
 
 Rechercher et installer l'extension `LaTeX Workshop`
 
-### Édition de documents Asymptote
-
-Rechercher et installer l'extension `Asymptote`
 
 ### Autres extensions Python
 
-* `Python Type Hint` ; pour l'annotation de type
-* `Python Preview` ; pour un clone de *Python Tutor*
+* `Pyright` ; pour le typage statique, entre autres

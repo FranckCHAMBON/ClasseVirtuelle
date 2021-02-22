@@ -263,8 +263,13 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="vscodium">VSCodium</h1>
 
-<p>Visual Studio Code est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclut de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques.</p>
+<p>Visual Studio Code est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclut de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque de certaines extensions.</p>
 <p><a href="https://vscodium.com/">VSCodium</a> est une version de Visual Studio Code <strong>sans t&#xE9;l&#xE9;m&#xE9;trie</strong>, et distribu&#xE9;e avec une licence libre (MIT) plus respectueuse de l&apos;esprit <em>Open Source</em>.</p>
+<p>D&apos;autre part, on peut ajouter des extensions ; il y a un point d&#xE9;licat.</p>
+<ul>
+<li>Le <em>MarketPlace</em> de Visual Studio Code contient des extensions libres, mais aussi d&apos;autres qui ne le sont pas, et qui peuvent inclure de la t&#xE9;l&#xE9;m&#xE9;trie &#xE9;galement... Nous ne pouvons pas le recomander.</li>
+<li>Le <em>MarketPlace</em> de <strong>VSCodium ne contient que des extensions libres</strong>, ce qui permet de pouvoir le recommander sereinement.</li>
+</ul>
 <h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
 
 <ul>
@@ -278,6 +283,11 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#mac-os">Mac OS</a></li>
 <li><a href="#linux-debian">Linux (Debian)</a></li>
+</ul>
+</li>
+<li><a href="#premier-d%C3%A9marrage">Premier d&#xE9;marrage</a>
+<ul>
+<li><a href="#quelques-r%C3%A9glages">Quelques r&#xE9;glages</a></li>
 </ul>
 </li>
 <li><a href="#extensions-utiles-en-nsi">Extensions utiles en NSI</a>
@@ -296,9 +306,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <ul>
 <li><a href="#markdown">Markdown</a></li>
 <li><a href="#langage-html">Langage HTML</a></li>
-<li><a href="#enregistrer-une-vid%C3%A9o">Enregistrer une vid&#xE9;o</a></li>
 <li><a href="#%C3%A9dition-de-documents-latex">&#xC9;dition de documents LaTeX</a></li>
-<li><a href="#%C3%A9dition-de-documents-asymptote">&#xC9;dition de documents Asymptote</a></li>
 <li><a href="#autres-extensions-python">Autres extensions Python</a></li>
 </ul>
 </li>
@@ -358,7 +366,23 @@ Ci-dessous, une traduction rapide.</p>
 <li>Mettre &#xE0; jour et installer</li>
 </ol>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codium 
-</pre><h2 class="mume-header" id="extensions-utiles-en-nsi">Extensions utiles en NSI</h2>
+</pre><h2 class="mume-header" id="premier-d%C3%A9marrage">Premier d&#xE9;marrage</h2>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token builtin class-name">cd</span> ~
+<span class="token function">mkdir</span> test_vscodium
+<span class="token builtin class-name">cd</span> test_vscodium
+codium <span class="token builtin class-name">.</span>
+</pre><p>Dans un terminal Bash,</p>
+<ol>
+<li>Nous sommes aller &#xE0; la racine de l&apos;utilisateur,</li>
+<li>Nous avons cr&#xE9;&#xE9; un nouveau dossier,</li>
+<li>et y sommes entr&#xE9;,</li>
+<li>ensuite nous avons ouvert VSCodium dans ce dossier.</li>
+</ol>
+<p><img src="assets/1-initial.png" alt="Premier d&#xE9;marrage"></p>
+<h3 class="mume-header" id="quelques-r%C3%A9glages">Quelques r&#xE9;glages</h3>
+
+<h2 class="mume-header" id="extensions-utiles-en-nsi">Extensions utiles en NSI</h2>
 
 <p>Au premier d&#xE9;marrage de VSCodium, on peut aller dans le gestionnaire d&apos;extensions avec (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>X</kbd>).</p>
 <h3 class="mume-header" id="menus-en-fran%C3%A7ais">Menus en fran&#xE7;ais</h3>
@@ -366,17 +390,29 @@ Ci-dessous, une traduction rapide.</p>
 <p>Pour franciser VSCodium :</p>
 <ol>
 <li>Rechercher <code>french</code></li>
-<li>Installer <code>French Language Pack for VS Code</code> de <code>Microsoft</code>, sous licence MIT.</li>
+<li>Installer <a href="https://open-vsx.org/extension/MS-CEINTL/vscode-language-pack-fr"><code>French Language Pack for VS Code</code></a></li>
 </ol>
-<h3 class="mume-header" id="correction-orthographique-et-grammaticale">Correction orthographique et grammaticale</h3>
+<blockquote>
+<p>Installation automatique via Bash</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension ms-ceintl.vscode-language-pack-fr
+</pre><h3 class="mume-header" id="correction-orthographique-et-grammaticale">Correction orthographique et grammaticale</h3>
 
 <ol>
-<li>Rechercher et installer <code>LTeX</code></li>
+<li>Rechercher et installer <a href="https://open-vsx.org/extension/valentjn/vscode-ltex"><code>LTeX</code></a></li>
+<li>LTeX devrait &#xEA;tre automatiquement configur&#xE9; en fran&#xE7;ais, sinon
+<ol>
 <li>Une fois install&#xE9;e, cliquer sur la roue dent&#xE9;e (param&#xE8;tres d&apos;extensions)</li>
 <li>D&#xE9;rouler vers le bas, et chercher la section <code>Ltex: language</code></li>
 <li>Dans le menu d&#xE9;roulant, choisir <code>fr</code> pour <code>french</code>.</li>
 </ol>
-<h3 class="mume-header" id="enjoliveurs">Enjoliveurs</h3>
+</li>
+</ol>
+<blockquote>
+<p>Installation automatique via Bash</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension valentjn.vscode-ltex
+</pre><h3 class="mume-header" id="enjoliveurs">Enjoliveurs</h3>
 
 <ol>
 <li>Chercher et installer l&apos;extension <code>Material Icon Theme</code> ; pour des ic&#xF4;nes de fichier.</li>
@@ -405,6 +441,7 @@ Ci-dessous, une traduction rapide.</p>
 
 <p>En terminale, on fait une initiation au langage <code>SQL</code></p>
 <p>Rechercher et installer l&apos;extension <code>SQLite</code></p>
+<p>Rechercher et installer l&apos;extension <code>ERD Editor</code></p>
 <h3 class="mume-header" id="vari%C3%A9es">Vari&#xE9;es</h3>
 
 <ul>
@@ -423,22 +460,15 @@ Ci-dessous, une traduction rapide.</p>
 <h3 class="mume-header" id="langage-html">Langage HTML</h3>
 
 <p>Pour pr&#xE9;visualiser en direct votre rendu HTML/Javascript.</p>
+<p>Il faut avoir le navigateur <code>Chromium</code> d&#xE9;j&#xE0; install&#xE9;.</p>
 <p>Rechercher et installer l&apos;extension <code>Browser Preview</code></p>
-<h3 class="mume-header" id="enregistrer-une-vid%C3%A9o">Enregistrer une vid&#xE9;o</h3>
-
-<p>Il faut avoir <code>FFmpeg</code> d&#xE9;j&#xE0; install&#xE9;.</p>
-<p>Rechercher et installer l&apos;extension <code>Chronicler</code></p>
 <h3 class="mume-header" id="%C3%A9dition-de-documents-latex">&#xC9;dition de documents LaTeX</h3>
 
 <p>Rechercher et installer l&apos;extension <code>LaTeX Workshop</code></p>
-<h3 class="mume-header" id="%C3%A9dition-de-documents-asymptote">&#xC9;dition de documents Asymptote</h3>
-
-<p>Rechercher et installer l&apos;extension <code>Asymptote</code></p>
 <h3 class="mume-header" id="autres-extensions-python">Autres extensions Python</h3>
 
 <ul>
-<li><code>Python Type Hint</code> ; pour l&apos;annotation de type</li>
-<li><code>Python Preview</code> ; pour un clone de <em>Python Tutor</em></li>
+<li><code>Pyright</code> ; pour le typage statique, entre autres</li>
 </ul>
 
       </div>
