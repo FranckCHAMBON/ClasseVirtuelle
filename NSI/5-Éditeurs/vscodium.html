@@ -263,13 +263,22 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="vscodium">VSCodium</h1>
 
-<p>Visual Studio Code est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclut de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.</p>
-<p><a href="https://vscodium.com/">VSCodium</a> est une version de Visual Studio Code <strong>sans t&#xE9;l&#xE9;m&#xE9;trie</strong>, et distribu&#xE9;e avec une licence libre (MIT) qui est bien plus respectueuse.</p>
+<p>Visual Studio Code (VSCode) est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclut de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.</p>
+<p><a href="https://github.com/VSCodium/vscodium">VSCodium</a> est une version de VSCode <strong>sans t&#xE9;l&#xE9;m&#xE9;trie</strong>, et distribu&#xE9;e avec une licence libre (MIT) qui est bien plus respectueuse.</p>
 <p>D&apos;autre part, on peut ajouter des extensions ; il y a un point d&#xE9;licat.</p>
 <ul>
-<li>Le <em>MarketPlace</em> de Visual Studio Code contient des extensions libres, mais aussi d&apos;autres qui ne le sont pas, et qui peuvent inclure de la t&#xE9;l&#xE9;m&#xE9;trie &#xE9;galement... Nous ne pouvons pas le recommander.</li>
-<li>Le <em>MarketPlace</em> de <strong>VSCodium ne contient que des extensions libres</strong>, ce qui permet de pouvoir le recommander sereinement.</li>
+<li>Le <a href="https://marketplace.visualstudio.com/VSCode"><em>MarketPlace</em></a> de VSCode contient des extensions libres, mais aussi d&apos;autres qui ne le sont pas, et qui peuvent inclure de la t&#xE9;l&#xE9;m&#xE9;trie &#xE9;galement... Nous ne pouvons pas le recommander.</li>
+<li>Le <a href="https://open-vsx.org/"><em>MarketPlace</em></a> de <strong>VSCodium ne contient que des extensions libres</strong>, ce qui permet de pouvoir le recommander sereinement.</li>
 </ul>
+<blockquote>
+<p>Une fois install&#xE9;, dans un terminal,</p>
+<ul>
+<li>pour lancer VSCodium, on entre : <code>codium .</code></li>
+<li>Pour lancer VSCode, on aurait entr&#xE9; : <code>code .</code></li>
+</ul>
+<p>Tout comme <code>chromium</code> est la version libre de <code>chrome</code>.<br>
+L&apos;aide que l&apos;on peut trouver en ligne sur VSCode se traduit en rempla&#xE7;ant <code>code</code> par <code>codium</code>.</p>
+</blockquote>
 <h2 class="mume-header undefined" id="sommaire">Sommaire</h2>
 
 <ul>
@@ -299,7 +308,6 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#meilleure-indentation-avec-python">Meilleure indentation avec Python</a></li>
 <li><a href="#donn%C3%A9es-en-table-csv">Donn&#xE9;es en table (<code>.csv</code>)</a></li>
 <li><a href="#langage-sql">Langage SQL</a></li>
-<li><a href="#vari%C3%A9es">Vari&#xE9;es</a></li>
 </ul>
 </li>
 <li><a href="#extensions-utiles-pour-le-professeur">Extensions utiles pour le professeur</a>
@@ -311,9 +319,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#autres-extensions-python">Autres extensions Python</a></li>
 </ul>
 </li>
-<li><a href="#compl%C3%A9ments-sur-les-extensions">Compl&#xE9;ments sur les extensions</a>
+<li><a href="#compl%C3%A9ments">Compl&#xE9;ments</a>
 <ul>
+<li><a href="#suggestions-dextensions">Suggestions d&apos;extensions</a></li>
+<li><a href="#o%C3%B9-sont-les-extensions">O&#xF9; sont les extensions ?</a></li>
 <li><a href="#installer-une-extension-qui-nest-pas-encore-sur-le-marketplace-libre">Installer une extension qui n&apos;est pas (encore) sur le MarketPlace libre.</a></li>
+<li><a href="#more-info-en">More Info (en)</a></li>
 </ul>
 </li>
 </ul>
@@ -324,7 +335,7 @@ Ci-dessous, une traduction rapide.</p>
 <h3 class="mume-header" id="windows">Windows</h3>
 
 <blockquote>
-<p>Cette section est non test&#xE9;e par votre professeur.</p>
+<p>Cette section est <strong>non test&#xE9;e</strong> par votre professeur.</p>
 </blockquote>
 <p>Il existe plusieurs gestionnaires de paquets pour Windows.</p>
 <h4 class="mume-header" id="avec-windows-package-manager-winget">Avec <em>Windows Package Manager (WinGet)</em></h4>
@@ -348,7 +359,7 @@ Ci-dessous, une traduction rapide.</p>
 </pre><h3 class="mume-header" id="mac-os">Mac OS</h3>
 
 <blockquote>
-<p>Cette section est non test&#xE9;e par votre professeur.</p>
+<p>Cette section est <strong>non test&#xE9;e</strong> par votre professeur.</p>
 </blockquote>
 <ol>
 <li>Il vous faut avoir le gestionnaire de paquet <a href="https://brew.sh/index_fr">Homebrew</a>, qui s&apos;installe (si ce n&apos;est pas d&#xE9;j&#xE0; fait) sur votre Mac, dans un terminal, avec :</li>
@@ -422,13 +433,16 @@ codium <span class="token builtin class-name">.</span>
 </pre><h3 class="mume-header" id="enjoliveurs">Enjoliveurs</h3>
 
 <ol>
-<li>Chercher et installer l&apos;extension <code>Material Icon Theme</code> ; pour des ic&#xF4;nes de fichier.</li>
+<li>Chercher et installer l&apos;extension <code>Material Theme</code> ; pour un th&#xE8;me sombre complet.</li>
 <li>Chercher et installer l&apos;extension <code>Bracket Pair Colorizer 2</code> ; pour mieux voir vos parenth&#xE8;ses.</li>
 </ol>
-<h3 class="mume-header" id="python">Python</h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension Equinusocio.vsc-material-theme
+codium --install-extension CoenraadS.bracket-pair-colorizer-2
+</pre><h3 class="mume-header" id="python">Python</h3>
 
 <p>Rechercher <code>Python</code> et installer l&apos;extension de Microsoft. Ceci n&apos;installe pas Python mais fera le lien entre Python d&#xE9;j&#xE0; install&#xE9; et VSCodium.</p>
-<p>Une fois install&#xE9;e, vous pouvez tester.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension ms-python.python
+</pre><p>Une fois install&#xE9;e, vous pouvez tester.</p>
 <ol>
 <li>Cr&#xE9;er un fichier <code>test.py</code> de type Python.</li>
 <li>En bas, &#xE0; gauche, devrait &#xEA;tre affich&#xE9; votre version de python.</li>
@@ -439,25 +453,20 @@ codium <span class="token builtin class-name">.</span>
 <h3 class="mume-header" id="meilleure-indentation-avec-python">Meilleure indentation avec Python</h3>
 
 <p>Rechercher et installer l&apos;extension <code>Python Indent</code></p>
-<h3 class="mume-header" id="donn%C3%A9es-en-table-csv">Donn&#xE9;es en table (<code>.csv</code>)</h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension KevinRose.vsc-python-indent
+</pre><h3 class="mume-header" id="donn%C3%A9es-en-table-csv">Donn&#xE9;es en table (<code>.csv</code>)</h3>
 
 <p>En premi&#xE8;re, on manipule des fichiers <code>.csv</code>, et on peut faire aussi les toutes premi&#xE8;res exp&#xE9;riences de SQL.</p>
 <p>Rechercher et installer l&apos;extension <code>Rainbow CSV</code></p>
-<h3 class="mume-header" id="langage-sql">Langage SQL</h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension mechatroner.rainbow-csv
+</pre><h3 class="mume-header" id="langage-sql">Langage SQL</h3>
 
 <p>En terminale, on fait une initiation au langage <code>SQL</code></p>
-<p>Rechercher et installer l&apos;extension <code>SQLite</code></p>
-<p>Rechercher et installer l&apos;extension <code>ERD Editor</code></p>
-<h3 class="mume-header" id="vari%C3%A9es">Vari&#xE9;es</h3>
-
-<ul>
-<li>Ouvrir un fichier avec une extension particuli&#xE8;re, puis le gestionnaire d&apos;extensions. Par exemple un fichier de sous-titres.
-<ul>
-<li>Le gestionnaire propose des extensions adapt&#xE9;es, comme : <code>Subtitles Editor</code></li>
-</ul>
-</li>
-</ul>
-<h2 class="mume-header" id="extensions-utiles-pour-le-professeur">Extensions utiles pour le professeur</h2>
+<p>Rechercher et installer l&apos;extension <code>SQLite</code><br>
+Rechercher et installer l&apos;extension <code>ERD Editor</code></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">codium --install-extension alexcvzz.vscode-sqlite
+codium --install-extension dineug.vuerd-vscode
+</pre><h2 class="mume-header" id="extensions-utiles-pour-le-professeur">Extensions utiles pour le professeur</h2>
 
 <h3 class="mume-header" id="compl%C3%A9tion-automatique-de-noms-de-fichier">Compl&#xE9;tion automatique de noms de fichier</h3>
 
@@ -479,11 +488,47 @@ codium <span class="token builtin class-name">.</span>
 <ul>
 <li><code>Pyright</code> ; pour le typage statique, entre autres...</li>
 </ul>
-<h2 class="mume-header" id="compl%C3%A9ments-sur-les-extensions">Compl&#xE9;ments sur les extensions</h2>
+<h2 class="mume-header" id="compl%C3%A9ments">Compl&#xE9;ments</h2>
 
+<h3 class="mume-header" id="suggestions-dextensions">Suggestions d&apos;extensions</h3>
+
+<ul>
+<li>Ouvrir un fichier avec une extension particuli&#xE8;re, puis le gestionnaire d&apos;extensions.</li>
+<li>Des suggestions sont propos&#xE9;es...</li>
+</ul>
+<h3 class="mume-header" id="o%C3%B9-sont-les-extensions">O&#xF9; sont les extensions ?</h3>
+
+<p>Les extensions sont stock&#xE9;es dans le r&#xE9;pertoire :</p>
+<ul>
+<li>Windows : <code>%USERPROFILE%\.vscode-oss\extensions</code></li>
+<li>Linux (tout comme macOS) : <code>~/.vscode-oss/extensions</code></li>
+</ul>
+<blockquote>
+<p>Il est possible de lancer VSCodium en ligne de commande avec un autre r&#xE9;pertoire d&apos;extensions avec le param&#xE8;tre : <code>--extensions-dir &lt;dir&gt;</code></p>
+</blockquote>
 <h3 class="mume-header" id="installer-une-extension-qui-nest-pas-encore-sur-le-marketplace-libre">Installer une extension qui n&apos;est pas (encore) sur le MarketPlace libre.</h3>
 
-<p>TODO</p>
+<p>Il est possible de :</p>
+<ul>
+<li>visiter le MarketPlace de Visual Studio Code,</li>
+<li>d&apos;y rep&#xE9;rer une extension libre int&#xE9;ressante,</li>
+<li>de la t&#xE9;l&#xE9;charger (chercher <em>Download</em>) et un lien vers un fichier <code>.vsix</code>,</li>
+<li>de l&apos;installer dans VSCodium en ligne de commande.</li>
+</ul>
+<p><code>codium --install-extension myextension.vsix</code></p>
+<p><strong>Exercice</strong> :</p>
+<ol>
+<li>Chercher sur le MarketPlace de VSCode : <code>Subtitles Editor</code></li>
+<li>L&apos;installer sur VSCodium</li>
+<li>Vous pourrez alors &#xE9;diter des fichiers de sous-titres facilement (traduction automatique, d&#xE9;calage, ...)</li>
+</ol>
+<blockquote>
+<p>L&apos;extension <code>Asymptote</code> int&#xE9;ressera les enseignants qui dessinent avec ce logiciel.</p>
+</blockquote>
+<h3 class="mume-header" id="more-info-en">More Info (en)</h3>
+
+<p><em>Just follow the <a href="https://github.com/VSCodium/vscodium/blob/master/DOCS.md">link</a>.</em></p>
+<p>En particulier, on y d&#xE9;taille les r&#xE9;pertoires pour migrer de VSCode &#xE0; VSCodium, pour ceux qui avaient commenc&#xE9; &#xE0; utiliser VSCode avant.</p>
 
       </div>
       

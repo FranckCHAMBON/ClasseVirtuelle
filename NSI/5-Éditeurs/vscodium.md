@@ -1,12 +1,19 @@
 # VSCodium {ignore}
 
-Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.
+Visual Studio Code (VSCode) est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.
 
-[VSCodium](https://vscodium.com/) est une version de Visual Studio Code **sans télémétrie**, et distribuée avec une licence libre (MIT) qui est bien plus respectueuse.
+[VSCodium](https://github.com/VSCodium/vscodium) est une version de VSCode **sans télémétrie**, et distribuée avec une licence libre (MIT) qui est bien plus respectueuse.
 
 D'autre part, on peut ajouter des extensions ; il y a un point délicat.
-* Le *MarketPlace* de Visual Studio Code contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recommander.
-* Le *MarketPlace* de **VSCodium ne contient que des extensions libres**, ce qui permet de pouvoir le recommander sereinement.
+* Le [*MarketPlace*](https://marketplace.visualstudio.com/VSCode) de VSCode contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recommander.
+* Le [*MarketPlace*](https://open-vsx.org/) de **VSCodium ne contient que des extensions libres**, ce qui permet de pouvoir le recommander sereinement.
+
+> Une fois installé, dans un terminal,
+> * pour lancer VSCodium, on entre : `codium .`
+> * Pour lancer VSCode, on aurait entré : `code .`
+>
+> Tout comme `chromium` est la version libre de `chrome`.
+> L'aide que l'on peut trouver en ligne sur VSCode se traduit en remplaçant `code` par `codium`.
 
 ## Sommaire {ignore}
 
@@ -19,7 +26,7 @@ Ci-dessous, une traduction rapide.
 
 ### Windows
 
-> Cette section est non testée par votre professeur.
+> Cette section est **non testée** par votre professeur.
 
 Il existe plusieurs gestionnaires de paquets pour Windows.
 
@@ -39,7 +46,7 @@ choco install vscodium
 ```
 
 ### Mac OS
-> Cette section est non testée par votre professeur.
+> Cette section est **non testée** par votre professeur.
 
 1. Il vous faut avoir le gestionnaire de paquet [Homebrew](https://brew.sh/index_fr), qui s'installe (si ce n'est pas déjà fait) sur votre Mac, dans un terminal, avec :
 ```bash
@@ -117,12 +124,21 @@ codium --install-extension valentjn.vscode-ltex
 
 
 ### Enjoliveurs
-1. Chercher et installer l'extension `Material Icon Theme` ; pour des icônes de fichier.
+1. Chercher et installer l'extension `Material Theme` ; pour un thème sombre complet.
 2. Chercher et installer l'extension `Bracket Pair Colorizer 2` ; pour mieux voir vos parenthèses.
+
+```bash
+codium --install-extension Equinusocio.vsc-material-theme
+codium --install-extension CoenraadS.bracket-pair-colorizer-2
+```
 
 
 ### Python
 Rechercher `Python` et installer l'extension de Microsoft. Ceci n'installe pas Python mais fera le lien entre Python déjà installé et VSCodium.
+
+```bash
+codium --install-extension ms-python.python
+```
 
 Une fois installée, vous pouvez tester.
 1. Créer un fichier `test.py` de type Python.
@@ -135,22 +151,31 @@ Une fois installée, vous pouvez tester.
 
 Rechercher et installer l'extension `Python Indent`
 
+```bash
+codium --install-extension KevinRose.vsc-python-indent
+```
+
 ### Données en table (`.csv`)
 En première, on manipule des fichiers `.csv`, et on peut faire aussi les toutes premières expériences de SQL.
 
 Rechercher et installer l'extension `Rainbow CSV`
 
+```bash
+codium --install-extension mechatroner.rainbow-csv
+```
+
+
 ### Langage SQL
 En terminale, on fait une initiation au langage `SQL`
 
 Rechercher et installer l'extension `SQLite`
-
 Rechercher et installer l'extension `ERD Editor`
 
-### Variées
+```bash
+codium --install-extension alexcvzz.vscode-sqlite
+codium --install-extension dineug.vuerd-vscode
+```
 
-* Ouvrir un fichier avec une extension particulière, puis le gestionnaire d'extensions. Par exemple un fichier de sous-titres.
-    * Le gestionnaire propose des extensions adaptées, comme : `Subtitles Editor`
 
 
 ## Extensions utiles pour le professeur
@@ -182,8 +207,42 @@ Rechercher et installer l'extension `LaTeX Workshop`
 
 * `Pyright` ; pour le typage statique, entre autres...
 
-## Compléments sur les extensions
+## Compléments
+
+### Suggestions d'extensions
+
+* Ouvrir un fichier avec une extension particulière, puis le gestionnaire d'extensions. 
+* Des suggestions sont proposées...
+
+
+### Où sont les extensions ?
+
+Les extensions sont stockées dans le répertoire :
+* Windows : `%USERPROFILE%\.vscode-oss\extensions`
+* Linux (tout comme macOS) : `~/.vscode-oss/extensions`
+
+> Il est possible de lancer VSCodium en ligne de commande avec un autre répertoire d'extensions avec le paramètre : `--extensions-dir <dir>`
+
 
 ### Installer une extension qui n'est pas (encore) sur le MarketPlace libre.
 
-TODO
+Il est possible de :
+* visiter le MarketPlace de Visual Studio Code,
+* d'y repérer une extension libre intéressante,
+* de la télécharger (chercher *Download*) et un lien vers un fichier `.vsix`,
+* de l'installer dans VSCodium en ligne de commande.
+
+`codium --install-extension myextension.vsix`
+
+**Exercice** :
+1. Chercher sur le MarketPlace de VSCode : `Subtitles Editor`
+2. L'installer sur VSCodium
+3. Vous pourrez alors éditer des fichiers de sous-titres facilement (traduction automatique, décalage, ...)
+
+> L'extension `Asymptote` intéressera les enseignants qui dessinent avec ce logiciel.
+
+### More Info (en)
+
+*Just follow the [link](https://github.com/VSCodium/vscodium/blob/master/DOCS.md).*
+
+En particulier, on y détaille les répertoires pour migrer de VSCode à VSCodium, pour ceux qui avaient commencé à utiliser VSCode avant.
