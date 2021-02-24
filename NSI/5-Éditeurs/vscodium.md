@@ -114,8 +114,8 @@ codium --install-extension ms-ceintl.vscode-language-pack-fr
 ### Correction orthographique et grammaticale
 
 1. Rechercher et installer [*LTeX*](https://open-vsx.org/extension/valentjn/vscode-ltex)
-2. LTeX devrait être automatiquement configuré en français, sinon
-    1. Une fois installée, cliquer sur la roue dentée (paramètres d'extensions)
+2. LTeX n'est pas automatiquement configuré pour le français, ainsi
+    1. Une fois installée, cliquer sur la roue dentée de `LTeX` (paramètres d'extensions)
     2. Dérouler vers le bas, et chercher la section `Ltex: language`
     3. Dans le menu déroulant, choisir `fr` pour `french`.
 
