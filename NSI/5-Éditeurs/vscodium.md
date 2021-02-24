@@ -4,9 +4,10 @@ Visual Studio Code (VSCode) est un éditeur libre pour ordinateur, très complet
 
 [VSCodium](https://github.com/VSCodium/vscodium) est une version de VSCode **sans télémétrie**, et distribuée avec une licence libre (MIT) qui est bien plus respectueuse.
 
-D'autre part, on peut ajouter des extensions ; il y a un point délicat.
+Au sujet des extensions, il y a en effet un point délicat.
 * Le [*MarketPlace*](https://marketplace.visualstudio.com/VSCode) de VSCode contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recommander.
 * Le [*MarketPlace*](https://open-vsx.org/) de **VSCodium ne contient que des extensions libres**, ce qui permet de pouvoir le recommander plus sereinement.
+* On recommandera de n'utiliser que des extensions qui sont présentes sur les deux *MarketPlace*, les exceptions seront scrutées.
 
 > Une fois installé, dans un terminal,
 > * pour lancer VSCodium, on entre : `codium .`
@@ -21,12 +22,9 @@ D'autre part, on peut ajouter des extensions ; il y a un point délicat.
 
 ## Installation
 
-VSCodium est multiplateforme, il suffit de suivre les indications proposées sur le [site officiel](https://github.com/VSCodium/vscodium).
-Ci-dessous, une traduction rapide.
+VSCodium est multiplateforme, il suffit de suivre les indications proposées sur le [site officiel](https://github.com/VSCodium/vscodium). Ci-dessous, une traduction rapide.
 
 ### Windows
-
-> Cette section est **non testée** par votre professeur.
 
 Il existe plusieurs gestionnaires de paquets pour Windows.
 
@@ -46,7 +44,6 @@ choco install vscodium
 ```
 
 ### Mac OS
-> Cette section est **non testée** par votre professeur.
 
 1. Il vous faut avoir le gestionnaire de paquet [Homebrew](https://brew.sh/index_fr), qui s'installe (si ce n'est pas déjà fait) sur votre Mac, dans un terminal, avec :
 ```bash
@@ -73,6 +70,8 @@ sudo apt update && sudo apt install codium
 ```
 
 ## Premier démarrage
+
+Avec Linux (ou macOS),
 
 ```bash
 cd ~

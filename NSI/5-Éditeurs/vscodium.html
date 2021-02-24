@@ -265,10 +265,11 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <p>Visual Studio Code (VSCode) est un &#xE9;diteur libre pour ordinateur, tr&#xE8;s complet, produit par Microsoft, mais qui inclut de la t&#xE9;l&#xE9;m&#xE9;trie (une sorte de mouchard). On peut certes la d&#xE9;sactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.</p>
 <p><a href="https://github.com/VSCodium/vscodium">VSCodium</a> est une version de VSCode <strong>sans t&#xE9;l&#xE9;m&#xE9;trie</strong>, et distribu&#xE9;e avec une licence libre (MIT) qui est bien plus respectueuse.</p>
-<p>D&apos;autre part, on peut ajouter des extensions ; il y a un point d&#xE9;licat.</p>
+<p>Au sujet des extensions, il y a en effet un point d&#xE9;licat.</p>
 <ul>
 <li>Le <a href="https://marketplace.visualstudio.com/VSCode"><em>MarketPlace</em></a> de VSCode contient des extensions libres, mais aussi d&apos;autres qui ne le sont pas, et qui peuvent inclure de la t&#xE9;l&#xE9;m&#xE9;trie &#xE9;galement... Nous ne pouvons pas le recommander.</li>
 <li>Le <a href="https://open-vsx.org/"><em>MarketPlace</em></a> de <strong>VSCodium ne contient que des extensions libres</strong>, ce qui permet de pouvoir le recommander plus sereinement.</li>
+<li>On recommandera de n&apos;utiliser que des extensions qui sont pr&#xE9;sentes sur les deux <em>MarketPlace</em>, les exceptions seront scrut&#xE9;es.</li>
 </ul>
 <blockquote>
 <p>Une fois install&#xE9;, dans un terminal,</p>
@@ -330,13 +331,9 @@ L&apos;aide que l&apos;on peut trouver en ligne sur VSCode se traduit alors en r
 </ul>
 <h2 class="mume-header" id="installation">Installation</h2>
 
-<p>VSCodium est multiplateforme, il suffit de suivre les indications propos&#xE9;es sur le <a href="https://github.com/VSCodium/vscodium">site officiel</a>.<br>
-Ci-dessous, une traduction rapide.</p>
+<p>VSCodium est multiplateforme, il suffit de suivre les indications propos&#xE9;es sur le <a href="https://github.com/VSCodium/vscodium">site officiel</a>. Ci-dessous, une traduction rapide.</p>
 <h3 class="mume-header" id="windows">Windows</h3>
 
-<blockquote>
-<p>Cette section est <strong>non test&#xE9;e</strong> par votre professeur.</p>
-</blockquote>
 <p>Il existe plusieurs gestionnaires de paquets pour Windows.</p>
 <h4 class="mume-header" id="avec-windows-package-manager-winget">Avec <em>Windows Package Manager (WinGet)</em></h4>
 
@@ -358,9 +355,6 @@ Ci-dessous, une traduction rapide.</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">choco <span class="token function">install</span> vscodium 
 </pre><h3 class="mume-header" id="mac-os">Mac OS</h3>
 
-<blockquote>
-<p>Cette section est <strong>non test&#xE9;e</strong> par votre professeur.</p>
-</blockquote>
 <ol>
 <li>Il vous faut avoir le gestionnaire de paquet <a href="https://brew.sh/index_fr">Homebrew</a>, qui s&apos;installe (si ce n&apos;est pas d&#xE9;j&#xE0; fait) sur votre Mac, dans un terminal, avec :</li>
 </ol>
@@ -385,6 +379,7 @@ Ci-dessous, une traduction rapide.</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codium 
 </pre><h2 class="mume-header" id="premier-d%C3%A9marrage">Premier d&#xE9;marrage</h2>
 
+<p>Avec Linux (ou macOS),</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token builtin class-name">cd</span> ~
 <span class="token function">mkdir</span> test_vscodium
 <span class="token builtin class-name">cd</span> test_vscodium
