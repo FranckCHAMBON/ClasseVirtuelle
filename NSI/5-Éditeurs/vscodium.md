@@ -124,8 +124,8 @@ codium --install-extension valentjn.vscode-ltex
 
 
 ### Enjoliveurs
-1. Chercher et installer l'extension `Material Theme` ; pour un thème sombre complet.
-2. Chercher et installer l'extension `Bracket Pair Colorizer 2` ; pour mieux voir vos parenthèses.
+1. Chercher et installer l'extension [`Material Theme`](https://open-vsx.org/extension/Equinusocio/vsc-material-theme) ; pour un thème sombre complet.
+2. Chercher et installer l'extension [`Bracket Pair Colorizer 2`](https://open-vsx.org/extension/CoenraadS/bracket-pair-colorizer-2) ; pour mieux voir vos parenthèses.
 
 ```bash
 codium --install-extension Equinusocio.vsc-material-theme
@@ -134,7 +134,7 @@ codium --install-extension CoenraadS.bracket-pair-colorizer-2
 
 
 ### Python
-Rechercher `Python` et installer l'extension de Microsoft. Ceci n'installe pas Python mais fera le lien entre Python déjà installé et VSCodium.
+Rechercher [`Python`](https://open-vsx.org/extension/ms-python/python) et installer l'extension de Microsoft. Ceci n'installe pas Python mais fera le lien entre Python déjà installé et VSCodium. Il **faut** donc avoir fait l'[installation de Python](https://www.python.org/downloads/) sur votre ordinateur pour utiliser cette extension.
 
 ```bash
 codium --install-extension ms-python.python
@@ -149,7 +149,7 @@ Une fois installée, vous pouvez tester.
 
 ### Meilleure indentation avec Python
 
-Rechercher et installer l'extension `Python Indent`
+Rechercher et installer l'extension [`Python Indent`](https://open-vsx.org/extension/KevinRose/vsc-python-indent)
 
 ```bash
 codium --install-extension KevinRose.vsc-python-indent
@@ -158,7 +158,7 @@ codium --install-extension KevinRose.vsc-python-indent
 ### Données en table (`.csv`)
 En première, on manipule des fichiers `.csv`, et on peut faire aussi les toutes premières expériences de SQL.
 
-Rechercher et installer l'extension `Rainbow CSV`
+Rechercher et installer l'extension [`Rainbow CSV`](https://open-vsx.org/extension/mechatroner/rainbow-csv)
 
 ```bash
 codium --install-extension mechatroner.rainbow-csv
@@ -166,10 +166,10 @@ codium --install-extension mechatroner.rainbow-csv
 
 
 ### Langage SQL
-En terminale, on fait une initiation au langage `SQL`
+En terminale, on fait une initiation au langage `SQL`.
 
-Rechercher et installer l'extension `SQLite`
-Rechercher et installer l'extension `ERD Editor`
+Rechercher et installer l'extension [`SQLite`](https://open-vsx.org/extension/alexcvzz/vscode-sqlite)
+Rechercher et installer l'extension [`ERD Editor`](https://open-vsx.org/extension/dineug/vuerd-vscode)
 
 ```bash
 codium --install-extension alexcvzz.vscode-sqlite
@@ -182,12 +182,22 @@ codium --install-extension dineug.vuerd-vscode
 
 ### Complétion automatique de noms de fichier
 
-Rechercher et installer l'extension `Path Autocomplete` ; pour compléter automatiquement les noms de fichiers.
+Rechercher et installer l'extension [`Path Autocomplete`](https://open-vsx.org/extension/ionutvmi/path-autocomplete) ; pour compléter automatiquement les noms de fichiers.
+
+```bash
+codium --install-extension ionutvmi.path-autocomplete
+```
 
 ### Markdown
 Pour créer des pages HTML grâce au langage Markdown, et visualiser en direct le rendu HTML.
 
-Rechercher et installer l'extension `Markdown Preview Enhanced`
+Rechercher et installer l'extension [`Markdown Preview Enhanced`](https://open-vsx.org/extension/shd101wyy/markdown-preview-enhanced)
+
+```bash
+codium --install-extension shd101wyy.markdown-preview-enhanced
+```
+
+En cas d'erreur, essayer le téléchargement manuel, voir plus bas, avec le fichier `.vsix`.
 
 ### Langage HTML
 Pour prévisualiser en direct votre rendu HTML/JavaScript.
@@ -195,17 +205,28 @@ Pour prévisualiser en direct votre rendu HTML/JavaScript.
 Il faut avoir le navigateur `Chromium` déjà installé.
 
 
-Rechercher et installer l'extension `Browser Preview`
+Rechercher et installer l'extension [`Browser Preview`](https://open-vsx.org/extension/auchenberg/vscode-browser-preview)
+
+```bash
+codium --install-extension auchenberg.vscode-browser-preview
+```
 
 
 ### Édition de documents LaTeX
 
-Rechercher et installer l'extension `LaTeX Workshop`
+Rechercher et installer l'extension [`LaTeX Workshop`](https://open-vsx.org/extension/James-Yu/latex-workshop)
 
+```bash
+codium --install-extension james-yu.latex-workshop
+```
 
 ### Autres extensions Python
 
-* `Pyright` ; pour le typage statique, entre autres...
+* [`Pyright`](https://open-vsx.org/extension/ms-pyright/pyright) ; pour le typage statique, entre autres...
+
+```bash
+codium --install-extension ms-pyright.pyright
+```
 
 ## Compléments
 
@@ -229,17 +250,17 @@ Les extensions sont stockées dans le répertoire :
 Il est possible de :
 * visiter le MarketPlace de Visual Studio Code,
 * d'y repérer une extension libre intéressante,
-* de la télécharger (chercher *Download*) et un lien vers un fichier `.vsix`,
-* de l'installer dans VSCodium en ligne de commande.
+* de la télécharger (chercher *Download* et cliquer sur le lien vers un fichier `.vsix`),
+* de l'installer pour VSCodium en ligne de commande, comme ci-dessous.
 
-`codium --install-extension myextension.vsix`
+`codium --install-extension mon_extension_toute_choupinou.vsix`
 
 **Exercice** :
-1. Chercher sur le MarketPlace de VSCode : `Subtitles Editor`
-2. L'installer sur VSCodium
+1. Chercher sur le MarketPlace de VSCode : [`Subtitles Editor`](https://marketplace.visualstudio.com/items?itemName=pepri.subtitles-editor)
+2. L'installer pour VSCodium
 3. Vous pourrez alors éditer des fichiers de sous-titres facilement (traduction automatique, décalage, ...)
 
-> L'extension `Asymptote` intéressera les enseignants qui dessinent avec ce logiciel.
+> L'extension [`Asymptote`](https://marketplace.visualstudio.com/items?itemName=supakornras.asymptote) intéressera les enseignants qui dessinent avec ce logiciel.
 
 ### More Info (en)
 
