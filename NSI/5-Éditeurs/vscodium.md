@@ -1,11 +1,11 @@
 # VSCodium {ignore}
 
-Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque de certaines extensions.
+Visual Studio Code est un éditeur libre pour ordinateur, très complet, produit par Microsoft, mais qui inclut de la télémétrie (une sorte de mouchard). On peut certes la désactiver, mais par principe, nous ne pouvons pas recommander ces pratiques, surtout avec le risque induit par certaines extensions qui ne sont pas libres.
 
-[VSCodium](https://vscodium.com/) est une version de Visual Studio Code **sans télémétrie**, et distribuée avec une licence libre (MIT) plus respectueuse de l'esprit *Open Source*.
+[VSCodium](https://vscodium.com/) est une version de Visual Studio Code **sans télémétrie**, et distribuée avec une licence libre (MIT) qui est bien plus respectueuse.
 
 D'autre part, on peut ajouter des extensions ; il y a un point délicat.
-* Le *MarketPlace* de Visual Studio Code contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recomander.
+* Le *MarketPlace* de Visual Studio Code contient des extensions libres, mais aussi d'autres qui ne le sont pas, et qui peuvent inclure de la télémétrie également... Nous ne pouvons pas le recommander.
 * Le *MarketPlace* de **VSCodium ne contient que des extensions libres**, ce qui permet de pouvoir le recommander sereinement.
 
 ## Sommaire {ignore}
@@ -85,6 +85,7 @@ Dans un terminal Bash,
 
 ### Quelques réglages
 
+TODO
 
 ## Extensions utiles en NSI
 
@@ -117,8 +118,7 @@ codium --install-extension valentjn.vscode-ltex
 
 ### Enjoliveurs
 1. Chercher et installer l'extension `Material Icon Theme` ; pour des icônes de fichier.
-2. Chercher et installer l'extension `Path Autocomplete` ; pour compléter automatiquement les noms de fichiers.
-3. Chercher et installer l'extension `Bracket Pair Colorizer 2` ; pour mieux voir vos parenthèses.
+2. Chercher et installer l'extension `Bracket Pair Colorizer 2` ; pour mieux voir vos parenthèses.
 
 
 ### Python
@@ -155,13 +155,17 @@ Rechercher et installer l'extension `ERD Editor`
 
 ## Extensions utiles pour le professeur
 
+### Complétion automatique de noms de fichier
+
+Rechercher et installer l'extension `Path Autocomplete` ; pour compléter automatiquement les noms de fichiers.
+
 ### Markdown
 Pour créer des pages HTML grâce au langage Markdown, et visualiser en direct le rendu HTML.
 
 Rechercher et installer l'extension `Markdown Preview Enhanced`
 
 ### Langage HTML
-Pour prévisualiser en direct votre rendu HTML/Javascript.
+Pour prévisualiser en direct votre rendu HTML/JavaScript.
 
 Il faut avoir le navigateur `Chromium` déjà installé.
 
@@ -176,4 +180,10 @@ Rechercher et installer l'extension `LaTeX Workshop`
 
 ### Autres extensions Python
 
-* `Pyright` ; pour le typage statique, entre autres
+* `Pyright` ; pour le typage statique, entre autres...
+
+## Compléments sur les extensions
+
+### Installer une extension qui n'est pas (encore) sur le MarketPlace libre.
+
+TODO
