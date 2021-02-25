@@ -125,7 +125,9 @@ codium --install-extension valentjn.vscode-ltex
 
 
 ### Enjoliveurs
-1. Chercher et installer l'extension [*Material Theme*](https://open-vsx.org/extension/Equinusocio/vsc-material-theme) ; pour un thème sombre complet.
+1. Des thèmes sombres
+    1. Chercher et installer l'extension [*Material Theme*](https://open-vsx.org/extension/Equinusocio/vsc-material-theme) ; pour un thème sombre complet.
+    2. Ou alors, chercher et installer l'extension [*Nord*](https://open-vsx.org/extension/arcticicestudio/nord-visual-studio-code)
 2. Chercher et installer l'extension [*Bracket Pair Colorizer 2*](https://open-vsx.org/extension/CoenraadS/bracket-pair-colorizer-2) ; pour mieux voir vos parenthèses.
 
 ```bash
@@ -270,3 +272,7 @@ Il est possible de :
 *Just follow the [link](https://github.com/VSCodium/vscodium/blob/master/DOCS.md).*
 
 En particulier, on y détaille les répertoires pour migrer de VSCode à VSCodium, pour ceux qui avaient commencé à utiliser VSCode avant.
+
+
+### D'autres avis
+* https://besson.link/visualstudiocode.fr.html
