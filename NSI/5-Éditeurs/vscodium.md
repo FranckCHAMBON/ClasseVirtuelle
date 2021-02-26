@@ -93,6 +93,10 @@ Dans un terminal Bash,
 
 TODO
 
+### Quelques informations utiles
+
+* [La documentation officielle (en anglais)](https://code.visualstudio.com/docs)
+
 ## Extensions utiles en NSI
 
 Au premier démarrage de VSCodium, on peut aller dans le gestionnaire d'extensions avec (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>X</kbd>), ou alors en cliquant (au milieu à gauche) sur le carré coupé en quatre, dont un morceau est détaché.
@@ -111,6 +115,14 @@ codium --install-extension ms-ceintl.vscode-language-pack-fr
 ```
 
 ### Correction orthographique et grammaticale
+
+> Pour les variables du code, et les commentaires.
+
+1. Rechercher et installer [*French - Code Spell Checker*](https://open-vsx.org/extension/streetsidesoftware/code-spell-checker-french)
+2. Appuyer sur <kbd>F1</kbd> taper `spell` et choisir `Spell Checker configuration info`
+3. Choisir l'onglet `USER`, et décocher `English`, puis cocher `French`.
+
+> Pour les fichiers LaTeX et Markdown.
 
 1. Rechercher et installer [*LTeX*](https://open-vsx.org/extension/valentjn/vscode-ltex)
 2. LTeX n'est pas automatiquement configuré pour le français, ainsi
