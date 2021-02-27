@@ -4,5 +4,7 @@ print(sqrt(2))
 
 
 une_variable = 4
-uny_trucz = 2
-print(une_variable * uny_trucz)
+
+for _ in range(10):
+    print("toto")
+

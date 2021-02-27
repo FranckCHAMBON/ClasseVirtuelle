@@ -91,7 +91,7 @@ Dans un terminal Bash,
 
 ### Quelques réglages
 
-TODO
+1. Vérifier dans le menu `Affichage`, que `Afficher les espaces blancs` est bien coché. Insister en le décochant, pour le cocher à nouveau.
 
 ### Quelques informations utiles
 
