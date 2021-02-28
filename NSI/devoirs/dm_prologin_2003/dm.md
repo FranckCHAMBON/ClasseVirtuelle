@@ -4,6 +4,16 @@
 > * Seul le travail rendu **avant la limite** sera corrigé.
 > * **Un seul** fichier sera lu par le professeur, le dernier avant la date.
 
+
+## Questions de dernières minutes
+* Il est totalement interdit de rendre un fichier `Word`, il ne sera pas lu.
+    * Vous devez rendre des fichiers texte avec l'extension `.py`, tous archivés dans un fichier `.zip`
+    * Un fichier `word` ne sera pas regardé ; du tout. En aucun cas.
+* VSCodium n'est pas obligatoire pour fabriquer les fichiers `.py`.
+    * Il est aussi possible d'utiliser [Geany](https://www.geany.org/download/releases/), ou tout autre éditeur de texte. (`Word` n'est pas un éditeur de texte !)
+* Si vous rendez votre travail en retard, il y aura trois points par jour de pénalité ; tout jour entamé étant compté.
+    * La notation est généreuse, il vaut mieux rendre un travail avec deux jours de retard, plutôt qu'avoir zéro pour travail non rendu !
+
 ## Sujet
 * Résoudre les problèmes pour la session 2003 de Prologin.
     * [10 problèmes d'entraînement de niveau 0 à 3.](https://prologin.org/train/2003/semifinal)
