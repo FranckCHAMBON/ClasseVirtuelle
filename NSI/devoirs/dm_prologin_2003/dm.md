@@ -13,6 +13,8 @@
     * Il est aussi possible d'utiliser [Geany](https://www.geany.org/download/releases/), ou tout autre éditeur de texte. (`Word` n'est pas un éditeur de texte !)
 * Si vous rendez votre travail en retard, il y aura trois points par jour de pénalité ; tout jour entamé étant compté.
     * La notation est généreuse, il vaut mieux rendre un travail avec deux jours de retard, plutôt qu'avoir zéro pour travail non rendu !
+* Vous pouvez m'envoyer des questions, j'y répondrai anonymement ici ; pour tous.
+* Très bonne fin de vacances à tous.
 
 ## Sujet
 * Résoudre les problèmes pour la session 2003 de Prologin.
