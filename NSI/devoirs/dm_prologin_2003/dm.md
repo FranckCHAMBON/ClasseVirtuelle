@@ -19,7 +19,7 @@
 ## Sujet
 * Résoudre les problèmes pour la session 2003 de Prologin.
     * [10 problèmes d'entraînement de niveau 0 à 3.](https://prologin.org/train/2003/semifinal)
-    * [**Bonus facultatif**] : [4 problèmes de qualification de niveau 2](https://prologin.org/train/2003/qualification) ; attention, le premier est plus difficile que les autres...
+    * [**Bonus facultatif**] : [3 problèmes de qualification de niveau 2](https://prologin.org/train/2003/qualification) ; attention, pas le premier qui est plus difficile que les autres...
 
 * Écrire un code propre respectant les règles vues en classe.
 
@@ -44,8 +44,8 @@
 
 ```py
 """
-Nom:
-Prénom:
+Nom: CHAMBON (à changer)
+Prénom: Franck (à changer)
 Prologin: Qualification 2003
 Exercice: 1 - Cases inaccessibles
 https://prologin.org/train/2003/qualification/cases_inaccessibles
