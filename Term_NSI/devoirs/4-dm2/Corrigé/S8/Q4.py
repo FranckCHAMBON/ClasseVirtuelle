@@ -19,9 +19,6 @@ def nombre_de_voyelles(nb_caractère: int, mot: str) -> int:
             nombre_voyelles += 1
     return nombre_voyelles
 
-# tests 
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_caractère = int(input())

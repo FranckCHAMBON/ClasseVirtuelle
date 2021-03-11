@@ -17,8 +17,6 @@ def escalier(nb_marche: int) -> str:
         print("X"*x)
 
 # tests
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_marche = int(input())

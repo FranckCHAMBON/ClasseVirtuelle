@@ -9,9 +9,6 @@ def cases_inaccessibles() -> int:
 
     """
 
-# tests
-import doctest
-doctest.testmod()
 
 # Entrée
 lignes, colonnes = map(int, input().split())

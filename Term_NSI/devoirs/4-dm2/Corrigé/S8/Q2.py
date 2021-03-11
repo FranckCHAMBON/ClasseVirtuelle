@@ -32,9 +32,6 @@ def comparaison_alphabétique(nb_caractère1: int, chaîne1: str, nb_caractère2
             else:
                 return chaîne2
    
-# tests 
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_caractère1 = int(input())

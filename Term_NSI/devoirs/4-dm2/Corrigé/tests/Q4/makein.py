@@ -1,0 +1,2 @@
+print(10000)
+print("aeiouyAEIOUYQSDFGHJKLMNBV"*(10000//25))

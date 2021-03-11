@@ -21,9 +21,6 @@ def somme(nb1: int, nb2: int, nb3: int) -> int:
             return nb2
         else: 
             return 0
-# tests 
-import doctest
-doctest.testmod()
 
 # Entrée
 nb1, nb2, nb3 = map(int, input().split())

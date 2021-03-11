@@ -20,9 +20,6 @@ def table_multiplication(nb: int) -> str:
     for x in range(1, 10):
         print(str(nb) + "x" + str(x) + "=" + str(nb*x))
     
-# tests 
-import doctest
-doctest.testmod()
 
 # Entrée
 nb = int(input())

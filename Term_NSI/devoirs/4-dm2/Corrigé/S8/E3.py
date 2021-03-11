@@ -21,9 +21,6 @@ def ecart(nb_tableau: int, tableau: int) -> int:
                 grand_ecart = ecart
     return grand_ecart
 
-# tests
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_tableau = int(input())

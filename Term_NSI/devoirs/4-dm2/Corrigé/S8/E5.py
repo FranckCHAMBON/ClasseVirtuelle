@@ -17,9 +17,6 @@ def mot_le_plus_long(chaine_caractère: str) -> int:
             mot = x
     return len(mot)
 
-# tests
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_caractère = int(input())

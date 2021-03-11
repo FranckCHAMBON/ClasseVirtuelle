@@ -22,9 +22,6 @@ def initiales(nb_caractère: int, chaine_caractère: str) -> str:
             else:
                 pass
     return chaine_finale
-# tests
-import doctest
-doctest.testmod()
 
 # Entrée
 nb_caractère = int(input())

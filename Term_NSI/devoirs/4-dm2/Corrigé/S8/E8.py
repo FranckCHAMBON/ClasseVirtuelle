@@ -43,10 +43,7 @@ def puissance4(table_puissance4: list) -> int:
                     else:
                         return table_puissance4[x][n]
                 else:
-                return 0
-# tests 
-import doctest
-doctest.testmod()
+                    return 0
 
 # Entrée
 table_puissance4 = [input() for _ in range(6)]

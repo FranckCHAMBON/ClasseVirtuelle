@@ -19,9 +19,6 @@ def nb_impairs(n: int, m: int) -> str:
     formatage = " ".join([repr(x) for x in liste_nb_impairs])
     return formatage
     
-# tests
-import doctest
-doctest.testmod()
 
 # Entrée
 n, m = map(int, input().split())
