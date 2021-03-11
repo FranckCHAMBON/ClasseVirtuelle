@@ -1,0 +1,768 @@
+<!DOCTYPE html><html><head>
+      <title>notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="dm-de-l%C3%A9l%C3%A8ve">DM de l&apos;&#xE9;l&#xE8;ve</h1>
+
+<h2 class="mume-header" id="%C3%A9preuve-r%C3%A9gionale">&#xC9;preuve r&#xE9;gionale</h2>
+
+<h3 class="mume-header" id="42">42</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 1 - 42
+https://prologin.org/train/2003/semifinal/42
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction">Commentaires de correction</h4>
+
+<p>On attend ici aussi une fonction... Oui, ici aussi.</p>
+<h3 class="mume-header" id="escalier">Escalier</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 2 - escalier
+https://prologin.org/train/2003/semifinal/escalier
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">triangle</span><span class="token punctuation">(</span>nb_marches <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un triangle rectangle &#xE0; la hauteur demand&#xE9;.
+    &gt;&gt;&gt; triangle(4)
+    X 
+    XX 
+    XXX 
+    XXXX 
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> nb_marches <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> triangle<span class="token punctuation">(</span>nb_marches<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> <span class="token string">&quot;X&quot;</span><span class="token operator">*</span>nb_marches
+
+<span class="token comment"># Test (Ne fonctionne pas)</span>
+<span class="token comment">#import doctest</span>
+<span class="token comment">#doctest.testmod() </span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+nb_marches <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>triangle<span class="token punctuation">(</span>nb_marches<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+</pre><h4 class="mume-header" id="commentaires-de-correction-1">Commentaires de correction</h4>
+
+<p>Bien.<br>
+Normal que le test ne fonctionne pas, il y a une diff&#xE9;rence entre afficher un texte, et le renvoyer.</p>
+<h3 class="mume-header" id="grand-%C3%A9cart">Grand &#xE9;cart</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 3 - Grand Ecart
+https://prologin.org/train/2003/semifinal/grand_ecart
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">plus_grand_ecart</span><span class="token punctuation">(</span>liste<span class="token punctuation">,</span> nb_entier<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le plus grand ecart entre deux nombre d&apos;une liste
+    &gt;&gt;&gt; plus_grand_ecart([4, 2, 3, 5, 10, 6, 4, 9, 1, 3,], 10 )
+    8
+    &quot;&quot;&quot;</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    maximum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> nb_entier<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+        ecart <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>liste<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> liste<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ecart<span class="token operator">&gt;</span>maximum<span class="token punctuation">:</span>
+            maximum <span class="token operator">=</span> ecart
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> maximum
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+nb_entier <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+liste <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+liste_entier <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+ 
+<span class="token keyword">for</span> i <span class="token keyword">in</span> liste<span class="token punctuation">:</span>
+    liste_entier<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plus_grand_ecart<span class="token punctuation">(</span>liste_entier<span class="token punctuation">,</span> nb_entier<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+</pre><h4 class="mume-header" id="commentaires-de-correction-2">Commentaires de correction</h4>
+
+<p>Bien.</p>
+<h3 class="mume-header" id="initiales">Initiales</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 4 - Initiales
+https://prologin.org/train/2003/semifinal/initiales
+&quot;&quot;&quot;</span>
+<span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>texte<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie l&apos;initiale de chaque mots de la phrase.
+  &gt;&gt;&gt; initiales(&apos;Rentre Avec tes pieds&apos;)
+  RATP
+  &quot;&quot;&quot;</span> 
+  lettre<span class="token operator">=</span><span class="token string">&quot;&quot;</span>
+  <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>texte<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> c<span class="token operator">!=</span><span class="token string">&quot; &quot;</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword">and</span> texte<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      lettre <span class="token operator">+=</span> c<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>lettre<span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es  </span>
+nb_lettre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+texte<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+initiales<span class="token punctuation">(</span>texte<span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-3">Commentaires de correction</h4>
+
+<p>TB, tu as &#xE9;vit&#xE9; le <code>.split()</code>.</p>
+<h3 class="mume-header" id="mot-le-plus-long">Mot le plus long</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 5 - Mot le plus long
+https://prologin.org/train/2003/semifinal/mot_le_plus_long
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">mot_le_plus_long</span><span class="token punctuation">(</span>phrase <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la longueur du plus long mot.
+    &gt;&gt;&gt; mot_le_plus_long(&apos;ecrivez une fonction qui trouve la longueur du plus long mot dans ce texte&apos;)
+    8
+    &quot;&quot;&quot;</span>
+    liste <span class="token operator">=</span> phrase<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    plus_grand_mot <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> liste<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>plus_grand_mot<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            plus_grand_mot <span class="token operator">=</span> i
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>plus_grand_mot<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+nb_lettres <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+phrase <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> nb_lettres <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Trop de lettres&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+mot_le_plus_long<span class="token punctuation">(</span>phrase<span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-4">Commentaires de correction</h4>
+
+<p><code>i</code> et <code>plus_grand_mot</code> : mauvais noms.</p>
+<p>Le <code>raise</code> est inutile en comp&#xE9;tition ; les fichiers d&apos;entr&#xE9;e sont cens&#xE9;s &#xEA;tre bons.</p>
+<h3 class="mume-header" id="nombres-impairs">Nombres impairs</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 6 - Nombres impairs
+https://prologin.org/train/2003/semifinal
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">impairs</span><span class="token punctuation">(</span>premier_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> deuxieme_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie les nombres impairs entre deux donn&#xE9;es.
+    &gt;&gt;&gt; impairs(42,51)
+    43 45 47 49 51 
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxieme_entier<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">&amp;</span> <span class="token number">1</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+premier_entier<span class="token punctuation">,</span> deuxieme_entier <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;=</span> premier_entier <span class="token operator">&lt;</span> deuxieme_entier <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Les nombres sont soit gros grand, soit le premier nombre et plus grand que le deuxi&#xE8;me.&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+impairs<span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxieme_entier<span class="token punctuation">)</span>
+
+
+</pre><h4 class="mume-header" id="commentaires-de-correction-5">Commentaires de correction</h4>
+
+<p>Bien, mais on pr&#xE9;f&#xE8;re le renvoie de la liste plut&#xF4;t que l&apos;affichage dans une fonction.</p>
+<p>Il y a plusieurs indices qui montrent que l&apos;esprit d&apos;un codeur en C est proche... Attention, danger.</p>
+<h3 class="mume-header" id="table-de-multiplication">Table de multiplication</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 7 - Table de multiplication
+https://prologin.org/train/2003/semifinal/table_de_multiplications
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">table_de_multiplications</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Revoie la table de multiplication de l&apos;entier demand&#xE9;.
+    &gt;&gt;&gt; table_de_multiplications(3)
+    3x1=3
+    3x2=6
+    3x3=9
+    3x4=12
+    3x5=15
+    3x6=18
+    3x7=21
+    3x8=24
+    3x9=27
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+       <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> i<span class="token operator">*</span>chiffre<span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e       </span>
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;=</span> chiffre <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Chiffre trop grand, il ne doit pas d&#xE9;passer 9.&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+table_de_multiplications<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-6">Commentaires de correction</h4>
+
+<p>TB.</p>
+<h3 class="mume-header" id="puissance-4">Puissance 4</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 8 - Puissance 4
+https://prologin.org/train/2003/semifinal/puissance_4
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">puissance_4</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token punctuation">,</span> grille<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le vainqueur ou non du puissance 4.
+    &gt;&gt;&gt; puissance_4(6, 7, [[0, 0, 1, 0, 0, 0, 0], [0, 0, 2, 2, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0], [0, 2, 2, 1, 0, 0, 0], [2, 2, 1, 2, 1, 0, 0], [1, 2, 1, 1, 2, 1, 0]])
+    2
+    &quot;&quot;&quot;</span>
+    sens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">dans_grille</span><span class="token punctuation">(</span>lig<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> lig <span class="token operator">&lt;</span> nb_lignes<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> col <span class="token operator">&lt;</span> nb_colonnes<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> v&#xE9;rifie<span class="token punctuation">(</span>lig<span class="token punctuation">,</span> col<span class="token punctuation">,</span> diff_lig<span class="token punctuation">,</span> diff_col<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pions <span class="token operator">=</span> grille<span class="token punctuation">[</span>lig<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            lig <span class="token operator">+=</span> diff_lig
+            col <span class="token operator">+=</span> diff_col
+            <span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span>dans_grille<span class="token punctuation">(</span>lig<span class="token punctuation">,</span> col<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>grille<span class="token punctuation">[</span>lig<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">!=</span> pions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token keyword">return</span> pions
+
+    <span class="token keyword">for</span> lig <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> col <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_colonnes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> grille<span class="token punctuation">[</span>lig<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> diff_lig<span class="token punctuation">,</span> diff_col <span class="token keyword">in</span> sens<span class="token punctuation">:</span>
+                    pions <span class="token operator">=</span> v&#xE9;rifie<span class="token punctuation">(</span>lig<span class="token punctuation">,</span> col<span class="token punctuation">,</span> diff_lig<span class="token punctuation">,</span> diff_col<span class="token punctuation">)</span>
+                    <span class="token keyword">if</span> pions <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                        <span class="token keyword">return</span> pions
+    <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+nb_colonnes <span class="token operator">=</span> <span class="token number">7</span>
+nb_lignes <span class="token operator">=</span> <span class="token number">6</span>
+grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Sortie </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>puissance_4<span class="token punctuation">(</span>nb_lignes<span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">,</span> grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-7">Commentaires de correction</h4>
+
+<p>Ceci est inutile et incoh&#xE9;rent avec le reste</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
+</pre><p>D&apos;autre part, le style est d&#xE9;j&#xE0; vu !!! DANGER.</p>
+<h3 class="mume-header" id="puzzle">Puzzle</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 8 - Puzzle 
+https://prologin.org/train/2003/semifinal/puzzle
+&quot;&quot;&quot;</span>
+
+piece <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+puzzle <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-8">Commentaires de correction</h4>
+
+<p>&#xC0; peine entam&#xE9;.</p>
+<h3 class="mume-header" id="solitaire">Solitaire</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 10 - Solitaire
+https://prologin.org/train/2003/semifinal/solitaire
+&quot;&quot;&quot;</span>
+
+grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>grille<span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-9">Commentaires de correction</h4>
+
+<p>&#xC0; peine entam&#xE9;.</p>
+<h3 class="mume-header" id="anagrammes">Anagrammes</h3>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Exercice: 11 - Anagrammes
+https://prologin.org/train/2003/semifinal/anagrammes
+&quot;&quot;&quot;</span>
+<span class="token comment"># Entr&#xE9;e</span>
+anagramme <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+anagrammes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+texte <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> mots <span class="token keyword">in</span> texte<span class="token punctuation">:</span>
+    mot <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">sorted</span><span class="token punctuation">(</span>mots<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> mot <span class="token keyword">in</span> anagrammes<span class="token punctuation">:</span>
+        anagrammes<span class="token punctuation">[</span>mot<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>mots<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        anagrammes<span class="token punctuation">[</span>mot<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>mots<span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> anagrammes<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>anagrammes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        anagramme<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span> 
+        
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>anagramme<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>anagrammes<span class="token punctuation">)</span>
+<span class="token comment"># Ne donne pas le bon r&#xE9;sultat...</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-10">Commentaires de correction</h4>
+
+<p>Bon d&#xE9;but ; la signature est correcte.<br>
+Voir le corrig&#xE9;.</p>
+<h3 class="mume-header" id="plages-du-pacifique">Plages du Pacifique</h3>
+
+<p>Non rendu.</p>
+<h3 class="mume-header" id="plan-de-m%C3%A9tro">Plan de m&#xE9;tro</h3>
+
+<p>Non rendu.</p>
+<h2 class="mume-header" id="qualification">Qualification</h2>
+
+<h2 class="mume-header" id="cases-inaccessibles">Cases inaccessibles</h2>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Qualification : 1 - Cases inaccessibles
+https://prologin.org/train/2003/qualification/cases_inaccessibles
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">nb_cases_inaccessibles</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cases<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de cases inaccessibles suivant l&apos;&#xE9;nonc&#xE9;.
+    
+    &gt;&gt;&gt; nb_lignes, nb_colonnes = 4, 3
+    &gt;&gt;&gt; cases = [[4, 5, 3], [3, 2, 6], [4, 1, 1], [0, 1, 2]]
+    &gt;&gt;&gt; nb_cases_inaccessibles(nb_lignes, nb_colonnes, cases)
+    5
+    
+    &quot;&quot;&quot;</span>
+    nb_cases_possibles <span class="token operator">=</span> <span class="token number">0</span>
+    sens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+nb_lignes<span class="token punctuation">,</span> nb_colonnes <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+cases <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nb_cases_inaccessibles<span class="token punctuation">(</span>nb_lignes<span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">,</span> cases<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-11">Commentaires de correction</h4>
+
+<p>&#xC0; peine entam&#xE9;. Le d&#xE9;but semble emprunt&#xE9; &#xE0; une correction du professeur &#x1F609;</p>
+<h2 class="mume-header" id="comparer-des-cha%C3%AEnes">Comparer des cha&#xEE;nes</h2>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Qualification : 2 - Comparer des cha&#xEE;nes
+https://prologin.org/train/2003/qualification/comparer_des_chaines
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">ordre</span><span class="token punctuation">(</span>mot1<span class="token punctuation">,</span> mot2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie le premier mot selon l&apos;ordre lexicographique.
+    &gt;&gt;&gt; ordre(&apos;prologin&apos;, &apos;prolo&apos;)
+    &apos;prolo&apos;
+    &quot;&quot;&quot;</span> 
+    <span class="token keyword">if</span> mot1 <span class="token operator">&lt;</span> mot2<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> mot1
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> mot2
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+nb1 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+mot1 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+nb2 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+mot2<span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>mot1<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Trop de lettres au premier mot&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>mot2<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Trop de lettres au deuxi&#xE8;me mot&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ordre<span class="token punctuation">(</span>mot1<span class="token punctuation">,</span> mot2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-12">Commentaires de correction</h4>
+
+<p>L&apos;utilisation de <code>&lt;</code> &#xE9;tait interdite ici... C&apos;est trich&#xE9; !</p>
+<h2 class="mume-header" id="les-trois-nombres">Les trois nombres</h2>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Qualification : 3 - Les trois nombres
+https://prologin.org/train/2003/qualification/les_trois_nombres
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">verifie</span><span class="token punctuation">(</span>nb_1<span class="token punctuation">,</span> nb_2<span class="token punctuation">,</span> nb_3<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie un nombre si la somme des deux autres sont &#xE9;gal. Sinon cela renvoie 0.
+    &gt;&gt;&gt; verifie(18, 42, 24)
+    42
+    &gt;&gt;&gt; verifie(11, 37, 18)
+    0
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> nb_1 <span class="token operator">+</span> nb_2 <span class="token operator">==</span> nb_3<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nb_3
+    <span class="token keyword">elif</span> nb_1 <span class="token operator">+</span> nb_3 <span class="token operator">==</span> nb_2<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nb_2
+    <span class="token keyword">elif</span> nb_2 <span class="token operator">+</span> nb_3 <span class="token operator">==</span> nb_1<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nb_1
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+nb_1<span class="token punctuation">,</span> nb_2<span class="token punctuation">,</span> nb_3 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>verifie<span class="token punctuation">(</span>nb_1<span class="token punctuation">,</span> nb_2<span class="token punctuation">,</span> nb_3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-13">Commentaires de correction</h4>
+
+<p>TB.</p>
+<h2 class="mume-header" id="nombre-de-voyelles">Nombre de voyelles</h2>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Prologin: Entrainement 2003
+Qualification : 4 - Nombre de voyelles 
+https://prologin.org/train/2003/qualification/nombre_de_voyelles
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">voyelles</span><span class="token punctuation">(</span>mot<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie le nom de voyelle dans une cha&#xEE;ne de caract&#xE8;re.
+    &gt;&gt;&gt; voyelles(&quot;Prologin&quot;)
+    3
+    &quot;&quot;&quot;</span>
+    voyelles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;e&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;i&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;u&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;y&apos;</span><span class="token punctuation">]</span>
+    nb_voyelles <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">for</span> lettre <span class="token keyword">in</span> mot <span class="token keyword">if</span> lettre <span class="token keyword">in</span> voyelles <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> nb_voyelles
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+nb_lettre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+mot <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> nb_lettre <span class="token operator">&lt;=</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Trop de caract&#xE8;res&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>voyelles<span class="token punctuation">(</span>mot<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h4 class="mume-header" id="commentaires-de-correction-14">Commentaires de correction</h4>
+
+<p>TB. Style fonctionnel efficace.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
