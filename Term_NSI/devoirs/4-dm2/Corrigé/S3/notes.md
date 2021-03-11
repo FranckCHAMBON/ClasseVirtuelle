@@ -37,11 +37,11 @@ Tu aurais pu mettre aussi une fonction...
 
 #### Commentaires de correction
 
-C'est bien, il y a fonction avec doctest !!!
+C'est bien, il y a fonction avec *doctest* !!!
 
 `effectif`, c'est mieux que `nb_de_nombres`
 
-Pourquoi avoir une liste de string plutôt que de int ???
+Pourquoi avoir une liste de *string* plutôt que de *integer* ???
 
 
 ### Initiales
@@ -62,7 +62,7 @@ Pourquoi avoir une liste de string plutôt que de int ???
 
 #### Commentaires de correction
 
-C'est bien, il y a fonction avec doctest !!!
+C'est bien, il y a fonction avec *doctest* !!!
 
 
 
@@ -72,7 +72,7 @@ C'est bien, il y a fonction avec doctest !!!
 
 #### Commentaires de correction
 
-C'est bien, il y a fonction avec doctest !!!
+C'est bien, il y a fonction avec *doctest* !!!
 
 
 
@@ -167,7 +167,7 @@ Utiliser `.sort()` c'est comme utiliser `<=` ; c'est interdit aussi ici ;-)
 
 #### Commentaires de correction
 
-Il y a fonction et doctest, c'est bien.
+Il y a fonction et *doctest*, c'est bien.
 
 Inutile de passer `somme` en paramètre.
 
@@ -180,4 +180,4 @@ Deuxième méthode sympa, mais il vaut mieux travailler avec les entiers plutôt
 
 #### Commentaires de correction
 
-La liste de voyelle pourrait rester dans le corps de la fonction, inutile de la passer en paramètre...
+La liste de voyelles pourrait rester dans le corps de la fonction, inutile de la passer en paramètre...

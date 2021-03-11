@@ -76,7 +76,7 @@ Cela permet un post traitement différent ; si on veut...
 #### Commentaires de correction
 
 TB.
-Ici, le doctest était pénible, et peu utile...
+Ici, le *doctest* était pénible, et peu utile...
 
 
 
@@ -157,7 +157,7 @@ Non rendu.
 
 #### Commentaires de correction
 
-On ne comprend pas comment la récursivité s'arrête...
+On ne comprend pas bien comment la récursivité s'arrête...
 Sinon, c'est bien !!!
 
 

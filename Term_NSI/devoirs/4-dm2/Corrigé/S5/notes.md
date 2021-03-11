@@ -41,7 +41,7 @@ Il valait mieux faire une boucle avec un tour de moins.
 
 #### Commentaires de correction
 
-On attend ici aussi fonction et doctest.
+On attend ici aussi fonction et *doctest*.
 
 
 
@@ -53,7 +53,7 @@ On attend ici aussi fonction et doctest.
 
 Style fonctionnel, c'est bien, tu pouvais condenser encore en deux lignes.
 
-Mais on attendait une fonction avec doctest.
+Mais on attendait une fonction avec *doctest*.
 
 
 
@@ -63,7 +63,7 @@ Mais on attendait une fonction avec doctest.
 
 #### Commentaires de correction
 
-C'est bien, mais avec doctest c'est mieux.
+C'est bien, mais avec *doctest* c'est mieux.
 
 
 
@@ -75,7 +75,7 @@ C'est bien, mais avec doctest c'est mieux.
 
 `range(1, 10)` est mieux que `range(1,10)`
 
-doctest ?
+*doctest* ?
 
 
 
@@ -192,7 +192,7 @@ Bravo, très bien.
 
 #### Commentaires de correction
 
-Arghh, un `break` ; on peut l'éviter avec une fonction, et obtenir un doctest au passage.
+Arghh, un `break` ; on peut l'éviter avec une fonction, et obtenir un *doctest* au passage.
 
 
 

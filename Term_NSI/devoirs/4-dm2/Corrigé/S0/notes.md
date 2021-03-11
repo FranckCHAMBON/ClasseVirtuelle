@@ -42,7 +42,7 @@ Sinon, TB.
 
 `texte` n'est pas de type `str`, mais de type `list`.
 
-On préfère le renvoie de `str` comme indiqué en annotation, mais la fonction renvoie ici `None`.
+On préfère le renvoi de `str` comme indiqué en annotation, mais la fonction renvoie ici `None`.
 
 Sinon, Bien.
 
@@ -58,7 +58,7 @@ Sinon, Bien.
 
 `texte` n'est pas de type `str`, mais de type `list`.
 
-On préfère le renvoie de `str` comme indiqué en annotation, mais la fonction renvoie ici `None`.
+On préfère le renvoi de `str` comme indiqué en annotation, mais la fonction renvoie ici `None`.
 
 Sinon, Bien.
 

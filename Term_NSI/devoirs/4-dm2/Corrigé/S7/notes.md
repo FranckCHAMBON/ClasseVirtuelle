@@ -21,7 +21,7 @@ TB.
 
 #### Commentaires de correction
 
-TB, mais où est le doctest ?
+TB, mais où est le *doctest* ?
 
 
 
@@ -37,7 +37,7 @@ Ceci est inutile
             pass
 ```
 
-Revoir PEP8, et espace après virugule.
+Revoir PEP8, et espace après virgule.
 
 
 
@@ -81,7 +81,7 @@ TB, mais le `print` dans la fonction, c'est pas top.
 
 #### Commentaires de correction
 
-TB, ici le doctest était pénible, et inutile...
+TB, ici le *doctest* était pénible, et inutile...
 
 
 
@@ -133,7 +133,7 @@ TB.
 #### Commentaires de correction
 
 On ne peut pas le résoudre par balayage, un balayage évite les méandres...
-Il faut le voir comme un garphe.
+Il faut le voir comme un graphe.
 
 ### Plan de métro
 

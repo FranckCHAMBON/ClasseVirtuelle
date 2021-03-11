@@ -92,7 +92,7 @@ Ceci est inutile et incohérent avec le reste
     return ""
 ```
 
-D'autre part, le style est déjà vu !!! DANGER.
+D'autre part, le style est déjà vu !!! **DANGER**.
 
 ### Puzzle
 
@@ -155,7 +155,7 @@ Non rendu.
 
 #### Commentaires de correction
 
-L'utilisation de `<` était interdite ici... C'est triché !
+L'utilisation de `<` était interdite ici... C'est tricher !
 
 
 

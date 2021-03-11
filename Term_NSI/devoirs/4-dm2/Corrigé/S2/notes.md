@@ -13,9 +13,9 @@
 
 Tu aurais pu mettre aussi une fonction...
 
-Pourquoi un doctest sans fonction ???
+Pourquoi un *doctest* sans fonction ???
 
-Le programme ne renvoie pas 42, mais il l'affiche !
+Ton programme ne renvoie pas 42, mais il l'affiche !
 
 
 
@@ -27,7 +27,7 @@ Le programme ne renvoie pas 42, mais il l'affiche !
 
 #### Commentaires de correction
 
-Bien, il y a fonction et doctest.
+Bien, il y a fonction et *doctest*.
 
 `nb_marches` : meilleur identifiant
 
@@ -51,13 +51,13 @@ Fichier vide !!!
 
 #### Commentaires de correction
 
-Bien, il y a fonction et doctest.
+Bien, il y a fonction et *doctest*.
 
-Pour les erreurs du doctest, voir le corrigé, ce sera clair ;-)
-Ton doctest croit voir un seul paramètre qui a un identifiant avec espace, c'est interdit.
+Pour les erreurs du *doctest*, voir le corrigé, ce sera clair ;-)
+Ton *doctest* croit voir un seul paramètre qui a un identifiant avec espace, c'est interdit.
 Tu aurais pu, au choix :
-* mettre un str en paramètre (mieux)
-* soit mettre une liste de str en paramètre
+* mettre un `str` en paramètre (mieux),
+* soit mettre une liste de `str` en paramètre.
 
 
 
@@ -68,13 +68,13 @@ Tu aurais pu, au choix :
 
 #### Commentaires de correction
 
-Bien, il y a fonction et doctest.
+Bien, il y a fonction et *doctest*.
 
-Pour les erreurs du doctest, c'est le même problème que pour E4 !!!
+Pour les erreurs du *doctest*, c'est le même problème que pour E4 !!!
 
 `lettre` : mauvais nom d'identifiant. `mot` serait mieux.
 
-`ans` : c'est pas top, c'est une abréviation d'un mot anglais.
+`ans` : c'est pas top, c'est une abréviation d'un mot anglais (*answer*).
 Soit tu codes en anglais, soit en français. Le mélange n'est pas fabuleux...
 
 
@@ -85,7 +85,7 @@ Soit tu codes en anglais, soit en français. Le mélange n'est pas fabuleux...
 
 #### Commentaires de correction
 
-Il n'y a pas de fonction ni de doctest.
+Il n'y a pas de fonction ni de *doctest*.
 
 
 ### Table de multiplication
@@ -94,7 +94,7 @@ Il n'y a pas de fonction ni de doctest.
 
 #### Commentaires de correction
 
-Il n'y a pas de fonction ni de doctest.
+Il n'y a pas de fonction ni de *doctest*.
 
 On attend un code plus clair, avec plus de respect du PEP8.
 
@@ -144,7 +144,7 @@ Non rendu
 
 Tu aurais pu mettre aussi une fonction...
 
-Utiliser sorted, c'est tricher, tout comme la comparaison en *builtin*...
+Utiliser `sorted`, c'est tricher, tout comme la comparaison avec une *builtin*...
 
 
 
@@ -156,7 +156,7 @@ Utiliser sorted, c'est tricher, tout comme la comparaison en *builtin*...
 
 Tu aurais pu mettre aussi une fonction...
 
-On attend aussi des doctest.
+On attend aussi des *doctest*.
 
 On attend un code factorisé, il y a trop de `print` ici.
 
@@ -171,7 +171,7 @@ Utiliser une liste est inutile.
 
 Tu aurais pu mettre aussi une fonction...
 
-Ton doctest est inutile sans fonction...
+Ton *doctest* est inutile sans fonction...
 
 Utiliser `.count` n'est pas génial ici...
 

@@ -41,7 +41,7 @@ Tu aurais pu mettre aussi une fonction...
 
 Tu aurais pu mettre aussi une fonction...
 
-On attend des fonctions avec doctest !!!
+On attend des fonctions avec *doctest* !!!
 
 Noms de variables peu clairs.
 
@@ -86,7 +86,7 @@ PEP8 : mettre espace après virgule ; exemple :
 Indiquer l'origine de l'inspiration quand du code est emprunté.
 Style curieusement différent des exercices précédents...
 
-On attend des fonctions avec doctest !!!
+On attend des fonctions avec *doctest* !!!
 
 Ligne 31 : le `return ""` est inutile, et incohérent au niveau des types.
 
@@ -133,7 +133,7 @@ Non rendu.
 
 1. L'auteur de ce code fait du Python2, pas du Python3 ; ce n'est pas un élève en NSI.
 2. L'esprit du problème est de ne pas utiliser les outils *builtin* comme `<` ou `.sort()`
-3. On attend une fonction avec doctest
+3. On attend une fonction avec *doctest*
 4. `mot_1` est plus clair que `mot1`
 
 
@@ -144,7 +144,7 @@ Non rendu.
 
 #### Commentaires de correction
 
-On attend une fonction avec doctest
+On attend une fonction avec *doctest*
 
 Cela permet, entre autres choses, de n'avoir qu'un seul `print` dans ce programme, or on veut un code factorisé !!!
 
@@ -155,11 +155,11 @@ Cela permet, entre autres choses, de n'avoir qu'un seul `print` dans ce programm
 
 #### Commentaires de correction
 
-On attend une fonction avec doctest
+On attend une fonction avec *doctest*
 
 `voyelle` : l'identifiant est mal choisi, car tu comptes l'espace aussi.
 
-A : identifiant très mal choisi.
+`A` : identifiant très mal choisi.
 
 `print(A)` au lieu de `print (A)`
 
