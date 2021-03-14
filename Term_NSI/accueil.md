@@ -96,6 +96,7 @@ Pour le code Python des solutions :
     * [corrigé](devoirs/BAC-blanc/corrigé.html)
 * [DM n°2](devoirs/4-dm2/dm2.html) : Prologin 2003 en grande partie.
     * [corrigé](devoirs/4-dm2/Corrigé/corrigé.html) : Solutions du professeur, et de quelques élèves anonymes.
+    * [corrections](devoirs/4-dm2/Corrigé/correction.html) : Solutions de quelques élèves anonymes, et du professeur ; avec commentaires. ==Nouvelle version==
 
 
 ## :checkered_flag: Épreuve finale
