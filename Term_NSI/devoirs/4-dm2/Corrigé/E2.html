@@ -299,15 +299,9 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>escalier<span class="token punctuation">(</span>nb_marches<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>
-<p>Bien, mais il n&apos;y a pas de tests pour le <em>doctest</em> ; il y avait une difficult&#xE9; avec ce probl&#xE8;me.</p>
-</li>
-<li>
-<p>Ce programme affiche un saut de ligne en trop au d&#xE9;but.</p>
-</li>
-<li>
-<p>Il faut &#xE9;viter les longues lignes, m&#xEA;me en <em>docstring</em>.</p>
-</li>
+<li>Bien, mais il n&apos;y a pas de tests pour le <em>doctest</em> ; il y avait en effet une difficult&#xE9; avec ce probl&#xE8;me.</li>
+<li>Ce programme affiche un saut de ligne en trop au d&#xE9;but.</li>
+<li>Il faut &#xE9;viter les longues lignes, m&#xEA;me en <em>docstring</em>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition</h3>
 
@@ -396,7 +390,7 @@ escalier <span class="token operator">=</span> <span class="token string">&quot;
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>escalier<span class="token punctuation">)</span>
 </pre><ul>
-<li>Un <code>&quot;&quot;.join</code> pour une valeur <strong>constante</strong>... autant utiliser <code>&quot;X&quot; * longueur</code>.</li>
+<li>Un <code>&quot;&quot;.join</code> pour une valeur <strong>constante</strong> dans l&apos;it&#xE9;rateur... autant utiliser <code>&quot;X&quot; * longueur</code>.</li>
 <li>La fonction <code>donne_ligne</code> devrait plut&#xF4;t &#xEA;tre plac&#xE9;e avant la lecture de l&apos;entr&#xE9;e.</li>
 <li>Une fonction pour l&apos;escalier aurait &#xE9;t&#xE9; bien aussi.</li>
 <li>A&#xE9;rer le <em>doctest</em>.</li>
@@ -432,7 +426,7 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <span class="token keyword">print</span><span class="token punctuation">(</span>construire_escalier<span class="token punctuation">(</span>nb_marches<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li><em>doctest</em> &#xE0; a&#xE9;rer.</li>
-<li>C&apos;est bien, tu as &#xE9;chapp&#xE9; les contre-obliques ; c&apos;est correct, mais lourd et peu pertinent de renvoyer l&apos;escalier...</li>
+<li>C&apos;est bien, il fallait &#xE9;chapper les contre-obliques avec cette m&#xE9;thode ; c&apos;est correct, mais lourd et peu pertinent de renvoyer l&apos;escalier...</li>
 <li>Cette version r&#xE9;cursive n&apos;ajoute pas de saut de ligne en trop au d&#xE9;but ; c&apos;est bien !</li>
 </ul>
 <h3 class="mume-header" id="proposition-6">Proposition</h3>
