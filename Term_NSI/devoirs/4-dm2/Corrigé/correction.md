@@ -16,7 +16,7 @@ Il s'agissait du début de Prologin 2003.
 10. [Solitaire](E10.html)
 11. [Anagrammes](E11.html)
 12. [Plages du Pacifique](E12.html)
-13. [Plan de métro](E12.html)
+13. [Plan de métro](E13.html)
 
 ## Qualifications
 
