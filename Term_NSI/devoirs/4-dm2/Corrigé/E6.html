@@ -1,0 +1,620 @@
+<!DOCTYPE html><html><head>
+      <title>E6</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="correction-de-nombres-impairshttpsprologinorgtrain2003semifinalnombres_impairs">Correction de <a href="https://prologin.org/train/2003/semifinal/nombres_impairs">Nombres impairs</a></h1>
+
+<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+
+<p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
+<h3 class="mume-header" id="proposition">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nb_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Cette fonction prend en param&#xE8;tre deux entiers et affiche dans un ordre croissant tous les nombres impairs se trouvant entre ces deux entiers inclus.
+    &gt;&gt;&gt; 42 51
+    43 45 47 49 51
+    &quot;&quot;&quot;</span>
+    liste_nb_impairs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>m <span class="token operator">-</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            liste_nb_impairs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+        n <span class="token operator">+=</span> <span class="token number">1</span>
+    formatage <span class="token operator">=</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">repr</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> liste_nb_impairs<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> formatage
+    
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+n<span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nb_impairs<span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>Annotations de type coh&#xE9;rentes, mais on pr&#xE9;f&#xE8;re ici le renvoi d&apos;une liste.</li>
+<li><em>doctest</em> &#xE0; revoir.</li>
+<li><code>for x in range(m - n + 1):</code> correct, mais &#xE0; justifier.</li>
+<li>On peut &#xE9;viter le <code>else pass</code>...</li>
+<li>On peut &#xE9;viter de calculer un modulo &#xE0; chaque tour de boucle.</li>
+<li>Ici, <code>repr</code> et <code>str</code> sont identiques.</li>
+</ul>
+<h3 class="mume-header" id="proposition-1">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>d&#xE9;but <span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token punctuation">,</span> fin <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Recherche sur un intervalle tout les nombres impairs et les renvoies de mani&#xE8;re r&#xE9;cursive
+    &gt;&gt;&gt; nombres_impairs(23,33)
+    23 25 27 29 31 33 
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> d&#xE9;but <span class="token operator">&gt;</span> fin<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> 
+    <span class="token keyword">if</span> d&#xE9;but <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> nombres_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>fin<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nombres_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>fin<span class="token punctuation">)</span>
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>     
+
+<span class="token comment"># Entr&#xE9;e</span>
+d&#xE9;but<span class="token punctuation">,</span>fin <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+nombres_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span>fin<span class="token punctuation">)</span>
+</pre><ul>
+<li><em>doctest</em> correct, mais <em>docstring</em> incorrecte : la fonction <strong>affiche</strong>, elle ne renvoie pas les nombres impairs.</li>
+<li>Cette version r&#xE9;cursive est int&#xE9;ressante.</li>
+<li>Probl&#xE8;me : cette version affiche une espace en trop &#xE0; la fin. C&apos;est souvent accept&#xE9; par les juges en ligne, mais pas toujours !!!</li>
+</ul>
+<h3 class="mume-header" id="proposition-2">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">nombre_1<span class="token punctuation">,</span> nombre_2 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> nombre_1 <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    nombre_1 <span class="token operator">+=</span> <span class="token number">1</span>
+
+liste_nombres_impairs <span class="token operator">=</span> <span class="token punctuation">[</span>nombre_impair <span class="token keyword">for</span> nombre_impair <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nombre_1<span class="token punctuation">,</span> nombre_2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>nombre<span class="token punctuation">)</span> <span class="token keyword">for</span> nombre <span class="token keyword">in</span> liste_nombres_impairs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On attendait une fonction.</li>
+<li><code>[nombre_impair for nombre_impair in range(nombre_1, nombre_2+1, 2)]</code> &#xE0; remplacer par :
+<ul>
+<li><code>list(range(nombre_1, nombre_2+1, 2))</code></li>
+</ul>
+</li>
+<li>De m&#xEA;me, utiliser <code>map(str, liste_nombres_impairs)</code> dans le <code>join</code>. Voir le corrig&#xE9;.</li>
+</ul>
+<h3 class="mume-header" id="proposition-3">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">impairs</span><span class="token punctuation">(</span>premier_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> deuxieme_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie les nombres impairs entre deux donn&#xE9;es.
+    &gt;&gt;&gt; impairs(42,51)
+    43 45 47 49 51 
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxieme_entier<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x <span class="token operator">&amp;</span> <span class="token number">1</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;es</span>
+premier_entier<span class="token punctuation">,</span> deuxieme_entier <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;=</span> premier_entier <span class="token operator">&lt;</span> deuxieme_entier <span class="token operator">&lt;=</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&apos;Les nombres sont soit gros grand, soit le premier nombre et plus grand que le deuxi&#xE8;me.&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+impairs<span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxieme_entier<span class="token punctuation">)</span>
+</pre><ul>
+<li><em>doctring</em> et annotation de type de sortie fausses ; la fonction renvoie <code>None</code> et non un entier.
+<ul>
+<li>On pr&#xE9;f&#xE8;re ici l&apos;affichage en dehors de la fonction.</li>
+</ul>
+</li>
+<li>A&#xE9;rer le <em>dcotest</em>.</li>
+<li>A&#xE9;rer <code>deuxieme_entier+1</code> ; toujours quand la variable comporte plus d&apos;une lettre.</li>
+<li><code>raise</code> inutile dans cette situation.</li>
+</ul>
+<h3 class="mume-header" id="proposition-4">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">cherche_impair_entre_nb</span><span class="token punctuation">(</span>premier_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> deuxi&#xE8;me_entier<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; cherche des nombre impair entre deux nombre et 
+    affiche la liste de c&apos;est nombre nombre trouver 
+    &gt;&gt;&gt; cherche_impair_entre_nb(42, 51)
+    [43, 45, 47, 49, 51]
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">if</span> premier_entier <span class="token operator">&gt;</span> deuxi&#xE8;me_entier<span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;il faux que la premi&#xE8;re entr&#xE9; &lt; deuxi&#xE8;me entr&#xE9;&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        liste_impair <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxi&#xE8;me_entier <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#deuxi&#xE8;me_entier + 1 car il est inclu</span>
+            <span class="token keyword">if</span> x<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token boolean">None</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                liste_impair<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> liste_impair
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+premier_entier<span class="token punctuation">,</span> deuxi&#xE8;me_entier <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;
+on sait que le premier indise est toujour inf&#xE9;rieur au deuxi&#xE8;me 
+donc on sera pas oubliger de faire un test pour voir si c&apos;est vrai 
+mais la on va quand m&#xEA;me le faire
+&quot;&quot;&quot;</span>
+<span class="token keyword">for</span> v <span class="token keyword">in</span> cherche_impair_entre_nb<span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxi&#xE8;me_entier<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>La fonction renvoie une liste ; c&apos;est <strong>bien</strong>. Cependant la <em>docstring</em> annonce le contraire, qu&apos;elle affiche !</li>
+<li><em>doctring</em> &#xE0; revoir avec un correcteur orthographique et grammatical. On attend peu de phrases en NSI, autant les rendre les plus simples et justes. Un effort est appr&#xE9;ci&#xE9;.</li>
+<li>Bon <em>doctest</em>, mais &#xE0; a&#xE9;rer.</li>
+<li>*<code>raise</code> inutile dans cette situation.</li>
+<li><code># deuxi&#xE8;me_entier inclus</code> est un commentaire encore plus court, il est utile, c&apos;est bien comme rappel.</li>
+<li>Le <code>None</code> avec <code>else</code> sont inutiles.</li>
+<li>Le dernier commentaire est peu clair. &#xC9;tait-il utile ?</li>
+<li>Pour l&apos;affichage, <code>&quot; &quot;.join(...)</code> est pr&#xE9;f&#xE9;rable. Ici, il y aura une espace en trop &#xE0; la fin.</li>
+</ul>
+<h3 class="mume-header" id="proposition-5">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;Cette algorithme deux entiers en param&#xE8;tres, et il affiche, dans l&apos;ordre croissant, tous les nombres impairs se trouvant entre ces deux entiers.
+exemple d&apos;entr&#xE9;e : 42 51
+exemple de sortie : 43 45 47 49 51
+                   
+&quot;&quot;&quot;</span>
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+nb_1<span class="token punctuation">,</span> nb_2 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Algorithme</span>
+nb_impaire<span class="token operator">=</span><span class="token punctuation">[</span>x <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_1<span class="token punctuation">,</span> <span class="token punctuation">(</span>nb_2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> x<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment">#&#xE9;criture fonctionnelle</span>
+r&#xE9;sultat_conversion <span class="token operator">=</span> <span class="token string">&apos; &apos;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span> <span class="token keyword">for</span> elem <span class="token keyword">in</span> nb_impaire<span class="token punctuation">)</span>  <span class="token comment">#Conversion d&#x2019;une liste d&apos;entiers en cha&#xEE;ne de caract&#xE8;re en utilisant join()</span>
+
+<span class="token comment"># Sortie</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r&#xE9;sultat_conversion<span class="token punctuation">)</span>
+</pre><ul>
+<li>&#xAB; Cette algorithme deux entiers en param&#xE8;tres,(...) &#xBB; (sic)
+<ul>
+<li>Il manque le verbe prendre.</li>
+<li>Algorithme est masculin, donc &#xAB; Cet algorithme prend ... &#xBB;.</li>
+<li>En fait, ce serait plut&#xF4;t &#xAB; Ce programme prend ... &#xBB;.</li>
+<li>Il manque la pr&#xE9;cision utile de l&apos;inclusion des bornes.</li>
+</ul>
+</li>
+<li>A&#xE9;rer de chaque c&#xF4;t&#xE9; du <code>=</code>. (<em>Sauf pour les param&#xE8;tres par d&#xE9;faut de fonction.</em>)</li>
+<li>Quitte &#xE0; utiliser un style fonctionnel, autant l&apos;utiliser efficacement :
+<ul>
+<li><code>[x for x in chose]</code> devient <code>list(chose)</code>.</li>
+<li><code>&apos; &apos;.join(str(elem) for elem in nb_impaire)</code> devient <code>&apos; &apos;.join(map(str, nb_impaire))</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="proposition-6">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
+
+<span class="token keyword">def</span> <span class="token function">nombres_impairs_entre</span><span class="token punctuation">(</span>nombre1<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nombre2<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie tous les nombres impairs se trouvant entre nombre1 et nombre2 dans l&apos;ordre croissant.
+    &gt;&gt;&gt; nombres_impairs_entre(1, 3)
+    &apos;1 3&apos;
+    &gt;&gt;&gt; nombres_impairs_entre(42, 51)
+    &apos;43 45 47 49 51&apos;
+    &quot;&quot;&quot;</span>
+
+    entiers_impairs <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    <span class="token keyword">if</span> nombre1 <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token comment"># Si nombre1 est impair, on renvoie tous les nombres entre nombre1 et nombre2 inclus avec un pas de 2                    </span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nombre1<span class="token punctuation">,</span> nombre2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            entiers_impairs <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment"># Si nombre1 est pair, on renvoie tous les nombres entre nombre1 exclus et nombre2 inclus avec un pas de 2    </span>
+        <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nombre1<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> nombre2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            entiers_impairs <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span>
+    <span class="token keyword">return</span> entiers_impairs<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">#Variante:</span>
+    <span class="token comment">#entiers_impairs = [str(x) for x in range(nombre1,nombre2+1) if x%2 == 1]</span>
+    <span class="token comment">#return &quot; &quot;.join(entiers_impairs)</span>
+
+<span class="token comment"># 1- Tests</span>
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 2- Lecture de l&apos;entr&#xE9;e</span>
+
+nombre1<span class="token punctuation">,</span> nombre2 <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 3- Appel de la fonction / Sortie</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>nombres_impairs_entre<span class="token punctuation">(</span>nombre1<span class="token punctuation">,</span> nombre2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On attendait plut&#xF4;t une fonction qui renvoie la liste, et non la cha&#xEE;ne.</li>
+<li>L&apos;affichage comporte ici une espace en trop &#xE0; la fin.</li>
+<li>Il y a deux bouts de code qui se ressemblent, signe qu&apos;on aurait pu factoriser le code.</li>
+</ul>
+<h3 class="mume-header" id="proposition-7">Proposition</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nb_impairs</span><span class="token punctuation">(</span>d&#xE9;but <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> fin <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie, dans l&apos;ordre croissant, 
+    tous les entiers impairs se trouvant entre les nombres &apos;d&#xE9;but&apos; et &apos;fin&apos;.
+    
+    &gt;&gt;&gt; d&#xE9;but, fin = 42 51
+    &gt;&gt;&gt; nb_impairs(d&#xE9;but, fin)
+    43 45 47 49 51
+    
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> nb <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span> fin <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">if</span> nb <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token punctuation">:</span> <span class="token comment">#si nb est impair</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>nb<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+d&#xE9;but<span class="token punctuation">,</span> fin <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> d&#xE9;but <span class="token operator">&lt;</span> fin <span class="token operator">&lt;=</span> <span class="token number">200</span> 
+
+<span class="token comment"># Sortie</span>
+nb_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span> fin<span class="token punctuation">)</span>
+</pre><ul>
+<li>La fonction <strong>ne renvoie pas</strong>, mais elle <strong>affiche</strong> ; ce n&apos;est pas pareil.</li>
+<li>L&apos;annotation de sortie est fausse, la fonction renvoie <code>None</code>.</li>
+<li>Tr&#xE8;s bon <em>doctest</em>.</li>
+<li>Le <code>assert</code> est inutile dans ce genre de situation.</li>
+</ul>
+<h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
+
+<h3 class="mume-header" id="version-basique">Version basique</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+https://prologin.org/train/2003/semifinal/nombres_impairs
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la liste des nombres impairs entre `n` et `m` inclus.
+
+    &gt;&gt;&gt; nombres_impairs(42, 51)
+    [43, 45, 47, 49, 51]
+
+    &gt;&gt;&gt; nombres_impairs(42, 52)
+    [43, 45, 47, 49, 51]
+
+    &gt;&gt;&gt; nombres_impairs(43, 51)
+    [43, 45, 47, 49, 51]
+
+    &gt;&gt;&gt; nombres_impairs(43, 52)
+    [43, 45, 47, 49, 51]
+
+    &quot;&quot;&quot;</span>
+
+    impairs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    i <span class="token operator">=</span> n
+    <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment"># i est d&#xE9;sormais impair</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> m<span class="token punctuation">:</span>
+        impairs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> impairs
+
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+n<span class="token punctuation">,</span> m <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+impairs <span class="token operator">=</span> nombres_impairs<span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> impairs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On a mis 4 <em>doctest</em>, un pour chaque type suivant la parit&#xE9; de <code>n</code> et <code>m</code>.</li>
+</ul>
+<h3 class="mume-header" id="version-fonctionnelle">Version fonctionnelle</h3>
+
+<p>1 ligne. <strong>Non recommand&#xE9;e</strong>, mais &#xE0; but p&#xE9;dagogique.</p>
+<ul>
+<li><code>n - (n&amp;1)</code>, c&apos;est <code>n</code> s&apos;il est pair, sinon <code>n-1</code> ; le r&#xE9;sultat est pair, juste inf&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
+<li><code>n - (n&amp;1) + 1</code>, c&apos;est <code>n</code> s&apos;il est impair, sinon <code>n+1</code> ; le r&#xE9;sultat est impair, juste sup&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token punctuation">(</span>n<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="version-r%C3%A9cursive">Version r&#xE9;cursive</h3>
+
+<p>N&apos;est pas efficace, mais correcte.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> n <span class="token operator">&gt;</span> m<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">elif</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nombres_impairs<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+</span> nombres_impairs<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+</pre><h3 class="mume-header" id="variante-de-laffichage">Variante de l&apos;affichage</h3>
+
+<p>Avec <em>unpack</em> ; <strong>hors programme</strong>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">*</span>impairs<span class="token punctuation">)</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
