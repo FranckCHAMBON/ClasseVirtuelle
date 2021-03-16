@@ -14,9 +14,6 @@ Il s'agissait du début de Prologin 2003.
 8. [Puissance 4](E8.html)
 9. [Puzzle](E9.html)
 10. [Solitaire](E10.html)
-
-À venir
-
 11. [Anagrammes](E11.html)
 12. [Plages du Pacifique](E12.html)
 13. [Plan de métro](E12.html)
