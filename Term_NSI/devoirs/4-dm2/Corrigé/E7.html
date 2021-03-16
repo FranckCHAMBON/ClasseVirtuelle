@@ -261,13 +261,28 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="correction-de-table-de-multiplicationhttpsprologinorgtrain2003semifinaltable_de_multiplications">Correction de <a href="https://prologin.org/train/2003/semifinal/table_de_multiplications">Table de multiplication</a></h1>
+      <h1 class="mume-header undefined" id="correction-de-table-de-multiplicationhttpsprologinorgtrain2003semifinaltable_de_multiplications">Correction de <a href="https://prologin.org/train/2003/semifinal/table_de_multiplications">Table de multiplication</a></h1>
 
 <p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+<li><a href="#proposition-8">Proposition 8</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
 <h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
-<h3 class="mume-header" id="proposition">Proposition</h3>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_multiplication</span><span class="token punctuation">(</span>nb<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Cette fonction prend en param&#xE8;tre un chiffre entre 1 et 9 et affiche sa table de multiplication.
@@ -298,7 +313,7 @@ table_multiplication<span class="token punctuation">(</span>nb<span class="token
 <li><em>doctest</em> &#xE0; revoir.</li>
 <li><em>fstring</em> &#xE0; privil&#xE9;gier.</li>
 </ul>
-<h2 class="mume-header" id="proposition-1">Proposition</h2>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_de_multiplication</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la table de multiplication du chiffre donn&#xE9; partant de 1 jusqu&apos;&#xE0; 9 dans une liste
@@ -328,7 +343,7 @@ affichage <span class="token operator">=</span> table_de_multiplication<span cla
 <li>Annotation de type incompl&#xE8;te.</li>
 <li>Il &#xE9;tait plus simple d&apos;afficher dans la fonction.</li>
 </ul>
-<h3 class="mume-header" id="proposition-2">Proposition</h3>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -338,7 +353,7 @@ affichage <span class="token operator">=</span> table_de_multiplication<span cla
 <li>Revoir le PEP-8, on attend une espace apr&#xE8;s la virgule.</li>
 <li>Penser aux <em>fstring</em>. C&apos;est tr&#xE8;s bien !</li>
 </ul>
-<h3 class="mume-header" id="proposition-3">Proposition</h3>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">multiple <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
@@ -348,7 +363,7 @@ affichage <span class="token operator">=</span> table_de_multiplication<span cla
 <li>On attendait une fonction.</li>
 <li>Revoir le PEP-8, on attend une espace apr&#xE8;s la virgule.</li>
 </ul>
-<h3 class="mume-header" id="proposition-4">Proposition</h3>
+<h3 class="mume-header" id="proposition-5">Proposition 5</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_de_multiplications</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Revoie la table de multiplication de l&apos;entier demand&#xE9;.
@@ -385,7 +400,7 @@ table_de_multiplications<span class="token punctuation">(</span>chiffre<span cla
 <li>Penser aux <em>fstring</em>.</li>
 <li>Le <code>raise</code> est inutile ici.</li>
 </ul>
-<h3 class="mume-header" id="proposition-5">Proposition</h3>
+<h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">nb_&#xE0;_multiplier <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 liste_tableu<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">9</span>
@@ -401,7 +416,7 @@ resulta <span class="token operator">=</span> <span class="token number">0</span
 <li>Ici, le style n&apos;est pas formidable ; une liste de liste ne se justifie pas.</li>
 <li>Les identifiants <code>x</code>, <code>y</code>, <code>z</code> ne sont pas clairs du tout...</li>
 </ul>
-<h3 class="mume-header" id="proposition-6">Proposition</h3>
+<h3 class="mume-header" id="proposition-7">Proposition 7</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;Cette algorithme prend en param&#xE8;tre un chiffre (entre 1 et 9), et il affiche la table de multiplication de ce chiffre.
 exemple d&apos;entr&#xE9;e : 3
@@ -462,7 +477,7 @@ chiffre <span class="token operator">=</span> <span class="token builtin">int</s
 <li>Joli tour de force de r&#xE9;ussir le <em>doctest</em>, mais ici on attendait plut&#xF4;t une fonction qui affiche...</li>
 <li>Il vaut mieux &#xE9;viter <code>+=</code> avec les cha&#xEE;nes de caract&#xE8;res, quand on peut. Question de complexit&#xE9;. Tr&#xE8;s souvent, il suffit d&apos;accumuler dans une liste les morceaux, puis de les coller &#xE0; la fin avec <code>s&#xE9;parateur.join(cumul)</code>.</li>
 </ul>
-<h3 class="mume-header" id="proposition-7">Proposition</h3>
+<h3 class="mume-header" id="proposition-8">Proposition 8</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Fonction avec multiplication</span>
 <span class="token keyword">def</span> <span class="token function">table_multiplication</span><span class="token punctuation">(</span>nb_r&#xE9;f <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span> <span class="token punctuation">:</span>

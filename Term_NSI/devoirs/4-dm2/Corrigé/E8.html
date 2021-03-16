@@ -261,13 +261,26 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="correction-de-puissance-4httpsprologinorgtrain2003semifinalpuissance_4">Correction de <a href="https://prologin.org/train/2003/semifinal/puissance_4">Puissance 4</a></h1>
+      <h1 class="mume-header undefined" id="correction-de-puissance-4httpsprologinorgtrain2003semifinalpuissance_4">Correction de <a href="https://prologin.org/train/2003/semifinal/puissance_4">Puissance 4</a></h1>
 
 <p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
 <h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
-<h3 class="mume-header" id="proposition">Proposition</h3>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">puissance4</span><span class="token punctuation">(</span>table_puissance4<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Cette fonction prend en param&#xE8;tre un tableau d&apos;entiers &#xE0; deux dimensions contenant 42 cases
@@ -325,7 +338,7 @@ table_puissance4 <span class="token operator">=</span> <span class="token punctu
 <li>Mauvaise id&#xE9;e d&apos;utiliser <code>n</code> et <code>x</code> et de les intervertir.</li>
 <li>On pouvait travailler avec des <code>str</code> plut&#xF4;t que des <code>int</code> dans ce probl&#xE8;me.</li>
 </ul>
-<h3 class="mume-header" id="proposition-1">Proposition</h3>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">Puissance_4</span><span class="token punctuation">(</span>grille<span class="token punctuation">:</span><span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie le gagnant 1 pour le joueur 1 ou 2 pour le joueur 2 si il arrive &#xE0; align&#xE9; 4 pions identitique,sinon 0 en cas d&apos;&#xE9;galit&#xE9;
@@ -383,7 +396,7 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 <li>La ligne <code>if not(est_possible(x, y)) or (grille[y][x] != joueur):</code> utilise de l&apos;&#xE9;valuation paresseuse ! C&apos;est bien. Si le premier test <code>est_possible(x, y)</code> est <code>False</code>, alors sa n&#xE9;gation est <code>True</code>, dans ce cas <code>True or ...</code> n&apos;&#xE9;value pas le second op&#xE9;rande. Ainsi <code>grille[y][x]</code> ne provoque pas d&apos;erreur. C&apos;est bien !</li>
 <li>On pouvait simplifier le code, en ne testant que le plus &#xE9;loign&#xE9; des 4 pions, au lieu des trois suivants.</li>
 </ul>
-<h3 class="mume-header" id="proposition-2">Proposition</h3>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">nb_lignes <span class="token operator">=</span> <span class="token number">6</span>
 nb_colonnes <span class="token operator">=</span> <span class="token number">7</span>
@@ -433,7 +446,7 @@ gagnant <span class="token operator">=</span> <span class="token number">0</span
 <li>Le <code>break</code> peut presque toujours &#xEA;tre &#xE9;vit&#xE9; en cr&#xE9;ant... une fonction.</li>
 <li>En cr&#xE9;ant plusieurs fonctions, on peut faire de nombreux renvois pr&#xE9;matur&#xE9;s. Au lieu de v&#xE9;rifier si on 4 align&#xE9;s &#xE0; la fin, on peut, en cours de v&#xE9;rification, renvoyer &#xAB; pas de gagnant ici pour l&apos;instant &#xBB; ; c&apos;est une bonne pratique. <strong>On doit morceler son code en fonction &#xE9;l&#xE9;mentaire.</strong></li>
 </ul>
-<h3 class="mume-header" id="proposition-3">Proposition</h3>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">puissance_4</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token punctuation">,</span> grille<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le vainqueur ou non du puissance 4.
@@ -479,7 +492,7 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 <li>Utiliser de meilleurs identifiants. <code>lig</code> et <code>col</code>, c&apos;est un mauvais style.</li>
 <li>Le <code>return &quot;&quot;</code> devrait &#xEA;tre un <code>return 0</code>, en cas de match nul.</li>
 </ul>
-<h3 class="mume-header" id="proposition-4">Proposition</h3>
+<h3 class="mume-header" id="proposition-5">Proposition 5</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">puissance_4</span><span class="token punctuation">(</span>matrice_jeu<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; trouve le gagnon 1 ou 2 si &#xE9;galiter affiche 0&quot;&quot;&quot;</span>
@@ -557,7 +570,7 @@ matrice_jeu <span class="token operator">=</span> <span class="token punctuation
 <li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)...</li>
 <li>Mais il a le m&#xE9;rite d&apos;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&apos;est bien.</li>
 </ul>
-<h3 class="mume-header" id="proposition-5">Proposition</h3>
+<h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
 

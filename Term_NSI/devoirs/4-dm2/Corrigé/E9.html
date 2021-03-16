@@ -261,13 +261,24 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="correction-de-puzzlehttpsprologinorgtrain2003semifinalpuzzle">Correction de <a href="https://prologin.org/train/2003/semifinal/puzzle">Puzzle</a></h1>
+      <h1 class="mume-header undefined" id="correction-de-puzzlehttpsprologinorgtrain2003semifinalpuzzle">Correction de <a href="https://prologin.org/train/2003/semifinal/puzzle">Puzzle</a></h1>
 
 <p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
 <h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
-<h3 class="mume-header" id="proposition">Proposition</h3>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">insertion_puzzle</span><span class="token punctuation">(</span>petit_puzzle<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">,</span> grand_puzzle <span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Regarde si l&apos;on peut ins&#xE9;rer le petit puzzle 4*4 dans les emplacements vides du grand puzzle
@@ -349,7 +360,7 @@ grand_puzzle <span class="token operator">=</span> <span class="token punctuatio
 <li>De bonnes choses, mais code trop long.</li>
 <li>Revoir le PEP-8.</li>
 </ul>
-<h3 class="mume-header" id="proposition-1">Proposition</h3>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">nb_lignes_pi&#xE8;ce <span class="token operator">=</span> nb_colonnes_pi&#xE8;ce <span class="token operator">=</span> <span class="token number">4</span>
 nb_lignes_puzzle <span class="token operator">=</span> nb_colonnes_puzzle <span class="token operator">=</span> <span class="token number">10</span>
@@ -408,7 +419,7 @@ puzzle_correct <span class="token operator">=</span> <span class="token boolean"
 <pre data-role="codeBlock" data-info="python" class="language-python">        <span class="token keyword">if</span> puzzle_correct<span class="token punctuation">:</span>
             <span class="token keyword">break</span>
 </pre><p>Il vaut mieux mettre cette section dans une fonction, et au lieu de <code>puzzle_correct = True</code>, faire un <code>return True</code></p>
-<h3 class="mume-header" id="proposition-2">Proposition</h3>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">trouve_enplacement_piece</span><span class="token punctuation">(</span>piece_puzzle<span class="token punctuation">,</span>  puzzle_entier<span class="token punctuation">,</span>x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> x2<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; cherche un endroit o&#xF9; la piece de puzzle peut entrer si elle entre affiche 1 sinon 0
@@ -491,7 +502,7 @@ et aussi il y a un probl&#xE8;me si la primi&#xE8;re ligne de la piece de puzzle
 <li>Mais il a le m&#xE9;rite d&apos;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&apos;est bien.</li>
 <li>Il y a beaucoup plus simple comme fa&#xE7;on de faire !!!</li>
 </ul>
-<h3 class="mume-header" id="proposition-3">Proposition</h3>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
 
@@ -609,6 +620,7 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 <li>J&apos;ai lanc&#xE9; ensuite dans un terminal bash :</li>
 </ul>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">prologin_2003/E9$ python puzzle.py <span class="token operator">&lt;</span> in.txt
+<span class="token number">1</span>
 </pre><ul>
 <li>Cette commande lance l&apos;interpr&#xE9;teur Python avec mon script <code>puzzle.py</code>, et en redirigeant l&apos;entr&#xE9;e standard sur le fichier <code>in.txt</code>.</li>
 <li>Je v&#xE9;rifie que la sortie est bien <code>1</code>.</li>

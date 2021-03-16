@@ -261,13 +261,28 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="correction-de-initialeshttpsprologinorgtrain2003semifinalinitiales">Correction de <a href="https://prologin.org/train/2003/semifinal/initiales">Initiales</a></h1>
+      <h1 class="mume-header undefined" id="correction-de-initialeshttpsprologinorgtrain2003semifinalinitiales">Correction de <a href="https://prologin.org/train/2003/semifinal/initiales">Initiales</a></h1>
 
 <p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+<li><a href="#proposition-8">Proposition 8</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
 <h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
-<h3 class="mume-header" id="proposition">Proposition</h3>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> string
 <span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>nb_caract&#xE8;re<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> chaine_caract&#xE8;re<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
@@ -309,7 +324,7 @@ chaine_caract&#xE8;re <span class="token operator">=</span> <span class="token b
 <li><code>split</code> n&apos;est pas utilis&#xE9;, c&apos;est bien, mais</li>
 <li>le programme &#xE9;choue, revoir l&apos;algorithme.</li>
 </ul>
-<h3 class="mume-header" id="proposition-1">Proposition</h3>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>cha&#xEE;ne_caract&#xE8;re <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie les Initiales d&apos;une cha&#xEE;ne de caract&#xE8;re
@@ -348,7 +363,7 @@ cha&#xEE;ne_caract&#xE8;re <span class="token operator">=</span> <span class="to
 <blockquote>
 <p>Quand on doit accumuler des objets, il faut penser en premier &#xE0; une liste !</p>
 </blockquote>
-<h3 class="mume-header" id="proposition-2">Proposition</h3>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">nombre_caract&#xE8;res <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 liste_mots <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -360,7 +375,7 @@ initiales_majuscules <span class="token operator">=</span> <span class="token st
 <li>On attend une fonction avec <em>doctest</em>,</li>
 <li>et sans utiliser <code>split</code> ici...</li>
 </ul>
-<h3 class="mume-header" id="proposition-3">Proposition</h3>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>texte<span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie l&apos;initiale de chaque mots de la phrase.
@@ -388,7 +403,7 @@ initiales<span class="token punctuation">(</span>texte<span class="token punctua
 <li>A&#xE9;rer le <em>doctest</em>.</li>
 <li>Bon algorithme.</li>
 </ul>
-<h3 class="mume-header" id="proposition-4">Proposition</h3>
+<h3 class="mume-header" id="proposition-5">Proposition 5</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">cherche_initiales</span><span class="token punctuation">(</span>liste_phrase<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; cherche les initieles d&apos;une phrase est l&apos;affiche
@@ -413,7 +428,7 @@ liste_phrase <span class="token operator">=</span> <span class="token builtin">i
 <li><code>&gt;&gt;&gt; cherche_initiales([</code> : OK</li>
 <li>On pr&#xE9;f&#xE8;re une fonction qui prend les param&#xE8;tres d&apos;origine, mais pas une liste.</li>
 </ul>
-<h3 class="mume-header" id="proposition-5">Proposition</h3>
+<h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> premi&#xE8;re_lettre<span class="token punctuation">(</span>phrase<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Cette fonction prend en param&#xE8;tre une cha&#xEE;ne de caract&#xE8;res, et affiche la premi&#xE8;re lettre de chacun de ces mots, en majuscule.
@@ -442,7 +457,7 @@ premi&#xE8;re_lettre<span class="token punctuation">(</span>phrase<span class="t
 <li><code>&gt;&gt;&gt; premi&#xE8;re_lettre(&quot;rentre avec tes pieds&quot;)</code> : possible</li>
 <li>On pr&#xE9;f&#xE8;re une version sans <code>split</code>...</li>
 </ul>
-<h3 class="mume-header" id="proposition-6">Proposition</h3>
+<h3 class="mume-header" id="proposition-7">Proposition 7</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
 
@@ -480,7 +495,7 @@ cha&#xEE;ne_mots <span class="token operator">=</span> <span class="token builti
 </li>
 <li>Et on pr&#xE9;f&#xE8;re une version sans <code>split</code>.</li>
 </ul>
-<h3 class="mume-header" id="proposition-7">Proposition</h3>
+<h3 class="mume-header" id="proposition-8">Proposition 8</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>texte <span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span> <span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie la premi&#xE8;re lettre de chaque mot, en majuscule, dans la cha&#xEE;ne de caract&#xE8;re &apos;texte&apos;.

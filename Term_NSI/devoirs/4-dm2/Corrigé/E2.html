@@ -261,13 +261,27 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="correction-de-escalierhttpsprologinorgtrain2003semifinalescalier">Correction de <a href="https://prologin.org/train/2003/semifinal/escalier">Escalier</a></h1>
+      <h1 class="mume-header undefined" id="correction-de-escalierhttpsprologinorgtrain2003semifinalescalier">Correction de <a href="https://prologin.org/train/2003/semifinal/escalier">Escalier</a></h1>
 
 <p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
 <h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
-<h3 class="mume-header" id="proposition">Proposition</h3>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">hauteur_marche <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>hauteur_marche <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># +1 car la hauteur_marche est enclux </span>
@@ -279,7 +293,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>&quot;X&quot; * x : facilit&#xE9; du langage non recommand&#xE9;e ici.</li>
 <li>Il y a un saut de ligne en trop au d&#xE9;but, avec <code>x = 0</code>. C&apos;est accept&#xE9; par le juge Prologin, mais uniquement en d&#xE9;but et en fin de la sortie compl&#xE8;te.</li>
 </ul>
-<h3 class="mume-header" id="proposition-1">Proposition</h3>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">escalier</span><span class="token punctuation">(</span>nb_marches <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Prend un entier &quot;nb_marches&quot; et renvoie un escalier de &quot;nb_marches&quot;, rempli du caract&#xE8;re &quot;X&quot; de mani&#xE8;re r&#xE9;cursive.
@@ -303,7 +317,7 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <li>Ce programme affiche un saut de ligne en trop au d&#xE9;but.</li>
 <li>Il faut &#xE9;viter les longues lignes, m&#xEA;me en <em>docstring</em>.</li>
 </ul>
-<h3 class="mume-header" id="proposition-2">Proposition</h3>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">triangle</span><span class="token punctuation">(</span>nombre_marche<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Cette fonction prend en param&#xE8;tre un entier positif et elle affiche un escalier, rempli du caract&#xE8;re X.
@@ -339,7 +353,7 @@ triangle<span class="token punctuation">(</span>nombre_marche<span class="token 
 <li>&#xC9;viter les longues lignes.</li>
 <li><code>nb_marches</code> : meilleur nom de variable.</li>
 </ul>
-<h3 class="mume-header" id="proposition-3">Proposition</h3>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">triangle</span><span class="token punctuation">(</span>nb_marches <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un triangle rectangle &#xE0; la hauteur demand&#xE9;.
@@ -368,7 +382,7 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <li>A&#xE9;rer le <em>doctest</em> !</li>
 <li>Cette version r&#xE9;cursive renvoie un saut de ligne en trop au d&#xE9;but.</li>
 </ul>
-<h3 class="mume-header" id="proposition-4">Proposition</h3>
+<h3 class="mume-header" id="proposition-5">Proposition 5</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python">nombre_marches <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 escalier <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
@@ -395,7 +409,7 @@ escalier <span class="token operator">=</span> <span class="token string">&quot;
 <li>Une fonction pour l&apos;escalier aurait &#xE9;t&#xE9; bien aussi.</li>
 <li>A&#xE9;rer le <em>doctest</em>.</li>
 </ul>
-<h3 class="mume-header" id="proposition-5">Proposition</h3>
+<h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
 
@@ -429,7 +443,7 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <li>C&apos;est bien, il fallait &#xE9;chapper les contre-obliques avec cette m&#xE9;thode ; c&apos;est correct, mais lourd et peu pertinent de renvoyer l&apos;escalier...</li>
 <li>Cette version r&#xE9;cursive n&apos;ajoute pas de saut de ligne en trop au d&#xE9;but ; c&apos;est bien !</li>
 </ul>
-<h3 class="mume-header" id="proposition-6">Proposition</h3>
+<h3 class="mume-header" id="proposition-7">Proposition 7</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">escalier</span><span class="token punctuation">(</span>nb_marches <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span> <span class="token punctuation">:</span> 
     <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie &apos;nb_marches&apos; lignes avec sur chaque ligne 
