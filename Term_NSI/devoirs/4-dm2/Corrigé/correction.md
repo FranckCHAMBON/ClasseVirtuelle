@@ -10,13 +10,13 @@ Il s'agissait du début de Prologin 2003.
 4. [Initiales](E4.html)
 5. [Mot le plus long](E5.html)
 6. [Nombres impairs](E6.html)
-
-À venir
-
 7. [Table de multiplication](E7.html)
 8. [Puissance 4](E8.html)
 9. [Puzzle](E9.html)
 10. [Solitaire](E10.html)
+
+À venir
+
 11. [Anagrammes](E11.html)
 12. [Plages du Pacifique](E12.html)
 13. [Plan de métro](E12.html)
