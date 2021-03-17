@@ -433,7 +433,7 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 <span class="token keyword">print</span><span class="token punctuation">(</span>donne_nb_cases_inaccessibles<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Bravo, tr&#xE8;s bien.</li>
-<li>A&#xE9;rer les <em>doctests</em>.</li>
+<li>A&#xE9;rer les <em>doctest</em>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
@@ -613,7 +613,7 @@ https://prologin.org/train/2003/qualification/cases_inaccessibles
         <span class="token keyword">else</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> self<span class="token punctuation">.</span>pile<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">nb_inaccessibles</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> grille<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">nb_inaccessibles</span><span class="token punctuation">(</span>grille<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de cases inaccessibles.
     * On part en haut &#xE0; gauche.
     * On bouge 1 case horizontalement ou verticalement,
@@ -624,10 +624,13 @@ https://prologin.org/train/2003/qualification/cases_inaccessibles
     &gt;&gt;&gt; ligne_2 = [3, 2, 6]
     &gt;&gt;&gt; ligne_3 = [4, 1, 1]
     &gt;&gt;&gt; ligne_4 = [0, 1, 2]
-    &gt;&gt;&gt; nb_inaccessibles(4, 3, [ligne_1, ligne_2, ligne_3, ligne_4])
+    &gt;&gt;&gt; nb_inaccessibles([ligne_1, ligne_2, ligne_3, ligne_4])
     5
 
     &quot;&quot;&quot;</span>
+
+    nb_lignes <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>grille<span class="token punctuation">)</span>
+    nb_colonnes <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>grille<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
     <span class="token keyword">def</span> <span class="token function">est_valide</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> j<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la r&#xE9;ponse : (i, j) est-elle une position valide sur la grille ?
@@ -667,7 +670,7 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 nb_lignes<span class="token punctuation">,</span> nb_colonnes  <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_lignes<span class="token punctuation">)</span><span class="token punctuation">]</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>nb_inaccessibles<span class="token punctuation">(</span>nb_lignes<span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">,</span> grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nb_inaccessibles<span class="token punctuation">(</span>grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre>
       </div>
       

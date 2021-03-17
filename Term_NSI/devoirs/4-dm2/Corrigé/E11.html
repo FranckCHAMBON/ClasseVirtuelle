@@ -403,7 +403,7 @@ anagrammes <span class="token operator">=</span> <span class="token builtin">set
 <span class="token keyword">print</span><span class="token punctuation">(</span>calcul_anagrammes<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Il faut &#xE9;viter les <code>continue</code> si possible. On peut facilement cr&#xE9;er une fonction et un retour pr&#xE9;matur&#xE9;.</li>
-<li>Les <code>if cond: pass; else action()</code> s&apos;&#xE9;liminent facilement. On teste la condition contraire et on obtient <code>if not(cond): action()</code>.</li>
+<li>Les <code>if cond: pass; else action()</code> se simplifient facilement. On teste la condition contraire et on obtient <code>if not(cond): action()</code>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
@@ -506,7 +506,7 @@ cha&#xEE;ne_mots <span class="token operator">=</span> <span class="token builti
 </pre><ul>
 <li>Il y a plus facile pour avoir une signature de l&apos;anagramme.
 <ul>
-<li>Plut&#xF4;t qu&apos;un dictionnaire qui compte le nombre de lettres, l&apos;anagramme avec les lettres dans l&apos;ordre alphab&#xE9;tique est une bonne signature ; plus simple &#xE0; stocker, et pour comparer &#xE9;galement.</li>
+<li>Plut&#xF4;t qu&apos;un dictionnaire qui compte le nombre de lettres, l&apos;anagramme avec les lettres rang&#xE9;es dans l&apos;ordre alphab&#xE9;tique est une bonne signature ; plus simple &#xE0; stocker, et pour comparer &#xE9;galement.</li>
 <li>Reprendre cette id&#xE9;e en exercice, mais sans dictionnaire.</li>
 </ul>
 </li>
@@ -580,14 +580,14 @@ https://prologin.org/train/2003/semifinal/anagrammes
     mot<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>mot<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">nb_couples_anagrammes</span><span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> phrase<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">nb_couples_anagrammes</span><span class="token punctuation">(</span>phrase<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de couples d&apos;anagrammes form&#xE9;s
     &#xE0; partir des mots de la cha&#xEE;ne.
 
     &gt;&gt;&gt; p_d&#xE9;but = &quot;le chien marche vers sa niche et trouve une limace d&quot;
     &gt;&gt;&gt; p_fin = &quot;e chine nue pleine de malice qui lui fait du charme&quot;
     &gt;&gt;&gt; phrase = p_d&#xE9;but + p_fin
-    &gt;&gt;&gt; nb_couples_anagrammes(103, phrase)
+    &gt;&gt;&gt; nb_couples_anagrammes(phrase)
     6
 
     &quot;&quot;&quot;</span>
@@ -615,7 +615,7 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 taille <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 phrase <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>nb_couples_anagrammes<span class="token punctuation">(</span>taille<span class="token punctuation">,</span> phrase<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nb_couples_anagrammes<span class="token punctuation">(</span>phrase<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>On compte ici les couple d&apos;anagrammes de mani&#xE8;res efficace.
 <ul>
@@ -628,8 +628,8 @@ phrase <span class="token operator">=</span> <span class="token builtin">input</
 </ul>
 </li>
 </ul>
-<p><strong>Exercice 1</strong> : Reprendre la classe <code>ABR</code>, ou bien <code>Tas</code>, et ajouter sans doublon les mots. Nous n&apos;avons plus besoin de <code>set</code> ici.</p>
-<p><strong>Exercice 2</strong> : De m&#xEA;me, construire une structure (sans doublon de signature) avec des tuples <code>(signature, effectif)</code>. Pour chaque nouveau mot unique, trouver sa signature, le chercher dans votre structure. S&apos;il est absent, ajouter un n&#x153;ud <code>(signature, 1)</code>. S&apos;il est pr&#xE9;sent, incr&#xE9;menter son effectif. Nous n&apos;avons plus besoin de <code>dict</code> ici.</p>
+<p><strong>Exercice 1</strong> : Dans le cours, reprendre la classe <code>ABR</code>, ou bien <code>Tas</code>, et ajouter sans doublon les mots. Nous n&apos;avons plus besoin de <code>set</code> ici.</p>
+<p><strong>Exercice 2</strong> : De m&#xEA;me, construire une structure (sans doublon de signature) avec des tuples <code>(signature, effectif)</code> comme &#xE9;l&#xE9;ments. Pour chaque nouveau mot unique, trouver sa signature, le chercher dans votre structure. S&apos;il est absent, ajouter un n&#x153;ud <code>(signature, 1)</code>. S&apos;il est pr&#xE9;sent, incr&#xE9;menter son effectif. Nous n&apos;avons plus besoin de <code>dict</code> ici.</p>
 <p><strong>Exercice 3</strong> : Proposer une autre m&#xE9;thode pour la signature <strong>sans</strong> utiliser de tri.</p>
 <h3 class="mume-header" id="version-sans-set-ni-dict">Version sans <code>set</code> ni <code>dict</code></h3>
 

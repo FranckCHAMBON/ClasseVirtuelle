@@ -554,10 +554,10 @@ auteur : Franck CHAMBON
 https://prologin.org/train/2003/qualification/nombre_de_voyelles
 &quot;&quot;&quot;</span>
 
-<span class="token keyword">def</span> <span class="token function">nb_voyelles</span><span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">nb_voyelles</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le nombre de voyelles de la cha&#xEE;ne.
 
-    &gt;&gt;&gt; nb_voyelles(8, &quot;ProlOgiN&quot;)
+    &gt;&gt;&gt; nb_voyelles(&quot;ProlOgiN&quot;)
     3
     
     &quot;&quot;&quot;</span>
@@ -577,7 +577,7 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 taille <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 cha&#xEE;ne <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>nb_voyelles<span class="token punctuation">(</span>taille<span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nb_voyelles<span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Une version fonctionnelle de <code>nb_voyelles</code> en une ligne !</li>
 </ul>

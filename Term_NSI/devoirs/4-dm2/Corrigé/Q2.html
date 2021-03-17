@@ -394,7 +394,7 @@ liste<span class="token punctuation">.</span>sort<span class="token punctuation"
 <span class="token keyword">print</span> liste<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 </pre><ol>
 <li>L&apos;auteur de ce code fait du Python2 &#xE0; la fin, pas du Python3 ; ce n&apos;est probablement pas un &#xE9;l&#xE8;ve en NSI.</li>
-<li>L&apos;esprit du probl&#xE8;me est de ne pas utiliser les outils <em>builtin</em> comme <code>&lt;</code> ou <code>.sort()</code>...</li>
+<li>L&apos;esprit du probl&#xE8;me est de ne pas utiliser les outils <em>builtin</em> comme <code>&lt;</code> (sur les cha&#xEE;nes) ou <code>.sort()</code>...</li>
 <li>On attend une fonction avec <em>doctest</em>.</li>
 <li><code>mot_1</code> est plus clair que <code>mot1</code>.</li>
 </ol>
@@ -602,6 +602,7 @@ cha&#xEE;ne_2 <span class="token operator">=</span> <span class="token builtin">
 <span class="token keyword">print</span><span class="token punctuation">(</span>premi&#xE8;re_cha&#xEE;ne<span class="token punctuation">(</span>nb_caracteres_1<span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">,</span> nb_caracteres_2<span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Attention, <code>sortie</code> est de type <code>str</code> et ne poss&#xE8;de pas de m&#xE9;thode <code>.append</code>.</li>
+<li>Erreur si un mot est un pr&#xE9;fixe de l&apos;autre. <code>pro</code> et <code>produit</code> donne 7 tours de boucle, qui ne sont pas arr&#xEA;t&#xE9;s, au quatri&#xE8;me tour, une erreur se produit pour lire le quatri&#xE8;me caract&#xE8;re de <code>pro</code> qui n&apos;existe pas.</li>
 </ul>
 <h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
 
@@ -610,19 +611,20 @@ auteur : Franck CHAMBON
 https://prologin.org/train/2003/qualification/cases_inaccessibles
 &quot;&quot;&quot;</span>
 
-<span class="token keyword">def</span> <span class="token function">plus_petite</span><span class="token punctuation">(</span>taille_1<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne_1<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span>
-                taille_2<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">plus_petite</span><span class="token punctuation">(</span>cha&#xEE;ne_1<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la plus petite des deux cha&#xEE;nes.
     En suivant l&apos;ordre lexicographique,
     et sans utiliser la fonction de la biblioth&#xE8;que interne.
 
-    &gt;&gt;&gt; plus_petite(8, &quot;prologin&quot;, 5, &quot;prolo&quot;)
+    &gt;&gt;&gt; plus_petite(&quot;prologin&quot;, &quot;prolo&quot;)
     &apos;prolo&apos;
 
-    &gt;&gt;&gt; plus_petite(4, &quot;toto&quot;, 4, &quot;titi&quot;)
+    &gt;&gt;&gt; plus_petite(&quot;toto&quot;, &quot;titi&quot;)
     &apos;titi&apos;
 
     &quot;&quot;&quot;</span>
+    taille_1 <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cha&#xEE;ne_1<span class="token punctuation">)</span>
+    taille_2 <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cha&#xEE;ne_2<span class="token punctuation">)</span>
     taille_commune <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>taille_1<span class="token punctuation">,</span> taille_2<span class="token punctuation">)</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille_commune<span class="token punctuation">)</span><span class="token punctuation">:</span>
         c_1 <span class="token operator">=</span> cha&#xEE;ne_1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
@@ -647,7 +649,7 @@ cha&#xEE;ne_1 <span class="token operator">=</span> <span class="token builtin">
 taille_2 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 cha&#xEE;ne_2 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>plus_petite<span class="token punctuation">(</span>taille_1<span class="token punctuation">,</span> cha&#xEE;ne_1<span class="token punctuation">,</span> taille_2<span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plus_petite<span class="token punctuation">(</span>cha&#xEE;ne_1<span class="token punctuation">,</span> cha&#xEE;ne_2<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Traditionnellement <code>c</code> est souvent un identifiant pour un <strong>c</strong>aract&#xE8;re d&apos;une cha&#xEE;ne.</li>
 <li>Utiliser <code>sort</code>, <code>sorted</code> ou <code>&lt;</code> sur les cha&#xEE;nes &#xE9;tait tricher, le sujet demandait de ne pas utiliser de fonction toute pr&#xEA;te de la biblioth&#xE8;que.</li>

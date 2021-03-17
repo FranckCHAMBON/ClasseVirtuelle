@@ -376,11 +376,12 @@ https://prologin.org/train/2003/semifinal/plan_de_metro
     graphe <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_liens<span class="token punctuation">)</span><span class="token punctuation">:</span>
         station_a<span class="token punctuation">,</span> station_b <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> station_x<span class="token punctuation">,</span> station_y <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>station_a<span class="token punctuation">,</span> station_b<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>station_b<span class="token punctuation">,</span> station_a<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">if</span> station_x <span class="token keyword">not</span> <span class="token keyword">in</span> graphe<span class="token punctuation">:</span>
                 graphe<span class="token punctuation">[</span>station_x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>station_y<span class="token punctuation">]</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
                 graphe<span class="token punctuation">[</span>station_x<span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>station_y<span class="token punctuation">)</span>
+            station_a<span class="token punctuation">,</span> station_b <span class="token operator">=</span> station_b<span class="token punctuation">,</span> station_a
     
     <span class="token comment"># parcours en largeur en partant de d&#xE9;part,</span>
     <span class="token comment"># avec calcul de la distance maximale atteinte</span>
@@ -406,7 +407,7 @@ main<span class="token punctuation">(</span><span class="token punctuation">)</s
 <p>Il suffit de construire le graphe, et d&apos;en faire un parcours en largeur depuis <code>d&#xE9;part</code>.</p>
 </li>
 <li>
-<p>Il faut penser &#xE0; cr&#xE9;er de petits fichiers tests avec une boucle en fin de course. Comme le suivant, o&#xF9; la sortie attendue est <code>0</code>.</p>
+<p>Il faut penser aussi &#xE0; cr&#xE9;er de petits fichiers tests avec une boucle en fin de course. Comme le suivant, o&#xF9; la sortie attendue est <code>0</code>.</p>
 </li>
 </ul>
 <pre data-role="codeBlock" data-info class="language-"><code>1
