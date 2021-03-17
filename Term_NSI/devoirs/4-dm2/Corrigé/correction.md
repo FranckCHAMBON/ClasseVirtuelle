@@ -1,4 +1,4 @@
-# Correction du Devoir maison
+# Correction du [Devoir maison n°2](../dm2.html)
 
 Il s'agissait du début de Prologin 2003.
 
