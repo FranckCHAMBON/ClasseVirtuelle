@@ -386,9 +386,9 @@ liste_entier <span class="token operator">=</span> <span class="token punctuatio
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>plus_grand_ecart<span class="token punctuation">(</span>liste_entier<span class="token punctuation">,</span> nb_entier<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Il vaut mieux d&#xE9;buter les param&#xE8;tres de la fonction par la taille, puis la liste.</li>
-<li>A&#xE9;rer <code>ecart&gt;maximum</code>, et ajouter un accent.</li>
-<li>Pour la lecture, utiliser plut&#xF4;t <code>map(int, input().split())</code>.</li>
+<li>Quitte &#xE0; donner les deux, il vaut mieux d&#xE9;buter les param&#xE8;tres de la fonction par la taille, puis la liste.</li>
+<li>A&#xE9;rer <code>ecart&gt;maximum</code>.</li>
+<li>Pour la lecture de plusieurs entiers sur une ligne, utiliser plut&#xF4;t <code>map(int, input().split())</code>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
@@ -417,7 +417,7 @@ liste_nb <span class="token operator">=</span> <span class="token builtin">input
 </pre><ul>
 <li>Ici, il vaut mieux passer une liste d&apos;entiers, plut&#xF4;t que de cha&#xEE;nes.</li>
 <li>A&#xE9;rer le <em>doctest</em>.</li>
-<li><code>Code spell checker</code> est un module pour VSCodium qui sera tr&#xE8;s utile...</li>
+<li><code>Code Spell Checker</code> est un module pour VSCodium qui sera tr&#xE8;s utile...</li>
 <li><code>effectif</code>, ou <code>taille</code> c&apos;est mieux que <code>nb_de_nombres</code>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-5">Proposition 5</h3>
@@ -490,7 +490,7 @@ tableau <span class="token operator">=</span> <span class="token builtin">list</
 <li>Inutile de faire <code>assert</code> pour v&#xE9;rifier l&apos;entr&#xE9;e du juge ; lui faire confiance.</li>
 <li><code>max</code> et <code>&#xE9;l&#xE9;ment</code> ne sont pas des noms id&#xE9;aux.
 <ul>
-<li>La fonction <code>max</code> sera &#xE9;cras&#xE9;e...</li>
+<li>La fonction <code>max</code> existe, et sera &#xE9;cras&#xE9;e...</li>
 <li><code>&#xE9;l&#xE9;ment</code> est ici un <strong>indice</strong> d&apos;un &#xE9;l&#xE9;ment...</li>
 </ul>
 </li>
@@ -502,13 +502,14 @@ auteur : Franck CHAMBON
 https://prologin.org/train/2003/semifinal/grand_ecart
 &quot;&quot;&quot;</span>
 
-<span class="token keyword">def</span> grand_&#xE9;cart<span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> tableau<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> grand_&#xE9;cart<span class="token punctuation">(</span>tableau<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie le plus grand &#xE9;cart entre un &#xE9;l&#xE9;ment et son successeur.
 
-    &gt;&gt;&gt; grand_&#xE9;cart(10, [4, 2, 3, 5, 10, 6, 4, 9, 1, 3])
+    &gt;&gt;&gt; grand_&#xE9;cart([4, 2, 3, 5, 10, 6, 4, 9, 1, 3])
     8
 
     &quot;&quot;&quot;</span>
+    taille <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>tableau<span class="token punctuation">)</span>
     &#xE9;cart_max <span class="token operator">=</span> <span class="token number">0</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         &#xE9;cart <span class="token operator">=</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>tableau<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> tableau<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -527,8 +528,17 @@ tableau <span class="token operator">=</span> <span class="token builtin">list</
 </pre><ul>
 <li>On utilise souvent <code>i</code> comme indice pour it&#xE9;rer sur un tableau, comme premi&#xE8;re dimension.</li>
 <li>Uniquement pour les variables &#xE0; une lettre, on pourrait resserrer l&apos;&#xE9;criture autour des op&#xE9;rations prioritaires ou uniques, comme <code>i+1</code>, (ou encore <code>5*x + 7</code>).</li>
+<li>Le param&#xE8;tre <code>taille</code> est utile pour les codes traditionnels en C pour la lecture d&apos;un tableau. En Python, c&apos;est inutile.
+<ul>
+<li>Il faut le lire.</li>
+<li>Ensuite, en C, on le passe en param&#xE8;tre avec le lien vers le tableau.</li>
+<li>En Python, on pr&#xE9;f&#xE8;re s&apos;en passer. Quitte &#xE0; demander sa longueur dans la fonction, comme ici.</li>
 </ul>
-
+</li>
+<li>Apr&#xE8;s la lecture du tableau, on aurait pu &#xE9;crire un test de v&#xE9;rification des donn&#xE9;es. C&apos;est utile en cas de doute sur les donn&#xE9;es d&apos;un probl&#xE8;me. Cela arrive. Ce n&apos;est pas demand&#xE9; dans ce DM.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">assert</span> <span class="token builtin">len</span><span class="token punctuation">(</span>tableau<span class="token punctuation">)</span> <span class="token operator">==</span> taille<span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f&quot;La taille donn&#xE9;e est </span><span class="token interpolation"><span class="token punctuation">{</span>taille<span class="token punctuation">}</span></span><span class="token string">, mais le tableau a </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">len</span><span class="token punctuation">(</span>tableau<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> &#xE9;l&#xE9;ments&quot;</span></span><span class="token punctuation">.</span>
+</pre>
       </div>
       
       

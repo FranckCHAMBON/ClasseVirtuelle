@@ -536,14 +536,24 @@ auteur : Franck CHAMBON
 https://prologin.org/train/2003/semifinal/mot_le_plus_long
 &quot;&quot;&quot;</span>
 
-<span class="token keyword">def</span> <span class="token function">longueur_plus_long_mot</span><span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">longueur_plus_long_mot</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la longueur du mot le plus long.
     
-    &gt;&gt;&gt; longueur_plus_long_mot(74, \
-&quot;ecrivez une fonction qui trouve la longueur du plus long mot dans ce texte&quot;)
+    &gt;&gt;&gt; longueur_plus_long_mot(&quot;ecrivez une fonction qui trouve\
+                    la longueur du plus long mot dans ce texte&quot;)
     8
 
+    &gt;&gt;&gt; longueur_plus_long_mot(&quot;aaa b&quot;)
+    3
+
+    &gt;&gt;&gt; longueur_plus_long_mot(&quot;a bbb&quot;)
+    3
+
+    &gt;&gt;&gt; longueur_plus_long_mot(&quot;cc&quot;)
+    2
+
     &quot;&quot;&quot;</span>
+    taille <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span>
     longueur_max <span class="token operator">=</span> <span class="token number">0</span>
     longueur <span class="token operator">=</span> <span class="token number">0</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>taille<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -566,18 +576,13 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 taille <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 cha&#xEE;ne <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>longueur_plus_long_mot<span class="token punctuation">(</span>taille<span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>On peut proposer <strong>en bonus</strong> une version fonctionnelle courte :</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">longueur_plus_long_mot</span><span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la longueur du mot le plus long.
-    
-    &gt;&gt;&gt; longueur_plus_long_mot(74, \
-&quot;ecrivez une fonction qui trouve la longueur du plus long mot dans ce texte&quot;)
-    8
-
-    &quot;&quot;&quot;</span>
-    mots <span class="token operator">=</span> cha&#xEE;ne<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> mots<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>longueur_plus_long_mot<span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On conseille d&apos;ajouter des tests utiles simples en plus de ceux propos&#xE9;s par le probl&#xE8;me. Des cas d&#xE9;licats (<em>corner cases</em> en anglais).</li>
+<li>On peut proposer <strong>en bonus</strong> une version fonctionnelle courte :</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">longueur_plus_long_mot</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><blockquote>
 <p><code>map</code> renvoie un it&#xE9;rateur, et aucune liste interm&#xE9;diaire n&apos;est cr&#xE9;&#xE9;e.</p>
 </blockquote>

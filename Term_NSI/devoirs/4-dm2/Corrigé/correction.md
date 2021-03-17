@@ -2,6 +2,8 @@
 
 Il s'agissait du début de [Prologin 2003](https://prologin.org/train/).
 
+* Les fautes d'orthographe ne sont pas relevées ici, mais il est fortement conseillé de soigner son code avec des variables bien nommées. On peut recommander [Code Spell Checker](https://open-vsx.org/extension/streetsidesoftware/code-spell-checker) à paramétrer en français. D'autre part, `nb_mots` (par exemple) est préférable avec un `s` final pour une variable « nombre de mots ».
+
 ## Entraînement
 
 1. [42](E1.html)

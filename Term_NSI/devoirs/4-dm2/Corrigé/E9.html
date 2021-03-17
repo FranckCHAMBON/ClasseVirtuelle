@@ -597,9 +597,9 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span> <span class="token keyword">if</span> est_possible<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Je d&#xE9;bute mes constantes en majuscule.</li>
-<li>On teste <strong>tous</strong> les d&#xE9;calages possibles, une pi&#xE8;ce pouvant d&#xE9;border s&apos;il n&apos;y a que des z&#xE9;ros &#xE0; l&apos;ext&#xE9;rieur. L&apos;&#xE9;nonc&#xE9; n&apos;&#xE9;tait pas tr&#xE8;s clair &#xE0; ce sujet.</li>
-<li>Pas de <em>doctest</em> ici.</li>
+<li>Je d&#xE9;bute mes constantes en majuscule, ou je les pr&#xE9;fixe comme <code>CONST_ma_constante</code>.</li>
+<li>On teste <strong>tous</strong> les d&#xE9;calages possibles, une pi&#xE8;ce pouvant d&#xE9;border s&apos;il n&apos;y a que des z&#xE9;ros &#xE0; l&apos;ext&#xE9;rieur. L&apos;&#xE9;nonc&#xE9; n&apos;&#xE9;tait pas tr&#xE8;s clair &#xE0; ce propos.</li>
+<li>Pas de <em>doctest</em> ici ; autre m&#xE9;thode.</li>
 <li>Dans mon r&#xE9;pertoire <code>prologin_2003/E9</code>, j&apos;ai cr&#xE9;&#xE9; un fichier <code>in.txt</code> contenant :</li>
 </ul>
 <pre data-role="codeBlock" data-info class="language-"><code>0110
@@ -626,8 +626,8 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 <li>Je v&#xE9;rifie que la sortie est bien <code>1</code>.</li>
 <li>On peut construire d&apos;autres fichiers tests...</li>
 <li>Cela &#xE9;vite de polluer le code avec de trop gros tests.</li>
-<li>Les <em>doctest</em>, c&apos;est tr&#xE8;s bien pour les petites fonctions ; pour les grosses fonctions on utilise d&apos;autres m&#xE9;thodes, dont la g&#xE9;n&#xE9;ration de fichiers tests (entr&#xE9;es et sorties).</li>
-<li>Nous <strong>reverrons</strong> comment rediriger l&apos;entr&#xE9;e et la sortie et automatiser les tests.</li>
+<li>Les <em>doctest</em>, c&apos;est tr&#xE8;s bien pour les petites fonctions ; pour les grosses fonctions on utilise d&apos;autres m&#xE9;thodes, dont la g&#xE9;n&#xE9;ration de fichiers tests (entr&#xE9;es et sorties), comme ici.</li>
+<li>Nous l&apos;avons d&#xE9;j&#xE0; vu en premi&#xE8;re, et nous <strong>reverrons</strong> comment rediriger l&apos;entr&#xE9;e et la sortie et automatiser les tests.</li>
 </ul>
 
       </div>

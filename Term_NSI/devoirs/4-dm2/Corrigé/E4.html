@@ -426,7 +426,7 @@ liste_phrase <span class="token operator">=</span> <span class="token builtin">i
 </pre><ul>
 <li><code>&gt;&gt;&gt;cherche_initiales([</code> : erreur</li>
 <li><code>&gt;&gt;&gt; cherche_initiales([</code> : OK</li>
-<li>On pr&#xE9;f&#xE8;re une fonction qui prend les param&#xE8;tres d&apos;origine, mais pas une liste.</li>
+<li>On pr&#xE9;f&#xE8;re une fonction qui prend les param&#xE8;tres d&apos;origine du probl&#xE8;me, mais pas une liste. On veut les initiales d&apos;une phrase, alors le param&#xE8;tre est la phrase.</li>
 </ul>
 <h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
@@ -556,14 +556,17 @@ https://prologin.org/train/2003/semifinal/initiales
     <span class="token keyword">return</span> lettre_maj
 
 
-<span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>taille<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie les initiales de la cha&#xEE;ne, en majuscules.
 
-    &gt;&gt;&gt; initiales(21, &quot;rentre avec tes pieds&quot;)
+    &gt;&gt;&gt; initiales(&quot;rentre avec tes pieds&quot;)
     &apos;RATP&apos;
 
     &quot;&quot;&quot;</span>
 
+    taille <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> taille <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment"># ce cas ne devrait pas se produire</span>
+        <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span>
     <span class="token keyword">if</span> cha&#xEE;ne<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">:</span>
         sigle <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
@@ -580,14 +583,17 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 taille <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 cha&#xEE;ne <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>initiales<span class="token punctuation">(</span>taille<span class="token punctuation">,</span> cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>initiales<span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>On n&apos;a pas utilis&#xE9; ni <code>split</code>, ni <code>upper</code>.</li>
 <li>Chaque fonction a son <em>doctest</em>.</li>
 <li>La fonction prend en compte le cas o&#xF9; la cha&#xEE;ne commence par une espace.</li>
 <li>On utilise le fait que l&apos;entr&#xE9;e est en minuscule !</li>
 </ul>
-
+<p>Une version fonctionnelle serait</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">initiales</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>mot<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> mot <span class="token keyword">in</span> cha&#xEE;ne<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre>
       </div>
       
       

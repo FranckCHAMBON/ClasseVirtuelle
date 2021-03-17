@@ -566,7 +566,7 @@ matrice_jeu <span class="token operator">=</span> <span class="token punctuation
 <span class="token keyword">print</span><span class="token punctuation">(</span>puissance_4<span class="token punctuation">(</span>matrice_jeu<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">&quot;&quot;&quot; il se peut qu&apos;il aurai un probleme de rapiditer et on plus je vois pas commen lire ma diagonal&quot;&quot;&quot;</span>
 </pre><ul>
-<li>Il vaut mieux mettre des parenth&#xE8;ses aux tests compos&#xE9;s comme <code>(...) and (...) and (...)</code>, pour confirmer les priorit&#xE9;s op&#xE9;ratoires.</li>
+<li>Il vaut mieux mettre des parenth&#xE8;ses aux tests compos&#xE9;s comme <code>(...) and (...) and (...)</code>, pour confirmer les priorit&#xE9;s op&#xE9;ratoires, et faciliter la lecture pour un tiers.</li>
 <li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)...</li>
 <li>Mais il a le m&#xE9;rite d&apos;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&apos;est bien.</li>
 </ul>
@@ -626,7 +626,7 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 <li>Attention aux lignes trop longues.
 <ul>
 <li>On peut mettre les commentaires sur la ligne pr&#xE9;c&#xE9;dente.</li>
-<li>On peut partager une ligne qui a une parenth&#xE8;se ouverte (ou bien un crochet, ou une accolade), ou alors, en dernier recours, utiliser la contre-oblique.</li>
+<li>On peut partager une ligne qui a une parenth&#xE8;se ouverte (ou bien un crochet, ou une accolade), ou alors, en dernier recours, utiliser la contre-oblique. Revoir le cours &#xE0; ce sujet.</li>
 </ul>
 </li>
 </ul>
@@ -690,8 +690,14 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 grille <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>gagnant_puissance_4<span class="token punctuation">(</span>grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>Le code a d&#xE9;j&#xE0; &#xE9;t&#xE9; factoris&#xE9; pour chacune des 4 fa&#xE7;ons de gagner : horizontale, verticale, et deux diagonales.</p>
+</pre><ul>
+<li>
+<p>Le code a d&#xE9;j&#xE0; &#xE9;t&#xE9; factoris&#xE9; pour chacune des 4 fa&#xE7;ons de gagner : horizontale, verticale, et deux diagonales.</p>
+</li>
+<li>
 <p>Pour factoriser encore les trois lignes qui se ressemblent, on peut utiliser la fonction <code>all</code> de Python qui renvoie <code>True</code> si tous ses &#xE9;l&#xE9;ments sont vrais, sinon un <code>False</code> pr&#xE9;matur&#xE9; est renvoy&#xE9;.</p>
+</li>
+</ul>
 <p>Une version raccourcie de la fonction <code>teste_en</code> est alors :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">    <span class="token keyword">def</span> <span class="token function">teste_en</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> j<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
         candidat <span class="token operator">=</span> grille<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>

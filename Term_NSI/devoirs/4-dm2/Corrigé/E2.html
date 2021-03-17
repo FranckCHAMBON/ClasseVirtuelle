@@ -290,7 +290,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>Une fonction est attendue.</li>
 <li><code>x</code> : nom de variable peu clair.</li>
 <li><code>hauteur_marche</code> : nom de variable peu clair.</li>
-<li>&quot;X&quot; * x : facilit&#xE9; du langage non recommand&#xE9;e ici.</li>
+<li><code>&quot;X&quot; * x</code> : facilit&#xE9; du langage non recommand&#xE9;e ici.</li>
 <li>Il y a un saut de ligne en trop au d&#xE9;but, avec <code>x = 0</code>. C&apos;est accept&#xE9; par le juge Prologin, mais uniquement en d&#xE9;but et en fin de la sortie compl&#xE8;te.</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition 2</h3>
@@ -350,8 +350,7 @@ triangle<span class="token punctuation">(</span>nombre_marche<span class="token 
 <li><code>nb_marches</code> est un meilleur nom de variable.</li>
 </ul>
 </li>
-<li>&#xC9;viter les longues lignes.</li>
-<li><code>nb_marches</code> : meilleur nom de variable.</li>
+<li>&#xC9;viter les longues lignes ; 80 caract&#xE8;res maximum.</li>
 </ul>
 <h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
@@ -440,7 +439,7 @@ nb_marches <span class="token operator">=</span> <span class="token builtin">int
 <span class="token keyword">print</span><span class="token punctuation">(</span>construire_escalier<span class="token punctuation">(</span>nb_marches<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li><em>doctest</em> &#xE0; a&#xE9;rer.</li>
-<li>C&apos;est bien, il fallait &#xE9;chapper les contre-obliques avec cette m&#xE9;thode ; c&apos;est correct, mais lourd et peu pertinent de renvoyer l&apos;escalier...</li>
+<li>C&apos;est bien, il fallait &#xE9;chapper les contre-obliques avec cette m&#xE9;thode ; c&apos;est correct, mais lourd et peu pertinent de renvoyer l&apos;escalier... Une autre solution &#xE9;tait de placer un <code>r</code> avant le triple double guillemet entrant, pour rendre la cha&#xEE;ne brute (<em><strong>r</strong>aw</em> en anglais) o&#xF9; les caract&#xE8;res ne sont pas &#xE9;chapp&#xE9;s.</li>
 <li>Cette version r&#xE9;cursive n&apos;ajoute pas de saut de ligne en trop au d&#xE9;but ; c&apos;est bien !</li>
 </ul>
 <h3 class="mume-header" id="proposition-7">Proposition 7</h3>
@@ -492,10 +491,11 @@ https://prologin.org/train/2003/semifinal/escalier
     XXXX
     
     &quot;&quot;&quot;</span>
-    <span class="token keyword">for</span> largeur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> nb_marches<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> largeur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> nb_marches <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>largeur<span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;X&quot;</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
 
 
 <span class="token comment"># Tests</span>
@@ -508,6 +508,9 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 
 nb_marches <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 affiche_escalier<span class="token punctuation">(</span>nb_marches<span class="token punctuation">)</span>
+</pre><p>Variante fonctionnelle</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">affiche_escalier</span><span class="token punctuation">(</span>nb_marches<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">&quot;X&quot;</span> <span class="token operator">*</span> i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> nb_marches <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Ici, exceptionnellement, on int&#xE8;gre l&apos;affichage dans la fonction.
 <ul>
@@ -518,7 +521,7 @@ affiche_escalier<span class="token punctuation">(</span>nb_marches<span class="t
 <li>Utiliser la multiplication de cha&#xEE;nes comme x * &quot;X&quot; est &#xE0; &#xE9;viter ici ; on attendait une double boucle, et pas cette facilit&#xE9; du langage.</li>
 </ul>
 <blockquote>
-<p>De mani&#xE8;re g&#xE9;n&#xE9;rale, pour un probl&#xE8;me simple, on demande de n&apos;utiliser que des outils basiques. <strong>Pas d&apos;utilisation de facilit&#xE9; du langage dans un probl&#xE8;me simple ; on ne le contourne pas.</strong></p>
+<p>De mani&#xE8;re g&#xE9;n&#xE9;rale, pour un probl&#xE8;me simple, on demande de n&apos;utiliser que des outils basiques. <strong>Pas d&apos;utilisation de facilit&#xE9; du langage dans un probl&#xE8;me simple ; on ne le contourne pas.</strong> Ensuite, pour un probl&#xE8;me avec d&apos;autres difficult&#xE9;s, on peut naturellement utiliser les facilit&#xE9;s du langage, sans qu&apos;elle ne ruine le probl&#xE8;me. Encore une fois, la r&#xE8;gle &#xE9;tant de ne pas contourner le probl&#xE8;me. Enfin, en commentaire, on peut aussi proposer une version qui montre vos connaissances du langage.</p>
 </blockquote>
 
       </div>

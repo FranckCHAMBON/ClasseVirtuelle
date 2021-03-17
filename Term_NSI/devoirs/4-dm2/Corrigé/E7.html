@@ -394,7 +394,7 @@ chiffre <span class="token operator">=</span> <span class="token builtin">int</s
 <span class="token comment"># Sortie</span>
 table_de_multiplications<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
 </pre><ul>
-<li>Annotation de type fausse, la fonction, ici, renvoie <code>None</code>.</li>
+<li>Annotation de type fausse, ici la fonction renvoie <code>None</code>.</li>
 <li>De m&#xEA;me, la <em>docstring</em> est fausse ; la fonction <strong>affiche</strong>, elle <strong>ne renvoie pas</strong>.</li>
 <li>Bon <em>doctest</em>, mais penser &#xE0; l&apos;a&#xE9;rer.</li>
 <li>Penser aux <em>fstring</em>.</li>
@@ -554,7 +554,7 @@ https://prologin.org/train/2003/semifinal/table_de_multiplications
     &quot;&quot;&quot;</span>
     <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token comment">## Version classique</span>
-        <span class="token comment">#print(chiffre, &quot;x&quot;, k, &quot;=&quot;, k * chiffre, sep=&quot;&quot;)</span>
+        <span class="token comment">#print(chiffre, &quot;x&quot;, k, &quot;=&quot;, chiffre * k, sep=&quot;&quot;)</span>
 
         <span class="token comment">## Version f-string ; recommand&#xE9;e</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre<span class="token punctuation">}</span></span><span class="token string">x</span><span class="token interpolation"><span class="token punctuation">{</span>k<span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre <span class="token operator">*</span> k<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
