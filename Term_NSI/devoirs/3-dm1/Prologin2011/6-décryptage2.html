@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -274,9 +274,9 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
 <ul>
-<li>Sur la premi&#xE8;re ligne, l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> repr&#xE9;sentant la taille du message de Scooby-Naire.</li>
+<li>Sur la premi&#xE8;re ligne, l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> repr&#xE9;sentant la taille du message de Scooby-Naire.</li>
 <li>Sur la deuxi&#xE8;me ligne, le message de Scooby-Naire.</li>
-<li>Sur la troisi&#xE8;me ligne, l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> repr&#xE9;sentant la taille de la cha&#xEE;ne &#xE0; tester.</li>
+<li>Sur la troisi&#xE8;me ligne, l&apos;entier <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> repr&#xE9;sentant la taille de la cha&#xEE;ne &#xE0; tester.</li>
 <li>Sur la derni&#xE8;re ligne, la cha&#xEE;ne &#xE0; tester.</li>
 </ul>
 <h3 class="mume-header" id="sortie">Sortie</h3>
@@ -326,7 +326,7 @@ https://prologin.org/train/2011/semifinal/decryptage2
 
 <span class="token comment"># 0. C&#x153;ur du probl&#xE8;me</span>
 <span class="token keyword">def</span> <span class="token function">est_inclus</span><span class="token punctuation">(</span>extrait<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> texte<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si touts les caract&#xE8;res de &apos;extrait&apos; sont inclus
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si tous les caract&#xE8;res de &apos;extrait&apos; sont inclus
     dans &apos;texte&apos;, avec multiplicit&#xE9;, mais sans compter l&apos;ordre.
     &gt;&gt;&gt; est_inclus(&quot;ABAC&quot;, &quot;BRAVO, CHARLIE.&quot;)
     1
@@ -334,12 +334,15 @@ https://prologin.org/train/2011/semifinal/decryptage2
     0
     &quot;&quot;&quot;</span>
     CONST_ASCII <span class="token operator">=</span> <span class="token number">128</span>
-    <span class="token keyword">def</span> <span class="token function">compte</span><span class="token punctuation">(</span>morceau<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">compte</span><span class="token punctuation">(</span>morceau<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la liste du compte des caract&#xE8;res.
+
         &gt;&gt;&gt; compte(&quot;ABAC&quot;)[ord(&apos;A&apos;)]
         2
+
         &gt;&gt;&gt; compte(&quot;ABAC&quot;)[ord(&apos;D&apos;)]
         0
+
         &quot;&quot;&quot;</span>
         compte_morceau <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>CONST_ASCII<span class="token punctuation">)</span><span class="token punctuation">]</span>
         <span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> morceau<span class="token punctuation">:</span>
@@ -378,19 +381,25 @@ message_test <span class="token operator">=</span> <span class="token builtin">i
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0. C&#x153;ur du probl&#xE8;me</span>
 <span class="token keyword">def</span> <span class="token function">est_inclus</span><span class="token punctuation">(</span>extrait<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> texte<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si touts les caract&#xE8;res de &apos;extrait&apos; sont inclus
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si tous les caract&#xE8;res de &apos;extrait&apos; sont inclus
     dans &apos;texte&apos;, avec multiplicit&#xE9;, mais sans compter l&apos;ordre.
+
     &gt;&gt;&gt; est_inclus(&quot;ABAC&quot;, &quot;BRAVO, CHARLIE.&quot;)
     1
+
     &gt;&gt;&gt; est_inclus(&quot;ABBAC&quot;, &quot;BRAVO, CHARLIE.&quot;)
     0
+
     &quot;&quot;&quot;</span>
     <span class="token keyword">def</span> <span class="token function">compte</span><span class="token punctuation">(</span>morceau<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un `Counter` des caract&#xE8;res.
+
         &gt;&gt;&gt; compte(&quot;ABAC&quot;) == {&apos;A&apos;: 2, &apos;B&apos;: 1, &apos;C&apos;: 1}
         True
+
         &gt;&gt;&gt; compte(&quot;ABBAC&quot;) == {&apos;A&apos;: 2, &apos;B&apos;: 2, &apos;C&apos;: 1}
         True
+
         &quot;&quot;&quot;</span>
         compte_morceau <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> morceau<span class="token punctuation">:</span>
@@ -418,19 +427,25 @@ message_test <span class="token operator">=</span> <span class="token builtin">i
 
 <span class="token comment"># 0. C&#x153;ur du probl&#xE8;me</span>
 <span class="token keyword">def</span> <span class="token function">est_inclus</span><span class="token punctuation">(</span>extrait<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> texte<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si touts les caract&#xE8;res de &apos;extrait&apos; sont inclus
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie True si tous les caract&#xE8;res de &apos;extrait&apos; sont inclus
     dans &apos;texte&apos;, avec multiplicit&#xE9;, mais sans compter l&apos;ordre.
+
     &gt;&gt;&gt; est_inclus(&quot;ABAC&quot;, &quot;BRAVO, CHARLIE.&quot;)
     1
+
     &gt;&gt;&gt; est_inclus(&quot;ABBAC&quot;, &quot;BRAVO, CHARLIE.&quot;)
     0
+
     &quot;&quot;&quot;</span>
     <span class="token keyword">def</span> <span class="token function">compte</span><span class="token punctuation">(</span>morceau<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Counter<span class="token punctuation">:</span>
         <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un `Counter` des caract&#xE8;res.
+
         &gt;&gt;&gt; compte(&quot;ABAC&quot;) == {&apos;A&apos;: 2, &apos;B&apos;: 1, &apos;C&apos;: 1}
         True
+
         &gt;&gt;&gt; compte(&quot;ABBAC&quot;) == {&apos;A&apos;: 2, &apos;B&apos;: 2, &apos;C&apos;: 1}
         True
+
         &quot;&quot;&quot;</span>
         compte_morceau <span class="token operator">=</span> Counter<span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">for</span> caract&#xE8;re <span class="token keyword">in</span> morceau<span class="token punctuation">:</span>

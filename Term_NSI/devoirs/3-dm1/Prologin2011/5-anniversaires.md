@@ -88,12 +88,16 @@ https://prologin.org/train/2011/semifinal/anniversaires
 # 0. Cœur du problème
 def nb_ballons(ma_liste: list) -> int:
     """Renvoie le nombre de ballons nécessaires suivant l'énoncé.
+
     >>> nb_ballons([20, 20])
     30
+
     >>> nb_ballons([10, 20, 30, 40])
     70
+
     >>> nb_ballons([80, 10, 80])
     125
+
     """
     stock = 0
     besoin_total = 0
@@ -105,9 +109,8 @@ def nb_ballons(ma_liste: list) -> int:
             stock -= x // 2
     return besoin_total
 
-# import doctest
-# doctest.testmod()
-# exit(0)
+import doctest
+doctest.testmod()
 
 
 # 1. Lecture

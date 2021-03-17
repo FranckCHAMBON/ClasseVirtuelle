@@ -83,14 +83,19 @@ https://prologin.org/train/2011/semifinal/decryptage
 def est_extrait(texte:str, partie: str) -> bool:
     """Renvoie True ou False selon que
     `partie` est un extrait de `texte`
+
     >>> est_extrait("Un morceau complet", "U orc cplt")
     True
+
     >>> est_extrait("Un morceau complet", "Z")
     False
+
     >>> est_extrait("Un morceau complet", "nU")
     False
+
     >>> est_extrait("J'ai dit ho", "diiit")
     False
+
     """
     l_texte = len(texte)
     l_partie = len(partie)
@@ -107,9 +112,8 @@ def est_extrait(texte:str, partie: str) -> bool:
             i_texte += 1
     return True
 
-# import doctest
-# doctest.testmod()
-# exit(0)
+import doctest
+doctest.testmod()
 
 
 # 1. Lecture
@@ -135,14 +139,19 @@ https://prologin.org/train/2011/semifinal/decryptage
 def est_extrait(texte:str, partie: str) -> bool:
     """Renvoie True ou False selon que
     `partie` est un extrait de `texte`
+
     >>> est_extrait("Un morceau complet", "U orc cplt")
     True
+
     >>> est_extrait("Un morceau complet", "Z")
     False
+
     >>> est_extrait("Un morceau complet", "nU")
     False
+
     >>> est_extrait("J'ai dit ho", "diiit")
     False
+
     """
     if partie == "":
         return True
@@ -153,9 +162,8 @@ def est_extrait(texte:str, partie: str) -> bool:
     else:
         return est_extrait(texte[1:], partie)
 
-# import doctest
-# doctest.testmod()
-# exit(0)
+import doctest
+doctest.testmod()
 
 
 # 1. Lecture

@@ -44,7 +44,7 @@ Régional 2011 - Problème 2 - Chocolats
 https://prologin.org/train/2011/semifinal/chocolats
 """
 # 0. Cœur du problème
-def moyenne_nombres_pairs(ma_liste: list) -> int:
+def moyenne_nombres_pairs(ma_liste: list[int]) -> int:
     """Renvoie la moyenne tronquée des nombres pairs de `ma_liste`
     >>> moyenne_nombres_pairs([1, 2, 3, 4])
     3

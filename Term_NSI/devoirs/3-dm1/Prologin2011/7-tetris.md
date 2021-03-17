@@ -74,23 +74,29 @@ https://prologin.org/train/2011/semifinal/tetris
 """
 
 # 0. Cœur du problème
-def nb_suppressions(tetris: list, nb_collones) -> int:
+def nb_suppressions(tetris: list[int]) -> int:
     """Renvoie le nombre de lignes que l'on peut supprimer dans
-    un tetris, un tableau 2D rempli de 0 et 1.
-    >>> nb_suppression([[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [1, 1, 0, 1, 1]], 5)
+    un Tetris, un tableau 2D rempli de 0 et 1.
+
+    >>> nb_suppression([[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [1, 1, 0, 1, 1]])
     1
+
     Astuce : si la somme d'une ligne est égale à nb_colonnes,
              alors on peut la supprimer.
     """
+    if len(tetris) == 0:
+        return 0 # Tetris vide
+    nb_colonnes = len(tetris[0])
+
     # version fonctionnelle
     return sum(1 for ligne in tetris if sum(ligne) == nb_colonnes)
     
     # version itérative
-    ans = 0
+    nb_lignes_pleines = 0
     for ligne in tetris:
         if sum(ligne) == nb_colonnes:
-            ans += 1
-    return ans
+            nb_lignes_pleines += 1
+    return nb_lignes_pleines
     
 
 # 1. Lecture
@@ -99,5 +105,5 @@ nb_colonnes = int(input())
 tetris = [list(map(int, input().split())) for _ in range(nb_lignes)]
 
 # 2. Écriture
-print(nb_suppressions(tetris, nb_colonnes))
+print(nb_suppressions(tetris))
 ```

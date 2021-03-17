@@ -82,7 +82,7 @@ for i in range(nb_objets):
     x, y, poids = map(float, input().split())
     somme_pondérée_x += x * poids
     somme_pondérée_y += y * poids
-    somme_poids += poids
+    somme_poids      += poids
 
 # 2. Calcul et écriture
 centre_gravité_x = somme_pondérée_x / somme_poids

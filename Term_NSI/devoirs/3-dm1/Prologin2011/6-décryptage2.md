@@ -71,7 +71,7 @@ https://prologin.org/train/2011/semifinal/decryptage2
 
 # 0. Cœur du problème
 def est_inclus(extrait: str, texte: str) -> bool:
-    """Renvoie True si touts les caractères de 'extrait' sont inclus
+    """Renvoie True si tous les caractères de 'extrait' sont inclus
     dans 'texte', avec multiplicité, mais sans compter l'ordre.
     >>> est_inclus("ABAC", "BRAVO, CHARLIE.")
     1
@@ -79,12 +79,15 @@ def est_inclus(extrait: str, texte: str) -> bool:
     0
     """
     CONST_ASCII = 128
-    def compte(morceau: str) -> list:
+    def compte(morceau: str) -> list[int]:
         """Renvoie la liste du compte des caractères.
+
         >>> compte("ABAC")[ord('A')]
         2
+
         >>> compte("ABAC")[ord('D')]
         0
+
         """
         compte_morceau = [0 for _ in range(CONST_ASCII)]
         for caractère in morceau:
@@ -128,19 +131,25 @@ Nous proposerons ensuite une version avec un type nouveau `Counter` qui a été 
 ```python
 # 0. Cœur du problème
 def est_inclus(extrait: str, texte: str) -> bool:
-    """Renvoie True si touts les caractères de 'extrait' sont inclus
+    """Renvoie True si tous les caractères de 'extrait' sont inclus
     dans 'texte', avec multiplicité, mais sans compter l'ordre.
+
     >>> est_inclus("ABAC", "BRAVO, CHARLIE.")
     1
+
     >>> est_inclus("ABBAC", "BRAVO, CHARLIE.")
     0
+
     """
     def compte(morceau: str) -> dict:
         """Renvoie un `Counter` des caractères.
+
         >>> compte("ABAC") == {'A': 2, 'B': 1, 'C': 1}
         True
+
         >>> compte("ABBAC") == {'A': 2, 'B': 2, 'C': 1}
         True
+
         """
         compte_morceau = dict()
         for caractère in morceau:
@@ -171,19 +180,25 @@ from collections import Counter
 
 # 0. Cœur du problème
 def est_inclus(extrait: str, texte: str) -> bool:
-    """Renvoie True si touts les caractères de 'extrait' sont inclus
+    """Renvoie True si tous les caractères de 'extrait' sont inclus
     dans 'texte', avec multiplicité, mais sans compter l'ordre.
+
     >>> est_inclus("ABAC", "BRAVO, CHARLIE.")
     1
+
     >>> est_inclus("ABBAC", "BRAVO, CHARLIE.")
     0
+
     """
     def compte(morceau: str) -> Counter:
         """Renvoie un `Counter` des caractères.
+
         >>> compte("ABAC") == {'A': 2, 'B': 1, 'C': 1}
         True
+
         >>> compte("ABBAC") == {'A': 2, 'B': 2, 'C': 1}
         True
+
         """
         compte_morceau = Counter()
         for caractère in morceau:

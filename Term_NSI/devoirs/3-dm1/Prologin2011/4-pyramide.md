@@ -61,46 +61,46 @@ https://prologin.org/train/2011/semifinal/pyramide
 """
 
 # 0. Cœur du problème
-def pyramide(hauteur: int) -> str:
-    r"""Renvoie une pyramide de hauteur donnée
-    >>> pyramide(1).split("\n")
-    ['*']
-    >>> pyramide(3).split("\n")
-    ['*', '**', '***']
+def affiche_pyramide(hauteur: int) -> None:
+    """Affiche une pyramide de `hauteur` donnée.
+
+    >>> affiche_pyramide(1)
+    *
+
+    >>> affiche_pyramide(3)
+    *
+    **
+    ***
+
     """
-    return "\n".join("*" * h for h in range(1, 1+hauteur))
+    return print("\n".join("*" * h for h in range(1, hauteur + 1)))
     
-# import doctest
-# doctest.testmod()
-# exit(0)
+import doctest
+doctest.testmod()
 
     
 # 1. Entrée
 hauteur = int(input())
 
 # 2. Sortie
-print(pyramide(hauteur))
+affiche_pyramide(hauteur)
 ```
 
-### Commentaire
+Une version simple serait :
 
-Noter le *doctest* qui commence par `r"""`, le `r` permet d'avoir une chaîne de caractères sans échappement. Ainsi, le `\n` n'est pas interprété dans le *docstring*.
-* Sans le `r`, le *docstring* serait équivalent à une chose bizarre :
 ```python
-def pyramide(hauteur: int) -> str:
-    """Renvoie une pyramide de hauteur donnée
-    >>> pyramide(1).split("
-")
-    ['*']
-    ...
-```
-* Une solution correcte sans le `r` aurait été :
-```python
-def pyramide(hauteur: int) -> str:
-    """Renvoie une pyramide de hauteur donnée
-    >>> pyramide(1).split("\\n")
-    ['*']
-    ...
+def affiche_pyramide(hauteur: int) -> None:
+    for h in range(1, hauteur + 1):
+        print("*" * h)
 ```
 
-En effet, le `\` s'échappe avec lui-même, ainsi `\\n` devient, une fois lue par la *docstring*, un `\n`.
+Une version sans la multiplication `str * int` serait :
+
+```python
+def affiche_pyramide(hauteur: int) -> None:
+    for h in range(1, hauteur + 1):
+        # Affiche une ligne de `h` étoiles
+        for i in range(h):
+            print("*", end="")
+        print()
+```
