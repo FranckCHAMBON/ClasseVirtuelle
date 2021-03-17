@@ -78,40 +78,45 @@ https://prologin.org/train/2013/semifinal/gravity
 """
 
 def gravite(chaîne):
-    """Renvoie la chaîne avec les '.' au début
+    """Renvoie la chaîne avec les '.' au début.
+
     >>> gravite('a.zer..ty')
     '...azerty'
+
     """
     # on construit une liste sans les '.'
-    ans = []
+    chute = []
     for x in chaîne:
         if x != '.':
-            ans.append(x)
+            chute.append(x)
     # variante fonctionnelle des 4 lignes précédentes
-    ans = [x for x in chaîne if x != '.']
+    chute = [x for x in chaîne if x != '.']
     
     # n : la quantité de '.' manquants
-    n = len(chaîne) - len(ans)
+    n = len(chaîne) - len(chute)
     # on ajoute au début les '.' manquants
-    ans = ['.' for _ in range(n)] + ans
+    chute = ['.' for _ in range(n)] + chute
     # join : pour obtenir une chaîne collée
-    return "".join(ans)
+    return "".join(chute)
 
-# 1. lecture de l'entrée
+# 1. Test des fonctions
+import doctest
+doctest.testmod()
+
+# 2. Lecture de l'entrée
 nb_lignes, nb_colonnes = map(int, input().split())
 grille = [list(input()) for _ in range(nb_lignes)]
 
-# 2. résolution
-# ans : une grille pleine de '.'
-ans = [['.' for _ in range(nb_colonnes)] for _ in range(nb_lignes)]
+# 3. Résolution
+grille_sortie = [['.' for _ in range(nb_colonnes)] for _ in range(nb_lignes)]
 for j in range(nb_colonnes):
     colonne_j = [grille[i][j] for i in range(nb_lignes)]
     # la colonne_j va subir la gravité
     colonne_j = gravite(colonne_j)
     for i in range(nb_lignes):
-        ans[i][j] = colonne_j[i]
+        grille_sortie[i][j] = colonne_j[i]
 
-# 3. écriture de la sortie
-for ligne in ans:
+# 4. Écriture de la sortie
+for ligne in grille_sortie:
     print("".join(ligne))
 ```

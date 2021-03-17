@@ -69,26 +69,34 @@ Régional 2013 - Problème 3 - XOR
 https://prologin.org/train/2013/semifinal/xor
 """
 
-def unique(effectif, liste):
-    """Renvoie l'élément unique d'une liste de longueur effectif,
+def unique(nombres: list[int]) -> int:
+    """Renvoie l'élément unique d'une liste de `nombres`,
        quand les autres sont en double.
-    >>> unique(3, [18, 42, 18])
+
+    >>> unique([18, 42, 18])
     42
-    >>> unique(5, [1, 18, 42, 18, 1])
+
+    >>> unique([1, 18, 42, 18, 1])
     42
+
     """
-    liste_triée = sorted(liste) # une copie triée
-    liste_triée.append(1_000_001) # on ajoute un dernier pour avoir un nombre pair
+    nb_triés = sorted(nombres) # une copie triée
+    nb_triés.append(1_000_001) # on ajoute un dernier pour avoir un nombre pair
     # 1,1,  3,3,  5,5,  7,8,  8,9,  9,10,  10,10 ...
-    # le premier couple distinct indique l'élément unique ; à gauche 
+    # le premier couple distinct indique l'élément unique ; à gauche
+    n = len(nb_triés)
     for i in range(0, n, 2):
-        if liste_triée[i] != liste_triée[i+1]:
-            return liste_triée[i]
+        if nb_triés[i] != nb_triés[i+1]:
+            return nb_triés[i]
+
+
+import doctest
+doctest.testmod()
 
 effectif = int(input())
 nombres = list(map(int, input().split()))
 
-print(unique(effectif, nombres))
+print(unique(nombres))
 ```
 
 ### *Smart*
@@ -112,12 +120,12 @@ D'après les propriétés de $\text{XOR}$, on peut faire les opérations dans l'
 effectif = int(input())
 nombres = map(int, input().split()) 
 
-ans = 0
+unique = 0
 for n in nombres:
-    ans = ans ^ n
-    # ans ^= n # équivalent
+    unique = unique ^ n
+    # unique ^= n # équivalent
 
-print(ans)
+print(unique)
 ```
 
 
@@ -133,3 +141,11 @@ unique = reduce(xor, nombres)
 
 print(unique)
 ```
+
+On pourrait même remplacer les trois dernières lignes par :
+
+```python
+print(reduce(xor, map(int, input().split())))
+```
+
+Mais le code est plus lisible sur trois lignes, et tout aussi efficace.

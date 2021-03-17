@@ -61,8 +61,8 @@ Exemple de sortie
 ## Indices
 
 1. Il serait bon de préparer au moins deux fonctions (que nous avons déjà vues) : 
-    + une fonction qui donne une lettre en fonction de son indice (de 0 à 25).
-    + une fonction qui donne un indice (de 0 à 25) en fonction d'une lettre minuscule.
+    + Une fonction qui donne une lettre en fonction de son indice (de 0 à 25).
+    + Une fonction qui donne un indice (de 0 à 25) en fonction d'une lettre minuscule.
 
 2. Enfin, il sera utile de trier un tableau de couple (lettre, quantité) avec la quantité comme critère... Nous avons déjà vu comment faire.
 
@@ -76,34 +76,44 @@ https://prologin.org/train/2013/semifinal/gate_of_steiner
 """
 
 def donne_lettre(i: int) -> str:
-    """Renvoie la lettre minuscule d'indice i (de 0 à 25)
+    """Renvoie la lettre minuscule d'indice i (de 0 à 25).
+
     >>> donne_lettre(0)
     'a'
+
     >>> donne_lettre(25)
     'z'
+
     """
     assert 0 <= i <= 25, f"i = {i} mais devrait être de 0 à 25"
     return chr(ord('a') + i)
 
 def donne_indice(lettre: str) -> int:
-    """Renvoie l'indice de la lettre minuscule, de 0 à 25
+    """Renvoie l'indice de la lettre minuscule, de 0 à 25.
+
     >>> donne_indice('a')
     0
+
     >>> donne_indice('z')
     25
+
     """
     assert len(lettre) == 1, "il ne doit y avoir qu'un seul caractère"
     assert 'a' <= lettre <= 'z', f"'{lettre}' n'est pas une lettre minuscule"
     return ord(lettre) - ord('a')
 
-# 1. initialisation d'une liste de 26 compteurs
+# 1. Tests des fonctions
+import doctest
+doctest.testmod()
+
+
+# 2. Initialisation d'une liste de 26 compteurs
 compteurs = [0 for i in range(26)]
 
-# 2. lecture de l'entrée
+# 3. Lecture de l'entrée
 largeur, longueur = map(int, input().split())
 for _ in range(largeur):
     ligne = input()
-    assert len(ligne) == longueur, "Problème avec la longueur de la ligne"
     for caractère in ligne:
         if 'a' <= caractère <= 'z':
             # caractère est une lettre
@@ -120,6 +130,6 @@ for _ in range(largeur):
 couples = [(compteurs[i], i) for i in range(26) if compteurs[i] > 0]
 couples.sort(reverse=True)
 
-# 3. écriture de la sortie
-print("".join(donne_lettre(i) for q,i in couples))
+# 4. Écriture de la sortie
+print("".join(donne_lettre(i) for q, i in couples))
 ```

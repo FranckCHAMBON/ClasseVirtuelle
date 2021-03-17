@@ -64,12 +64,15 @@ On pourra utiliser :
 * `i`, `j` et `k` pour des coordonnées dans une grille, ou un **indice**.
     * `i` pour l'indice de ligne, `j` de colonne, et `k` autre indice.
 
+> Vos noms de variable doivent être **très explicites**.
+
 ### Fonctions
 Écrire des fonctions,
 * toujours avec *docstring*,
 * souvent avec *doctest*,
 * souvent avec annotation de type.
-* inutile de faire une fonction `main()`
+
+Inutile de faire une fonction `main()`
 
 ### Commentaires
 Écrire des commentaires **avant** une phase de votre programme. Comme
@@ -81,6 +84,7 @@ nb_points_vie = int(input())
 ### Respect du PEP-8
 Le PEP-8 devra être respectée le plus possible, sauf sur un point.
 + On préférera une utilisation correcte des accents dans les identifiants en français.
++ Par exemple, `carré` plutôt que `carre` pour de la géométrie...
 
 > Pour les autres : [rappel des bonnes pratiques](https://franckchambon.github.io/ClasseVirtuelle/Term_NSI/pep.html).
 
