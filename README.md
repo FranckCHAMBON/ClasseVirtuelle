@@ -24,4 +24,4 @@ Il y a des règles et des possibilités :
 * [Pour les spé NSI en première](NSI/nsi-accueil.md)
 * [Pour les terminales NSI](Term_NSI/accueil.md)
 * [Pour les maths expertes](https://franckchambon.github.io/matex/)
-
+* [Pour les collègues enseignants](Collègues/accueil.md)
