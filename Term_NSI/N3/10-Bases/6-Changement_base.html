@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>8-Moyenne_hexad&#xE9;cimale</title>
+      <title>6-Changement_base</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,111 +261,87 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="moyenne-hexad%C3%A9cimalehttpwwwfrance-ioiorgalgotaskphpidchapter565idtask457"><a href="http://www.france-ioi.org/algo/task.php?idChapter=565&amp;idTask=457">Moyenne hexad&#xE9;cimale</a></h1>
+      <h1 class="mume-header" id="changement-de-basehttpwwwfrance-ioiorgalgotaskphpidchapter565idtask368"><a href="http://www.france-ioi.org/algo/task.php?idChapter=565&amp;idTask=368">Changement de base</a></h1>
 
-<p>&#xC9;crivez un programme qui lit des nombres en base hexad&#xE9;cimale fournis par l&apos;utilisateur et qui affiche la partie enti&#xE8;re de leur moyenne, &#xE9;galement en base hexad&#xE9;cimale.</p>
-<p>On rappelle que la base hexad&#xE9;cimale (base 16) est compos&#xE9;e des chiffres de 0 &#xE0; 9, puis des lettres de A &#xE0; F (on se contentera ici de caract&#xE8;res majuscules).</p>
+<p>Alice et Bob sont lass&#xE9;s des capacit&#xE9;s trop limit&#xE9;es de leur calculatrice et ont d&#xE9;cid&#xE9; d&apos;en programmer une eux-m&#xEA;mes.</p>
+<p>Pour eux, la premi&#xE8;re &#xE9;tape consiste &#xE0; &#xE9;crire un programme capable de convertir un nombre d&apos;une base donn&#xE9;e en une autre.</p>
+<p>R&#xE9;f&#xE9;rez-vous a l&apos;introduction de l&apos;&#xE9;preuve pour plus de d&#xE9;tails sur la notation des nombres en base quelconque.</p>
 <h2 class="mume-header" id="contraintes">Contraintes</h2>
 
 <ul>
-<li><code>1 &lt;= N &lt;= 100</code>, o&#xF9; <code>N</code> est le nombre de valeurs hexad&#xE9;cimales dont l&apos;utilisateur doit calculer la moyenne.</li>
-<li><code>0 &lt;= V &lt;= 10000</code>, o&#xF9; <code>V</code> est la valeur d&#xE9;cimale de l&apos;un des nombres hexad&#xE9;cimaux lus.</li>
+<li><code>2 &lt;= B &lt;= 256</code>, o&#xF9; <code>B</code> est la base dans laquelle est repr&#xE9;sent&#xE9; un nombre.</li>
+<li><code>0 &lt;= N &lt; 100 000 000</code>, le nombre &#xE0; convertir d&apos;une base &#xE0; l&apos;autre.</li>
 </ul>
 <h3 class="mume-header" id="entr%C3%A9e">Entr&#xE9;e</h3>
 
-<p>La premi&#xE8;re ligne de l&apos;entr&#xE9;e contient un nombre <code>N</code> exprim&#xE9; en base hexad&#xE9;cimale : le nombre de valeurs dont il faut faire la moyenne.</p>
-<p>Chacune des <code>N</code> lignes suivantes contient un entier, en base hexad&#xE9;cimale.</p>
+<p>La premi&#xE8;re ligne de l&apos;entr&#xE9;e contient trois entiers : <code>B1</code>, <code>B2</code>, et <code>C</code>, respectivement la base de d&#xE9;part, la base d&apos;arriv&#xE9;e et la taille du nombre (en nombre de chiffres) dans la base de d&#xE9;part.</p>
+<p>La seconde ligne contient l&apos;entier <code>N</code> &#xE0; convertir, dans sa base de d&#xE9;part, sous la forme de <code>C</code> entiers repr&#xE9;sentant chacun un chiffre.</p>
 <h3 class="mume-header" id="sortie">Sortie</h3>
 
-<p>Vous devez afficher un entier sur la sortie, en base hexad&#xE9;cimale : la partie enti&#xE8;re de la moyenne des nombres fournis en entr&#xE9;e.</p>
-<p>Attention : le r&#xE9;sultat peut comporter plusieurs chiffres.</p>
-<h3 class="mume-header" id="exemple">Exemple</h3>
+<p>Le nombre exprim&#xE9; dans la base d&apos;arriv&#xE9;e (si le nombre est non-nul, il ne doit pas commencer pas un chiffre nul). Ce nombre doit &#xEA;tre fourni au m&#xEA;me format que celui de l&apos;entr&#xE9;e, comme indiqu&#xE9; dans l&apos;introduction de l&apos;&#xE9;preuve.</p>
+<h3 class="mume-header" id="exemples">Exemples</h3>
+
+<h4 class="mume-header" id="exemple-1">Exemple 1</h4>
 
 <p>entr&#xE9;e :</p>
-<pre class="language-text">C
-0
-2
-4
-6
-8
-A
-C
-E
-10
-12
-14
-16
+<pre class="language-text">10 2 2
+4 2
 </pre>
 <p>sortie :</p>
-<pre class="language-text">B
+<pre class="language-text">1 0 1 0 1 0
 </pre>
+<h4 class="mume-header" id="exemple-2">Exemple 2</h4>
+
+<p>entr&#xE9;e :</p>
+<pre class="language-text">100 10 3
+2 20 3
+</pre>
+<p>sortie :</p>
+<pre class="language-text">2 2 0 0 3
+</pre>
+<h3 class="mume-header" id="commentaires">Commentaires</h3>
+
+<p>Dans l&apos;exemple 1, le nombre de 2 chiffres fourni en entr&#xE9;e est 42 en base d&#xE9;cimale et s&apos;&#xE9;crit <code>101010</code> en base binaire.</p>
+<p>Faites attention aux deux &#xAB; 0 &#xBB; successifs. Par exemple dans l&apos;exemple 2, &#xAB; 2 20 3 en base 100 &#xBB; $= 2 &#xD7; 100^2 + 20 &#xD7; 100 + 3 = 2 &#xD7; 10^4 + 2 * 10^3 + 3 = $ &#xAB; 22003 en base 10 &#xBB;.</p>
 <h2 class="mume-header" id="solution">Solution</h2>
 
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">int16</span><span class="token punctuation">(</span>cha&#xEE;ne<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie l&apos;entier correspondant &#xE0; &apos;cha&#xEE;ne&apos; lu en hexad&#xE9;cimal.
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">lire_base</span><span class="token punctuation">(</span>chiffres<span class="token punctuation">:</span> <span class="token builtin">list</span><span class="token punctuation">,</span> base<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la valeur du nombre, avec ses &apos;chiffres&apos; donn&#xE9;s en &apos;base&apos;.
 
-    &gt;&gt;&gt; hex(&quot;0&quot;)
-    0
-
-    &gt;&gt;&gt; hex(&quot;A&quot;)
-    10
-
-    &gt;&gt;&gt; hex(&quot;FF&quot;)
-    255
+    &gt;&gt;&gt; lire_base([3, 11], 12)
+    47
 
     &quot;&quot;&quot;</span>
-    n <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> c <span class="token keyword">in</span> cha&#xEE;ne<span class="token punctuation">:</span>
-        n <span class="token operator">*=</span> <span class="token number">16</span>
-        <span class="token keyword">if</span> <span class="token string">&quot;0&quot;</span> <span class="token operator">&lt;=</span> c <span class="token operator">&lt;=</span> <span class="token string">&quot;9&quot;</span><span class="token punctuation">:</span>
-            n <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">&apos;0&apos;</span><span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            n <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">10</span>
-    <span class="token keyword">return</span> n
+    r&#xE9;sultat <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> chiffre <span class="token keyword">in</span> chiffres<span class="token punctuation">:</span>
+        r&#xE9;sultat <span class="token operator">*=</span> base
+        r&#xE9;sultat <span class="token operator">+=</span> chiffre
+    <span class="token keyword">return</span> r&#xE9;sultat
 
-<span class="token keyword">def</span> hexad&#xE9;cimal<span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la repr&#xE9;sentation de n en hexad&#xE9;cimal.
+<span class="token keyword">def</span> &#xE9;crire_base<span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> base<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;&#xC9;crit l&apos;entier &apos;n&apos;, dans la &apos;base&apos;.
 
-    &gt;&gt;&gt; hexad&#xE9;cimal(15)
-    &apos;F&apos;
-
-    &gt;&gt;&gt; hexad&#xE9;cimal(256)
-    &apos;100&apos;
-
+    &gt;&gt;&gt; &#xE9;crire_base(1234, 100)
+    12 34
+    
     &quot;&quot;&quot;</span>
-    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token string">&quot;0&quot;</span>
     chiffres <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">while</span> n <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        chiffre <span class="token operator">=</span> n <span class="token operator">%</span> <span class="token number">16</span>
-        n <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">16</span>
+        chiffre <span class="token operator">=</span> n <span class="token operator">%</span> base
+        n <span class="token operator">=</span> n <span class="token operator">//</span> base
         chiffres<span class="token punctuation">.</span>append<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
-    table <span class="token operator">=</span> <span class="token string">&quot;0123456789ABCDEF&quot;</span>
-    <span class="token keyword">return</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>table<span class="token punctuation">[</span>chiffre<span class="token punctuation">]</span> <span class="token keyword">for</span> chiffre <span class="token keyword">in</span> chiffres<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
+    <span class="token keyword">if</span> chiffres <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># le chiffre 0</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> chiffre <span class="token keyword">in</span> chiffres<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-n <span class="token operator">=</span> int16<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-somme <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>int16<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>hexad&#xE9;cimal<span class="token punctuation">(</span>somme <span class="token operator">//</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="commentaires">Commentaires</h3>
-
-<ul>
-<li>Pour la fonction <code>int16</code> :
-<ul>
-<li>On doit traiter s&#xE9;par&#xE9;ment les cas chiffre et lettre.</li>
-<li>On peut remplacer <code>n *= 16</code> par <code>n &lt;&lt;= 4</code> (d&#xE9;calage de 4bits &#xE0; gauche).</li>
-<li>On peut remplacer les deux <code>n += ...</code> par <code>n |= ...</code> (ou-bit-&#xE0;-bit). (<em>Technique</em>)</li>
-<li>Au lieu de cr&#xE9;er la fonction <code>int16(cha&#xEE;ne)</code>, on pourrait utiliser <code>int(cha&#xEE;ne, 16)</code> ; la fonction <em>built-in</em> <code>int</code> de Python accepte un param&#xE8;tre optionnel pour le choix de base... Ici, ce serait tricher...</li>
-</ul>
-</li>
-<li>Pour la fonction <code>hexad&#xE9;cimal</code> :
-<ul>
-<li>Les deux premi&#xE8;res instructions du <code>while</code> peuvent &#xEA;tre remplac&#xE9;e par <code>n, chiffre = divmod(n, 16)</code>, mais aussi par <code>chiffre = n &amp; 15</code>, suivi de <code>n &gt;&gt;= 4</code>, cette derni&#xE8;re m&#xE9;thode &#xE9;tant plus rapide ; ce sont des fonctions &#xE9;l&#xE9;mentaires pour le processeur.</li>
-<li>L&apos;utilisation de <code>table</code> est une astuce &#xE0; retenir pour les situations o&#xF9; une fonction ne poss&#xE8;de qu&apos;une petite table de valeurs possibles sur un domaine de la forme $[![0..N[![$.</li>
-</ul>
-</li>
-</ul>
-
+b1<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+chiffres <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+&#xE9;crire_base<span class="token punctuation">(</span>lire_base<span class="token punctuation">(</span>chiffres<span class="token punctuation">,</span> b1<span class="token punctuation">)</span><span class="token punctuation">,</span> b2<span class="token punctuation">)</span>
+</pre>
       </div>
       
       

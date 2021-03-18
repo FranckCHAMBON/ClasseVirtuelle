@@ -47,12 +47,16 @@ sortie :
 ```python
 def int16(chaîne: str) -> int:
     """Renvoie l'entier correspondant à 'chaîne' lu en hexadécimal.
+
     >>> hex("0")
     0
+
     >>> hex("A")
     10
+
     >>> hex("FF")
     255
+
     """
     n = 0
     for c in chaîne:
@@ -65,10 +69,13 @@ def int16(chaîne: str) -> int:
 
 def hexadécimal(n: int) -> str:
     """Renvoie la représentation de n en hexadécimal.
+
     >>> hexadécimal(15)
-    F
+    'F'
+
     >>> hexadécimal(256)
-    100
+    '100'
+
     """
     if n == 0:
         return "0"
@@ -95,5 +102,5 @@ print(hexadécimal(somme // n))
     * Au lieu de créer la fonction `int16(chaîne)`, on pourrait utiliser `int(chaîne, 16)` ; la fonction *built-in* `int` de Python accepte un paramètre optionnel pour le choix de base... Ici, ce serait tricher...
 * Pour la fonction `hexadécimal` :
     * Les deux premières instructions du `while` peuvent être remplacée par `n, chiffre = divmod(n, 16)`, mais aussi par `chiffre = n & 15`, suivi de `n >>= 4`, cette dernière méthode étant plus rapide ; ce sont des fonctions élémentaires pour le processeur.
-    * L'utilisation de `table` est une astuce à retenir pour les situations où une fonctions ne possède qu'une petite table de valeurs possibles sur un domaine de la forme $[\![0..N[\![$.
+    * L'utilisation de `table` est une astuce à retenir pour les situations où une fonction ne possède qu'une petite table de valeurs possibles sur un domaine de la forme $[\![0..N[\![$.
     

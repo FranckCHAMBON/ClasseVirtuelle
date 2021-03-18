@@ -45,9 +45,11 @@ sortie :
 ```python
 def écrire_base(n: int, base: int) -> None:
     """Écrit l'entier 'n', dans la 'base'.
+
     >>> écrire_base(1234, 100)
     2
     12 34
+    
     """
     chiffres = []
     while n > 0:

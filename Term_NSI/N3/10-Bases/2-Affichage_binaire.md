@@ -58,9 +58,9 @@ n = int(input())
 print(bin(n)[2:])
 ```
 
-* Si on n'enlève pas ces deux premières caractères, on a par exemple :
+* Si on n'enlève pas ces deux premiers caractères, on a par exemple :
 ```python
 >>> bin(6)
 0b110
 ```
-* La fonction `bin` renvoie une chaîne de caractère, et on peut obtenir la tranche du 2ème jusqu'à la fin avec `[2:]`
+* La fonction `bin` renvoie une chaîne de caractère, et on peut obtenir la tranche du 2ᵉ jusqu'à la fin avec `[2:]`
