@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -268,7 +268,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <h2 class="mume-header" id="tldr">TL;DR</h2>
 
-<p>Une fois vos <em>doctest</em> &#xE9;crits, ajouter ceci &#xE0; la fin de vos d&#xE9;claration de fonction :</p>
+<p>Une fois vos <em>doctest</em> &#xE9;crits, ajouter ceci &#xE0; la fin de vos d&#xE9;clarations de fonction :</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">import</span> doctest
 doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </pre><p>Et lancer votre code.</p>
@@ -289,10 +289,10 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 <p>Il est important de bien d&#xE9;crire dans une <em>docstring</em> le principe de la fonction. C&apos;est une comp&#xE9;tence importante &#xE0; avoir. Pour soi, mais aussi pour les lecteurs du code que vous partagez, coll&#xE8;gues, examinateurs, sup&#xE9;rieurs, vous-m&#xEA;me du futur...</p>
 </li>
 <li>
-<p>Il est important aussi de pratiquer l&apos;annotation de type (quand ils sont simples), cela aide &#xE0; la compr&#xE9;hension de la description de la fonction. Avec certains langages de programmation, c&apos;est obligatoire, et cela aider &#xE0; &#xE9;viter de nombreux <em>bugs</em>.</p>
+<p>Il est important aussi de pratiquer l&apos;annotation de type (quand ils sont simples), cela aide &#xE0; la compr&#xE9;hension de la description de la fonction. Avec certains langages de programmation, c&apos;est obligatoire, et cela peut aider &#xE0; &#xE9;viter de nombreux <em>bugs</em>.</p>
 </li>
 <li>
-<p>Nous parlerons ici plus en d&#xE9;tail des tests &#xE0; inclure dans la <em>doctring</em> qui permettent d&apos;am&#xE9;liorer la description et surtout de faire des v&#xE9;rifications automatiques. Am&#xE9;liorer et pr&#xE9;ciser certains d&#xE9;tails...</p>
+<p>Nous parlerons ici plus en d&#xE9;tail des tests &#xE0; inclure dans la <em>docstring</em> qui permettent d&apos;am&#xE9;liorer la description et surtout de faire des v&#xE9;rifications automatiques. Am&#xE9;liorer et pr&#xE9;ciser certains d&#xE9;tails...</p>
 </li>
 </ul>
 <h3 class="mume-header" id="principe-du-test">Principe du test</h3>
@@ -318,7 +318,7 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
     <span class="token keyword">return</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>lettre<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">lettre_minuscule</span><span class="token punctuation">(</span>indice<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la lettre minuscule dont `indice` donn&#xE9;.
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la lettre minuscule dont `indice` est donn&#xE9;.
 
     &gt;&gt;&gt; lettre_minuscule(0)
     &apos;a&apos;
@@ -338,9 +338,15 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 <span class="token comment"># * lecture de l&apos;entr&#xE9;e</span>
 <span class="token comment"># * utilisation des fonctions</span>
 <span class="token comment"># * &#xE9;criture de la sortie</span>
-</pre><blockquote>
+</pre><p><strong>Entra&#xEE;nez-vous &#xE0; faire un <em>doctest</em> pour chaque fonction simple.</strong> Il doit &#xEA;tre court, et essayer de d&#xE9;jouer des pi&#xE8;ges possibles...</p>
+<p><strong>Pour aller plus loin</strong></p>
+<blockquote>
 <p>&#x26A0;&#xFE0F; On remarquera qu&apos;en console, si la sortie attendue est de type <code>str</code>, elle est &#xE9;crite entre guillemets simples <code>&apos;</code> ; vous devez en faire autant dans le <em>doctest</em>, exactement comme si c&apos;&#xE9;tait une utilisation en console Python.</p>
-<p><strong>Entra&#xEE;nez-vous &#xE0; faire un <em>doctest</em> pour chaque fonction simple.</strong> Il doit &#xEA;tre court, et essayer de d&#xE9;jouer des pi&#xE8;ges possibles...</p>
+<ul>
+<li>Si la cha&#xEE;ne contient elle-m&#xEA;me des guillemets simples, alors elle est affich&#xE9;e entre guillemets doubles.</li>
+<li>Si la cha&#xEE;ne contient les deux types de guillemets, alors elle est entre guillemets simples, et les guillemets simples int&#xE9;rieurs sont &#xE9;chapp&#xE9;s.</li>
+</ul>
+<p>Et bien s&#xFB;r, <strong>lire en d&#xE9;tail</strong> la <a href="https://docs.python.org/fr/3/library/doctest.html">documentation</a></p>
 </blockquote>
 
       </div>

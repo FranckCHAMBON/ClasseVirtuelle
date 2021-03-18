@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Une fois vos *doctest* écrits, ajouter ceci à la fin de vos déclaration de fonction :
+Une fois vos *doctest* écrits, ajouter ceci à la fin de vos déclarations de fonction :
 ```python
 import doctest
 doctest.testmod()
@@ -24,9 +24,9 @@ Le cœur du problème étant le traitement, pour lequel on écrit une fonction, 
 
 * Il est important de bien décrire dans une *docstring* le principe de la fonction. C'est une compétence importante à avoir. Pour soi, mais aussi pour les lecteurs du code que vous partagez, collègues, examinateurs, supérieurs, vous-même du futur...
 
-* Il est important aussi de pratiquer l'annotation de type (quand ils sont simples), cela aide à la compréhension de la description de la fonction. Avec certains langages de programmation, c'est obligatoire, et cela aider à éviter de nombreux *bugs*.
+* Il est important aussi de pratiquer l'annotation de type (quand ils sont simples), cela aide à la compréhension de la description de la fonction. Avec certains langages de programmation, c'est obligatoire, et cela peut aider à éviter de nombreux *bugs*.
 
-* Nous parlerons ici plus en détail des tests à inclure dans la *doctring* qui permettent d'améliorer la description et surtout de faire des vérifications automatiques. Améliorer et préciser certains détails...
+* Nous parlerons ici plus en détail des tests à inclure dans la *docstring* qui permettent d'améliorer la description et surtout de faire des vérifications automatiques. Améliorer et préciser certains détails...
 
 ### Principe du test
 
@@ -53,7 +53,7 @@ def indice_lettre_minuscule(lettre: str) -> int:
     return ord(lettre) - ord('a')
 
 def lettre_minuscule(indice: int) -> str:
-    """Renvoie la lettre minuscule dont `indice` donné.
+    """Renvoie la lettre minuscule dont `indice` est donné.
 
     >>> lettre_minuscule(0)
     'a'
@@ -75,7 +75,12 @@ doctest.testmod()
 # * écriture de la sortie
 ```
 
+**Entraînez-vous à faire un _doctest_ pour chaque fonction simple.** Il doit être court, et essayer de déjouer des pièges possibles...
+
+**Pour aller plus loin**
 > ⚠️ On remarquera qu'en console, si la sortie attendue est de type `str`, elle est écrite entre guillemets simples `'` ; vous devez en faire autant dans le *doctest*, exactement comme si c'était une utilisation en console Python.
+> * Si la chaîne contient elle-même des guillemets simples, alors elle est affichée entre guillemets doubles.
+> * Si la chaîne contient les deux types de guillemets, alors elle est entre guillemets simples, et les guillemets simples intérieurs sont échappés.
 >
-> **Entraînez-vous à faire un _doctest_ pour chaque fonction simple.** Il doit être court, et essayer de déjouer des pièges possibles...
+> Et bien sûr, **lire en détail** la [documentation](https://docs.python.org/fr/3/library/doctest.html)
 
