@@ -68,6 +68,15 @@ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium mai
 ```bash
 sudo apt update && sudo apt install codium 
 ```
+### Linux (Debian), autre méthode
+
+```bash
+sudo apt install extrepo
+sudo extrepo enable vscodium
+sudo apt install vscodium
+```
+
+Merci à V. pour l'info.
 
 ## Premier démarrage
 
