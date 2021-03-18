@@ -50,7 +50,7 @@ sortie :
 
 Dans l'exemple 1, le nombre de 2 chiffres fourni en entrée est 42 en base décimale et s'écrit `101010` en base binaire.
 
-Faites attention aux deux « 0 » successifs. Par exemple dans l'exemple 2, « 2 20 3 en base 100 » $= 2 × 100^2 + 20 × 100 + 3 = 2 × 10^4 + 2 * 10^3 + 3 = $ « 22003 en base 10 ».
+Faites attention aux deux « 0 » successifs. Par exemple dans l'exemple 2, « 2 20 3 en base 100 » $= 2 × 100^2 + 20 × 100 + 3 = 2 × 10^4 + 2 × 10^3 + 3 =$ « 22003 en base 10 ».
 
 ## Solution
 
@@ -73,7 +73,7 @@ def écrire_base(n: int, base: int) -> None:
 
     >>> écrire_base(1234, 100)
     12 34
-    
+
     """
     chiffres = []
     while n > 0:
