@@ -44,6 +44,7 @@ print(prénom, nom, sep=', ')
 * Une ligne vide après une définition de fonction.
 * Deux lignes vides après une définition de classe.
 * Une ligne vide pour séparer deux étapes marquées d'un groupe d'instructions.
+* Une ligne vide pour aérer chaque *doctest*.
 * Maximum 79 caractères de code par ligne.
     * Une ligne trop longue peut être coupée sans problème **à l'intérieur** de parenthèses, crochets ou accolades ; on parle de continuation implicite.
     * Sinon, on peut toujours couper une ligne avec `\`.
