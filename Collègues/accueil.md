@@ -11,6 +11,8 @@ En résumé.
     * VSCodium pour presque tout faire.
 * Pour les pros, vous savez déjà...
 
+
+
 ## GeoGebra
 
 Réflexe à avoir pour presque tout schéma en classe virtuelle (entre autres utilisations), quelle que soit la matière.
@@ -21,12 +23,14 @@ Réflexe à avoir pour presque tout schéma en classe virtuelle (entre autres ut
 * Tout le monde connaît GeoGebra, mais il n'est pas assez mis en avant. Son utilisation au collège devrait être prolongée encore au lycée, par les enseignants et les élèves.
 * Sur tablette, avec un petit stylet, on ajoute de la précision à ses schémas.
 
+> Bientôt, un petit topo, avec des images.
+
 ## Un bon éditeur Markdown
 
 Pour être productif, et pouvoir partager et remobiliser des ressources, il n'y a pas mieux que le **Markdown**.
 
 ### Qualités
-* C'est un langage de balisage léger, il est le **plus répandu**.
+* C'est un langage de balisage léger, il en est le **plus répandu**.
 * Un processeur de document comme LibreOffice ou Word entremêlent trop le fond et la forme, et il est difficile d'extraire le fond pour le remobiliser. Ils ne devraient pas être utilisés pour le partage des sources de document, mais juste pour produire *à la rigueur* des documents finis.
 * Le code source d'un document Markdown est lisible par un humain, ce qui n'est pas le cas des outils évoqués juste avant. On peut même se contenter de travailler en ne voyant que le code source.
 * On voit toutes les balises ; tout est explicite. Il n'y a rien de caché.
@@ -45,7 +49,7 @@ Pour être productif, et pouvoir partager et remobiliser des ressources, il n'y 
 
 
 ### Défauts
-* Il existe quelques variantes, le langage n'est pas totalement unifié. Il y a aussi plusieurs moteurs de rendus.
+* Il existe quelques variantes du Markdown ; le langage n'est pas totalement unifié. Il y a aussi plusieurs moteurs de rendus.
     * Nous ne présenterons donc que **la partie commune**.
 
 ### Quel éditeur ?
@@ -61,7 +65,7 @@ Plusieurs possibilités.
         * On a des cellules de `Code` (Python 3), mais on peut les changer en `Markdown`.
 
 2. Pour commencer à créer.
-    * Mon [premier cours sur Jupyter](https://htmlpreview.github.io/?https://raw.githubusercontent.com/FranckCHAMBON/Python-Lycee/master/Python-Carnets/Python-Jupyter-1.html).
+    * Vous pouvez suivre mon [premier cours sur Jupyter](https://htmlpreview.github.io/?https://raw.githubusercontent.com/FranckCHAMBON/Python-Lycee/master/Python-Carnets/Python-Jupyter-1.html).
     * Créer vos propres carnets avec Jupyter !
 
 3. Ensuite, vous êtes à l'aise avec Markdown ; on peut utiliser son éditeur préféré.
@@ -72,7 +76,7 @@ Plusieurs possibilités.
 
 ## Un bon éditeur Python
 
-Ma [présentation assez complète de Python au lycée](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html)
+Ma [présentation assez complète de Python au lycée](https://htmlpreview.github.io/?https://github.com/FranckCHAMBON/Python-Lycee/blob/master/Python-Presentation/Python-Presentation.html).
 
 En résumé :
 
