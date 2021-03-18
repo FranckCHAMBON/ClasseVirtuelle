@@ -44,10 +44,13 @@ sortie :
 ```python
 def est_valide(nom: str) -> bool:
     """Renvoie si 'nom' est un identifiant valide.
+
     >>> est_valide("Bon_jour32")
     True
+
     >>> est_valide("32Bonjour")
     False
+    
     """
     if not(('a' <= nom[0] <= 'z') or ('A' <= nom[0] <= 'Z') or (nom[0] == '_')):
         return False

@@ -44,10 +44,13 @@ def est_palindrome(titre: str) -> bool:
     """Renvoie un booléen,
     True si 'titre' est un palindrome.
     La casse ne compte pas.
+
     >>> est_palindrome("Laval")
     True
+
     >>> est_palindrome("ABc")
     False
+    
     """
     ligne = titre.lower() # en minuscule
     début = 0

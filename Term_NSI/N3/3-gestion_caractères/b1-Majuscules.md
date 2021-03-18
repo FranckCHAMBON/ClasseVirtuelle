@@ -25,12 +25,16 @@ sortie :
 def majuscule(lettre: str) -> str:
     """Renvoie la version majuscule d'une lettre minuscule,
     Sinon renvoie le même caractère.
+
     >>> majuscule("a")
-    A
+    'A'
+
     >>> majuscule("B")
-    B
+    'B'
+
     >>> majuscule("!")
-    !
+    '!'
+    
     """
     if ord('a') <= ord(lettre) <= ord('z'):
         return chr(ord(lettre) - ord('a') + ord('A'))

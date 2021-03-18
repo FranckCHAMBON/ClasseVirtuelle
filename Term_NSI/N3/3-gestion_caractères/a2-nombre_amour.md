@@ -34,10 +34,13 @@ sortie :
 def valeur(mot: str) -> int:
     """Renvoie la somme totale d'un mot où chaque lettre est remplacée par un nombre.
     A par 0, B par 1, ..., Z par 25.
+
     >>> valeur("ABCD")
     6
+
     >>> valeur("ZZ")
     50
+
     """
     total = 0
     for lettre in mot:
@@ -47,12 +50,16 @@ def valeur(mot: str) -> int:
 def nombre_amour(n: int) -> int:
     """Renvoie la somme des chiffres de l'entier n.
     Si le résultat est supérieur ou égal à 10, on recommence...
+
     >>> nombre_amour(5)
     5
+
     >>> nombre_amour(123)
     6
+
     >>> nombre_amour(77777)
     8
+    
     """
     amour = 0
     while n > 0:
