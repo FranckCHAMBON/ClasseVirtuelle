@@ -291,14 +291,19 @@ def intersecte(début_1: int, fin_1: int, début_2: int, fin_2: int) -> bool:
     """Renvoie un booléen.
     Les deux intervalles s'intersectent-ils ?
     Remarque, ici les bords ne comptent pas !
+
     >>> intersecte(2, 10, 5, 17)
     True
+
     >>> intersecte(2, 5, 10, 17)
     False
+
     >>> intersecte(2, 8, 8, 17)
     True
+
     """
     return (fin_2 >= début_1) and (fin_1 >= début_2)
+
 
 début_1 = int(input())
 fin_1 = int(input())
@@ -362,14 +367,19 @@ def intersecte(début_1: int, fin_1: int, début_2: int, fin_2: int) -> bool:
     """Renvoie un booléen.
     Les deux intervalles s'intersectent-ils ?
     Remarque, ici les bords ne comptent pas !
+
     >>> intersecte(2, 10, 5, 17)
     True
+
     >>> intersecte(2, 5, 10, 17)
     False
+
     >>> intersecte(2, 8, 8, 17)
     False
+
     """
     return (fin_2 > début_1) and (fin_1 > début_2)
+
 
 nb_paires = int(input())
 for _ in range(nb_paires):

@@ -97,15 +97,18 @@ On peut aussi écrire une version récursive.
 ```python
 def affiche(début: int, fin: int):
     """Affiche les nombres de `début` à `fin` inclus.
+
     >>> affiche(3, 5)
     3
     4
     5
+
     """
     assert début <= fin
     print(début)
     if début != fin:
         affiche(début+1, fin)
+
 
 temp_min = int(input())
 temp_max = int(input())
@@ -169,14 +172,20 @@ print(volume)
 ```python
 def volume_socle(largeur_bas: int, largeur_haut: int) -> int:
     """Renvoie le volume d'un socle avec des étages carrés.
+
     >>> volume_socle(7, 3)
     135
+
     """
     if largeur_bas < largeur_haut:
         return 0
     else:
         volume_base = largeur_bas * largeur_bas * 1
         return  volume_base + volume_socle(largeur_bas - 1, largeur_haut)
+
+
+import doctest
+doctest.testmod()
 
 largeur_bas = int(input())
 largeur_haut = int(input())

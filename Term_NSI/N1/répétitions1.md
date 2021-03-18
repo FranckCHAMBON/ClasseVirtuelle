@@ -135,20 +135,26 @@ Une solution plus mathématique serait
 
 ```python
 def lettre(i: int, j: int) -> str:
-   """Renvoie la lettre aux coordonnées (i, j)
+   """Renvoie la lettre aux coordonnées (i, j).
+
    >>> lettre(0, 0)
    O
+
    >>> lettre(1, 2)
    X
+
    """
    return "O" if (i+j) % 2 == 0 else "X"
 
 def ligne(i: int, largeur: int) -> str:
-   """Renvoie la ligne d'indice i
+   """Renvoie la ligne d'indice i.
+
    >>> ligne(0, 10)
    OXOXOXOXOX
+
    >>> ligne(1, 12)
    XOXOXOXOXOXO
+
    """
    return "".join(lettre(i, j) for j in range(largeur))
 

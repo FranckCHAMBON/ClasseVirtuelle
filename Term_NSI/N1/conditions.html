@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -534,7 +534,7 @@ dateFinSecond <span class="token operator">=</span> <span class="token builtin">
 <ul>
 <li>En utilisant la loi de De Morgan, on peut donner une condition aussi rapide qui valide &quot;Amis&quot; au lieu de &quot;Pas amis&quot;.</li>
 </ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>non</mtext><mo stretchy="false">(</mo><mi>A</mi><mtext>&#xA0;ou&#xA0;</mtext><mi>B</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>non</mtext><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mtext>&#xA0;et&#xA0;non</mtext><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{non}(A \text{ ou } B) = \text{non}(A)\text{ et }\text{non}(B)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mord text"><span class="mord">&#xA0;ou&#xA0;</span></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mclose">)</span><span class="mord text"><span class="mord">&#xA0;et&#xA0;</span></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>non</mtext><mo stretchy="false">(</mo><mi>A</mi><mtext>&#xA0;ou&#xA0;</mtext><mi>B</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>non</mtext><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mtext>&#xA0;et&#xA0;non</mtext><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{non}(A \text{ ou } B) = \text{non}(A)\text{ et }\text{non}(B)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mord text"><span class="mord">&#xA0;ou&#xA0;</span></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mclose">)</span><span class="mord text"><span class="mord">&#xA0;et&#xA0;</span></span><span class="mord text"><span class="mord">non</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span></span></span></p>
 <ul>
 <li>On place cette condition dans une fonction. Elle pourra &#xEA;tre utile.</li>
 <li>On utilise l&apos;op&#xE9;rateur ternaire, pour factoriser le <code>print</code>.</li>
@@ -543,14 +543,19 @@ dateFinSecond <span class="token operator">=</span> <span class="token builtin">
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un bool&#xE9;en.
     Les deux intervalles s&apos;intersectent-ils ?
     Remarque, ici les bords ne comptent pas !
+
     &gt;&gt;&gt; intersecte(2, 10, 5, 17)
     True
+
     &gt;&gt;&gt; intersecte(2, 5, 10, 17)
     False
+
     &gt;&gt;&gt; intersecte(2, 8, 8, 17)
     True
+
     &quot;&quot;&quot;</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>fin_2 <span class="token operator">&gt;=</span> d&#xE9;but_1<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>fin_1 <span class="token operator">&gt;=</span> d&#xE9;but_2<span class="token punctuation">)</span>
+
 
 d&#xE9;but_1 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 fin_1 <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -603,14 +608,19 @@ fin_2 <span class="token operator">=</span> <span class="token builtin">int</spa
     <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie un bool&#xE9;en.
     Les deux intervalles s&apos;intersectent-ils ?
     Remarque, ici les bords ne comptent pas !
+
     &gt;&gt;&gt; intersecte(2, 10, 5, 17)
     True
+
     &gt;&gt;&gt; intersecte(2, 5, 10, 17)
     False
+
     &gt;&gt;&gt; intersecte(2, 8, 8, 17)
     False
+
     &quot;&quot;&quot;</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>fin_2 <span class="token operator">&gt;</span> d&#xE9;but_1<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>fin_1 <span class="token operator">&gt;</span> d&#xE9;but_2<span class="token punctuation">)</span>
+
 
 nb_paires <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nb_paires<span class="token punctuation">)</span><span class="token punctuation">:</span>

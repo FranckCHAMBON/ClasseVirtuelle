@@ -12,6 +12,8 @@ doctest.testmod()
 Et lancer votre code.
 > Une absence de message signifie que les tests sont bons.
 
+> **Ne pas laisser ces deux lignes dans les codes soumis sur FranceIOI, la version de Python y est un peu ancienne.**
+
 
 ## Plus en détail
 

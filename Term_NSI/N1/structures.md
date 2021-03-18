@@ -41,7 +41,7 @@ print(nbAccessibles)
 ```
 
 Remarque
-: Un écart devrait toujours être positif. Ici, un meilleur nom de variable aurait été `différence`, puis ensuite
+: Un écart devrait toujours être positif. Ici, un meilleur nom de variable aurait été `différence`, ensuite
 ```python
 if différence > 0:
     écart = différence

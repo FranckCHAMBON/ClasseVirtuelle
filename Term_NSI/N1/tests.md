@@ -7,7 +7,9 @@
 ### Sujet
 
  Votre programme doit lire deux entiers, correspondant à deux numéros de bornes kilométriques, et il doit afficher la distance séparant ces deux bornes. Notez que le résultat doit être un nombre positif ou nul.
+
 ### Exemples
+
 #### Exemple 1
 
 entrée :

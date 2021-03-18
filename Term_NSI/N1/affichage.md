@@ -50,3 +50,4 @@ Et avec le chef tu reviendras !""")
 print("Tout droit tu grimperas,\nLa clé tu trouveras,\nHabile tu seras,\nQuand tu les porteras,\nEt avec le chef tu reviendras !")
 ```
 
+Cette dernière solution est peu élégante, la ligne de code étant trop longue. On préfère moins de 80 caractères par ligne de code.

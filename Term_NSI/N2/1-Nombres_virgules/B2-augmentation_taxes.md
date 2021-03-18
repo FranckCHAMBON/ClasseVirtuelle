@@ -80,4 +80,4 @@ print(round(prix_avec_taxe2, 2))
 
 * `round(x, 2)` permet d'avoir un arrondi de `x` avec 2 chiffres après la virgule.
 
-* une autre possibilité pour cet arrondi est de calculer `round(100 * x) / 100`
+* Une autre possibilité pour cet arrondi est de calculer `round(100 * x) / 100`
