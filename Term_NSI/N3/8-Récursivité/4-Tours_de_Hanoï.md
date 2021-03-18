@@ -57,6 +57,7 @@ def déplace(n: int, origine: int, destination: int, temporaire: int) -> None:
     vers la pile destination,
     en utilisant la pile temporaire.
     Renvoie None
+
     >>> déplace(3, 1, 3, 2)
     1 -> 3
     1 -> 2
@@ -65,6 +66,7 @@ def déplace(n: int, origine: int, destination: int, temporaire: int) -> None:
     2 -> 1
     2 -> 3
     1 -> 3
+
     """
     if n == 0:
         # il n'y a rien à faire

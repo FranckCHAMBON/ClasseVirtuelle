@@ -20,9 +20,11 @@ sortie :
 
 ```python
 def entre_deux(n: int, m: int) -> str:
-    """Renvoie les nombres entre n et m
+    """Renvoie les nombres entre n et m.
+
     >>> entre_deux(4, 11)
-    4 5 6 7 8 9 10 11
+    '4 5 6 7 8 9 10 11'
+
     """
     if n == m:
         return str(n)
@@ -38,4 +40,4 @@ print(entre_deux(n, m))
 * Pour le cas général, on peut renvoyer
     * $n$ en chaîne, puis
     * une espace, puis
-    * la chaîne des nombre entre $n+1$ et $m$ par récursivité.
+    * la chaîne des nombres entre $n+1$ et $m$ par récursivité.

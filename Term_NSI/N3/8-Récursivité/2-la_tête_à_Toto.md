@@ -59,13 +59,17 @@ sortie :
 
 ```python
 def toto(n: int) -> str:
-    """Renvoie "0", où "0" est remplacé par "(0 + 0)", récursivement, n fois
+    """Renvoie "0", où "0" est remplacé par "(0 + 0)", récursivement, n fois.
+
     >>> toto(0)
-    0
+    '0'
+
     >>> toto(1)
-    (0 + 0)
+    '(0 + 0)'
+
     >>> toto(2)
-    ((0 + 0) + (0 + 0))
+    '((0 + 0) + (0 + 0))'
+    
     """
     if n == 0:
         return "0"

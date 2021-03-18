@@ -57,12 +57,16 @@ sortie :
 def sierpinski(n: int) -> list:
     """Renvoie une liste de n lignes de longueur n, formant un triangle de Sierpinski.
     n est une puissance de 2.
+
     >>> sierpinski(1)
     ["#"]
+
     >>> sierpinski(2)
     ["##", "# "]
+
     >>> sierpinski(4)
     ["####", "# # ", "##  ", "#   "]
+    
     """
     if n == 1:
         return ['#']

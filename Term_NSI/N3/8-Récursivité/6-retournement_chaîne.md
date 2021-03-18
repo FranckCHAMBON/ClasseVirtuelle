@@ -24,8 +24,10 @@ sortie :
 ```python
 def retourne(chaîne: str) -> str:
     """Renvoie 'chaîne' retournée.
+
     >>> retourne("bonjour")
-    ruojnob
+    'ruojnob'
+    
     """
     if chaîne == "":
         return ""

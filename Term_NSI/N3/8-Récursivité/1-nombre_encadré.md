@@ -37,11 +37,14 @@ sortie :
 ```python
 def nb_encadré(nombre: int, nb_crochets: int) -> str:
     """Renvoie 'nombre' entouré de paires de crochets.
-    La sortie est de type str
+    La sortie est de type str.
+
     >>> exo(42, 3)
-    [[[42]]]
+    '[[[42]]]'
+
     >>> exo(24, 0)
-    24
+    '24'
+
     """
     if nb_crochets == 0:
         return str(nombre)
