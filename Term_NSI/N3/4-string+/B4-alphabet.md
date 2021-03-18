@@ -30,6 +30,7 @@ def lettre_majuscule(indice: int) -> str:
     
     >>> lettre_majuscule(25)
     'Z'
+    
     """
     return chr(ord('A') + indice)
 

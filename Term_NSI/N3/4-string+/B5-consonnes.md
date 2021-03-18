@@ -20,6 +20,7 @@ def lettre_minuscule(indice: int) -> str:
     
     >>> lettre_minuscule(25)
     'z'
+    
     """
     return chr(ord('a') + indice)
 
