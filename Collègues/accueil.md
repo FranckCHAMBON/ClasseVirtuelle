@@ -9,7 +9,7 @@ En résumé.
 * Je milite pour plus d'utilisation de GeoGebra, au collège, comme au lycée.
 * Ensuite, je recommande aux programmeurs débutants :
     * Jupyter pour créer des contenus scientifiques, ou faire de petits scripts Python.
-    * Geany pour coder en Python, et résoudre ses premiers problèmes.
+    * Thonny pour coder en Python, et résoudre ses premiers problèmes.
 * Pour les utilisateurs avancés :
     * VSCodium pour presque tout faire.
 * Pour les pros, vous savez déjà...
@@ -98,7 +98,7 @@ Il existe d'autres solutions, mais avec inscription, je les disqualifie, en atte
 * Utiliser FranceIOI, Prologin, ...
 * Jupyter, et Thonny pour les débutants complets.
 * Ensuite Geany est très bien en premier éditeur généraliste.
-* Enfin, VSCodium pour les élèves en NSI.
+* Enfin, VSCodium pour les élèves en terminale NSI.
 
 ## Outils variés
 
