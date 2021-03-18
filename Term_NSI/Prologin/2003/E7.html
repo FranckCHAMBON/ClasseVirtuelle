@@ -1,0 +1,588 @@
+<!DOCTYPE html><html><head>
+      <title>E7</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header undefined" id="correction-de-table-de-multiplicationhttpsprologinorgtrain2003semifinaltable_de_multiplications">Correction de <a href="https://prologin.org/train/2003/semifinal/table_de_multiplications">Table de multiplication</a></h1>
+
+<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+<li><a href="#proposition-8">Proposition 8</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+
+<p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
+<h3 class="mume-header" id="proposition-1">Proposition 1</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_multiplication</span><span class="token punctuation">(</span>nb<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Cette fonction prend en param&#xE8;tre un chiffre entre 1 et 9 et affiche sa table de multiplication.
+    &gt;&gt;&gt; 3
+    3x1=3
+    3x2=6
+    3x3=9
+    3x4=12
+    3x5=15
+    3x6=18
+    3x7=21
+    3x8=24
+    3x9=27
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>nb<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;x&quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;=&quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>nb<span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+<span class="token comment"># tests </span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+nb <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+table_multiplication<span class="token punctuation">(</span>nb<span class="token punctuation">)</span>
+</pre><ul>
+<li><em>doctest</em> &#xE0; revoir.</li>
+<li><em>fstring</em> &#xE0; privil&#xE9;gier.</li>
+</ul>
+<h3 class="mume-header" id="proposition-2">Proposition 2</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_de_multiplication</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Renvoie la table de multiplication du chiffre donn&#xE9; partant de 1 jusqu&apos;&#xE0; 9 dans une liste
+    &gt;&gt;&gt; table_de_multiplication(4)
+    [&apos;4x1=4&apos;, &apos;4x2=8&apos;, &apos;4x3=12&apos;, &apos;4x4=16&apos;, &apos;4x5=20&apos;, &apos;4x6=24&apos;, &apos;4x7=28&apos;, &apos;4x8=32&apos;, &apos;4x9=36&apos;]
+    &gt;&gt;&gt; table_de_multiplication(8)
+    [&apos;8x1=8&apos;, &apos;8x2=16&apos;, &apos;8x3=24&apos;, &apos;8x4=32&apos;, &apos;8x5=40&apos;, &apos;8x6=48&apos;, &apos;8x7=56&apos;, &apos;8x8=64&apos;, &apos;8x9=72&apos;]
+
+    &quot;&quot;&quot;</span>
+    affichage <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    
+        affichage<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&apos;</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre<span class="token punctuation">}</span></span><span class="token string">x</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre <span class="token operator">*</span> x<span class="token punctuation">}</span></span><span class="token string">&apos;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> affichage
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+affichage <span class="token operator">=</span> table_de_multiplication<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+<span class="token keyword">for</span> multiplication <span class="token keyword">in</span> affichage<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>multiplication<span class="token punctuation">)</span>
+</pre><ul>
+<li>Annotation de type incompl&#xE8;te.</li>
+<li>Il &#xE9;tait plus simple d&apos;afficher dans la fonction.</li>
+</ul>
+<h3 class="mume-header" id="proposition-3">Proposition 3</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span><span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span>y<span class="token punctuation">,</span><span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span>chiffre<span class="token operator">*</span>y<span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On attendait une fonction.</li>
+<li>Revoir le PEP-8, on attend une espace apr&#xE8;s la virgule.</li>
+<li>Penser aux <em>fstring</em>. C&apos;est tr&#xE8;s bien !</li>
+</ul>
+<h3 class="mume-header" id="proposition-4">Proposition 4</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">multiple <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>multiple<span class="token punctuation">}</span></span><span class="token string">x</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>multiple<span class="token operator">*</span>x<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</pre><ul>
+<li>On attendait une fonction.</li>
+<li>Revoir le PEP-8, on attend une espace apr&#xE8;s la virgule.</li>
+</ul>
+<h3 class="mume-header" id="proposition-5">Proposition 5</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">table_de_multiplications</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Revoie la table de multiplication de l&apos;entier demand&#xE9;.
+    &gt;&gt;&gt; table_de_multiplications(3)
+    3x1=3
+    3x2=6
+    3x3=9
+    3x4=12
+    3x5=15
+    3x6=18
+    3x7=21
+    3x8=24
+    3x9=27
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+       <span class="token keyword">print</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">,</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> i<span class="token operator">*</span>chiffre<span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Test</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e       </span>
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;=</span> chiffre <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">&quot;Chiffre trop grand, il ne doit pas d&#xE9;passer 9.&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Sortie</span>
+table_de_multiplications<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+</pre><ul>
+<li>Annotation de type fausse, ici la fonction renvoie <code>None</code>.</li>
+<li>De m&#xEA;me, la <em>docstring</em> est fausse ; la fonction <strong>affiche</strong>, elle <strong>ne renvoie pas</strong>.</li>
+<li>Bon <em>doctest</em>, mais penser &#xE0; l&apos;a&#xE9;rer.</li>
+<li>Penser aux <em>fstring</em>.</li>
+<li>Le <code>raise</code> est inutile ici.</li>
+</ul>
+<h3 class="mume-header" id="proposition-6">Proposition 6</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python">nb_&#xE0;_multiplier <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+liste_tableu<span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">9</span>
+resulta <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> y <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">#10 est eclue dans la boucle va de 1 &#xE0; 9</span>
+    resulta <span class="token operator">=</span> nb_&#xE0;_multiplier <span class="token operator">*</span> y
+    liste_tableu<span class="token punctuation">[</span>y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>nb_&#xE0;_multiplier<span class="token punctuation">,</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> resulta<span class="token punctuation">]</span>
+<span class="token keyword">for</span> x <span class="token keyword">in</span> liste_tableu<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> z <span class="token keyword">in</span> x<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>Ici, le style n&apos;est pas formidable ; une liste de liste ne se justifie pas.</li>
+<li>Les identifiants <code>x</code>, <code>y</code>, <code>z</code> ne sont pas clairs du tout...</li>
+</ul>
+<h3 class="mume-header" id="proposition-7">Proposition 7</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;Cette algorithme prend en param&#xE8;tre un chiffre (entre 1 et 9), et il affiche la table de multiplication de ce chiffre.
+exemple d&apos;entr&#xE9;e : 3
+exemple de sortie : 3x1=3
+                    3x2=6
+                    3x3=9
+                    3x4=12
+                    3x5=15
+                    3x6=18
+                    3x7=21
+                    3x8=24
+                    3x9=27
+&quot;&quot;&quot;</span>
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># Entr&#xE9;e</span>
+nombre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Algorithme</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>nombre<span class="token punctuation">,</span><span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span><span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span>i<span class="token operator">*</span>nombre<span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span> <span class="token comment"># Sortie</span>
+</pre><ul>
+<li>On attendait une fonction.</li>
+<li>Revoir le PEP-8, on attend une espace apr&#xE8;s chaque virgule.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># 0- Coeur du programme</span>
+
+<span class="token keyword">def</span> <span class="token function">construction_table_de_multiplication_de</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie la table de multiplication de chiffre.
+    &gt;&gt;&gt; construction_table_de_multiplication_de(1)
+    &apos;1x1=1\\n1x2=2\\n1x3=3\\n1x4=4\\n1x5=5\\n1x6=6\\n1x7=7\\n1x8=8\\n1x9=9\\n&apos;
+    &gt;&gt;&gt; construction_table_de_multiplication_de(3)
+    &apos;3x1=3\\n3x2=6\\n3x3=9\\n3x4=12\\n3x5=15\\n3x6=18\\n3x7=21\\n3x8=24\\n3x9=27\\n&apos;
+    &quot;&quot;&quot;</span>
+
+    table_de_multiplication <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    <span class="token keyword">for</span> multiplicateur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        table_de_multiplication <span class="token operator">+=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;x&quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>multiplicateur<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;=&quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>chiffre <span class="token operator">*</span> multiplicateur<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span>
+    <span class="token keyword">return</span> table_de_multiplication
+
+<span class="token comment"># 1- Tests</span>
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 2- Lecture de l&apos;entr&#xE9;e</span>
+
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 3- Appel de la fonction / Sortie</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>construction_table_de_multiplication_de<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>Joli tour de force de r&#xE9;ussir le <em>doctest</em>, mais ici on attendait plut&#xF4;t une fonction qui affiche...</li>
+<li>Il vaut mieux &#xE9;viter <code>+=</code> avec les cha&#xEE;nes de caract&#xE8;res, quand on peut. Question de complexit&#xE9;. Tr&#xE8;s souvent, il suffit d&apos;accumuler dans une liste les morceaux, puis de les coller &#xE0; la fin avec <code>s&#xE9;parateur.join(cumul)</code>.</li>
+</ul>
+<h3 class="mume-header" id="proposition-8">Proposition 8</h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Fonction avec multiplication</span>
+<span class="token keyword">def</span> <span class="token function">table_multiplication</span><span class="token punctuation">(</span>nb_r&#xE9;f <span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot; Renvoie la table de multiplication du &apos;nb_r&#xE9;f&apos; (de 1 jusqu&apos;&#xE0; 9)&apos;.
+    
+    &gt;&gt;&gt; chiffre = 3
+    &gt;&gt;&gt; table_multiplication(chiffre)
+    3x1=3
+    3x2=6
+    3x3=9
+    3x4=12
+    3x5=15
+    3x6=18
+    3x7=21
+    3x8=24
+    3x9=27
+    
+    &quot;&quot;&quot;</span>
+    longueur_table <span class="token operator">=</span> <span class="token number">9</span>
+    d&#xE9;but<span class="token punctuation">,</span> fin <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span>
+    <span class="token keyword">for</span> nb <span class="token keyword">in</span> <span class="token builtin">range</span> <span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span> fin<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        r&#xE9;sultat <span class="token operator">=</span> nb_r&#xE9;f <span class="token operator">*</span> nb
+        structure <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">(</span>nb_r&#xE9;f<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">(</span>nb<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">(</span>r&#xE9;sultat<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>structure<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># OU avec addition</span>
+<span class="token triple-quoted-string string">&quot;&quot;&quot;
+    longueur_table = 9
+    r&#xE9;sultat = nb_r&#xE9;f
+    multiplication = &quot;x&quot;
+    &#xE9;gal = &quot;=&quot;
+    d&#xE9;but, fin = 1, 9
+    for nb in range (d&#xE9;but, fin+1) :
+        structure = [str(nb_r&#xE9;f), multiplication, str(nb), &#xE9;gal, str(r&#xE9;sultat)]
+        print(&quot;&quot;.join(structure))
+        r&#xE9;sultat += nb_r&#xE9;f
+&quot;&quot;&quot;</span>
+
+<span class="token comment"># tests</span>
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Entr&#xE9;e</span>
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> chiffre <span class="token operator">&lt;=</span> <span class="token number">9</span>
+
+<span class="token comment"># Sortie</span>
+table_multiplication<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+</pre><ul>
+<li>Erreur de <em>docstring</em> et d&apos;annotation. La fonction ne renvoie pas la table, elle l&apos;affiche.</li>
+<li>Le <code>assert</code> est inutile ici.</li>
+</ul>
+<h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+auteur : Franck CHAMBON
+https://prologin.org/train/2003/semifinal/table_de_multiplications
+&quot;&quot;&quot;</span>
+
+<span class="token keyword">def</span> <span class="token function">affiche_table</span><span class="token punctuation">(</span>chiffre<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Affiche la table de multiplication de `chiffre`.
+
+    &gt;&gt;&gt; affiche_table(3)
+    3x1=3
+    3x2=6
+    3x3=9
+    3x4=12
+    3x5=15
+    3x6=18
+    3x7=21
+    3x8=24
+    3x9=27
+
+    &quot;&quot;&quot;</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">## Version classique</span>
+        <span class="token comment">#print(chiffre, &quot;x&quot;, k, &quot;=&quot;, chiffre * k, sep=&quot;&quot;)</span>
+
+        <span class="token comment">## Version f-string ; recommand&#xE9;e</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre<span class="token punctuation">}</span></span><span class="token string">x</span><span class="token interpolation"><span class="token punctuation">{</span>k<span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>chiffre <span class="token operator">*</span> k<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">import</span> doctest
+doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+affiche_table<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
+</pre><p><strong>Ici</strong>, on r&#xE9;alise l&apos;affichage dans la fonction.<br>
+* Le r&#xE9;sultat n&apos;est pas utile ici, &#xE0; part pour l&apos;afficher, autant le faire directement.<br>
+* Le code et le <em>doctest</em> sont plus simples &#xE0; &#xE9;crire.</p>
+<ul>
+<li>On recommande chaudement l&apos;utilisation des <em>fstring</em>, sauf sur FranceIOI qui utilise une ancienne version de Python.</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

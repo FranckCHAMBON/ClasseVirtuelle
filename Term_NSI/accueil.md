@@ -13,7 +13,8 @@ Rendez-vous **obligatoires** :
 
 
 
-## 🥇 FranceIOI
+## 🥇 Juges en ligne
+### FranceIOI
 > Solutions alternatives aux problèmes sur FranceIOI
 
 Pour le code Python des solutions :
@@ -32,6 +33,17 @@ Pour le code Python des solutions :
 1. [Niveau 1](N1/accueil.html)
 2. [Niveau 2](N2/accueil.html)
 3. [Niveau 3](N3/accueil.html)
+
+### Quelques corrigés de Prologin
+* [2003](Prologin/2003.html), avec des versions d'élèves
+* [2011](Prologin/2011.html)
+* [2013](Prologin/2013.html)
+
+### Autres en anglais
+* [Project Euler](https://projecteuler.net/)
+    * Un problème est donné, on peut utiliser un script pour trouver la réponse. Le site vérifie la réponse, mais pas le script. Les premiers problèmes sont abordables et recommandés. À partir de 50 environ, ça devient délicat pour les élèves de NSI. Il faut souvent un bagage mathématique solide niveau BAC.
+* [SPOJ](https://www.spoj.com/)
+    * La plus grande banque mondiale de problèmes en ligne que l'on peut résoudre avec une grande variété de langages. On peut choisir le liste des problèmes, et trier par nombres de réussites, ainsi on a accès à un nombre important de problèmes faciles. Il y a aussi des problèmes d'une difficulté colossale, même pour les étudiants.
 
 ## Cours
 
