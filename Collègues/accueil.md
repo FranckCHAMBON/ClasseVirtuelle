@@ -96,9 +96,9 @@ Il existe d'autres solutions, mais avec inscription, je les disqualifie, en atte
 
 ### Sur PC
 * Utiliser FranceIOI, Prologin, ...
-* Jupyter pour les débutants complets.
-* Geany le plus rapidement possible.
-* VSCodium pour les élèves en NSI.
+* Jupyter, et Thonny pour les débutants complets.
+* Ensuite Geany est très bien en premier éditeur généraliste.
+* Enfin, VSCodium pour les élèves en NSI.
 
 ## Outils variés
 
