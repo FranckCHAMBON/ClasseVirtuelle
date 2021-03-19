@@ -6,10 +6,12 @@ Lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https:
 
 ## Les visio-conférences
 
-/!\ Nouveau lien /!\ Le lien du CNED ne marche plus...
+/!\ Nouveaux liens /!\
 
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-* [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+
+1.[https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
+2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
 
 Il y a des règles et des possibilités :
 + Vous pouvez utiliser le chat pour déposer vos questions, avec par exemple un lien Internet précis vers un problème en ligne.

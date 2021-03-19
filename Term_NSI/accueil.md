@@ -6,8 +6,9 @@
 
 ## :busts_in_silhouette: Classe virtuelle de  M. Chambon
 
-==Nouveau lien==
-> [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+==Nouveaux liens==
+> 1. [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
+> 2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
 
 Rendez-vous **obligatoires** :
 * :clock10: les lundis de 10h à 12h
