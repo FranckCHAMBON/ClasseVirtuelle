@@ -1,7 +1,10 @@
 # :dizzy: Spécialité NSI
 
 ## :busts_in_silhouette: Classe virtuelle de  M. Chambon
-> [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
+
+==Nouveau lien==
+
+> [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
 
 Rendez-vous en cas de confinement complet :
 * :clock10: les mardis de 10h à 12h (groupe1)
