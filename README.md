@@ -5,11 +5,13 @@ Vous trouverez ici les documents utiles pour suivre et travailler en spé NSI pr
 Lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
 
 ## Les visio-conférences
+
+/!\ Nouveau lien /!\ Le lien du CNED ne marche plus...
+
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
-* [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203).
+* [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
 
 Il y a des règles et des possibilités :
-+ Vous devez être connecté au CNED pour accéder à la classe virtuelle.
 + Vous pouvez utiliser le chat pour déposer vos questions, avec par exemple un lien Internet précis vers un problème en ligne.
 + Vous pouvez être amené à participer oralement, brancher votre micro dans ce cas.
 + Vous pourrez partager votre écran pour montrer votre travail.
