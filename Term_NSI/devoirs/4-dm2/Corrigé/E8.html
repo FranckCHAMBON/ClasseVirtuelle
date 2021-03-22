@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
       
       
       
@@ -622,6 +622,8 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>d&#xE9;terminer_gagnant<span class="token punctuation">(</span>grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
+<li>Revoir l&apos;annotation de type pour <code>d&#xE9;terminer_gagnant</code>.</li>
+<li>Il y a trop de commentaires ; seuls ceux indispensables doivent rester. Si le code n&apos;est pas explicite, d&apos;abord essayer de le rendre explicite.</li>
 <li><code>return (0 &lt;= i &lt;= 5) and (0 &lt;= j &lt;= 6)</code> est mieux pour <code>est_dans_grille</code>.</li>
 <li>Attention aux lignes trop longues.
 <ul>
@@ -667,9 +669,10 @@ https://prologin.org/train/2003/semifinal/puissance_4
                     <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># vertical</span>
                     <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># diagonal 1</span>
                     <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># diagonal 2</span>
-                <span class="token punctuation">]</span>
+                   <span class="token punctuation">]</span>
         <span class="token keyword">for</span> di<span class="token punctuation">,</span> dj <span class="token keyword">in</span> vecteurs<span class="token punctuation">:</span>
             <span class="token keyword">if</span> est_dans_grille<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">3</span><span class="token operator">*</span>di<span class="token punctuation">,</span> j <span class="token operator">+</span> <span class="token number">3</span><span class="token operator">*</span>dj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment"># les autres y seront donc aussi</span>
                 <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i <span class="token operator">+</span> di<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">+</span> dj<span class="token punctuation">]</span> <span class="token operator">==</span> candidat<span class="token punctuation">:</span>
                     <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>di<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>dj<span class="token punctuation">]</span> <span class="token operator">==</span> candidat<span class="token punctuation">:</span>
                         <span class="token keyword">if</span> grille<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">3</span><span class="token operator">*</span>di<span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">3</span><span class="token operator">*</span>dj<span class="token punctuation">]</span> <span class="token operator">==</span> candidat<span class="token punctuation">:</span>
