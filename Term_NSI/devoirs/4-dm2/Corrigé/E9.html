@@ -263,9 +263,9 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="correction-de-puzzlehttpsprologinorgtrain2003semifinalpuzzle">Correction de <a href="https://prologin.org/train/2003/semifinal/puzzle">Puzzle</a></h1>
 
-<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<p>Quelques propositions d&#x2019;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
 <ul>
-<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
 <ul>
 <li><a href="#proposition-1">Proposition 1</a></li>
 <li><a href="#proposition-2">Proposition 2</a></li>
@@ -275,7 +275,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
 </ul>
-<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
 <h3 class="mume-header" id="proposition-1">Proposition 1</h3>
@@ -359,6 +359,7 @@ grand_puzzle <span class="token operator">=</span> <span class="token punctuatio
 </pre><ul>
 <li>De bonnes choses, mais code trop long.</li>
 <li>Revoir le PEP-8.</li>
+<li><code>x</code> et <code>y</code> sont de mauvais choix ici.</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
@@ -412,13 +413,16 @@ puzzle_correct <span class="token operator">=</span> <span class="token boolean"
 </pre><p>Il vaut mieux</p>
 <pre data-role="codeBlock" data-info="python" class="language-python">            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">==</span> pi&#xE8;ce<span class="token punctuation">[</span>delta_x<span class="token punctuation">]</span><span class="token punctuation">[</span>delta_y<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token keyword">not</span> est_dans_le_puzzle<span class="token punctuation">(</span>x_d&#xE9;part<span class="token operator">+</span>delta_x<span class="token punctuation">,</span> y_d&#xE9;part<span class="token operator">+</span>delta_y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                 <span class="token keyword">return</span> <span class="token boolean">False</span>
-</pre><p>En effet, si un z&#xE9;ro est en dehors du cadre, c&apos;est autoris&#xE9;...</p>
+</pre><p>En effet, si un z&#xE9;ro est en dehors du cadre, c&#x2019;est autoris&#xE9;&#x2026;</p>
 <ol start="2">
 <li>Pas terrible</li>
 </ol>
 <pre data-role="codeBlock" data-info="python" class="language-python">        <span class="token keyword">if</span> puzzle_correct<span class="token punctuation">:</span>
             <span class="token keyword">break</span>
 </pre><p>Il vaut mieux mettre cette section dans une fonction, et au lieu de <code>puzzle_correct = True</code>, faire un <code>return True</code></p>
+<ol start="3">
+<li><strong>Bonne pratique</strong> ; tu as d&#xE9;fini des constantes au d&#xE9;but, <em>mais</em> il faut les utiliser alors partout, il reste au moins deux <code>4</code> &#xE0; remplacer !!!</li>
+</ol>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">trouve_enplacement_piece</span><span class="token punctuation">(</span>piece_puzzle<span class="token punctuation">,</span>  puzzle_entier<span class="token punctuation">,</span>x<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> x2<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -498,8 +502,8 @@ x2 <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token triple-quoted-string string">&quot;&quot;&quot; probl&#xE8;me out of range ligne 34, 45 alors qu&apos;il ne drvrait pas 
 et aussi il y a un probl&#xE8;me si la primi&#xE8;re ligne de la piece de puzzle ressemble &#xE0; &#xE7;a 0001 alors j&apos;ai pas de code pour savoir &#xE7;a&quot;&quot;&quot;</span>
 </pre><ul>
-<li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)...</li>
-<li>Mais il a le m&#xE9;rite d&apos;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&apos;est bien.</li>
+<li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)&#x2026;</li>
+<li>Mais il a le m&#xE9;rite d&#x2019;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&#x2019;est bien.</li>
 <li>Il y a beaucoup plus simple comme fa&#xE7;on de faire !!!</li>
 </ul>
 <h3 class="mume-header" id="proposition-4">Proposition 4</h3>
@@ -551,8 +555,8 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>pi&#xE8;ce_compatible_puzzle<span class="token punctuation">(</span>puzzle<span class="token punctuation">,</span> pi&#xE8;ce<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Il faut faire un meilleur test pour faire d&#xE9;border la pi&#xE8;ce. S&apos;il n&apos;y a que des z&#xE9;ros &#xE0; l&apos;ext&#xE9;rieur, la pi&#xE8;ce peut &#xEA;tre plac&#xE9;e.</li>
-<li>En Python, on pr&#xE9;f&#xE8;re que la fonction <code>pi&#xE8;ce_compatible_puzzle</code> renvoie un bool&#xE9;en, au lieu de <code>0</code> ou <code>1</code> qui est une tradition du langage C qui n&apos;a pas de bool&#xE9;en. Pour finir, l&apos;affichage de <code>0</code> ou <code>1</code> peut se faire avec <code>print(&quot;1&quot; if pi&#xE8;ce_compatible_puzzle(puzzle, pi&#xE8;ce) else &quot;0&quot;)</code>.</li>
+<li>Il faut faire un meilleur test pour faire d&#xE9;border la pi&#xE8;ce. S&#x2019;il n&#x2019;y a que des z&#xE9;ros &#xE0; l&#x2019;ext&#xE9;rieur, la pi&#xE8;ce peut &#xEA;tre plac&#xE9;e.</li>
+<li>En Python, on pr&#xE9;f&#xE8;re que la fonction <code>pi&#xE8;ce_compatible_puzzle</code> renvoie un bool&#xE9;en, au lieu de <code>0</code> ou <code>1</code> qui est une tradition du langage C qui n&#x2019;a pas de bool&#xE9;en. Pour finir, l&#x2019;affichage de <code>0</code> ou <code>1</code> peut se faire avec <code>print(&quot;1&quot; if pi&#xE8;ce_compatible_puzzle(puzzle, pi&#xE8;ce) else &quot;0&quot;)</code>.</li>
 </ul>
 <h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
 
@@ -598,9 +602,9 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span> <span class="token keyword">if</span> est_possible<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Je d&#xE9;bute mes constantes en majuscule, ou je les pr&#xE9;fixe comme <code>CONST_ma_constante</code>.</li>
-<li>On teste <strong>tous</strong> les d&#xE9;calages possibles, une pi&#xE8;ce pouvant d&#xE9;border s&apos;il n&apos;y a que des z&#xE9;ros &#xE0; l&apos;ext&#xE9;rieur. L&apos;&#xE9;nonc&#xE9; n&apos;&#xE9;tait pas tr&#xE8;s clair &#xE0; ce propos.</li>
+<li>On teste <strong>tous</strong> les d&#xE9;calages possibles, une pi&#xE8;ce pouvant d&#xE9;border s&#x2019;il n&#x2019;y a que des z&#xE9;ros &#xE0; l&#x2019;ext&#xE9;rieur. L&#x2019;&#xE9;nonc&#xE9; n&#x2019;&#xE9;tait pas tr&#xE8;s clair &#xE0; ce propos.</li>
 <li>Pas de <em>doctest</em> ici ; autre m&#xE9;thode.</li>
-<li>Dans mon r&#xE9;pertoire <code>prologin_2003/E9</code>, j&apos;ai cr&#xE9;&#xE9; un fichier <code>in.txt</code> contenant :</li>
+<li>Dans mon r&#xE9;pertoire <code>prologin_2003/E9</code>, j&#x2019;ai cr&#xE9;&#xE9; un fichier <code>in.txt</code> contenant :</li>
 </ul>
 <pre data-role="codeBlock" data-info class="language-"><code>0110
 0110
@@ -617,29 +621,53 @@ puzzle <span class="token operator">=</span> <span class="token punctuation">[</
 1110110011
 1110111111
 </code></pre><ul>
-<li>J&apos;ai lanc&#xE9; ensuite dans un terminal bash :</li>
+<li>J&#x2019;ai lanc&#xE9; ensuite dans un terminal bash :</li>
 </ul>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">prologin_2003/E9$ python puzzle.py <span class="token operator">&lt;</span> in.txt
 <span class="token number">1</span>
 </pre><ul>
-<li>Cette commande lance l&apos;interpr&#xE9;teur Python avec mon script <code>puzzle.py</code>, et en redirigeant l&apos;entr&#xE9;e standard sur le fichier <code>in.txt</code>.</li>
+<li>Cette commande lance l&#x2019;interpr&#xE9;teur Python avec mon script <code>puzzle.py</code>, et en redirigeant l&#x2019;entr&#xE9;e standard sur le fichier <code>in.txt</code>.</li>
 <li>Je v&#xE9;rifie que la sortie est bien <code>1</code>.</li>
-<li>On peut construire d&apos;autres fichiers tests...</li>
+<li>On peut construire d&#x2019;autres fichiers tests&#x2026;</li>
 <li>Cela &#xE9;vite de polluer le code avec de trop gros tests.</li>
-<li>Les <em>doctest</em>, c&apos;est tr&#xE8;s bien pour les petites fonctions ; pour les grosses fonctions on utilise d&apos;autres m&#xE9;thodes, dont la g&#xE9;n&#xE9;ration de fichiers tests (entr&#xE9;es et sorties), comme ici.</li>
-<li>Nous l&apos;avons d&#xE9;j&#xE0; vu en premi&#xE8;re, et nous <strong>reverrons</strong> comment rediriger l&apos;entr&#xE9;e et la sortie et automatiser les tests.</li>
+<li>Les <em>doctest</em>, c&#x2019;est tr&#xE8;s bien pour les petites fonctions ; pour les grosses fonctions on utilise d&#x2019;autres m&#xE9;thodes, dont la g&#xE9;n&#xE9;ration de fichiers tests (entr&#xE9;es et sorties), comme ici.</li>
+<li>Nous l&#x2019;avons d&#xE9;j&#xE0; vu en premi&#xE8;re, et nous <strong>reverrons</strong> comment rediriger l&#x2019;entr&#xE9;e et la sortie et automatiser les tests.</li>
 </ul>
 
       </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
       
-      
-    
-    
-    
-    
-    
-    
-    
-    
   
     </body></html>

@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -263,9 +263,9 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="correction-de-nombres-impairshttpsprologinorgtrain2003semifinalnombres_impairs">Correction de <a href="https://prologin.org/train/2003/semifinal/nombres_impairs">Nombres impairs</a></h1>
 
-<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<p>Quelques propositions d&#x2019;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
 <ul>
-<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
 <ul>
 <li><a href="#proposition-1">Proposition 1</a></li>
 <li><a href="#proposition-2">Proposition 2</a></li>
@@ -282,11 +282,11 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#version-basique">Version basique</a></li>
 <li><a href="#version-fonctionnelle">Version fonctionnelle</a></li>
 <li><a href="#version-r%C3%A9cursive">Version r&#xE9;cursive</a></li>
-<li><a href="#variante-de-laffichage">Variante de l&apos;affichage</a></li>
+<li><a href="#variante-de-laffichage">Variante de l&#x2019;affichage</a></li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
 <h3 class="mume-header" id="proposition-1">Proposition 1</h3>
@@ -316,12 +316,12 @@ n<span class="token punctuation">,</span> m <span class="token operator">=</span
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>nb_impairs<span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Annotations de type coh&#xE9;rentes, mais on pr&#xE9;f&#xE8;re ici le renvoi d&apos;une liste.</li>
+<li>Annotations de type coh&#xE9;rentes, mais on pr&#xE9;f&#xE8;re ici le renvoi d&#x2019;une liste.</li>
 <li><em>doctest</em> &#xE0; revoir.</li>
 <li><code>for x in range(m - n + 1):</code> correct, mais &#xE0; justifier.</li>
-<li>On peut &#xE9;viter le <code>else pass</code>...</li>
+<li>On peut &#xE9;viter le <code>else pass</code>&#x2026;</li>
 <li>On peut &#xE9;viter de calculer un modulo &#xE0; chaque tour de boucle.</li>
-<li>Ici, <code>repr</code> et <code>str</code> sont identiques.</li>
+<li>Ici, <code>repr</code> et <code>str</code> sont <em>identiques</em>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
@@ -350,7 +350,7 @@ nombres_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="to
 </pre><ul>
 <li><em>doctest</em> correct, mais <em>docstring</em> incorrecte : la fonction <strong>affiche</strong>, elle ne renvoie pas les nombres impairs.</li>
 <li>Cette version r&#xE9;cursive est int&#xE9;ressante.</li>
-<li>Probl&#xE8;me : cette version affiche une espace en trop &#xE0; la fin. C&apos;est souvent accept&#xE9; par les juges en ligne, mais pas toujours !!!</li>
+<li>Probl&#xE8;me : cette version affiche une espace en trop &#xE0; la fin. C&#x2019;est souvent accept&#xE9; par les juges en ligne, mais pas toujours !!!</li>
 </ul>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
 
@@ -397,11 +397,11 @@ impairs<span class="token punctuation">(</span>premier_entier<span class="token 
 </pre><ul>
 <li><em>doctring</em> et annotation de type de sortie fausses ; la fonction renvoie <code>None</code> et non un entier.
 <ul>
-<li>On pr&#xE9;f&#xE8;re ici l&apos;affichage en dehors de la fonction.</li>
+<li>On pr&#xE9;f&#xE8;re ici l&#x2019;affichage en dehors de la fonction.</li>
 </ul>
 </li>
 <li>A&#xE9;rer le <em>doctest</em>.</li>
-<li>A&#xE9;rer <code>deuxieme_entier+1</code> ; toujours quand la variable comporte plus d&apos;une lettre.</li>
+<li>A&#xE9;rer <code>deuxieme_entier+1</code> ; toujours quand la variable comporte plus d&#x2019;une lettre.</li>
 <li><code>raise</code> inutile dans cette situation.</li>
 </ul>
 <h3 class="mume-header" id="proposition-5">Proposition 5</h3>
@@ -435,14 +435,14 @@ mais la on va quand m&#xEA;me le faire
 <span class="token keyword">for</span> v <span class="token keyword">in</span> cherche_impair_entre_nb<span class="token punctuation">(</span>premier_entier<span class="token punctuation">,</span> deuxi&#xE8;me_entier<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>La fonction renvoie une liste ; c&apos;est <strong>bien</strong>. Cependant la <em>docstring</em> annonce le contraire, qu&apos;elle l&apos;affiche !</li>
+<li>La fonction renvoie une liste ; c&#x2019;est <strong>bien</strong>. Cependant la <em>docstring</em> annonce le contraire, qu&#x2019;elle l&#x2019;affiche !</li>
 <li><em>doctring</em> &#xE0; revoir avec un correcteur orthographique et grammatical. On attend peu de phrases en NSI, autant les rendre les plus simples et justes. Un effort est appr&#xE9;ci&#xE9;.</li>
 <li>Bon <em>doctest</em>, mais &#xE0; a&#xE9;rer.</li>
 <li><code>raise</code> inutile dans cette situation.</li>
-<li><code># deuxi&#xE8;me_entier inclus</code> est un commentaire encore plus court, il est utile, c&apos;est bien comme rappel.</li>
+<li><code># deuxi&#xE8;me_entier inclus</code> est un commentaire encore plus court, il est utile, c&#x2019;est bien comme rappel.</li>
 <li>Le <code>None</code> avec <code>else</code> sont inutiles.</li>
 <li>Le dernier commentaire est peu clair. &#xC9;tait-il utile ?</li>
-<li>Pour l&apos;affichage, <code>&quot; &quot;.join(...)</code> est pr&#xE9;f&#xE9;rable. Ici, il y aura une espace en trop &#xE0; la fin.</li>
+<li>Pour l&#x2019;affichage, <code>&quot; &quot;.join(...)</code> est pr&#xE9;f&#xE9;rable. Ici, il y aura une espace en trop &#xE0; la fin.</li>
 </ul>
 <h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
@@ -465,16 +465,16 @@ r&#xE9;sultat_conversion <span class="token operator">=</span> <span class="toke
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r&#xE9;sultat_conversion<span class="token punctuation">)</span>
 </pre><ul>
-<li>&#xAB; Cette algorithme deux entiers en param&#xE8;tres,(...) &#xBB; (sic)
+<li>&#xAB; Cette algorithme deux entiers en param&#xE8;tres,(&#x2026;) &#xBB; (sic)
 <ul>
 <li>Il manque le verbe prendre.</li>
-<li>Algorithme est masculin, donc &#xAB; Cet algorithme prend ... &#xBB;.</li>
-<li>En fait, ce serait plut&#xF4;t &#xAB; Ce programme prend ... &#xBB;.</li>
-<li>Il manque la pr&#xE9;cision utile de l&apos;inclusion des bornes.</li>
+<li>Algorithme est masculin, donc &#xAB; Cet algorithme prend &#x2026; &#xBB;.</li>
+<li>En fait, ce serait plut&#xF4;t &#xAB; Ce programme prend &#x2026; &#xBB;.</li>
+<li>Il manque la pr&#xE9;cision utile de l&#x2019;inclusion des bornes.</li>
 </ul>
 </li>
 <li>A&#xE9;rer de chaque c&#xF4;t&#xE9; du <code>=</code>. (<em>Sauf pour les param&#xE8;tres par d&#xE9;faut de fonction.</em>)</li>
-<li>Quitte &#xE0; utiliser un style fonctionnel, autant l&apos;utiliser efficacement :
+<li>Quitte &#xE0; utiliser un style fonctionnel, autant l&#x2019;utiliser efficacement :
 <ul>
 <li><code>[x for x in chose]</code> devient <code>list(chose)</code>.</li>
 <li><code>&apos; &apos;.join(str(elem) for elem in nb_impaire)</code> devient <code>&apos; &apos;.join(map(str, nb_impaire))</code>.</li>
@@ -522,8 +522,8 @@ nombre1<span class="token punctuation">,</span> nombre2 <span class="token opera
 <span class="token keyword">print</span><span class="token punctuation">(</span>nombres_impairs_entre<span class="token punctuation">(</span>nombre1<span class="token punctuation">,</span> nombre2<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>On attendait plut&#xF4;t une fonction qui renvoie la liste, et non la cha&#xEE;ne.</li>
-<li>L&apos;affichage comporte ici une espace en trop &#xE0; la fin.</li>
-<li>Il y a deux bouts de code qui se ressemblent, signe qu&apos;on aurait pu le factoriser.</li>
+<li>L&#x2019;affichage comporte ici une espace en trop &#xE0; la fin.</li>
+<li>Il y a deux bouts de code qui se ressemblent, signe qu&#x2019;on aurait pu le factoriser.</li>
 </ul>
 <h3 class="mume-header" id="proposition-8">Proposition 8</h3>
 
@@ -551,9 +551,9 @@ d&#xE9;but<span class="token punctuation">,</span> fin <span class="token operat
 <span class="token comment"># Sortie</span>
 nb_impairs<span class="token punctuation">(</span>d&#xE9;but<span class="token punctuation">,</span> fin<span class="token punctuation">)</span>
 </pre><ul>
-<li>La fonction <strong>ne renvoie pas</strong>, mais elle <strong>affiche</strong> ; ce n&apos;est pas pareil.</li>
-<li>L&apos;annotation de sortie est fausse, la fonction renvoie <code>None</code>.</li>
-<li>Tr&#xE8;s bon <em>doctest</em>, mais ici ce serait utile d&apos;en avoir 4, pour chaque cas de parit&#xE9;.</li>
+<li>La fonction <strong>ne renvoie pas</strong>, mais elle <strong>affiche</strong> ; ce n&#x2019;est pas pareil.</li>
+<li>L&#x2019;annotation de sortie est fausse, la fonction renvoie <code>None</code>.</li>
+<li>Tr&#xE8;s bon <em>doctest</em>, mais ici ce serait utile d&#x2019;en avoir 4, pour chaque cas de parit&#xE9;.</li>
 <li>Le <code>assert</code> est inutile dans ce genre de situation.</li>
 </ul>
 <h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
@@ -602,20 +602,20 @@ impairs <span class="token operator">=</span> nombres_impairs<span class="token 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">,</span> impairs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>On a mis 4 <em>doctest</em>, un pour chaque type suivant la parit&#xE9; de <code>n</code> et <code>m</code>.</li>
-<li>Le <code>while</code> est un peu plus rudimentaire qu&apos;une boucle avec <code>for</code>.</li>
+<li>Le <code>while</code> est un peu plus rudimentaire qu&#x2019;une boucle avec <code>for</code>.</li>
 </ul>
 <h3 class="mume-header" id="version-fonctionnelle">Version fonctionnelle</h3>
 
 <p>1 ligne. <strong>Non recommand&#xE9;e</strong>, mais &#xE0; but p&#xE9;dagogique.</p>
 <ul>
-<li><code>n - (n&amp;1)</code>, c&apos;est <code>n</code> s&apos;il est pair, sinon <code>n-1</code> ; le r&#xE9;sultat est pair, juste inf&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
-<li><code>n - (n&amp;1) + 1</code>, c&apos;est donc <code>n</code> s&apos;il est impair, sinon <code>n+1</code> ; le r&#xE9;sultat est impair, juste sup&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
+<li><code>n - (n&amp;1)</code>, c&#x2019;est <code>n</code> s&#x2019;il est pair, sinon <code>n-1</code> ; le r&#xE9;sultat est pair, juste inf&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
+<li><code>n - (n&amp;1) + 1</code>, c&#x2019;est donc <code>n</code> s&#x2019;il est impair, sinon <code>n+1</code> ; le r&#xE9;sultat est impair, juste sup&#xE9;rieur ou &#xE9;gal &#xE0; <code>n</code>.</li>
 </ul>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token punctuation">(</span>n<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><h3 class="mume-header" id="version-r%C3%A9cursive">Version r&#xE9;cursive</h3>
 
-<p>N&apos;est pas efficace, mais correcte.</p>
+<p>N&#x2019;est pas efficace, mais correcte.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">def</span> <span class="token function">nombres_impairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> m<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> n <span class="token operator">&gt;</span> m<span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -623,21 +623,56 @@ impairs <span class="token operator">=</span> nombres_impairs<span class="token 
         <span class="token keyword">return</span> nombres_impairs<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+</span> nombres_impairs<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
-</pre><h3 class="mume-header" id="variante-de-laffichage">Variante de l&apos;affichage</h3>
+</pre><h3 class="mume-header" id="variante-de-laffichage">Variante de l&#x2019;affichage</h3>
 
 <p>Avec <em>unpack</em> ; <strong>hors programme</strong>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token operator">*</span>impairs<span class="token punctuation">)</span>
 </pre>
       </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+<li><a href="#proposition-8">Proposition 8</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a>
+<ul>
+<li><a href="#version-basique">Version basique</a></li>
+<li><a href="#version-fonctionnelle">Version fonctionnelle</a></li>
+<li><a href="#version-r%C3%A9cursive">Version r&#xE9;cursive</a></li>
+<li><a href="#variante-de-laffichage">Variante de l&#x2019;affichage</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
       
-      
-    
-    
-    
-    
-    
-    
-    
-    
   
     </body></html>

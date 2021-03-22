@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -263,9 +263,9 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="correction-de-puissance-4httpsprologinorgtrain2003semifinalpuissance_4">Correction de <a href="https://prologin.org/train/2003/semifinal/puissance_4">Puissance 4</a></h1>
 
-<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<p>Quelques propositions d&#x2019;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
 <ul>
-<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
 <ul>
 <li><a href="#proposition-1">Proposition 1</a></li>
 <li><a href="#proposition-2">Proposition 2</a></li>
@@ -277,7 +277,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
 </ul>
-<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
 <h3 class="mume-header" id="proposition-1">Proposition 1</h3>
@@ -332,11 +332,16 @@ table_puissance4 <span class="token operator">=</span> <span class="token punctu
 <span class="token comment"># Sortie</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>puissance4<span class="token punctuation">(</span>table_puissance4<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Erreur d&apos;indentation et dans le <em>doctest</em>, entre autres.</li>
+<li>Erreur d&#x2019;indentation et dans le <em>doctest</em>, entre autres.</li>
 <li><code>else pass</code> &#xE0; &#xE9;viter.</li>
 <li>Toutes les cases ne sont pas test&#xE9;es en vertical.</li>
-<li>Mauvaise id&#xE9;e d&apos;utiliser <code>n</code> et <code>x</code> et de les intervertir.</li>
 <li>On pouvait travailler avec des <code>str</code> plut&#xF4;t que des <code>int</code> dans ce probl&#xE8;me.</li>
+<li>Mauvaise id&#xE9;e d&#x2019;utiliser <code>n</code> et <code>x</code> et de les intervertir.
+<ul>
+<li>On pr&#xE9;f&#xE8;re <code>x</code> et <code>y</code> pour des abscisses et ordonn&#xE9;es, ce qui n&#x2019;est pas le cas ici.</li>
+<li>On utilise de pr&#xE9;f&#xE9;rence <code>i</code> et <code>j</code> comme coordonn&#xE9;es dans une grille, ligne <code>i</code>, et colonne <code>j</code>.</li>
+</ul>
+</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
@@ -393,7 +398,7 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 </pre><ul>
 <li>Beaucoup de bonnes choses. <strong>Bien.</strong></li>
 <li>4 directions suffisaient &#xE0; &#xEA;tre test&#xE9;es, au lieu de 8.</li>
-<li>La ligne <code>if not(est_possible(x, y)) or (grille[y][x] != joueur):</code> utilise de l&apos;&#xE9;valuation paresseuse ! C&apos;est bien. Si le premier test <code>est_possible(x, y)</code> est <code>False</code>, alors sa n&#xE9;gation est <code>True</code>, dans ce cas <code>True or ...</code> n&apos;&#xE9;value pas le second op&#xE9;rande. Ainsi <code>grille[y][x]</code> ne provoque pas d&apos;erreur. C&apos;est bien !</li>
+<li>La ligne <code>if not(est_possible(x, y)) or (grille[y][x] != joueur):</code> utilise de l&#x2019;&#xE9;valuation paresseuse ! C&#x2019;est bien. Si le premier test <code>est_possible(x, y)</code> est <code>False</code>, alors sa n&#xE9;gation est <code>True</code>, dans ce cas <code>True or ...</code> n&#x2019;&#xE9;value pas le second op&#xE9;rande. Ainsi <code>grille[y][x]</code> ne provoque pas d&#x2019;erreur. C&#x2019;est bien !</li>
 <li>On pouvait simplifier le code, en ne testant que le plus &#xE9;loign&#xE9; des 4 pions, au lieu des trois suivants.</li>
 </ul>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
@@ -442,9 +447,9 @@ gagnant <span class="token operator">=</span> <span class="token number">0</span
                     gagnant <span class="token operator">=</span> joueur
 <span class="token keyword">print</span><span class="token punctuation">(</span>gagnant<span class="token punctuation">)</span>
 </pre><ul>
-<li>&#xAB; Retourne un bool&#xE9;en si (...) &#xBB;, mieux : &#xAB; Retourne le bool&#xE9;en <code>True</code> si (...) &#xBB;</li>
-<li>Le <code>break</code> peut presque toujours &#xEA;tre &#xE9;vit&#xE9; en cr&#xE9;ant... une fonction.</li>
-<li>En cr&#xE9;ant plusieurs fonctions, on peut faire de nombreux renvois pr&#xE9;matur&#xE9;s. Au lieu de v&#xE9;rifier si on 4 align&#xE9;s &#xE0; la fin, on peut, en cours de v&#xE9;rification, renvoyer &#xAB; pas de gagnant ici pour l&apos;instant &#xBB; ; c&apos;est une bonne pratique. <strong>On doit morceler son code en fonction &#xE9;l&#xE9;mentaire.</strong></li>
+<li>&#xAB; Retourne un bool&#xE9;en si (&#x2026;) &#xBB;, mieux : &#xAB; Retourne le bool&#xE9;en <code>True</code> si (&#x2026;) &#xBB;</li>
+<li>Le <code>break</code> peut presque toujours &#xEA;tre &#xE9;vit&#xE9; en cr&#xE9;ant&#x2026; une fonction.</li>
+<li>En cr&#xE9;ant plusieurs fonctions, on peut faire de nombreux renvois pr&#xE9;matur&#xE9;s. Au lieu de v&#xE9;rifier si on 4 align&#xE9;s &#xE0; la fin, on peut, en cours de v&#xE9;rification, renvoyer &#xAB; pas de gagnant ici pour l&#x2019;instant &#xBB; ; c&#x2019;est une bonne pratique. <strong>On doit morceler son code en fonction &#xE9;l&#xE9;mentaire.</strong></li>
 </ul>
 <h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
@@ -489,7 +494,7 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 <span class="token keyword">print</span><span class="token punctuation">(</span>puissance_4<span class="token punctuation">(</span>nb_lignes<span class="token punctuation">,</span> nb_colonnes<span class="token punctuation">,</span> grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
 <li>Beaucoup de bonnes choses.</li>
-<li>Utiliser de meilleurs identifiants. <code>lig</code> et <code>col</code>, c&apos;est un mauvais style.</li>
+<li>Utiliser de meilleurs identifiants. <code>lig</code> et <code>col</code>, c&#x2019;est un mauvais style.</li>
 <li>Le <code>return &quot;&quot;</code> devrait &#xEA;tre un <code>return 0</code>, en cas de match nul.</li>
 </ul>
 <h3 class="mume-header" id="proposition-5">Proposition 5</h3>
@@ -567,8 +572,8 @@ matrice_jeu <span class="token operator">=</span> <span class="token punctuation
 <span class="token triple-quoted-string string">&quot;&quot;&quot; il se peut qu&apos;il aurai un probleme de rapiditer et on plus je vois pas commen lire ma diagonal&quot;&quot;&quot;</span>
 </pre><ul>
 <li>Il vaut mieux mettre des parenth&#xE8;ses aux tests compos&#xE9;s comme <code>(...) and (...) and (...)</code>, pour confirmer les priorit&#xE9;s op&#xE9;ratoires, et faciliter la lecture pour un tiers.</li>
-<li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)...</li>
-<li>Mais il a le m&#xE9;rite d&apos;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&apos;est bien.</li>
+<li>Le code est tr&#xE8;s peu clair, on ne comprend pas pourquoi il y a des appels r&#xE9;cursifs (en particulier)&#x2026;</li>
+<li>Mais il a le m&#xE9;rite d&#x2019;&#xEA;tre d&#xE9;coup&#xE9; en fonctions ; c&#x2019;est bien.</li>
 </ul>
 <h3 class="mume-header" id="proposition-6">Proposition 6</h3>
 
@@ -622,8 +627,8 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>d&#xE9;terminer_gagnant<span class="token punctuation">(</span>grille<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Revoir l&apos;annotation de type pour <code>d&#xE9;terminer_gagnant</code>.</li>
-<li>Il y a trop de commentaires ; seuls ceux indispensables doivent rester. Si le code n&apos;est pas explicite, d&apos;abord essayer de le rendre explicite.</li>
+<li>Revoir l&#x2019;annotation de type pour <code>d&#xE9;terminer_gagnant</code>.</li>
+<li>Il y a trop de commentaires ; seuls ceux indispensables doivent rester. Si le code n&#x2019;est pas explicite, d&#x2019;abord essayer de le rendre explicite.</li>
 <li><code>return (0 &lt;= i &lt;= 5) and (0 &lt;= j &lt;= 6)</code> est mieux pour <code>est_dans_grille</code>.</li>
 <li>Attention aux lignes trop longues.
 <ul>
@@ -712,15 +717,41 @@ grille <span class="token operator">=</span> <span class="token punctuation">[</
         <span class="token keyword">return</span> <span class="token string">&quot;0&quot;</span>
 </pre>
       </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
       
-      
-    
-    
-    
-    
-    
-    
-    
-    
   
     </body></html>

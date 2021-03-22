@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
       
       
       
@@ -263,9 +263,9 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 class="mume-header undefined" id="correction-de-table-de-multiplicationhttpsprologinorgtrain2003semifinaltable_de_multiplications">Correction de <a href="https://prologin.org/train/2003/semifinal/table_de_multiplications">Table de multiplication</a></h1>
 
-<p>Quelques propositions d&apos;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
+<p>Quelques propositions d&#x2019;&#xE9;l&#xE8;ves, et &#xE0; la fin un corrig&#xE9; du professeur.</p>
 <ul>
-<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</a>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
 <ul>
 <li><a href="#proposition-1">Proposition 1</a></li>
 <li><a href="#proposition-2">Proposition 2</a></li>
@@ -279,7 +279,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
 </ul>
-<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&apos;&#xE9;l&#xE8;ves</h2>
+<h2 class="mume-header" id="propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</h2>
 
 <p>&#xC0; la suite de chaque proposition de code, un commentaire de correction du professeur. Le cartouche demand&#xE9; en introduction a &#xE9;t&#xE9; supprim&#xE9; ici.</p>
 <h3 class="mume-header" id="proposition-1">Proposition 1</h3>
@@ -312,6 +312,7 @@ table_multiplication<span class="token punctuation">(</span>nb<span class="token
 </pre><ul>
 <li><em>doctest</em> &#xE0; revoir.</li>
 <li><em>fstring</em> &#xE0; privil&#xE9;gier.</li>
+<li><code>x</code> n&#x2019;&#xE9;tait pas le meilleur nom de variable ici.</li>
 </ul>
 <h3 class="mume-header" id="proposition-2">Proposition 2</h3>
 
@@ -341,7 +342,7 @@ affichage <span class="token operator">=</span> table_de_multiplication<span cla
     <span class="token keyword">print</span><span class="token punctuation">(</span>multiplication<span class="token punctuation">)</span>
 </pre><ul>
 <li>Annotation de type incompl&#xE8;te.</li>
-<li>Il &#xE9;tait plus simple d&apos;afficher dans la fonction.</li>
+<li>Il &#xE9;tait plus simple d&#x2019;afficher dans la fonction.</li>
 <li>Il vaut mieux ne pas choisir <code>x</code> ici comme variable.</li>
 </ul>
 <h3 class="mume-header" id="proposition-3">Proposition 3</h3>
@@ -352,7 +353,7 @@ affichage <span class="token operator">=</span> table_de_multiplication<span cla
 </pre><ul>
 <li>On attendait une fonction.</li>
 <li>Revoir le PEP-8, on attend une espace apr&#xE8;s la virgule.</li>
-<li>Penser aux <em>fstring</em>. C&apos;est tr&#xE8;s bien !</li>
+<li>Penser aux <em>fstring</em>. C&#x2019;est tr&#xE8;s bien !</li>
 </ul>
 <h3 class="mume-header" id="proposition-4">Proposition 4</h3>
 
@@ -397,7 +398,7 @@ table_de_multiplications<span class="token punctuation">(</span>chiffre<span cla
 </pre><ul>
 <li>Annotation de type fausse, ici la fonction renvoie <code>None</code>.</li>
 <li>De m&#xEA;me, la <em>docstring</em> est fausse ; la fonction <strong>affiche</strong>, elle <strong>ne renvoie pas</strong>.</li>
-<li>Bon <em>doctest</em>, mais penser &#xE0; l&apos;a&#xE9;rer.</li>
+<li>Bon <em>doctest</em>, mais penser &#xE0; l&#x2019;a&#xE9;rer.</li>
 <li>Penser aux <em>fstring</em>.</li>
 <li>Le <code>raise</code> est inutile ici.</li>
 </ul>
@@ -414,8 +415,8 @@ resulta <span class="token operator">=</span> <span class="token number">0</span
         <span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Ici, le style n&apos;est pas formidable ; une liste de liste ne se justifie pas.</li>
-<li>Les identifiants <code>x</code>, <code>y</code>, <code>z</code> ne sont pas clairs du tout...</li>
+<li>Ici, le style n&#x2019;est pas formidable ; une liste de liste ne se justifie pas.</li>
+<li>Les identifiants <code>x</code>, <code>y</code>, <code>z</code> ne sont pas clairs du tout&#x2026;</li>
 </ul>
 <h3 class="mume-header" id="proposition-7">Proposition 7</h3>
 
@@ -475,8 +476,8 @@ chiffre <span class="token operator">=</span> <span class="token builtin">int</s
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>construction_table_de_multiplication_de<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </pre><ul>
-<li>Joli tour de force de r&#xE9;ussir le <em>doctest</em>, mais ici on attendait plut&#xF4;t une fonction qui affiche...</li>
-<li>Il vaut mieux &#xE9;viter <code>+=</code> avec les cha&#xEE;nes de caract&#xE8;res, quand on peut. Question de complexit&#xE9;. Tr&#xE8;s souvent, il suffit d&apos;accumuler dans une liste les morceaux, puis de les coller &#xE0; la fin avec <code>s&#xE9;parateur.join(cumul)</code>.</li>
+<li>Joli tour de force de r&#xE9;ussir le <em>doctest</em>, mais ici on attendait plut&#xF4;t une fonction qui affiche&#x2026;</li>
+<li>Il vaut mieux &#xE9;viter <code>+=</code> avec les cha&#xEE;nes de caract&#xE8;res, quand on peut. Question de complexit&#xE9;. Tr&#xE8;s souvent, il suffit d&#x2019;accumuler dans une liste les morceaux, puis de les coller &#xE0; la fin avec <code>s&#xE9;parateur.join(cumul)</code>.</li>
 </ul>
 <h3 class="mume-header" id="proposition-8">Proposition 8</h3>
 
@@ -528,7 +529,7 @@ chiffre <span class="token operator">=</span> <span class="token builtin">int</s
 <span class="token comment"># Sortie</span>
 table_multiplication<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
 </pre><ul>
-<li>Erreur de <em>docstring</em> et d&apos;annotation. La fonction ne renvoie pas la table, elle l&apos;affiche.</li>
+<li>Erreur de <em>docstring</em> et d&#x2019;annotation. La fonction ne renvoie pas la table, elle l&#x2019;affiche.</li>
 <li>Le <code>assert</code> est inutile ici.</li>
 </ul>
 <h2 class="mume-header" id="corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</h2>
@@ -567,23 +568,52 @@ doctest<span class="token punctuation">.</span>testmod<span class="token punctua
 chiffre <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 affiche_table<span class="token punctuation">(</span>chiffre<span class="token punctuation">)</span>
-</pre><p><strong>Ici</strong>, on r&#xE9;alise l&apos;affichage dans la fonction.<br>
-* Le r&#xE9;sultat n&apos;est pas utile ici, &#xE0; part pour l&apos;afficher, autant le faire directement.<br>
-* Le code et le <em>doctest</em> sont plus simples &#xE0; &#xE9;crire.</p>
+</pre><p><strong>Ici</strong>, on r&#xE9;alise l&#x2019;affichage dans la fonction.</p>
 <ul>
-<li>On recommande chaudement l&apos;utilisation des <em>fstring</em>, sauf sur FranceIOI qui utilise une ancienne version de Python.</li>
+<li>Le r&#xE9;sultat n&#x2019;est pas utile ici, &#xE0; part pour l&#x2019;afficher, autant le faire directement.</li>
+<li>Le code et le <em>doctest</em> sont plus simples &#xE0; &#xE9;crire.</li>
+<li>On recommande chaudement l&#x2019;utilisation des <em>fstring</em>, sauf sur FranceIOI qui utilise une ancienne version de Python.</li>
+<li>Dans la <em>docstring</em>, on recommande l&#x2019;utilisation de Markdown quand on sait faire. Il est possible de g&#xE9;n&#xE9;rer la documentation compl&#xE8;te d&#x2019;un module &#xE0; partir des <em>doctring</em> de ses diff&#xE9;rents composants.</li>
 </ul>
 
       </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#propositions-d%C3%A9l%C3%A8ves">Propositions d&#x2019;&#xE9;l&#xE8;ves</a>
+<ul>
+<li><a href="#proposition-1">Proposition 1</a></li>
+<li><a href="#proposition-2">Proposition 2</a></li>
+<li><a href="#proposition-3">Proposition 3</a></li>
+<li><a href="#proposition-4">Proposition 4</a></li>
+<li><a href="#proposition-5">Proposition 5</a></li>
+<li><a href="#proposition-6">Proposition 6</a></li>
+<li><a href="#proposition-7">Proposition 7</a></li>
+<li><a href="#proposition-8">Proposition 8</a></li>
+</ul>
+</li>
+<li><a href="#corrig%C3%A9-du-professeur">Corrig&#xE9; du professeur</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
       
-      
-    
-    
-    
-    
-    
-    
-    
-    
   
     </body></html>
