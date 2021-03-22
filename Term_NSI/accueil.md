@@ -29,11 +29,17 @@ Rendez-vous **obligatoires** :
 * [2011](Prologin/2011.html)
 * [2013](Prologin/2013.html)
 
-### Autres en anglais
+### Autres, souvent en anglais
 * [Project Euler](https://projecteuler.net/)
     * Un problème est donné, on peut utiliser un script pour trouver la réponse. Le site vérifie la réponse, mais pas le script. Les premiers problèmes sont abordables et recommandés. À partir de 50 environ, ça devient délicat pour les élèves de NSI. Il faut souvent un bagage mathématique solide niveau BAC.
 * [SPOJ](https://www.spoj.com/)
     * La plus grande banque mondiale de problèmes en ligne que l'on peut résoudre avec une grande variété de langages. On peut choisir le liste des problèmes, et trier par nombres de réussites, ainsi on a accès à un nombre important de problèmes faciles. Il y a aussi des problèmes d'une difficulté colossale, même pour les étudiants.
+* [CodingGame](https://www.codingame.com/start)
+    * Très performant côté *design*. D'origine France.
+* [CheckiO](https://checkio.org/)
+    * Après un début commun, on peut choisir son parcours.
+* [codewars](https://www.codewars.com/)
+    * Pas de gestion complexe de l'entrée/sortie ; on y travaille avec des fonctions.
 
 ## Cours
 
@@ -100,11 +106,13 @@ Rendez-vous **obligatoires** :
     * [corrections](devoirs/4-dm2/Corrigé/correction.html) : Solutions de quelques élèves anonymes, et du professeur ; avec commentaires.
 
 
-## :checkered_flag: Épreuve finale
+## :checkered_flag: Épreuve finale, ==avec Grand Oral==
 
 * **Épreuves du mois de mars annulées ; contrôle continu pour les spécialités !!!**
 * Le programme : le [B.O.](https://cache.media.eduscol.education.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf)
 * L'aménagement des sujets suite à la crise sanitaire se fait sur les [**entrées prépondérantes du programme**](programme.html).
 * [Sujet zéro](devoirs/bac-0/S0BAC21-Tle-SPE-NSI.pdf) du BAC
     * [Corrigé](devoirs/bac-0/Sujet_zero_20_21.pdf)
-* [Banque de sujets NSI](https://eduscol.education.fr/2661/banque-des-epreuves-pratiques-de-specialite-nsi)  ; ==**Nouveau**== Attention, il y a de nombreuses coquilles...
+* [Banque de sujets NSI](https://eduscol.education.fr/2661/banque-des-epreuves-pratiques-de-specialite-nsi)  ; ==**Attention**==, il y a de nombreuses coquilles...
+* [Le Grand Oral](https://eduscol.education.fr/729/presentation-du-grand-oral)
+    * Aller, en particulier, à la page 55 du document : « Grand oral et enseignements de spécialité » que l'on peut ouvrir en pdf.
