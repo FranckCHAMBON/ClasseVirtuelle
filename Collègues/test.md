@@ -32,4 +32,11 @@ Une console devrait apparaître ci-dessous ; mais je crois que ça buggue à dis
 <iframe src="https://console.basthon.fr/?script=eJxLSU1TSNOo0LTi5VIAgqLUktKiPAVjrQoFbQVDiBgAo14IGA" width="900" height="900"></iframe>
 
 
+## Test avec HackMD
+
+> Joue avec ça
+
+<iframe src="https://hackmd.io/FxMBC1n8TVundt8Bwo5nhA?both" width="900" height="900"></iframe>
+
+
 Pas mal non ?
