@@ -110,9 +110,11 @@ En résumé :
 
 ### En ligne ; sans inscription
 * [Python Tutor](http://pythontutor.com/visualize.html#mode=edit) ; pratique pour voir pas à pas un tout petit script.
-* [Ideone](https://ideone.com/) ; complet et pratique pour préparer une entrée standard à l'avance.
+* [Brython]()
+* [Basthon]()
+Il existe d'autres solutions, mais souvent avec inscription ou bien analyses, je les disqualifie, en attendant des solutions intégrées aux ENT d'établissement. À suivre : Capytale.
 
-Il existe d'autres solutions, mais avec inscription, je les disqualifie, en attendant des solutions intégrées aux ENT d'établissement. À suivre : Capytale.
+* [Tests](test.html)
 
 ### Sur tablette
 * [QPython](https://play.google.com/store/apps/details?id=org.qpython.qpy)
