@@ -1,14 +1,15 @@
 # Documents de cours de M. Chambon
 
-Vous trouverez ici les documents utiles pour suivre et travailler en spé NSI première et terminale, ainsi qu'en maths expertes.
-
-Lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
+Vous trouverez ici les documents utiles pour :
+- la spécialité NSI première et terminale,
+- les mathématiques expertes en terminale,
+- les collègues de lycée.
 
 ## Les visio-conférences
 
 /!\ **Nouveaux liens** /!\
 
-Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
+Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur un des liens suivants :
 
 - Ma classe à la maison (CNED) : [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
 
