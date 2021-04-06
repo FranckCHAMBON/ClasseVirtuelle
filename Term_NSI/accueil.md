@@ -14,7 +14,9 @@ Rendez-vous **obligatoires** :
 * :clock10: les mercredis de 10 h à 12 h
 * :clock8: les vendredis de 8 h à 10 h
 
-
+==Communication hors ATRIUM==
+**Message important** : Il semble qu'ATRIUM soit un peu en panne par moment...
+Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://hackmd.io/Z-KjiJGQRPqLIPTI_SQQYw?both
 
 ## 🥇 Juges en ligne
 ### FranceIOI

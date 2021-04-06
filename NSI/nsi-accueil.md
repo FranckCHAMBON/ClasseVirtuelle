@@ -13,6 +13,13 @@
 Rendez-vous en cas de confinement complet :
 * :clock2: les vendredis de 14 h à 16 h
 
+
+==Communication hors ATRIUM==
+**Message important** : Il semble qu'ATRIUM soit un peu en panne par moment...
+Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://hackmd.io/ZQxuRh_8RnSsautuyQaBTg?both
+
+
+
 ## :anchor: Devoirs
 * [DS n°1](devoirs/ds1.pdf) *corrigé*
     * [Correction exercice 1](devoirs/ds1-ex1.html)
