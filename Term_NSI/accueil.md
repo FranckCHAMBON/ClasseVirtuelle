@@ -4,23 +4,25 @@
 
 [TOC]
 
-## :busts_in_silhouette: Classe virtuelle de  M. Chambon
+## 👥 Classe virtuelle de M. Chambon
 
 ==Nouveaux liens==
 > 1. [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
-> 2. La solution de secours Visio-lycée a été désactivée, il ne reste plus que le CNED ; solution unique, sans secours.
+> 2. La solution de secours `Visio-lycée` a été désactivée, il ne reste plus que le CNED ; solution unique, sans secours.
 
 
 Rendez-vous **obligatoires** :
-* :clock10: les mercredis de 10 h à 12 h
-* :clock8: les vendredis de 8 h à 10 h
+* 🕙 les mercredis de 10 h à 12 h
+* 🕗 les vendredis de 8 h à 10 h
 
 ==Communication hors ATRIUM==
 **Message important** : Il semble qu'ATRIUM soit un peu en panne par moment...
 Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://hackmd.io/Z-KjiJGQRPqLIPTI_SQQYw?both
 
 ## 🥇 Juges en ligne
+
 ### FranceIOI
+
 > Solutions alternatives aux problèmes sur FranceIOI
 
 1. [Niveau 1](N1/accueil.html)
@@ -46,7 +48,7 @@ Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : 
 
 ## Cours
 
-### 🦺  Histoire d'UNIX
+### 📜 Histoire d'UNIX
 
 * [Histoire d'UNIX](cours/0-Histoire/Unix.html)
 
@@ -66,7 +68,7 @@ Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : 
 * [Modularité](cours/3-Module/?.html) **à venir**
 
 
-### :artificial_satellite: Programmation Orientée Objet (POO)
+### 🛰️ Programmation Orientée Objet (POO)
 
 * [Introduction à la POO](cours/1-POO/POO.html)
 
@@ -90,13 +92,13 @@ Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : 
     * [Corrections d'exercices](cours/3-Arbres/3-correction.html)
 
 
-### :diamond_shape_with_a_dot_inside: Graphes
+### 💠 Graphes
 
 * [Graphes](cours/4-Graphes/1-graphes.html)
 * [Parcours](cours/4-Graphes/2-parcours.html)
 
 
-## :anchor: Devoirs
+## ⚓️ Devoirs
 * [DS n°1](devoirs/1-ds1/DS1.html) - récursivité
     * [corrigé](devoirs/1-ds1/corrigé.html)
 * [DS n°2](devoirs/2-ds2/DS2.html) - algorithmique
@@ -109,7 +111,7 @@ Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : 
     * [corrections](devoirs/4-dm2/Corrigé/correction.html) : Solutions de quelques élèves anonymes, et du professeur ; avec commentaires.
 
 
-## :checkered_flag: Épreuve finale, ==avec Grand Oral==
+## 🏁 Épreuve finale, ==avec Grand Oral==
 
 * **Épreuves du mois de mars annulées ; contrôle continu pour les spécialités !!!**
 * Le programme : le [B.O.](https://cache.media.eduscol.education.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf)
