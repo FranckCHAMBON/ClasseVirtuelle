@@ -114,7 +114,6 @@ En résumé :
 * [Basthon]()
 Il existe d'autres solutions, mais souvent avec inscription ou bien analyses, je les disqualifie, en attendant des solutions intégrées aux ENT d'établissement. À suivre : Capytale.
 
-* [Tests](test.html)
 
 ### Sur tablette
 * [QPython](https://play.google.com/store/apps/details?id=org.qpython.qpy)
