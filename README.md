@@ -7,7 +7,7 @@ Vous trouverez ici les documents utiles pour :
 
 ## Les visio-conférences
 
-/!\ **Nouveaux liens** /!\
+⚠️ **Nouveaux liens** ⚠️
 
 Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant :
 
