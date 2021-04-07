@@ -1,17 +1,19 @@
 # Documents de cours de M. Chambon
 
-Vous trouverez ici les documents utiles pour suivre et travailler en spé NSI première et terminale, ainsi qu'en maths expertes.
-
-Lien pour cette page : [https://franckchambon.github.io/ClasseVirtuelle/](https://franckchambon.github.io/ClasseVirtuelle/)
+Vous trouverez ici les documents utiles pour :
+- la spécialité NSI première et terminale,
+- les mathématiques expertes en terminale,
+- les collègues de lycée.
 
 ## Les visio-conférences
 
-/!\ Nouveaux liens /!\
+/!\ **Nouveaux liens** /!\
 
-Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant aux heures qui vous seront communiquées via ATRIUM :
+Pour rejoindre la classe virtuelle de M. Chambon, vous devez aller sur le lien suivant :
 
-1.[https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
-2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+- Ma classe à la maison (CNED) : [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
+
+- la solution de secours Visio-lycée a été désactivée, il ne reste plus que le CNED, solution unique, sans secours.
 
 Il y a des règles et des possibilités :
 + Vous pouvez utiliser le chat pour déposer vos questions, avec par exemple un lien Internet précis vers un problème en ligne.

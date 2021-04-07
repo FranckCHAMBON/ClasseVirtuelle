@@ -11,9 +11,14 @@
 > 2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
 
 Rendez-vous en cas de confinement complet :
-* :clock10: les mardis de 10h à 12h (groupe1)
-* :clock8: les mercredis de 8h à 10h (groupe2)
-* :clock2: les vendredis de 14h à 16h
+* :clock2: les vendredis de 14 h à 16 h
+
+
+==Communication hors ATRIUM==
+**Message important** : Il semble qu'ATRIUM soit un peu en panne par moment...
+Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://hackmd.io/ZQxuRh_8RnSsautuyQaBTg?both
+
+
 
 ## :anchor: Devoirs
 * [DS n°1](devoirs/ds1.pdf) *corrigé*
