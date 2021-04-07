@@ -46,7 +46,7 @@ Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : 
 
 ## Cours
 
-### 🦺 Histoire d'UNIX
+### 🦺  Histoire d'UNIX
 
 * [Histoire d'UNIX](cours/0-Histoire/Unix.html)
 
