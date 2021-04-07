@@ -428,13 +428,16 @@ Probl&#xE8;me: https://prologin.org/train/2003/semifinal/anagrammes
             <span class="token comment"># en cas d&apos;&#xE9;galit&#xE9;, on ne fait rien ici</span>
             <span class="token keyword">pass</span>
   
-<span class="token keyword">def</span> <span class="token function">parcours_profondeur</span><span class="token punctuation">(</span>arbre<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
-    <span class="token comment"># parcours infixe</span>
+<span class="token keyword">def</span> vers_liste_tri&#xE9;e<span class="token punctuation">(</span>abr<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">list</span><span class="token punctuation">:</span>
     liste_ordonn&#xE9;e <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">if</span> <span class="token keyword">not</span> arbre<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        liste_ordonn&#xE9;e<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>parcours_profondeur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        liste_ordonn&#xE9;e<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
-        liste_ordonn&#xE9;e<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>parcours_profondeur<span class="token punctuation">(</span>arbre<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ajoute <span class="token operator">=</span> liste_ordonn&#xE9;e<span class="token punctuation">.</span>append
+    <span class="token keyword">def</span> <span class="token function">parcours_infixe</span><span class="token punctuation">(</span>abr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> abr<span class="token punctuation">.</span>est_vide<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            parcours_infixe<span class="token punctuation">(</span>abr<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>gauche<span class="token punctuation">)</span>
+            ajoute<span class="token punctuation">(</span>abr<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>&#xE9;l&#xE9;ment<span class="token punctuation">)</span>
+            parcours_infixe<span class="token punctuation">(</span>abr<span class="token punctuation">.</span>racine<span class="token punctuation">.</span>droite<span class="token punctuation">)</span>
+    
+    parcours_infixe<span class="token punctuation">(</span>abr<span class="token punctuation">)</span>
     <span class="token keyword">return</span> liste_ordonn&#xE9;e
 
 <span class="token keyword">class</span> <span class="token class-name">ABR_2</span><span class="token punctuation">:</span>
@@ -500,14 +503,14 @@ Probl&#xE8;me: https://prologin.org/train/2003/semifinal/anagrammes
     <span class="token keyword">for</span> mot <span class="token keyword">in</span> mots<span class="token punctuation">:</span>
         arbre_mots_uniques<span class="token punctuation">.</span>ajoute<span class="token punctuation">(</span>mot<span class="token punctuation">)</span>
     
-    mots_uniques <span class="token operator">=</span> parcours_profondeur<span class="token punctuation">(</span>arbre_mots_uniques<span class="token punctuation">)</span>
+    mots_uniques <span class="token operator">=</span> vers_liste_tri&#xE9;e<span class="token punctuation">(</span>arbre_mots_uniques<span class="token punctuation">)</span>
 
     effectif_anagrammes <span class="token operator">=</span> ABR_2<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># g&#xE8;re effectif</span>
     <span class="token keyword">for</span> mot <span class="token keyword">in</span> mots_uniques<span class="token punctuation">:</span>
         signe <span class="token operator">=</span> signature<span class="token punctuation">(</span>mot<span class="token punctuation">)</span>
         effectif_anagrammes<span class="token punctuation">.</span>ajoute<span class="token punctuation">(</span>signe<span class="token punctuation">)</span>
     
-    liste_effectifs <span class="token operator">=</span> parcours_profondeur<span class="token punctuation">(</span>effectif_anagrammes<span class="token punctuation">)</span>
+    liste_effectifs <span class="token operator">=</span> vers_liste_tri&#xE9;e<span class="token punctuation">(</span>effectif_anagrammes<span class="token punctuation">)</span>
 
     r&#xE9;ponse <span class="token operator">=</span> <span class="token number">0</span>
     <span class="token keyword">for</span> signe<span class="token punctuation">,</span> quantit&#xE9; <span class="token keyword">in</span> liste_effectifs<span class="token punctuation">:</span>
@@ -527,6 +530,7 @@ phrase <span class="token operator">=</span> <span class="token builtin">input</
 <span class="token comment"># &#xE9;criture</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>nb_couples_anagrammes<span class="token punctuation">(</span>phrase<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
 </pre>
       </div>
       
