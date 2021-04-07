@@ -8,7 +8,8 @@
 
 ==Nouveaux liens==
 > 1. [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
-> 2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+> 2. La solution de secours Visio-lycée a été désactivée, il ne reste plus que le CNED ; solution unique, sans secours.
+
 
 Rendez-vous **obligatoires** :
 * :clock10: les mercredis de 10 h à 12 h
