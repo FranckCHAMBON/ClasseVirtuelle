@@ -6,9 +6,7 @@
 
 > 1. [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
 
-
-
-> 2. (secours) [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+> 2. (secours) [https://codi-aix-marseille.beta.education.fr/BM0wKIPkQKqJwSN1X0BNZQ?both](https://codi-aix-marseille.beta.education.fr/BM0wKIPkQKqJwSN1X0BNZQ?both)
 
 Rendez-vous en cas de confinement complet :
 * :clock2: les vendredis de 14 h à 16 h
