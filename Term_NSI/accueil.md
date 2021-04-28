@@ -17,7 +17,7 @@ Rendez-vous **obligatoires** :
 
 ==Communication hors ATRIUM==
 **Message important** : Il semble qu'ATRIUM soit un peu en panne par moment...
-Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://hackmd.io/Z-KjiJGQRPqLIPTI_SQQYw?both
+Pour échanger une information, vous pouvez en cas d'urgence utiliser ce lien : https://codi-aix-marseille.beta.education.fr/87b6ssvySAGJorASfAXjzg?both
 
 ## 🥇 Juges en ligne
 
