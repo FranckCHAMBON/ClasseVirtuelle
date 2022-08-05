@@ -254,3 +254,4 @@ On fera comme s'il n'y avait pas d'ordre pour les clés, et que l'on peut itére
 for une_clé in mon_dico:
     ma_fonction(mon_dico[une_clé])
 ```
+> *More about [Python Dictionary](https://www.scaler.com/topics/what-is-dictionary-in-python/)* ; en anglais
